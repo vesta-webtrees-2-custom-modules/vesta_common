@@ -21,7 +21,7 @@ This module does not provide webtrees components, and therefore does not have to
 * Based on and tested with webtrees 2.0.0-alpha.5. Cannot be used with webtrees 1.x!
 * Download the zipped module, including all related modules, [here](https://cissee.de/vesta.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>
-* Issues also via <https://github.com/vesta-webtrees-2-custom-modules/vesta_common/issues>
+* Issues also via <https://github.com/vesta-webtrees-2-custom-modules/vesta_common/issues> 
 
 ### Installation<a name="installation"/>
 
