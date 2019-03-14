@@ -1,4 +1,3 @@
-
 # ⚶ Vesta Common (Webtrees 2 Custom Module)
 
 This [webtrees](https://www.webtrees.net/) custom module provides common classes to be used by other custom modules.
