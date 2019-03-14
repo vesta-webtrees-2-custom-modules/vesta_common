@@ -9,7 +9,6 @@ The project’s website is [cissee.de](https://cissee.de).
 * [Download](#download)
 * [Installation](#installation)
 * [License](#license)
-
 ### Features<a name="features"/>
 
 This module does not provide webtrees components, and therefore does not have to be activated in the module administration. 

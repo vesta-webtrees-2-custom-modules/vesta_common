@@ -1,45 +1,49 @@
-<?php use Fisharebest\Webtrees\I18N; ?>
+<?php
+
+use Fisharebest\Webtrees\I18N; ?>
 
 <?= view('components/breadcrumbs', ['links' => [route('admin-control-panel') => I18N::translate('Control panel'), route('modules') => I18N::translate('Modules'), $title]]) ?>
 
 <h1><?= $title ?></h1>
 
-<?php foreach ($fullDescription as $description) {?>
-	<p class="text-muted">
-		<?php echo $description; ?>
-	</p>
+<?php foreach ($fullDescription as $description) { ?>
+  <p class="text-muted">
+      <?php echo $description; ?>
+  </p>
 <?php } ?>
 
 <?php echo $editConfigBeforeFaq ?>
-	
+
 <h4><?php echo I18N::translate('FAQ') ?></h4>		
 <p class="small">
-	<?php echo I18N::translate('Q: How do the Vesta modules interact?') ?>
+    <?php echo I18N::translate('Q: How do the Vesta modules interact?') ?>
 </p>
 <p class="small text-muted">
-	<?php echo I18N::translate('A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events.') ?>
+    <?php echo I18N::translate('A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events.') ?>
 </p>
 <p class="small">
-	<?php echo I18N::translate('Q: Ok, but what\'s the actual benefit for the user?') ?>
+    <?php echo I18N::translate('Q: Ok, but what\'s the actual benefit for the user?') ?>
 </p>
 <p class="small text-muted">
-	<?php echo I18N::translate('A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we\'d have to use multiple module-specific tabs.');
-	echo ' ';
-	echo I18N::translate('Different modules may also be linked dynamically to provide specific data, such as location data for event places.') ?>
+    <?php
+    echo I18N::translate('A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we\'d have to use multiple module-specific tabs.');
+    echo ' ';
+    echo I18N::translate('Different modules may also be linked dynamically to provide specific data, such as location data for event places.')
+    ?>
 </p>
 <p class="small">
-	<?php echo I18N::translate('Q: How do I configure additional hooks?') ?>
+    <?php echo I18N::translate('Q: How do I configure additional hooks?') ?>
 </p>
 <p class="small text-muted">
-	<?php echo I18N::translate('A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module\'s preferences.') ?>
+    <?php echo I18N::translate('A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module\'s preferences.') ?>
 </p>
 <p class="small">
-	<?php echo I18N::translate('Q: What\'s with the '.$vesta.' symbol?') ?>
+    <?php echo I18N::translate('Q: What\'s with the ' . $vesta . ' symbol?') ?>
 </p>
 <p class="small text-muted">
-	<?php echo I18N::translate('A: The Vesta symbol is mainly used to group related modules in the module administration list.') ?>
-	<?php echo I18N::translate($vesta.' is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family.') ?>
-	<?php echo I18N::translate('If the symbol is displayed improperly, e.g. as a rectangle, check your browser\'s unicode support capabilities.') ?>
+    <?php echo I18N::translate('A: The Vesta symbol is mainly used to group related modules in the module administration list.') ?>
+    <?php echo I18N::translate($vesta . ' is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family.') ?>
+    <?php echo I18N::translate('If the symbol is displayed improperly, e.g. as a rectangle, check your browser\'s unicode support capabilities.') ?>
 </p>
 
 <?php echo $editConfigAfterFaq ?>

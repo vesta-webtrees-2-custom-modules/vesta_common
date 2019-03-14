@@ -1,9 +1,21 @@
-<?php use Fisharebest\Webtrees\Bootstrap4; ?>
-<?php use Fisharebest\Webtrees\Functions\FunctionsEdit; ?>
-<?php use Fisharebest\Webtrees\I18N; ?>
-<?php use Fisharebest\Webtrees\Module\ModuleExternalUrlInterface; ?>
-<?php use Fisharebest\Webtrees\Module\ModuleConfigInterface; ?>
-<?php use Fisharebest\Webtrees\View; ?>
+<?php
+
+use Fisharebest\Webtrees\Bootstrap4; ?>
+<?php
+
+use Fisharebest\Webtrees\Functions\FunctionsEdit; ?>
+<?php
+
+use Fisharebest\Webtrees\I18N; ?>
+<?php
+
+use Fisharebest\Webtrees\Module\ModuleExternalUrlInterface; ?>
+<?php
+
+use Fisharebest\Webtrees\Module\ModuleConfigInterface; ?>
+<?php
+
+use Fisharebest\Webtrees\View; ?>
 
 <?= view('components/breadcrumbs', ['links' => [route('admin-control-panel') => I18N::translate('Control panel'), route('modules') => I18N::translate('Modules'), $title]]) ?>
 
@@ -19,50 +31,50 @@
                 <th><?= I18N::translate('Module') ?></th>
                 <th class="text-center"><?= I18N::translate('Enabled') ?></th>
                 <?php if ($uses_access) : ?>
-                    <th class="text-center"><?= I18N::translate('Access level') ?></th>
+                  <th class="text-center"><?= I18N::translate('Access level') ?></th>
                 <?php endif ?>
                 <?php if ($uses_sorting) : ?>
-                    <th class="text-center"><?= I18N::translate('Move up') ?></th>
-                    <th class="text-center"><?= I18N::translate('Move down') ?></th>
+                  <th class="text-center"><?= I18N::translate('Move up') ?></th>
+                  <th class="text-center"><?= I18N::translate('Move down') ?></th>
                 <?php endif ?>
             </tr>
         </thead>
 
         <tbody>
             <?php foreach ($modules as $module_name => $module) : ?>
-                <tr>
-                    <th scope="col">
-                        <input type="hidden" name="order[]" value="<?= e($module->name()) ?>"?>
-                        <span title="<?= e($module->description()) ?>">
-                            <?= $module->title() ?>
-                        </span>
-                        <?php if ($module instanceof ModuleConfigInterface && $module->isEnabled()) : ?>
-                            <a href="<?= e($module->getConfigLink()) ?>" title="<?= I18N::translate('Preferences') ?>">
-                                <?= view('icons/preferences') ?>
-                                <span class="sr-only">
-                                    <?= I18N::translate('Preferences') ?>
-                                </span>
-                            </a>
-                        <?php endif ?>
-                        <?php if ($module instanceof ModuleExternalUrlInterface) : ?>
-                            <br>
-                            <a href="<?= e($module->externalUrl()) ?>">
-                                <?= e($module->externalUrl()) ?>
-                            </a>
-                        <?php endif ?>
-                    </th>
-
-                    <td class="text-center">
-                        <label class="d-block">
-                            <input type="checkbox" name="status-<?= e($module->name()) ?>" id="status-<?= e($module->name()) ?>" <?= $module->isEnabled() ? 'checked' : '' ?>>
+              <tr>
+                  <th scope="col">
+                      <input type="hidden" name="order[]" value="<?= e($module->name()) ?>"?>
+                      <span title="<?= e($module->description()) ?>">
+                          <?= $module->title() ?>
+                      </span>
+                      <?php if ($module instanceof ModuleConfigInterface && $module->isEnabled()) : ?>
+                        <a href="<?= e($module->getConfigLink()) ?>" title="<?= I18N::translate('Preferences') ?>">
+                            <?= view('icons/preferences') ?>
                             <span class="sr-only">
-                                <?= I18N::translate('Enabled') ?>
+                                <?= I18N::translate('Preferences') ?>
                             </span>
-                        </label>
-                    </td>
+                        </a>
+                      <?php endif ?>
+                      <?php if ($module instanceof ModuleExternalUrlInterface) : ?>
+                        <br>
+                        <a href="<?= e($module->externalUrl()) ?>">
+                            <?= e($module->externalUrl()) ?>
+                        </a>
+                      <?php endif ?>
+                  </th>
 
-                    <?php if ($uses_access) : ?>
-                        <td class="text-center">
+                  <td class="text-center">
+                      <label class="d-block">
+                          <input type="checkbox" name="status-<?= e($module->name()) ?>" id="status-<?= e($module->name()) ?>" <?= $module->isEnabled() ? 'checked' : '' ?>>
+                          <span class="sr-only">
+                              <?= I18N::translate('Enabled') ?>
+                          </span>
+                      </label>
+                  </td>
+
+                  <?php if ($uses_access) : ?>
+                    <td class="text-center">
                         <div class="modal fade" id="access-level-<?= $module->name() ?>" tabindex="-1" role="dialog">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -78,14 +90,14 @@
                                         <table class="table table-sm">
                                             <tbody>
                                                 <?php foreach ($trees as $tree) : ?>
-                                                    <tr>
-                                                        <td>
-                                                            <?= e($tree->title()) ?>
-                                                        </td>
-                                                        <td>
-                                                            <?= Bootstrap4::select(FunctionsEdit::optionsAccessLevels(), $module->accessLevel($tree, $interface), ['name' => 'access-' . $module->name() . '-' . $tree->id()]) ?>
-                                                        </td>
-                                                    </tr>
+                                                  <tr>
+                                                      <td>
+                                                          <?= e($tree->title()) ?>
+                                                      </td>
+                                                      <td>
+                                                          <?= Bootstrap4::select(FunctionsEdit::optionsAccessLevels(), $module->accessLevel($tree, $interface), ['name' => 'access-' . $module->name() . '-' . $tree->id()]) ?>
+                                                      </td>
+                                                  </tr>
                                                 <?php endforeach ?>
                                             </tbody>
                                         </table>
@@ -100,26 +112,26 @@
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#access-level-<?= $module->name() ?>">
                             <?= view('icons/edit') ?>
                             <span class="sr-only">
-                                 <?= I18N::translate('edit') ?>
+                                <?= I18N::translate('edit') ?>
                             </span>
                         </button>
                     </td>
-                    <?php endif ?>
+                  <?php endif ?>
 
-                    <?php if ($uses_sorting) : ?>
-                        <td class="move up text-center">
-                            <a href="#" title="<?= I18N::translate('Move up') ?>">
-                                <?= view('icons/arrow-up') ?>
-                            </a>
-                        </td>
+                  <?php if ($uses_sorting) : ?>
+                    <td class="move up text-center">
+                        <a href="#" title="<?= I18N::translate('Move up') ?>">
+                            <?= view('icons/arrow-up') ?>
+                        </a>
+                    </td>
 
-                        <td class="move down text-center">
-                            <a href="#" title="<?= I18N::translate('Move down') ?>">
-                                <?= view('icons/arrow-down') ?>
-                            </a>
-                        </td>
-                    <?php endif ?>
-                </tr>
+                    <td class="move down text-center">
+                        <a href="#" title="<?= I18N::translate('Move down') ?>">
+                            <?= view('icons/arrow-down') ?>
+                        </a>
+                    </td>
+                  <?php endif ?>
+              </tr>
             <?php endforeach ?>
         </tbody>
     </table>
@@ -138,17 +150,17 @@
 
 <?php View::push('javascript') ?>
 <script>
-    $('.wt-table-menu td.move').click(function() {
-        var row = $(this).closest('tr');
+  $('.wt-table-menu td.move').click(function () {
+      var row = $(this).closest('tr');
 
-        if ($(this).hasClass('up')) {
-            row.prev().before(row);
-        } else {
-            row.next().after(row);
-        }
+      if ($(this).hasClass('up')) {
+          row.prev().before(row);
+      } else {
+          row.next().after(row);
+      }
 
-        return false;
-    });
+      return false;
+  });
 </script>
 <?php View::endpush() ?>
 
