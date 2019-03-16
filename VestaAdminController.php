@@ -2,17 +2,23 @@
 
 namespace Vesta;
 
-use Cissee\WebtreesExt\AbstractModuleBaseController;
+use Fisharebest\Webtrees\Http\Controllers\AbstractBaseController;
 use Fisharebest\Webtrees\Tree;
 use Symfony\Component\HttpFoundation\Response;
+use function route;
 
-class VestaAdminController extends AbstractModuleBaseController {
+class VestaAdminController extends AbstractBaseController {
 
   protected $layout = 'layouts/administration';
 
+  public static function vestaViewsNamespace(): string {
+    return 'Vesta_Views_Namespace';
+  }
+
+  protected $moduleName;
+
   public function __construct(string $moduleName) {
-    //__DIR__ is the directory of VestaModuleTrait - that's intentional: it's a generic view!
-    parent::__construct(__DIR__, $moduleName);
+    $this->moduleName = $moduleName;
   }
 
   //adapted from ModuleController (e.g. listFooters)
@@ -24,7 +30,8 @@ class VestaAdminController extends AbstractModuleBaseController {
           $access,
           $sorting): Response {
 
-    return $this->viewResponse('admin/vesta_components', [
+    //assumes the namespace has been registered!
+    return $this->viewResponse(VestaAdminController::vestaViewsNamespace() . '::admin/vesta_components', [
                 'interface' => $interface,
                 'description' => $description,
                 'modules' => $modules,

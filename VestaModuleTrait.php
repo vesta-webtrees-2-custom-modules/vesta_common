@@ -2,14 +2,22 @@
 
 namespace Vesta;
 
-use Cissee\WebtreesExt\ModuleView;
+use Fisharebest\Localization\Translation;
+use Fisharebest\Webtrees\Carbon;
+use Fisharebest\Webtrees\Contracts\UserInterface;
+use Fisharebest\Webtrees\Schema\MigrationInterface;
+use Fisharebest\Webtrees\Tree;
 use Fisharebest\Webtrees\View;
+use Illuminate\Database\Capsule\Manager as DB;
+use Illuminate\Support\Str;
+use PDOException;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Vesta\ControlPanel\ControlPanelUtils;
 use Vesta\ControlPanel\Model\ControlPanelPreferences;
-use Illuminate\Database\Capsule\Manager as DB;
+use function route;
+use function view;
 
 trait VestaModuleTrait {
 
@@ -53,6 +61,27 @@ trait VestaModuleTrait {
       $prefix = $this->getVestaSymbol() . ' ';
     }
     return $prefix . $this->getMainTitle();
+  }
+
+  /**
+   * Additional/updated translations.
+   *
+   * @param string $language
+   *
+   * @return string[]
+   */
+  public function customTranslations(string $language): array {
+    $languageFile1 = $this->resourcesFolder() . 'lang/' . $language . '.mo';
+    $languageFile2 = $this->resourcesFolder() . 'lang/' . $language . '.csv';
+    $ret = [];
+    if (file_exists($languageFile1)) {
+      $ret = (new Translation($languageFile1))->asArray();
+    }
+    if (file_exists($languageFile2)) {
+      //we may have both!
+      $ret = array_merge($ret, (new Translation($languageFile2))->asArray());
+    }
+    return $ret;
   }
 
   public function getConfigLink(): string {
@@ -121,9 +150,8 @@ trait VestaModuleTrait {
     $utils = new ControlPanelUtils($this);
     $utils->printPrefs($this->createPrefs(), $this->name());
     $prefs = ob_get_clean();
-
-    // Render the view (__DIR__ is the directory of VestaModuleTrait - that's intentional: it's a generic view!)
-    $innerHtml = ModuleView::make(__DIR__, 'vesta_config', [
+    
+    $innerHtml = view(VestaAdminController::vestaViewsNamespace() . '::vesta_config', [
                 'title' => $this->title(),
                 'vesta' => $this->getVestaSymbol(),
                 'fullDescription' => $this->getFullDescription(),
@@ -141,18 +169,18 @@ trait VestaModuleTrait {
     return $html;
   }
 
-  //OverrideHook
-
   /**
+   * OverrideHook
+   * 
    * echoes html
    */
   protected function editConfigBeforeFaq() {
     
   }
 
-  //OverrideHook
-
   /**
+   * OverrideHook
+   * 
    * echoes html
    */
   protected function editConfigAfterFaq() {
@@ -202,6 +230,135 @@ trait VestaModuleTrait {
     }
 
     return $updates_applied;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////
+
+  protected function vestaViewsNamespace(): string {
+    return 'Vesta_Views_Namespace';
+  }
+  
+  /**
+   *  Boostrap.
+   *
+   * @param UserInterface $user A user (or visitor) object.
+   * @param Tree|null     $tree Note that $tree can be null (if all trees are private).
+   */
+  public function boot(): void {
+    // Register a namespace for our views.
+    View::registerNamespace($this->name(), $this->resourcesFolder() . 'views/');
+    
+    // and for Vesta views.
+    View::registerNamespace(VestaAdminController::vestaViewsNamespace(), __DIR__ . '/resources/views/');
+    
+    $this->onBoot();
+  }
+
+  /**
+   * OverrideHook
+   */
+  protected function onBoot(): void {
+    
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * OverrideHook
+   */
+  public function assetsViaViews(): array {
+    return [];
+  }
+
+  //adapted from ModuleCustomTrait
+
+  /**
+   * Create a URL for an asset.
+   *
+   * @param string $asset e.g. "css/theme.css" or "img/banner.png"
+   *
+   * @return string
+   */
+  public function assetUrl(string $asset): string {
+    $assetFile = $asset;
+    $assetsViaViews = $this->assetsViaViews();
+    if (array_key_exists($asset, $assetsViaViews)) {
+      $assetFile = 'views/' . $assetsViaViews[$asset] . '.phtml';
+    }
+
+    $file = $this->resourcesFolder() . $assetFile;
+
+    // Add the file's modification time to the URL, so we can set long expiry cache headers.
+    //[RC] assume this is also ok for views (i.e. assume the rendered content isn't dynamic)
+    $hash = filemtime($file);
+
+    return route('module', [
+        'module' => $this->name(),
+        'action' => 'asset',
+        'asset' => $asset,
+        'hash' => $hash,
+    ]);
+  }
+
+  //adapted from ModuleCustomTrait
+
+  /**
+   * Serve a CSS/JS file.
+   *
+   * @param Request $request
+   *
+   * @return Response
+   */
+  public function getAssetAction(Request $request): Response {
+    // The file being requested.  e.g. "css/theme.css"
+    $asset = $request->get('asset');
+
+    // Do not allow requests that try to access parent folders.
+    if (Str::contains($asset, '..')) {
+      throw new AccessDeniedHttpException($asset);
+    }
+
+    $assetsViaViews = $this->assetsViaViews();
+    if (array_key_exists($asset, $assetsViaViews)) {
+      $assetFile = $assetsViaViews[$asset];
+      $assertRouter = function (string $asset) {
+        return $this->assetUrl($asset);
+      };
+      $content = view($this->name() . '::' . $assetFile, ['assetRouter' => $assertRouter]);
+    } else {
+      $file = $this->resourcesFolder() . $asset;
+
+      if (!file_exists($file)) {
+        throw new NotFoundHttpException($file);
+      }
+
+      $content = file_get_contents($file);
+    }
+
+    $expiry_date = Carbon::now()->addYears(10);
+
+    $extension = pathinfo($asset, PATHINFO_EXTENSION);
+
+    $mime_types = [
+        'css' => 'text/css',
+        'gif' => 'image/gif',
+        'js' => 'application/javascript',
+        'jpg' => 'image/jpg',
+        'jpeg' => 'image/jpg',
+        'json' => 'application/json',
+        'png' => 'image/png',
+        'txt' => 'text/plain',
+    ];
+
+    $mime_type = $mime_types[$extension] ?? 'application/octet-stream';
+
+    $headers = [
+        'Content-Type' => $mime_type,
+    ];
+
+    $response = new Response($content, Response::HTTP_OK, $headers);
+
+    return $response->setExpires($expiry_date);
   }
 
 }
