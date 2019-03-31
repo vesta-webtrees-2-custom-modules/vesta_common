@@ -11,6 +11,7 @@ $loader->addPsr4('Vesta\\ControlPanel\\Model\\', __DIR__ . "/controlpanel/model"
 $loader->addPsr4('Vesta\\ControlPanel\\Model\\', __DIR__ . "/controlpanel/model/elements");
 
 $loader->addPsr4('Cissee\\WebtreesExt\\', __DIR__ . "/patchedWebtrees");
+$loader->addPsr4('Cissee\\WebtreesExt\\Functions\\', __DIR__ . "/patchedWebtrees/functions");
 
 $loader->register();
 
