@@ -2,7 +2,7 @@
 
 namespace Cissee\WebtreesExt;
 
-use Fisharebest\Webtrees\Bootstrap4;
+use function view;
 
 class ViewUtils {
   //webtrees 1.x had FunctionsEdit::twoStateCheckbox
@@ -16,17 +16,11 @@ class ViewUtils {
    * @param boolean $inline
    */
   public static function checkbox($name, $value, $label, $disabled = false, $inline = false) {
-    return Bootstrap4::checkbox(
-                    $label,
-                    $inline,
-                    [
-                        'name' => $name,
-                        'checked' => (bool) $value,
-                        'disabled' => $disabled
-    ]);
+    if ($inline) {
+      return view('components/checkbox-inline', ['label' => $label, 'name' => $name, 'checked' => $value, 'disabled' => $disabled]);
+    }
+    return view('components/checkbox', ['label' => $label, 'name' => $name, 'checked' => $value, 'disabled' => $disabled]);
   }
-
-  //webtrees 1.x had FunctionsEdit::selectEditControl
 
   /**
    * 
@@ -36,12 +30,7 @@ class ViewUtils {
    * @param string $label
    */
   public static function select($name, $options, $value) {
-    return Bootstrap4::select(
-                    $options,
-                    $value,
-                    [
-                        'id' => $name,
-                        'name' => $name]);
+    return view('components/select', ['name' => $name, 'selected' => $value, 'values' => $options]);
   }
 
 }

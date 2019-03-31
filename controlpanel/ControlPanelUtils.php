@@ -3,7 +3,6 @@
 namespace Vesta\ControlPanel;
 
 use Cissee\WebtreesExt\ViewUtils;
-use Fisharebest\Webtrees\Bootstrap4;
 use Fisharebest\Webtrees\FlashMessages;
 use Fisharebest\Webtrees\GedcomTag;
 use Fisharebest\Webtrees\I18N;
@@ -151,11 +150,25 @@ class ControlPanelUtils {
   public function printControlPanelFactRestriction(ControlPanelFactRestriction $element) {
     //why escape only here?	
     $value = e($this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue()));
+    /*
     ?>
     <div class="col-sm-9">
-        <?= Bootstrap4::multiSelect(GedcomTag::getPicklistFacts($element->getFamily() ? 'FAM' : 'INDI'), explode(',', $value), ['id' => $element->getSettingKey(), 'name' => $element->getSettingKey() . '[]', 'class' => 'select2']) ?>
+        <?= Bootstrap4::multiSelect(
+     GedcomTag::getPicklistFacts($element->getFamily() ? 'FAM' : 'INDI'), 
+     explode(',', $value), 
+     [
+     'id' => $element->getSettingKey(), 
+     'name' => $element->getSettingKey() . '[]', 
+     'class' => 'select2']) ?>
     </div>
     <?php
+    */
+    echo view('components/select', [
+        'name' => $element->getSettingKey() . '[]', 
+        'id' => $element->getSettingKey(), 
+        'selected' => explode(',', $value), 
+        'values' => GedcomTag::getPicklistFacts($element->getFamily() ? 'FAM' : 'INDI'), 
+        'class' => 'select2']);
   }
 
   public function printControlPanelRange(ControlPanelRange $element) {
@@ -203,11 +216,7 @@ class ControlPanelUtils {
 
     $value = $this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue());
 
-    echo Bootstrap4::radioButtons(
-            $element->getSettingKey(),
-            $options,
-            $value,
-            true);
+    echo view('components/radios-inline', ['name' => $element->getSettingKey(), 'selected' => $value, 'options' => $options]);
   }
 
   /**
