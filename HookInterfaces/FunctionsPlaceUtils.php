@@ -9,7 +9,8 @@ use Fisharebest\Webtrees\Module\ModuleInterface;
 use Fisharebest\Webtrees\Services\ModuleService;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
-use Symfony\Component\HttpFoundation\Request;
+use Psr\Http\Message\ServerRequestInterface;
+use Cissee\WebtreesExt\Requests;
 use Vesta\Model\PlaceStructure;
 use function app;
 
@@ -52,8 +53,8 @@ class FunctionsPlaceUtils {
     return FunctionsPlaceUtils::getFirstLatLon($module, $fact, $parentGedcomPlace);
   }
 
-  public static function updateOrder(ModuleInterface $moduleForPrefsOrder, Request $request) {
-    $order = (array) $request->get('order');
+  public static function updateOrder(ModuleInterface $moduleForPrefsOrder, ServerRequestInterface $request) {
+    $order = Requests::getArray($request, 'order');
     //set als preference
     $pref = implode(',', $order);
     $moduleForPrefsOrder->setPreference('ORDER', $pref);

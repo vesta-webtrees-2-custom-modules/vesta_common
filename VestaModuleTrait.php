@@ -11,9 +11,8 @@ use Fisharebest\Webtrees\View;
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Support\Str;
 use PDOException;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Vesta\ControlPanel\ControlPanelUtils;
 use Vesta\ControlPanel\Model\ControlPanelPreferences;
 use function route;
@@ -91,7 +90,7 @@ trait VestaModuleTrait {
     ]);
   }
 
-  public function getAdminAction(): Response {
+  public function getAdminAction(): ResponseInterface {
 
     //fancy way, example from StoriesModule.php
     /*
@@ -105,15 +104,10 @@ trait VestaModuleTrait {
      */
 
     //plain way
-    return new Response($this->editConfig(), Response::HTTP_OK);
+    return response($this->editConfig());
   }
 
-  /**
-   * 
-   * @param $request
-   * @return RedirectResponse
-   */
-  public function postAdminAction(Request $request): RedirectResponse {
+  public function postAdminAction(ServerRequestInterface $request): ResponseInterface {
     $this->saveConfig($request);
 
     $url = route('module', [
@@ -121,7 +115,7 @@ trait VestaModuleTrait {
         'action' => 'Admin',
     ]);
 
-    return new RedirectResponse($url);
+    return redirect($url);
   }
 
   /**
@@ -190,7 +184,7 @@ trait VestaModuleTrait {
   /**
    * Save updated configuration settings.
    */
-  protected function saveConfig(Request $request) {
+  protected function saveConfig(ServerRequestInterface $request) {
     $utils = new ControlPanelUtils($this);
     $utils->savePostData($request, $this->createPrefs());
   }
@@ -309,9 +303,9 @@ trait VestaModuleTrait {
    *
    * @return Response
    */
-  public function getAssetAction(Request $request): Response {
+  public function getAssetAction(ServerRequestInterface $request): ResponseInterface {
     // The file being requested.  e.g. "css/theme.css"
-    $asset = $request->get('asset');
+    $asset = $request->getQueryParams()['asset'];
 
     // Do not allow requests that try to access parent folders.
     if (Str::contains($asset, '..')) {
@@ -335,7 +329,7 @@ trait VestaModuleTrait {
       $content = file_get_contents($file);
     }
 
-    $expiry_date = Carbon::now()->addYears(10);
+    $expiry_date = Carbon::now()->addYears(10)->toDateTimeString();
 
     $extension = pathinfo($asset, PATHINFO_EXTENSION);
 
@@ -354,11 +348,9 @@ trait VestaModuleTrait {
 
     $headers = [
         'Content-Type' => $mime_type,
+        'Expires' => $expiry_date,
     ];
-
-    $response = new Response($content, Response::HTTP_OK, $headers);
-
-    return $response->setExpires($expiry_date);
+    return response($content, 200, $headers);
   }
 
 }

@@ -9,7 +9,7 @@ use Fisharebest\Webtrees\Tree;
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Support\Collection;
 use stdClass;
-use Symfony\Component\HttpFoundation\Response;
+use Psr\Http\Message\ResponseInterface;
 use Fisharebest\Webtrees\Module\ModuleInterface;
 
 //same as Fisharebest\Webtrees\Module\AbstractModule, but methods made non-final
@@ -213,19 +213,19 @@ abstract class AbstractModule implements ModuleInterface {
    * @param mixed[] $view_data
    * @param int     $status
    *
-   * @return Response
+   * @return ResponseInterface
    */
-  protected function viewResponse($view_name, $view_data, $status = Response::HTTP_OK): Response {
-    // Make the view's data available to the layout.
-    $layout_data = $view_data;
+  protected function viewResponse($view_name, $view_data, $status = StatusCodeInterface::STATUS_OK): ResponseInterface
+  {
+      // Make the view's data available to the layout.
+      $layout_data = $view_data;
 
-    // Render the view
-    $layout_data['content'] = view($view_name, $view_data);
+      // Render the view
+      $layout_data['content'] = view($view_name, $view_data);
 
-    // Insert the view into the layout
-    $html = view($this->layout, $layout_data);
+      // Insert the view into the layout
+      $html = view($this->layout, $layout_data);
 
-    return new Response($html, $status);
+      return response($html, $status);
   }
-
 }

@@ -30,7 +30,7 @@ class ViewUtils {
    * @param string $label
    */
   public static function select($name, $options, $value) {
-    return view('components/select', ['name' => $name, 'selected' => $value, 'values' => $options]);
+    return view('components/select', ['name' => $name, 'selected' => $value, 'options' => $options]);
   }
 
 }

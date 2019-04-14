@@ -4,7 +4,7 @@ namespace Vesta;
 
 use Fisharebest\Webtrees\Http\Controllers\AbstractBaseController;
 use Fisharebest\Webtrees\Tree;
-use Symfony\Component\HttpFoundation\Response;
+use Psr\Http\Message\ResponseInterface;
 use function route;
 
 class VestaAdminController extends AbstractBaseController {
@@ -28,7 +28,7 @@ class VestaAdminController extends AbstractBaseController {
           $title,
           $description,
           $access,
-          $sorting): Response {
+          $sorting): ResponseInterface {
 
     //assumes the namespace has been registered!
     return $this->viewResponse(VestaAdminController::vestaViewsNamespace() . '::admin/vesta_components', [

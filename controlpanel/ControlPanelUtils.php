@@ -7,7 +7,7 @@ use Fisharebest\Webtrees\FlashMessages;
 use Fisharebest\Webtrees\GedcomTag;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\ModuleInterface;
-use Symfony\Component\HttpFoundation\Request;
+use Psr\Http\Message\ServerRequestInterface;
 use TheSeer\Tokenizer\Exception;
 use Vesta\ControlPanel\Model\ControlPanelCheckbox;
 use Vesta\ControlPanel\Model\ControlPanelElement;
@@ -167,12 +167,12 @@ class ControlPanelUtils {
         'name' => $element->getSettingKey() . '[]', 
         'id' => $element->getSettingKey(), 
         'selected' => explode(',', $value), 
-        'values' => GedcomTag::getPicklistFacts($element->getFamily() ? 'FAM' : 'INDI'), 
+        'options' => GedcomTag::getPicklistFacts($element->getFamily() ? 'FAM' : 'INDI'), 
         'class' => 'select2']);
   }
 
   public function printControlPanelRange(ControlPanelRange $element) {
-    $value = $this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue());
+    $value = (int)$this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue());
     ?>
     <div class="input-group" style="min-width: 300px; max-width: 300px;">
         <label class="input-group-addon" for="<?php echo $element->getSettingKey(); ?>"><?php echo $element->getLabel() ?></label>
@@ -223,16 +223,16 @@ class ControlPanelUtils {
    * 
    * @return void
    */
-  public function savePostData(Request $request, ControlPanelPreferences $prefs) {
+  public function savePostData(ServerRequestInterface $request, ControlPanelPreferences $prefs) {
     foreach ($prefs->getSections() as $section) {
       foreach ($section->getSubsections() as $subsection) {
         foreach ($subsection->getElements() as $element) {
           if ($element instanceof ControlPanelFactRestriction) {
-            $this->module->setPreference($element->getSettingKey(), implode(',', $request->get($element->getSettingKey())));
+            $this->module->setPreference($element->getSettingKey(), implode(',', $request->getParsedBody()[$element->getSettingKey()]));
           } else if ($element instanceof ControlPanelCheckbox) {
-            $this->module->setPreference($element->getSettingKey(), ($request->get($element->getSettingKey()) !== null));
+            $this->module->setPreference($element->getSettingKey(), (($request->getParsedBody()[$element->getSettingKey()] ?? null) != null)?'1':'0');
           } else {
-            $this->module->setPreference($element->getSettingKey(), $request->get($element->getSettingKey()));
+            $this->module->setPreference($element->getSettingKey(), $request->getParsedBody()[$element->getSettingKey()]);
           }
         }
       }
