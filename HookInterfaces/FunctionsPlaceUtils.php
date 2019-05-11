@@ -2,6 +2,7 @@
 
 namespace Vesta\Hook\HookInterfaces;
 
+use Cissee\WebtreesExt\Requests;
 use Closure;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Contracts\UserInterface;
@@ -10,13 +11,25 @@ use Fisharebest\Webtrees\Services\ModuleService;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
 use Psr\Http\Message\ServerRequestInterface;
-use Cissee\WebtreesExt\Requests;
 use Vesta\Model\PlaceStructure;
 use function app;
 
 class FunctionsPlaceUtils {
 
-  //horizontally (hooks), then, if $fallbackViaParents, verticlly (via parent hierarchy)
+  public static function getParentPlaces($module, PlaceStructure $place, $typesOfLocation, $recursively = false) {
+    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $place->getTree(), Auth::user())
+            ->toArray();
+    
+    $places = [];
+    foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
+      $parentPlaces = $functionsPlaceProvider->hPlacesGetParentPlaces($place, $typesOfLocation, $recursively);
+      array_merge($places, $parentPlaces);
+    }
+    
+    return $places;
+  }
+  
+  //horizontally (hooks), then, if $fallbackViaParents, vertically (via parent hierarchy)
   public static function getFirstLatLon($module, $fact, $gedcomPlace, $fallbackViaParents = true) {
     if (empty($gedcomPlace)) {
       return null;

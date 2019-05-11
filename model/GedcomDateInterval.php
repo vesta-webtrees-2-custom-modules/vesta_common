@@ -2,19 +2,19 @@
 
 namespace Vesta\Model;
 
+use Fisharebest\Webtrees\Date\AbstractCalendarDate;
 use Vesta\Model\DateUtils;
-use Fisharebest\Webtrees\Date\CalendarDate;
 
 /**
  * A date interval, convertible from/to gedcom DATE
  *   
  */
 class GedcomDateInterval {
-  /* @var $fromCalendarDate CalendarDate/AbstractCalendarDate */
-
+  
+  /* @var $fromCalendarDate AbstractCalendarDate */
   private $fromCalendarDate;
 
-  /* @var $toCalendarDate CalendarDate/AbstractCalendarDate */
+  /* @var $toCalendarDate AbstractCalendarDate */
   private $toCalendarDate;
 
   protected static function minJD($calendarDate) {
@@ -87,7 +87,7 @@ class GedcomDateInterval {
     return $this->getMin();
   }
 
-  public function __construct($fromCalendarDate, $toCalendarDate) {
+  public function __construct(?AbstractCalendarDate $fromCalendarDate, ?AbstractCalendarDate $toCalendarDate) {
     $this->fromCalendarDate = $fromCalendarDate;
     $this->toCalendarDate = $toCalendarDate;
   }
