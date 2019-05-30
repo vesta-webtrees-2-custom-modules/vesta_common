@@ -216,7 +216,13 @@ class ControlPanelUtils {
 
     $value = $this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue());
 
-    echo view('components/radios-inline', ['name' => $element->getSettingKey(), 'selected' => $value, 'options' => $options]);
+    //problematic because array keys may be coverted to integer by php (even if explicitly set as string)
+    //echo view('components/radios-inline', ['name' => $element->getSettingKey(), 'selected' => $value, 'options' => $options]);
+    
+    //fixed contents:
+    foreach ($options as $optionValue => $label) {
+      echo view('components/radio-inline', ['label' => $label, 'name' => $element->getSettingKey(), 'value' => (string)$optionValue, 'checked' => (string)$optionValue === $value]);
+    }
   }
 
   /**
