@@ -6,7 +6,7 @@ use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\AbstractModule;
 use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 
-class VestaCommonLibModule2 extends AbstractModule implements ModuleCustomInterface {
+class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterface {
 
   private $vesta;
 
@@ -19,7 +19,7 @@ class VestaCommonLibModule2 extends AbstractModule implements ModuleCustomInterf
   }
 
   public function customModuleVersion(): string {
-    return '2.0.0-beta.2.1';
+    return '2.0.0-beta.2.2';
   }
 
   public function customModuleLatestVersionUrl(): string {

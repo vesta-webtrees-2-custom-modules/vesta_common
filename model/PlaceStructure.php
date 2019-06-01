@@ -45,14 +45,14 @@ class PlaceStructure {
     return $this->eventDateInterval;
   }
 
-  public function __construct($gedcom, Tree $tree, $eventType = null, GedcomDateInterval $eventDateInterval) {
+  public function __construct(string $gedcom, Tree $tree, ?string $eventType, GedcomDateInterval $eventDateInterval) {
     $this->gedcom = $gedcom;
     $this->tree = $tree;
     $this->eventType = $eventType;
     $this->eventDateInterval = $eventDateInterval;
   }
 
-  public static function create($gedcom, Tree $tree, $eventType = null, $eventDateGedcomString = null) {
+  public static function create(string $gedcom, Tree $tree, ?string $eventType = null, ?string $eventDateGedcomString = null) {
     $dateInterval = GedcomDateInterval::createEmpty();
     if ($eventDateGedcomString !== null) {
       $dateInterval = GedcomDateInterval::create($eventDateGedcomString);
@@ -124,4 +124,11 @@ class PlaceStructure {
     return null;
   }
 
+  public function debug(): string {
+    return 
+      $this->tree->name() . ' :: ' . 
+      $this->gedcom  . ' :: ' . 
+      $this->eventType  . ' :: ' . 
+      $this->eventDateInterval->toGedcomString(0);
+  }
 }

@@ -17,14 +17,14 @@ use Fisharebest\Webtrees\View; ?>
     <table class="table table-bordered wt-table-menu">
         <thead>
             <tr>
-                <th><?= I18N::translate('Module') ?></th>
-                <th class="text-center"><?= I18N::translate('Enabled') ?></th>
+                <th><?= I18N::translate('Module') ?><br/>&nbsp;</th>
+                <th class="text-center"><?= I18N::translate('Enabled') ?><br/><?= I18N::translate('(entire module)') ?></th>
                 <?php if ($uses_access) : ?>
-                  <th class="text-center"><?= I18N::translate('Access level') ?></th>
+                  <th class="text-center"><?= I18N::translate('Access level') ?><br/><?= I18N::translate('(specific functionality)') ?></th>
                 <?php endif ?>
                 <?php if ($uses_sorting) : ?>
-                  <th class="text-center"><?= I18N::translate('Move up') ?></th>
-                  <th class="text-center"><?= I18N::translate('Move down') ?></th>
+                  <th class="text-center"><?= I18N::translate('Move') ?><br/><?= I18N::translate('up') ?></th>
+                  <th class="text-center"><?= I18N::translate('Move') ?><br/><?= I18N::translate('down') ?></th>
                 <?php endif ?>
             </tr>
         </thead>

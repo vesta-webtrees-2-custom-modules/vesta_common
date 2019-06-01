@@ -14,4 +14,4 @@ if (defined("WT_VERSION")) {
 
 require_once __DIR__ . '/autoload.php';
 
-return new VestaCommonLibModule2('vestaCommonLib');
+return new VestaCommonLibModule('vestaCommonLib');

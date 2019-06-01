@@ -103,7 +103,7 @@ class GedcomDateInterval {
    * it's often more helpful not to create actual (open) intervals
    * @return GedcomDateInterval
    */
-  public static function create($date, $ignorePartialRanges = false) {
+  public static function create(string $date, $ignorePartialRanges = false) {
     //cf Date.php
     // Extract any explanatory text
     if (preg_match('/^(.*) ?[(](.*)[)]/', $date, $match)) {

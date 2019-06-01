@@ -2,6 +2,9 @@
 
 namespace Vesta\Hook\HookInterfaces;
 
+use Vesta\Model\GovReference;
+use Vesta\Model\LocReference;
+use Vesta\Model\MapCoordinates;
 use Vesta\Model\PlaceStructure;
 
 /**
@@ -23,7 +26,27 @@ trait EmptyFunctionsPlace {
     return 9999;
   }
 
-  public function hPlacesGetLatLon(PlaceStructure $place) {
+  public function plac2Map(PlaceStructure $ps): ?MapCoordinates {
+    return null;
+  }
+  
+  public function plac2Loc(PlaceStructure $ps): ?LocReference {
+    return null;
+  }
+  
+  public function plac2Gov(PlaceStructure $ps): ?GovReference {
+    return null;
+  }
+
+  public function loc2Map(LocReference $loc): ?MapCoordinates {
+    return null;
+  }
+    
+  public function loc2gov(LocReference $loc): ?GovReference {
+    return null;
+  }
+  
+  public function gov2map(GovReference $gov): ?MapCoordinates {
     return null;
   }
 

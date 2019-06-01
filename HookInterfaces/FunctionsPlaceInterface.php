@@ -2,6 +2,9 @@
 
 namespace Vesta\Hook\HookInterfaces;
 
+use Vesta\Model\GovReference;
+use Vesta\Model\LocReference;
+use Vesta\Model\MapCoordinates;
 use Vesta\Model\PlaceStructure;
 
 /**
@@ -15,16 +18,57 @@ interface FunctionsPlaceInterface {
 
   public function defaultPlacesOrder(): int;
 
+
   /**
-   *
-   * @param $place
-   *
-   * @return array|null (array of integer) Latitude/Longitude of a fact, obtained from somewhere outside the fact's own gedcom
-   * impls must not traverse the place hierarchy in any way!
+   * impls must not traverse the place hierarchy (given or implied) in any way,
+   * nor attempt to aggregate via other plac2x, x2map functions themselves.
    * 
-   * 		 		 
+   * @param PlaceStructure $ps
+   * @return MapCoordinates|null
    */
-  public function hPlacesGetLatLon(PlaceStructure $place);
+  public function plac2Map(PlaceStructure $ps): ?MapCoordinates;
+  
+  /**
+   * impls must not traverse the place hierarchy (given or implied) in any way.
+   * 
+   * @param PlaceStructure $ps
+   * @return LocReference|null
+   */
+  public function plac2Loc(PlaceStructure $ps): ?LocReference;
+
+  /**
+   * impls must not traverse the place hierarchy (given or implied) in any way,
+   * nor attempt to aggregate via other plac2x, x2gov functions themselves.
+   * 
+   * @param PlaceStructure $ps
+   * @return GovReference|null
+   */
+  public function plac2Gov(PlaceStructure $ps): ?GovReference;
+
+  /**
+   * impls must not traverse the place hierarchy (given or implied) in any way,
+   * nor attempt to aggregate via other loc2x, x2map functions themselves.
+   * 
+   * @param LocReference $loc
+   * @return MapCoordinates|null
+   */
+  public function loc2Map(LocReference $loc): ?MapCoordinates;
+  
+  /**
+   * impls must not traverse the place hierarchy (given or implied) in any way.
+   * 
+   * @param LocReference $loc
+   * @return GovReference|null
+   */
+  public function loc2gov(LocReference $loc): ?GovReference;
+  
+  /**
+   * impls must not traverse the place hierarchy (given or implied) in any way.
+   * 
+   * @param GovReference $gov
+   * @return MapCoordinates|null
+   */
+  public function gov2map(GovReference $gov): ?MapCoordinates;
 
   /**
    *
