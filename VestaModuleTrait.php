@@ -299,9 +299,9 @@ trait VestaModuleTrait {
   /**
    * Serve a CSS/JS file.
    *
-   * @param Request $request
+   * @param ServerRequestInterface $request
    *
-   * @return Response
+   * @return ResponseInterface
    */
   public function getAssetAction(ServerRequestInterface $request): ResponseInterface {
     // The file being requested.  e.g. "css/theme.css"

@@ -19,7 +19,7 @@ class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterfa
   }
 
   public function customModuleVersion(): string {
-    return '2.0.0-beta.2.2';
+    return '2.0.0-beta.3.1';
   }
 
   public function customModuleLatestVersionUrl(): string {
