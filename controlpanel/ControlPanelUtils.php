@@ -234,7 +234,11 @@ class ControlPanelUtils {
       foreach ($section->getSubsections() as $subsection) {
         foreach ($subsection->getElements() as $element) {
           if ($element instanceof ControlPanelFactRestriction) {
-            $this->module->setPreference($element->getSettingKey(), implode(',', $request->getParsedBody()[$element->getSettingKey()]));
+            $value = '';
+            if (array_key_exists($element->getSettingKey(), $request->getParsedBody())) {
+              $value = implode(',', $request->getParsedBody()[$element->getSettingKey()]);
+            }
+            $this->module->setPreference($element->getSettingKey(), $value);
           } else if ($element instanceof ControlPanelCheckbox) {
             $this->module->setPreference($element->getSettingKey(), (($request->getParsedBody()[$element->getSettingKey()] ?? null) != null)?'1':'0');
           } else {
