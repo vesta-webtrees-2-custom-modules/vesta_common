@@ -2,6 +2,8 @@
 
 namespace Vesta\Model;
 
+use Fisharebest\Webtrees\Fact;
+use Fisharebest\Webtrees\Functions\Functions;
 use Fisharebest\Webtrees\Tree;
 use Fisharebest\Webtrees\Place;
 use Vesta\Model\GedcomDateInterval;
@@ -58,6 +60,15 @@ class PlaceStructure {
       $dateInterval = GedcomDateInterval::create($eventDateGedcomString);
     }
     return new PlaceStructure($gedcom, $tree, $eventType, $dateInterval);
+  }
+  
+  public static function fromFact(Fact $event): PlaceStructure {
+    $placerec = Functions::getSubRecord(2, '2 PLAC', $event->gedcom());
+    if (empty($placerec)) {
+      $placerec = "2 PLAC";
+    }      
+    $ps = PlaceStructure::create($placerec, $event->record()->tree(), $event->getTag(), $event->attribute("DATE"));
+    return $ps;
   }
 
   /**
