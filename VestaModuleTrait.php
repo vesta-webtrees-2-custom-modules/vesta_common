@@ -90,7 +90,7 @@ trait VestaModuleTrait {
     ]);
   }
 
-  public function getAdminAction(): ResponseInterface {
+  public function getAdminAction(ServerRequestInterface $request): ResponseInterface {
 
     //fancy way, example from StoriesModule.php
     /*

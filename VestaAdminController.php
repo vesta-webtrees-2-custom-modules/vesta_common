@@ -3,8 +3,9 @@
 namespace Vesta;
 
 use Fisharebest\Webtrees\Http\Controllers\AbstractBaseController;
-use Fisharebest\Webtrees\Tree;
+use Fisharebest\Webtrees\Services\TreeService;
 use Psr\Http\Message\ResponseInterface;
+use function app;
 use function route;
 
 class VestaAdminController extends AbstractBaseController {
@@ -36,7 +37,7 @@ class VestaAdminController extends AbstractBaseController {
                 'description' => $description,
                 'modules' => $modules,
                 'title' => $title,
-                'trees' => Tree::all(),
+                'trees' => app(TreeService::class)->all(),
                 'uses_access' => $access,
                 'uses_sorting' => $sorting,
                 'cancelRoute' => route('module', [
