@@ -10,6 +10,7 @@ use Fisharebest\Webtrees\Module\ModuleInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use TheSeer\Tokenizer\Exception;
 use Vesta\ControlPanel\Model\ControlPanelCheckbox;
+use Vesta\ControlPanel\Model\ControlPanelCheckboxInverted;
 use Vesta\ControlPanel\Model\ControlPanelElement;
 use Vesta\ControlPanel\Model\ControlPanelFactRestriction;
 use Vesta\ControlPanel\Model\ControlPanelPreferences;
@@ -106,6 +107,8 @@ class ControlPanelUtils {
   public function printElement(ControlPanelElement $element) {
     if ($element instanceof ControlPanelCheckbox) {
       $this->printControlPanelCheckbox($element);
+    } else if ($element instanceof ControlPanelCheckboxInverted) {
+      $this->printControlPanelCheckboxInverted($element);
     } else if ($element instanceof ControlPanelFactRestriction) {
       $this->printControlPanelFactRestriction($element);
     } else if ($element instanceof ControlPanelRange) {
@@ -146,7 +149,28 @@ class ControlPanelUtils {
     </div>
     <?php
   }
+  
+  public function printControlPanelCheckboxInverted(ControlPanelCheckboxInverted $element) {
+    $value = $this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue());
 
+    //ugly positioning of checkbox - for now, build checkbox directly (as in admin_trees_config)
+    /*
+      ?>
+      <div class="optionbox">
+      <?php echo ViewUtils::checkbox($element->getSettingKey(), $value, $element->getLabel()); ?>
+      </div>
+      <?php
+     */
+    ?>
+    <div class="form-check">
+        <label for="<?= $element->getSettingKey() ?>">
+            <input name="<?= $element->getSettingKey() ?>" type="checkbox" id="<?= $element->getSettingKey() ?>" value="<?= $element->getSettingKey() ?>" <?= $value ? '' : 'checked' ?>>
+            <?= $element->getLabel() ?>
+        </label>
+    </div>
+    <?php
+  }
+  
   public function printControlPanelFactRestriction(ControlPanelFactRestriction $element) {
     //why escape only here?	
     $value = e($this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue()));
@@ -241,6 +265,8 @@ class ControlPanelUtils {
             $this->module->setPreference($element->getSettingKey(), $value);
           } else if ($element instanceof ControlPanelCheckbox) {
             $this->module->setPreference($element->getSettingKey(), (($request->getParsedBody()[$element->getSettingKey()] ?? null) != null)?'1':'0');
+          } else if ($element instanceof ControlPanelCheckboxInverted) {
+            $this->module->setPreference($element->getSettingKey(), (($request->getParsedBody()[$element->getSettingKey()] ?? null) != null)?'0':'1');
           } else {
             $this->module->setPreference($element->getSettingKey(), $request->getParsedBody()[$element->getSettingKey()]);
           }

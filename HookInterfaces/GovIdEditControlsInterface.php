@@ -11,7 +11,7 @@ interface GovIdEditControlsInterface {
           string $id, 
           string $name, 
           string $placeName, 
-          bool $withLabel,
-          bool $onCreate): GenericViewElement;
+          bool $forModal,
+          bool $withLabel): GenericViewElement;
 
 }

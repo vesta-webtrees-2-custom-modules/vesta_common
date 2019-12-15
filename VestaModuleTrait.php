@@ -4,9 +4,7 @@ namespace Vesta;
 
 use Fisharebest\Localization\Translation;
 use Fisharebest\Webtrees\Carbon;
-use Fisharebest\Webtrees\Contracts\UserInterface;
 use Fisharebest\Webtrees\Schema\MigrationInterface;
-use Fisharebest\Webtrees\Tree;
 use Fisharebest\Webtrees\View;
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Support\Str;
@@ -232,13 +230,8 @@ trait VestaModuleTrait {
     return 'Vesta_Views_Namespace';
   }
   
-  /**
-   *  Boostrap.
-   *
-   * @param UserInterface $user A user (or visitor) object.
-   * @param Tree|null     $tree Note that $tree can be null (if all trees are private).
-   */
-  public function boot(): void {
+  public function boot(): void {    
+    
     // Register a namespace for our views.
     View::registerNamespace($this->name(), $this->resourcesFolder() . 'views/');
     
