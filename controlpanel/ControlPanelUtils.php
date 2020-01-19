@@ -8,7 +8,6 @@ use Fisharebest\Webtrees\GedcomTag;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\ModuleInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use TheSeer\Tokenizer\Exception;
 use Vesta\ControlPanel\Model\ControlPanelCheckbox;
 use Vesta\ControlPanel\Model\ControlPanelCheckboxInverted;
 use Vesta\ControlPanel\Model\ControlPanelElement;
@@ -18,6 +17,7 @@ use Vesta\ControlPanel\Model\ControlPanelRadioButtons;
 use Vesta\ControlPanel\Model\ControlPanelRange;
 use Vesta\ControlPanel\Model\ControlPanelSection;
 use Vesta\ControlPanel\Model\ControlPanelSubsection;
+use Exception;
 
 class ControlPanelUtils {
 
