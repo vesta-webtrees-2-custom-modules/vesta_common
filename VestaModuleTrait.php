@@ -18,6 +18,8 @@ use function view;
 
 trait VestaModuleTrait {
 
+  use VestaModuleCustomTrait;
+  
   protected function getVestaSymbol() {
     return json_decode('"\u26B6"');
   }
@@ -345,5 +347,4 @@ trait VestaModuleTrait {
     ];
     return response($content, 200, $headers);
   }
-
 }

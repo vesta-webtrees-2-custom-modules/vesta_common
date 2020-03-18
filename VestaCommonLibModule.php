@@ -8,6 +8,8 @@ use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 
 class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterface {
 
+  use VestaModuleCustomTrait;
+
   private $vesta;
 
   public function __construct() {
@@ -19,11 +21,11 @@ class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterfa
   }
 
   public function customModuleVersion(): string {
-    return '2.0.2.1';
+    return file_get_contents(__DIR__ . '/latest-version.txt');
   }
 
   public function customModuleLatestVersionUrl(): string {
-    return 'https://cissee.de';
+    return 'https://raw.githubusercontent.com/vesta-webtrees-2-custom-modules/vesta_common/master/latest-version.txt';
   }
 
   public function customModuleSupportUrl(): string {
