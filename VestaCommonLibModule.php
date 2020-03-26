@@ -5,10 +5,13 @@ namespace Vesta;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\AbstractModule;
 use Fisharebest\Webtrees\Module\ModuleCustomInterface;
+use Fisharebest\Webtrees\Module\ModuleCustomTrait;
 
 class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterface {
 
-  use VestaModuleCustomTrait;
+  use ModuleCustomTrait, VestaModuleCustomTrait {
+    VestaModuleCustomTrait::customModuleLatestVersion insteadof ModuleCustomTrait;
+  }
 
   private $vesta;
 
