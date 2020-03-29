@@ -2,6 +2,9 @@
 
 namespace Vesta\Hook\HookInterfaces;
 
+use Fisharebest\Webtrees\Place;
+use Fisharebest\Webtrees\Tree;
+use Illuminate\Support\Collection;
 use Vesta\Model\GovReference;
 use Vesta\Model\LocReference;
 use Vesta\Model\MapCoordinates;
@@ -45,6 +48,17 @@ interface FunctionsPlaceInterface {
    */
   public function plac2Gov(PlaceStructure $ps): ?GovReference;
 
+  /**
+   * batched for better performance 
+   * (note that even a single GovReference may map to multiple placenames!)
+   * 
+   * impls must not traverse or aggregate!
+   * 
+   * @param Collection<GovReference> $gov
+   * @return Collection<string>
+   */
+  public function govs2Placenames(Collection $gov): Collection;
+  
   /**
    * impls must not traverse the place hierarchy (given or implied) in any way,
    * nor attempt to aggregate via other loc2x, x2map functions themselves.

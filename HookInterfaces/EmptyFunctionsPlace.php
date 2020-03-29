@@ -2,6 +2,7 @@
 
 namespace Vesta\Hook\HookInterfaces;
 
+use Illuminate\Support\Collection;
 use Vesta\Model\GovReference;
 use Vesta\Model\LocReference;
 use Vesta\Model\MapCoordinates;
@@ -38,6 +39,10 @@ trait EmptyFunctionsPlace {
     return null;
   }
 
+  public function govs2Placenames(Collection $govs): Collection {
+    return new Collection();
+  }
+  
   public function loc2Map(LocReference $loc): ?MapCoordinates {
     return null;
   }
