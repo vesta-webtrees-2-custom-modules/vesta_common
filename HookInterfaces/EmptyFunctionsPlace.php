@@ -55,6 +55,10 @@ trait EmptyFunctionsPlace {
     return null;
   }
 
+  public function gov2html(GovReference $gov): ?string {
+    return null;
+  }
+
   public function hPlacesGetParentPlaces(PlaceStructure $place, $typesOfLocation, $recursively = false) {
     return array();
   }

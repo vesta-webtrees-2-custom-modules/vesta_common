@@ -83,6 +83,8 @@ interface FunctionsPlaceInterface {
    * @return MapCoordinates|null
    */
   public function gov2map(GovReference $gov): ?MapCoordinates;
+  
+  public function gov2html(GovReference $gov): ?string;
 
   /**
    *

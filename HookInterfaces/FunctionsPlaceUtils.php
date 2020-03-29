@@ -21,6 +21,20 @@ use function app;
 
 class FunctionsPlaceUtils {
 
+  public static function gov2html(ModuleInterface $module, Tree $tree, GovReference $gov): string {
+    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $tree, Auth::user())
+            ->toArray();
+    
+    $ret = "";
+    foreach ($functionsPlaceProviders as $functionsPlaceProvider) {      
+      $html = $functionsPlaceProvider->gov2html($gov);
+      if ($html !== null) {
+        $ret .= $html;
+      }      
+    }
+    return $ret;
+  }
+
   //for now, never fallback via indirect parent hierarchies
   public static function plac2Map(ModuleInterface $module, PlaceStructure $ps, $fallbackViaParents = true): ?MapCoordinates {
     //1. via gedcom
