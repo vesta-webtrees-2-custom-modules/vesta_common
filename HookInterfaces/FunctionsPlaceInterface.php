@@ -2,8 +2,6 @@
 
 namespace Vesta\Hook\HookInterfaces;
 
-use Fisharebest\Webtrees\Place;
-use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
 use Vesta\Model\GovReference;
 use Vesta\Model\LocReference;
