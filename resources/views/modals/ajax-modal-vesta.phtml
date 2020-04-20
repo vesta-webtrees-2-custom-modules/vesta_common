@@ -1,0 +1,48 @@
+<?php 
+  //adapted from ajax.phtml
+?>
+<!-- A dynamic modal, with content loaded using AJAX. -->
+<div class="modal fade" id="wt-ajax-modal-vesta" tabindex="-1" role="dialog" aria-labelledBy="wt-ajax-modal-vesta-title" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+            <div id="wt-ajax-modal-vesta-title"></div>
+        </div>
+	</div>
+</div>
+
+<script>
+    //unlike ajax.phtml, this placeholder itself may be loaded via ajax (as part of tab), i.e. after DOMContentLoaded
+    <?php if (!$ajax) : ?>
+    document.addEventListener("DOMContentLoaded", function () {
+    <?php endif ?>    
+          $("#wt-ajax-modal-vesta")
+            .on("show.bs.modal", function (event) {
+                let modal_content = this.querySelector(".modal-content");
+
+                // If we need to paste the result into a select2 control
+                modal_content.dataset.selectId = event.relatedTarget.dataset.selectId;
+
+                // Clear existing content (to prevent FOUC) and load new content.
+                $(modal_content)
+                    .empty()
+                    .load(event.relatedTarget.dataset.href, function () {
+                      <?php  
+                      foreach ($select2Initializers as $select2Initializer) {
+                        echo $select2Initializer;
+                      }  
+                      ?>
+                      /* 
+                        //example default initializer, cf ajax.phtml:
+  
+                        // Activate autocomplete fields
+                        $(".select2", $(this)).select2({
+                          dropdownParent: $(this),
+                          escapeMarkup: function (x) { return x }
+                        });
+                       */ 
+                    });
+            });
+    <?php if (!$ajax) : ?>
+    });
+    <?php endif ?>
+</script>
