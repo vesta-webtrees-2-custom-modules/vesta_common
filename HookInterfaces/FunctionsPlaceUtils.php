@@ -58,7 +58,7 @@ class FunctionsPlaceUtils {
     $bestMap = null;
     $bestMapProviderIndex = count($functionsPlaceProviders);
     
-    error_log($ps->getGedcomName());
+    //error_log($ps->getGedcomName());
 
     //2. via plac2map
     $index = 0;
@@ -67,14 +67,14 @@ class FunctionsPlaceUtils {
       if ($map !== null) {
         //first one wins!
         $bestMap = $map;
-        error_log("set bestMap 2.");
+        //error_log("set bestMap 2.");
         $bestMapProviderIndex = $index;
         break;
       }
       $index++;
     }
     
-    error_log("after plac2map: " . $bestMapProviderIndex);
+    //error_log("after plac2map: " . $bestMapProviderIndex);
     
     //3. via plac2loc + loc2map
     //any providers after current best are ignored!
@@ -96,7 +96,7 @@ class FunctionsPlaceUtils {
               
           $map = $functionsPlaceProvider2->loc2map($loc);
           if ($map !== null) {
-            error_log("set bestMap 3.");
+            //error_log("set bestMap 3.");
             $bestMap = $map;
             $bestMapProviderIndex = $maxIndex;
             break; //only inner loop, we have to check other outers
@@ -107,7 +107,7 @@ class FunctionsPlaceUtils {
       $index++;
     }
     
-    error_log("after plac2loc + loc2map: " . $bestMapProviderIndex);
+    //error_log("after plac2loc + loc2map: " . $bestMapProviderIndex);
     
     //4. via plac2gov + gov2map
     
@@ -127,7 +127,7 @@ class FunctionsPlaceUtils {
           
           $map = $functionsPlaceProvider2->gov2map($gov);
           if ($map !== null) {
-            error_log("set bestMap 4.");
+            //error_log("set bestMap 4.");
             $bestMap = $map;
             $bestMapProviderIndex = $maxIndex;
             break; //only inner loop, we have to check other outers
@@ -138,7 +138,7 @@ class FunctionsPlaceUtils {
       $index++;
     }    
     
-    error_log("after plac2gov + gov2map: " . $bestMapProviderIndex);
+    //error_log("after plac2gov + gov2map: " . $bestMapProviderIndex);
     
     //5. via plac2loc + loc2gov + gov2map
     
@@ -165,7 +165,7 @@ class FunctionsPlaceUtils {
               }
               $map = $functionsPlaceProvider3->gov2map($gov);
               if ($map !== null) {
-                error_log("set bestMap 5.");
+                //error_log("set bestMap 5.");
                 $bestMap = $map;
                 $bestMapProviderIndex = $maxIndex;
                 break;
@@ -179,8 +179,8 @@ class FunctionsPlaceUtils {
       $index++;
     }
     
-    error_log("after plac2loc + loc2gov + gov2map: " . $bestMapProviderIndex);
-    error_log(print_r($bestMap, true));
+    //error_log("after plac2loc + loc2gov + gov2map: " . $bestMapProviderIndex);
+    //error_log(print_r($bestMap, true));
     if ($bestMap !== null) {
       return $bestMap;
     }
