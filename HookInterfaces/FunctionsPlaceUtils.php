@@ -12,6 +12,7 @@ use Fisharebest\Webtrees\Services\ModuleService;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
 use Psr\Http\Message\ServerRequestInterface;
+use Vesta\Model\GenericViewElement;
 use Vesta\Model\GovReference;
 use Vesta\Model\LocReference;
 use Vesta\Model\MapCoordinates;
@@ -20,21 +21,49 @@ use Vesta\Model\Trace;
 use function app;
 
 class FunctionsPlaceUtils {
-
-  public static function gov2html(ModuleInterface $module, Tree $tree, GovReference $gov): string {
+  
+  public static function plac2html(ModuleInterface $module, PlaceStructure $ps): GenericViewElement {
+    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $ps->getTree(), Auth::user())
+            ->toArray();
+    
+    $gves = array();
+    foreach ($functionsPlaceProviders as $functionsPlaceProvider) {      
+      $gve = $functionsPlaceProvider->plac2html($ps);
+      if ($gve !== null) {
+        $gves[] = $gve;
+      }      
+    }
+    return GenericViewElement::implode($gves);
+  }
+  
+  public static function gov2html(ModuleInterface $module, Tree $tree, GovReference $gov): GenericViewElement {
     $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $tree, Auth::user())
             ->toArray();
     
-    $ret = "";
+    $gves = array();
     foreach ($functionsPlaceProviders as $functionsPlaceProvider) {      
-      $html = $functionsPlaceProvider->gov2html($gov);
-      if ($html !== null) {
-        $ret .= $html;
+      $gve = $functionsPlaceProvider->gov2html($gov);
+      if ($gve !== null) {
+        $gves[] = $gve;
       }      
     }
-    return $ret;
+    return GenericViewElement::implode($gves);
   }
-
+  
+  public static function map2html(ModuleInterface $module, Tree $tree, MapCoordinates $map): GenericViewElement {
+    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $tree, Auth::user())
+            ->toArray();
+    
+    $gves = array();
+    foreach ($functionsPlaceProviders as $functionsPlaceProvider) {      
+      $gve = $functionsPlaceProvider->map2html($map);
+      if ($gve !== null) {
+        $gves[] = $gve;
+      }      
+    }
+    return GenericViewElement::implode($gves);
+  }
+  
   //for now, never fallback via indirect parent hierarchies
   public static function plac2Map(ModuleInterface $module, PlaceStructure $ps, $fallbackViaParents = true): ?MapCoordinates {
     //1. via gedcom

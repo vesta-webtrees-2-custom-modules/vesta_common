@@ -3,6 +3,7 @@
 namespace Vesta\Hook\HookInterfaces;
 
 use Illuminate\Support\Collection;
+use Vesta\Model\GenericViewElement;
 use Vesta\Model\GovReference;
 use Vesta\Model\LocReference;
 use Vesta\Model\MapCoordinates;
@@ -28,6 +29,8 @@ interface FunctionsPlaceInterface {
    * @return MapCoordinates|null
    */
   public function plac2Map(PlaceStructure $ps): ?MapCoordinates;
+  
+  public function plac2html(PlaceStructure $ps): ?GenericViewElement;
   
   /**
    * impls must not traverse the place hierarchy (given or implied) in any way.
@@ -82,7 +85,9 @@ interface FunctionsPlaceInterface {
    */
   public function gov2map(GovReference $gov): ?MapCoordinates;
   
-  public function gov2html(GovReference $gov): ?string;
+  public function gov2html(GovReference $gov): ?GenericViewElement;
+
+  public function map2html(MapCoordinates $map): ?GenericViewElement;
 
   /**
    *
