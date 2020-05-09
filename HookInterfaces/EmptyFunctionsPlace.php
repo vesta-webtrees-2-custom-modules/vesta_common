@@ -2,7 +2,9 @@
 
 namespace Vesta\Hook\HookInterfaces;
 
+use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
+use Vesta\Model\GedcomDateInterval;
 use Vesta\Model\GenericViewElement;
 use Vesta\Model\GovReference;
 use Vesta\Model\LocReference;
@@ -28,7 +30,9 @@ trait EmptyFunctionsPlace {
     return 9999;
   }
 
-  public function plac2Map(PlaceStructure $ps): ?MapCoordinates {
+  ////////////////////////////////////////////////////////////////////////////////
+  
+  public function plac2map(PlaceStructure $ps): ?MapCoordinates {
     return null;
   }
   
@@ -36,19 +40,15 @@ trait EmptyFunctionsPlace {
     return null;
   }
   
-  public function plac2Loc(PlaceStructure $ps): ?LocReference {
+  public function plac2loc(PlaceStructure $ps): ?LocReference {
     return null;
   }
   
-  public function plac2Gov(PlaceStructure $ps): ?GovReference {
+  public function plac2gov(PlaceStructure $ps): ?GovReference {
     return null;
   }
-
-  public function govs2Placenames(Collection $govs): Collection {
-    return new Collection();
-  }
   
-  public function loc2Map(LocReference $loc): ?MapCoordinates {
+  public function loc2map(LocReference $loc): ?MapCoordinates {
     return null;
   }
     
@@ -68,10 +68,19 @@ trait EmptyFunctionsPlace {
     return null;
   }
   
-  public function hPlacesGetParentPlaces(PlaceStructure $place, $typesOfLocation, $recursively = false) {
-    return array();
+  public function gov2plac(GovReference $gov, Tree $tree): ?PlaceStructure {
+    return null;
+  }
+  
+  public function gov2loc(GovReference $gov, Tree $tree): ?LocReference {
+    return null;
+  }
+  
+  public function loc2plac(LocReference $loc): ?PlaceStructure {
+    return null;
   }
 
+  public function govPgov(GovReference $gov, GedcomDateInterval $dateInterval, Collection $typesOfLocation, int $maxLevels = PHP_INT_MAX): Collection {
+    return new Collection();
+  }
 }
-
-?>

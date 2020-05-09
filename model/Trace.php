@@ -2,6 +2,7 @@
 
 namespace Vesta\Model;
 
+//TODO: make immutable!
 class Trace {
 
   private $elements;

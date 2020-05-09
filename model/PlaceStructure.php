@@ -2,6 +2,7 @@
 
 namespace Vesta\Model;
 
+use Closure;
 use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\Functions\Functions;
 use Fisharebest\Webtrees\Tree;
@@ -9,65 +10,121 @@ use Fisharebest\Webtrees\Place;
 use Vesta\Model\GedcomDateInterval;
 
 /**
- * A GEDCOM level 2 place (PLAC) object (complete structure)
+ * A GEDCOM level 2 place (PLAC) object (complete structure, may include custom tags)
  * plus event type and date
  *   
  */
 class PlaceStructure {
 
   private $tree;
+  private $gedcomName;
   private $gedcom;
   private $eventType;
   private $eventDateInterval;
+  private $level;
 
   // Regular expression to match a GEDCOM XREF.
   //cf WT_REGEX_XREF (1.x)/ Gedcom::REGEX_XREF (2.x)
   const REGEX_XREF = '[A-Za-z0-9:_-]+';
 
-  public function getTree() {
+  public function getTree(): Tree {
     return $this->tree;
   }
 
+  public function getGedcomName(): string {
+    return $this->gedcomName;
+  }
+  
   //discouraged, preferably use other getters! 
-  public function getGedcom() {
+  public function getGedcom(): string {
     return $this->gedcom;
   }
-
+  
   /**
    * @return string|null tag of the level 1 event, if any
    */
-  public function getEventType() {
+  public function getEventType(): ?string {
     return $this->eventType;
   }
 
   /**
    * @return GedcomDateInterval date interval of the level 1 event
    */
-  public function getEventDateInterval() {
+  public function getEventDateInterval(): GedcomDateInterval {
     return $this->eventDateInterval;
   }
 
-  public function __construct(string $gedcom, Tree $tree, ?string $eventType, GedcomDateInterval $eventDateInterval) {
+  public function getLevel(): int {
+    return $this->level;
+  }
+  
+  private function __construct(
+          string $gedcomName, 
+          string $gedcom, 
+          Tree $tree, 
+          ?string $eventType, 
+          GedcomDateInterval $eventDateInterval, 
+          int $level = 0) {
+    
+    $this->gedcomName = $gedcomName;
     $this->gedcom = $gedcom;
     $this->tree = $tree;
     $this->eventType = $eventType;
     $this->eventDateInterval = $eventDateInterval;
+    $this->level = $level;
   }
 
-  public static function create(string $gedcom, Tree $tree, ?string $eventType = null, ?string $eventDateGedcomString = null) {
+  public static function create(
+          string $gedcom, 
+          Tree $tree, 
+          ?string $eventType = null, 
+          ?string $eventDateGedcomString = null, 
+          int $level = 0): ?PlaceStructure {
+    
+    $gedcomName = '';
+
+    if (preg_match('/^2 PLAC (.+)/', $gedcom, $match)) {
+      $gedcomName = $match[1];
+    }
+    if ($gedcomName === '') {
+      //no - this isn't valid GEDCOM!
+      //$placerec = "2 PLAC \n";
+      //error_log("Invalid place: ". $gedcom);
+      //$ex = new \Exception();
+      //error_log(print_r($ex->getTraceAsString(), true));
+      return null;
+    }
+    
     $dateInterval = GedcomDateInterval::createEmpty();
     if ($eventDateGedcomString !== null) {
       $dateInterval = GedcomDateInterval::create($eventDateGedcomString);
     }
-    return new PlaceStructure($gedcom, $tree, $eventType, $dateInterval);
+    return new PlaceStructure($gedcomName, $gedcom, $tree, $eventType, $dateInterval, $level);
   }
   
-  public static function fromFact(Fact $event): PlaceStructure {
+  public static function fromName(string $name, Tree $tree): ?PlaceStructure {
+    $gedcom = "2 PLAC " . $name;
+    return PlaceStructure::create($gedcom, $tree);
+  }
+  
+  public static function fromNameAndGov(string $name, string $gov, Tree $tree, int $level = 0): ?PlaceStructure {
+    $gedcom = "2 PLAC " . $name . "\n3 _GOV @" . $gov . "@";
+    return PlaceStructure::create($gedcom, $tree, null, null, $level);
+  }
+  
+  public static function fromNameAndLoc(string $name, string $loc, Tree $tree, int $level = 0): ?PlaceStructure {
+    $gedcom = "2 PLAC " . $name . "\n3 _LOC @" . $loc . "@";
+    return PlaceStructure::create($gedcom, $tree, null, null, $level);
+  }
+          
+  public static function fromFact(Fact $event): ?PlaceStructure {
     $placerec = Functions::getSubRecord(2, '2 PLAC', $event->gedcom());
-    if (empty($placerec)) {
-      $placerec = "2 PLAC";
-    }      
-    $ps = PlaceStructure::create($placerec, $event->record()->tree(), $event->getTag(), $event->attribute("DATE"));
+
+    $ps = PlaceStructure::create(
+            $placerec, 
+            $event->record()->tree(), 
+            $event->getTag(), 
+            $event->attribute("DATE"));
     return $ps;
   }
 
@@ -80,20 +137,35 @@ class PlaceStructure {
   }
 
   /**
+   * helper for those who are aware of this custom tag
+   * 
    * @return string|null
    */
   public function getLoc() {
-    if (preg_match('/\n3 _LOC @(' . PlaceStructure::REGEX_XREF . ')@/', $this->getGedcom(), $match)) {
+    if (preg_match('/3 _LOC @(' . PlaceStructure::REGEX_XREF . ')@/', $this->getGedcom(), $match)) {
       return $match[1];
     }
 
     return null;
   }
 
+  /**
+   * helper for those who are aware of this custom tag
+   * 
+   * @return string|null
+   */
+  public function getGov() {
+    if (preg_match('/3 _GOV @(' . PlaceStructure::REGEX_XREF . ')@/', $this->getGedcom(), $match)) {
+      return $match[1];
+    }
+
+    return null;
+  }
+  
   public function getLati() {
     //cf FunctionsPrint
     $map_lati = null;
-    $cts = preg_match('/\d LATI (.*)/', $this->getGedcom(), $match);
+    $cts = preg_match('/4 LATI (.*)/', $this->getGedcom(), $match);
     if ($cts > 0) {
       $map_lati = $match[1];
     }
@@ -107,7 +179,7 @@ class PlaceStructure {
   public function getLong() {
     //cf FunctionsPrint
     $map_long = null;
-    $cts = preg_match('/\d LONG (.*)/', $this->getGedcom(), $match);
+    $cts = preg_match('/4 LONG (.*)/', $this->getGedcom(), $match);
     if ($cts > 0) {
       $map_long = $match[1];
     }
@@ -118,28 +190,39 @@ class PlaceStructure {
     return null;
   }
 
-  public function getGedcomName() {
-    if (preg_match('/2 (?:PLAC) ?(.*(?:(?:\n3 CONT ?.*)*)*)/', $this->gedcom, $match)) {
-      return preg_replace("/\n3 CONT ?/", "\n", $match[1]);
+  public function parent(): ?PlaceStructure {
+    //error_log("parentGedcom? ". $this->getGedcom());
+    
+    //important to include linebreaks in '.*' via '/s'!
+    if (preg_match('/^2 PLAC [^,]+, (.+)/s', $this->getGedcom(), $match)) {
+      $parentGedcom = "2 PLAC " . $match[1];
+      
+      //error_log("parentGedcom ". $parentGedcom);
+      
+      return PlaceStructure::create(
+            $parentGedcom,
+            $this->getTree(), 
+            $this->getEventType(), 
+            $this->getEventDateInterval()->toGedcomString(2),
+            $this->getLevel() + 1);
     }
+    
     return null;
   }
-
-  //TODO
-  //public function getGov()
-
-  public function getAttribute($tag) {
-    if (preg_match('/3 (?:' . $tag . ') ?(.*(?:(?:\n4 CONT ?.*)*)*)/', $this->gedcom, $match)) {
-      return preg_replace("/\n4 CONT ?/", "\n", $match[1]);
-    }
-    return null;
-  }
-
+  
   public function debug(): string {
     return 
       $this->tree->name() . ' :: ' . 
+      $this->gedcomName  . ' :: ' . 
       $this->gedcom  . ' :: ' . 
       $this->eventType  . ' :: ' . 
-      $this->eventDateInterval->toGedcomString(0);
+      $this->eventDateInterval->toGedcomString(0)  . ' :: ' . 
+      $this->level;
+  }
+  
+  public static function sorterByLevel(): Closure {
+    return function (PlaceStructure $x, PlaceStructure $y): int {
+      return $x->getLevel() <=> $y->getLevel();
+    };
   }
 }

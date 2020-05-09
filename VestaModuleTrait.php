@@ -2,8 +2,11 @@
 
 namespace Vesta;
 
+use Cissee\WebtreesExt\WhatsNew\WhatsNewInterface;
 use Fisharebest\Localization\Translation;
 use Fisharebest\Webtrees\Carbon;
+use Fisharebest\Webtrees\FlashMessages;
+use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Schema\MigrationInterface;
 use Fisharebest\Webtrees\View;
 use Illuminate\Database\Capsule\Manager as DB;
@@ -13,6 +16,8 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Vesta\ControlPanel\ControlPanelUtils;
 use Vesta\ControlPanel\Model\ControlPanelPreferences;
+use function redirect;
+use function response;
 use function route;
 use function view;
 
@@ -53,6 +58,15 @@ trait VestaModuleTrait {
     return $prefix . $mainListTitle;
   }
 
+  public function getMenuTitle($mainMenuTitle) {
+    $prefix = '';
+    $vesta_show = $this->getPreference('VESTA_MENU', '1');
+    if ($vesta_show) {
+      $prefix = $this->getVestaSymbol() . ' ';
+    }
+    return $prefix . $mainMenuTitle;
+  }
+  
   public function title(): string {
     $prefix = '';
     $vesta_show = $this->getPreference('VESTA', '1');
@@ -189,6 +203,27 @@ trait VestaModuleTrait {
     $utils->savePostData($request, $this->createPrefs());
   }
 
+  protected function flashWhatsNew($namespace, $target_version): bool {
+    $pref = 'WHATS_NEW';
+    
+    $current_version = intval($this->getPreference($pref, '0'));
+    $updates_applied = false;
+    
+    //flash the messages, one version at a time.
+    while ($current_version < $target_version) {
+      $class = $namespace . '\\WhatsNew' . $current_version;
+      /** @var WhatsNewInterface $whatsNew */
+      $whatsNew = new $class();
+      FlashMessages::addMessage(I18N::translate("What's new? ") . $whatsNew->getMessage());      
+      $current_version++;
+
+      $this->setPreference($pref, (string)$current_version);
+      $updates_applied = true;
+    }
+
+    return $updates_applied;
+  }
+  
   //same as Database::getSchema, but use module settings instead of site settings (Issue #3 in personal_facts_with_hooks)
   protected function updateSchema($namespace, $schema_name, $target_version): bool {
     try {

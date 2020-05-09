@@ -12,6 +12,7 @@ use Fisharebest\Webtrees\Services\ModuleService;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
 use Psr\Http\Message\ServerRequestInterface;
+use Vesta\Model\GedcomDateInterval;
 use Vesta\Model\GenericViewElement;
 use Vesta\Model\GovReference;
 use Vesta\Model\LocReference;
@@ -65,7 +66,7 @@ class FunctionsPlaceUtils {
   }
   
   //for now, never fallback via indirect parent hierarchies
-  public static function plac2Map(ModuleInterface $module, PlaceStructure $ps, $fallbackViaParents = true): ?MapCoordinates {
+  public static function plac2map(ModuleInterface $module, PlaceStructure $ps, $fallbackViaParents = true): ?MapCoordinates {
     //1. via gedcom
     if (($ps->getLati() !== null) && ($ps->getLong() !== null)) {
       return new MapCoordinates($ps->getLati(), $ps->getLong(), new Trace(I18N::translate('map coordinates directly (MAP tag)')));
@@ -92,7 +93,7 @@ class FunctionsPlaceUtils {
     //2. via plac2map
     $index = 0;
     foreach ($functionsPlaceProviders as $functionsPlaceProvider) {      
-      $map = $functionsPlaceProvider->plac2Map($ps);
+      $map = $functionsPlaceProvider->plac2map($ps);
       if ($map !== null) {
         //first one wins!
         $bestMap = $map;
@@ -215,23 +216,19 @@ class FunctionsPlaceUtils {
     }
     
     //6. via parent hierarchy?
-    $gedcomPlace = $ps->getGedcom();
-    if (!$fallbackViaParents || (strpos($gedcomPlace, ',') === false)) {
+    if (!$fallbackViaParents) {
+      return null;
+    }    
+    $parentPs = $ps->parent();
+    if ($parentPs === null) {
       return null;
     }
-    
-    $parents = explode(',', $gedcomPlace);
-    $parents = array_reverse($parents);
-    array_pop($parents);
-    $parents = array_reverse($parents);
-    $parentGedcomPlace = "2 PLAC " . trim(implode(',', $parents));
-
-    $parentPs = new PlaceStructure($parentGedcomPlace, $ps->getTree(), $ps->getEventType(), $ps->getEventDateInterval());
-    return FunctionsPlaceUtils::plac2Map($module, $parentPs);
+    return FunctionsPlaceUtils::plac2map($module, $parentPs, true);
   }
   
   //for now, never fallback via indirect parent hierarchies
-  public static function plac2Gov(ModuleInterface $module, PlaceStructure $ps, $fallbackViaParents = true): ?GovReference {
+  public static function plac2gov(ModuleInterface $module, PlaceStructure $ps, $fallbackViaParents = true): ?GovReference {    
+    //1. skip:
     //_GOV is a non-standard tag - we don't know how to handle it directly!
 
     $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $ps->getTree(), Auth::user())
@@ -263,32 +260,28 @@ class FunctionsPlaceUtils {
     }
     
     //4. via parent hierarchy?
-    $gedcomPlace = $ps->getGedcom();
-    if (!$fallbackViaParents || (strpos($gedcomPlace, ',') === false)) {
+    if (!$fallbackViaParents) {
+      return null;
+    }    
+    $parentPs = $ps->parent();
+    if ($parentPs === null) {
       return null;
     }
-    
-    $parents = explode(',', $gedcomPlace);
-    $parents = array_reverse($parents);
-    array_pop($parents);
-    $parents = array_reverse($parents);
-    $parentGedcomPlace = "2 PLAC " . trim(implode(',', $parents));
-
-    $parentPs = new PlaceStructure($parentGedcomPlace, $ps->getTree(), $ps->getEventType(), $ps->getEventDateInterval());
-    return FunctionsPlaceUtils::plac2Gov($module, $parentPs);
+    return FunctionsPlaceUtils::plac2gov($module, $parentPs, true);
   }
   
   //for now, never fallback via indirect parent hierarchies
-  public static function plac2Loc(ModuleInterface $module, PlaceStructure $ps, $fallbackViaParents = true): ?LocReference {
+  public static function plac2loc(ModuleInterface $module, PlaceStructure $ps, $fallbackViaParents = true): ?LocReference {
+    //1. skip:
     //_LOC is a non-standard tag - we don't know how to handle it directly!
 
     $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $ps->getTree(), Auth::user())
             ->toArray();
     
-    //2. via loc2Gov
+    //2. via plac2loc
     
     foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
-      $loc = $functionsPlaceProvider->plac2Loc($ps);
+      $loc = $functionsPlaceProvider->plac2loc($ps);
       if ($loc !== null) {
         //first one wins!
         return $loc;
@@ -296,30 +289,25 @@ class FunctionsPlaceUtils {
     }
     
     //3. via parent hierarchy?
-    $gedcomPlace = $ps->getGedcom();
-    if (!$fallbackViaParents || (strpos($gedcomPlace, ',') === false)) {
+    if (!$fallbackViaParents) {
+      return null;
+    }    
+    $parentPs = $ps->parent();
+    if ($parentPs === null) {
       return null;
     }
-    
-    $parents = explode(',', $gedcomPlace);
-    $parents = array_reverse($parents);
-    array_pop($parents);
-    $parents = array_reverse($parents);
-    $parentGedcomPlace = "2 PLAC " . trim(implode(',', $parents));
-
-    $parentPs = new PlaceStructure($parentGedcomPlace, $ps->getTree(), $ps->getEventType(), $ps->getEventDateInterval());
-    return FunctionsPlaceUtils::plac2Loc($module, $parentPs);
+    return FunctionsPlaceUtils::plac2loc($module, $parentPs, true);
   }
     
   //for now, never fallback via indirect parent hierarchies
-  public static function loc2Map(ModuleInterface $module, LocReference $loc): ?MapCoordinates {
+  public static function loc2map(ModuleInterface $module, LocReference $loc): ?MapCoordinates {
     $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $loc->getTree(), Auth::user())
             ->toArray();
     
-    //3. via loc2Map
+    //3. via loc2map
     
     foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
-      $map = $functionsPlaceProvider->loc2Map($loc);
+      $map = $functionsPlaceProvider->loc2map($loc);
       if ($map !== null) {
         //first one wins!
         return $map;
@@ -343,7 +331,100 @@ class FunctionsPlaceUtils {
 
     return null;
   }
+     
+  public static function gov2plac(ModuleInterface $module, GovReference $gov, Tree $tree): ?PlaceStructure {
+    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $tree, Auth::user())
+            ->toArray();
+    
+    //1. via gov2plac
+    
+    foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
+      $ps = $functionsPlaceProvider->gov2plac($gov, $tree);
+      if ($ps !== null) {
+        //first one wins!
+        return $ps;
+      }
+    }
+    
+    //2. via gov2loc + loc2plac
+    foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
+      $loc = $functionsPlaceProvider->gov2loc($gov, $tree);
+      if ($loc !== null) {
+        //first one (with a loc2plac) wins
+        foreach ($functionsPlaceProviders as $functionsPlaceProvider2) {
+          $ps = $functionsPlaceProvider2->loc2plac($loc);
+          if ($ps !== null) {
+            //first one wins!
+            return $ps;
+          }
+        }
+      }
+    }
 
+    return null;
+  }
+     
+  ////////////////////////////////////////////////////////////////////////////////
+
+  public static function placPplac(
+          ModuleInterface $module, 
+          PlaceStructure $ps, 
+          Collection $typesOfLocation, 
+          int $maxLevels = PHP_INT_MAX): Collection {
+    
+    $ret = new Collection();
+    
+    if ($maxLevels < 1) {
+      return $ret;
+    }
+    
+    //1. directly
+    $parentPs = $ps->parent();
+    if ($parentPs !== null) {
+      $ret->add($parentPs);
+      
+      //also check parent recursively
+      $ret = $ret->merge(FunctionsPlaceUtils::placPplac($module, $parentPs, $typesOfLocation, $maxLevels-1));
+    }
+    
+    //2. via any plac2gov + govPgov + any gov2Plac
+    $gov = FunctionsPlaceUtils::plac2gov($module, $ps, false); //using $level from $ps!
+    if ($gov !== null) {
+      $parentGovs = FunctionsPlaceUtils::govPgov($module, $ps->getTree(), $gov, $ps->getEventDateInterval(), $typesOfLocation, $maxLevels);
+      
+      foreach ($parentGovs as $parentGov) {
+        $parentPsViaGov = FunctionsPlaceUtils::gov2plac($module, $parentGov, $ps->getTree()); //using $level from $parentGov!
+        if ($parentPsViaGov !== null) {
+          $ret->add($parentPsViaGov);
+        }
+      }
+    }
+    
+    return $ret;
+  }
+ 
+  public static function govPgov(
+          ModuleInterface $module, 
+          Tree $tree, 
+          GovReference $gov, 
+          GedcomDateInterval $dateInterval, 
+          Collection $typesOfLocation, 
+          int $maxLevels = PHP_INT_MAX): Collection {
+    
+    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $tree, Auth::user())
+            ->toArray();
+    
+    $ret = new Collection();
+    foreach ($functionsPlaceProviders as $functionsPlaceProvider) {      
+      $parentGovs = $functionsPlaceProvider->govPgov($gov, $dateInterval, $typesOfLocation, $maxLevels);
+      $ret = $ret->merge($parentGovs);
+    }
+    
+    return $ret;
+  }
+  
+  ////////////////////////////////////////////////////////////////////////////////
+  
   public static function updateOrder(ModuleInterface $moduleForPrefsOrder, ServerRequestInterface $request) {
     $order = Requests::getArray($request, 'order');
     //set als preference
@@ -386,20 +467,5 @@ class FunctionsPlaceUtils {
     return function (FunctionsPlaceInterface $x, FunctionsPlaceInterface $y): int {
       return $x->getPlacesOrder() <=> $y->getPlacesOrder();
     };
-  }
-  
-  //legacy stuff
-  
-  public static function getParentPlaces($module, PlaceStructure $place, $typesOfLocation, $recursively = false) {
-    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $place->getTree(), Auth::user())
-            ->toArray();
-    
-    $places = [];
-    foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
-      $parentPlaces = $functionsPlaceProvider->hPlacesGetParentPlaces($place, $typesOfLocation, $recursively);
-      array_merge($places, $parentPlaces);
-    }
-    
-    return $places;
   }
 }
