@@ -155,7 +155,7 @@ class PlaceStructure {
    * @return string|null
    */
   public function getGov() {
-    if (preg_match('/3 _GOV @(' . PlaceStructure::REGEX_XREF . ')@/', $this->getGedcom(), $match)) {
+    if (preg_match('/3 _GOV (.*)/', $this->getGedcom(), $match)) {
       return $match[1];
     }
 
