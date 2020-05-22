@@ -1,6 +1,6 @@
 <?php
 
-namespace Vesta\ControlPanel\Model;
+namespace Vesta\ControlPanelUtils\Model;
 
 class ControlPanelSubsection {
 

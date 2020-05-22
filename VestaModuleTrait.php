@@ -14,8 +14,8 @@ use Illuminate\Support\Str;
 use PDOException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Vesta\ControlPanel\ControlPanelUtils;
-use Vesta\ControlPanel\Model\ControlPanelPreferences;
+use Vesta\ControlPanelUtils\ControlPanelUtils;
+use Vesta\ControlPanelUtils\Model\ControlPanelPreferences;
 use function redirect;
 use function response;
 use function route;
@@ -69,7 +69,7 @@ trait VestaModuleTrait {
   
   public function title(): string {
     $prefix = '';
-    $vesta_show = $this->getPreference('VESTA', '1');
+    $vesta_show = true/*$this->getPreference('VESTA', '1')*/;
     if ($vesta_show) {
       $prefix = $this->getVestaSymbol() . ' ';
     }

@@ -1,16 +1,18 @@
 <?php
 
-namespace Vesta\ControlPanel\Model;
+namespace Vesta\ControlPanelUtils\Model;
+
+use Fisharebest\Webtrees\GedcomTag;
 
 class ControlPanelFactRestriction implements ControlPanelElement {
 
-  private $family;
+  private $options;
   private $description;
   private $settingKey;
   private $settingDefaultValue;
 
-  public function getFamily() {
-    return $this->family;
+  public function getOptions() {
+    return $this->options;
   }
 
   public function getDescription() {
@@ -27,17 +29,25 @@ class ControlPanelFactRestriction implements ControlPanelElement {
 
   /**
    * 
-   * @param boolean $family
+   * @param array $options
    * @param string|null $description
    * @param string $settingKey
    * @param string $settingDefaultValue
    */
-  public function __construct($family, $description, $settingKey, $settingDefaultValue) {
-    $this->family = $family;
+  public function __construct($options, $description, $settingKey, $settingDefaultValue) {
+    $this->options = $options;
     $this->description = $description;
 
     $this->settingKey = $settingKey;
     $this->settingDefaultValue = $settingDefaultValue;
+  }
+  
+  public static function createWithIndividualFacts($description, $settingKey, $settingDefaultValue) {
+    return new ControlPanelFactRestriction(GedcomTag::getPicklistFacts('INDI'), $description, $settingKey, $settingDefaultValue);
+  }
+  
+  public static function createWithFamilyFacts($description, $settingKey, $settingDefaultValue) {
+    return new ControlPanelFactRestriction(GedcomTag::getPicklistFacts('FAM'), $description, $settingKey, $settingDefaultValue);
   }
 
 }

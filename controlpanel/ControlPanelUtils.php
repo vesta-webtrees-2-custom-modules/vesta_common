@@ -1,22 +1,21 @@
 <?php
 
-namespace Vesta\ControlPanel;
+namespace Vesta\ControlPanelUtils;
 
 use Cissee\WebtreesExt\ViewUtils;
 use Fisharebest\Webtrees\FlashMessages;
-use Fisharebest\Webtrees\GedcomTag;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\ModuleInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Vesta\ControlPanel\Model\ControlPanelCheckbox;
-use Vesta\ControlPanel\Model\ControlPanelCheckboxInverted;
-use Vesta\ControlPanel\Model\ControlPanelElement;
-use Vesta\ControlPanel\Model\ControlPanelFactRestriction;
-use Vesta\ControlPanel\Model\ControlPanelPreferences;
-use Vesta\ControlPanel\Model\ControlPanelRadioButtons;
-use Vesta\ControlPanel\Model\ControlPanelRange;
-use Vesta\ControlPanel\Model\ControlPanelSection;
-use Vesta\ControlPanel\Model\ControlPanelSubsection;
+use Vesta\ControlPanelUtils\Model\ControlPanelCheckbox;
+use Vesta\ControlPanelUtils\Model\ControlPanelCheckboxInverted;
+use Vesta\ControlPanelUtils\Model\ControlPanelElement;
+use Vesta\ControlPanelUtils\Model\ControlPanelFactRestriction;
+use Vesta\ControlPanelUtils\Model\ControlPanelPreferences;
+use Vesta\ControlPanelUtils\Model\ControlPanelRadioButtons;
+use Vesta\ControlPanelUtils\Model\ControlPanelRange;
+use Vesta\ControlPanelUtils\Model\ControlPanelSection;
+use Vesta\ControlPanelUtils\Model\ControlPanelSubsection;
 use Exception;
 
 class ControlPanelUtils {
@@ -191,7 +190,7 @@ class ControlPanelUtils {
         'name' => $element->getSettingKey() . '[]', 
         'id' => $element->getSettingKey(), 
         'selected' => explode(',', $value), 
-        'options' => GedcomTag::getPicklistFacts($element->getFamily() ? 'FAM' : 'INDI'), 
+        'options' => $element->getOptions(), 
         'class' => 'select2']);
   }
 
