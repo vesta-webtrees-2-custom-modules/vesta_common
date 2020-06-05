@@ -2,7 +2,9 @@
 
 namespace Cissee\WebtreesExt\Functions;
 
-use Fisharebest\Webtrees\I18N;
+use Cissee\WebtreesExt\MoreI18N;
+use function route;
+use function view;
 
 class FunctionsPrintExtHelpLink {
 
@@ -15,9 +17,9 @@ class FunctionsPrintExtHelpLink {
     ]);
 
     return
-            '<a href="#" data-toggle="modal" data-target="#wt-ajax-modal" data-href="' . $url . '" title="' . I18N::translate('Help') . '">' .
+            '<a href="#" data-toggle="modal" data-target="#wt-ajax-modal" data-href="' . $url . '" title="' . MoreI18N::xlate('Help') . '">' .
             view('icons/help') .
-            '<span class="sr-only">' . I18N::translate('Help') . '</span>' .
+            '<span class="sr-only">' . MoreI18N::xlate('Help') . '</span>' .
             '</a>';
   }
 

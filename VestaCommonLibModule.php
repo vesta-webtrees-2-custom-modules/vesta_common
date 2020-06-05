@@ -10,6 +10,7 @@ use Fisharebest\Webtrees\Module\ModuleCustomTrait;
 class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterface {
 
   use ModuleCustomTrait, VestaModuleCustomTrait {
+    VestaModuleCustomTrait::customTranslations insteadof ModuleCustomTrait;
     VestaModuleCustomTrait::customModuleLatestVersion insteadof ModuleCustomTrait;
   }
 
@@ -40,7 +41,7 @@ class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterfa
   }
 
   public function description(): string {
-    return I18N::translate('A module providing common classes for other \'Vesta\' custom modules. Does not have to be activated.');
+    return I18N::translate('A module providing common classes and translations for other \'Vesta\' custom modules.');
   }
 
   /**
@@ -51,17 +52,4 @@ class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterfa
   public function resourcesFolder(): string {
     return __DIR__ . '/resources/';
   }
-
-  /**
-   * Additional/updated translations.
-   *
-   * @param string $language
-   *
-   * @return string[]
-   */
-  public function customTranslations(string $language): array {
-    //TODO
-    return [];
-  }
-
 }

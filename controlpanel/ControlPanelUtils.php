@@ -2,9 +2,10 @@
 
 namespace Vesta\ControlPanelUtils;
 
+use Cissee\WebtreesExt\MoreI18N;
 use Cissee\WebtreesExt\ViewUtils;
+use Exception;
 use Fisharebest\Webtrees\FlashMessages;
-use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\ModuleInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Vesta\ControlPanelUtils\Model\ControlPanelCheckbox;
@@ -16,7 +17,9 @@ use Vesta\ControlPanelUtils\Model\ControlPanelRadioButtons;
 use Vesta\ControlPanelUtils\Model\ControlPanelRange;
 use Vesta\ControlPanelUtils\Model\ControlPanelSection;
 use Vesta\ControlPanelUtils\Model\ControlPanelSubsection;
-use Exception;
+use Vesta\ControlPanelUtils\Model\ControlPanelTextbox;
+use function csrf_field;
+use function view;
 
 class ControlPanelUtils {
 
@@ -36,7 +39,7 @@ class ControlPanelUtils {
    */
   public function printPrefs(ControlPanelPreferences $prefs, $module) {
     ?>
-    <h1><?php echo I18N::translate('Preferences'); ?></h1>
+    <h1><?php echo MoreI18N::xlate('Preferences'); ?></h1>
 
     <form method="post">
         <?= csrf_field() ?>
@@ -53,7 +56,7 @@ class ControlPanelUtils {
             <div class="col-sm-offset-3 col-sm-9">
                 <button type="submit" class="btn btn-primary">
                     <i class="fa fa-check"></i>
-                    <?php echo I18N::translate('save'); ?>
+                    <?php echo MoreI18N::xlate('save'); ?>
                 </button>
             </div>
         </div>
@@ -97,6 +100,14 @@ class ControlPanelUtils {
             foreach ($subsection->getElements() as $element) {
               $this->printElement($element);
             }
+            $description = $subsection->getDescription();
+            if ($description !== null) {
+              ?>
+              <p class="small text-muted">
+                  <?php echo $description; ?>
+              </p>
+              <?php
+            }
             ?>
         </div>
     </div>
@@ -104,7 +115,9 @@ class ControlPanelUtils {
   }
 
   public function printElement(ControlPanelElement $element) {
-    if ($element instanceof ControlPanelCheckbox) {
+    if ($element instanceof ControlPanelTextbox) {
+      $this->printControlPanelTextbox($element);
+    } else if ($element instanceof ControlPanelCheckbox) {
       $this->printControlPanelCheckbox($element);
     } else if ($element instanceof ControlPanelCheckboxInverted) {
       $this->printControlPanelCheckboxInverted($element);
@@ -128,6 +141,24 @@ class ControlPanelUtils {
     }
   }
 
+  public function printControlPanelTextbox(ControlPanelTextbox $element) {
+    $value = $this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue());
+    //TODO better maxLength, pattern!
+    
+    ?>
+      <div class="col-sm-10">
+          <div class="input-group" dir="ltr">
+              <div class="input-group-prepend">
+                  <span class="input-group-text" dir="ltr">
+                      <?= e($element->getLabel()) ?>
+                  </span>
+              </div>
+              <input class="form-control" id="<?= $element->getSettingKey() ?>" maxlength="31" name="<?= $element->getSettingKey() ?>" pattern="[^&lt;&gt;&quot;*?{}():/\\$%|]*" required type="text" value="<?= e($value) ?>" dir="ltr">
+          </div>
+      </div>
+    <?php 
+  }
+  
   public function printControlPanelCheckbox(ControlPanelCheckbox $element) {
     $value = $this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue());
 
@@ -273,7 +304,7 @@ class ControlPanelUtils {
       }
     }
 
-    FlashMessages::addMessage(I18N::translate('The preferences for the module “%s” have been updated.', $this->module->title()), 'success');
+    FlashMessages::addMessage(MoreI18N::xlate('The preferences for the module “%s” have been updated.', $this->module->title()), 'success');
   }
 
 }

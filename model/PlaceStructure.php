@@ -123,9 +123,14 @@ class PlaceStructure {
     $ps = PlaceStructure::create(
             $placerec, 
             $event->record()->tree(), 
-            $event->getTag(), 
+            $event->tag(), 
             $event->attribute("DATE"));
     return $ps;
+  }
+  
+  public static function fromPlace(Place $place): PlaceStructure {
+    $gedcom = "2 PLAC " . $place->gedcomName();
+    return PlaceStructure::create($gedcom, $place->tree());
   }
 
   /**

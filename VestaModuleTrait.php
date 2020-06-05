@@ -3,7 +3,6 @@
 namespace Vesta;
 
 use Cissee\WebtreesExt\WhatsNew\WhatsNewInterface;
-use Fisharebest\Localization\Translation;
 use Fisharebest\Webtrees\Carbon;
 use Fisharebest\Webtrees\FlashMessages;
 use Fisharebest\Webtrees\I18N;
@@ -16,6 +15,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Vesta\ControlPanelUtils\ControlPanelUtils;
 use Vesta\ControlPanelUtils\Model\ControlPanelPreferences;
+use function GuzzleHttp\json_decode;
 use function redirect;
 use function response;
 use function route;
@@ -74,27 +74,6 @@ trait VestaModuleTrait {
       $prefix = $this->getVestaSymbol() . ' ';
     }
     return $prefix . $this->getMainTitle();
-  }
-
-  /**
-   * Additional/updated translations.
-   *
-   * @param string $language
-   *
-   * @return string[]
-   */
-  public function customTranslations(string $language): array {
-    $languageFile1 = $this->resourcesFolder() . 'lang/' . $language . '.mo';
-    $languageFile2 = $this->resourcesFolder() . 'lang/' . $language . '.csv';
-    $ret = [];
-    if (file_exists($languageFile1)) {
-      $ret = (new Translation($languageFile1))->asArray();
-    }
-    if (file_exists($languageFile2)) {
-      //we may have both!
-      $ret = array_merge($ret, (new Translation($languageFile2))->asArray());
-    }
-    return $ret;
   }
 
   public function getConfigLink(): string {

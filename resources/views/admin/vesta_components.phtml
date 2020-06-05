@@ -1,5 +1,6 @@
 <?php
 
+use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\Functions\FunctionsEdit;
 use Fisharebest\Webtrees\Http\RequestHandlers\ControlPanel;
 use Fisharebest\Webtrees\I18N;
@@ -8,7 +9,7 @@ use Fisharebest\Webtrees\Module\ModuleExternalUrlInterface;
 use Fisharebest\Webtrees\View;
 ?>
 
-<?= view('components/breadcrumbs', ['links' => [route(ControlPanel::class) => I18N::translate('Control panel'), route('modules') => I18N::translate('Modules'), $title]]) ?>
+<?= view('components/breadcrumbs', ['links' => [route(ControlPanel::class) => MoreI18N::xlate('Control panel'), route('modules') => MoreI18N::xlate('Modules'), $title]]) ?>
 
 <h1><?= $title ?></h1>
 
@@ -19,14 +20,14 @@ use Fisharebest\Webtrees\View;
     <table class="table table-bordered wt-table-menu">
         <thead>
             <tr>
-                <th><?= I18N::translate('Module') ?><br/>&nbsp;</th>
-                <th class="text-center"><?= I18N::translate('Enabled') ?><br/><?= I18N::translate('(entire module)') ?></th>
+                <th><?= MoreI18N::xlate('Module') ?><br/>&nbsp;</th>
+                <th class="text-center"><?= MoreI18N::xlate('Enabled') ?><br/><?= I18N::translate('(entire module)') ?></th>
                 <?php if ($uses_access) : ?>
-                  <th class="text-center"><?= I18N::translate('Access level') ?><br/><?= I18N::translate('(specific functionality)') ?></th>
+                  <th class="text-center"><?= MoreI18N::xlate('Access level') ?><br/><?= I18N::translate('(specific functionality)') ?></th>
                 <?php endif ?>
                 <?php if ($uses_sorting) : ?>
-                  <th class="text-center"><?= I18N::translate('Move') ?><br/><?= I18N::translate('up') ?></th>
-                  <th class="text-center"><?= I18N::translate('Move') ?><br/><?= I18N::translate('down') ?></th>
+                  <th class="text-center"><?= I18N::translateContext('as in "Move up"', 'Move') ?><br/><?= I18N::translateContext('as in "Move up"', 'up') ?></th>
+                  <th class="text-center"><?= I18N::translateContext('as in "Move down"', 'Move') ?><br/><?= I18N::translateContext('as in "Move down"', 'down') ?></th>
                 <?php endif ?>
             </tr>
         </thead>
@@ -40,10 +41,10 @@ use Fisharebest\Webtrees\View;
                           <?= $module->title() ?>
                       </span>
                       <?php if ($module instanceof ModuleConfigInterface && $module->isEnabled()) : ?>
-                        <a href="<?= e($module->getConfigLink()) ?>" title="<?= I18N::translate('Preferences') ?>">
+                        <a href="<?= e($module->getConfigLink()) ?>" title="<?= MoreI18N::xlate('Preferences') ?>">
                             <?= view('icons/preferences') ?>
                             <span class="sr-only">
-                                <?= I18N::translate('Preferences') ?>
+                                <?= MoreI18N::xlate('Preferences') ?>
                             </span>
                         </a>
                       <?php endif ?>
@@ -59,7 +60,7 @@ use Fisharebest\Webtrees\View;
                       <label class="d-block">
                           <input type="checkbox" name="status-<?= e($module->name()) ?>" id="status-<?= e($module->name()) ?>" <?= $module->isEnabled() ? 'checked' : '' ?>>
                           <span class="sr-only">
-                              <?= I18N::translate('Enabled') ?>
+                              <?= MoreI18N::xlate('Enabled') ?>
                           </span>
                       </label>
                   </td>
@@ -71,7 +72,7 @@ use Fisharebest\Webtrees\View;
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h2 class="modal-title">
-                                            <?= e($module->title()) ?> – <?= I18N::translate('Access level') ?>
+                                            <?= e($module->title()) ?> – <?= MoreI18N::xlate('Access level') ?>
                                         </h2>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
@@ -107,7 +108,7 @@ use Fisharebest\Webtrees\View;
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#access-level-<?= $module->name() ?>">
                             <?= view('icons/edit') ?>
                             <span class="sr-only">
-                                <?= I18N::translate('edit') ?>
+                                <?= MoreI18N::xlate('edit') ?>
                             </span>
                         </button>
                     </td>
@@ -115,13 +116,13 @@ use Fisharebest\Webtrees\View;
 
                   <?php if ($uses_sorting) : ?>
                     <td class="move up text-center">
-                        <a href="#" title="<?= I18N::translate('Move up') ?>">
+                        <a href="#" title="<?= MoreI18N::xlate('Move up') ?>">
                             <?= view('icons/arrow-up') ?>
                         </a>
                     </td>
 
                     <td class="move down text-center">
-                        <a href="#" title="<?= I18N::translate('Move down') ?>">
+                        <a href="#" title="<?= MoreI18N::xlate('Move down') ?>">
                             <?= view('icons/arrow-down') ?>
                         </a>
                     </td>
@@ -133,12 +134,12 @@ use Fisharebest\Webtrees\View;
 
     <button class="btn btn-primary" type="submit">
         <?= view('icons/save') ?>
-        <?= I18N::translate('save') ?>
+        <?= MoreI18N::xlate('save') ?>
     </button>
 
     <a class="btn btn-secondary" href="<?= e($cancelRoute) ?>">
         <?= view('icons/cancel') ?>
-        <?= I18N::translate('cancel') ?>
+        <?= MoreI18N::xlate('cancel') ?>
     </a>
 </form>
 

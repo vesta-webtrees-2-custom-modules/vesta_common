@@ -3,12 +3,34 @@
 namespace Vesta;
 
 use Fig\Http\Message\StatusCodeInterface;
+use Fisharebest\Localization\Translation;
 use Fisharebest\Webtrees\Cache;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use function app;
 
 trait VestaModuleCustomTrait {
+  
+  /**
+   * Additional/updated translations.
+   *
+   * @param string $language
+   *
+   * @return string[]
+   */
+  public function customTranslations(string $language): array {
+    $languageFile1 = $this->resourcesFolder() . 'lang/' . $language . '.mo';
+    $languageFile2 = $this->resourcesFolder() . 'lang/' . $language . '.csv';
+    $ret = [];
+    if (file_exists($languageFile1)) {
+      $ret = (new Translation($languageFile1))->asArray();
+    }
+    if (file_exists($languageFile2)) {
+      //we may have both!
+      $ret = array_merge($ret, (new Translation($languageFile2))->asArray());
+    }
+    return $ret;
+  }
   
   //taken from ModuleCustomTrait
   public function customModuleLatestVersion(): string {
