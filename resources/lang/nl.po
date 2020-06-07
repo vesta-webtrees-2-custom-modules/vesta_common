@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-06-05 20:44+0200\n"
-"PO-Revision-Date: 2020-06-07 13:22+0200\n"
+"PO-Revision-Date: 2020-06-07 18:48+0200\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,8 +26,8 @@ msgid "Vesta Common"
 msgstr "Vesta Algemeen"
 
 #: VestaCommonLibModule.php:43
-msgid "A module providing common classes for other 'Vesta' custom modules. Does not have to be activated."
-msgstr "Een module met gemeenschappelijke klassen voor andere 'Vesta' aangepaste modules. Hoeft niet geactiveerd te worden."
+msgid "A module providing common classes and translations for other 'Vesta' custom modules."
+msgstr "Een module met gemeenschappelijke klassen voor andere 'Vesta' aangepaste modules."
 
 #: VestaModuleTrait.php:217
 msgid "What's new? "
@@ -71,7 +71,7 @@ msgstr "A: Via 'hooks'. Hooks zorgen ervoor dat modules de functionaliteit van a
 
 #: resources/views/vesta_config.phtml:30
 msgid "Q: Ok, but what's the actual benefit for the user?"
-msgstr "V: Ok, maar wat is het voordeel voor de gebruiker?"
+msgstr "V: Oké, maar wat is het voordeel voor de gebruiker?"
 
 #: resources/views/vesta_config.phtml:34
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."

@@ -43,7 +43,7 @@ interface FunctionsPlaceInterface {
   
   public function gov2map(GovReference $gov): ?MapCoordinates;
   
-  public function gov2html(GovReference $gov): ?GenericViewElement;
+  public function gov2html(GovReference $gov, Tree $tree): ?GenericViewElement;
 
   public function map2html(MapCoordinates $map): ?GenericViewElement;
   
@@ -52,6 +52,8 @@ interface FunctionsPlaceInterface {
   public function gov2loc(GovReference $gov, Tree $tree): ?LocReference;
   
   public function loc2plac(LocReference $loc): ?PlaceStructure;
+
+  public function loc2linkIcon(LocReference $loc): ?string;
 
   /**
    * get parent(s) of indicated types ("POLI","RELI" etc)

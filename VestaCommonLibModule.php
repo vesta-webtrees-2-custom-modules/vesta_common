@@ -36,20 +36,23 @@ class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterfa
     return 'https://cissee.de';
   }
 
+  public function resourcesFolder(): string {
+    return __DIR__ . '/resources/';
+  }
+  
   public function title(): string {
-    return $this->vesta . ' ' . I18N::translate('Vesta Common');
+    $title = I18N::translate('Vesta Common');
+    if (!$this->isEnabled()) {
+      $title = ModuleI18N::translate($this, $title);
+    }
+    return $this->vesta . ' ' . $title;
   }
 
   public function description(): string {
-    return I18N::translate('A module providing common classes and translations for other \'Vesta\' custom modules.');
-  }
-
-  /**
-   * Where does this module store its resources
-   *
-   * @return string
-   */
-  public function resourcesFolder(): string {
-    return __DIR__ . '/resources/';
+    $description = I18N::translate('A module providing common classes and translations for other \'Vesta\' custom modules.');
+    if (!$this->isEnabled()) {
+      $description = ModuleI18N::translate($this, $description);
+    }
+    return $description;
   }
 }

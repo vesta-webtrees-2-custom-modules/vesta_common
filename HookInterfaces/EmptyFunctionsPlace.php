@@ -60,7 +60,7 @@ trait EmptyFunctionsPlace {
     return null;
   }
 
-  public function gov2html(GovReference $gov): ?GenericViewElement {
+  public function gov2html(GovReference $gov, Tree $tree): ?GenericViewElement {
     return null;
   }
 
@@ -77,6 +77,10 @@ trait EmptyFunctionsPlace {
   }
   
   public function loc2plac(LocReference $loc): ?PlaceStructure {
+    return null;
+  }
+
+  public function loc2linkIcon(LocReference $loc): ?string {
     return null;
   }
 

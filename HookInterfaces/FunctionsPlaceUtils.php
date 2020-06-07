@@ -23,6 +23,20 @@ use function app;
 
 class FunctionsPlaceUtils {
   
+  public static function loc2linkIcon(ModuleInterface $module, LocReference $loc): string {
+    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $loc->getTree(), Auth::user())
+            ->toArray();
+    
+    $links = array();
+    foreach ($functionsPlaceProviders as $functionsPlaceProvider) {      
+      $link = $functionsPlaceProvider->loc2linkIcon($loc);
+      if ($link !== null) {
+        $links[] = $link;
+      }      
+    }
+    return implode($links);
+  }
+  
   public static function plac2html(ModuleInterface $module, PlaceStructure $ps): GenericViewElement {
     $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $ps->getTree(), Auth::user())
             ->toArray();
@@ -43,7 +57,7 @@ class FunctionsPlaceUtils {
     
     $gves = array();
     foreach ($functionsPlaceProviders as $functionsPlaceProvider) {      
-      $gve = $functionsPlaceProvider->gov2html($gov);
+      $gve = $functionsPlaceProvider->gov2html($gov, $tree);
       if ($gve !== null) {
         $gves[] = $gve;
       }      

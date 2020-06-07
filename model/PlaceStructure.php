@@ -5,8 +5,9 @@ namespace Vesta\Model;
 use Closure;
 use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\Functions\Functions;
-use Fisharebest\Webtrees\Tree;
+use Fisharebest\Webtrees\Location;
 use Fisharebest\Webtrees\Place;
+use Fisharebest\Webtrees\Tree;
 use Vesta\Model\GedcomDateInterval;
 
 /**
@@ -22,7 +23,8 @@ class PlaceStructure {
   private $eventType;
   private $eventDateInterval;
   private $level;
-
+  private $location;
+  
   // Regular expression to match a GEDCOM XREF.
   //cf WT_REGEX_XREF (1.x)/ Gedcom::REGEX_XREF (2.x)
   const REGEX_XREF = '[A-Za-z0-9:_-]+';
@@ -64,7 +66,8 @@ class PlaceStructure {
           Tree $tree, 
           ?string $eventType, 
           GedcomDateInterval $eventDateInterval, 
-          int $level = 0) {
+          int $level = 0,
+          ?Location $location = null) {
     
     $this->gedcomName = $gedcomName;
     $this->gedcom = $gedcom;
@@ -72,6 +75,7 @@ class PlaceStructure {
     $this->eventType = $eventType;
     $this->eventDateInterval = $eventDateInterval;
     $this->level = $level;
+    $this->location = $location;
   }
 
   public static function create(
@@ -79,7 +83,8 @@ class PlaceStructure {
           Tree $tree, 
           ?string $eventType = null, 
           ?string $eventDateGedcomString = null, 
-          int $level = 0): ?PlaceStructure {
+          int $level = 0,
+          ?Location $location = null): ?PlaceStructure {
     
     $gedcomName = '';
 
@@ -99,7 +104,7 @@ class PlaceStructure {
     if ($eventDateGedcomString !== null) {
       $dateInterval = GedcomDateInterval::create($eventDateGedcomString);
     }
-    return new PlaceStructure($gedcomName, $gedcom, $tree, $eventType, $dateInterval, $level);
+    return new PlaceStructure($gedcomName, $gedcom, $tree, $eventType, $dateInterval, $level, $location);
   }
   
   public static function fromName(string $name, Tree $tree): ?PlaceStructure {
@@ -112,9 +117,9 @@ class PlaceStructure {
     return PlaceStructure::create($gedcom, $tree, null, null, $level);
   }
   
-  public static function fromNameAndLoc(string $name, string $loc, Tree $tree, int $level = 0): ?PlaceStructure {
+  public static function fromNameAndLoc(string $name, string $loc, Tree $tree, int $level = 0, ?Location $location = null): ?PlaceStructure {
     $gedcom = "2 PLAC " . $name . "\n3 _LOC @" . $loc . "@";
-    return PlaceStructure::create($gedcom, $tree, null, null, $level);
+    return PlaceStructure::create($gedcom, $tree, null, null, $level, $location);
   }
           
   public static function fromFact(Fact $event): ?PlaceStructure {
@@ -141,6 +146,10 @@ class PlaceStructure {
     return new Place($this->getGedcomName(), $this->tree);
   }
 
+  public function getLocation(): ?Location {
+    return $this->location;
+  }
+  
   /**
    * helper for those who are aware of this custom tag
    * 

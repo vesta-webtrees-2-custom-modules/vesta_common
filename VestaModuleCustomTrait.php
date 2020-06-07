@@ -65,6 +65,6 @@ trait VestaModuleCustomTrait {
         }
 
         return $this->customModuleVersion();
-    }, 86400);
+    }, 3600); //ModuleCustomTrait has 1 day, we use 1 hour
   }
 }

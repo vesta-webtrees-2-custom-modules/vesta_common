@@ -17,7 +17,7 @@ This module also provides translations, and therefore has to be activated in the
 
 ### Download<a name="download"/>
 
-* Current version: 2.0.5.0.0
+* Current version: 2.0.5.1.0
 * Based on and tested with webtrees 2.0.5. Cannot be used with webtrees 1.x. May not work with earlier 2.x versions!
 * Download the zipped module, including all related modules, [here](https://cissee.de/vesta.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>
@@ -32,6 +32,7 @@ This module also provides translations, and therefore has to be activated in the
 * **vesta_common: a webtrees custom module**
 * Copyright (C) 2019 - 2020 Richard Cissée
 * Derived from **webtrees** - Copyright (C) 2010 to 2019 webtrees development team.
+* Dutch translations provided by TheDutchJewel.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

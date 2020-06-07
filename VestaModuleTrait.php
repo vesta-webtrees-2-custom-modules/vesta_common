@@ -73,9 +73,21 @@ trait VestaModuleTrait {
     if ($vesta_show) {
       $prefix = $this->getVestaSymbol() . ' ';
     }
-    return $prefix . $this->getMainTitle();
+    $title = $this->getMainTitle();
+    if (!$this->isEnabled()) {
+      $title = ModuleI18N::translate($this, $title);
+    }
+    return $prefix . $title;
   }
 
+  public function description(): string {
+    $description = $this->getShortDescription();
+    if (!$this->isEnabled()) {
+      $description = ModuleI18N::translate($this, $description);
+    }
+    return $description;
+  }
+  
   public function getConfigLink(): string {
     return route('module', [
         'module' => $this->name(),
@@ -116,6 +128,11 @@ trait VestaModuleTrait {
    */
   protected abstract function createPrefs();
 
+  /**
+   * @return string
+   */
+  protected abstract function getShortDescription();
+  
   /**
    * @return string[]
    */
