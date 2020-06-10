@@ -128,7 +128,7 @@ class PlaceStructure {
     $ps = PlaceStructure::create(
             $placerec, 
             $event->record()->tree(), 
-            $event->tag(), 
+            $event->getTag(), 
             $event->attribute("DATE"));
     return $ps;
   }
