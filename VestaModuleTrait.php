@@ -310,7 +310,8 @@ trait VestaModuleTrait {
 
     // Add the file's modification time to the URL, so we can set long expiry cache headers.
     //[RC] assume this is also ok for views (i.e. assume the rendered content isn't dynamic)
-    $hash = filemtime($file);
+    // otherwise override assetAdditionalHash()!
+    $hash = hash("md5", filemtime($file) . $this->assetAdditionalHash($asset));
 
     return route('module', [
         'module' => $this->name(),
@@ -318,6 +319,11 @@ trait VestaModuleTrait {
         'asset' => $asset,
         'hash' => $hash,
     ]);
+  }
+  
+  //OverrideHook
+  public function assetAdditionalHash(string $asset): string {
+    return "";
   }
 
   //adapted from ModuleCustomTrait
@@ -344,7 +350,10 @@ trait VestaModuleTrait {
       $assertRouter = function (string $asset) {
         return $this->assetUrl($asset);
       };
-      $content = view($this->name() . '::' . $assetFile, ['assetRouter' => $assertRouter]);
+      $content = view($this->name() . '::' . $assetFile, [
+          'assetRouter' => $assertRouter,
+          'module' => $this
+      ]);
     } else {
       $file = $this->resourcesFolder() . $asset;
 
