@@ -208,9 +208,11 @@ trait VestaModuleTrait {
     //flash the messages, one version at a time.
     while ($current_version < $target_version) {
       $class = $namespace . '\\WhatsNew' . $current_version;
-      /** @var WhatsNewInterface $whatsNew */
-      $whatsNew = new $class();
-      FlashMessages::addMessage(I18N::translate("What's new? ") . $whatsNew->getMessage());      
+      
+      if (class_exists($class)) {
+        $whatsNew = new $class();
+        FlashMessages::addMessage(I18N::translate("What's new? ") . $whatsNew->getMessage());        
+      } //else removed, apparently
       $current_version++;
 
       $this->setPreference($pref, (string)$current_version);

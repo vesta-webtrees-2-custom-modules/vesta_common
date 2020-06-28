@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the vesta package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vesta 1.0\n"
+"Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
+"POT-Creation-Date: 2020-06-15 22:33+0200\n"
+"PO-Revision-Date: 2020-06-23 17:55+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"Language: cs\n"
+
+#: HookInterfaces/FunctionsPlaceUtils.php:86
+msgid "map coordinates directly (MAP tag)"
+msgstr "mapové souřadnice přímo (tag MAP)"
+
+#: VestaCommonLibModule.php:44
+msgid "Vesta Common"
+msgstr "Vesta Common"
+
+#: VestaCommonLibModule.php:52
+msgid ""
+"A module providing common classes and translations for other 'Vesta' custom "
+"modules."
+msgstr "Modul poskytuje společné třídy a překlady pro ostatní moduly 'Vesta'."
+
+#: VestaModuleTrait.php:213
+msgid "What's new? "
+msgstr "Co je nového? "
+
+#: resources/views/admin/vesta_components.phtml:24
+msgid "(entire module)"
+msgstr "(v celém modulu)"
+
+#: resources/views/admin/vesta_components.phtml:26
+msgid "(specific functionality)"
+msgstr "(u specifických funkcí)"
+
+#: resources/views/admin/vesta_components.phtml:29
+msgctxt "as in \"Move up\""
+msgid "Move"
+msgstr "Přemístit"
+
+#: resources/views/admin/vesta_components.phtml:29
+msgctxt "as in \"Move up\""
+msgid "up"
+msgstr "výše"
+
+#: resources/views/admin/vesta_components.phtml:30
+msgctxt "as in \"Move down\""
+msgid "Move"
+msgstr "Přemístit"
+
+#: resources/views/admin/vesta_components.phtml:30
+msgctxt "as in \"Move down\""
+msgid "down"
+msgstr "níže"
+
+#: resources/views/vesta_config.phtml:25
+msgid "Q: How do the Vesta modules interact?"
+msgstr "Q: Jak moduly Vesta navzájem spolupracují?"
+
+#: resources/views/vesta_config.phtml:28
+msgid ""
+"A: Via hooks. Hooks allow modules to extend functionality of other "
+"components, without having to re-implement the entire component. Webtrees "
+"uses hooks e.g. in the page footer, and for historic events."
+msgstr ""
+"A: Přes háčky (hooky). Háčky umožňují modulům rozšiřovat funkčnost ostatních "
+"komponent, aniž by bylo nutné přepracovat celou komponentu. Webtrees používá "
+"háčky např. u zápatí stránky a u historických událostí."
+
+#: resources/views/vesta_config.phtml:31
+msgid "Q: Ok, but what's the actual benefit for the user?"
+msgstr "Q: Tak v čem je vlastně skutečný přínos pro uživatele?"
+
+#: resources/views/vesta_config.phtml:35
+msgid ""
+"A: Different modules may target the same component, e.g. by enhancing the "
+"facts and events tab in various places. Without hooks, we'd have to use "
+"multiple module-specific tabs."
+msgstr ""
+"A: Různé moduly mohou cílit na tutéž komponentu, např. vylepšit záložku "
+"Fakta a události na různých místech. Bez háčků by bylo nutné použít několika "
+"specifických záložek."
+
+#: resources/views/vesta_config.phtml:37
+msgid ""
+"Different modules may also be linked dynamically to provide specific data, "
+"such as location data for event places."
+msgstr ""
+"Různé moduly mohou být také dynamicky propojeny za účelem dodání určitých "
+"údajů, jako třeba polohové údaje k místům událostí."
+
+#: resources/views/vesta_config.phtml:41
+msgid "Q: How do I configure additional hooks?"
+msgstr "Q: Jak mohu uzpůsobit dodatečné háčky?"
+
+#: resources/views/vesta_config.phtml:44
+msgid ""
+"A: Hooks are usually enabled automatically when the respective custom module "
+"is enabled. See also the respective source and target module's preferences."
+msgstr ""
+"A: Háčky jsou obvykle aktivovány automaticky jakmile je aktivován příslušný "
+"modul. Více také u nastavení zdrojového a cílového modulu."
+
+#: resources/views/vesta_config.phtml:47
+#, php-format
+msgid "Q: What's with the %1$s symbol?"
+msgstr "Q: Co je zač symbol %1$s ?"
+
+#: resources/views/vesta_config.phtml:50
+msgid ""
+"A: The Vesta symbol is mainly used to group related modules in the module "
+"administration list."
+msgstr ""
+"A: Symbol Vesta je použit hlavně k seskupení modulů v seznamu modulů v "
+"Panelu správy."
+
+#: resources/views/vesta_config.phtml:51
+#, php-format
+msgid ""
+"%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman "
+"goddess of the hearth, home, and family."
+msgstr ""
+"%1$s je astronomický symbol asteroidu Vesta, pojmenovaného po římské bohyni "
+"krbu, domova a rodiny."
+
+#: resources/views/vesta_config.phtml:52
+msgid ""
+"If the symbol is displayed improperly, e.g. as a rectangle, check your "
+"browser's unicode support capabilities."
+msgstr ""
+"Pokud se symbol zobrazuje nesprávně, např. jako nějaký čtyřúhelník, "
+"zkontrolujte kódové nastavení vašeho prohlížeče."
+
+#: resources/views/vesta_config.phtml:53
+msgid ""
+"You may have to install a font providing this symbol, and for certain "
+"browsers – Chrome in particular – this font has to be in one of the font "
+"families specified by webtrees, such as 'Segoe UI Symbol'."
+msgstr ""
+"Možná bude nutno instalovat font s tímto symbolem a pro určité prohlížeče ‒ "
+"zvláště Chrome ‒ musí být tento font jednou z rodin fontů nastavených ve "
+"webtrees, jako je 'Segoe UI Symbol'."
