@@ -84,13 +84,13 @@ class GenericPlaceHierarchyController
         switch ($action2) {
             case 'list':
                 $nextaction = ['hierarchy' => $this->utils->hierarchyActionLabel()];
-                $content .= view('modules/place-hierarchy/list', $this->getList($tree));
+                $content .= view($this->utils->listView(), $this->getList($tree));
                 break;
             case 'hierarchy':
             case 'hierarchy-e':
                 $nextaction = ['list' => $this->utils->listActionLabel()];
                 $data       = $this->getHierarchy($place);
-                $content .= (null === $data || $showmap) ? '' : view('place-hierarchy', $data);
+                $content .= (null === $data || $showmap) ? '' : view($this->utils->placeHierarchyView(), $data);
                 if (null === $data || $action2 === 'hierarchy-e') {
                     $content .= view('modules/place-hierarchy/events', [
                         'indilist' => $place->searchIndividualsInPlace(),

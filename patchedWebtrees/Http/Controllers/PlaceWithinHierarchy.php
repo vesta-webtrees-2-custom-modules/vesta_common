@@ -2,26 +2,18 @@
 
 namespace Cissee\WebtreesExt\Http\Controllers;
 
-use Fisharebest\Webtrees\Place;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
 
 //abstraction of Place/PlaceLocation functionality
-interface PlaceWithinHierarchy {
+interface PlaceWithinHierarchy extends PlaceWithinHierarchyBase {
   
   ////////////////////////////////////////////////////////////////////////////////
   //Place
   
   public function id(): int;
   
-  public function url(): string;
-  
   public function tree(): Tree;
-  
-  public function gedcomName(): string;
-    
-  //ok to use place here - only evaluated wrt gedcomName() and parent()
-  public function parent(): Place;  
   
   /**
    * Get the lower level places.
@@ -29,9 +21,6 @@ interface PlaceWithinHierarchy {
    * @return array<PlaceWithinHierarchy>
    */
   public function getChildPlaces(): array;
-    
-  //for views
-  public function placeName(): string;
   
   //for views
   public function fullName(bool $link = false): string;

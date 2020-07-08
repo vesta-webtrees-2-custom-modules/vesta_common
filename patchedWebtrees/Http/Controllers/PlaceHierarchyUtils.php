@@ -26,6 +26,12 @@ interface PlaceHierarchyUtils {
   //I18N::translate('Places')
   public function pageLabel(): string;
   
+  //'place-hierarchy'
+  public function placeHierarchyView(): string;
+  
+  //'modules/place-hierarchy/list'
+  public function listView(): string;
+  
   //'modules/place-hierarchy/page'
   public function pageView(): string;
   
