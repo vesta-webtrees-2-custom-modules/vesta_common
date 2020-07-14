@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-06-15 22:33+0200\n"
+"POT-Creation-Date: 2020-07-09 21:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr ""
 
-#: VestaModuleTrait.php:213
+#: VestaModuleTrait.php:214
 msgid "What's new? "
 msgstr ""
 

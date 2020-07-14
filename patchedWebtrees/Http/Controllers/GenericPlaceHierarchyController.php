@@ -57,8 +57,8 @@ class GenericPlaceHierarchyController
         $action   = $request->getAttribute('action');
         $action2  = $request->getQueryParams()['action2'] ?? 'hierarchy';
         $place_id = (int) ($request->getQueryParams()['place_id'] ?? 0);
-        $place    = $this->utils->findPlace($place_id, $tree);
-
+        $place    = $this->utils->findPlace($place_id, $tree, $request->getQueryParams());
+                
         // Request for a non-existent place?
         if ($place_id !== $place->id()) {
             return redirect($place->url());
@@ -130,12 +130,9 @@ class GenericPlaceHierarchyController
      */
     private function getList(Tree $tree): array
     {
-        $places = $this->utils->searchPlaces($tree)
-            ->sort(static function (PlaceWithinHierarchy $x, PlaceWithinHierarchy $y): int {
-                return $x->gedcomName() <=> $y->gedcomName();
-            })
-            ->all();
-
+        $topLevel = $this->utils->findPlace(0, $tree);
+        $places = $topLevel->getChildPlaces();
+            
         $numfound = count($places);
 
         if ($numfound === 0) {
@@ -185,18 +182,13 @@ class GenericPlaceHierarchyController
     private function breadcrumbs(PlaceWithinHierarchy $place): array
     {
         $breadcrumbs = [];
-        if ($place->gedcomName() !== '') {
-            $breadcrumbs[] = $place;
-            $parent_place  = $place->parent();
-            while ($parent_place->gedcomName() !== '') {
-                $breadcrumbs[] = $parent_place;
-                $parent_place  = $parent_place->parent();
-            }
-            $breadcrumbs = array_reverse($breadcrumbs);
-            $current     = array_pop($breadcrumbs);
-        } else {
-            $current = null;
+        $breadcrumbs[] = $place;
+        while ($place->gedcomName() !== '') {          
+          $place = $place->parent();
+          $breadcrumbs[] = $place;
         }
+        $breadcrumbs = array_reverse($breadcrumbs);
+        $current = array_pop($breadcrumbs);
 
         return [
             'breadcrumbs' => $breadcrumbs,
@@ -261,8 +253,8 @@ class GenericPlaceHierarchyController
 
             //Stats
             $placeStats = [];
-            $placeStats['INDI'] = $place->searchIndividualsInPlace()->count();
-            $placeStats['FAM'] = $place->searchFamiliesInPlace()->count();
+            $placeStats['INDI'] = $place->countIndividualsInPlace();
+            $placeStats['FAM'] = $place->countFamiliesInPlace();
             
             $sidebar .= view($this->utils->sidebarView(), [
                 'showlink'      => $show_link,

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-06-15 22:33+0200\n"
+"POT-Creation-Date: 2020-07-09 21:37+0200\n"
 "PO-Revision-Date: 2020-06-16 13:59+0200\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: \n"
@@ -89,7 +89,7 @@ msgstr "V: Wat is er met het %1$s-symbool?"
 msgid "Vesta Common"
 msgstr "Vesta Algemeen"
 
-#: VestaModuleTrait.php:213
+#: VestaModuleTrait.php:214
 msgid "What's new? "
 msgstr "Wat is er nieuw? "
 

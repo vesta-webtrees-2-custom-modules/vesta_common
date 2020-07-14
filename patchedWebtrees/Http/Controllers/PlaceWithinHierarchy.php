@@ -4,6 +4,7 @@ namespace Cissee\WebtreesExt\Http\Controllers;
 
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
+use Vesta\Model\PlaceStructure;
 
 //abstraction of Place/PlaceLocation functionality
 interface PlaceWithinHierarchy extends PlaceWithinHierarchyBase {
@@ -18,7 +19,7 @@ interface PlaceWithinHierarchy extends PlaceWithinHierarchyBase {
   /**
    * Get the lower level places.
    *
-   * @return array<PlaceWithinHierarchy>
+   * @return array<PlaceWithinHierarchy>, keyed by id
    */
   public function getChildPlaces(): array;
   
@@ -37,11 +38,25 @@ interface PlaceWithinHierarchy extends PlaceWithinHierarchyBase {
   ////////////////////////////////////////////////////////////////////////////////
   //extensions
   
-  //SearchService::searchIndividualsInPlace
   public function searchIndividualsInPlace(): Collection;
   
-  //SearchService::searchFamiliesInPlace
+  //may be more efficient than searchIndividualsInPlace()->count();
+  public function countIndividualsInPlace(): int;
+  
   public function searchFamiliesInPlace(): Collection;
   
+  //may be more efficient than searchFamiliesInPlace()->count();
+  public function countFamiliesInPlace(): int;
+  
   public function boundingRectangleWithChildren(array $children): array;
+  
+  public function placeStructure(): ?PlaceStructure;
+  
+  public function additionalLinksHtmlBeforeName(): string;
+  
+  /**
+   * 
+   * @return Collection<PlaceHierarchyLinks>
+   */
+  public function links(): Collection;
 }

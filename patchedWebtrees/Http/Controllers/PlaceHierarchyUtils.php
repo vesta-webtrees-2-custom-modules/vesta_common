@@ -3,19 +3,13 @@
 namespace Cissee\WebtreesExt\Http\Controllers;
 
 use Fisharebest\Webtrees\Tree;
-use Illuminate\Support\Collection;
 
 
 interface PlaceHierarchyUtils {
   
-  //SearchService $search_service, 
-  //        Statistics $statistics
-  
   //Place:::find
-  public function findPlace(int $id, Tree $tree): PlaceWithinHierarchy;
-  
-   //SearchService::searchPlaces
-  public function searchPlaces(Tree $tree): Collection;
+  //$requestParameters may or may not be evaluated
+  public function findPlace(int $id, Tree $tree, array $requestParameters): PlaceWithinHierarchy;
     
   //I18N::translate('Show place hierarchy')
   public function hierarchyActionLabel(): string;
