@@ -50,6 +50,17 @@ class FunctionsClippingsCartUtils {
     return $ret;
   }
   
+  public static function getTransitiveLinks(ModuleInterface $module, GedcomRecord $record): Collection {
+    $providers = FunctionsClippingsCartUtils::accessibleModules($record->tree(), Auth::user())
+            ->toArray();
+    
+    $ret = new Collection();
+    foreach ($providers as $provider) {      
+      $ret = $ret->merge($provider->getTransitiveLinks($record));
+    }
+    return $ret;
+  }
+  
   public static function accessibleModules(Tree $tree, UserInterface $user): Collection {
     return app()
         ->make(ModuleService::class)

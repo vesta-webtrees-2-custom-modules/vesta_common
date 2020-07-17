@@ -2,13 +2,17 @@
 
 namespace Cissee\WebtreesExt\Http\Controllers;
 
-use Cissee\WebtreesExt\Http\Controllers\PlaceWithinHierarchy;
 use Cissee\WebtreesExt\Http\Controllers\PlaceUrls;
+use Cissee\WebtreesExt\Http\Controllers\PlaceWithinHierarchy;
+use Fisharebest\Webtrees\Gedcom;
+use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Place;
 use Fisharebest\Webtrees\PlaceLocation;
 use Fisharebest\Webtrees\Services\SearchService;
 use Fisharebest\Webtrees\Statistics;
 use Fisharebest\Webtrees\Tree;
+use Illuminate\Database\Capsule\Manager as DB;
+use Illuminate\Database\Query\Expression;
 use Illuminate\Support\Collection;
 use Vesta\Model\PlaceStructure;
 
@@ -37,15 +41,40 @@ class DefaultPlaceWithinHierarchy extends DefaultPlaceWithinHierarchyBase implem
     $this->statistics = $statistics;
   }
   
-  public function getChildPlaces(): array {
-    $self = $this;
-    $ret = new Collection($this->actual->getChildPlaces());
+  //original impl in Place doesn't use the id, which is inefficient
+  //(obtained later one-by-one via id())
+  public function getChildPlacesCacheIds(Place $place): Collection
+    {
+        if ($place->gedcomName() !== '') {
+            $parent_text = Gedcom::PLACE_SEPARATOR . $place->gedcomName();
+        } else {
+            $parent_text = '';
+        }
+
+        $tree = $place->tree();
+        
+        return DB::table('places')
+            ->where('p_file', '=', $tree->id())
+            ->where('p_parent_id', '=', $place->id())
+            ->orderBy(new Expression('p_place /*! COLLATE ' . I18N::collation() . ' */'))
+            ->pluck('p_place', 'p_id')
+            ->map(function (string $place, int $id) use ($parent_text, $tree): Place {
+                $place = new Place($place . $parent_text, $tree);
+                app('cache.array')->remember('place-' . $place->gedcomName(), function () use ($id): int {return $id;});
+                return $place;
+            });
+    }
     
-    return $ret
+  public function getChildPlaces(): array {
+    $self = $this;    
+    $ret = $this
+            ->getChildPlacesCacheIds($this->actual)
             ->mapWithKeys(static function (Place $place) use ($self): array {
               return [$place->id() => new DefaultPlaceWithinHierarchy($place, $self->urls, $self->search_service, $self->statistics)];
             })
             ->toArray();
+    
+    return $ret;
   }
   
   public function id(): int {

@@ -33,14 +33,17 @@ class GenericPlaceHierarchyController
     /** @var PlaceHierarchyUtils */
     private $utils;
 
+    private $detailsThreshold;
+            
     /**
      * GenericPlaceHierarchyController constructor.
      *
      * @param PlaceHierarchyUtils $utils
      */
-    public function __construct(PlaceHierarchyUtils $utils)
+    public function __construct(PlaceHierarchyUtils $utils, int $detailsThreshold)
     {
         $this->utils = $utils;
+        $this->detailsThreshold = $detailsThreshold;
     }
 
     /**
@@ -68,9 +71,14 @@ class GenericPlaceHierarchyController
         $showmap    = Site::getPreference('map-provider') !== '';
         $data       = null;
 
+        $places = null;
         if ($showmap) {
+            //Speedup #4
+            //no need to retrieve them more than once!
+            $places = $place->getChildPlaces();
+
             $content .= view('modules/place-hierarchy/map', [
-                'data'     => $this->mapData($place),
+                'data'     => $this->mapData($place, $places),
                 'provider' => [
                     'url'    => 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                     'options' => [
@@ -89,7 +97,7 @@ class GenericPlaceHierarchyController
             case 'hierarchy':
             case 'hierarchy-e':
                 $nextaction = ['list' => $this->utils->listActionLabel()];
-                $data       = $this->getHierarchy($place);
+                $data       = $this->getHierarchy($place, $places);
                 $content .= (null === $data || $showmap) ? '' : view($this->utils->placeHierarchyView(), $data);
                 if (null === $data || $action2 === 'hierarchy-e') {
                     $content .= view('modules/place-hierarchy/events', [
@@ -154,9 +162,9 @@ class GenericPlaceHierarchyController
      * @return array{'tree':Tree,'col_class':string,'columns':array<array<PlaceWithinHierarchy>>,'place':PlaceWithinHierarchy}|null
      * @throws Exception
      */
-    private function getHierarchy(PlaceWithinHierarchy $place): ?array
+    private function getHierarchy(PlaceWithinHierarchy $place, $places): ?array
     {
-        $child_places = $place->getChildPlaces();
+        $child_places = ($places !== null)?$places:$place->getChildPlaces();
         $numfound     = count($child_places);
 
         if ($numfound > 0) {
@@ -201,9 +209,8 @@ class GenericPlaceHierarchyController
      *
      * @return array
      */
-    protected function mapData(PlaceWithinHierarchy $placeObj): array
+    protected function mapData(PlaceWithinHierarchy $placeObj, $places): array
     {
-        $places    = $placeObj->getChildPlaces();
         $features  = [];
         $sidebar   = '';
         $flag_path = Webtrees::MODULES_DIR . 'openstreetmap/';
@@ -214,6 +221,12 @@ class GenericPlaceHierarchyController
             $show_link = false;
         }
 
+        //Speedup #3
+        //details only up to a given threshold 
+        //(relevant for stats in general (i.e. should be in main webtrees),
+        //but also for our more complex location function)
+        $showDetails = sizeof($places) <= $this->detailsThreshold;
+      
         $locations = [];
         foreach ($places as $id => $place) {
             $location = $place;
@@ -221,40 +234,45 @@ class GenericPlaceHierarchyController
             //[RC] added, may be more efficient to re-use
             $locations[] = $location;
             
-            if ($location->icon() !== '' && is_file($flag_path . $location->icon())) {
-                $flag = $flag_path . $location->icon();
-            } else {
-                $flag = '';
-            }
+            $sidebar_class = '';
+            $flag = '';
+            
+            if ($showDetails) {
+              if ($location->icon() !== '' && is_file($flag_path . $location->icon())) {
+                  $flag = $flag_path . $location->icon();
+              }
 
-            if ($location->latitude() === 0.0 && $location->longitude() === 0.0) {
-                $sidebar_class = 'unmapped';
-            } else {
-                $sidebar_class = 'mapped';
-                $features[]    = [
-                    'type'       => 'Feature',
-                    'id'         => $id,
-                    'geometry'   => [
-                        'type'        => 'Point',
-                        'coordinates' => [$location->longitude(), $location->latitude()],
-                    ],
-                    'properties' => [
-                        'tooltip' => $place->gedcomName(),
-                        'popup'   => view('modules/place-hierarchy/popup', [
-                            'showlink'  => $show_link,
-                            'flag'      => $flag,
-                            'place'     => $place,
-                            'latitude'  => $location->latitude(),
-                            'longitude' => $location->longitude(),
-                        ]),
-                    ],
-                ];
+              if ($location->latitude() === 0.0 && $location->longitude() === 0.0) {
+                  $sidebar_class = 'unmapped';
+              } else {
+                  $sidebar_class = 'mapped';
+                  $features[]    = [
+                      'type'       => 'Feature',
+                      'id'         => $id,
+                      'geometry'   => [
+                          'type'        => 'Point',
+                          'coordinates' => [$location->longitude(), $location->latitude()],
+                      ],
+                      'properties' => [
+                          'tooltip' => $place->gedcomName(),
+                          'popup'   => view('modules/place-hierarchy/popup', [
+                              'showlink'  => $show_link,
+                              'flag'      => $flag,
+                              'place'     => $place,
+                              'latitude'  => $location->latitude(),
+                              'longitude' => $location->longitude(),
+                          ]),
+                      ],
+                  ];
+              }
             }
 
             //Stats
             $placeStats = [];
-            $placeStats['INDI'] = $place->countIndividualsInPlace();
-            $placeStats['FAM'] = $place->countFamiliesInPlace();
+            if ($showDetails) {
+              $placeStats['INDI'] = $place->countIndividualsInPlace();
+              $placeStats['FAM'] = $place->countFamiliesInPlace();              
+            }
             
             $sidebar .= view($this->utils->sidebarView(), [
                 'showlink'      => $show_link,
@@ -263,11 +281,18 @@ class GenericPlaceHierarchyController
                 'place'         => $place,
                 'sidebar_class' => $sidebar_class,
                 'stats'         => $placeStats,
+                
+                'showDetails'   => $showDetails,
             ]);
         }
 
+        $bounds = [[-180.0, -90.0], [180.0, 90.0]];
+        if ($showDetails) {
+          $bounds = $placeObj->boundingRectangleWithChildren($locations);
+        }
+        
         return [
-            'bounds'  => $placeObj->boundingRectangleWithChildren($locations),
+            'bounds'  => $bounds,
             'sidebar' => $sidebar,
             'markers' => [
                 'type'     => 'FeatureCollection',

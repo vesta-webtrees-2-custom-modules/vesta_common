@@ -6,6 +6,8 @@ use Fisharebest\Webtrees\Tree;
 
 interface PlaceHierarchyParticipant {
 
+  public function participates(Tree $tree): bool;
+          
   public function filterLabel(): string;
   
   public function filterParameterName(): string;
