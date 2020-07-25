@@ -2,7 +2,6 @@
 
 namespace Vesta;
 
-use Cissee\WebtreesExt\WhatsNew\WhatsNewInterface;
 use Fisharebest\Webtrees\Carbon;
 use Fisharebest\Webtrees\FlashMessages;
 use Fisharebest\Webtrees\I18N;

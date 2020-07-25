@@ -25,5 +25,10 @@ interface GovIdEditControlsInterface {
           string $placeName, 
           bool $forModal,
           bool $withLabel): GenericViewElement;
+  
+  public function govTypeIdEditControl(
+          ?string $govTypeId, 
+          string $id, 
+          string $name): GenericViewElement;
 
 }
