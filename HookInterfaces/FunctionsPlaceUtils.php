@@ -414,6 +414,24 @@ class FunctionsPlaceUtils {
       }
     }
     
+    //3. via any plac2loc + locPloc + loc2plac
+    $loc = FunctionsPlaceUtils::plac2loc($module, $ps, false);
+    if ($loc !== null) {
+      $parentLocs = FunctionsPlaceUtils::locPloc($module, $ps->getTree(), $loc, $ps->getEventDateInterval(), $typesOfLocation, $maxLevels);
+      
+      $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $ps->getTree(), Auth::user())
+        ->toArray();
+    
+      foreach ($parentLocs as $parentLoc) {
+        foreach ($functionsPlaceProviders as $functionsPlaceProvider) {      
+          $parentPsViaLoc = $functionsPlaceProvider->loc2plac($parentLoc);
+          if ($parentPsViaLoc !== null) {
+            $ret->add($parentPsViaLoc);
+          }
+        }
+      }
+    }
+    
     return $ret;
   }
  
@@ -432,6 +450,26 @@ class FunctionsPlaceUtils {
     foreach ($functionsPlaceProviders as $functionsPlaceProvider) {      
       $parentGovs = $functionsPlaceProvider->govPgov($gov, $dateInterval, $typesOfLocation, $maxLevels);
       $ret = $ret->merge($parentGovs);
+    }
+    
+    return $ret;
+  }
+  
+  public static function locPloc(
+          ModuleInterface $module, 
+          Tree $tree, 
+          LocReference $loc, 
+          GedcomDateInterval $dateInterval, 
+          Collection $typesOfLocation, 
+          int $maxLevels = PHP_INT_MAX): Collection {
+    
+    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $tree, Auth::user())
+            ->toArray();
+    
+    $ret = new Collection();
+    foreach ($functionsPlaceProviders as $functionsPlaceProvider) {      
+      $parentLocs = $functionsPlaceProvider->locPloc($loc, $dateInterval, $typesOfLocation, $maxLevels);
+      $ret = $ret->merge($parentLocs);
     }
     
     return $ret;

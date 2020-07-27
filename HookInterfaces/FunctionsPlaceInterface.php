@@ -65,4 +65,15 @@ interface FunctionsPlaceInterface {
    * @return Collection<GovReference>
    */
   public function govPgov(GovReference $gov, GedcomDateInterval $dateInterval, Collection $typesOfLocation, int $maxLevels = PHP_INT_MAX): Collection;
+  
+  /**
+   * get parent(s) of indicated types ("POLI","RELI" etc)
+   * 
+   * @param LocReference $gov
+   * @param GedcomDateInterval $dateInterval
+   * @param Collection<string> $typesOfLocation
+   * @param int $maxLevels
+   * @return Collection<LocReference>
+   */
+  public function locPloc(LocReference $loc, GedcomDateInterval $dateInterval, Collection $typesOfLocation, int $maxLevels = PHP_INT_MAX): Collection;
 }

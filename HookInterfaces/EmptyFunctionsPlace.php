@@ -87,4 +87,8 @@ trait EmptyFunctionsPlace {
   public function govPgov(GovReference $gov, GedcomDateInterval $dateInterval, Collection $typesOfLocation, int $maxLevels = PHP_INT_MAX): Collection {
     return new Collection();
   }
+  
+  public function locPloc(LocReference $loc, GedcomDateInterval $dateInterval, Collection $typesOfLocation, int $maxLevels = PHP_INT_MAX): Collection {
+    return new Collection();
+  }
 }

@@ -133,6 +133,17 @@ class PlaceStructure {
     return $ps;
   }
   
+  public static function fromFactWithExplicitInterval(Fact $event, GedcomDateInterval $dateInterval): ?PlaceStructure {
+    $placerec = Functions::getSubRecord(2, '2 PLAC', $event->gedcom());
+    $ps = PlaceStructure::create(
+            $placerec, 
+            $event->record()->tree(), 
+            $event->getTag(), 
+            $dateInterval->toGedcomString(2));
+    
+    return $ps;
+  }
+  
   public static function fromPlace(Place $place): ?PlaceStructure {
     $gedcom = "2 PLAC " . $place->gedcomName();
     return PlaceStructure::create($gedcom, $place->tree());
