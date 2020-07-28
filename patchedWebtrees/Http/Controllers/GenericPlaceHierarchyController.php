@@ -92,7 +92,7 @@ class GenericPlaceHierarchyController
         switch ($action2) {
             case 'list':
                 $nextaction = ['hierarchy' => $this->utils->hierarchyActionLabel()];
-                $content .= view($this->utils->listView(), $this->getList($tree));
+                $content .= view($this->utils->listView(), $this->getList($tree, $request));
                 break;
             case 'hierarchy':
             case 'hierarchy-e':
@@ -136,9 +136,9 @@ class GenericPlaceHierarchyController
      *
      * @return Place[][]
      */
-    private function getList(Tree $tree): array
+    private function getList(Tree $tree, ServerRequestInterface $request): array
     {
-        $topLevel = $this->utils->findPlace(0, $tree);
+        $topLevel = $this->utils->findPlace(0, $tree, $request->getQueryParams());
         $places = $topLevel->getChildPlaces();
             
         $numfound = count($places);
