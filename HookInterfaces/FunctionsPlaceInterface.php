@@ -5,7 +5,6 @@ namespace Vesta\Hook\HookInterfaces;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
 use Vesta\Model\GedcomDateInterval;
-use Vesta\Model\GenericViewElement;
 use Vesta\Model\GovReference;
 use Vesta\Model\LocReference;
 use Vesta\Model\MapCoordinates;
@@ -31,8 +30,6 @@ interface FunctionsPlaceInterface {
   
   public function plac2map(PlaceStructure $ps): ?MapCoordinates;
   
-  public function plac2html(PlaceStructure $ps): ?GenericViewElement;
-  
   public function plac2loc(PlaceStructure $ps): ?LocReference;
 
   public function plac2gov(PlaceStructure $ps): ?GovReference;
@@ -43,17 +40,11 @@ interface FunctionsPlaceInterface {
   
   public function gov2map(GovReference $gov): ?MapCoordinates;
   
-  public function gov2html(GovReference $gov, Tree $tree): ?GenericViewElement;
-
-  public function map2html(MapCoordinates $map): ?GenericViewElement;
-  
   public function gov2plac(GovReference $gov, Tree $tree): ?PlaceStructure;
   
   public function gov2loc(GovReference $gov, Tree $tree): ?LocReference;
   
   public function loc2plac(LocReference $loc): ?PlaceStructure;
-
-  public function loc2linkIcon(LocReference $loc): ?string;
 
   /**
    * get parent(s) of indicated types ("POLI","RELI" etc)

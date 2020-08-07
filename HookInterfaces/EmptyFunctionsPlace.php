@@ -5,7 +5,6 @@ namespace Vesta\Hook\HookInterfaces;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
 use Vesta\Model\GedcomDateInterval;
-use Vesta\Model\GenericViewElement;
 use Vesta\Model\GovReference;
 use Vesta\Model\LocReference;
 use Vesta\Model\MapCoordinates;
@@ -36,10 +35,6 @@ trait EmptyFunctionsPlace {
     return null;
   }
   
-  public function plac2html(PlaceStructure $ps): ?GenericViewElement {
-    return null;
-  }
-  
   public function plac2loc(PlaceStructure $ps): ?LocReference {
     return null;
   }
@@ -59,14 +54,6 @@ trait EmptyFunctionsPlace {
   public function gov2map(GovReference $gov): ?MapCoordinates {
     return null;
   }
-
-  public function gov2html(GovReference $gov, Tree $tree): ?GenericViewElement {
-    return null;
-  }
-
-  public function map2html(MapCoordinates $map): ?GenericViewElement {
-    return null;
-  }
   
   public function gov2plac(GovReference $gov, Tree $tree): ?PlaceStructure {
     return null;
@@ -77,10 +64,6 @@ trait EmptyFunctionsPlace {
   }
   
   public function loc2plac(LocReference $loc): ?PlaceStructure {
-    return null;
-  }
-
-  public function loc2linkIcon(LocReference $loc): ?string {
     return null;
   }
 

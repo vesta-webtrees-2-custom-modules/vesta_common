@@ -24,7 +24,7 @@ use function app;
 class FunctionsPlaceUtils {
   
   public static function loc2linkIcon(ModuleInterface $module, LocReference $loc): string {
-    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $loc->getTree(), Auth::user())
+    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModulesPrintFunctions($module, $loc->getTree(), Auth::user())
             ->toArray();
     
     $links = array();
@@ -38,7 +38,7 @@ class FunctionsPlaceUtils {
   }
   
   public static function plac2html(ModuleInterface $module, PlaceStructure $ps): GenericViewElement {
-    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $ps->getTree(), Auth::user())
+    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModulesPrintFunctions($module, $ps->getTree(), Auth::user())
             ->toArray();
     
     $gves = array();
@@ -52,7 +52,7 @@ class FunctionsPlaceUtils {
   }
   
   public static function gov2html(ModuleInterface $module, Tree $tree, GovReference $gov): GenericViewElement {
-    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $tree, Auth::user())
+    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModulesPrintFunctions($module, $tree, Auth::user())
             ->toArray();
     
     $gves = array();
@@ -66,7 +66,7 @@ class FunctionsPlaceUtils {
   }
   
   public static function map2html(ModuleInterface $module, Tree $tree, MapCoordinates $map): GenericViewElement {
-    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $tree, Auth::user())
+    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModulesPrintFunctions($module, $tree, Auth::user())
             ->toArray();
     
     $gves = array();
@@ -484,12 +484,27 @@ class FunctionsPlaceUtils {
     $moduleForPrefsOrder->setPreference('ORDER_PLACE_FUNCTIONS', $pref);
   }
 
-  public static function accessibleModules(ModuleInterface $moduleForPrefsOrder, Tree $tree, UserInterface $user): Collection {
+  public static function accessibleModules(
+          ModuleInterface $moduleForPrefsOrder, 
+          Tree $tree, 
+          UserInterface $user): Collection {
+    
     return self::sort($moduleForPrefsOrder, app()
                             ->make(ModuleService::class)
                             ->findByComponent(FunctionsPlaceInterface::class, $tree, $user));
   }
 
+  public static function accessibleModulesPrintFunctions(
+          ModuleInterface $moduleForPrefsOrder, 
+          Tree $tree, 
+          UserInterface $user): Collection {
+    
+    //currently no sorting!
+    return app()
+                            ->make(ModuleService::class)
+                            ->findByComponent(PrintFunctionsPlaceInterface::class, $tree, $user);
+  }
+  
   public static function modules(ModuleInterface $moduleForPrefsOrder, $include_disabled = false): Collection {
     return self::sort($moduleForPrefsOrder, app()
                             ->make(ModuleService::class)
@@ -514,7 +529,7 @@ class FunctionsPlaceUtils {
                     })
                     ->sort(FunctionsPlaceUtils::sorter());
   }
-
+  
   public static function sorter(): Closure {
     return function (FunctionsPlaceInterface $x, FunctionsPlaceInterface $y): int {
       return $x->getPlacesOrder() <=> $y->getPlacesOrder();
