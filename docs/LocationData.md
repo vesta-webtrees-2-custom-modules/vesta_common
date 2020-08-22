@@ -6,7 +6,7 @@ This document describes various ways of managing location data in webtrees, base
 
 * [Introduction](#introduction)
 * [Location Data](#locationdata)
-* [Use Cases](#usecases)
+* [Use Cases](#use-cases)
 * [First Steps](#first)
 
 ## Introduction<a name="introduction"/>
@@ -19,9 +19,17 @@ The Vesta custom modules provide functionality that overcomes these limitations.
 
 ## Location Data<a name="locationdata"/>
 
-There are different ways to manage different kinds of location data. Based on your use case, you'll have to enable and configure the respective custom modules accordingly. In any case, the location data is then used by the 'Vesta Facts and events' module, which enhances the data displayed for individual and family events, as shown in this example:
+There are different ways to manage different kinds of location data. Based on your use case, you'll have to enable and configure the respective custom modules accordingly. In any case, the location data is then used by the 'Vesta Facts and events' module, which enhances the data displayed for individual and family events, as shown in this example for shared place data:
 
 <p align="center"><img src="event.png" alt="Screenshot" align="center" width="67%"></p>
+
+The same place enhanced instead with historical GOV data:
+
+<p align="center"><img src="gov.png" alt="Screenshot" align="center" width="67%"></p>
+
+Also note the links to external maps, including a historical map of Europe in the 19th century:
+
+<p align="center"><img src="mapire.png" alt="Screenshot" align="center" width="67%"></p>
 
 Map coordinates are also used by the 'Vesta Places and pedigree map' module for place lists and maps. The following diagram gives an overview of the Vesta custom modules. Modules displaying data (via lists, tabs, or charts) are in the top row, with a green background. Modules also provide location data (red background) and other data (orange background) to other modules.
 
@@ -52,7 +60,7 @@ How does it work in detail?
 * Map coordinates: This is how webtrees itself manages geographic data via the control panel. 
 This geographic data isn't used everywhere, though (it is used for maps within webtrees, but not for links to external maps in the original 'Facts and events' module). 
 The 'Vesta Webtrees Location Data Provider' module rectifies this.
-* Historical data: The 'Vesta Gov4Webtrees' module by itself also maps historical data (obtained from the GOV historical gazetteer) via place names. 
+* Historical data: The 'Vesta Gov4Webtrees' module by itself provides historical data (obtained from the GOV historical gazetteer) via place names. 
 The respective edit controls are provided next to event places for convenience, but actually refer to global place names.
 
 ### Top-level location data (within GEDCOM)
@@ -63,7 +71,7 @@ A shared place may also have one or more higher-level shared places, which allow
 As shared place names and hierarchies may additionally be restricted to specific dates, it is also possible to model historical data, in a similar way to the historical gazetteer data provided by the GOV historical gazetteer. 
 Modelling historical data extensively requires a lot of effort, and in general it is recommended to use available GOV data instead if possible. 
 
-## Use Cases<a name="usecases"/>
+## Use Cases
 
 ### Using explicit references
 
@@ -74,12 +82,12 @@ Whenever you enter a place name, you now have the option to choose an existing s
 By default, the shared place name is used as the event place name so you don't have to enter both explicitly. 
 If you have date-specific shared place names and/or hierarchies, the event date is taken into account (even when edited on-the-fly) when the place named is filled in from the shared place.
 
-Here, a shared place is found for an event in 2000 (note also how any shared place name matches the search string). Search results are always displayed using the name for today, for consistency. The tooltip indicates the name for the given date, which is then used to fill in the event place name.
+In the following example, a shared place is found for an event in 2000 (note also how any shared place name matches the search string). Search results are always displayed using the name for today, for consistency.
 
 <p align="center"><img src="date1.png" alt="Screenshot" align="center" width="67%"></p>
 <p align="center"><img src="fill1.png" alt="Screenshot" align="center" width="67%"></p>
 
-Searching for the same shared place for an event in 1900 returns the same results, but the event place name is filled in differently:
+Searching for the same shared place for an event in 1900 returns the same results, but the tooltip indicates the name for the given date, which is then used to fill in the event place name:
 
 <p align="center"><img src="date2.png" alt="Screenshot" align="center" width="67%"></p>
 <p align="center"><img src="fill2.png" alt="Screenshot" align="center" width="67%"></p>
