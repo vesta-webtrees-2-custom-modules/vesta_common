@@ -14,6 +14,7 @@ interface GovIdEditControlsInterface {
    * @param string $id
    * @param string $name
    * @param string $placeName
+   * @param string|null $placeNameInputSelector
    * @param bool $forModal if true, this has to be prepared via ajax-modal-vesta.phtml plus govIdEditControlSelect2ScriptSnippet()!
    * @param bool $withLabel
    * @return GenericViewElement
@@ -22,7 +23,8 @@ interface GovIdEditControlsInterface {
           ?string $govId, 
           string $id, 
           string $name, 
-          string $placeName, 
+          string $placeName,
+          ?string $placeNameInputSelector,          
           bool $forModal,
           bool $withLabel): GenericViewElement;
   

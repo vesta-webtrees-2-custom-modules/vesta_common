@@ -52,6 +52,16 @@ use Fisharebest\Webtrees\I18N;
     <?php echo I18N::translate('If the symbol is displayed improperly, e.g. as a rectangle, check your browser\'s unicode support capabilities.') . ' '; ?>
     <?php echo I18N::translate('You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as \'Segoe UI Symbol\'.') ?>
 </p>
+<p class="small">
+    <?php echo I18N::translate('Q: Is there additional documentation?') ?>
+</p>
+<p class="small text-muted">
+    <?php echo I18N::translate('A: Each module has a Readme file with basic information (best viewed online, but also included in the module\'s folder).') ?>
+    <?php       
+      $link = '<a href="https://github.com/vesta-webtrees-2-custom-modules/vesta_common/blob/master/docs/LocationData.md">'.I18N::translate('here').'</a>';
+      echo I18N::translate('See also %1$s for an overview of location data management in webtrees.', $link) 
+    ?>
+</p>
 
 <div>
 <?php echo $editConfigAfterFaq ?>

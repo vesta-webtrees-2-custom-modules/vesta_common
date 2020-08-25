@@ -55,4 +55,8 @@ class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterfa
     }
     return $description;
   }
+  
+  public function boot(): void {
+    $this->flashWhatsNew('\Vesta\WhatsNew', 1);
+  }
 }

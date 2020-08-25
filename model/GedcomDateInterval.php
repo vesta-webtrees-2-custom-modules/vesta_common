@@ -2,7 +2,9 @@
 
 namespace Vesta\Model;
 
+use Fisharebest\Webtrees\Carbon;
 use Fisharebest\Webtrees\Date\AbstractCalendarDate;
+use Fisharebest\Webtrees\Date\GregorianDate;
 use Vesta\Model\DateUtils;
 
 /**
@@ -18,21 +20,11 @@ class GedcomDateInterval {
   private $toCalendarDate;
 
   protected static function minJD($calendarDate) {
-    if (method_exists($calendarDate, "minimumJulianDay")) {
-      return $calendarDate->minimumJulianDay();
-    }
-
-    //1.7.x
-    return $calendarDate->minJD;
+    return $calendarDate->minimumJulianDay();
   }
 
   protected static function maxJD($calendarDate) {
-    if (method_exists($calendarDate, "maximumJulianDay")) {
-      return $calendarDate->maximumJulianDay();
-    }
-
-    //1.7.x
-    return $calendarDate->maxJD;
+    return $calendarDate->maximumJulianDay();
   }
 
   /**
@@ -96,6 +88,12 @@ class GedcomDateInterval {
     return new GedcomDateInterval(null, null);
   }
 
+  public static function createNow() {
+    $startjd = Carbon::now()->julianDay();
+    $endjd = $startjd;
+    return new GedcomDateInterval(new GregorianDate($startjd), new GregorianDate($endjd));
+  }
+  
   /**
    * 
    * @param type $date

@@ -3,8 +3,6 @@
 namespace Vesta;
 
 use Fisharebest\Webtrees\Carbon;
-use Fisharebest\Webtrees\FlashMessages;
-use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Schema\MigrationInterface;
 use Fisharebest\Webtrees\View;
 use Illuminate\Database\Capsule\Manager as DB;
@@ -14,7 +12,6 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Vesta\ControlPanelUtils\ControlPanelUtils;
 use Vesta\ControlPanelUtils\Model\ControlPanelPreferences;
-use function GuzzleHttp\json_decode;
 use function redirect;
 use function response;
 use function route;
@@ -196,29 +193,6 @@ trait VestaModuleTrait {
   protected function saveConfig(ServerRequestInterface $request) {
     $utils = new ControlPanelUtils($this);
     $utils->savePostData($request, $this->createPrefs());
-  }
-
-  protected function flashWhatsNew($namespace, $target_version): bool {
-    $pref = 'WHATS_NEW';
-    
-    $current_version = intval($this->getPreference($pref, '0'));
-    $updates_applied = false;
-    
-    //flash the messages, one version at a time.
-    while ($current_version < $target_version) {
-      $class = $namespace . '\\WhatsNew' . $current_version;
-      
-      if (class_exists($class)) {
-        $whatsNew = new $class();
-        FlashMessages::addMessage(I18N::translate("What's new? ") . $whatsNew->getMessage());        
-      } //else removed, apparently
-      $current_version++;
-
-      $this->setPreference($pref, (string)$current_version);
-      $updates_applied = true;
-    }
-
-    return $updates_applied;
   }
   
   //same as Database::getSchema, but use module settings instead of site settings (Issue #3 in personal_facts_with_hooks)

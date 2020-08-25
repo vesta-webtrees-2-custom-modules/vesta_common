@@ -8,8 +8,18 @@ use function view;
 
 class FunctionsPrintExtHelpLink {
 
-  //cf helpLink in FunctionsPrint
-  public static function helpLink($module, $topic) {
+  //cf edit/input-addon-help.phtml
+  public static function inputAddonHelp($module, string $topic): string {
+    return
+            '<div class="input-group-append">' .
+            '    <span class="input-group-text">' .
+            FunctionsPrintExtHelpLink::helpLink($module, $topic) .
+            '    </span>' .
+            '</div>';
+  }
+  
+  //cf help/link.phtml
+  public static function helpLink($module, string $topic): string {
     $url = route('module', [
         'module' => $module,
         'action' => 'Help',

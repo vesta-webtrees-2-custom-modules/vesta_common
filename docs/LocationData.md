@@ -5,11 +5,11 @@ This document describes various ways of managing location data in webtrees, base
 ## Contents
 
 * [Introduction](#introduction)
-* [Location Data](#locationdata)
+* [Location Data](#location-data)
 * [Use Cases](#use-cases)
-* [First Steps](#first)
+* [First Steps](#first-steps)
 
-## Introduction<a name="introduction"/>
+## Introduction
 
 In the current [GEDCOM specification 5.5.1](https://www.familysearch.org/developers/docs/guides/gedcom), there are no top-level location records which would allow to re-use location data in different places. It is possible to add some data to a specific place record (such as a PLAC under an individual or family event), but even this is restricted to map coordinates and notes.
 
@@ -17,7 +17,7 @@ Webtrees by itself allows to map locations to map coordinates globally, via the 
 
 The Vesta custom modules provide functionality that overcomes these limitations.
 
-## Location Data<a name="locationdata"/>
+## Location Data
 
 There are different ways to manage different kinds of location data. Based on your use case, you'll have to enable and configure the respective custom modules accordingly. In any case, the location data is then used by the 'Vesta Facts and events' module, which enhances the data displayed for individual and family events, as shown in this example for shared place data:
 
@@ -31,7 +31,9 @@ Also note the links to external maps, including a historical map of Europe in th
 
 <p align="center"><img src="mapire.png" alt="Screenshot" align="center" width="67%"></p>
 
-Map coordinates are also used by the 'Vesta Places and pedigree map' module for place lists and maps. The following diagram gives an overview of the Vesta custom modules. Modules displaying data (via lists, tabs, or charts) are in the top row, with a green background. Modules also provide location data (red background) and other data (orange background) to other modules.
+Map coordinates are also used by the 'Vesta Places and pedigree map' module for place lists and maps. 
+
+The following diagram gives an overview of the Vesta custom modules. Modules displaying data (via lists, tabs, and charts) are in the top row, with a green background. Modules also provide location data (red background) and other data (orange background) to other modules.
 
 <p align="center"><img src="vesta.svg" alt="Screenshot" align="center" width="67%"></p>
 
@@ -110,7 +112,7 @@ It is also possible, but no longer recommended, to use shared place names with c
 
 Additional data fixes, e.g. for migrating webtrees geographic data to shared places, will be provided in future versions of the 'Shared Places' module.
 
-## First Steps<a name="first"/>
+## First Steps
 
 The easiest way to familiarize yourself with all available functionality and to decide what to use is probably to experiment a bit. 
 You can start by using the default configuration options. Create a few shared places, perhaps including GOV ids, and see how everything interacts.

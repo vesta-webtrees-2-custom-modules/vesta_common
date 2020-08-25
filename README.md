@@ -11,13 +11,14 @@ This is a webtrees 2.x module - It cannot be used with webtrees 1.x.
 * [Download](#download)
 * [Installation](#installation)
 * [License](#license)
+
 ### Features<a name="features"/>
 
 This module also provides translations, and therefore has to be activated in the module administration even if it doesn't provide any other kind of webtrees components. 
 
 ### Download<a name="download"/>
 
-* Current version: 2.0.7.1.0
+* Current version: 2.0.7.2.0
 * Based on and tested with webtrees 2.0.7. Cannot be used with webtrees 1.x. May not work with earlier 2.x versions!
 * Download the zipped module, including all related modules, [here](https://cissee.de/vesta.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>
