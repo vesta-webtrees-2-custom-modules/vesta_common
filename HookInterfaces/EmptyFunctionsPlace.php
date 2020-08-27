@@ -39,6 +39,10 @@ trait EmptyFunctionsPlace {
     return null;
   }
   
+  public function plac2govSupported(): bool {
+    return false;
+  }
+  
   public function plac2gov(PlaceStructure $ps): ?GovReference {
     return null;
   }

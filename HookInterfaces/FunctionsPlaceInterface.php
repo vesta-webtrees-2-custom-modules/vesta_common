@@ -32,6 +32,8 @@ interface FunctionsPlaceInterface {
   
   public function plac2loc(PlaceStructure $ps): ?LocReference;
 
+  public function plac2govSupported(): bool;
+  
   public function plac2gov(PlaceStructure $ps): ?GovReference;
   
   public function loc2map(LocReference $loc): ?MapCoordinates;
