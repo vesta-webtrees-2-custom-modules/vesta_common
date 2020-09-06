@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-07-09 21:44+0200\n"
+"POT-Creation-Date: 2020-09-06 11:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,10 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
+#, php-format
+msgid "%1$s excluded"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
+#, php-format
+msgid "%1$s filters"
+msgstr ""
+
 #: resources/views/vesta_config.phtml:51
 #, php-format
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
-msgstr ""
+msgstr "%1$s ist das astronomische Symbol für den Asteroiden Vesta, benannt nach der römischen Göttin des Herdes, des Hauses und der Familie."
 
 #: resources/views/admin/vesta_components.phtml:24
 msgid "(entire module)"
@@ -36,27 +46,31 @@ msgstr ""
 
 #: resources/views/vesta_config.phtml:35
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
+msgstr "Verschiedene Module können auf die gleiche Komponente abzielen, z.B. durch die Erweiterung des Reiters 'Fakten und Ereignisse' an verschiedenen Stellen. Ohne Hooks müssten wir mehrere modulspezifische Reiters verwenden."
+
+#: resources/views/vesta_config.phtml:59
+msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
 msgstr ""
 
 #: resources/views/vesta_config.phtml:44
 msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
-msgstr ""
+msgstr "A: Hooks werden normalerweise automatisch aktiviert, wenn das jeweilige benutzerdefinierte Modul aktiviert wird. Siehe auch die Präferenzen des jeweiligen Ausgangs- und Zielmoduls."
 
 #: resources/views/vesta_config.phtml:50
 msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
-msgstr ""
+msgstr "Das Vesta-Symbol wird hauptsächlich verwendet, um verwandte Module in der Modulverwaltungsliste zu gruppieren."
 
 #: resources/views/vesta_config.phtml:28
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
-msgstr ""
+msgstr "A: Über Hooks. Hooks ermöglicht es den Modulen, die Funktionalität anderer Komponenten zu erweitern, ohne die gesamte Komponente neu implementieren zu müssen. Webtrees verwendet Hooks z.B. in der Seitenfußzeile und für historische Ereignisse."
 
 #: resources/views/vesta_config.phtml:37
 msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
-msgstr ""
+msgstr "Verschiedene Module können auch dynamisch miteinander verknüpft werden, um spezifische Daten bereitzustellen, z.B. Ortsdaten für Orte in Ereignissen."
 
 #: resources/views/vesta_config.phtml:52
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
-msgstr ""
+msgstr "Wenn das Symbol nicht korrekt angezeigt wird, z.B. als Rechteck, überprüfen Sie die Unicode-Unterstützung Ihres Browsers."
 
 #: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
@@ -70,40 +84,73 @@ msgstr "nach oben"
 
 #: resources/views/vesta_config.phtml:41
 msgid "Q: How do I configure additional hooks?"
-msgstr ""
+msgstr "F: Wie kann ich zusätzliche Hooks konfigurieren?"
 
 #: resources/views/vesta_config.phtml:25
 msgid "Q: How do the Vesta modules interact?"
+msgstr "F: Wie wirken die Vesta-Module zusammen?"
+
+#: resources/views/vesta_config.phtml:56
+msgid "Q: Is there additional documentation?"
 msgstr ""
 
 #: resources/views/vesta_config.phtml:31
 msgid "Q: Ok, but what's the actual benefit for the user?"
-msgstr ""
+msgstr "F: Ok, aber was ist der eigentliche Nutzen für den Benutzer?"
 
 #: resources/views/vesta_config.phtml:47
 #, php-format
 msgid "Q: What's with the %1$s symbol?"
+msgstr "F: Was hat es mit dem %1$s Symbol auf sich?"
+
+#: resources/views/vesta_config.phtml:62
+#, php-format
+msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr ""
 
 #: VestaCommonLibModule.php:44
 msgid "Vesta Common"
 msgstr ""
 
-#: VestaModuleTrait.php:214
+#: VestaModuleCustomTrait.php:85
 msgid "What's new? "
 msgstr ""
 
 #: resources/views/vesta_config.phtml:53
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
-msgstr ""
+msgstr "Möglicherweise müssen Sie eine Schriftart installieren, die dieses Symbol bereitstellt, und bei bestimmten Browsern - insbesondere bei Chrome - muss diese Schriftart in einer der von Webtrees spezifizierten Schriftartfamilien vorliegen, wie z.B. 'Segoe UI Symbol'."
 
 #: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
 msgid "down"
 msgstr "verschieben"
 
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
+#, php-format
+msgid "exclude %1$s"
+msgstr ""
+
+#: resources/views/vesta_config.phtml:61
+msgid "here"
+msgstr ""
+
 #: HookInterfaces/FunctionsPlaceUtils.php:86
 msgid "map coordinates directly (MAP tag)"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
+msgid "reset this filter"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
+#, php-format
+msgid "restrict to %1$s"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
+#, php-format
+msgid "restricted to %1$s"
 msgstr ""
 
 #: resources/views/admin/vesta_components.phtml:29

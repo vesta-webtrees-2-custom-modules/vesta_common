@@ -50,4 +50,7 @@ class ControlPanelFactRestriction implements ControlPanelElement {
     return new ControlPanelFactRestriction(GedcomTag::getPicklistFacts('FAM'), $description, $settingKey, $settingDefaultValue);
   }
 
+  public static function createWithFacts($options, $description, $settingKey, $settingDefaultValue) {
+    return new ControlPanelFactRestriction($options, $description, $settingKey, $settingDefaultValue);
+  }
 }

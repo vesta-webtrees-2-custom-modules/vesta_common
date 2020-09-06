@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-07-09 21:37+0200\n"
+"POT-Creation-Date: 2020-09-06 11:29+0200\n"
 "PO-Revision-Date: 2020-06-23 17:55+0200\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: \n"
@@ -17,6 +17,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
+#, php-format
+msgid "%1$s excluded"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
+#, php-format
+msgid "%1$s filters"
+msgstr ""
 
 #: resources/views/vesta_config.phtml:51
 #, php-format
@@ -38,6 +48,10 @@ msgstr "Modul poskytuje společné třídy a překlady pro ostatní moduly 'Vest
 #: resources/views/vesta_config.phtml:35
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
 msgstr "A: Různé moduly mohou cílit na tutéž komponentu, např. vylepšit záložku Fakta a události na různých místech. Bez háčků by bylo nutné použít několika specifických záložek."
+
+#: resources/views/vesta_config.phtml:59
+msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
+msgstr ""
 
 #: resources/views/vesta_config.phtml:44
 msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
@@ -77,6 +91,10 @@ msgstr "Q: Jak mohu uzpůsobit dodatečné háčky?"
 msgid "Q: How do the Vesta modules interact?"
 msgstr "Q: Jak moduly Vesta navzájem spolupracují?"
 
+#: resources/views/vesta_config.phtml:56
+msgid "Q: Is there additional documentation?"
+msgstr ""
+
 #: resources/views/vesta_config.phtml:31
 msgid "Q: Ok, but what's the actual benefit for the user?"
 msgstr "Q: Tak v čem je vlastně skutečný přínos pro uživatele?"
@@ -86,11 +104,16 @@ msgstr "Q: Tak v čem je vlastně skutečný přínos pro uživatele?"
 msgid "Q: What's with the %1$s symbol?"
 msgstr "Q: Co je zač symbol %1$s ?"
 
+#: resources/views/vesta_config.phtml:62
+#, php-format
+msgid "See also %1$s for an overview of location data management in webtrees."
+msgstr ""
+
 #: VestaCommonLibModule.php:44
 msgid "Vesta Common"
 msgstr "Vesta Common"
 
-#: VestaModuleTrait.php:214
+#: VestaModuleCustomTrait.php:85
 msgid "What's new? "
 msgstr "Co je nového? "
 
@@ -103,9 +126,33 @@ msgctxt "as in \"Move down\""
 msgid "down"
 msgstr "níže"
 
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
+#, php-format
+msgid "exclude %1$s"
+msgstr ""
+
+#: resources/views/vesta_config.phtml:61
+msgid "here"
+msgstr ""
+
 #: HookInterfaces/FunctionsPlaceUtils.php:86
 msgid "map coordinates directly (MAP tag)"
 msgstr "mapové souřadnice přímo (tag MAP)"
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
+msgid "reset this filter"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
+#, php-format
+msgid "restrict to %1$s"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
+#, php-format
+msgid "restricted to %1$s"
+msgstr ""
 
 #: resources/views/admin/vesta_components.phtml:29
 msgctxt "as in \"Move up\""

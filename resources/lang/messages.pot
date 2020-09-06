@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-07-09 21:44+0200\n"
+"POT-Creation-Date: 2020-09-06 11:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,8 +29,38 @@ msgstr ""
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr ""
 
-#: VestaModuleTrait.php:214
+#: VestaModuleCustomTrait.php:85
 msgid "What's new? "
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
+#, php-format
+msgid "%1$s filters"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
+#, php-format
+msgid "restrict to %1$s"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
+#, php-format
+msgid "exclude %1$s"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
+#, php-format
+msgid "%1$s excluded"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
+msgid "reset this filter"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
+#, php-format
+msgid "restricted to %1$s"
 msgstr ""
 
 #: resources/views/admin/vesta_components.phtml:24
@@ -109,4 +139,21 @@ msgstr ""
 
 #: resources/views/vesta_config.phtml:53
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
+msgstr ""
+
+#: resources/views/vesta_config.phtml:56
+msgid "Q: Is there additional documentation?"
+msgstr ""
+
+#: resources/views/vesta_config.phtml:59
+msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
+msgstr ""
+
+#: resources/views/vesta_config.phtml:61
+msgid "here"
+msgstr ""
+
+#: resources/views/vesta_config.phtml:62
+#, php-format
+msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr ""
