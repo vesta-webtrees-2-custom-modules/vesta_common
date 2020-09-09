@@ -8,24 +8,24 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-06 11:29+0200\n"
-"PO-Revision-Date: 2020-07-18 10:01+0200\n"
+"PO-Revision-Date: 2020-09-07 08:24+0200\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
 msgid "%1$s excluded"
-msgstr ""
+msgstr "%1$s uitgesloten"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
 #, php-format
 msgid "%1$s filters"
-msgstr ""
+msgstr "%1$s filters"
 
 #: resources/views/vesta_config.phtml:51
 #, php-format
@@ -50,7 +50,7 @@ msgstr "A: Verschillende modules kunnen zich richten op hetzelfde onderdeel, bij
 
 #: resources/views/vesta_config.phtml:59
 msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
-msgstr ""
+msgstr "A: Elke module heeft een Readme-bestand met basisinformatie (online te bekijken, maar ook opgenomen in de map van de module)."
 
 #: resources/views/vesta_config.phtml:44
 msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
@@ -92,7 +92,7 @@ msgstr "V: Hoe werken de Vesta-modules samen?"
 
 #: resources/views/vesta_config.phtml:56
 msgid "Q: Is there additional documentation?"
-msgstr ""
+msgstr "V: Is er aanvullende documentatie?"
 
 #: resources/views/vesta_config.phtml:31
 msgid "Q: Ok, but what's the actual benefit for the user?"
@@ -106,7 +106,7 @@ msgstr "V: Wat is er met het %1$s-symbool?"
 #: resources/views/vesta_config.phtml:62
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
-msgstr ""
+msgstr "Zie ook %1$s voor een overzicht van locatiegegevensbeheer in webtrees."
 
 #: VestaCommonLibModule.php:44
 msgid "Vesta Common"
@@ -128,11 +128,11 @@ msgstr "omlaag"
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
 #, php-format
 msgid "exclude %1$s"
-msgstr ""
+msgstr "sluit %1$s uit"
 
 #: resources/views/vesta_config.phtml:61
 msgid "here"
-msgstr ""
+msgstr "hier"
 
 #: HookInterfaces/FunctionsPlaceUtils.php:86
 msgid "map coordinates directly (MAP tag)"
@@ -141,17 +141,17 @@ msgstr "coördinaten rechtstreeks toewijzen (MAP-label)"
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
 msgid "reset this filter"
-msgstr ""
+msgstr "dit filter opnieuw instellen"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
 #, php-format
 msgid "restrict to %1$s"
-msgstr ""
+msgstr "beperken tot %1$s"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
 #, php-format
 msgid "restricted to %1$s"
-msgstr ""
+msgstr "beperkt tot %1$s"
 
 #: resources/views/admin/vesta_components.phtml:29
 msgctxt "as in \"Move up\""
