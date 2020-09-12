@@ -101,7 +101,7 @@ class GedcomDateInterval {
    * it's often more helpful not to create actual (open) intervals
    * @return GedcomDateInterval
    */
-  public static function create(string $date, $ignorePartialRanges = false) {
+  public static function create(string $date, $ignorePartialRanges = false): GedcomDateInterval {
     //cf Date.php
     // Extract any explanatory text
     if (preg_match('/^(.*) ?[(](.*)[)]/', $date, $match)) {
@@ -134,6 +134,12 @@ class GedcomDateInterval {
     }
 
     $date1 = DateUtils::parseDate($date);
+    
+    //handle invalid dates (e.g. via input '') as empty.
+    if (($date1->minimumJulianDay() === 0) && ($date1->maximumJulianDay() === 0)) {
+      return GedcomDateInterval::createEmpty();
+    }
+    
     return new GedcomDateInterval($date1, $date1);
   }
 
