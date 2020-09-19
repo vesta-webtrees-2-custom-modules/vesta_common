@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-09-19 14:28+0200\n"
+"POT-Creation-Date: 2020-09-19 14:43+0200\n"
 "PO-Revision-Date: 2020-09-07 08:24+0200\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: \n"
@@ -64,13 +64,77 @@ msgstr "A: Het Vesta-symbool wordt voornamelijk gebruikt om gerelateerde modules
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "A: Via 'hooks'. Hooks zorgen ervoor dat modules de functionaliteit van andere componenten kunnen uitbreiden, zonder dat het hele onderdeel opnieuw hoeft te worden geïmplementeerd. Webtrees maakt gebruik van hooks, bijvoorbeeld in de paginavoettekst, en voor historische gebeurtenissen."
 
+#. I18N: Module Configuration, also checkbox on facts and events tab
+#: CommonI18N.php:149
+msgid "Associated facts and events"
+msgstr "Feiten en gebeurtenissen als/met medewerker(s)"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:143
+msgid "Deselect in order to have the title appear exactly as the original title."
+msgstr "Schakel de selectie uit om de oorspronkelijke naam te blijven gebruiken."
+
 #: resources/views/vesta_config.phtml:37
 msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
 msgstr "Verschillende modules kunnen ook dynamisch worden gekoppeld om specifieke gegevens te verstrekken, zoals locatiegegevens voor gebeurtenisplaatsen."
 
+#. I18N: Module Configuration
+#: CommonI18N.php:123
+msgid "Displayed data"
+msgstr "Weergegeven gegevens"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:119
+msgid "Displayed title"
+msgstr "Weergegeven titel"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:165
+msgid "Facts and Events Tab Settings"
+msgstr "Instellingen voor tabblad Feiten en gebeurtenissen"
+
 #: resources/views/vesta_config.phtml:52
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
 msgstr "Als het symbool niet goed wordt weergegeven, bijvoorbeeld als rechthoek, controleer dan de Unicode-ondersteuningsmogelijkheden van uw browser."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:161
+msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
+msgstr "Als beide lijsten leeg zijn, zullen geen aanvullende feiten en gebeurtenissen van deze aard worden getoond."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:131
+#, php-format
+msgid "Include the %1$s symbol in the chart menu entry title"
+msgstr "Het %1$s-symbool opnemen in de vermelding in het diagrammenu"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:139
+#, php-format
+msgid "Include the %1$s symbol in the clippings cart menu entry title"
+msgstr "Het %1$s-symbool opnemen in de menutitel"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:135
+#, php-format
+msgid "Include the %1$s symbol in the list menu entry title"
+msgstr "Het %1$s-symbool opnemen in het Lijsten-menu"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:127
+#, php-format
+msgid "Include the %1$s symbol in the tab title"
+msgstr "Het %1$s-symbool opnemen in de titel van het tabblad"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:93
+msgid "Location Data Providers"
+msgstr "Aanbieders van locatiegegevens"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:97
+msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
+msgstr "Modules die hier worden vermeld, worden (in de geconfigureerde volgorde) gebruikt om kaartcoördinaten van plaatsen te bepalen."
 
 #: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
@@ -81,6 +145,16 @@ msgstr "Verplaats"
 msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Verplaats"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:115
+msgid "Options"
+msgstr "Opties"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:89
+msgid "Provides location data to other custom modules."
+msgstr "Biedt locatiegegevens aan andere aangepaste modules."
 
 #: resources/views/vesta_config.phtml:41
 msgid "Q: How do I configure additional hooks?"
@@ -103,6 +177,39 @@ msgstr "V: Oké, maar wat is het voordeel voor de gebruiker?"
 msgid "Q: What's with the %1$s symbol?"
 msgstr "V: Wat is er met het %1$s-symbool?"
 
+#. I18N: Module configuration: Refers to the module's Readme file
+#: CommonI18N.php:103
+msgid "Readme"
+msgstr "Leesmij"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:73
+#, php-format
+msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
+msgstr "Vereist de modules '%1$s %2$s' en '%1$s %3$s'."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:81
+#, php-format
+msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
+msgstr "Vereist de modules '%1$s %2$s', '%1$s %3$s' en '%1$s %4$s'."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:66
+#, php-format
+msgid "Requires the '%1$s %2$s' module."
+msgstr "Vereist de module '%1$s %2$s'."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:157
+msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
+msgstr "Beperken tot deze lijst van GEDCOM gezinsfeiten en -gebeurtenissen. Indien nodig kunt u deze lijst wijzigen door namen van feiten en gebeurtenissen, zelfs aangepaste namen, te verwijderen of toe te voegen."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:153
+msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
+msgstr "Beperken tot deze lijst van GEDCOM persoonsfeiten en -gebeurtenissen. Indien nodig kunt u deze lijst wijzigen door namen van feiten en gebeurtenissen, zelfs aangepaste namen, te verwijderen of toe te voegen."
+
 #: resources/views/vesta_config.phtml:62
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
@@ -111,6 +218,66 @@ msgstr "Zie ook %1$s voor een overzicht van locatiegegevensbeheer in webtrees."
 #: VestaCommonLibModule.php:51
 msgid "This module cannot be disabled."
 msgstr ""
+
+#. I18N: Module title
+#: CommonI18N.php:23
+msgid "Vesta Classic Look & Feel"
+msgstr "Vesta Klassieke uitstraling & gevoel"
+
+#. I18N: Module title
+#: CommonI18N.php:59
+msgid "Vesta Clippings Cart"
+msgstr "Vesta Stamboomknipsels"
+
+#. I18N: Module title
+#: CommonI18N.php:19
+msgid "Vesta Common"
+msgstr "Vesta Algemeen"
+
+#. I18N: Module title
+#: CommonI18N.php:43
+msgid "Vesta Extended Relationships"
+msgstr "Vesta Uitgebreide verwantschappen"
+
+#. I18N: Module title
+#: CommonI18N.php:27
+msgid "Vesta Facts and events"
+msgstr "Vesta Feiten en gebeurtenissen"
+
+#. I18N: Module title
+#: CommonI18N.php:31
+msgid "Vesta Families"
+msgstr "Vesta Gezinnen"
+
+#. I18N: Module title
+#: CommonI18N.php:35
+msgid "Vesta Gov4Webtrees"
+msgstr "Vesta Gov4Webtrees"
+
+#. I18N: Module title
+#: CommonI18N.php:55
+msgid "Vesta Places and Pedigree map"
+msgstr "Vesta Plaatsen en Grafische kwartierstaat"
+
+#. I18N: Module title
+#: CommonI18N.php:47
+msgid "Vesta Research Suggestions"
+msgstr "Vesta Onderzoekssuggesties"
+
+#. I18N: Module title
+#: CommonI18N.php:39
+msgid "Vesta Shared Places"
+msgstr "Vesta Gedeelde plaatsen"
+
+#. I18N: Module title
+#: CommonI18N.php:51
+msgid "Vesta Webtrees Location Data Provider"
+msgstr "Vesta Webtreeslocatiegegevensaanbieder"
+
+#. I18N: Module configuration: Refers to general documentation
+#: CommonI18N.php:107
+msgid "Vesta location data management overview"
+msgstr "Overzicht van Vesta-locatiegegevensbeheer."
 
 #: VestaModuleCustomTrait.php:85
 msgid "What's new? "
@@ -157,6 +324,3 @@ msgstr "beperkt tot %1$s"
 msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "omhoog"
-
-#~ msgid "Vesta Common"
-#~ msgstr "Vesta Algemeen"

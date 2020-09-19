@@ -99,24 +99,6 @@ class CommonI18N {
   
   //////////////////////////////////////////////////////////////////////////////
 
-  public static function tabComponent(): string {
-    return /* I18N: Module configuration */ I18N::translate('tab');
-  }
-  
-  public static function chartMenuComponent(): string {
-    return /* I18N: Module configuration */ I18N::translate('chart menu entry');
-  }
-
-  public static function listMenuComponent(): string {
-    return /* I18N: Module configuration */ I18N::translate('list menu entry');
-  }
-  
-  public static function clippingsCartMenuComponent(): string {
-    return /* I18N: Module configuration */ I18N::translate('clippings cart menu entry');
-  }
-  
-  //////////////////////////////////////////////////////////////////////////////
-
   public static function readme(): string {
     return /* I18N: Module configuration: Refers to the module's Readme file */ I18N::translate('Readme');
   }
@@ -141,12 +123,24 @@ class CommonI18N {
     return /* I18N: Module Configuration */I18N::translate('Displayed data');
   }
   
-  public static function vestaSymbolInTitle1(string $component): string {
-    return /* I18N: Module Configuration */I18N::translate('Include the %1$s symbol in the %2$s title', CommonI18N::getVestaSymbol(), $component);
+  public static function vestaSymbolInTabTitle(): string {
+    return /* I18N: Module Configuration */I18N::translate('Include the %1$s symbol in the tab title', CommonI18N::getVestaSymbol());
   }
   
-  public static function vestaSymbolInTitle2(string $component): string {
-    return /* I18N: Module Configuration */I18N::translate('Deselect in order to have the %1$s appear exactly as the original %1$s.', $component);
+  public static function vestaSymbolInChartTitle(): string {
+    return /* I18N: Module Configuration */I18N::translate('Include the %1$s symbol in the chart menu entry title', CommonI18N::getVestaSymbol());
+  }
+  
+  public static function vestaSymbolInListTitle(): string {
+    return /* I18N: Module Configuration */I18N::translate('Include the %1$s symbol in the list menu entry title', CommonI18N::getVestaSymbol());
+  }
+  
+  public static function vestaSymbolInClippingsCartTitle(): string {
+    return /* I18N: Module Configuration */I18N::translate('Include the %1$s symbol in the clippings cart menu entry title', CommonI18N::getVestaSymbol());
+  }
+  
+  public static function vestaSymbolInTitle2(): string {
+    return /* I18N: Module Configuration */I18N::translate('Deselect in order to have the title appear exactly as the original title.');
   }
   
   //////////////////////////////////////////////////////////////////////////////
