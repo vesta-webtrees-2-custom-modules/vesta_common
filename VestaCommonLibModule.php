@@ -3,7 +3,7 @@
 namespace Vesta;
 
 use Fisharebest\Webtrees\I18N;
-use Fisharebest\Webtrees\Module\AbstractModule;
+use Cissee\WebtreesExt\AbstractModule;
 use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomTrait;
 
@@ -41,15 +41,14 @@ class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterfa
   }
   
   public function title(): string {
-    $title = I18N::translate('Vesta Common');
-    if (!$this->isEnabled()) {
-      $title = ModuleI18N::translate($this, $title);
-    }
+    $title = CommonI18N::titleVestaCommon();
     return $this->vesta . ' ' . $title;
   }
 
   public function description(): string {
-    $description = I18N::translate('A module providing common classes and translations for other \'Vesta\' custom modules.');
+    $description = 
+            I18N::translate('A module providing common classes and translations for other \'Vesta\' custom modules.') . ' ' .
+            I18N::translate('This module cannot be disabled.');
     if (!$this->isEnabled()) {
       $description = ModuleI18N::translate($this, $description);
     }
@@ -57,6 +56,11 @@ class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterfa
   }
   
   public function boot(): void {
-    $this->flashWhatsNew('\Vesta\WhatsNew', 1);
+    $this->flashWhatsNew('\Vesta\WhatsNew', 2);
+  }
+  
+  public function isEnabled(): bool {
+    //disabling this module has no useful effect, so we block it
+    return true;
   }
 }

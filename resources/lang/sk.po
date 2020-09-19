@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-09-06 11:29+0200\n"
+"POT-Creation-Date: 2020-09-19 14:28+0200\n"
 "PO-Revision-Date: 2020-08-09 22:17+0200\n"
 "Last-Translator: Ladislav Rosival <lacoros@gmail.com>\n"
 "Language-Team: \n"
@@ -41,7 +41,7 @@ msgstr "(celý modul)"
 msgid "(specific functionality)"
 msgstr "(špecifická funkcionalita)"
 
-#: VestaCommonLibModule.php:52
+#: VestaCommonLibModule.php:50
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr "Modul poskytujúci všeobecné treidy a preklady pre iné moduly 'Vesta'."
 
@@ -109,8 +109,8 @@ msgstr "Q: Čo je %1$s vlastne za symbol?"
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr ""
 
-#: VestaCommonLibModule.php:44
-msgid "Vesta Common"
+#: VestaCommonLibModule.php:51
+msgid "This module cannot be disabled."
 msgstr ""
 
 #: VestaModuleCustomTrait.php:85

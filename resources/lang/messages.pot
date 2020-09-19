@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-09-06 11:29+0200\n"
+"POT-Creation-Date: 2020-09-19 14:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,12 +21,12 @@ msgstr ""
 msgid "map coordinates directly (MAP tag)"
 msgstr ""
 
-#: VestaCommonLibModule.php:44
-msgid "Vesta Common"
+#: VestaCommonLibModule.php:50
+msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr ""
 
-#: VestaCommonLibModule.php:52
-msgid "A module providing common classes and translations for other 'Vesta' custom modules."
+#: VestaCommonLibModule.php:51
+msgid "This module cannot be disabled."
 msgstr ""
 
 #: VestaModuleCustomTrait.php:85

@@ -70,9 +70,12 @@ trait VestaModuleTrait {
       $prefix = $this->getVestaSymbol() . ' ';
     }
     $title = $this->getMainTitle();
+    //no longer required, main title expected to be tranlated in Vesta Common
+    /*
     if (!$this->isEnabled()) {
       $title = ModuleI18N::translate($this, $title);
     }
+    */
     return $prefix . $title;
   }
 

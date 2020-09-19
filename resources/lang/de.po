@@ -2,16 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vesta package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-09-06 11:29+0200\n"
+"POT-Creation-Date: 2020-09-19 14:28+0200\n"
 "PO-Revision-Date: 2020-09-12 18:56+0000\n"
 "Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-common/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,7 +41,7 @@ msgstr ""
 msgid "(specific functionality)"
 msgstr ""
 
-#: VestaCommonLibModule.php:52
+#: VestaCommonLibModule.php:50
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr ""
 
@@ -110,8 +109,8 @@ msgstr "F: Was hat es mit dem %1$s Symbol auf sich?"
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr ""
 
-#: VestaCommonLibModule.php:44
-msgid "Vesta Common"
+#: VestaCommonLibModule.php:51
+msgid "This module cannot be disabled."
 msgstr ""
 
 #: VestaModuleCustomTrait.php:85
