@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 14:43+0200\n"
-"PO-Revision-Date: 2020-09-19 15:22+0000\n"
-"Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
+"PO-Revision-Date: 2020-09-24 21:40+0000\n"
+"Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/sk/>\n"
 "Language: sk\n"
@@ -22,17 +22,19 @@ msgstr ""
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
 msgid "%1$s excluded"
-msgstr ""
+msgstr "bez %1$s"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
 #, php-format
 msgid "%1$s filters"
-msgstr ""
+msgstr "%1$s filtre"
 
 #: resources/views/vesta_config.phtml:51
 #, php-format
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
-msgstr "%1$s je astronomický symbol asteroidu Vesta, pomenovaného podľa rímskej bohyne srdca, domova a rodiny."
+msgstr ""
+"%1$s je astronomický symbol asteroidu Vesta, pomenovaného podľa rímskej "
+"bohyne krbu, domova a rodiny."
 
 #: resources/views/admin/vesta_components.phtml:24
 msgid "(entire module)"
@@ -44,7 +46,7 @@ msgstr "(špecifická funkcionalita)"
 
 #: VestaCommonLibModule.php:50
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
-msgstr "Modul poskytujúci všeobecné treidy a preklady pre iné moduly 'Vesta'."
+msgstr "Modul poskytujúci všeobecné triedy a preklady pre iné moduly 'Vesta'."
 
 #: resources/views/vesta_config.phtml:35
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
@@ -53,6 +55,8 @@ msgstr "A: Rôzne moduly môžu smerovať na rovnaký komponent, napr. rozšíri
 #: resources/views/vesta_config.phtml:59
 msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
 msgstr ""
+"A: Každý modul má súbor Readme so základnými informáciami (najlepšie je ho "
+"pozrieť online, ale je aj súčasťou zložky modulu)."
 
 #: resources/views/vesta_config.phtml:44
 msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
@@ -75,6 +79,8 @@ msgstr "Fakty a udalosti pridružených osôb"
 #: CommonI18N.php:143
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr ""
+"Zrušte voľbu, ak chcete, aby sa názov zobrazoval exaktne tak, ako pôvodný "
+"názov."
 
 #: resources/views/vesta_config.phtml:37
 msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
@@ -108,25 +114,25 @@ msgstr "Ak sú oba zoznamy prázdne, nebudú zobrazené žiadne takéto dodatoč
 #: CommonI18N.php:131
 #, php-format
 msgid "Include the %1$s symbol in the chart menu entry title"
-msgstr ""
+msgstr "Použiť symbol %1$s v názve položky v menu schém"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:139
 #, php-format
 msgid "Include the %1$s symbol in the clippings cart menu entry title"
-msgstr ""
+msgstr "Použiť symbol %1$s v názve položky v menu schránky výstrižkov"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:135
 #, php-format
 msgid "Include the %1$s symbol in the list menu entry title"
-msgstr "Vložiť symbol %1$s do položky menu"
+msgstr "Použiť symbol %1$s v názve položky v menu zoznamov"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:127
 #, php-format
 msgid "Include the %1$s symbol in the tab title"
-msgstr ""
+msgstr "Použiť symbol %1$s v názve záložky"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:93
