@@ -2,9 +2,11 @@
 
 namespace Vesta\Model;
 
+use Closure;
 use Fisharebest\Webtrees\Carbon;
 use Fisharebest\Webtrees\Date\AbstractCalendarDate;
 use Fisharebest\Webtrees\Date\GregorianDate;
+use Illuminate\Support\Collection;
 use Vesta\Model\DateUtils;
 
 /**
@@ -13,66 +15,50 @@ use Vesta\Model\DateUtils;
  */
 class GedcomDateInterval {
   
-  /* @var $fromCalendarDate AbstractCalendarDate */
+  /* @var $fromCalendarDate AbstractCalendarDate|null */
   private $fromCalendarDate;
 
-  /* @var $toCalendarDate AbstractCalendarDate */
+  /* @var $toCalendarDate AbstractCalendarDate|null */
   private $toCalendarDate;
 
-  protected static function minJD($calendarDate) {
+  protected static function minJD(AbstractCalendarDate $calendarDate): int {
     return $calendarDate->minimumJulianDay();
   }
 
-  protected static function maxJD($calendarDate) {
+  protected static function maxJD(AbstractCalendarDate $calendarDate): int {
     return $calendarDate->maximumJulianDay();
   }
 
-  /**
-   *
-   * @return CalendarDate|null	 
-   */
-  public function getFromCalendarDate() {
+  public function getFromCalendarDate(): ?AbstractCalendarDate {
     return $this->fromCalendarDate;
   }
 
-  /**
-   *
-   * @return CalendarDate|null	 
-   */
-  public function getToCalendarDate() {
+  public function getToCalendarDate(): ?AbstractCalendarDate {
     return $this->toCalendarDate;
   }
 
-  /**
-   *
-   * @return integer|null	 
-   */
-  public function getFrom() {
+  public function getFrom(): ?int {
     if ($this->fromCalendarDate === null) {
       return null;
     }
     return GedcomDateInterval::minJD($this->fromCalendarDate);
   }
 
-  /**
-   *
-   * @return integer|null	 
-   */
-  public function getTo() {
+  public function getTo(): ?int {
     if ($this->toCalendarDate === null) {
       return null;
     }
     return GedcomDateInterval::maxJD($this->toCalendarDate);
   }
 
-  public function getMin() {
+  public function getMin(): ?int {
     if ($this->getFrom() !== null) {
       return $this->getFrom();
     }
     return $this->getTo();
   }
 
-  public function getMedian() {
+  public function getMedian(): ?int {
     if (($this->getFrom() !== null) && ($this->getTo() !== null)) {
       return ($this->getFrom() + $this->getTo()) / 2;
     }
@@ -167,10 +153,16 @@ class GedcomDateInterval {
   }
 
   /**
-   *
-   * @return GedcomDateInterval|null 
+   * 
+   * @param GedcomDateInterval $other
+   * @param bool $sameInexactDateDoesNotIntersect interpret combination of 'TO 2001' and 'FROM 2001' as non-intersecting (instead of handling them like '31.12.2001' and '1.1.2001'),
+   * (unless at least one of the intervals has same FROM/TO, because in that case we cannot guess the user's actual intention)
+   * @return GedcomDateInterval|null
    */
-  public function intersect(GedcomDateInterval $other) {
+  public function intersect(
+          GedcomDateInterval $other,
+          bool $sameInexactDateDoesNotIntersect = false): ?GedcomDateInterval {
+    
     $fromCalendarDate = $this->getFromCalendarDate();
     if ($other->getFrom() !== null) {
       if (($this->getFrom() === null) || ($other->getFrom() > $this->getFrom())) {
@@ -185,15 +177,31 @@ class GedcomDateInterval {
       }
     }
 
-    //TODO check: do imprecise dates intersect correctly?
-    if (($fromCalendarDate !== null) && ($toCalendarDate !== null) && (GedcomDateInterval::minJD($fromCalendarDate) > GedcomDateInterval::maxJD($toCalendarDate))) {
-      return null;
+    if (($fromCalendarDate !== null) && ($toCalendarDate !== null)) {
+      if ($sameInexactDateDoesNotIntersect) {
+        //do not use '===' for object equality!
+        if ($fromCalendarDate == $toCalendarDate) {
+          if ($fromCalendarDate->day() === 0) {
+            
+            //it is inexact, but do we have actual ranges?
+            if ($this->getFromCalendarDate() !== $this->getToCalendarDate()) {
+              if ($other->getFromCalendarDate() !== $other->getToCalendarDate()) {
+                return null;
+              }
+            }
+          }
+        }
+      }
+      
+      if (GedcomDateInterval::minJD($fromCalendarDate) > GedcomDateInterval::maxJD($toCalendarDate)) {    
+        return null;
+      }
     }
 
     return new GedcomDateInterval($fromCalendarDate, $toCalendarDate);
   }
 
-  public function maxUntil(GedcomDateInterval $other) {
+  public function maxUntil(GedcomDateInterval $other): ?GedcomDateInterval {
     if ($other->getFrom() === null) {
       return null;
     }
@@ -211,6 +219,58 @@ class GedcomDateInterval {
     return new GedcomDateInterval($fromCalendarDate, $toCalendarDate);
   }
 
+  /**
+   * 
+   * @param $other
+   * @return part of this that is before $other
+   */
+  public function before(GedcomDateInterval $other): ?GedcomDateInterval {
+    $otherFrom = $other->getFrom();
+    if ($otherFrom === null) {
+      return null;
+    }
+    
+    $thisFrom = $this->getFrom();
+    if ($thisFrom === null) {
+      $retFrom = null;
+    } else if ($thisFrom < $otherFrom) {
+      $retFrom = $thisFrom;
+    } else {
+      return null;
+    }
+    
+    $retTo = $otherFrom-1;
+    return new GedcomDateInterval(
+            ($retFrom == null)?null:new GregorianDate($retFrom), 
+            new GregorianDate($retTo));
+  }
+  
+  /**
+   * 
+   * @param $other
+   * @return part of this that is after $other
+   */
+  public function after(GedcomDateInterval $other): ?GedcomDateInterval {
+    $otherTo = $other->getTo();
+    if ($otherTo === null) {
+      return null;
+    }
+    
+    $thisTo = $this->getTo();
+    if ($thisTo === null) {
+      $retTo = null;
+    } else if ($thisTo > $otherTo) {
+      $retTo = $thisTo;
+    } else {
+      return null;
+    }
+    
+    $retFrom = $otherTo+1;
+    return new GedcomDateInterval(
+            new GregorianDate($retFrom), 
+            ($retTo == null)?null:new GregorianDate($retTo));
+  }
+  
   /**
    * @param $asFromTo if false, return as BET a AND B (if applicable)
    * @return empty if (null, null), gedcom starting with newline otherwise 
@@ -259,4 +319,64 @@ class GedcomDateInterval {
     return new GedcomDateInterval($shiftedFrom, $shiftedTo);
   }
 
+  /**
+   * 
+   * 
+   * @param Collection $input assumed to be ordered wrt GedcomDateInterval field
+   * @return Collection that has an entry for each point within $this interval, ordered by GedcomDateInterval field
+   */
+
+  /**
+   * example: 
+   * input has [1-10],[3-20],[50-100],[300-400]
+   * $this is [open-200]
+   * 
+   * result:
+   * [open-1],[1-10],[3-20],[21-49],[50-100],[101-200]
+   * 
+   * @param Collection $input sorted by date
+   * @param Closure $dateGetter arg: collection element type, return: GedcomDateInterval
+   * @param Closure $elementCreator arg: GedcomDateInterval, return collection element type
+   * @return Collection $input expanded so that each point within $this interval has an entry, ordered by GedcomDateInterval field
+   * original inputs completely outside $this are skipped
+   */  
+  public function fillInterval(
+          Collection $input,
+          Closure $dateGetter,
+          Closure $elementCreator): Collection {
+    
+    $ret = new Collection();
+    
+    $refInterval = $this;
+    
+    foreach ($input as $element) {
+      /* @var $nextInterval GedcomDateInterval */
+      $nextInterval = $dateGetter($element);
+        
+      if ($nextInterval->intersect($this) === null) {
+        //irrelevant, skip
+        continue;
+      }
+      
+      if ($refInterval !== null) {
+        $before = $refInterval->before($nextInterval);
+        $refInterval = $refInterval->after($nextInterval);
+        
+        if ($before !== null) {
+          $newElement = $elementCreator($before);
+          $ret->add($newElement);
+        }        
+      } //else all covered, just add remaining
+      
+      $ret->add($element);
+    }
+    
+    //final step
+    if ($refInterval !== null) {
+      $newElement = $elementCreator($refInterval);
+      $ret->add($newElement);
+    }
+    
+    return $ret;
+  }
 }

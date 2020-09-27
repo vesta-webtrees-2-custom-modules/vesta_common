@@ -7,6 +7,8 @@ use Fisharebest\Webtrees\Tree;
 
 interface PlaceHierarchyUtils {
   
+  public function getUrlFilters(array $requestParameters): array;
+  
   //Place:::find
   //$requestParameters may or may not be evaluated
   public function findPlace(int $id, Tree $tree, array $requestParameters): PlaceWithinHierarchy;

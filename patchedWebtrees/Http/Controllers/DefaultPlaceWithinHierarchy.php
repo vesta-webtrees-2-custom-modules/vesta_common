@@ -14,10 +14,15 @@ use Fisharebest\Webtrees\Tree;
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Database\Query\Expression;
 use Illuminate\Support\Collection;
+use Vesta\Model\MapCoordinates;
 use Vesta\Model\PlaceStructure;
+use function app;
 
-class DefaultPlaceWithinHierarchy extends DefaultPlaceWithinHierarchyBase implements PlaceWithinHierarchy {
-
+class DefaultPlaceWithinHierarchy implements PlaceWithinHierarchy {
+  
+  /** @var Place */
+  protected $actual;
+  
   /** @var PlaceUrls */
   protected $urls;
   
@@ -35,35 +40,53 @@ class DefaultPlaceWithinHierarchy extends DefaultPlaceWithinHierarchyBase implem
           SearchService $search_service, 
           Statistics $statistics) {
     
-    parent::__construct($actual, $urls);
+    $this->actual = $actual;
     $this->urls = $urls;
     $this->search_service = $search_service;
     $this->statistics = $statistics;
   }
   
+  //Speedup
+  //more efficient than $this->actual->url() when calling for lots of places
+  //this should be in webtrees, e.g. via caching result of 'findByComponent' or even 'Auth::accessLevel'
+  public function url(): string {
+    return $this->urls->url($this->actual);
+  }
+  
+  public function gedcomName(): string {
+    return $this->actual->gedcomName();
+  }
+    
+  public function parent(): PlaceWithinHierarchy {
+    return new DefaultPlaceWithinHierarchy($this->actual->parent(), $this->urls, $this->search_service, $this->statistics);
+  }
+  
+  public function placeName(): string {
+    return $this->actual->placeName();
+  }
+  
   //original impl in Place doesn't use the id, which is inefficient
   //(obtained later one-by-one via id())
-  public function getChildPlacesCacheIds(Place $place): Collection
-    {
-        if ($place->gedcomName() !== '') {
-            $parent_text = Gedcom::PLACE_SEPARATOR . $place->gedcomName();
-        } else {
-            $parent_text = '';
-        }
-
-        $tree = $place->tree();
-        
-        return DB::table('places')
-            ->where('p_file', '=', $tree->id())
-            ->where('p_parent_id', '=', $place->id())
-            ->orderBy(new Expression('p_place /*! COLLATE ' . I18N::collation() . ' */'))
-            ->pluck('p_place', 'p_id')
-            ->map(function (string $place, int $id) use ($parent_text, $tree): Place {
-                $place = new Place($place . $parent_text, $tree);
-                app('cache.array')->remember('place-' . $place->gedcomName(), function () use ($id): int {return $id;});
-                return $place;
-            });
+  public function getChildPlacesCacheIds(Place $place): Collection {
+    if ($place->gedcomName() !== '') {
+        $parent_text = Gedcom::PLACE_SEPARATOR . $place->gedcomName();
+    } else {
+        $parent_text = '';
     }
+
+    $tree = $place->tree();
+
+    return DB::table('places')
+        ->where('p_file', '=', $tree->id())
+        ->where('p_parent_id', '=', $place->id())
+        ->orderBy(new Expression('p_place /*! COLLATE ' . I18N::collation() . ' */'))
+        ->pluck('p_place', 'p_id')
+        ->map(function (string $place, int $id) use ($parent_text, $tree): Place {
+            $place = new Place($place . $parent_text, $tree);
+            app('cache.array')->remember('place-' . $place->gedcomName(), function () use ($id): int {return $id;});
+            return $place;
+        });
+  }
     
   public function getChildPlaces(): array {
     $self = $this;    
@@ -109,6 +132,11 @@ class DefaultPlaceWithinHierarchy extends DefaultPlaceWithinHierarchyBase implem
     return $tmp === [] ? 0 : $tmp[0]->tot;
   }
   
+  public function getLatLon(): ?MapCoordinates {
+    //TODO return proper coordinates!
+    return null;
+  }
+   
   public function latitude(): float {
     $pl = new PlaceLocation($this->gedcomName());
     return $pl->latitude();

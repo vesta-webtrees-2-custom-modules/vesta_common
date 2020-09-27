@@ -4,10 +4,12 @@ namespace Cissee\WebtreesExt\Http\Controllers;
 
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
-use Vesta\Model\PlaceStructure;
+use Vesta\Model\MapCoordinates;
 
 //abstraction of Place/PlaceLocation functionality
-interface PlaceWithinHierarchy extends PlaceWithinHierarchyBase {
+interface PlaceWithinHierarchy {
+  
+  public function parent(): PlaceWithinHierarchy;  
   
   ////////////////////////////////////////////////////////////////////////////////
   //Place
@@ -15,6 +17,10 @@ interface PlaceWithinHierarchy extends PlaceWithinHierarchyBase {
   public function id(): int;
   
   public function tree(): Tree;
+  
+  public function url(): string;
+  
+  public function gedcomName(): string;
   
   /**
    * Get the lower level places.
@@ -24,6 +30,9 @@ interface PlaceWithinHierarchy extends PlaceWithinHierarchyBase {
   public function getChildPlaces(): array;
   
   //for views
+  public function placeName(): string;
+  
+  //for views
   public function fullName(bool $link = false): string;
   
   ////////////////////////////////////////////////////////////////////////////////
@@ -31,8 +40,12 @@ interface PlaceWithinHierarchy extends PlaceWithinHierarchyBase {
   
   public function icon(): string;
   
+  public function getLatLon(): ?MapCoordinates;
+  
+  //legacy, 0.0 represents 'unknown'
   public function latitude(): float;
   
+  //legacy, 0.0 represents 'unknown'
   public function longitude(): float;
  
   ////////////////////////////////////////////////////////////////////////////////
@@ -50,7 +63,8 @@ interface PlaceWithinHierarchy extends PlaceWithinHierarchyBase {
   
   public function boundingRectangleWithChildren(array $children): array;
   
-  public function placeStructure(): ?PlaceStructure;
+  //Internal API!
+  //public function placeStructure(): ?PlaceStructure;
   
   public function additionalLinksHtmlBeforeName(): string;
   

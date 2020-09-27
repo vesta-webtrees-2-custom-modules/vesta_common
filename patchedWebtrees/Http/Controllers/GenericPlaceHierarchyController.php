@@ -23,11 +23,7 @@ use function is_file;
 use function redirect;
 use function view;
 
-/**
- * Class GenericPlaceHierarchyController
- */
-class GenericPlaceHierarchyController
-{
+class GenericPlaceHierarchyController {
     use ViewResponseTrait;
   
     /** @var PlaceHierarchyUtils */
@@ -40,8 +36,7 @@ class GenericPlaceHierarchyController
      *
      * @param PlaceHierarchyUtils $utils
      */
-    public function __construct(PlaceHierarchyUtils $utils, int $detailsThreshold)
-    {
+    public function __construct(PlaceHierarchyUtils $utils, int $detailsThreshold) {
         $this->utils = $utils;
         $this->detailsThreshold = $detailsThreshold;
     }
@@ -51,8 +46,7 @@ class GenericPlaceHierarchyController
      *
      * @return ResponseInterface
      */
-    public function show(ServerRequestInterface $request): ResponseInterface
-    {
+    public function show(ServerRequestInterface $request): ResponseInterface {
         $tree = $request->getAttribute('tree');
         assert($tree instanceof Tree);
 
@@ -113,6 +107,8 @@ class GenericPlaceHierarchyController
 
         $breadcrumbs = $this->breadcrumbs($place);
 
+        $urlFilters = $this->utils->getUrlFilters($request->getQueryParams());
+        
         return $this->viewResponse(
             $this->utils->pageView(),
             [
@@ -127,6 +123,7 @@ class GenericPlaceHierarchyController
                 'nextaction'     => $nextaction,
                 'module'         => $module,
                 'action'         => $action,
+                'urlFilters'     => $urlFilters,
             ]
         );
     }
@@ -136,8 +133,7 @@ class GenericPlaceHierarchyController
      *
      * @return Place[][]
      */
-    private function getList(Tree $tree, ServerRequestInterface $request): array
-    {
+    private function getList(Tree $tree, ServerRequestInterface $request): array {
         $topLevel = $this->utils->findPlace(0, $tree, $request->getQueryParams());
         $places = $topLevel->getChildPlaces();
             
@@ -162,8 +158,7 @@ class GenericPlaceHierarchyController
      * @return array{'tree':Tree,'col_class':string,'columns':array<array<PlaceWithinHierarchy>>,'place':PlaceWithinHierarchy}|null
      * @throws Exception
      */
-    private function getHierarchy(PlaceWithinHierarchy $place, $places): ?array
-    {
+    private function getHierarchy(PlaceWithinHierarchy $place, $places): ?array {
         $child_places = ($places !== null)?$places:$place->getChildPlaces();
         $numfound     = count($child_places);
 
@@ -187,8 +182,7 @@ class GenericPlaceHierarchyController
      *
      * @return array{'breadcrumbs':array<PlaceWithinHierarchy>,'current':PlaceWithinHierarchy|null}
      */
-    private function breadcrumbs(PlaceWithinHierarchy $place): array
-    {
+    private function breadcrumbs(PlaceWithinHierarchy $place): array {
         $breadcrumbs = [];
         $breadcrumbs[] = $place;
         while ($place->gedcomName() !== '') {          
@@ -209,8 +203,7 @@ class GenericPlaceHierarchyController
      *
      * @return array
      */
-    protected function mapData(PlaceWithinHierarchy $placeObj, $places): array
-    {
+    protected function mapData(PlaceWithinHierarchy $placeObj, $places): array {
         $features  = [];
         $sidebar   = '';
         $flag_path = Webtrees::MODULES_DIR . 'openstreetmap/';
@@ -229,6 +222,7 @@ class GenericPlaceHierarchyController
       
         $locations = [];
         foreach ($places as $id => $place) {
+            /* @var $location PlaceWithinHierarchy */
             $location = $place;
             
             //[RC] added, may be more efficient to re-use
