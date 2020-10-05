@@ -8,318 +8,366 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 15:42+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-10-05 12:03+0000\n"
+"Last-Translator: Christophe Nemo <spam@teknow.org>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3-dev\n"
 
 #. I18N: Module title
 #: CommonI18N.php:19
 msgid "Vesta Common"
-msgstr ""
+msgstr "Vesta Commun"
 
 #. I18N: Module title
 #: CommonI18N.php:23
 msgid "Vesta Classic Look & Feel"
-msgstr ""
+msgstr "Vesta Interface Classique"
 
 #. I18N: Module title
 #: CommonI18N.php:27
 msgid "Vesta Facts and events"
-msgstr ""
+msgstr "Vesta Actes et évènements"
 
 #. I18N: Module title
 #: CommonI18N.php:31
 msgid "Vesta Families"
-msgstr ""
+msgstr "Vesta Familles"
 
 #. I18N: Module title
 #: CommonI18N.php:35
 msgid "Vesta Gov4Webtrees"
-msgstr ""
+msgstr "Vesta Gov4Webtrees"
 
 #. I18N: Module title
 #: CommonI18N.php:39
 msgid "Vesta Shared Places"
-msgstr ""
+msgstr "Vesta Lieux Partagés"
 
 #. I18N: Module title
 #: CommonI18N.php:43
 msgid "Vesta Extended Relationships"
-msgstr ""
+msgstr "Vesta Relations étendues"
 
 #. I18N: Module title
 #: CommonI18N.php:47
 msgid "Vesta Research Suggestions"
-msgstr ""
+msgstr "Vesta Suggestions de Recherche"
 
 #. I18N: Module title
 #: CommonI18N.php:51
 msgid "Vesta Webtrees Location Data Provider"
-msgstr ""
+msgstr "Vesta Fournisseur de Données de Localisation Webtrees"
 
 #. I18N: Module title
 #: CommonI18N.php:55
 msgid "Vesta Places and Pedigree map"
-msgstr ""
+msgstr "Vesta Lieux et Carte de Filiation"
 
 #. I18N: Module title
 #: CommonI18N.php:59
 msgid "Vesta Clippings Cart"
-msgstr ""
+msgstr "Vesta Panier de découpes"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:66
 #, php-format
 msgid "Requires the '%1$s %2$s' module."
-msgstr ""
+msgstr "Nécessite le module '%1$s %2$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
 #, php-format
 msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
-msgstr ""
+msgstr "Nécessite le module '%1$s %2$s, ainsi que le module '%1$s %3$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:81
 #, php-format
 msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
 msgstr ""
+"Nécessite le module '%1$s %2$s', le module '%1$s %3$s', et le module '%1$s "
+"%4$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
 msgid "Provides location data to other custom modules."
-msgstr ""
+msgstr "Fournit des données de localisation aux autres modules."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:93
 msgid "Location Data Providers"
-msgstr ""
+msgstr "Fournisseurs de Données de Localisation"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
 msgstr ""
+"Les modules listés ici sont utilisés (dans l'ordre de configuration) afin de "
+"déterminer les coordonnées géographiques des lieux."
 
 #. I18N: Module configuration: Refers to the module's Readme file
 #: CommonI18N.php:103
 msgid "Readme"
-msgstr ""
+msgstr "Lisez-moi"
 
 #. I18N: Module configuration: Refers to general documentation
 #: CommonI18N.php:107
 msgid "Vesta location data management overview"
-msgstr ""
+msgstr "Aperçu de la gestion des données de localisation Vesta"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:115
 msgid "Options"
-msgstr ""
+msgstr "Options"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:119
 msgid "Displayed title"
-msgstr ""
+msgstr "Titre affiché"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:123
 msgid "Displayed data"
-msgstr ""
+msgstr "Données affichées"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:127
 #, php-format
 msgid "Include the %1$s symbol in the tab title"
-msgstr ""
+msgstr "Inclure le symbole %1$s dans le titre de l'onglet"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:131
 #, php-format
 msgid "Include the %1$s symbol in the chart menu entry title"
-msgstr ""
+msgstr "Inclure le symbole %1$s dans le titre d'accès du menu graphique"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:135
 #, php-format
 msgid "Include the %1$s symbol in the list menu entry title"
-msgstr ""
+msgstr "Inclure le symbole %1$s dans le titre d'accès du menu liste"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:139
 #, php-format
 msgid "Include the %1$s symbol in the clippings cart menu entry title"
 msgstr ""
+"Inclure le symbole %1$s dans le titre d'accès du menu panier de découpes"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:143
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr ""
+"Désélectionner afin de faire apparaître le titre identique au titre original."
 
 #. I18N: Module Configuration, also checkbox on facts and events tab
 #: CommonI18N.php:149
 msgid "Associated facts and events"
-msgstr ""
+msgstr "Actes et événements associés"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:153
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
+"Restreindre à une liste d'actes et d'événements individuels GEDCOM. Vous "
+"pouvez modifier cette liste en supprimant ou ajoutant des noms d'actes ou "
+"d'événements, y compris personnalisés, si nécessaire."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
+"Restreindre à une liste d'actes et d'événements familiaux GEDCOM. Vous "
+"pouvez modifier cette liste en supprimant ou ajoutant des noms d'actes ou "
+"d'événements, y compris personnalisés, si nécessaire."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:161
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr ""
+"En particulier si les deux listes sont vides, aucun faits ou événements "
+"additionnels de ce type ne seront montrés."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:165
 msgid "Facts and Events Tab Settings"
-msgstr ""
+msgstr "Paramètres de l'onglet Actes et Evenements"
 
 #: HookInterfaces/FunctionsPlaceUtils.php:86
 msgid "map coordinates directly (MAP tag)"
-msgstr ""
+msgstr "placer les coordonnées directement (tag MAP)"
 
 #: VestaCommonLibModule.php:50
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr ""
+"Un module fournissant les traductions et classes communes pour les autres "
+"modules personnalisés 'Vesta'."
 
 #: VestaCommonLibModule.php:51
 msgid "This module cannot be disabled."
-msgstr ""
+msgstr "Ce module ne peut être désactivé."
 
 #: VestaModuleCustomTrait.php:85
 msgid "What's new? "
-msgstr ""
+msgstr "Nouveautés "
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
 #, php-format
 msgid "%1$s filters"
-msgstr ""
+msgstr "Filtres %1$s"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
 #, php-format
 msgid "restrict to %1$s"
-msgstr ""
+msgstr "restreindre à %1$s"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
 #, php-format
 msgid "exclude %1$s"
-msgstr ""
+msgstr "exclure %1$s"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
 msgid "%1$s excluded"
-msgstr ""
+msgstr "%1$s exclu"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
 msgid "reset this filter"
-msgstr ""
+msgstr "réinitialiser le filtre"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
 #, php-format
 msgid "restricted to %1$s"
-msgstr ""
+msgstr "restreint à %1$s"
 
 #: resources/views/admin/vesta_components.phtml:24
 msgid "(entire module)"
-msgstr ""
+msgstr "(module entier)"
 
 #: resources/views/admin/vesta_components.phtml:26
 msgid "(specific functionality)"
-msgstr ""
+msgstr "(fonctionnalité spécifique)"
 
 #: resources/views/admin/vesta_components.phtml:29
 msgctxt "as in \"Move up\""
 msgid "Move"
-msgstr ""
+msgstr "Déplacer"
 
 #: resources/views/admin/vesta_components.phtml:29
 msgctxt "as in \"Move up\""
 msgid "up"
-msgstr ""
+msgstr "en haut"
 
 #: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
 msgid "Move"
-msgstr ""
+msgstr "Déplacer"
 
 #: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
 msgid "down"
-msgstr ""
+msgstr "en bas"
 
 #: resources/views/vesta_config.phtml:25
 msgid "Q: How do the Vesta modules interact?"
-msgstr ""
+msgstr "Q : Comment interagissent les modules Vesta ?"
 
 #: resources/views/vesta_config.phtml:28
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr ""
+"R : via des crochets. Les crochets permettent aux modules d'étendre leurs "
+"fonctionnalités aux autres composants, sans avoir à réimplémenter tout le "
+"composant. Webtrees utilise par exemple les crochets dans le pied de page, "
+"et pour l'historique des événements."
 
 #: resources/views/vesta_config.phtml:31
 msgid "Q: Ok, but what's the actual benefit for the user?"
-msgstr ""
+msgstr "Q : Ok, mais c'est quoi le bénéfice pour l'utilisateur ?"
 
 #: resources/views/vesta_config.phtml:35
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
 msgstr ""
+"R : Différents modules peuvent cibler le même composant, par exemple en "
+"améliorant l'onglet actes et événements à divers endroits. Sans les "
+"crochets, il faudrait utiliser plusieurs modules particuliers pour chaque "
+"onglet."
 
 #: resources/views/vesta_config.phtml:37
 msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
 msgstr ""
+"Différents modules peuvent aussi être liés dynamiquement pour fournir des "
+"données spécifiques, comme des données de localisation pour les lieux des "
+"événements."
 
 #: resources/views/vesta_config.phtml:41
 msgid "Q: How do I configure additional hooks?"
-msgstr ""
+msgstr "Q : comment puis-je configurer des crochets supplémentaires ?"
 
 #: resources/views/vesta_config.phtml:44
 msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
 msgstr ""
+"R : Les crochets sont généralement activés automatiquement lorsque le module "
+"personnalisé associé est activé. Voir aussi du côté des préférences des "
+"modules cible et source respectifs."
 
 #: resources/views/vesta_config.phtml:47
 #, php-format
 msgid "Q: What's with the %1$s symbol?"
-msgstr ""
+msgstr "Q : C'est quoi ce symbole %1$s ?"
 
 #: resources/views/vesta_config.phtml:50
 msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
 msgstr ""
+"A : Le symbole Vesta est principalement utilisé pour regrouper des modules "
+"reliés dans la liste d'administration des modules."
 
 #: resources/views/vesta_config.phtml:51
 #, php-format
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr ""
+"%1$s est le symbole astronomique de l'astéroïde Vesta, nommé d'après la "
+"déesse Romaine du cœur, du foyer et de la famille."
 
 #: resources/views/vesta_config.phtml:52
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
 msgstr ""
+"Si le symbole ne s'affiche pas correctement, par exemple sous forme de petit "
+"rectangle, vérifier le support unicode de votre navigateur."
 
 #: resources/views/vesta_config.phtml:53
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr ""
+"Vous pourriez avoir à installer une police permettant l'affichage de ce "
+"symbole, et pour certains navigateurs - Chrome en particulier - cette police "
+"doit être l'une des polices spécifiées par webtrees, par exemple 'Segoe UI "
+"Symbol'."
 
 #: resources/views/vesta_config.phtml:56
 msgid "Q: Is there additional documentation?"
-msgstr ""
+msgstr "Q : Existe-t-il une documentation supplémentaire ?"
 
 #: resources/views/vesta_config.phtml:59
 msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
 msgstr ""
+"A : Chaque module dispose d'un fichier Lisez-moi avec les informations "
+"basiques (la lecture en ligne est conseillée, mais il se trouve aussi dans "
+"le répertoire d'installation du module)."
 
 #: resources/views/vesta_config.phtml:61
 msgid "here"
-msgstr ""
+msgstr "ici"
 
 #: resources/views/vesta_config.phtml:62
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr ""
+"Voir aussi %1$s pour un aperçu de la gestion des données de localisation "
+"dans webtrees."
