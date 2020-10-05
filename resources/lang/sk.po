@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 14:43+0200\n"
-"PO-Revision-Date: 2020-09-30 18:40+0000\n"
-"Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
+"PO-Revision-Date: 2020-10-05 12:03+0000\n"
+"Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/sk/>\n"
 "Language: sk\n"
@@ -94,7 +94,7 @@ msgstr "Zobrazované údaje"
 #. I18N: Module Configuration
 #: CommonI18N.php:119
 msgid "Displayed title"
-msgstr "Zobrazený názov"
+msgstr "Zobrazovaný názov"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:165
@@ -144,7 +144,7 @@ msgstr "Poskytovatelia údajov o polohe"
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
 msgstr ""
 "Tu uvedené moduly sa používajú (v nakonfigurovanom poradí) na určovanie "
-"súradníc máp miest."
+"geografických koordinát miest."
 
 #: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
@@ -196,7 +196,7 @@ msgstr "Čítať"
 #: CommonI18N.php:73
 #, php-format
 msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
-msgstr "Vyžaduje moduly '%1$s %2$s' a '%1$s %3$s'."
+msgstr "Vyžaduje moduly '%1$s s%2$s' a '%1$s %3$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:81
@@ -223,56 +223,56 @@ msgstr "Obmedziť na tento zoznam osobných GEDCOM faktov a udalostí. Tento zoz
 #: resources/views/vesta_config.phtml:62
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
-msgstr ""
+msgstr "Pozrite aj %1$s pre prehľad o správe údajov o polohe vo webtrees."
 
 #: VestaCommonLibModule.php:51
 msgid "This module cannot be disabled."
-msgstr ""
+msgstr "Tento modul sa nedá vypnúť."
 
 #. I18N: Module title
 #: CommonI18N.php:23
 msgid "Vesta Classic Look & Feel"
-msgstr ""
+msgstr "Vesta Classic Look & Feel"
 
 #. I18N: Module title
 #: CommonI18N.php:59
 msgid "Vesta Clippings Cart"
-msgstr ""
+msgstr "Vesta Clippings Cart"
 
 #. I18N: Module title
 #: CommonI18N.php:19
 msgid "Vesta Common"
-msgstr ""
+msgstr "Vesta Common"
 
 #. I18N: Module title
 #: CommonI18N.php:43
 msgid "Vesta Extended Relationships"
-msgstr ""
+msgstr "Vesta Extended Relationships"
 
 #. I18N: Module title
 #: CommonI18N.php:27
 msgid "Vesta Facts and events"
-msgstr ""
+msgstr "Vesta Facts and events"
 
 #. I18N: Module title
 #: CommonI18N.php:31
 msgid "Vesta Families"
-msgstr ""
+msgstr "Vesta Families"
 
 #. I18N: Module title
 #: CommonI18N.php:35
 msgid "Vesta Gov4Webtrees"
-msgstr ""
+msgstr "Vesta Gov4Webtrees"
 
 #. I18N: Module title
 #: CommonI18N.php:55
 msgid "Vesta Places and Pedigree map"
-msgstr ""
+msgstr "Vesta Places and Pedigree map"
 
 #. I18N: Module title
 #: CommonI18N.php:47
 msgid "Vesta Research Suggestions"
-msgstr ""
+msgstr "Vesta Research Suggestions"
 
 #. I18N: Module title
 #: CommonI18N.php:39
@@ -282,12 +282,12 @@ msgstr "Vesta zdieľané miesta"
 #. I18N: Module title
 #: CommonI18N.php:51
 msgid "Vesta Webtrees Location Data Provider"
-msgstr ""
+msgstr "Vesta Webtrees Location Data Provider"
 
 #. I18N: Module configuration: Refers to general documentation
 #: CommonI18N.php:107
 msgid "Vesta location data management overview"
-msgstr ""
+msgstr "Vesta prehľad správy údajov o polohe"
 
 #: VestaModuleCustomTrait.php:85
 msgid "What's new? "
@@ -305,11 +305,11 @@ msgstr "dole"
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
 #, php-format
 msgid "exclude %1$s"
-msgstr ""
+msgstr "okrem %1$s"
 
 #: resources/views/vesta_config.phtml:61
 msgid "here"
-msgstr ""
+msgstr "tu"
 
 #: HookInterfaces/FunctionsPlaceUtils.php:86
 msgid "map coordinates directly (MAP tag)"
@@ -318,17 +318,17 @@ msgstr "koordináty na mape priamo (tag MAP)"
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
 msgid "reset this filter"
-msgstr ""
+msgstr "zrušiť tento filter"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
 #, php-format
 msgid "restrict to %1$s"
-msgstr ""
+msgstr "obmedziť na %1$s"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
 #, php-format
 msgid "restricted to %1$s"
-msgstr ""
+msgstr "obmedzené na %1$s"
 
 #: resources/views/admin/vesta_components.phtml:29
 msgctxt "as in \"Move up\""
