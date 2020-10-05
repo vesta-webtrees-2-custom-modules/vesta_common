@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 14:43+0200\n"
-"PO-Revision-Date: 2020-10-05 12:03+0000\n"
+"PO-Revision-Date: 2020-10-05 15:26+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/sk/>\n"
@@ -46,7 +46,7 @@ msgstr "(špecifická funkcionalita)"
 
 #: VestaCommonLibModule.php:50
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
-msgstr "Modul poskytujúci všeobecné triedy a preklady pre iné moduly 'Vesta'."
+msgstr "Modul poskytujúci všeobecné triedy a preklady pre iné moduly „Vesta“."
 
 #: resources/views/vesta_config.phtml:35
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
@@ -196,19 +196,19 @@ msgstr "Čítať"
 #: CommonI18N.php:73
 #, php-format
 msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
-msgstr "Vyžaduje moduly '%1$s s%2$s' a '%1$s %3$s'."
+msgstr "Vyžaduje moduly „%1$s s%2$s“ a „%1$s %3$s“."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:81
 #, php-format
 msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
-msgstr "Vyžaduje modul '%1$s %2$s', modul '%1$s %3$s', a modul '%1$s %4$s'."
+msgstr "Vyžaduje modul „%1$s %2$s“, modul „%1$s %3$s“ a modul „%1$s %4$s“."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:66
 #, php-format
 msgid "Requires the '%1$s %2$s' module."
-msgstr "Vyžaduje modul '%1$s %2$s'."
+msgstr "Vyžaduje modul „%1$s %2$s“."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
@@ -295,7 +295,10 @@ msgstr "Čo je nové? "
 
 #: resources/views/vesta_config.phtml:53
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
-msgstr "Mali by ste nainštalovať font, ktorý obsahuje tento symbol, a pre niektoré prehliadače - špeciálne pre Chrome - tento font by mal byť z rodiny fontov špecifikovaných webtrees, ako napr. 'Segoe UI Symbol'."
+msgstr ""
+"Mali by ste nainštalovať font, ktorý obsahuje tento symbol, a pre niektoré "
+"prehliadače - špeciálne pre Chrome - tento font by mal byť z rodiny fontov "
+"špecifikovaných vo webtrees, ako napr. „Segoe UI Symbol“."
 
 #: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
