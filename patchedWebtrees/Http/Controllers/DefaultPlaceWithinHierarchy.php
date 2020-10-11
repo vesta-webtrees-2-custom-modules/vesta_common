@@ -8,6 +8,7 @@ use Fisharebest\Webtrees\Gedcom;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Place;
 use Fisharebest\Webtrees\PlaceLocation;
+use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Services\SearchService;
 use Fisharebest\Webtrees\Statistics;
 use Fisharebest\Webtrees\Tree;
@@ -16,7 +17,6 @@ use Illuminate\Database\Query\Expression;
 use Illuminate\Support\Collection;
 use Vesta\Model\MapCoordinates;
 use Vesta\Model\PlaceStructure;
-use function app;
 
 class DefaultPlaceWithinHierarchy implements PlaceWithinHierarchy {
   
@@ -83,7 +83,7 @@ class DefaultPlaceWithinHierarchy implements PlaceWithinHierarchy {
         ->pluck('p_place', 'p_id')
         ->map(function (string $place, int $id) use ($parent_text, $tree): Place {
             $place = new Place($place . $parent_text, $tree);
-            app('cache.array')->remember('place-' . $place->gedcomName(), function () use ($id): int {return $id;});
+            Registry::cache()->array()->remember('place-' . $place->gedcomName(), function () use ($id): int {return $id;});
             return $place;
         });
   }
