@@ -18,7 +18,7 @@ This module also provides translations, and therefore has to be activated in the
 
 ### Download<a name="download"/>
 
-* Current version: 2.0.10.0.0
+* Current version: 2.0.10.1.0
 * Based on and tested with webtrees 2.0.10. Requires webtrees 2.0.9 or later.
 * Download the zipped module, including all related modules, [here](https://cissee.de/vesta.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>
@@ -27,7 +27,7 @@ This module also provides translations, and therefore has to be activated in the
 
 ### Installation<a name="installation"/>
 
-* Unzip the files and copy them to the modules_v4 folder of your webtrees installation. All related modules are included in the zip file. It's safe to overwrite the respective directories if they already exist (they are bundled with other custom modules as well), as long as other custom models using these dependencies are also upgraded to their respective latest versions.
+* Unzip the files and copy the contents of the modules_v4 folder to the respective folder of your webtrees installation. All related modules are included in the zip file. It's safe to overwrite the respective directories if they already exist (they are bundled with other custom modules as well), as long as other custom models using these dependencies are also upgraded to their respective latest versions.
 
 ### License<a name="license"/>
 

@@ -60,7 +60,7 @@ use function strip_tags;
 use function utf8_decode;
 
 //[RC] adjusted: all scopes from private to protected,
-//further adjustments are indicated directly
+//further adjustments are marked specifically
 //
 //placed in vesta_common because addRecordToCart() is 'common' interface!
 /**
@@ -433,7 +433,8 @@ class ClippingsCartModule extends AbstractModule implements ModuleMenuInterface
         $tree = $request->getAttribute('tree');
         assert($tree instanceof Tree);
 
-        return $this->viewResponse('modules/clippings/show', [
+        return $this->viewResponse('modules/clippings/show', [            
+            'module' => $this->name(),            
             'records' => $this->allRecordsInCart($tree),
             'title'   => I18N::translate('Family tree clippings cart'),
             'tree'    => $tree,
