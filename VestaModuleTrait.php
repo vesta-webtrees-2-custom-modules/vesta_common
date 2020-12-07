@@ -3,6 +3,9 @@
 namespace Vesta;
 
 use Fisharebest\Webtrees\Carbon;
+use Fisharebest\Webtrees\Exceptions\HttpAccessDeniedException;
+use Fisharebest\Webtrees\Exceptions\HttpNotFoundException;
+
 use Fisharebest\Webtrees\Schema\MigrationInterface;
 use Fisharebest\Webtrees\View;
 use Illuminate\Database\Capsule\Manager as DB;
@@ -315,11 +318,16 @@ trait VestaModuleTrait {
    */
   public function getAssetAction(ServerRequestInterface $request): ResponseInterface {
     // The file being requested.  e.g. "css/theme.css"
-    $asset = $request->getQueryParams()['asset'];
+    $params = $request->getQueryParams();
+    if (!array_key_exists('asset', $params)) {
+      throw new HttpNotFoundException('No asset specified.');
+    }
+
+    $asset = $params['asset'];
 
     // Do not allow requests that try to access parent folders.
     if (Str::contains($asset, '..')) {
-      throw new AccessDeniedHttpException($asset);
+      throw new HttpAccessDeniedException($asset);
     }
 
     $assetsViaViews = $this->assetsViaViews();
@@ -336,7 +344,7 @@ trait VestaModuleTrait {
       $file = $this->resourcesFolder() . $asset;
 
       if (!file_exists($file)) {
-        throw new NotFoundHttpException($file);
+        throw new HttpNotFoundException($file);
       }
 
       $content = file_get_contents($file);
