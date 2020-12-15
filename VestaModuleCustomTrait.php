@@ -21,6 +21,11 @@ trait VestaModuleCustomTrait {
    * @return string[]
    */
   public function customTranslations(string $language): array {
+    //webtrees uses "nb", weblate uses "nb_NO"
+    if ("nb" === $language) {
+      $language = "nb_NO";
+    }    
+    
     $languageFile1 = $this->resourcesFolder() . 'lang/' . $language . '.mo';
     $languageFile2 = $this->resourcesFolder() . 'lang/' . $language . '.csv';
     $ret = [];
