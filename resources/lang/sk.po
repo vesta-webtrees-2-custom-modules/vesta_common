@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 14:43+0200\n"
-"PO-Revision-Date: 2020-10-06 15:26+0000\n"
+"PO-Revision-Date: 2020-12-28 15:29+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/sk/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.4.1-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -120,7 +120,7 @@ msgstr "Použiť symbol %1$s v názve položky v menu schém"
 #: CommonI18N.php:139
 #, php-format
 msgid "Include the %1$s symbol in the clippings cart menu entry title"
-msgstr "Použiť symbol %1$s v názve položky v menu schránky výstrižkov"
+msgstr "Použiť symbol %1$s v menu pri položke Schránka výstrižkov"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:135
@@ -237,7 +237,7 @@ msgstr "Vesta Classic Look & Feel"
 #. I18N: Module title
 #: CommonI18N.php:59
 msgid "Vesta Clippings Cart"
-msgstr "Vesta Clippings Cart"
+msgstr "Vesta schránka výstrižkov"
 
 #. I18N: Module title
 #: CommonI18N.php:19
