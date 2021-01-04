@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 14:43+0200\n"
-"PO-Revision-Date: 2020-12-28 15:29+0000\n"
+"PO-Revision-Date: 2021-01-04 12:29+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/sk/>\n"
@@ -237,7 +237,7 @@ msgstr "Vesta Classic Look & Feel"
 #. I18N: Module title
 #: CommonI18N.php:59
 msgid "Vesta Clippings Cart"
-msgstr "Vesta schránka výstrižkov"
+msgstr "Vesta Schránka výstrižkov"
 
 #. I18N: Module title
 #: CommonI18N.php:19
@@ -247,17 +247,17 @@ msgstr "Vesta Common"
 #. I18N: Module title
 #: CommonI18N.php:43
 msgid "Vesta Extended Relationships"
-msgstr "Vesta Extended Relationships"
+msgstr "Vesta Rozšírené vzťahy"
 
 #. I18N: Module title
 #: CommonI18N.php:27
 msgid "Vesta Facts and events"
-msgstr "Vesta Facts and events"
+msgstr "Vesta Fakty a udalosti"
 
 #. I18N: Module title
 #: CommonI18N.php:31
 msgid "Vesta Families"
-msgstr "Vesta Families"
+msgstr "Vesta Rodiny"
 
 #. I18N: Module title
 #: CommonI18N.php:35
@@ -277,7 +277,7 @@ msgstr "Vesta Research Suggestions"
 #. I18N: Module title
 #: CommonI18N.php:39
 msgid "Vesta Shared Places"
-msgstr "Vesta zdieľané miesta"
+msgstr "Vesta Zdieľané miesta"
 
 #. I18N: Module title
 #: CommonI18N.php:51
