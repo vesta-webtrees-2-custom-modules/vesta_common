@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 14:43+0200\n"
-"PO-Revision-Date: 2020-10-05 15:26+0000\n"
-"Last-Translator: ro-la <lacoros@gmail.com>\n"
+"PO-Revision-Date: 2021-01-18 22:32+0000\n"
+"Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/cs/>\n"
 "Language: cs\n"
@@ -17,17 +17,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.5-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
 msgid "%1$s excluded"
-msgstr ""
+msgstr "vyjma %1$s"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
 #, php-format
 msgid "%1$s filters"
-msgstr ""
+msgstr "%1$s filtry"
 
 #: resources/views/vesta_config.phtml:51
 #, php-format
@@ -36,31 +36,40 @@ msgstr "%1$s je astronomický symbol asteroidu Vesta, pojmenovaného po římsk�
 
 #: resources/views/admin/vesta_components.phtml:24
 msgid "(entire module)"
-msgstr "(v celém modulu)"
+msgstr "(celý modul)"
 
 #: resources/views/admin/vesta_components.phtml:26
 msgid "(specific functionality)"
-msgstr "(u specifických funkcí)"
+msgstr "(specifická funkcionalita)"
 
 #: VestaCommonLibModule.php:50
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
-msgstr "Modul poskytuje společné třídy a překlady pro ostatní moduly 'Vesta'."
+msgstr "Modul poskytující společné třídy a překlady pro ostatní moduly 'Vesta'."
 
 #: resources/views/vesta_config.phtml:35
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
-msgstr "A: Různé moduly mohou cílit na tutéž komponentu, např. vylepšit záložku Fakta a události na různých místech. Bez háčků by bylo nutné použít několika specifických záložek."
+msgstr ""
+"A: Různé moduly mohou cílit na tutéž komponentu, např. vylepšit záložku "
+"Fakta a události na různých místech. Bez háčků bychom museli použít několik "
+"specifických záložek."
 
 #: resources/views/vesta_config.phtml:59
 msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
 msgstr ""
+"A: Každý modul má soubor Readme se základními informacemi (nejlepší je "
+"prohlížet ho online, ale je také ve složce modulu)."
 
 #: resources/views/vesta_config.phtml:44
 msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
-msgstr "A: Háčky jsou obvykle aktivovány automaticky jakmile je aktivován příslušný modul. Více také u nastavení zdrojového a cílového modulu."
+msgstr ""
+"A: Háčky jsou obvykle aktivovány automaticky jakmile je aktivován příslušný "
+"uživatelský modul. Více také u nastavení zdrojového a cílového modulu."
 
 #: resources/views/vesta_config.phtml:50
 msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
-msgstr "A: Symbol Vesta je použit hlavně k seskupení modulů v seznamu modulů v Panelu správy."
+msgstr ""
+"A: Symbol Vesta je použit hlavně k seskupení modulů v seznamu modulů v "
+"panelu správy."
 
 #: resources/views/vesta_config.phtml:28
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
