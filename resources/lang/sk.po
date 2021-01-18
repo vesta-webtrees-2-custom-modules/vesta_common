@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 14:43+0200\n"
-"PO-Revision-Date: 2021-01-09 10:32+0000\n"
-"Last-Translator: ro-la <lacoros@gmail.com>\n"
+"PO-Revision-Date: 2021-01-18 22:32+0000\n"
+"Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/sk/>\n"
 "Language: sk\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.1-dev\n"
+"X-Generator: Weblate 4.5-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -73,7 +73,7 @@ msgstr "A: Cez háčiky (hooks). Háčiky umožňujú modulom rozšíriť funkci
 #. I18N: Module Configuration, also checkbox on facts and events tab
 #: CommonI18N.php:149
 msgid "Associated facts and events"
-msgstr "Fakty a udalosti pridružených osôb"
+msgstr "Fakty a udalosti společníků"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:143
