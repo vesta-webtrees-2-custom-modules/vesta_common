@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 14:43+0200\n"
-"PO-Revision-Date: 2021-01-18 22:32+0000\n"
+"PO-Revision-Date: 2021-01-19 11:32+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/cs/>\n"
@@ -84,6 +84,7 @@ msgstr "Fakta a události společníků"
 #: CommonI18N.php:143
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr ""
+"Zrušte volbu, chcete-li, aby se název zobrazoval stejně jako původní název."
 
 #: resources/views/vesta_config.phtml:37
 msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
@@ -92,7 +93,7 @@ msgstr "Různé moduly mohou být také dynamicky propojeny za účelem dodání
 #. I18N: Module Configuration
 #: CommonI18N.php:123
 msgid "Displayed data"
-msgstr "Zobrazené údaje"
+msgstr "Zobrazované údaje"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:119
@@ -117,19 +118,19 @@ msgstr "Zejména když jsou oba seznamy prázdné, žádná dodatečná fakta an
 #: CommonI18N.php:131
 #, php-format
 msgid "Include the %1$s symbol in the chart menu entry title"
-msgstr "Přidat symbol %1$s do názvu položky v menu Diagramy"
+msgstr "V menu přidat symbol %1$s do názvu položky Diagramy"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:139
 #, php-format
 msgid "Include the %1$s symbol in the clippings cart menu entry title"
-msgstr ""
+msgstr "V menu přidat symbol %1$s do názvu položky Výstřižky"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:135
 #, php-format
 msgid "Include the %1$s symbol in the list menu entry title"
-msgstr "Přidat symbol %1$s do názvu položky v menu Seznamy"
+msgstr "V menu přidat symbol %1$s do názvu položky Seznamy"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:127
@@ -177,7 +178,7 @@ msgstr "Q: Jak moduly Vesta navzájem spolupracují?"
 
 #: resources/views/vesta_config.phtml:56
 msgid "Q: Is there additional documentation?"
-msgstr ""
+msgstr "Q: Existuje nějaká další dokumentace?"
 
 #: resources/views/vesta_config.phtml:31
 msgid "Q: Ok, but what's the actual benefit for the user?"
@@ -191,7 +192,7 @@ msgstr "Q: Co je zač symbol %1$s ?"
 #. I18N: Module configuration: Refers to the module's Readme file
 #: CommonI18N.php:103
 msgid "Readme"
-msgstr ""
+msgstr "Readme"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
@@ -224,11 +225,11 @@ msgstr "Omezit na tento seznam osobních faktů a událostí. Tento seznam je po
 #: resources/views/vesta_config.phtml:62
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
-msgstr ""
+msgstr "Vizte také %1$s pro přehled o správě údajů o poloze ve webtrees."
 
 #: VestaCommonLibModule.php:51
 msgid "This module cannot be disabled."
-msgstr ""
+msgstr "Tento modul se nesmí vypnout."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -288,7 +289,7 @@ msgstr "Vesta Webtrees Location Data Provider"
 #. I18N: Module configuration: Refers to general documentation
 #: CommonI18N.php:107
 msgid "Vesta location data management overview"
-msgstr ""
+msgstr "Přehled správy údajů o poloze ve Vesta"
 
 #: VestaModuleCustomTrait.php:85
 msgid "What's new? "
@@ -306,11 +307,11 @@ msgstr "níže"
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
 #, php-format
 msgid "exclude %1$s"
-msgstr ""
+msgstr "kromě %1$s"
 
 #: resources/views/vesta_config.phtml:61
 msgid "here"
-msgstr ""
+msgstr "tady"
 
 #: HookInterfaces/FunctionsPlaceUtils.php:86
 msgid "map coordinates directly (MAP tag)"
@@ -319,17 +320,17 @@ msgstr "mapové souřadnice přímo (tag MAP)"
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
 msgid "reset this filter"
-msgstr ""
+msgstr "znovu nastavit tento filtr"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
 #, php-format
 msgid "restrict to %1$s"
-msgstr ""
+msgstr "omezit na %1$s"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
 #, php-format
 msgid "restricted to %1$s"
-msgstr ""
+msgstr "s omezením na %1$s"
 
 #: resources/views/admin/vesta_components.phtml:29
 msgctxt "as in \"Move up\""
