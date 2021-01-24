@@ -143,7 +143,23 @@ class ControlPanelUtils {
 
   public function printControlPanelTextbox(ControlPanelTextbox $element) {
     $value = $this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue());
-    //TODO better maxLength, pattern!
+    $maxLength = $element->getMaxLength();
+    $maxLengthStr = '';
+    if ($maxLength > 0) {
+      $maxLengthStr = 'maxlength="' . $maxLength .'" ';
+    }
+    
+    $pattern = $element->getPattern();
+    $patternStr = '';
+    if ($pattern !== null) {
+      $patternStr = 'pattern="' . $pattern .'" ';
+    }
+    
+    $required = $element->getRequired();
+    $requiredStr = '';
+    if ($required === true) {
+      $requiredStr = 'required ';
+    }
     
     ?>
       <div class="col-sm-10">
@@ -153,7 +169,7 @@ class ControlPanelUtils {
                       <?= e($element->getLabel()) ?>
                   </span>
               </div>
-              <input class="form-control" id="<?= $element->getSettingKey() ?>" maxlength="31" name="<?= $element->getSettingKey() ?>" pattern="[^&lt;&gt;&quot;*?{}():/\\$%|]*" required type="text" value="<?= e($value) ?>" dir="ltr">
+              <input class="form-control" id="<?= $element->getSettingKey() ?>" <?= $maxLengthStr ?>name="<?= $element->getSettingKey() ?>" <?= $patternStr?><?= $requiredStr?>type="text" value="<?= e($value) ?>" dir="ltr">
           </div>
       </div>
     <?php 
