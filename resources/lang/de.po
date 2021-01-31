@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 14:43+0200\n"
-"PO-Revision-Date: 2020-09-12 18:56+0000\n"
-"Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/de/>\n"
+"PO-Revision-Date: 2021-01-31 09:41+0000\n"
+"Last-Translator: Bernd Schwendinger <b0ernie@gmx.net>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.5-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -26,7 +27,7 @@ msgstr "ohne %1$s"
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
 #, php-format
 msgid "%1$s filters"
-msgstr ""
+msgstr "%1$s filtern"
 
 #: resources/views/vesta_config.phtml:51
 #, php-format
@@ -35,11 +36,11 @@ msgstr "%1$s ist das astronomische Symbol für den Asteroiden Vesta, benannt nac
 
 #: resources/views/admin/vesta_components.phtml:24
 msgid "(entire module)"
-msgstr ""
+msgstr "(gesamtes Modul)"
 
 #: resources/views/admin/vesta_components.phtml:26
 msgid "(specific functionality)"
-msgstr ""
+msgstr "(spezifische Funktionalität)"
 
 #: VestaCommonLibModule.php:50
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
