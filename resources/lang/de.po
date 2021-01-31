@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2020-09-19 14:43+0200\n"
-"PO-Revision-Date: 2021-01-31 09:41+0000\n"
+"PO-Revision-Date: 2021-01-31 19:41+0000\n"
 "Last-Translator: Bernd Schwendinger <b0ernie@gmx.net>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/de/>\n"
@@ -45,6 +45,8 @@ msgstr "(spezifische Funktionalität)"
 #: VestaCommonLibModule.php:50
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr ""
+"Ein Modul, das gemeinsame Klassen und Übersetzungen für andere "
+"benutzerdefinierte 'Vesta'-Module bereitstellt."
 
 #: resources/views/vesta_config.phtml:35
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
@@ -53,6 +55,8 @@ msgstr "Verschiedene Module können auf die gleiche Komponente abzielen, z.B. du
 #: resources/views/vesta_config.phtml:59
 msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
 msgstr ""
+"A: Zu jedem Modul gibt es eine Readme-Datei mit grundlegenden Informationen ("
+"am besten online ansehen, aber auch im Ordner des Moduls enthalten)."
 
 #: resources/views/vesta_config.phtml:44
 msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
@@ -69,12 +73,13 @@ msgstr "A: Über Hooks. Hooks ermöglicht es den Modulen, die Funktionalität an
 #. I18N: Module Configuration, also checkbox on facts and events tab
 #: CommonI18N.php:149
 msgid "Associated facts and events"
-msgstr ""
+msgstr "Zugehörige Tatsachen und Ereignisse"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:143
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr ""
+"Hebe die Auswahl auf, damit der Titel genau wie der Originaltitel erscheint."
 
 #: resources/views/vesta_config.phtml:37
 msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
@@ -83,17 +88,17 @@ msgstr "Verschiedene Module können auch dynamisch miteinander verknüpft werden
 #. I18N: Module Configuration
 #: CommonI18N.php:123
 msgid "Displayed data"
-msgstr ""
+msgstr "Angezeigte Daten"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:119
 msgid "Displayed title"
-msgstr ""
+msgstr "Angezeigter Titel"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:165
 msgid "Facts and Events Tab Settings"
-msgstr ""
+msgstr "Einstellungen der Registerkarte Tatsachen und Ereignisse"
 
 #: resources/views/vesta_config.phtml:52
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
@@ -103,40 +108,44 @@ msgstr "Wenn das Symbol nicht korrekt angezeigt wird, z.B. als Rechteck, überpr
 #: CommonI18N.php:161
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr ""
+"Insbesondere, wenn beide Listen leer sind, werden keine weiteren Tatsachen "
+"und Ereignisse dieser Art angezeigt."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:131
 #, php-format
 msgid "Include the %1$s symbol in the chart menu entry title"
-msgstr ""
+msgstr "Das Symbol %1$s in den Titel des Diagramm-Menüeintrags einfügen"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:139
 #, php-format
 msgid "Include the %1$s symbol in the clippings cart menu entry title"
-msgstr ""
+msgstr "Das Symbol %1$s in den Titel des Zwischenablage-Menüeintrags einfügen"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:135
 #, php-format
 msgid "Include the %1$s symbol in the list menu entry title"
-msgstr ""
+msgstr "Einfügen des Symbols %1$s in den Titel des Listenmenüeintrags"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:127
 #, php-format
 msgid "Include the %1$s symbol in the tab title"
-msgstr ""
+msgstr "Das Symbol %1$s in den Registerkartentitel einfügen"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:93
 msgid "Location Data Providers"
-msgstr ""
+msgstr "Anbieter von Standortdaten (Location Data Providers)"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
 msgstr ""
+"Die hier aufgeführten Module werden (in der konfigurierten Reihenfolge) "
+"verwendet, um Kartenkoordinaten von Orten zu ermitteln."
 
 #: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
@@ -151,12 +160,13 @@ msgstr "nach oben"
 #. I18N: Module Configuration
 #: CommonI18N.php:115
 msgid "Options"
-msgstr ""
+msgstr "Optionen"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
 msgid "Provides location data to other custom modules."
 msgstr ""
+"Stellt Standortdaten für andere benutzerdefinierte Module zur Verfügung."
 
 #: resources/views/vesta_config.phtml:41
 msgid "Q: How do I configure additional hooks?"
@@ -168,7 +178,7 @@ msgstr "F: Wie wirken die Vesta-Module zusammen?"
 
 #: resources/views/vesta_config.phtml:56
 msgid "Q: Is there additional documentation?"
-msgstr ""
+msgstr "F: Gibt es weitere Dokumentation?"
 
 #: resources/views/vesta_config.phtml:31
 msgid "Q: Ok, but what's the actual benefit for the user?"
@@ -182,108 +192,120 @@ msgstr "F: Was hat es mit dem %1$s Symbol auf sich?"
 #. I18N: Module configuration: Refers to the module's Readme file
 #: CommonI18N.php:103
 msgid "Readme"
-msgstr ""
+msgstr "Liesmich"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
 #, php-format
 msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
-msgstr ""
+msgstr "Benötigt das Modul '%1$s %2$s' und das Modul '%1$s %3$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:81
 #, php-format
 msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
 msgstr ""
+"Benötigt das Modul '%1$s %2$s', das Modul '%1$s %3$s' und das Modul '%1$s "
+"%4$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:66
 #, php-format
 msgid "Requires the '%1$s %2$s' module."
-msgstr ""
+msgstr "Benötigt das Modul '%1$s %2$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
+"Beschränken Sie sich auf diese Liste der GEDCOM Familienfakten und -"
+"ereignisse. Sie können diese Liste ändern, indem Sie Fakten- und "
+"Ereignisnamen, auch benutzerdefinierte, nach Bedarf entfernen oder "
+"hinzufügen."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:153
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
+"Beschränken Sie sich auf diese Liste der GEDCOM Individualfakten und -"
+"ereignisse. Sie können diese Liste ändern, indem Sie Fakten- und "
+"Ereignisnamen, auch benutzerdefinierte, nach Bedarf entfernen oder "
+"hinzufügen."
 
 #: resources/views/vesta_config.phtml:62
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr ""
+"Siehe auch %1$s für eine Übersicht über die Verwaltung von Ortsdaten in "
+"Webtrees."
 
 #: VestaCommonLibModule.php:51
 msgid "This module cannot be disabled."
-msgstr ""
+msgstr "Dieses Modul kann nicht deaktiviert werden."
 
 #. I18N: Module title
 #: CommonI18N.php:23
 msgid "Vesta Classic Look & Feel"
-msgstr ""
+msgstr "Vesta Classic Look & Feel"
 
 #. I18N: Module title
 #: CommonI18N.php:59
 msgid "Vesta Clippings Cart"
-msgstr ""
+msgstr "Vesta Clippings Cart"
 
 #. I18N: Module title
 #: CommonI18N.php:19
 msgid "Vesta Common"
-msgstr ""
+msgstr "Vesta Common"
 
 #. I18N: Module title
 #: CommonI18N.php:43
 msgid "Vesta Extended Relationships"
-msgstr ""
+msgstr "Vesta Extended Relationships"
 
 #. I18N: Module title
 #: CommonI18N.php:27
 msgid "Vesta Facts and events"
-msgstr ""
+msgstr "Vesta Facts and events"
 
 #. I18N: Module title
 #: CommonI18N.php:31
 msgid "Vesta Families"
-msgstr ""
+msgstr "Vesta Families"
 
 #. I18N: Module title
 #: CommonI18N.php:35
 msgid "Vesta Gov4Webtrees"
-msgstr ""
+msgstr "Vesta Gov4Webtrees"
 
 #. I18N: Module title
 #: CommonI18N.php:55
 msgid "Vesta Places and Pedigree map"
-msgstr ""
+msgstr "Vesta Places and Pedigree map"
 
 #. I18N: Module title
 #: CommonI18N.php:47
 msgid "Vesta Research Suggestions"
-msgstr ""
+msgstr "Vesta Research Suggestions"
 
 #. I18N: Module title
 #: CommonI18N.php:39
 msgid "Vesta Shared Places"
-msgstr ""
+msgstr "Vesta Shared Places"
 
 #. I18N: Module title
 #: CommonI18N.php:51
 msgid "Vesta Webtrees Location Data Provider"
-msgstr ""
+msgstr "Vesta Webtrees Location Data Provider"
 
 #. I18N: Module configuration: Refers to general documentation
 #: CommonI18N.php:107
 msgid "Vesta location data management overview"
-msgstr ""
+msgstr "Vesta-Standortdatenmanagement im Überblick"
 
 #: VestaModuleCustomTrait.php:85
 msgid "What's new? "
-msgstr ""
+msgstr "Was gibt es neues? "
 
 #: resources/views/vesta_config.phtml:53
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
@@ -297,30 +319,30 @@ msgstr "verschieben"
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
 #, php-format
 msgid "exclude %1$s"
-msgstr ""
+msgstr "%1$s ausschließen"
 
 #: resources/views/vesta_config.phtml:61
 msgid "here"
-msgstr ""
+msgstr "hier"
 
 #: HookInterfaces/FunctionsPlaceUtils.php:86
 msgid "map coordinates directly (MAP tag)"
-msgstr ""
+msgstr "Kartenkoordinaten direkt (MAP-Tag)"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
 msgid "reset this filter"
-msgstr ""
+msgstr "Filter zurücksetzen"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
 #, php-format
 msgid "restrict to %1$s"
-msgstr ""
+msgstr "beschränken auf %1$s"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
 #, php-format
 msgid "restricted to %1$s"
-msgstr ""
+msgstr "beschränkt auf %1$s"
 
 #: resources/views/admin/vesta_components.phtml:29
 msgctxt "as in \"Move up\""
