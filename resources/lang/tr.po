@@ -1,0 +1,367 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the vesta package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vesta 1.0\n"
+"Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
+"POT-Creation-Date: 2020-09-19 15:42+0200\n"
+"PO-Revision-Date: 2021-02-05 12:41+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.5-dev\n"
+
+#. I18N: Module title
+#: CommonI18N.php:19
+msgid "Vesta Common"
+msgstr "Vesta Yaygın"
+
+#. I18N: Module title
+#: CommonI18N.php:23
+msgid "Vesta Classic Look & Feel"
+msgstr "Vesta Klasik Görünüm ve His"
+
+#. I18N: Module title
+#: CommonI18N.php:27
+msgid "Vesta Facts and events"
+msgstr "Vesta Gerçekler ve olaylar"
+
+#. I18N: Module title
+#: CommonI18N.php:31
+msgid "Vesta Families"
+msgstr "Vesta Aileler"
+
+#. I18N: Module title
+#: CommonI18N.php:35
+msgid "Vesta Gov4Webtrees"
+msgstr "Vesta Gov4Webtrees"
+
+#. I18N: Module title
+#: CommonI18N.php:39
+msgid "Vesta Shared Places"
+msgstr "Vesta Paylaşılan Yerler"
+
+#. I18N: Module title
+#: CommonI18N.php:43
+msgid "Vesta Extended Relationships"
+msgstr "Vesta Genişletilmiş İlişkiler"
+
+#. I18N: Module title
+#: CommonI18N.php:47
+msgid "Vesta Research Suggestions"
+msgstr "Vesta Araştırma Önerileri"
+
+#. I18N: Module title
+#: CommonI18N.php:51
+msgid "Vesta Webtrees Location Data Provider"
+msgstr "Vesta Webtrees Konum Verisi Sağlayıcısı"
+
+#. I18N: Module title
+#: CommonI18N.php:55
+msgid "Vesta Places and Pedigree map"
+msgstr "Vesta Yerler ve Soyağacı haritası"
+
+#. I18N: Module title
+#: CommonI18N.php:59
+msgid "Vesta Clippings Cart"
+msgstr "Vesta Kupürler Sepeti"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:66
+#, php-format
+msgid "Requires the '%1$s %2$s' module."
+msgstr "'%1$s %2$s' modülünü gerektirir."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:73
+#, php-format
+msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
+msgstr "'%1$s %2$s' modülünü, ve '%1$s %3$s' modülünü gerektirir."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:81
+#, php-format
+msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
+msgstr ""
+"'%1$s %2$s' modülünü, '%1$s %3$s' modülünü, ve '%1$s %4$s' modülünü "
+"gerektirir."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:89
+msgid "Provides location data to other custom modules."
+msgstr "Diğer özel modüllere konum verileri sağlar."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:93
+msgid "Location Data Providers"
+msgstr "Konum Veri Sağlayıcıları"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:97
+msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
+msgstr ""
+"Burada listelenen modüller (yapılandırılmış sırada) yerlerin harita "
+"koordinatlarını belirlemek için kullanılır."
+
+#. I18N: Module configuration: Refers to the module's Readme file
+#: CommonI18N.php:103
+msgid "Readme"
+msgstr "Beni oku"
+
+#. I18N: Module configuration: Refers to general documentation
+#: CommonI18N.php:107
+msgid "Vesta location data management overview"
+msgstr "Vesta konum verileri yönetimine genel bakış"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:115
+msgid "Options"
+msgstr "Seçenekler"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:119
+msgid "Displayed title"
+msgstr "Görüntülenen başlık"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:123
+msgid "Displayed data"
+msgstr "Görüntülenen veriler"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:127
+#, php-format
+msgid "Include the %1$s symbol in the tab title"
+msgstr "%1$s sembolünü sekme başlığına dahil et"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:131
+#, php-format
+msgid "Include the %1$s symbol in the chart menu entry title"
+msgstr "Grafik menüsü giriş başlığına %1$s sembolünü dahil et"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:135
+#, php-format
+msgid "Include the %1$s symbol in the list menu entry title"
+msgstr "Liste menüsü giriş başlığına %1$s sembolünü dahil et"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:139
+#, php-format
+msgid "Include the %1$s symbol in the clippings cart menu entry title"
+msgstr "Kupür sepeti menü girişi başlığına %1$s sembolünü dahil et"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:143
+msgid "Deselect in order to have the title appear exactly as the original title."
+msgstr ""
+"Başlığın tam olarak orijinal başlık olarak görünmesi için seçimi kaldırın."
+
+#. I18N: Module Configuration, also checkbox on facts and events tab
+#: CommonI18N.php:149
+msgid "Associated facts and events"
+msgstr "İlişkili gerçekler ve olaylar"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:153
+msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
+msgstr ""
+"Bu GEDCOM bireysel gerçekleri ve olayları listesiyle sınırlandırın. "
+"Gerektiğinde gerçek ve olay adlarını, hatta özel olanları bile kaldırarak "
+"veya ekleyerek bu listeyi değiştirebilirsiniz."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:157
+msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
+msgstr ""
+"Bu GEDCOM aile gerçekleri ve olayları listesiyle sınırlandırın. Gerektiğinde "
+"gerçek ve olay adlarını, hatta özel olanları bile kaldırarak veya ekleyerek "
+"bu listeyi değiştirebilirsiniz."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:161
+msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
+msgstr ""
+"Özellikle, her iki liste de boşsa, bu tür ek gerçekler ve olaylar "
+"gösterilmeyecektir."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:165
+msgid "Facts and Events Tab Settings"
+msgstr "Gerçekler ve Olaylar Sekmesi Ayarları"
+
+#: HookInterfaces/FunctionsPlaceUtils.php:86
+msgid "map coordinates directly (MAP tag)"
+msgstr "doğrudan harita koordinatları (MAP etiketi)"
+
+#: VestaCommonLibModule.php:50
+msgid "A module providing common classes and translations for other 'Vesta' custom modules."
+msgstr ""
+"Diğer 'Vesta' özel modülleri için ortak sınıflar ve çeviriler sağlayan bir "
+"modül."
+
+#: VestaCommonLibModule.php:51
+msgid "This module cannot be disabled."
+msgstr "Bu modül devre dışı bırakılamaz."
+
+#: VestaModuleCustomTrait.php:85
+msgid "What's new? "
+msgstr "Yeni olan ne? "
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
+#, php-format
+msgid "%1$s filters"
+msgstr "%1$s filtreleri"
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
+#, php-format
+msgid "restrict to %1$s"
+msgstr "%1$s ile sınırla"
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
+#, php-format
+msgid "exclude %1$s"
+msgstr "%1$s'i hariç tut"
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
+#, php-format
+msgid "%1$s excluded"
+msgstr "%1$s hariç tutuldu"
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
+msgid "reset this filter"
+msgstr "bu filtreyi sıfırla"
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
+#, php-format
+msgid "restricted to %1$s"
+msgstr "%1$s ile sınırlı"
+
+#: resources/views/admin/vesta_components.phtml:24
+msgid "(entire module)"
+msgstr "(tüm modül)"
+
+#: resources/views/admin/vesta_components.phtml:26
+msgid "(specific functionality)"
+msgstr "(özel işlevsellik)"
+
+#: resources/views/admin/vesta_components.phtml:29
+msgctxt "as in \"Move up\""
+msgid "Move"
+msgstr "Taşı"
+
+#: resources/views/admin/vesta_components.phtml:29
+msgctxt "as in \"Move up\""
+msgid "up"
+msgstr "yukarı"
+
+#: resources/views/admin/vesta_components.phtml:30
+msgctxt "as in \"Move down\""
+msgid "Move"
+msgstr "Taşı"
+
+#: resources/views/admin/vesta_components.phtml:30
+msgctxt "as in \"Move down\""
+msgid "down"
+msgstr "aşağı"
+
+#: resources/views/vesta_config.phtml:25
+msgid "Q: How do the Vesta modules interact?"
+msgstr "S: Vesta modülleri nasıl etkileşime girer?"
+
+#: resources/views/vesta_config.phtml:28
+msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
+msgstr ""
+"C: Kancalar aracılığıyla. Kancalar, modüllerin tüm bileşeni yeniden "
+"uygulamaya gerek kalmadan diğer bileşenlerin işlevselliğini genişletmesine "
+"izin verir. Webtrees, örneğin sayfa altbilgisinde ve tarihi olaylar için "
+"kancalar kullanır."
+
+#: resources/views/vesta_config.phtml:31
+msgid "Q: Ok, but what's the actual benefit for the user?"
+msgstr "S: Tamam, ancak kullanıcı için asıl fayda nedir?"
+
+#: resources/views/vesta_config.phtml:35
+msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
+msgstr ""
+"C: Farklı modüller aynı bileşeni hedefleyebilir, örneğin çeşitli yerlerde "
+"gerçekler ve olaylar sekmesini geliştirerek. Kancalar olmasaydı, birden çok "
+"modüle özgü sekme kullanmamız gerekirdi."
+
+#: resources/views/vesta_config.phtml:37
+msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
+msgstr ""
+"Etkinlik yerleri için konum verileri gibi belirli verileri sağlamak üzere "
+"farklı modüller dinamik olarak bağlanabilir."
+
+#: resources/views/vesta_config.phtml:41
+msgid "Q: How do I configure additional hooks?"
+msgstr "S: Ek kancaları nasıl yapılandırabilirim?"
+
+#: resources/views/vesta_config.phtml:44
+msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
+msgstr ""
+"C: İlgili özel modül etkinleştirildiğinde kancalar genellikle otomatik "
+"olarak etkinleştirilir. Ayrıca ilgili kaynak ve hedef modülün tercihlerine "
+"bakın."
+
+#: resources/views/vesta_config.phtml:47
+#, php-format
+msgid "Q: What's with the %1$s symbol?"
+msgstr "Q: %1$s sembolü nedir?"
+
+#: resources/views/vesta_config.phtml:50
+msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
+msgstr ""
+"C: Vesta sembolü esas olarak modül yönetim listesindeki ilgili modülleri "
+"gruplamak için kullanılır."
+
+#: resources/views/vesta_config.phtml:51
+#, php-format
+msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
+msgstr ""
+"%1$s; ocağın, evin ve ailenin Roma tanrıçasının adını taşıyan asteroit "
+"Vesta'nın astronomik sembolüdür."
+
+#: resources/views/vesta_config.phtml:52
+msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
+msgstr ""
+"Sembol yanlış görüntülenirse, örneğin bir dikdörtgen olarak, tarayıcınızın "
+"unicode destek yeteneklerini kontrol edin."
+
+#: resources/views/vesta_config.phtml:53
+msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
+msgstr ""
+"Bu sembolü sağlayan bir yazı tipi yüklemeniz gerekebilir ve belirli "
+"tarayıcılar için – özellikle Chrome – bu yazı tipi, 'Segoe UI Symbol' gibi "
+"webtrees tarafından belirtilen yazı tipi ailelerinden birinde olmalıdır."
+
+#: resources/views/vesta_config.phtml:56
+msgid "Q: Is there additional documentation?"
+msgstr "S: Ek belgeler var mı?"
+
+#: resources/views/vesta_config.phtml:59
+msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
+msgstr ""
+"C: Her modülün temel bilgileri içeren bir Beni oku dosyası vardır (en iyi "
+"çevrimiçi olarak görüntülenebilir, ancak modülün klasöründe de bulunur)."
+
+#: resources/views/vesta_config.phtml:61
+msgid "here"
+msgstr "burada"
+
+#: resources/views/vesta_config.phtml:62
+#, php-format
+msgid "See also %1$s for an overview of location data management in webtrees."
+msgstr ""
+"Webtrees'de konum veri yönetimine genel bakış için %1$s bölümüne de bakın."
