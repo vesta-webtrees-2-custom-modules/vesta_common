@@ -110,7 +110,7 @@ It is also possible, but no longer recommended, to use shared place names with c
 
 ### Migrating data
 
-Additional data fixes, e.g. for migrating webtrees geographic data to shared places, will be provided in future versions of the 'Shared Places' module.
+Additional data fixes, e.g. for migrating webtrees geographic data to shared places, will be provided in future versions of the 'Shared Places' module. All GEDCOM files containing _LOC-records exported from other programs should be importable directly.  
 
 ## First Steps
 
