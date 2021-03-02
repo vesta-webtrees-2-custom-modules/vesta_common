@@ -12,6 +12,10 @@ interface PlaceHierarchyParticipant {
   
   public function filterParameterName(): string;
   
-  public function findPlace(int $id, Tree $tree, PlaceUrls $urlS): PlaceWithinHierarchy;
+  public function findPlace(
+          int $id, 
+          Tree $tree, 
+          PlaceUrls $urls,
+          bool $asAdditionalParticipant = false): PlaceWithinHierarchy;
 
 }

@@ -24,7 +24,7 @@ interface PlaceWithinHierarchy {
   
   /**
    * Get the lower level places.
-   *
+   * 
    * @return array<PlaceWithinHierarchy>, keyed by id
    */
   public function getChildPlaces(): array;
