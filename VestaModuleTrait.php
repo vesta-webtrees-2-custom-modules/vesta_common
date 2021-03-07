@@ -66,6 +66,15 @@ trait VestaModuleTrait {
     return $prefix . $mainMenuTitle;
   }
   
+  public function getSidebarTitle($mainTabTitle) {
+    $prefix = '';
+    $vesta_show = $this->getPreference('VESTA_SIDEBAR', '1');
+    if ($vesta_show) {
+      $prefix = $this->getVestaSymbol() . ' ';
+    }
+    return $prefix . $mainTabTitle;
+  }
+  
   public function title(): string {
     $prefix = '';
     $vesta_show = true/*$this->getPreference('VESTA', '1')*/;

@@ -135,6 +135,10 @@ class CommonI18N {
     return /* I18N: Module Configuration */I18N::translate('Include the %1$s symbol in the list menu entry title', CommonI18N::getVestaSymbol());
   }
   
+  public static function vestaSymbolInSidebarTitle(): string {
+    return /* I18N: Module Configuration */I18N::translate('Include the %1$s symbol in the sidebar title', CommonI18N::getVestaSymbol());
+  }
+  
   public static function vestaSymbolInClippingsCartTitle(): string {
     return /* I18N: Module Configuration */I18N::translate('Include the %1$s symbol in the clippings cart menu entry title', CommonI18N::getVestaSymbol());
   }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2020-09-19 15:42+0200\n"
+"POT-Creation-Date: 2021-03-07 12:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -151,36 +151,42 @@ msgstr ""
 #. I18N: Module Configuration
 #: CommonI18N.php:139
 #, php-format
-msgid "Include the %1$s symbol in the clippings cart menu entry title"
+msgid "Include the %1$s symbol in the sidebar title"
 msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:143
+#, php-format
+msgid "Include the %1$s symbol in the clippings cart menu entry title"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:147
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr ""
 
 #. I18N: Module Configuration, also checkbox on facts and events tab
-#: CommonI18N.php:149
+#: CommonI18N.php:153
 msgid "Associated facts and events"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:153
+#: CommonI18N.php:157
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:157
+#: CommonI18N.php:161
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:161
+#: CommonI18N.php:165
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:169
 msgid "Facts and Events Tab Settings"
 msgstr ""
 
@@ -196,7 +202,12 @@ msgstr ""
 msgid "This module cannot be disabled."
 msgstr ""
 
-#: VestaModuleCustomTrait.php:85
+#. I18N: gedcom tag _FSFTID
+#: VestaCommonLibModule.php:60
+msgid "FamilySearch id"
+msgstr ""
+
+#: VestaModuleCustomTrait.php:90
 msgid "What's new? "
 msgstr ""
 

@@ -56,6 +56,9 @@ class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterfa
   }
   
   public function boot(): void {
+    //added via GedcomTag.php
+    /* I18N: gedcom tag _FSFTID */I18N::translate('FamilySearch id');
+      
     $this->flashWhatsNew('\Vesta\WhatsNew', 2);
   }
   
