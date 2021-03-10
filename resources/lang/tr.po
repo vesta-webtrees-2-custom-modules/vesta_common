@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-03-07 12:44+0100\n"
-"PO-Revision-Date: 2021-02-05 12:41+0000\n"
-"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
-"Language-Team: Turkish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/tr/>\n"
+"PO-Revision-Date: 2021-03-10 17:02+0000\n"
+"Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 4.5.2-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -97,7 +98,7 @@ msgstr "Gerçekler ve Olaylar Sekmesi Ayarları"
 #. I18N: gedcom tag _FSFTID
 #: VestaCommonLibModule.php:60
 msgid "FamilySearch id"
-msgstr ""
+msgstr "FamilySearch kimliği"
 
 #: resources/views/vesta_config.phtml:52
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
@@ -130,7 +131,7 @@ msgstr "Liste menüsü giriş başlığına %1$s sembolünü dahil et"
 #: CommonI18N.php:139
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
-msgstr ""
+msgstr "Kenar çubuğu başlığına %1$s simgesini ekle"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:127
