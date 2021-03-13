@@ -1,5 +1,20 @@
 <?php
 
+/**
+ * webtrees: online genealogy
+ * Copyright (C) 2021 webtrees development team
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 declare(strict_types=1);
 
 namespace Fisharebest\Webtrees\Functions;
@@ -12,11 +27,7 @@ use Fisharebest\Webtrees\Date;
 use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\Family;
 use Fisharebest\Webtrees\Gedcom;
-use Fisharebest\Webtrees\GedcomCode\GedcomCodeAdop;
-use Fisharebest\Webtrees\GedcomCode\GedcomCodeLang;
 use Fisharebest\Webtrees\GedcomCode\GedcomCodeName;
-use Fisharebest\Webtrees\GedcomCode\GedcomCodePedi;
-use Fisharebest\Webtrees\GedcomCode\GedcomCodeQuay;
 use Fisharebest\Webtrees\GedcomCode\GedcomCodeRela;
 use Fisharebest\Webtrees\GedcomCode\GedcomCodeStat;
 use Fisharebest\Webtrees\GedcomCode\GedcomCodeTemp;
@@ -24,6 +35,7 @@ use Fisharebest\Webtrees\GedcomTag;
 use Fisharebest\Webtrees\Html;
 use Fisharebest\Webtrees\Http\RequestHandlers\AutoCompleteCitation;
 use Fisharebest\Webtrees\Http\RequestHandlers\AutoCompletePlace;
+use Fisharebest\Webtrees\Http\RequestHandlers\AutoCompleteSurname;
 use Fisharebest\Webtrees\Http\RequestHandlers\CreateMediaObjectModal;
 use Fisharebest\Webtrees\Http\RequestHandlers\CreateNoteModal;
 use Fisharebest\Webtrees\Http\RequestHandlers\CreateRepositoryModal;
@@ -40,6 +52,7 @@ use Fisharebest\Webtrees\Services\UserService;
 use Fisharebest\Webtrees\Tree;
 use Psr\Http\Message\ServerRequestInterface;
 use Ramsey\Uuid\Uuid;
+
 use function app;
 use function array_key_exists;
 use function array_merge;
@@ -79,7 +92,7 @@ class FunctionsEdit
      *
      * @return string
      */
-    public static function editLanguageCheckboxes($parameter_name, $languages): string
+    public static function editLanguageCheckboxes(string $parameter_name, array $languages): string
     {
         return view('edit/language-checkboxes', ['languages' => $languages]);
     }
@@ -87,7 +100,7 @@ class FunctionsEdit
     /**
      * A list of access levels (e.g. for an edit control).
      *
-     * @return string[]
+     * @return array<string>
      */
     public static function optionsAccessLevels(): array
     {
@@ -97,7 +110,7 @@ class FunctionsEdit
     /**
      * A list of active languages (e.g. for an edit control).
      *
-     * @return string[]
+     * @return array<string>
      */
     public static function optionsActiveLanguages(): array
     {
@@ -112,7 +125,7 @@ class FunctionsEdit
     /**
      * A list of calendar conversions (e.g. for an edit control).
      *
-     * @return string[]
+     * @return array<string>
      */
     public static function optionsCalendarConversions(): array
     {
@@ -122,7 +135,7 @@ class FunctionsEdit
     /**
      * A list of contact methods (e.g. for an edit control).
      *
-     * @return string[]
+     * @return array<string>
      */
     public static function optionsContactMethods(): array
     {
@@ -132,7 +145,7 @@ class FunctionsEdit
     /**
      * A list of hide/show options (e.g. for an edit control).
      *
-     * @return string[]
+     * @return array<string>
      */
     public static function optionsHideShow(): array
     {
@@ -145,11 +158,11 @@ class FunctionsEdit
     /**
      * A list of integers (e.g. for an edit control).
      *
-     * @param int[] $integers
+     * @param array<int> $integers
      *
-     * @return string[]
+     * @return array<int,string>
      */
-    public static function numericOptions($integers): array
+    public static function numericOptions(array $integers): array
     {
         $array = [];
         foreach ($integers as $integer) {
@@ -166,7 +179,7 @@ class FunctionsEdit
     /**
      * A list of no/yes options (e.g. for an edit control).
      *
-     * @return string[]
+     * @return array<string>
      */
     public static function optionsNoYes(): array
     {
@@ -181,9 +194,9 @@ class FunctionsEdit
      *
      * @param string $relationship
      *
-     * @return string[]
+     * @return array<string>
      */
-    public static function optionsRelationships($relationship): array
+    public static function optionsRelationships(string $relationship): array
     {
         $relationships = GedcomCodeRela::getValues();
         // The user is allowed to specify values that aren't in the list.
@@ -199,9 +212,9 @@ class FunctionsEdit
      *
      * @param bool $include_empty
      *
-     * @return string[]
+     * @return array<string>
      */
-    public static function optionsRestrictions($include_empty): array
+    public static function optionsRestrictions(bool $include_empty): array
     {
         $options = [
             'none'         => I18N::translate('Show to visitors'),
@@ -220,7 +233,7 @@ class FunctionsEdit
     /**
      * A list of GEDCOM restrictions for privacy rules.
      *
-     * @return string[]
+     * @return array<string>
      */
     public static function optionsRestrictionsRule(): array
     {
@@ -230,17 +243,17 @@ class FunctionsEdit
     /**
      * A list of temple options (e.g. for an edit control).
      *
-     * @return string[]
+     * @return array<string>
      */
     public static function optionsTemples(): array
     {
-        return ['' => I18N::translate('No temple - living ordinance')] + GedcomCodeTemp::templeNames();
+        return Registry::elementFactory()->make('SUBN:TEMP')->values();
     }
 
     /**
      * A list of user options (e.g. for an edit control).
      *
-     * @return string[]
+     * @return array<string>
      */
     public static function optionsUsers(): array
     {
@@ -270,7 +283,7 @@ class FunctionsEdit
      *
      * @return string
      */
-    public static function addSimpleTag(Tree $tree, $tag, $upperlevel = '', $label = ''): string
+    public static function addSimpleTag(Tree $tree, string $tag, string $upperlevel = '', string $label = ''): string
     {
         $localization_service = app(LocalizationService::class);
         
@@ -310,7 +323,7 @@ class FunctionsEdit
             $value = trim($value, '@');
         }
 
-        if ($fact === 'REPO' || $fact === 'SOUR' || $fact === 'OBJE' || $fact === 'FAMC' || $fact === 'SUBM' || $fact === 'ASSO' || $fact === '_ASSO') {
+        if ($fact === 'REPO' || $fact === 'SOUR' || $fact === 'OBJE' || $fact === 'FAMC' || $fact === 'SUBM' || $fact === 'ASSO' || $fact === '_ASSO' || $fact === 'ALIA') {
             $islink = true;
         }
 
@@ -416,18 +429,20 @@ class FunctionsEdit
             $html .= '</div>';
         } elseif ($fact === 'GIVN') {
             $html .= '<div class="input-group">';
-            $html .= '<input class="form-control" type="text" id="' . $id . '" name="' . $name . '" value="' . e($value) . '" data-autocomplete-type="GIVN" oninput="updatewholename()" autofocus>';
+            $html .= '<input class="form-control" type="text" id="' . $id . '" name="' . $name . '" value="' . e($value) . '" oninput="updatewholename()" autofocus>';
             $html .= view('edit/input-addon-keyboard', ['id' => $id]);
             $html .= '</div>';
         } elseif ($fact === 'SURN' || $fact === '_MARNM_SURN') {
             $html .= '<div class="input-group">';
-            $html .= '<input class="form-control" type="text" id="' . $id . '" name="' . $name . '" value="' . e($value) . '" data-autocomplete-type="SURN" oninput="updatewholename()">';
+            $html .= '<input class="form-control" type="text" id="' . $id . '" name="' . $name . '" value="' . e($value) . '" autocomplete="off" data-autocomplete-url="' . e(route(AutoCompleteSurname::class, ['tree' => $tree->name()])) . '" oninput="updatewholename()" onblur="updatewholename()">';
             $html .= view('edit/input-addon-keyboard', ['id' => $id]);
             $html .= '</div>';
         } elseif ($fact === 'ADOP') {
-            $html .= view('components/select', ['id' => $id, 'name' => $name, 'selected' => $value, 'options' => GedcomCodeAdop::getValues()]);
+            $element = Registry::elementFactory()->make('INDI:ADOP:FAMC:ADOP');
+            $html .= view('components/select', ['id' => $id, 'name' => $name, 'selected' => $value, 'options' => $element->values()]);
         } elseif ($fact === 'LANG') {
-            $html .= view('components/select', ['id' => $id, 'name' => $name, 'selected' => $value, 'options' => GedcomCodeLang::getValues()]);
+            $element = Registry::elementFactory()->make('HEAD:LANG');
+            $html .= view('components/select', ['id' => $id, 'name' => $name, 'selected' => $value, 'options' => $element->values()]);
         } elseif ($fact === 'ALIA') {
             $html .= '<div class="input-group">';
             $html .= view('components/select-individual', ['id' => $id, 'name' => $name, 'individual' => Registry::individualFactory()->make($value, $tree), 'tree' => $tree]);
@@ -453,11 +468,7 @@ class FunctionsEdit
             $html .= '<div id="caldiv' . $id . '" style="position:absolute;visibility:hidden;background-color:white;z-index:1000"></div>';
             $html .= '<p class="text-muted">' . (new Date($value))->display() . '</p>';
         } elseif ($fact === 'FAMC') {
-            $html .=
-                '<div class="input-group">' .
-                '<div class="input-group-prepend"><button class="btn btn-secondary" type="button" data-toggle="modal" data-backdrop="static" data-target="#modal-create-family" data-element-id="' . $id . '" title="' . I18N::translate('Create a family') . '">' . view('icons/add') . '</button></div>' .
-                view('components/select-family', ['id' => $id, 'name' => $name, 'family' => Registry::familyFactory()->make($value, $tree), 'tree' => $tree]) .
-                '</div>';
+            $html .= view('components/select-family', ['id' => $id, 'name' => $name, 'family' => Registry::familyFactory()->make($value, $tree), 'tree' => $tree]);
         } elseif ($fact === 'LATI') {
             $html .= '<input class="form-control" type="text" id="' . $id . '" name="' . $name . '" value="' . e($value) . '" oninput="webtrees.reformatLatitude(this)">';
         } elseif ($fact === 'LONG') {
@@ -490,7 +501,9 @@ class FunctionsEdit
                     'data-autocomplete-extra' => 'SOUR',
                 ]) . '>';
         } elseif ($fact === 'PEDI') {
-            $html .= view('components/select', ['id' => $id, 'name' => $name, 'selected' => $value, 'options' => GedcomCodePedi::getValues()]);
+            $element = Registry::elementFactory()->make('INDI:FAMC:PEDI');
+
+            $html .= view('components/select', ['id' => $id, 'name' => $name, 'selected' => $value, 'options' => $element->values()]);
         } elseif ($fact === 'PLAC') {
             $html .= '<div class="input-group">';
             $html .= '<input ' . Html::attributes([
@@ -507,7 +520,8 @@ class FunctionsEdit
             $html .= view('edit/input-addon-help', ['fact' => 'PLAC']);
             $html .= '</div>';
         } elseif ($fact === 'QUAY') {
-            $html .= view('components/select', ['id' => $id, 'name' => $name, 'selected' => $value, 'options' => ['' => ''] + GedcomCodeQuay::getValues()]);
+            $element = Registry::elementFactory()->make('INDI:SOUR:QUAY');
+            $html .= view('components/select', ['id' => $id, 'name' => $name, 'selected' => $value, 'options' => $element->values()]);
         } elseif ($fact === 'RELA') {
             $html .= view('components/select', ['id' => $id, 'name' => $name, 'selected' => $value, 'options' => self::optionsRelationships($value)]);
         } elseif ($fact === 'REPO') {
@@ -551,22 +565,6 @@ class FunctionsEdit
         } elseif ($fact === 'TYPE' && $level === '0') {
             // Level 0 TYPE fields are only used for NAME records
             $html .= view('components/select', ['id' => $id, 'name' => $name, 'selected' => $value, 'options' => GedcomCodeName::getValues()]);
-        } elseif ($fact === 'TYPE' && $level === '3') {
-            //-- Build the selector for the Media 'TYPE' Fact
-            $html          .= '<select name="text[]"><option selected value="" ></option>';
-            $selectedValue = strtolower($value);
-            if (!array_key_exists($selectedValue, GedcomTag::getFileFormTypes())) {
-                $html .= '<option selected value="' . e($value) . '" >' . e($value) . '</option>';
-            }
-            foreach (['' => ''] + GedcomTag::getFileFormTypes() + [] as $typeName => $typeValue) {
-                $html .= '<option value="' . $typeName . '" ';
-                if ($selectedValue === $typeName) {
-                    $html .= 'selected';
-                }
-                $html .= '>' . $typeValue . '</option>';
-            }
-            $html .= '</select>';
-        
         
         //TODO Issue #2
         //[RC] extended for SOUR.DATA.EVEN ($upperlevel is SOUR when editing the DATA fact, and DATA when creating a DATA fact - seems weird)
@@ -644,7 +642,7 @@ class FunctionsEdit
      *
      * @return void
      */
-    public static function addSimpleTags(Tree $tree, $fact): void
+    public static function addSimpleTags(Tree $tree, string $fact): void
     {
         // For new individuals, these facts default to "Y"
         if ($fact === 'MARR') {
@@ -673,7 +671,7 @@ class FunctionsEdit
      *
      * @return void
      */
-    public static function createAddForm(Tree $tree, $fact): void
+    public static function createAddForm(Tree $tree, string $fact): void
     {
         self::$tags = [];
 
@@ -719,6 +717,9 @@ class FunctionsEdit
      */
     public static function createEditForm(Fact $fact): void
     {
+        $handler = app(FunctionsEditPlacHandler::class);
+        $expected_subtags_plac = $handler->expectedSubtagsPlac();
+                
         $record = $fact->record();
         $tree   = $record->tree();
 
@@ -735,9 +736,9 @@ class FunctionsEdit
             'SOUR' => [
                 'PAGE',
                 'DATA',
-            ],
+            ],            
             //[RC] adjusted
-            'PLAC' => ['_LOC', 'MAP'],
+            'PLAC' => $expected_subtags_plac,
             'MAP'  => [
                 'LATI',
                 'LONG',
@@ -817,8 +818,7 @@ class FunctionsEdit
             // Dates need different labels, depending on whether they are inside sources.
             if ($inSource && $type === 'DATE') {
                 echo self::addSimpleTag($tree, $subrecord, '', GedcomTag::getLabel($label));
-            } elseif (!$inSource && $type === 'DATE') {
-                $handler = app(FunctionsEditPlacHandler::class);
+            } elseif (!$inSource && $type === 'DATE') {                
                 //adjust upperlevel to align with _LOC, upperlevel anyway not used by original code!
                 //[2021/02] this seems to be a bad idea, reverting to $level1type
                 //echo $handler->addSimpleTag($tree, $subrecord, $level0type, GedcomTag::getLabel($label));
@@ -833,7 +833,6 @@ class FunctionsEdit
             } elseif (($type !== 'PLAC') && ($type !== '_LOC') && ($type !== 'LATI') && ($type !== 'LONG')) {
                 echo self::addSimpleTag($tree, $subrecord, $level0type, GedcomTag::getLabel($label));
             } else {
-                $handler = app(FunctionsEditPlacHandler::class);
                 echo $handler->addSimpleTag($tree, $subrecord, $level0type, GedcomTag::getLabel($label));
             }
 
@@ -850,14 +849,12 @@ class FunctionsEdit
             foreach ($expected_subtags[$type] ?? [] as $subtag) {
                 if (!in_array($subtag, $subtags, true)) {
                     if (($type === 'PLAC') && ($subtag === '_LOC')) {
-                      $handler = app(FunctionsEditPlacHandler::class);
                       //gah what a mess, why is it 'INDI:PLAC' here and not 'BIRT:PLAC'???
                       echo $handler->addSimpleTag($tree, ($level + 1) . ' _LOC', $level0type.':PLAC', GedcomTag::getLabel($label . ':' . $subtag));
                     } else {
                       echo self::addSimpleTag($tree, ($level + 1) . ' ' . $subtag, '', GedcomTag::getLabel($label . ':' . $subtag));
                     }                    
                     foreach ($expected_subtags[$subtag] ?? [] as $subsubtag) {
-                        $handler = app(FunctionsEditPlacHandler::class);
                         echo $handler->addSimpleTag($tree, ($level + 2) . ' ' . $subsubtag, '', GedcomTag::getLabel($label . ':' . $subtag . ':' . $subsubtag)); 
                         //must use this method to create proper 'child_of_'
                         //echo self::addSimpleTag($tree, ($level + 2) . ' ' . $subsubtag, '', GedcomTag::getLabel($label . ':' . $subtag . ':' . $subsubtag));
@@ -886,7 +883,7 @@ class FunctionsEdit
      *
      * @return void
      */
-    public static function insertMissingSubtags(Tree $tree, $level1tag, $add_date = false): void
+    public static function insertMissingSubtags(Tree $tree, string $level1tag, bool $add_date = false): void
     {
         // handle  MARRiage TYPE
         $type_val = '';
@@ -899,7 +896,6 @@ class FunctionsEdit
             if ($key === 'DATE' && in_array($level1tag, Config::nonDateFacts(), true) || $key === 'PLAC' && in_array($level1tag, Config::nonPlaceFacts(), true)) {
                 continue;
             }
-            
             if (in_array($level1tag, $value, true) && !in_array($key, self::$tags, true)) {
                 if ($key === 'TYPE') {
                     echo self::addSimpleTag($tree, '2 TYPE ' . $type_val, $level1tag);

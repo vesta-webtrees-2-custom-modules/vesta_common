@@ -2,32 +2,30 @@
 
 namespace Vesta\Hook\HookInterfaces;
 
-use Aura\Router\Route;
 use Fisharebest\Webtrees\GedcomRecord;
-use Fisharebest\Webtrees\Tree;
+use Fisharebest\Webtrees\Location;
 use Illuminate\Support\Collection;
 
 interface FunctionsClippingsCartInterface {
-
-  public function getAddToClippingsCartRoute(Route $route, Tree $tree): ?string;
   
-  /**
-   * 
-   * @return Collection<string>
-   */
-  public function getDirectLinkTypes(): Collection;
+  public function getAddLocationActionAdditionalOptions(Location $location): ?array;
+  
+  public function postAddLocationActionHandleOption(ClippingsCartAddToCartInterface $target, Location $location, string $option): bool;
   
   /**
    * 
    * @param GedcomRecord $record
-   * @return Collection<string> xrefs
+   * @return Collection of xref
    */
+  public function getIndirectLocations(GedcomRecord $record): Collection;
+  
+  /*
+  public function getAddToClippingsCartRoute(Route $route, Tree $tree): ?string;
+  
+  public function getDirectLinkTypes(): Collection;
+  
   public function getIndirectLinks(GedcomRecord $record): Collection;
   
-  /**
-   * 
-   * @param string $xref
-   * @return Collection<string> xrefs
-   */
-  public function getTransitiveLinks(GedcomRecord $record): Collection;
+  public function getTransitiveLinks(GedcomRecord $record): Collection;  
+  */
 }

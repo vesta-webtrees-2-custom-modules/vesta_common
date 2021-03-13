@@ -137,12 +137,12 @@ class DefaultPlaceWithinHierarchy implements PlaceWithinHierarchy {
     return null;
   }
    
-  public function latitude(): float {
+  public function latitude(): ?float {
     $pl = new PlaceLocation($this->gedcomName());
     return $pl->latitude();
   }
   
-  public function longitude(): float {
+  public function longitude(): ?float {
     $pl = new PlaceLocation($this->gedcomName());
     return $pl->longitude();
   }

@@ -14,11 +14,13 @@ $loader->addPsr4('Cissee\\WebtreesExt\\', __DIR__ . "/patchedWebtrees");
 $loader->addPsr4('Cissee\\WebtreesExt\\WhatsNew\\', __DIR__ . "/patchedWebtrees/WhatsNew");
 $loader->addPsr4('Cissee\\WebtreesExt\\Functions\\', __DIR__ . "/patchedWebtrees/functions");
 $loader->addPsr4('Cissee\\WebtreesExt\\Module\\', __DIR__ . "/patchedWebtrees/Module");
+$loader->addPsr4('Cissee\\WebtreesExt\\Elements\\', __DIR__ . "/patchedWebtrees/Elements");
 $loader->addPsr4('Cissee\\WebtreesExt\\Http\\Controllers\\', __DIR__ . "/patchedWebtrees/Http/Controllers");
 $loader->addPsr4('Cissee\\WebtreesExt\\Http\\RequestHandlers\\', __DIR__ . "/patchedWebtrees/Http/RequestHandlers");
 
 $loader->register();
 
+//note: some of this is already in ElementFactory, but Functions* stilal accesses GedcomTag!
 //GedcomTag:
 //adjustments for shared places:
 //adjustment for _LOC:_LOC etc hopefully possible in webtrees 2.1.x

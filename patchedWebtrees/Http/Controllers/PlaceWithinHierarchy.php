@@ -42,11 +42,9 @@ interface PlaceWithinHierarchy {
   
   public function getLatLon(): ?MapCoordinates;
   
-  //legacy, 0.0 represents 'unknown'
-  public function latitude(): float;
+  public function latitude(): ?float;
   
-  //legacy, 0.0 represents 'unknown'
-  public function longitude(): float;
+  public function longitude(): ?float;
  
   ////////////////////////////////////////////////////////////////////////////////
   //extensions

@@ -2,11 +2,10 @@
 
 namespace Vesta\Hook\HookInterfaces;
 
-use Aura\Router\Route;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Contracts\UserInterface;
 use Fisharebest\Webtrees\GedcomRecord;
-use Fisharebest\Webtrees\Module\ModuleInterface;
+use Fisharebest\Webtrees\Location;
 use Fisharebest\Webtrees\Services\ModuleService;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
@@ -14,6 +13,46 @@ use function app;
 
 class FunctionsClippingsCartUtils {
     
+  public static function getAddLocationActionAdditionalOptions(Location $location): array {
+    $providers = FunctionsClippingsCartUtils::accessibleModules($location->tree(), Auth::user())
+            ->toArray();
+    
+    foreach ($providers as $provider) {      
+      $ret = $provider->getAddLocationActionAdditionalOptions($location);
+      //first one wins!
+      if ($ret !== null) {
+        return $ret;
+      }
+    }
+    return [];
+  }
+  
+  public static function postAddLocationActionHandleOption(ClippingsCartAddToCartInterface $target, Location $location, string $option) {
+    $providers = FunctionsClippingsCartUtils::accessibleModules($location->tree(), Auth::user())
+            ->toArray();
+    
+    foreach ($providers as $provider) {      
+      $ret = $provider->postAddLocationActionHandleOption($target, $location, $option);
+      //first one wins!
+      if ($ret) {
+        return;
+      }
+    }
+    return;
+  }
+  
+  public static function getIndirectLocations(GedcomRecord $record): Collection {
+    $providers = FunctionsClippingsCartUtils::accessibleModules($record->tree(), Auth::user())
+            ->toArray();
+    
+    $ret = new Collection();
+    foreach ($providers as $provider) {      
+      $ret = $ret->merge($provider->getIndirectLocations($record));
+    }
+    return $ret;
+  }
+  
+  /*
   public static function getAddToClippingsCartRoute(ModuleInterface $module, Route $route, Tree $tree): ?string {
     $providers = FunctionsClippingsCartUtils::accessibleModules($tree, Auth::user())
             ->toArray();
@@ -60,6 +99,7 @@ class FunctionsClippingsCartUtils {
     }
     return $ret;
   }
+  */
   
   public static function accessibleModules(Tree $tree, UserInterface $user): Collection {
     return app()

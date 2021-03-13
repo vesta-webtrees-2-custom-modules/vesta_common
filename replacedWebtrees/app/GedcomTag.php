@@ -2,7 +2,7 @@
 
 /**
  * webtrees: online genealogy
- * Copyright (C) 2020 webtrees development team
+ * Copyright (C) 2021 webtrees development team
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -12,7 +12,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
 declare(strict_types=1);
@@ -21,6 +21,7 @@ namespace Fisharebest\Webtrees;
 
 use Ramsey\Uuid\Uuid;
 
+use function array_filter;
 use function str_contains;
 
 /**
@@ -407,28 +408,6 @@ class GedcomTag
         '__IMAGE_SIZE__',
     ];
 
-    /** @var string[] Possible values for the Object-File-Format types */
-    private const OBJE_FILE_FORM_TYPE = [
-        'audio',
-        'book',
-        'card',
-        'certificate',
-        'coat',
-        'document',
-        'electronic',
-        'fiche',
-        'film',
-        'magazine',
-        'manuscript',
-        'map',
-        'newspaper',
-        'photo',
-        'tombstone',
-        'video',
-        'painting',
-        'other',
-    ];
-
     /**
      * Is $tag one of our known tags?
      *
@@ -436,7 +415,7 @@ class GedcomTag
      *
      * @return bool
      */
-    public static function isTag($tag): bool
+    public static function isTag(string $tag): bool
     {
         return in_array($tag, self::ALL_TAGS, true);
     }
@@ -448,7 +427,7 @@ class GedcomTag
      *
      * @return string
      */
-    public static function getLabel($tag): string
+    public static function getLabel(string $tag): string
     {
         switch ($tag) {
             case 'ABBR':
@@ -458,13 +437,13 @@ class GedcomTag
                 /* I18N: gedcom tag ADDR */
                 return I18N::translate('Address');
             case 'ADR1':
-                /* I18N: gedcom tag ADD1 */
+                /* I18N: gedcom tag ADR1 */
                 return I18N::translate('Address line 1');
             case 'ADR2':
-                /* I18N: gedcom tag ADD2 */
+                /* I18N: gedcom tag ADR2 */
                 return I18N::translate('Address line 2');
             case 'ADR3':
-                /* I18N: gedcom tag ADD2 */
+                /* I18N: gedcom tag ADR3 */
                 return I18N::translate('Address line 3');
             case 'ADOP':
                 /* I18N: gedcom tag ADOP */
@@ -1330,7 +1309,7 @@ class GedcomTag
      *
      * @return string
      */
-    public static function getLabelValue($tag, $value, GedcomRecord $record = null, $element = 'div'): string
+    public static function getLabelValue(string $tag, string $value, GedcomRecord $record = null, $element = 'div'): string
     {
         return
             '<' . $element . ' class="fact_' . $tag . '">' .
@@ -1344,9 +1323,9 @@ class GedcomTag
      *
      * @param string $fact_type
      *
-     * @return string[]
+     * @return array<string>
      */
-    public static function getPicklistFacts($fact_type): array
+    public static function getPicklistFacts(string $fact_type): array
     {
         switch ($fact_type) {
             case Individual::RECORD_TYPE:
@@ -1565,78 +1544,21 @@ class GedcomTag
      */
     public static function getFileFormTypeValue(string $type): string
     {
-        switch (strtolower($type)) {
-            case 'audio':
-                /* I18N: Type of media object */
-                return I18N::translate('Audio');
-            case 'book':
-                /* I18N: Type of media object */
-                return I18N::translate('Book');
-            case 'card':
-                /* I18N: Type of media object */
-                return I18N::translate('Card');
-            case 'certificate':
-                /* I18N: Type of media object */
-                return I18N::translate('Certificate');
-            case 'coat':
-                /* I18N: Type of media object */
-                return I18N::translate('Coat of arms');
-            case 'document':
-                /* I18N: Type of media object */
-                return I18N::translate('Document');
-            case 'electronic':
-                /* I18N: Type of media object */
-                return I18N::translate('Electronic');
-            case 'fiche':
-                /* I18N: Type of media object */
-                return I18N::translate('Microfiche');
-            case 'film':
-                /* I18N: Type of media object */
-                return I18N::translate('Microfilm');
-            case 'magazine':
-                /* I18N: Type of media object */
-                return I18N::translate('Magazine');
-            case 'manuscript':
-                /* I18N: Type of media object */
-                return I18N::translate('Manuscript');
-            case 'map':
-                /* I18N: Type of media object */
-                return I18N::translate('Map');
-            case 'newspaper':
-                /* I18N: Type of media object */
-                return I18N::translate('Newspaper');
-            case 'photo':
-                /* I18N: Type of media object */
-                return I18N::translate('Photo');
-            case 'tombstone':
-                /* I18N: Type of media object */
-                return I18N::translate('Tombstone');
-            case 'video':
-                /* I18N: Type of media object */
-                return I18N::translate('Video');
-            case 'painting':
-                /* I18N: Type of media object */
-                return I18N::translate('Painting');
-            default:
-                /* I18N: Type of media object */
-                return I18N::translate('Other');
-        }
+        $element = Registry::elementFactory()->make('OBJE:FILE:FORM:TYPE');
+
+        return $element->values()[$type] ?? $type;
     }
 
     /**
      * A list of all possible values for 1 FILE/2 FORM/3 TYPE
      *
-     * @return string[]
+     * @return array<string>
      */
     public static function getFileFormTypes(): array
     {
-        $values = array_map(static function (string $keyword): string {
-            return self::getFileFormTypeValue($keyword);
-        }, array_combine(self::OBJE_FILE_FORM_TYPE, self::OBJE_FILE_FORM_TYPE));
+        $element = Registry::elementFactory()->make('OBJE:FILE:FORM:TYPE');
 
-        uasort($values, '\Fisharebest\Webtrees\I18N::strcasecmp');
-
-        return $values;
+        return array_filter($element->values());
     }
 
     /**

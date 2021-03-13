@@ -236,7 +236,7 @@ class GenericPlaceHierarchyController {
                   $flag = $flag_path . $location->icon();
               }
 
-              if ($location->latitude() === 0.0 && $location->longitude() === 0.0) {
+              if ($location->latitude() === null && $location->longitude() === null) {
                   $sidebar_class = 'unmapped';
               } else {
                   $sidebar_class = 'mapped';

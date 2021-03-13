@@ -2,10 +2,14 @@
 
 namespace Vesta;
 
-use Fisharebest\Webtrees\I18N;
 use Cissee\WebtreesExt\AbstractModule;
+use Cissee\WebtreesExt\Elements\FamilySearchFamilyTreeId;
+use Cissee\WebtreesExt\MoreI18N;
+use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomTrait;
+use Fisharebest\Webtrees\Registry;
+use function GuzzleHttp\json_decode;
 
 class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterface {
 
@@ -56,9 +60,9 @@ class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterfa
   }
   
   public function boot(): void {
-    //added via GedcomTag.php
-    /* I18N: gedcom tag _FSFTID */I18N::translate('FamilySearch id');
-      
+    $ef = Registry::elementFactory();
+    $ef->register(['INDI:_FSFTID' => new FamilySearchFamilyTreeId(MoreI18N::xlate('FamilySearch id'))]);
+  
     $this->flashWhatsNew('\Vesta\WhatsNew', 2);
   }
   
