@@ -1,0 +1,83 @@
+<?php
+
+use Cissee\WebtreesExt\Module\ModuleMetaInterfaceUtils;
+use Cissee\WebtreesExt\MoreI18N;
+use Fisharebest\Webtrees\Http\RequestHandlers\ControlPanel;
+use Fisharebest\Webtrees\Http\RequestHandlers\UpgradeWizardConfirm;
+use Fisharebest\Webtrees\I18N;
+
+/**
+ * @var string $current_version
+ * @var string $latest_version
+ * @var string $title
+ */
+
+?>
+
+<?= view('components/breadcrumbs', ['links' => [route(ControlPanel::class) => MoreI18N::xlate('Control panel'), $title]]) ?>
+
+<h1><?= $title ?></h1>
+
+<?php if ($latest_version === '') : ?>
+    <div class="alert alert-warning">
+        <?= MoreI18N::xlate('No upgrade information is available.') ?>
+    </div>
+<?php elseif (version_compare($current_version, $latest_version) >= 0) : ?>
+    <div class="alert alert-info">
+        <?= MoreI18N::xlate('This is the latest version of webtrees. No upgrade is available.') ?>
+    </div>
+<?php else : ?>
+    <p>
+        <?= MoreI18N::xlate('A new version of webtrees is available.') ?>
+    </p>
+    
+    <div class="alert alert-info alert-dismissible" role="alert">
+        <?= I18N::translate('Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well.', $latest_version) ?>
+    </div>
+    
+    <?php
+      $oor = ModuleMetaInterfaceUtils::getModulesOutOfRange($latest_version, true);
+      if (!$oor->isEmpty()) {
+        $titles = $oor->reduce(static function ($carry, $item): string {
+          $title = $item->title();
+                  return ($carry === "")?$title:$carry . "; " . $title;
+              }, "")
+        ?>
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <?= I18N::translate('The currently installed versions of the following custom modules are incompatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s', $latest_version, $titles) ?>
+        </div>
+        <p>
+          
+        </p>
+        <?php
+      }
+
+      $oor = ModuleMetaInterfaceUtils::getModulesOutOfRange($latest_version, false);
+      if (!$oor->isEmpty()) {
+        $titles = $oor->reduce(function ($carry, $item): string {
+          $title = $item->title();
+                  return ($carry === "")?$title:$carry . "; " . $title;
+              }, "")
+        ?>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <?= I18N::translate('The currently installed versions of the following custom modules are incompatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s', $latest_version, $titles) ?>
+        </div>
+        <p>
+          
+        </p>
+        <?php
+      }
+    ?>
+        
+    <p>
+        <?= MoreI18N::xlate('Depending on your server configuration, you may be able to upgrade automatically.') ?>
+    </p>
+
+    <form method="post" action="<?= e(route(UpgradeWizardConfirm::class)) ?>" class="form-horizontal">
+        <?= csrf_field() ?>
+
+        <button type="submit" class="btn btn-primary" name="continue" value="1">
+            <?= MoreI18N::xlate('continue') ?>
+        </button>
+    </form>
+<?php endif ?>

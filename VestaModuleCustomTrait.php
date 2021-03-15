@@ -2,14 +2,9 @@
 
 namespace Vesta;
 
-use Fig\Http\Message\StatusCodeInterface;
 use Fisharebest\Localization\Translation;
-use Fisharebest\Webtrees\Cache;
 use Fisharebest\Webtrees\FlashMessages;
 use Fisharebest\Webtrees\I18N;
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
-use function app;
 
 trait VestaModuleCustomTrait {
   
@@ -39,6 +34,7 @@ trait VestaModuleCustomTrait {
     return $ret;
   }
   
+  /*
   //taken from ModuleCustomTrait
   public function customModuleLatestVersion(): string {
     // No update URL provided.
@@ -74,6 +70,7 @@ trait VestaModuleCustomTrait {
         return $this->customModuleVersion();
     }, 3600); //ModuleCustomTrait has 1 day, we use 1 hour
   }
+  */
   
   protected function flashWhatsNew($namespace, $target_version): bool {
     $pref = 'WHATS_NEW';

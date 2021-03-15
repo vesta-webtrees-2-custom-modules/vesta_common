@@ -4,18 +4,24 @@ namespace Vesta;
 
 use Cissee\WebtreesExt\AbstractModule;
 use Cissee\WebtreesExt\Elements\FamilySearchFamilyTreeId;
+use Cissee\WebtreesExt\Module\ModuleMetaInterface;
+use Cissee\WebtreesExt\Module\ModuleMetaTrait;
 use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomTrait;
 use Fisharebest\Webtrees\Registry;
+use Fisharebest\Webtrees\View;
 use function GuzzleHttp\json_decode;
 
-class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterface {
+class VestaCommonLibModule extends AbstractModule implements 
+  ModuleCustomInterface,
+  ModuleMetaInterface {
 
-  use ModuleCustomTrait, VestaModuleCustomTrait {
+  use ModuleCustomTrait, ModuleMetaTrait, VestaModuleCustomTrait {
     VestaModuleCustomTrait::customTranslations insteadof ModuleCustomTrait;
-    VestaModuleCustomTrait::customModuleLatestVersion insteadof ModuleCustomTrait;
+    ModuleMetaTrait::customModuleVersion insteadof ModuleCustomTrait;
+    ModuleMetaTrait::customModuleLatestVersion insteadof ModuleCustomTrait;
   }
 
   private $vesta;
@@ -28,18 +34,18 @@ class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterfa
     return 'Richard Cissée';
   }
 
-  public function customModuleVersion(): string {
-    return file_get_contents(__DIR__ . '/latest-version.txt');
-  }
-
-  public function customModuleLatestVersionUrl(): string {
-    return 'https://raw.githubusercontent.com/vesta-webtrees-2-custom-modules/vesta_common/master/latest-version.txt';
-  }
-
   public function customModuleSupportUrl(): string {
     return 'https://cissee.de';
   }
 
+  public function customModuleMetaDatasJson(): string {
+    return file_get_contents(__DIR__ . '/metadata.json');
+  } 
+  
+  public function customModuleLatestMetaDatasJsonUrl(): string {
+    return 'https://raw.githubusercontent.com/vesta-webtrees-2-custom-modules/vesta_common/master/metadata.json';
+  }
+  
   public function resourcesFolder(): string {
     return __DIR__ . '/resources/';
   }
@@ -64,6 +70,12 @@ class VestaCommonLibModule extends AbstractModule implements ModuleCustomInterfa
     $ef->register(['INDI:_FSFTID' => new FamilySearchFamilyTreeId(MoreI18N::xlate('FamilySearch id'))]);
   
     $this->flashWhatsNew('\Vesta\WhatsNew', 2);
+    
+    // Register a namespace for our views.
+    View::registerNamespace($this->name(), $this->resourcesFolder() . 'views/');
+    
+    // Replace an existing view with our own version.
+    View::registerCustomView('::admin/upgrade/wizard', $this->name() . '::admin/upgrade/wizard');      
   }
   
   public function isEnabled(): bool {
