@@ -76,7 +76,7 @@ trait ModuleMetaTrait {
 
             if ($response->getStatusCode() === StatusCodeInterface::STATUS_OK) {
                 $json = $response->getBody()->getContents();
-                return $this->decodeJsonToMetaData($json);
+                return $this->decodeJsonToMetaDatas($json);
             }
             
         } catch (RequestException $ex) {
