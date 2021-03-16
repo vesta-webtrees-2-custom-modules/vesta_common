@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-03-07 12:44+0100\n"
-"PO-Revision-Date: 2021-02-02 17:41+0000\n"
+"PO-Revision-Date: 2021-03-16 15:02+0000\n"
 "Last-Translator: mpwt <der@bauschaffen.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 4.5.2-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -97,7 +98,7 @@ msgstr "Einstellungen der Registerkarte Tatsachen und Ereignisse"
 #. I18N: gedcom tag _FSFTID
 #: VestaCommonLibModule.php:60
 msgid "FamilySearch id"
-msgstr ""
+msgstr "FamilySearch-ID"
 
 #: resources/views/vesta_config.phtml:52
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
@@ -130,7 +131,7 @@ msgstr "Einfügen des Symbols %1$s in den Titel des Listenmenüeintrags"
 #: CommonI18N.php:139
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
-msgstr ""
+msgstr "Das Symbol %1$s in den Seitenleistentitel einfügen"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:127
