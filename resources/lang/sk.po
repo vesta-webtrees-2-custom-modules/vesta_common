@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-03-07 12:44+0100\n"
-"PO-Revision-Date: 2021-03-17 11:18+0000\n"
+"PO-Revision-Date: 2021-03-17 14:18+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/sk/>\n"
@@ -98,7 +98,7 @@ msgstr "Nastavenie záložky Fakty a udalosti"
 #. I18N: gedcom tag _FSFTID
 #: VestaCommonLibModule.php:60
 msgid "FamilySearch id"
-msgstr ""
+msgstr "FamilySearch id"
 
 #: resources/views/vesta_config.phtml:52
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
@@ -131,7 +131,7 @@ msgstr "Použiť symbol %1$s v názve položky v menu zoznamov"
 #: CommonI18N.php:139
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
-msgstr ""
+msgstr "Použiť symbol %1$s v bočnom paneli"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:127
