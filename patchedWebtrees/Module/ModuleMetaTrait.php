@@ -157,8 +157,8 @@ trait ModuleMetaTrait {
         $ret []= $metaData;
       }
       return new Collection($ret);
-    } catch (\Exception $ex) {
-      error_log("error decoding json!");
+    } catch (\Exception $e) {
+      error_log("error decoding json: ".$e->getTraceAsString());
       return new Collection();
     }    
   }

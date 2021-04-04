@@ -16,5 +16,10 @@
 		"from": "2.0.12",
 		"to": "2.1",
 		"changelog": ["All modules: Additional translations."]
+	},
+	{
+		"version": "2.0.15.0.0",
+		"from": "2.0.12",
+		"to": "2.1"
 	}
 ]
