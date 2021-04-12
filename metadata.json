@@ -21,5 +21,11 @@
 		"version": "2.0.15.0.0",
 		"from": "2.0.12",
 		"to": "2.1"
+	},
+	{
+		"version": "2.0.15.1.0",
+		"from": "2.0.12",
+		"to": "2.1",
+		"changelog": ["All modules: Additional translations.","Bugfix (handling non-Gregorian calendar dates)."]
 	}
 ]

@@ -191,6 +191,9 @@ abstract class AbstractModule implements ModuleInterface {
     ]);
   }
 
+  //HACK in case accessLevel has to be re-evaluated (without $tree as arg, e.g. for ModuleSidebarInterface.supportedFacts())
+  protected $treeUsedForAccessLevelCheck;
+  
   /**
    * Get a the current access level for a module
    *
@@ -200,6 +203,8 @@ abstract class AbstractModule implements ModuleInterface {
    * @return int
    */
   public function accessLevel(Tree $tree, string $interface): int {
+    $this->treeUsedForAccessLevelCheck = $tree;
+    
     $access_levels = Registry::cache()->array()
             ->remember('module-privacy-' . $tree->id(), static function () use ($tree): Collection {
       return DB::table('module_privacy')

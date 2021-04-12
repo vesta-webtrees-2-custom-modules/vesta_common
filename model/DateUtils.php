@@ -175,6 +175,18 @@ class DateUtils {
 
   //[RC] added
   public static function toGedcomString(AbstractCalendarDate $calendarDate) {
+    //ok so this was available all the time apparently, just rather hard to find out about it!
+    if ($calendarDate instanceof GregorianDate) {
+      $ret = $calendarDate->format('%A %O %E');
+    } else {
+      $ret = $calendarDate->format('%@ %A %O %E');      
+    }
+            
+    //error_log("toGedComString".$ret);
+    
+    return $ret;
+
+    /*
     if (($calendarDate instanceof GregorianDate) || ($calendarDate instanceof JulianDate)) {
       $str = '';
       if ($calendarDate instanceof JulianDate) {
@@ -215,11 +227,10 @@ class DateUtils {
         $str .= $m . " ";
       }
       $str .= $calendarDate->year();
+      error_log("toGedcomString".$str);
       return $str;
     }
-
-    //TODO better handling of other calendars!
-    return DateUtils::julianDayToGedcomString($calendarDate->minJD);
+    */
   }
 
   //[RC] added, discouraged
