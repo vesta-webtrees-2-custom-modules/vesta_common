@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-03-07 12:44+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2021-04-15 13:26+0000\n"
+"Last-Translator: Panagiotis Klimis <klimis.p@gmail.com>\n"
+"Language-Team: Greek <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/el/>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.6-dev\n"
 
 #. I18N: Module title
 #: CommonI18N.php:19
@@ -75,13 +78,13 @@ msgstr ""
 #: CommonI18N.php:66
 #, php-format
 msgid "Requires the '%1$s %2$s' module."
-msgstr ""
+msgstr "Απαιτεί την ενότητα '%1$s %2$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
 #, php-format
 msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
-msgstr ""
+msgstr "Απαιτείται η ενότητα '%1$s %2$s' και η ενότητα '%1$s %3$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:81
