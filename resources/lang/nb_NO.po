@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-03-07 12:44+0100\n"
-"PO-Revision-Date: 2021-03-17 16:18+0000\n"
+"PO-Revision-Date: 2021-04-19 10:26+0000\n"
 "Last-Translator: Eyolf Østrem <eyolf@oestrem.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/nb_NO/>\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5.2-dev\n"
+"X-Generator: Weblate 4.6\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
 msgid "%1$s excluded"
-msgstr "%1$s ekskludert"
+msgstr "unntatt %1$s"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
 #, php-format
@@ -48,7 +48,10 @@ msgstr "En modul som gir felles klasser og oversettelser for andre 'Vesta' tilpa
 
 #: resources/views/vesta_config.phtml:35
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
-msgstr "A: Ulike moduler kan bruke samme komponent, for eksempel ved å forbedre fakta og hendelser-fanen på ulike steder. Uten hooks måtte vi bruke flere modulspesifikke faner."
+msgstr ""
+"A: Ulike moduler kan bruke samme komponent, for eksempel ved å forbedre «"
+"Fakta og hendelser»-fanen på ulike steder. Uten hooks måtte vi bruke flere "
+"modulspesifikke faner."
 
 #: resources/views/vesta_config.phtml:59
 msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
@@ -93,7 +96,7 @@ msgstr "Vist tittel"
 #. I18N: Module Configuration
 #: CommonI18N.php:169
 msgid "Facts and Events Tab Settings"
-msgstr "Innstillinger for fakta og hendelser-fanen"
+msgstr "Innstillinger for «Fakta og hendelser»-fanen"
 
 #. I18N: gedcom tag _FSFTID
 #: VestaCommonLibModule.php:60
@@ -131,7 +134,7 @@ msgstr "Inkluder %1$s-symbolet i tittelen på diagrammenyen"
 #: CommonI18N.php:139
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
-msgstr ""
+msgstr "Vis %1$s-symbolet i tittelen på sidepanelet"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:127
