@@ -2,36 +2,42 @@
 	{
 		"version": "2.0.13.0.0",
 		"from": "2.0.12",
-		"to": "2.1",
+		"to": "2.0.16",
 		"changelog": ["Add version metadata support."]
 	},
 	{
 		"version": "2.0.13.0.1",
 		"from": "2.0.12",
-		"to": "2.1",
+		"to": "2.0.16",
 		"changelog": ["Bugfix."]
 	},
 	{
 		"version": "2.0.13.1.0",
 		"from": "2.0.12",
-		"to": "2.1",
+		"to": "2.0.16",
 		"changelog": ["All modules: Additional translations."]
 	},
 	{
 		"version": "2.0.15.0.0",
 		"from": "2.0.12",
-		"to": "2.1"
+		"to": "2.0.16"
 	},
 	{
 		"version": "2.0.15.1.0",
 		"from": "2.0.12",
-		"to": "2.1",
+		"to": "2.0.16",
 		"changelog": ["All modules: Additional translations.","Bugfix (handling non-Gregorian calendar dates)."]
 	},
 	{
 		"version": "2.0.15.2.0",
 		"from": "2.0.12",
-		"to": "2.1",
+		"to": "2.0.16",
+		"changelog": ["All modules: Additional translations."]
+	},
+	{
+		"version": "2.0.15.3.0",
+		"from": "2.0.12",
+		"to": "2.0.16",
 		"changelog": ["All modules: Additional translations."]
 	}
 ]

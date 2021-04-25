@@ -244,8 +244,10 @@ class ControlPanelUtils {
   public function printControlPanelRange(ControlPanelRange $element) {
     $value = (int)$this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue());
     ?>
-    <div class="input-group" style="min-width: 300px; max-width: 300px;">
-        <label class="input-group-addon" for="<?php echo $element->getSettingKey(); ?>"><?php echo $element->getLabel() ?></label>
+    <div class="input-group">
+        <div class="input-group col-sm-4">
+          <label class="input-group-addon" for="<?php echo $element->getSettingKey(); ?>"><?php echo $element->getLabel() ?></label>
+        </div>
         <?php echo ViewUtils::select($element->getSettingKey(), array_combine(range($element->getMin(), $element->getMax()), range($element->getMin(), $element->getMax())), $value) ?>
     </div>
     <?php
