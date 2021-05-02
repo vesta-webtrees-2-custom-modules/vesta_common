@@ -7,6 +7,7 @@ class ControlPanelSubsection {
   private $label;
   private $elements;
   private $description;
+  private $header;
 
   /**
    * 
@@ -30,10 +31,18 @@ class ControlPanelSubsection {
     return $this->description;
   }
   
-  public function __construct($label, $elements, $description = null) {
+  /**
+   * @return string|null
+   */
+  public function getHeader() {
+    return $this->header;
+  }
+  
+  public function __construct($label, $elements, $description = null, $header = null) {
     $this->label = $label;
     $this->elements = $elements;
     $this->description = $description;
+    $this->header = $header;
   }
 
 }

@@ -128,6 +128,12 @@ class PlaceStructure {
     return PlaceStructure::create($gedcom, $tree, null, $dateInterval->toGedcomString(2), $level, $location);
   }
   
+  public static function fromNameAndLocWithYear(int $year, string $name, string $loc, Tree $tree, int $level = 0, ?Location $location = null): ?PlaceStructure {
+    $gedcom = "2 PLAC " . $name . "\n3 _LOC @" . $loc . "@";
+    $dateInterval = GedcomDateInterval::createYear($year);
+    return PlaceStructure::create($gedcom, $tree, null, $dateInterval->toGedcomString(2), $level, $location);
+  }
+  
   public static function fromFact(Fact $event): ?PlaceStructure {
     $placerec = Functions::getSubRecord(2, '2 PLAC', $event->gedcom());
 

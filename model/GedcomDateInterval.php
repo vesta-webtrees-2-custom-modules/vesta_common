@@ -80,6 +80,12 @@ class GedcomDateInterval {
     return new GedcomDateInterval(new GregorianDate($startjd), new GregorianDate($endjd));
   }
   
+  public static function createYear(int $year) {
+    $startjd = Carbon::createFromDate($year)->julianDay();
+    $endjd = $startjd;
+    return new GedcomDateInterval(new GregorianDate($startjd), new GregorianDate($endjd));
+  }
+  
   /**
    * 
    * @param type $date

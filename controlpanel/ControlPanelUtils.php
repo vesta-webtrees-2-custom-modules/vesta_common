@@ -97,6 +97,14 @@ class ControlPanelUtils {
         </label>
         <div class="col-sm-9">
             <?php
+            $header = $subsection->getHeader();
+            if ($header !== null) {
+              ?>
+              <p class="small text-muted">
+                  <?php echo $header; ?>
+              </p>
+              <?php
+            }
             foreach ($subsection->getElements() as $element) {
               $this->printElement($element);
             }
