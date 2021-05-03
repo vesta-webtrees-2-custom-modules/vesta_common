@@ -10,6 +10,8 @@ use function e;
 use function rawurlencode;
 use function strtoupper;
 
+//webtrees (from 2.0.16) now has its own FamilySearchFamilyTreeId
+//linking to a glossy but rather useless 'discovery version' of the page though
 class FamilySearchFamilyTreeId extends AbstractElement
 {
     protected const EXTERNAL_URL = 'https://www.familysearch.org/tree/person/details/';
