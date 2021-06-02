@@ -19,8 +19,8 @@ declare(strict_types=1);
 
 namespace Fisharebest\Webtrees;
 
+use Fisharebest\Webtrees\Registry;
 use Ramsey\Uuid\Uuid;
-
 use function array_filter;
 use function str_contains;
 
@@ -1311,6 +1311,14 @@ class GedcomTag
      */
     public static function getLabelValue(string $tag, string $value, GedcomRecord $record = null, $element = 'div'): string
     {
+      //Shared Places Issue #77
+      if ('NAME:LANG' === $tag) {                
+        $value = Registry::elementFactory()->make('_LOC:NAME:LANG')->value(
+                $value, 
+                new Tree(-1, 'DEFAULT', 'DEFAULT')); //tree actually irrelevant
+        $value = $value;
+      }
+      
         return
             '<' . $element . ' class="fact_' . $tag . '">' .
             /* I18N: a label/value pair, such as “Occupation: Farmer”. Some languages may need to change the punctuation. */
