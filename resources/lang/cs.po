@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-03-07 12:44+0100\n"
-"PO-Revision-Date: 2021-01-19 11:32+0000\n"
+"PO-Revision-Date: 2021-06-07 22:34+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
-"Language-Team: Czech <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/cs/>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/cs/>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -97,7 +98,7 @@ msgstr "Nastavení záložky Fakta a události"
 #. I18N: gedcom tag _FSFTID
 #: VestaCommonLibModule.php:60
 msgid "FamilySearch id"
-msgstr ""
+msgstr "FamilySearch id"
 
 #: resources/views/vesta_config.phtml:52
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
@@ -130,7 +131,7 @@ msgstr "V menu přidat symbol %1$s do názvu položky Seznamy"
 #: CommonI18N.php:139
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
-msgstr ""
+msgstr "Použít symbol %1$s v názvu postranního panelu"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:127
