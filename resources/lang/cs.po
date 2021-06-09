@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-03-07 12:44+0100\n"
-"PO-Revision-Date: 2021-06-07 22:34+0000\n"
+"PO-Revision-Date: 2021-06-08 20:34+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/cs/>\n"
@@ -193,7 +193,7 @@ msgstr "Q: Co je zač symbol %1$s ?"
 #. I18N: Module configuration: Refers to the module's Readme file
 #: CommonI18N.php:103
 msgid "Readme"
-msgstr "Readme"
+msgstr "Čístomně"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
@@ -235,12 +235,12 @@ msgstr "Tento modul se nesmí vypnout."
 #. I18N: Module title
 #: CommonI18N.php:23
 msgid "Vesta Classic Look & Feel"
-msgstr "Vesta Classic Look & Feel"
+msgstr "Vesta Klasický vzhled"
 
 #. I18N: Module title
 #: CommonI18N.php:59
 msgid "Vesta Clippings Cart"
-msgstr "Vesta Clippings Cart"
+msgstr "Vesta výstřižky"
 
 #. I18N: Module title
 #: CommonI18N.php:19
@@ -250,17 +250,17 @@ msgstr "Vesta Common"
 #. I18N: Module title
 #: CommonI18N.php:43
 msgid "Vesta Extended Relationships"
-msgstr "Vesta Extended Relationships"
+msgstr "Vesta Rozšířené vztahy"
 
 #. I18N: Module title
 #: CommonI18N.php:27
 msgid "Vesta Facts and events"
-msgstr "Vesta Facts and events"
+msgstr "Vesta Fakta a události"
 
 #. I18N: Module title
 #: CommonI18N.php:31
 msgid "Vesta Families"
-msgstr "Vesta Families"
+msgstr "Vesta Rodiny"
 
 #. I18N: Module title
 #: CommonI18N.php:35
@@ -270,17 +270,17 @@ msgstr "Vesta Gov4Webtrees"
 #. I18N: Module title
 #: CommonI18N.php:55
 msgid "Vesta Places and Pedigree map"
-msgstr "Vesta Places and Pedigree map"
+msgstr "Vesta Mapa míst a předků"
 
 #. I18N: Module title
 #: CommonI18N.php:47
 msgid "Vesta Research Suggestions"
-msgstr "Vesta Research Suggestions"
+msgstr "Vesta Badatelské návrhy"
 
 #. I18N: Module title
 #: CommonI18N.php:39
 msgid "Vesta Shared Places"
-msgstr "Vesta Shared Places"
+msgstr "Vesta Sdílená místa"
 
 #. I18N: Module title
 #: CommonI18N.php:51
