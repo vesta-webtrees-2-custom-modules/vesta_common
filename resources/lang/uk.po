@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-03-07 12:44+0100\n"
-"PO-Revision-Date: 2021-06-11 13:32+0000\n"
+"PO-Revision-Date: 2021-06-15 12:32+0000\n"
 "Last-Translator: z-yurets <zaharchenko.yurij@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/uk/>\n"
@@ -85,7 +85,7 @@ msgstr "Необхідний '%1$s %2$s' модуль."
 #: CommonI18N.php:73
 #, php-format
 msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
-msgstr "Необхідні \"%1$s %2$s\" і \"%1$s %1$s\" модулі."
+msgstr "Необхідні \"%1$s %2$s\" і \"%1$s %3$s\" модулі."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:81
