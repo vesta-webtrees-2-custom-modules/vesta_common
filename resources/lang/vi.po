@@ -1,0 +1,373 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the vesta package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vesta 1.0\n"
+"Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
+"POT-Creation-Date: 2021-03-07 12:44+0100\n"
+"PO-Revision-Date: 2021-07-15 17:34+0000\n"
+"Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
+"Language-Team: Vietnamese <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/vi/>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.7.2-dev\n"
+
+#. I18N: Module title
+#: CommonI18N.php:19
+msgid "Vesta Common"
+msgstr ""
+
+#. I18N: Module title
+#: CommonI18N.php:23
+msgid "Vesta Classic Look & Feel"
+msgstr "Vesta Classic Nhìn và cảm nhận"
+
+#. I18N: Module title
+#: CommonI18N.php:27
+msgid "Vesta Facts and events"
+msgstr "Vesta Sự kiện và số liệu"
+
+#. I18N: Module title
+#: CommonI18N.php:31
+msgid "Vesta Families"
+msgstr "Vesta Gia đình"
+
+#. I18N: Module title
+#: CommonI18N.php:35
+msgid "Vesta Gov4Webtrees"
+msgstr ""
+
+#. I18N: Module title
+#: CommonI18N.php:39
+msgid "Vesta Shared Places"
+msgstr "Vesta Địa điểm được chia sẻ"
+
+#. I18N: Module title
+#: CommonI18N.php:43
+msgid "Vesta Extended Relationships"
+msgstr "Vesta Mối quan hệ mở rộng"
+
+#. I18N: Module title
+#: CommonI18N.php:47
+msgid "Vesta Research Suggestions"
+msgstr "Vesta Đề xuất nghiên cứu"
+
+#. I18N: Module title
+#: CommonI18N.php:51
+msgid "Vesta Webtrees Location Data Provider"
+msgstr "Vesta Webtrees Nhà cung cấp dữ liệu vị trí"
+
+#. I18N: Module title
+#: CommonI18N.php:55
+msgid "Vesta Places and Pedigree map"
+msgstr "Vesta Bản đồ Địa danh và Phả hệ"
+
+#. I18N: Module title
+#: CommonI18N.php:59
+msgid "Vesta Clippings Cart"
+msgstr "Vesta Giỏ dữ liệu"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:66
+#, php-format
+msgid "Requires the '%1$s %2$s' module."
+msgstr "Yêu cầu mô-đun '%1$s %2$s'."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:73
+#, php-format
+msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
+msgstr "Yêu cầu mô-đun '%1$s %2$s' và mô-đun '%1$s %3$s'."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:81
+#, php-format
+msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
+msgstr "Yêu cầu mô-đun '%1$s %2$s', mô-đun '%1$s %3$s' và mô-đun '%1$s %4$s'."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:89
+msgid "Provides location data to other custom modules."
+msgstr "Cung cấp dữ liệu vị trí cho các mô-đun tùy chỉnh khác."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:93
+msgid "Location Data Providers"
+msgstr "Nhà cung cấp dữ liệu vị trí"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:97
+msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
+msgstr ""
+"Các mô-đun được liệt kê ở đây được sử dụng (theo thứ tự đã định cấu hình) để "
+"xác định tọa độ bản đồ của các địa điểm."
+
+#. I18N: Module configuration: Refers to the module's Readme file
+#: CommonI18N.php:103
+msgid "Readme"
+msgstr "Đọc file này"
+
+#. I18N: Module configuration: Refers to general documentation
+#: CommonI18N.php:107
+msgid "Vesta location data management overview"
+msgstr "Vesta Tổng quan về quản lý dữ liệu vị trí"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:115
+msgid "Options"
+msgstr "Tùy chọn"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:119
+msgid "Displayed title"
+msgstr "Tiêu đề được hiển thị"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:123
+msgid "Displayed data"
+msgstr "Dữ liệu được hiển thị"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:127
+#, php-format
+msgid "Include the %1$s symbol in the tab title"
+msgstr "Bao gồm biểu tượng %1$s trong tiêu đề tab"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:131
+#, php-format
+msgid "Include the %1$s symbol in the chart menu entry title"
+msgstr "Bao gồm biểu tượng %1$s trong tiêu đề mục nhập menu biểu đồ"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:135
+#, php-format
+msgid "Include the %1$s symbol in the list menu entry title"
+msgstr "Bao gồm biểu tượng %1$s trong danh sách mune tiêu đề"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:139
+#, php-format
+msgid "Include the %1$s symbol in the sidebar title"
+msgstr "Bao gồm biểu tượng %1$s trong thanh tiêu đề bên"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:143
+#, php-format
+msgid "Include the %1$s symbol in the clippings cart menu entry title"
+msgstr "Bao gồm biểu tượng %1$s trong mục menu tiêu đề nhập giỏ hàng"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:147
+msgid "Deselect in order to have the title appear exactly as the original title."
+msgstr "Bỏ chọn để tiêu đề xuất hiện chính xác như tiêu đề ban đầu."
+
+#. I18N: Module Configuration, also checkbox on facts and events tab
+#: CommonI18N.php:153
+msgid "Associated facts and events"
+msgstr "Sự kiện và số liệu liên quan"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:157
+msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
+msgstr ""
+"Giới hạn trong danh sách này các dữ kiện và sự kiện riêng lẻ của GEDCOM. Bạn "
+"có thể sửa đổi danh sách này bằng cách xóa hoặc thêm tên sự kiện và sự kiện, "
+"thậm chí cả tên tùy chỉnh, nếu cần."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:161
+msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
+msgstr ""
+"Giới hạn trong danh sách các dữ kiện và sự kiện gia đình GEDCOM này. Bạn có "
+"thể sửa đổi danh sách này bằng cách xóa hoặc thêm tên sự kiện và sự kiện, "
+"thậm chí cả tên tùy chỉnh, nếu cần."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:165
+msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
+msgstr ""
+"Đặc biệt nếu cả hai danh sách đều trống, không có dữ kiện và sự kiện bổ sung "
+"nào thuộc loại này sẽ được hiển thị."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:169
+msgid "Facts and Events Tab Settings"
+msgstr "Cài đặt tab Sự kiện và Số liệu"
+
+#: HookInterfaces/FunctionsPlaceUtils.php:86
+msgid "map coordinates directly (MAP tag)"
+msgstr "tọa độ bản đồ trực tiếp (thẻ MAP)"
+
+#: VestaCommonLibModule.php:50
+msgid "A module providing common classes and translations for other 'Vesta' custom modules."
+msgstr ""
+"Một mô-đun cung cấp các lớp phổ biến và bản dịch cho các mô-đun tùy chỉnh "
+"khác của 'Vesta'."
+
+#: VestaCommonLibModule.php:51
+msgid "This module cannot be disabled."
+msgstr "Mô-đun này không thể bị vô hiệu hóa."
+
+#. I18N: gedcom tag _FSFTID
+#: VestaCommonLibModule.php:60
+msgid "FamilySearch id"
+msgstr "Id Tìm kiếm gia đình"
+
+#: VestaModuleCustomTrait.php:90
+msgid "What's new? "
+msgstr "Có gì mới? "
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
+#, php-format
+msgid "%1$s filters"
+msgstr "Bộ lọc %1$s"
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
+#, php-format
+msgid "restrict to %1$s"
+msgstr "hạn chế từ %1$s"
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
+#, php-format
+msgid "exclude %1$s"
+msgstr "loại trừ %1$s"
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
+#, php-format
+msgid "%1$s excluded"
+msgstr "Đã loại trừ %1$s"
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
+msgid "reset this filter"
+msgstr "đặt lại bộ lọc này"
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
+#, php-format
+msgid "restricted to %1$s"
+msgstr "bị giới hạn trong %1$s"
+
+#: resources/views/admin/vesta_components.phtml:24
+msgid "(entire module)"
+msgstr "(toàn bộ mô-đun)"
+
+#: resources/views/admin/vesta_components.phtml:26
+msgid "(specific functionality)"
+msgstr "(chức năng cụ thể)"
+
+#: resources/views/admin/vesta_components.phtml:29
+msgctxt "as in \"Move up\""
+msgid "Move"
+msgstr ""
+
+#: resources/views/admin/vesta_components.phtml:29
+msgctxt "as in \"Move up\""
+msgid "up"
+msgstr ""
+
+#: resources/views/admin/vesta_components.phtml:30
+msgctxt "as in \"Move down\""
+msgid "Move"
+msgstr ""
+
+#: resources/views/admin/vesta_components.phtml:30
+msgctxt "as in \"Move down\""
+msgid "down"
+msgstr ""
+
+#: resources/views/vesta_config.phtml:25
+msgid "Q: How do the Vesta modules interact?"
+msgstr "Hỏi: Làm thế nào để các mô-đun Vesta tương tác?"
+
+#: resources/views/vesta_config.phtml:28
+msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
+msgstr ""
+"Trả lời: Qua móc câu. Hooks cho phép các mô-đun mở rộng chức năng của các "
+"thành phần khác mà không cần phải triển khai lại toàn bộ thành phần. "
+"Webtrees sử dụng hooks, ví dụ: trong chân trang và cho các sự kiện lịch sử."
+
+#: resources/views/vesta_config.phtml:31
+msgid "Q: Ok, but what's the actual benefit for the user?"
+msgstr "Hỏi: Được rồi, nhưng lợi ích thực sự cho người dùng là gì?"
+
+#: resources/views/vesta_config.phtml:35
+msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
+msgstr ""
+"Trả lời: Các mô-đun khác nhau có thể nhắm mục tiêu đến cùng một thành phần, "
+"ví dụ: bằng cách nâng cao tab sự kiện và sự kiện ở nhiều nơi khác nhau. Nếu "
+"không có hook, chúng tôi sẽ phải sử dụng nhiều tab dành riêng cho mô-đun."
+
+#: resources/views/vesta_config.phtml:37
+msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
+msgstr ""
+"Các mô-đun khác nhau cũng có thể được liên kết động để cung cấp dữ liệu cụ "
+"thể, chẳng hạn như dữ liệu vị trí cho các địa điểm tổ chức sự kiện."
+
+#: resources/views/vesta_config.phtml:41
+msgid "Q: How do I configure additional hooks?"
+msgstr "Hỏi: Làm cách nào để định cấu hình các móc bổ sung?"
+
+#: resources/views/vesta_config.phtml:44
+msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
+msgstr ""
+"Trả lời: Các móc thường được bật tự động khi bật mô-đun tùy chỉnh tương ứng. "
+"Xem thêm tùy chọn nguồn và mô-đun đích tương ứng."
+
+#: resources/views/vesta_config.phtml:47
+#, php-format
+msgid "Q: What's with the %1$s symbol?"
+msgstr "Hỏi: Biểu tượng %1$s là gì?"
+
+#: resources/views/vesta_config.phtml:50
+msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
+msgstr ""
+"Trả lời: Biểu tượng Vesta chủ yếu được sử dụng để nhóm các mô-đun liên quan "
+"trong danh sách quản trị mô-đun."
+
+#: resources/views/vesta_config.phtml:51
+#, php-format
+msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
+msgstr ""
+"%1$s là biểu tượng thiên văn của tiểu hành tinh Vesta, được đặt theo tên của "
+"nữ thần lò sưởi, ngôi nhà và gia đình của người La Mã."
+
+#: resources/views/vesta_config.phtml:52
+msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
+msgstr ""
+"Nếu biểu tượng được hiển thị không đúng cách, ví dụ: dưới dạng hình chữ "
+"nhật, hãy kiểm tra khả năng hỗ trợ unicode của trình duyệt của bạn."
+
+#: resources/views/vesta_config.phtml:53
+msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
+msgstr ""
+"Bạn có thể phải cài đặt một phông chữ cung cấp biểu tượng này và đối với một "
+"số trình duyệt nhất định - cụ thể là Chrome - phông chữ này phải thuộc một "
+"trong các họ phông chữ do webtrees chỉ định, chẳng hạn như 'Segoe UI Symbol'."
+
+#: resources/views/vesta_config.phtml:56
+msgid "Q: Is there additional documentation?"
+msgstr "Hỏi: Có tài liệu bổ sung không?"
+
+#: resources/views/vesta_config.phtml:59
+msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
+msgstr ""
+"Trả lời: Mỗi mô-đun có một tệp Readme với thông tin cơ bản (tốt nhất là xem "
+"trực tuyến, nhưng cũng được bao gồm trong thư mục của mô-đun)."
+
+#: resources/views/vesta_config.phtml:61
+msgid "here"
+msgstr "đây"
+
+#: resources/views/vesta_config.phtml:62
+#, php-format
+msgid "See also %1$s for an overview of location data management in webtrees."
+msgstr ""
+"Xem them %1$s để biết tổng quan về quản lý dữ liệu vị trí trong webtrees."
