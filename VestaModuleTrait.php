@@ -359,8 +359,6 @@ trait VestaModuleTrait {
       $content = file_get_contents($file);
     }
 
-    $expiry_date = Carbon::now()->addYears(10)->toDateTimeString();
-
     $extension = pathinfo($asset, PATHINFO_EXTENSION);
 
     $mime_types = [
@@ -376,9 +374,12 @@ trait VestaModuleTrait {
 
     $mime_type = $mime_types[$extension] ?? 'application/octet-stream';
 
+    //$expiry_date = Carbon::now()->addYears(10)->toDateTimeString();
+    
     $headers = [
         'Content-Type' => $mime_type,
-        'Expires' => $expiry_date,
+        //'Expires' => $expiry_date, //apparently outdated, see also EmitResponse.php, i.e. we have to use Cache-Control!
+        'Cache-Control'  => 'public,max-age=31536000', //what webtrees uses elsewhere: ~10 years
     ];
     return response($content, 200, $headers);
   }

@@ -8,6 +8,7 @@ use Fisharebest\Webtrees\Functions\Functions;
 use Fisharebest\Webtrees\Location;
 use Fisharebest\Webtrees\Place;
 use Fisharebest\Webtrees\Tree;
+use JsonSerializable;
 use Vesta\Model\GedcomDateInterval;
 
 /**
@@ -15,7 +16,7 @@ use Vesta\Model\GedcomDateInterval;
  * plus event type and date
  *   
  */
-class PlaceStructure {
+class PlaceStructure implements JsonSerializable {
 
   private $tree;
   private $gedcomName;
@@ -24,6 +25,22 @@ class PlaceStructure {
   private $eventDateInterval;
   private $level;
   private $location;
+  
+  public function jsonSerialize() {
+    return [
+      'tree' => $this->tree->id(),
+      'gedcomName' => $this->gedcomName,
+      'gedcom' => $this->gedcom,
+      //'eventType' => $this->eventType,
+      //'eventDateInterval' => $this->eventDateInterval,
+      'level' => $this->level,
+      'location' => ($this->location !== null) ? $this->location->xref() : null,
+    ];
+  }
+     
+  public function debug(): string {
+    return json_encode($this);
+  }
   
   // Regular expression to match a GEDCOM XREF.
   //cf WT_REGEX_XREF (1.x)/ Gedcom::REGEX_XREF (2.x)
@@ -58,6 +75,10 @@ class PlaceStructure {
 
   public function getLevel(): int {
     return $this->level;
+  }
+  
+  public function getLocation(): ?Location {
+    return $this->location;
   }
   
   private function __construct(
@@ -168,10 +189,6 @@ class PlaceStructure {
   public function getPlace() {
     return new Place($this->getGedcomName(), $this->tree);
   }
-
-  public function getLocation(): ?Location {
-    return $this->location;
-  }
   
   /**
    * helper for those who are aware of this custom tag
@@ -228,12 +245,15 @@ class PlaceStructure {
   }
 
   public function parent(): ?PlaceStructure {
-    //error_log("parentGedcom? ". $this->getGedcom());
     
+    //[2021/08] not sure what the idea was here: any level 3/4 tags aren't valid for the parent!
     //important to include linebreaks in '.*' via '/s'!
-    if (preg_match('/^2 PLAC [^,]+, (.+)/s', $this->getGedcom(), $match)) {
-      $parentGedcom = "2 PLAC " . $match[1];
-      
+    //if (preg_match('/^2 PLAC [^,]+, (.+)/s', $this->getGedcom(), $match)) {
+    //  $parentGedcom = "2 PLAC " . $match[1];
+    
+    $parentName = $this->getPlace()->parent()->gedcomName();
+    if ($parentName !== '') {
+      $parentGedcom = "2 PLAC " . $parentName;
       //error_log("parentGedcom ". $parentGedcom);
       
       return PlaceStructure::create(
@@ -245,16 +265,6 @@ class PlaceStructure {
     }
     
     return null;
-  }
-  
-  public function debug(): string {
-    return 
-      $this->tree->name() . ' :: ' . 
-      $this->gedcomName  . ' :: ' . 
-      $this->gedcom  . ' :: ' . 
-      $this->eventType  . ' :: ' . 
-      $this->eventDateInterval->toGedcomString(0)  . ' :: ' . 
-      $this->level;
   }
   
   public static function sorterByLevel(): Closure {

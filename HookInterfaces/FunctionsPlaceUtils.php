@@ -8,6 +8,7 @@ use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Contracts\UserInterface;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\ModuleInterface;
+use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Services\ModuleService;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
@@ -81,16 +82,17 @@ class FunctionsPlaceUtils {
   
   //for now, never fallback via indirect parent hierarchies
   public static function plac2map(ModuleInterface $module, PlaceStructure $ps, $fallbackViaParents = true): ?MapCoordinates {
+   
     //1. via gedcom
     if (($ps->getLati() !== null) && ($ps->getLong() !== null)) {
       return new MapCoordinates($ps->getLati(), $ps->getLong(), new Trace(I18N::translate('map coordinates directly (MAP tag)')));
     }
 
     $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $ps->getTree(), Auth::user());
-    
+
     //we have to try all ways:
     //more direct (e.g. plac2map) may have lower order than more indirect way.
-    
+
     //the following is equivalent to (but hopefully more effective than)
     //
     //
@@ -98,12 +100,12 @@ class FunctionsPlaceUtils {
     //create sublist of n elements from $functionsPlaceProviders;
     //attempt to obtain map from sublist, return if successful
     //increment n and repeat
-    
+
     $bestMap = null;
     $bestMapProviderIndex = count($functionsPlaceProviders);
-    
-    //error_log($ps->getGedcomName());
 
+    //error_log($ps->getGedcomName());
+    //
     //2. via plac2map
     $index = 0;
     foreach ($functionsPlaceProviders as $functionsPlaceProvider) {      
@@ -117,19 +119,20 @@ class FunctionsPlaceUtils {
       }
       $index++;
     }
-    
-    //error_log("after plac2map: " . $bestMapProviderIndex);
-    
+
+    //error_log(microtime() . "after plac2map: " . $bestMapProviderIndex);
+
     //3. via plac2loc + loc2map
     //any providers after current best are ignored!
     //if we have plac2map via 2, we don't care about e.g. plac2loc (via 3, or even via 2) + loc2map (via any)
-            
+
     $index = 0;
     foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
       if ($index >= $bestMapProviderIndex) {
         break;
       }
       $loc = $functionsPlaceProvider->plac2loc($ps);
+      //error_log(microtime() . "loc" . ($loc != null));
       if ($loc !== null) {
         $index2 = 0;
         foreach ($functionsPlaceProviders as $functionsPlaceProvider2) {
@@ -137,8 +140,9 @@ class FunctionsPlaceUtils {
           if ($maxIndex >= $bestMapProviderIndex) {
             break; //only inner loop, we have to check other outers (we may be at (2,4), but (3,3) is overall preferable)
           }
-              
+
           $map = $functionsPlaceProvider2->loc2map($loc);
+          //error_log(microtime() . "map" . ($map != null));
           if ($map !== null) {
             //error_log("set bestMap 3.");
             $bestMap = $map;
@@ -150,11 +154,11 @@ class FunctionsPlaceUtils {
       }
       $index++;
     }
-    
+
     //error_log("after plac2loc + loc2map: " . $bestMapProviderIndex);
-    
+
     //4. via plac2gov + gov2map
-    
+
     $index = 0;
     foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
       if ($index >= $bestMapProviderIndex) {
@@ -168,7 +172,7 @@ class FunctionsPlaceUtils {
           if ($maxIndex >= $bestMapProviderIndex) {
             break; //only inner loop, we have to check other outers (we may be at (2,4), but (3,3) is overall preferable)
           }
-          
+
           $map = $functionsPlaceProvider2->gov2map($gov);
           if ($map !== null) {
             //error_log("set bestMap 4.");
@@ -181,11 +185,11 @@ class FunctionsPlaceUtils {
       }
       $index++;
     }    
-    
+
     //error_log("after plac2gov + gov2map: " . $bestMapProviderIndex);
-    
+
     //5. via plac2loc + loc2gov + gov2map
-    
+
     $index = 0;
     foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
       if ($index >= $bestMapProviderIndex) {
@@ -221,14 +225,14 @@ class FunctionsPlaceUtils {
         $index2++;
       }
       $index++;
-    }
-    
+    }      
+
     //error_log("after plac2loc + loc2gov + gov2map: " . $bestMapProviderIndex);
     //error_log(print_r($bestMap, true));
     if ($bestMap !== null) {
       return $bestMap;
     }
-    
+
     //6. via parent hierarchy?
     if (!$fallbackViaParents) {
       return null;
@@ -347,35 +351,40 @@ class FunctionsPlaceUtils {
   }
      
   public static function gov2plac(ModuleInterface $module, GovReference $gov, Tree $tree): ?PlaceStructure {
-    $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $tree, Auth::user())
+    //Issue #54
+    //expensive, therefore cached
+    return Registry::cache()->array()->remember(FunctionsPlaceUtils::class . 'gov2plac_' . $gov->getId(), static function () use ($module, $gov, $tree): ?PlaceStructure {
+      
+      $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $tree, Auth::user())
             ->toArray();
     
-    //1. via gov2plac
-    
-    foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
-      $ps = $functionsPlaceProvider->gov2plac($gov, $tree);
-      if ($ps !== null) {
-        //first one wins!
-        return $ps;
+      //1. via gov2plac
+
+      foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
+        $ps = $functionsPlaceProvider->gov2plac($gov, $tree);
+        if ($ps !== null) {
+          //first one wins!
+          return $ps;
+        }
       }
-    }
-    
-    //2. via gov2loc + loc2plac
-    foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
-      $loc = $functionsPlaceProvider->gov2loc($gov, $tree);
-      if ($loc !== null) {
-        //first one (with a loc2plac) wins
-        foreach ($functionsPlaceProviders as $functionsPlaceProvider2) {
-          $ps = $functionsPlaceProvider2->loc2plac($loc);
-          if ($ps !== null) {
-            //first one wins!
-            return $ps;
+
+      //2. via gov2loc + loc2plac
+      foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
+        $loc = $functionsPlaceProvider->gov2loc($gov, $tree);
+        if ($loc !== null) {
+          //first one (with a loc2plac) wins
+          foreach ($functionsPlaceProviders as $functionsPlaceProvider2) {
+            $ps = $functionsPlaceProvider2->loc2plac($loc);
+            if ($ps !== null) {
+              //first one wins!
+              return $ps;
+            }
           }
         }
       }
-    }
 
-    return null;
+      return null;
+    });
   }
      
   ////////////////////////////////////////////////////////////////////////////////
@@ -489,9 +498,8 @@ class FunctionsPlaceUtils {
           Tree $tree, 
           UserInterface $user): Collection {
     
-    return self::sort($moduleForPrefsOrder, app()
-                            ->make(ModuleService::class)
-                            ->findByComponent(FunctionsPlaceInterface::class, $tree, $user));
+    return self::sort($moduleForPrefsOrder, app()->make(ModuleService::class)
+            ->findByComponent(FunctionsPlaceInterface::class, $tree, $user));
   }
 
   public static function accessibleModulesPrintFunctions(
@@ -500,18 +508,23 @@ class FunctionsPlaceUtils {
           UserInterface $user): Collection {
     
     //currently no sorting!
-    return app()
-                            ->make(ModuleService::class)
-                            ->findByComponent(PrintFunctionsPlaceInterface::class, $tree, $user);
+    return app()->make(ModuleService::class)
+            ->findByComponent(PrintFunctionsPlaceInterface::class, $tree, $user);
   }
   
-  public static function modules(ModuleInterface $moduleForPrefsOrder, $include_disabled = false): Collection {
+  public static function modules(
+          ModuleInterface $moduleForPrefsOrder, 
+          $include_disabled = false): Collection {
+    
     return self::sort($moduleForPrefsOrder, app()
                             ->make(ModuleService::class)
                             ->findByInterface(FunctionsPlaceInterface::class, $include_disabled));
   }
 
-  private static function sort(ModuleInterface $moduleForPrefsOrder, Collection $coll): Collection {
+  private static function sort(
+          ModuleInterface $moduleForPrefsOrder, 
+          Collection $coll): Collection {
+    
     $pref = $moduleForPrefsOrder->getPreference('ORDER_PLACE_FUNCTIONS');
     if ($pref === null) {
       $pref = '';

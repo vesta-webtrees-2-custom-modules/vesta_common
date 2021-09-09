@@ -7,28 +7,23 @@ use Fisharebest\Webtrees\Carbon;
 use Fisharebest\Webtrees\Date\AbstractCalendarDate;
 use Fisharebest\Webtrees\Date\GregorianDate;
 use Illuminate\Support\Collection;
+use JsonSerializable;
 use Vesta\Model\DateUtils;
 
 /**
  * A date interval, convertible from/to gedcom DATE
+ * (conversion loses inexactness information though, i.e. not strictly lossless)
  *   
  */
-class GedcomDateInterval {
+class GedcomDateInterval implements JsonSerializable {
   
   /* @var $fromCalendarDate AbstractCalendarDate|null */
-  private $fromCalendarDate;
+  //private $fromCalendarDate;
 
   /* @var $toCalendarDate AbstractCalendarDate|null */
-  private $toCalendarDate;
+  //private $toCalendarDate;
 
-  protected static function minJD(AbstractCalendarDate $calendarDate): int {
-    return $calendarDate->minimumJulianDay();
-  }
-
-  protected static function maxJD(AbstractCalendarDate $calendarDate): int {
-    return $calendarDate->maximumJulianDay();
-  }
-
+  /*
   public function getFromCalendarDate(): ?AbstractCalendarDate {
     return $this->fromCalendarDate;
   }
@@ -36,21 +31,59 @@ class GedcomDateInterval {
   public function getToCalendarDate(): ?AbstractCalendarDate {
     return $this->toCalendarDate;
   }
+  */
+
+  //simpler internal format
+  
+  /* @var $from int|null */
+  private $from;
+  
+  /* @var $fromIsInexact bool */
+  private $fromIsInexact;
+  
+  /* @var $to int|null */
+  private $to;
+  
+  /* @var $toIsInexact bool */
+  private $toIsInexact;
+  
+  public function jsonSerialize() {
+    return [
+      'from' => $this->from,
+      'fromIsInexact' => $this->fromIsInexact,
+      'to' => $this->to,
+      'toIsInexact' => $this->toIsInexact,
+    ];
+  }
 
   public function getFrom(): ?int {
+    return $this->from;
+    /*
     if ($this->fromCalendarDate === null) {
       return null;
     }
     return GedcomDateInterval::minJD($this->fromCalendarDate);
+    */
   }
 
+  public function getFromIsInexact(): bool {
+    return $this->fromIsInexact;
+  }
+    
   public function getTo(): ?int {
+    return $this->to;
+    /*
     if ($this->toCalendarDate === null) {
       return null;
     }
     return GedcomDateInterval::maxJD($this->toCalendarDate);
+    */
   }
 
+  public function getToIsInexact(): bool {
+    return $this->toIsInexact;
+  }
+  
   public function getMin(): ?int {
     if ($this->getFrom() !== null) {
       return $this->getFrom();
@@ -65,27 +98,63 @@ class GedcomDateInterval {
     return $this->getMin();
   }
 
-  public function __construct(?AbstractCalendarDate $fromCalendarDate, ?AbstractCalendarDate $toCalendarDate) {
-    $this->fromCalendarDate = $fromCalendarDate;
-    $this->toCalendarDate = $toCalendarDate;
+  public function __construct(
+          ?int $from, 
+          ?int $to,
+          bool $fromIsInexact = false,
+          bool $toIsInexact = false) {
+    
+    $this->from = $from;
+    $this->to = $to;
+    $this->fromIsInexact = ($from === null)?true:$fromIsInexact;
+    $this->toIsInexact = ($to === null)?true:$toIsInexact;
+  }
+  
+  protected static function minJD(AbstractCalendarDate $calendarDate): int {
+    return $calendarDate->minimumJulianDay();
   }
 
-  public static function createEmpty() {
+  protected static function maxJD(AbstractCalendarDate $calendarDate): int {
+    return $calendarDate->maximumJulianDay();
+  }
+  
+  public static function createEmpty(): GedcomDateInterval {
     return new GedcomDateInterval(null, null);
   }
 
-  public static function createNow() {
+  public static function createNow(): GedcomDateInterval {
     $startjd = Carbon::now()->julianDay();
     $endjd = $startjd;
-    return new GedcomDateInterval(new GregorianDate($startjd), new GregorianDate($endjd));
+    return new GedcomDateInterval($startjd, $endjd);
   }
   
-  public static function createYear(int $year) {
+  public static function createYear(int $year): GedcomDateInterval {
     $startjd = Carbon::createFromDate($year)->julianDay();
     $endjd = $startjd;
-    return new GedcomDateInterval(new GregorianDate($startjd), new GregorianDate($endjd));
+    return new GedcomDateInterval($startjd, $endjd);
   }
   
+  public static function createFromCalendarDates(
+          ?AbstractCalendarDate $fromCalendarDate, 
+          ?AbstractCalendarDate $toCalendarDate): GedcomDateInterval {
+    
+    $from = null;
+    $fromIsInexact = false;
+    if ($fromCalendarDate !== null) {
+      $from = GedcomDateInterval::minJD($fromCalendarDate);
+      $fromIsInexact = ($fromCalendarDate->day() === 0);
+    }
+    
+    $to = null;
+    $toIsInexact = false;
+    if ($toCalendarDate !== null) {
+      $to = GedcomDateInterval::maxJD($toCalendarDate);
+      $toIsInexact = ($toCalendarDate->day() === 0);
+    }
+    
+    return new GedcomDateInterval($from, $to, $fromIsInexact, $toIsInexact);
+  }
+          
   /**
    * 
    * @param type $date
@@ -107,7 +176,7 @@ class GedcomDateInterval {
       //$qual2 = $match[3];
       $date2 = DateUtils::parseDate($match[4]);
 
-      return new GedcomDateInterval($date1, $date2);
+      return GedcomDateInterval::createFromCalendarDates($date1, $date2);
     }
 
     if (preg_match('/^(TO|FROM|BEF|AFT|CAL|EST|INT|ABT) (.+)/', $date, $match)) {
@@ -115,11 +184,11 @@ class GedcomDateInterval {
       $date1 = DateUtils::parseDate($match[2]);
 
       if ((!$ignorePartialRanges && ('BEF' === $qual1)) || ('TO' === $qual1)) {
-        return new GedcomDateInterval(null, $date1);
+        return GedcomDateInterval::createFromCalendarDates(null, $date1);
       }
 
       if ((!$ignorePartialRanges && ('AFT' === $qual1)) || ('FROM' === $qual1)) {
-        return new GedcomDateInterval($date1, null);
+        return GedcomDateInterval::createFromCalendarDates($date1, null);
       }
 
       return new GedcomDateInterval($date1, $date1);
@@ -132,7 +201,7 @@ class GedcomDateInterval {
       return GedcomDateInterval::createEmpty();
     }
     
-    return new GedcomDateInterval($date1, $date1);
+    return GedcomDateInterval::createFromCalendarDates($date1, $date1);
   }
 
   /**
@@ -141,21 +210,37 @@ class GedcomDateInterval {
    * @return GedcomDateInterval
    */
   public function expand(GedcomDateInterval $other) {
-    $fromCalendarDate = $this->getFromCalendarDate();
-    if ($this->getFrom() !== null) {
-      if (($other->getFrom() === null) || ($other->getFrom() < $this->getFrom())) {
-        $fromCalendarDate = $other->getFromCalendarDate();
+    $from = $this->getFrom();
+    $fromIsInexact = $this->getFromIsInexact();
+    if ($from !== null) {
+      if (
+              ($other->getFrom() === null) 
+              || 
+              ($other->getFrom() < $from) 
+              || 
+              ($fromIsInexact && ($other->getFrom() === $from))) {
+        
+        $from = $other->getFrom();
+        $fromIsInexact = $other->getFromIsInexact();
       }
     }
 
-    $toCalendarDate = $this->getToCalendarDate();
-    if ($this->getTo() !== null) {
-      if (($other->getTo() === null) || ($other->getTo() > $this->getTo())) {
-        $toCalendarDate = $other->getToCalendarDate();
+    $to = $this->getTo();
+    $toIsInexact = $this->getToIsInexact();
+    if ($to !== null) {
+      if (
+              ($other->getTo() === null) 
+              || 
+              ($other->getTo() > $to)
+              || 
+              ($toIsInexact && ($other->getTo() === $to))) {
+        
+        $to = $other->getTo();
+        $toIsInexact = $other->getToIsInexact();
       }
     }
 
-    return new GedcomDateInterval($fromCalendarDate, $toCalendarDate);
+    return new GedcomDateInterval($from, $to, $fromIsInexact, $toIsInexact);
   }
 
   /**
@@ -169,29 +254,32 @@ class GedcomDateInterval {
           GedcomDateInterval $other,
           bool $sameInexactDateDoesNotIntersect = false): ?GedcomDateInterval {
     
-    $fromCalendarDate = $this->getFromCalendarDate();
+    $from = $this->getFrom();
+    $fromIsInexact = $this->getFromIsInexact();
     if ($other->getFrom() !== null) {
-      if (($this->getFrom() === null) || ($other->getFrom() > $this->getFrom())) {
-        $fromCalendarDate = $other->getFromCalendarDate();
+      if (($from === null) || ($other->getFrom() > $from)) {
+        $from = $other->getFrom();
+        $fromIsInexact = $other->getFromIsInexact();
       }
     }
 
-    $toCalendarDate = $this->getToCalendarDate();
+    $to = $this->getTo();
+    $toIsInexact = $this->getToIsInexact();
     if ($other->getTo() !== null) {
-      if (($this->getTo() === null) || ($other->getTo() < $this->getTo())) {
-        $toCalendarDate = $other->getToCalendarDate();
+      if (($to === null) || ($other->getTo() < $to)) {
+        $to = $other->getTo();
+        $toIsInexact = $other->getToIsInexact();
       }
     }
 
-    if (($fromCalendarDate !== null) && ($toCalendarDate !== null)) {
+    if (($from !== null) && ($to !== null)) {
       if ($sameInexactDateDoesNotIntersect) {
-        //do not use '===' for object equality!
-        if ($fromCalendarDate == $toCalendarDate) {
-          if ($fromCalendarDate->day() === 0) {
+        if ($from === $to) {
+          if ($fromIsInexact || $toIsInexact) {
             
             //it is inexact, but do we have actual ranges?
-            if ($this->getFromCalendarDate() !== $this->getToCalendarDate()) {
-              if ($other->getFromCalendarDate() !== $other->getToCalendarDate()) {
+            if ($this->getFrom() !== $this->getTo()) {
+              if ($other->getFrom() !== $other->getTo()) {
                 return null;
               }
             }
@@ -199,12 +287,12 @@ class GedcomDateInterval {
         }
       }
       
-      if (GedcomDateInterval::minJD($fromCalendarDate) > GedcomDateInterval::maxJD($toCalendarDate)) {    
+      if ($from > $to) {    
         return null;
       }
     }
 
-    return new GedcomDateInterval($fromCalendarDate, $toCalendarDate);
+    return new GedcomDateInterval($from, $to, $fromIsInexact, $toIsInexact);
   }
 
   public function maxUntil(GedcomDateInterval $other): ?GedcomDateInterval {
@@ -212,17 +300,20 @@ class GedcomDateInterval {
       return null;
     }
 
-    $fromCalendarDate = $this->getFromCalendarDate();
-    if (($this->getFrom() !== null) && ($this->getFrom() > $other->getFrom())) {
+    $from = $this->getFrom();
+    $fromIsInexact = $this->getFromIsInexact();
+    if (($from !== null) && ($from > $other->getFrom())) {
       return null;
     }
 
-    $toCalendarDate = $this->getToCalendarDate();
-    if (($this->getTo() === null) || ($other->getFrom() < $this->getTo())) {
-      $toCalendarDate = $other->getFromCalendarDate();
+    $to = $this->getTo();
+    $toIsInexact = $this->getToIsInexact();
+    if (($to === null) || ($other->getFrom() < $to)) {
+      $to = $other->getFrom();
+      $toIsInexact = $other->getFromIsInexact();
     }
 
-    return new GedcomDateInterval($fromCalendarDate, $toCalendarDate);
+    return new GedcomDateInterval($from, $to, $fromIsInexact, $toIsInexact);
   }
 
   /**
@@ -237,18 +328,24 @@ class GedcomDateInterval {
     }
     
     $thisFrom = $this->getFrom();
+    $thisFromIsInexact = $this->getFromIsInexact();
+    
     if ($thisFrom === null) {
       $retFrom = null;
+      $retFromIsInexact = false;
     } else if ($thisFrom < $otherFrom) {
       $retFrom = $thisFrom;
+      $retFromIsInexact = $thisFromIsInexact;
     } else {
       return null;
     }
     
     $retTo = $otherFrom-1;
     return new GedcomDateInterval(
-            ($retFrom == null)?null:new GregorianDate($retFrom), 
-            new GregorianDate($retTo));
+            $retFrom, 
+            $retTo,
+            $retFromIsInexact,
+            false);
   }
   
   /**
@@ -263,45 +360,51 @@ class GedcomDateInterval {
     }
     
     $thisTo = $this->getTo();
+    $thisToIsInexact = $this->getToIsInexact();
+    
     if ($thisTo === null) {
       $retTo = null;
+      $retToIsInexact = false;
     } else if ($thisTo > $otherTo) {
       $retTo = $thisTo;
+      $retToIsInexact = $thisToIsInexact;
     } else {
       return null;
     }
     
     $retFrom = $otherTo+1;
     return new GedcomDateInterval(
-            new GregorianDate($retFrom), 
-            ($retTo == null)?null:new GregorianDate($retTo));
+            $retFrom, 
+            $retTo,
+            false,
+            $retToIsInexact);
   }
   
   /**
    * @param $asFromTo if false, return as BET a AND B (if applicable)
    * @return empty if (null, null), gedcom starting with newline otherwise 
+   * note that we lose the inexactness information here! This is assumed to be acceptable.
    */
   public function toGedcomString($level, $asFromTo = false) {
-    if (($this->fromCalendarDate === null) && ($this->toCalendarDate === null)) {
+    if (($this->from === null) && ($this->to === null)) {
       return "";
     }
 
-    if ($this->fromCalendarDate === null) {
-      $to = DateUtils::toGedcomString($this->toCalendarDate);
+    if ($this->from === null) {
+      $to = DateUtils::toGedcomString(new GregorianDate($this->to));
       return "\n" . $level . " DATE BEF " . $to;
     }
 
-    $from = DateUtils::toGedcomString($this->fromCalendarDate);
-    if ($this->toCalendarDate === null) {
+    $from = DateUtils::toGedcomString(new GregorianDate($this->from));
+    if ($this->to === null) {
       return "\n" . $level . " DATE AFT " . $from;
     }
 
-    //equality, not identity!
-    if ($this->fromCalendarDate == $this->toCalendarDate) {
+    if ($this->from === $this->to) {
       return "\n" . $level . " DATE " . $from;
     }
 
-    $to = DateUtils::toGedcomString($this->toCalendarDate);
+    $to = DateUtils::toGedcomString(new GregorianDate($this->to));
 
     if ($asFromTo) {
       return "\n" . $level . " DATE FROM " . $from . " TO " . $to;
@@ -314,15 +417,17 @@ class GedcomDateInterval {
    */
   public function shiftYears($fromPlusYears, $toPlusYears) {
     $shiftedFrom = null;
-    if ($this->fromCalendarDate !== null) {
-      $shiftedFrom = DateUtils::asYear($this->fromCalendarDate, $fromPlusYears);
+    if ($this->from !== null) {
+      $shiftedFrom = GedcomDateInterval::minJD(
+              DateUtils::asYear(new GregorianDate($this->from), $fromPlusYears));
     }
     $shiftedTo = null;
-    if ($this->toCalendarDate !== null) {
-      $shiftedTo = DateUtils::asYear($this->toCalendarDate, $toPlusYears);
+    if ($this->to !== null) {
+      $shiftedTo = GedcomDateInterval::maxJD(
+              DateUtils::asYear(new GregorianDate($this->to), $toPlusYears));
     }
 
-    return new GedcomDateInterval($shiftedFrom, $shiftedTo);
+    return new GedcomDateInterval($shiftedFrom, $shiftedTo, true, true);
   }
 
   /**
