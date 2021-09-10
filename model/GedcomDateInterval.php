@@ -191,7 +191,7 @@ class GedcomDateInterval implements JsonSerializable {
         return GedcomDateInterval::createFromCalendarDates($date1, null);
       }
 
-      return new GedcomDateInterval($date1, $date1);
+      return GedcomDateInterval::createFromCalendarDates($date1, $date1);
     }
 
     $date1 = DateUtils::parseDate($date);

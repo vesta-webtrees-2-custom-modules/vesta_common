@@ -86,5 +86,11 @@
 		"from": "2.0.12",
 		"to": "2.0.17",
 		"changelog": ["All modules: Additional translations and some performance improvements."]
+	},
+	{
+		"version": "2.0.16.5.1",
+		"from": "2.0.12",
+		"to": "2.0.17",
+		"changelog": ["Small bugfix."]
 	}
 ]
