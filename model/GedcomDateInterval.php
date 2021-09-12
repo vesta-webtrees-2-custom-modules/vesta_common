@@ -110,6 +110,14 @@ class GedcomDateInterval implements JsonSerializable {
     $this->toIsInexact = ($to === null)?true:$toIsInexact;
   }
   
+  public static function fromStd($std): GedcomDateInterval {
+    return new GedcomDateInterval(
+            $std->from, 
+            $std->to, 
+            $std->fromIsInexact, 
+            $std->toIsInexact);
+  }
+  
   protected static function minJD(AbstractCalendarDate $calendarDate): int {
     return $calendarDate->minimumJulianDay();
   }

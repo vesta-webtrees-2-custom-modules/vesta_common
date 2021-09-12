@@ -11,7 +11,7 @@ class GenericViewElement {
    * 
    * @return string html string
    */
-  public function getMain() {
+  public function getMain(): string {
     return $this->main;
   }
 
@@ -19,11 +19,11 @@ class GenericViewElement {
    * 
    * @return string html string (i.e. script tags must be included)
    */
-  public function getScript() {
+  public function getScript(): string {
     return $this->script;
   }
 
-  public function __construct($main, $script) {
+  public function __construct(string $main, string $script) {
     $this->main = $main;
     $this->script = $script;
   }

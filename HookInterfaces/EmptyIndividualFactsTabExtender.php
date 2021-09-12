@@ -3,7 +3,6 @@
 namespace Vesta\Hook\HookInterfaces;
 
 use Cissee\WebtreesExt\FactPlaceAdditions;
-use Cissee\WebtreesExt\FormatPlaceAdditions;
 use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\Individual;
 use Fisharebest\Webtrees\Tree;
@@ -57,13 +56,21 @@ trait EmptyIndividualFactsTabExtender {
     return new GenericViewElement('', '');
   }
 
-  public function hFactsTabGetFormatPlaceAdditions(PlaceStructure $place) {
-    return new FormatPlaceAdditions();
-  }
-
-  public function factPlaceAdditions(PlaceStructure $place): ?FactPlaceAdditions {
+  public function factPlaceAdditionsBeforePlace(PlaceStructure $place): ?string {
     return null;
   }
+  
+  public function factPlaceAdditionsAfterMap(PlaceStructure $place): ?string {
+    return null;
+  }
+  
+  public function factPlaceAdditionsAfterNotes(PlaceStructure $place): ?string {
+    return null;
+  }
+  
+  //public function factPlaceAdditions(PlaceStructure $place): ?FactPlaceAdditions {
+  //  return null;
+  //}
   
   public function hFactsTabGetOutputForAssoRel(
           Fact $event,

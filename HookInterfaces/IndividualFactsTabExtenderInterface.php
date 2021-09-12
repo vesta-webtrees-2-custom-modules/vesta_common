@@ -3,7 +3,6 @@
 namespace Vesta\Hook\HookInterfaces;
 
 use Cissee\WebtreesExt\FactPlaceAdditions;
-use Cissee\WebtreesExt\FormatPlaceAdditions;
 use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\Individual;
 use Fisharebest\Webtrees\Tree;
@@ -70,17 +69,13 @@ interface IndividualFactsTabExtenderInterface {
    * @return GenericViewElement with html to display after the description box, and script
    */
   public function hFactsTabGetOutputAfterDBox(Individual $person);
-
-  /**
-   *
-   * @param $place
-   *
-   * @return FormatPlaceAdditions
-   */
-  //deprecated
-  public function hFactsTabGetFormatPlaceAdditions(PlaceStructure $place);
   
-  public function factPlaceAdditions(PlaceStructure $place): ?FactPlaceAdditions;
+  public function factPlaceAdditionsBeforePlace(PlaceStructure $place): ?string;
+  public function factPlaceAdditionsAfterMap(PlaceStructure $place): ?string;
+  public function factPlaceAdditionsAfterNotes(PlaceStructure $place): ?string;
+  
+  //deprecated
+  //public function factPlaceAdditions(PlaceStructure $place): ?FactPlaceAdditions;
 
   /**
    * first hook subscriber to return non-empty or null wins! 

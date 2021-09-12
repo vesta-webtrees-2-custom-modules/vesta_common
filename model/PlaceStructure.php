@@ -7,9 +7,12 @@ use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\Functions\Functions;
 use Fisharebest\Webtrees\Location;
 use Fisharebest\Webtrees\Place;
+use Fisharebest\Webtrees\Services\TreeService;
 use Fisharebest\Webtrees\Tree;
 use JsonSerializable;
 use Vesta\Model\GedcomDateInterval;
+use function app;
+use function GuzzleHttp\json_encode;
 
 /**
  * A GEDCOM level 2 place (PLAC) object (complete structure, may include custom tags)
@@ -31,8 +34,8 @@ class PlaceStructure implements JsonSerializable {
       'tree' => $this->tree->id(),
       'gedcomName' => $this->gedcomName,
       'gedcom' => $this->gedcom,
-      //'eventType' => $this->eventType,
-      //'eventDateInterval' => $this->eventDateInterval,
+      'eventType' => $this->eventType,
+      'eventDateInterval' => $this->eventDateInterval,
       'level' => $this->level,
       'location' => ($this->location !== null) ? $this->location->xref() : null,
     ];
@@ -98,7 +101,18 @@ class PlaceStructure implements JsonSerializable {
     $this->level = $level;
     $this->location = $location;
   }
-
+  
+  public static function fromStd($std): PlaceStructure {
+    return new PlaceStructure(
+            $std->gedcomName, 
+            $std->gedcom, 
+            app(TreeService::class)->find($std->tree), 
+            $std->eventType, 
+            GedcomDateInterval::fromStd($std->eventDateInterval), 
+            $std->level, 
+            null); //hmmm
+  }
+  
   public static function create(
           string $gedcom, 
           Tree $tree, 
