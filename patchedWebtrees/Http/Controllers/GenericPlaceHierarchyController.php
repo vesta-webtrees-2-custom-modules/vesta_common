@@ -74,9 +74,9 @@ class GenericPlaceHierarchyController {
             $content .= view('modules/place-hierarchy/map', [
                 'data'     => $this->mapData($place, $places),
                 'provider' => [
-                    'url'    => 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    'url'     => 'https://tile-{s}.openstreetmap.fr/hot/{z}/{x}/{y}.png',
                     'options' => [
-                        'attribution' => '<a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a> contributors',
+                    'attribution' => 'Tile style - from the <a href="https://www.hotosm.org">Humanitarian OpenStreetMap Team </a>, hosting - from <a href="https://openstreetmap.fr">OSM France</a>', 
                         'max_zoom'    => 19
                     ]
                 ]
