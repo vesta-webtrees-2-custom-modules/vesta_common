@@ -13,6 +13,7 @@ use Fisharebest\Webtrees\Date\JalaliDate;
 use Fisharebest\Webtrees\Date\JewishDate;
 use Fisharebest\Webtrees\Date\JulianDate;
 use Fisharebest\Webtrees\Date\RomanDate;
+use Fisharebest\Webtrees\Date;
 
 class DateUtils {
   //cf Date.php where this in non-static (why?) and private (why why why?)
@@ -173,6 +174,10 @@ class DateUtils {
     return new GregorianDate([''.$year, '', '']);
   }
 
+  public static function toDate(AbstractCalendarDate $calendarDate): Date {
+    return new Date(DateUtils::toGedcomString($calendarDate));
+  }
+  
   //[RC] added
   public static function toGedcomString(AbstractCalendarDate $calendarDate) {
     //ok so this was available all the time apparently, just rather hard to find out about it!

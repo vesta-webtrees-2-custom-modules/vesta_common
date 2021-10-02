@@ -165,10 +165,18 @@ abstract class AbstractModule implements ModuleInterface {
    * @return string
    */
   public function getPreference(string $setting_name, string $default = ''): string {
-    return DB::table('module_setting')
-                    ->where('module_name', '=', $this->name())
+    $name = $this->name();
+    $key = 'module_setting_' . $name . '_' . $setting_name . '_' . $default;
+    
+    return Registry::cache()->array()->remember(
+            $key, 
+            function() use($name, $setting_name, $default): string {
+      
+      return DB::table('module_setting')
+                    ->where('module_name', '=', $name)
                     ->where('setting_name', '=', $setting_name)
                     ->value('setting_value') ?? $default;
+    });
   }
 
   /**

@@ -20,7 +20,13 @@ use Fisharebest\Webtrees\I18N;
 <?php echo $editConfigBeforeFaq ?>
 </div>
 
-<h4><?php echo MoreI18N::xlate('FAQ') ?></h4>		
+<div>
+<?php echo $editConfigAfterFaq ?>
+</div>
+  
+<?php echo $prefs ?>
+  
+<h1><?php echo MoreI18N::xlate('FAQ') ?></h1>		
 <p class="small">
     <?php echo I18N::translate('Q: How do the Vesta modules interact?') ?>
 </p>
@@ -63,8 +69,3 @@ use Fisharebest\Webtrees\I18N;
     ?>
 </p>
 
-<div>
-<?php echo $editConfigAfterFaq ?>
-</div>
-
-<?php echo $prefs ?>

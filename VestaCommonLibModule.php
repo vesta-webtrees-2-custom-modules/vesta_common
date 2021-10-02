@@ -76,6 +76,9 @@ class VestaCommonLibModule extends AbstractModule implements
     
     // Replace an existing view with our own version.
     View::registerCustomView('::admin/upgrade/wizard', $this->name() . '::admin/upgrade/wizard');      
+    
+    //allow custom modules to add head/body content to admin pages as well
+    View::registerCustomView('::layouts/administration', $this->name() . '::layouts/administration');
   }
   
   public function isEnabled(): bool {
