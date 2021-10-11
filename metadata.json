@@ -2,105 +2,110 @@
 	{
 		"version": "2.0.13.0.0",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["Add version metadata support."]
 	},
 	{
 		"version": "2.0.13.0.1",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["Bugfix."]
 	},
 	{
 		"version": "2.0.13.1.0",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["All modules: Additional translations."]
 	},
 	{
 		"version": "2.0.15.0.0",
 		"from": "2.0.12",
-		"to": "2.0.17"
+		"to": "2.0.18"
 	},
 	{
 		"version": "2.0.15.1.0",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["All modules: Additional translations.","Bugfix (handling non-Gregorian calendar dates)."]
 	},
 	{
 		"version": "2.0.15.2.0",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["All modules: Additional translations."]
 	},
 	{
 		"version": "2.0.15.3.0",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["All modules: Additional translations."]
 	},
 	{
 		"version": "2.0.15.4.0",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["All modules: Additional translations."]
 	},
 	{
 		"version": "2.0.16.0.0",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["All modules: Additional translations."]
 	},
 	{
 		"version": "2.0.16.1.0",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["All modules: Additional translations."]
 	},
 	{
 		"version": "2.0.16.1.1",
 		"from": "2.0.12",
-		"to": "2.0.17"
+		"to": "2.0.18"
 	},
 	{
 		"version": "2.0.16.2.0",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["All modules: Additional translations."]
 	},
 	{
 		"version": "2.0.16.3.0",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["All modules: Additional translations."]
 	},
 	{
 		"version": "2.0.16.4.0",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["All modules: Additional translations."]
 	},
 	{
 		"version": "2.0.16.5.0",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["All modules: Additional translations and some performance improvements."]
 	},
 	{
 		"version": "2.0.16.5.1",
 		"from": "2.0.12",
-		"to": "2.0.17",
+		"to": "2.0.18",
 		"changelog": ["Small bugfix."]
 	},
 	{
 		"version": "2.0.16.5.2",
 		"from": "2.0.12",
-		"to": "2.0.17"
+		"to": "2.0.18"
 	},
 	{
 		"version": "2.0.16.6.0",
 		"from": "2.0.12",
-		"to": "2.0.17"
+		"to": "2.0.18"
+	},
+	{
+		"version": "2.0.17.0.0",
+		"from": "2.0.12",
+		"to": "2.0.18"
 	}
 ]

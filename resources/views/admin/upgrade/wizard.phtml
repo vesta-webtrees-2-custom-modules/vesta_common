@@ -44,7 +44,7 @@ use Fisharebest\Webtrees\I18N;
               }, "")
         ?>
         <div class="alert alert-warning alert-dismissible" role="alert">
-            <?= I18N::translate('The currently installed versions of the following custom modules are incompatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s', $latest_version, $titles) ?>
+            <?= I18N::translate('The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s', $latest_version, $titles) ?>
         </div>
         <p>
           
@@ -60,7 +60,7 @@ use Fisharebest\Webtrees\I18N;
               }, "")
         ?>
         <div class="alert alert-danger alert-dismissible" role="alert">
-            <?= I18N::translate('The currently installed versions of the following custom modules are incompatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s', $latest_version, $titles) ?>
+            <?= I18N::translate('The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s', $latest_version, $titles) ?>
         </div>
         <p>
           
