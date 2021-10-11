@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-10-11 18:54+0200\n"
-"PO-Revision-Date: 2021-03-08 13:15+0000\n"
+"PO-Revision-Date: 2021-10-11 22:06+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5.1\n"
+"X-Generator: Weblate 4.9-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -74,248 +75,252 @@ msgstr "A: Via 'hooks'. Hooks zorgen ervoor dat modules de functionaliteit van a
 #. I18N: gedcom tag ABBR
 #: replacedWebtrees/app/GedcomTag.php:435
 msgid "Abbreviation"
-msgstr ""
+msgstr "Afkorting"
 
 #. I18N: gedcom tag ADDR
 #: replacedWebtrees/app/GedcomTag.php:438
 msgid "Address"
-msgstr ""
+msgstr "Adres"
 
 #. I18N: gedcom tag ADR1
 #: replacedWebtrees/app/GedcomTag.php:441
 msgid "Address line 1"
-msgstr ""
+msgstr "Adresregel 1"
 
 #. I18N: gedcom tag ADR2
 #: replacedWebtrees/app/GedcomTag.php:444
 msgid "Address line 2"
-msgstr ""
+msgstr "Adresregel 2"
 
 #. I18N: gedcom tag ADR3
 #: replacedWebtrees/app/GedcomTag.php:447
 msgid "Address line 3"
-msgstr ""
+msgstr "Adresregel 3"
 
 #. I18N: gedcom tag _ADPF
 #: replacedWebtrees/app/GedcomTag.php:1038
 msgid "Adopted by father"
-msgstr ""
+msgstr "Geadopteerd door vader"
 
 #. I18N: gedcom tag _ADPM
 #: replacedWebtrees/app/GedcomTag.php:1042
 msgid "Adopted by mother"
-msgstr ""
+msgstr "Geadopteerd door moeder"
 
 #. I18N: gedcom tag ADOP
 #: replacedWebtrees/app/GedcomTag.php:450
 msgid "Adoption"
-msgstr ""
+msgstr "Adoptie"
 
 #. I18N: gedcom tag CHRA
 #: replacedWebtrees/app/GedcomTag.php:580
 msgid "Adult christening"
-msgstr ""
+msgstr "Doop van volwassene"
 
 #. I18N: gedcom tag AGE
 #: replacedWebtrees/app/GedcomTag.php:460
 msgid "Age"
-msgstr ""
+msgstr "Leeftijd"
 
 #. I18N: gedcom tag AGNC
 #: replacedWebtrees/app/GedcomTag.php:463
 msgid "Agency"
-msgstr ""
+msgstr "Instantie"
 
 #. I18N: gedcom tag _ALBUM
 #: replacedWebtrees/app/GedcomTag.php:1052
 msgid "Album"
-msgstr ""
+msgstr "Album"
 
 #. I18N: gedcom tag ALIA
 #: replacedWebtrees/app/GedcomTag.php:466
 msgid "Alias"
-msgstr ""
+msgstr "Alias"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:170
 msgid "All"
-msgstr ""
+msgstr "Alle"
 
 #. I18N: gedcom tag _AKA
 #: replacedWebtrees/app/GedcomTag.php:1047
 msgid "Also known as"
-msgstr ""
+msgstr "Ook bekend als"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:459
 msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
 msgstr ""
+"Een gerelateerd persoon is een andere persoon die betrokken was bij dit feit "
+"of deze gebeurtenis, zoals een getuige of een priester."
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:457
 msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
 msgstr ""
+"Een gerelateerd persoon is een andere persoon die betrokken was bij deze "
+"persoon, zoals een vriend of een werkgever."
 
 #. I18N: gedcom tag ANCI
 #: replacedWebtrees/app/GedcomTag.php:472
 msgid "Ancestors interest"
-msgstr ""
+msgstr "Interesse in voorouders"
 
 #. I18N: gedcom tag AFN
 #: replacedWebtrees/app/GedcomTag.php:457
 msgid "Ancestral file number"
-msgstr ""
+msgstr "Voorouderlijk dossiernummer (AFN)"
 
 #. I18N: gedcom tag ANUL
 #: replacedWebtrees/app/GedcomTag.php:475
 msgid "Annulment"
-msgstr ""
+msgstr "Nietigverklaring"
 
 #. I18N: gedcom tag ASSO
 #. I18N: gedcom tag _ASSO
 #: replacedWebtrees/app/GedcomTag.php:478
 #: replacedWebtrees/app/GedcomTag.php:1055
 msgid "Associate"
-msgstr ""
+msgstr "Gerelateerd persoon"
 
 #. I18N: Module Configuration, also checkbox on facts and events tab
 #: CommonI18N.php:153
 msgid "Associated facts and events"
-msgstr "Feiten en gebeurtenissen als/met medewerker(s)"
+msgstr "Feiten en gebeurtenissen met gerelateerde personen"
 
 #. I18N: gedcom tag AUTH
 #: replacedWebtrees/app/GedcomTag.php:481
 msgid "Author"
-msgstr ""
+msgstr "Auteur"
 
 #. I18N: gedcom tag CHAN:_WT_USER
 #: replacedWebtrees/app/GedcomTag.php:564
 msgid "Author of last change"
-msgstr ""
+msgstr "Auteur van laatste wijziging"
 
 #. I18N: gedcom tag BAPM
 #: replacedWebtrees/app/GedcomTag.php:493
 msgid "Baptism"
-msgstr ""
+msgstr "Gedoopt"
 
 #. I18N: gedcom tag BARM
 #: replacedWebtrees/app/GedcomTag.php:500
 msgid "Bar mitzvah"
-msgstr ""
+msgstr "Bar mitswa"
 
 #. I18N: gedcom tag BASM
 #: replacedWebtrees/app/GedcomTag.php:507
 msgid "Bat mitzvah"
-msgstr ""
+msgstr "Bar mitswa"
 
 #. I18N: gedcom tag _BIBL
 #: replacedWebtrees/app/GedcomTag.php:1059
 msgid "Bibliography"
-msgstr ""
+msgstr "Bibliografie"
 
 #. I18N: gedcom tag BLOB
 #: replacedWebtrees/app/GedcomTag.php:528
 msgid "Binary data object"
-msgstr ""
+msgstr "Binair gegevensobject"
 
 #. I18N: gedcom tag BIRT
 #: replacedWebtrees/app/GedcomTag.php:514
 msgid "Birth"
-msgstr ""
+msgstr "Geboren"
 
 #. I18N: gedcom tag BLES
 #: replacedWebtrees/app/GedcomTag.php:521
 msgid "Blessing"
-msgstr ""
+msgstr "Zegening"
 
 #. I18N: gedcom tag _BRTM
 #: replacedWebtrees/app/GedcomTag.php:1063
 msgid "Brit milah"
-msgstr ""
+msgstr "Brit milah"
 
 #. I18N: gedcom tag BURI
 #: replacedWebtrees/app/GedcomTag.php:531
 msgid "Burial"
-msgstr ""
+msgstr "Begraven"
 
 #. I18N: gedcom tag CALN
 #: replacedWebtrees/app/GedcomTag.php:538
 msgid "Call number"
-msgstr ""
+msgstr "Inventarisnummer"
 
 #. I18N: gedcom tag CAST
 #: replacedWebtrees/app/GedcomTag.php:541
 msgid "Caste"
-msgstr ""
+msgstr "Kaste"
 
 #. I18N: gedcom tag CAUS
 #: replacedWebtrees/app/GedcomTag.php:544
 msgid "Cause"
-msgstr ""
+msgstr "Oorzaak"
 
 #: replacedWebtrees/app/GedcomTag.php:635
 msgid "Cause of death"
-msgstr ""
+msgstr "Doodsoorzaak"
 
 #. I18N: gedcom tag CEME
 #: replacedWebtrees/app/GedcomTag.php:547
 msgid "Cemetery"
-msgstr ""
+msgstr "Begraafplaats"
 
 #. I18N: gedcom tag CENS
 #: replacedWebtrees/app/GedcomTag.php:550
 msgid "Census"
-msgstr ""
+msgstr "Volkstelling"
 
 #: replacedWebtrees/app/GedcomTag.php:552
 msgid "Census date"
-msgstr ""
+msgstr "Datum volkstelling"
 
 #: replacedWebtrees/app/GedcomTag.php:554
 msgid "Census place"
-msgstr ""
+msgstr "Plaats volkstelling"
 
 #. I18N: gedcom tag CHAR
 #: replacedWebtrees/app/GedcomTag.php:567
 msgid "Character set"
-msgstr ""
+msgstr "Tekenreeks"
 
 #. I18N: gedcom tag CHIL
 #: replacedWebtrees/app/GedcomTag.php:570
 msgid "Child"
-msgstr ""
+msgstr "Kind"
 
 #. I18N: gedcom tag CHR
 #: replacedWebtrees/app/GedcomTag.php:573
 msgid "Christening"
-msgstr ""
+msgstr "Gedoopt"
 
 #. I18N: gedcom tag PAGE
 #: replacedWebtrees/app/GedcomTag.php:873
 msgid "Citation details"
-msgstr ""
+msgstr "Details citaat"
 
 #. I18N: gedcom tag CITN
 #: replacedWebtrees/app/GedcomTag.php:583
 msgid "Citizenship"
-msgstr ""
+msgstr "Staatsburgerschap"
 
 #. I18N: gedcom tag CITY
 #: replacedWebtrees/app/GedcomTag.php:586
 msgid "City"
-msgstr ""
+msgstr "Plaats"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:619
 #: replacedWebtrees/app/GedcomTag.php:803
 msgid "Civil marriage"
-msgstr ""
+msgstr "Burgerlijk huwelijk"
 
 #. I18N: gedcom tag COMM
 #: replacedWebtrees/app/GedcomTag.php:589
 msgid "Comment"
-msgstr ""
+msgstr "Commentaar"
 
 #. I18N: gedcom tag _COML
 #: replacedWebtrees/app/GedcomTag.php:1071
 msgid "Common law marriage"
-msgstr ""
+msgstr "Erkend partnerschap"
 
 #. I18N: gedcom tag CONC
 #: replacedWebtrees/app/GedcomTag.php:592
@@ -325,7 +330,7 @@ msgstr ""
 #. I18N: gedcom tag CONF
 #: replacedWebtrees/app/GedcomTag.php:598
 msgid "Confirmation"
-msgstr ""
+msgstr "Vormsel/confirmatie"
 
 #. I18N: gedcom tag CONT
 #: replacedWebtrees/app/GedcomTag.php:595
@@ -335,154 +340,154 @@ msgstr ""
 #. I18N: gedcom tag MAP
 #: replacedWebtrees/app/GedcomTag.php:781
 msgid "Coordinates"
-msgstr ""
+msgstr "Coördinaten"
 
 #. I18N: gedcom tag COPR
 #: replacedWebtrees/app/GedcomTag.php:608
 msgid "Copyright"
-msgstr ""
+msgstr "Copyright"
 
 #. I18N: gedcom tag CORP
 #: replacedWebtrees/app/GedcomTag.php:611
 msgid "Corporation"
-msgstr ""
+msgstr "Organisatie"
 
 #. I18N: gedcom tag CTRY
 #: replacedWebtrees/app/GedcomTag.php:621
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:491
 msgid "Create a media object"
-msgstr ""
+msgstr "Maak een nieuw media object aan"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:532
 msgid "Create a repository"
-msgstr ""
+msgstr "Maak een nieuwe opslagplaats aan"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:482
 msgid "Create a shared note"
-msgstr ""
+msgstr "Maak een nieuwe gedeelde notitie aan"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:546
 msgid "Create a source"
-msgstr ""
+msgstr "Maak een nieuwe bron aan"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:554
 msgid "Create a submitter"
-msgstr ""
+msgstr "Maak een nieuwe inzender aan"
 
 #. I18N: gedcom tag CREM
 #: replacedWebtrees/app/GedcomTag.php:614
 msgid "Cremation"
-msgstr ""
+msgstr "Crematie"
 
 #. I18N: gedcom tag _DNA (from FTM 2010)
 #: replacedWebtrees/app/GedcomTag.php:1085
 msgid "DNA markers"
-msgstr ""
+msgstr "DNA-markers"
 
 #. I18N: gedcom tag DATA
 #: replacedWebtrees/app/GedcomTag.php:624
 msgid "Data"
-msgstr ""
+msgstr "Gegevens"
 
 #. I18N: gedcom tag DATE
 #: replacedWebtrees/app/GedcomTag.php:630
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #. I18N: LDS = Church of Latter Day Saints.
 #: replacedWebtrees/app/GedcomTag.php:487
 msgid "Date of LDS baptism"
-msgstr ""
+msgstr "Datum van de LDS-doop"
 
 #. I18N: LDS = Church of Latter Day Saints.
 #: replacedWebtrees/app/GedcomTag.php:963
 msgid "Date of LDS child sealing"
-msgstr ""
+msgstr "Datum van de LDS-kindverzegeling"
 
 #. I18N: LDS = Church of Latter Day Saints.
 #: replacedWebtrees/app/GedcomTag.php:680
 msgid "Date of LDS endowment"
-msgstr ""
+msgstr "Datum van de LDS-schenking"
 
 #: replacedWebtrees/app/GedcomTag.php:452
 msgid "Date of adoption"
-msgstr ""
+msgstr "Adoptiedatum"
 
 #: replacedWebtrees/app/GedcomTag.php:495
 msgid "Date of baptism"
-msgstr ""
+msgstr "Doopdatum"
 
 #: replacedWebtrees/app/GedcomTag.php:502
 msgid "Date of bar mitzvah"
-msgstr ""
+msgstr "Bar mitswa-datum"
 
 #: replacedWebtrees/app/GedcomTag.php:509
 msgid "Date of bat mitzvah"
-msgstr ""
+msgstr "Bat mitswa-datum"
 
 #: replacedWebtrees/app/GedcomTag.php:516
 msgid "Date of birth"
-msgstr ""
+msgstr "Geboortedatum"
 
 #: replacedWebtrees/app/GedcomTag.php:523
 msgid "Date of blessing"
-msgstr ""
+msgstr "Datum zegening"
 
 #: replacedWebtrees/app/GedcomTag.php:1065
 msgid "Date of brit milah"
-msgstr ""
+msgstr "Brit milah-datum"
 
 #: replacedWebtrees/app/GedcomTag.php:533
 msgid "Date of burial"
-msgstr ""
+msgstr "Begrafenisdatum"
 
 #: replacedWebtrees/app/GedcomTag.php:575
 msgid "Date of christening"
-msgstr ""
+msgstr "Doopdatum"
 
 #: replacedWebtrees/app/GedcomTag.php:600
 msgid "Date of confirmation"
-msgstr ""
+msgstr "Datum vormsel/confirmatie"
 
 #: replacedWebtrees/app/GedcomTag.php:616
 msgid "Date of cremation"
-msgstr ""
+msgstr "Crematiedatum"
 
 #: replacedWebtrees/app/GedcomTag.php:637
 msgid "Date of death"
-msgstr ""
+msgstr "Overlijdensdatum"
 
 #: replacedWebtrees/app/GedcomTag.php:672
 msgid "Date of emigration"
-msgstr ""
+msgstr "Emigratiedatum"
 
 #: replacedWebtrees/app/GedcomTag.php:688
 msgid "Date of engagement"
-msgstr ""
+msgstr "Verlovingsdatum"
 
 #: replacedWebtrees/app/GedcomTag.php:626
 msgid "Date of entry in original source"
-msgstr ""
+msgstr "Inschrijfdatum in originele bron"
 
 #: replacedWebtrees/app/GedcomTag.php:695
 msgid "Date of event"
-msgstr ""
+msgstr "Gebeurtenisdatum"
 
 #: replacedWebtrees/app/GedcomTag.php:724
 msgid "Date of first communion"
-msgstr ""
+msgstr "Datum eerste communie"
 
 #: replacedWebtrees/app/GedcomTag.php:758
 msgid "Date of immigration"
-msgstr ""
+msgstr "Immigratiedatum"
 
 #. I18N: gedcom tag CHAN:DATE
 #: replacedWebtrees/app/GedcomTag.php:561
 msgid "Date of last change"
-msgstr ""
+msgstr "Datum laatste wijziging"
 
 #: replacedWebtrees/app/GedcomTag.php:799
 msgid "Date of marriage"
