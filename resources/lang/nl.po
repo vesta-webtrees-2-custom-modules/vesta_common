@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-10-11 18:54+0200\n"
-"PO-Revision-Date: 2021-10-12 08:26+0000\n"
+"PO-Revision-Date: 2021-10-12 10:05+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/nl/>\n"
@@ -1866,7 +1866,7 @@ msgstr "nooit"
 #: replacedWebtrees/Functions/FunctionsEdit.php:153
 #: replacedWebtrees/Functions/FunctionsEdit.php:187
 msgid "no"
-msgstr "geen"
+msgstr "nee"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
