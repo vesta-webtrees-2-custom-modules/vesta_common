@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-10-11 18:54+0200\n"
-"PO-Revision-Date: 2021-10-12 10:05+0000\n"
+"PO-Revision-Date: 2021-10-12 13:09+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/nl/>\n"
@@ -361,7 +361,7 @@ msgstr "Land"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:491
 msgid "Create a media object"
-msgstr "Maak een nieuw media object aan"
+msgstr "Maak een nieuw mediaobject aan"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:532
 msgid "Create a repository"
