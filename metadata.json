@@ -107,5 +107,11 @@
 		"version": "2.0.17.0.0",
 		"from": "2.0.12",
 		"to": "2.0.18"
+	},
+	{
+		"version": "2.0.17.0.1",
+		"from": "2.0.12",
+		"to": "2.0.18",
+		"changelog": ["All modules: Additional translations."]
 	}
 ]
