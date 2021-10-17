@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-10-11 18:54+0200\n"
-"PO-Revision-Date: 2021-10-14 10:32+0000\n"
+"PO-Revision-Date: 2021-10-17 10:35+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/nl/>\n"
@@ -882,7 +882,7 @@ msgstr "Persoon"
 #. I18N: gedcom tag INFL
 #: replacedWebtrees/app/GedcomTag.php:766
 msgid "Infant"
-msgstr "Baby"
+msgstr "Minder dan 1 jaar oud"
 
 #. I18N: gedcom tag _INTE
 #: replacedWebtrees/app/GedcomTag.php:1157
