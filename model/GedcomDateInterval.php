@@ -395,29 +395,29 @@ class GedcomDateInterval implements JsonSerializable {
    */
   public function toGedcomString($level, $asFromTo = false) {
     if (($this->from === null) && ($this->to === null)) {
-      return "";
+      return '';
     }
 
     if ($this->from === null) {
       $to = DateUtils::toGedcomString(new GregorianDate($this->to));
-      return "\n" . $level . " DATE BEF " . $to;
+      return "\n" . $level . ' DATE BEF ' . $to;
     }
 
     $from = DateUtils::toGedcomString(new GregorianDate($this->from));
     if ($this->to === null) {
-      return "\n" . $level . " DATE AFT " . $from;
+      return "\n" . $level . ' DATE AFT ' . $from;
     }
 
     if ($this->from === $this->to) {
-      return "\n" . $level . " DATE " . $from;
+      return "\n" . $level . ' DATE ' . $from;
     }
 
     $to = DateUtils::toGedcomString(new GregorianDate($this->to));
 
     if ($asFromTo) {
-      return "\n" . $level . " DATE FROM " . $from . " TO " . $to;
+      return "\n" . $level . ' DATE FROM ' . $from . ' TO ' . $to;
     }
-    return "\n" . $level . " DATE BET " . $from . " AND " . $to;
+    return "\n" . $level . ' DATE BET ' . $from . ' AND ' . $to;
   }
 
   /**
