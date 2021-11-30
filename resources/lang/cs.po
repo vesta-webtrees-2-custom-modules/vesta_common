@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-10-11 18:54+0200\n"
-"PO-Revision-Date: 2021-11-30 19:50+0000\n"
+"PO-Revision-Date: 2021-11-30 22:53+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/cs/>\n"
@@ -245,12 +245,12 @@ msgstr "Pohřbení"
 #. I18N: gedcom tag CALN
 #: replacedWebtrees/app/GedcomTag.php:538
 msgid "Call number"
-msgstr ""
+msgstr "Signatura"
 
 #. I18N: gedcom tag CAST
 #: replacedWebtrees/app/GedcomTag.php:541
 msgid "Caste"
-msgstr ""
+msgstr "Kasta"
 
 #. I18N: gedcom tag CAUS
 #: replacedWebtrees/app/GedcomTag.php:544
