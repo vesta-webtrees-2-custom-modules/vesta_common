@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-10-11 18:54+0200\n"
-"PO-Revision-Date: 2021-11-29 15:53+0000\n"
+"PO-Revision-Date: 2021-11-30 19:50+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/cs/>\n"
@@ -77,106 +77,110 @@ msgstr "A: Přes háčky (hooky). Háčky umožňují modulům rozšiřovat funk
 #. I18N: gedcom tag ABBR
 #: replacedWebtrees/app/GedcomTag.php:435
 msgid "Abbreviation"
-msgstr ""
+msgstr "Zkratka"
 
 #. I18N: gedcom tag ADDR
 #: replacedWebtrees/app/GedcomTag.php:438
 msgid "Address"
-msgstr ""
+msgstr "Adresa"
 
 #. I18N: gedcom tag ADR1
 #: replacedWebtrees/app/GedcomTag.php:441
 msgid "Address line 1"
-msgstr ""
+msgstr "Adresní řádek 1"
 
 #. I18N: gedcom tag ADR2
 #: replacedWebtrees/app/GedcomTag.php:444
 msgid "Address line 2"
-msgstr ""
+msgstr "Adresní řádek 2"
 
 #. I18N: gedcom tag ADR3
 #: replacedWebtrees/app/GedcomTag.php:447
 msgid "Address line 3"
-msgstr ""
+msgstr "Adresní řádek 3"
 
 #. I18N: gedcom tag _ADPF
 #: replacedWebtrees/app/GedcomTag.php:1038
 msgid "Adopted by father"
-msgstr ""
+msgstr "Adoptován/a otcem"
 
 #. I18N: gedcom tag _ADPM
 #: replacedWebtrees/app/GedcomTag.php:1042
 msgid "Adopted by mother"
-msgstr ""
+msgstr "Adoptován/a matkou"
 
 #. I18N: gedcom tag ADOP
 #: replacedWebtrees/app/GedcomTag.php:450
 msgid "Adoption"
-msgstr ""
+msgstr "Adopce"
 
 #. I18N: gedcom tag CHRA
 #: replacedWebtrees/app/GedcomTag.php:580
 msgid "Adult christening"
-msgstr ""
+msgstr "Křest v dospělosti"
 
 #. I18N: gedcom tag AGE
 #: replacedWebtrees/app/GedcomTag.php:460
 msgid "Age"
-msgstr ""
+msgstr "Věk"
 
 #. I18N: gedcom tag AGNC
 #: replacedWebtrees/app/GedcomTag.php:463
 msgid "Agency"
-msgstr ""
+msgstr "Agentura"
 
 #. I18N: gedcom tag _ALBUM
 #: replacedWebtrees/app/GedcomTag.php:1052
 msgid "Album"
-msgstr ""
+msgstr "Album"
 
 #. I18N: gedcom tag ALIA
 #: replacedWebtrees/app/GedcomTag.php:466
 msgid "Alias"
-msgstr ""
+msgstr "Alias"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:170
 msgid "All"
-msgstr ""
+msgstr "Všichni"
 
 #. I18N: gedcom tag _AKA
 #: replacedWebtrees/app/GedcomTag.php:1047
 msgid "Also known as"
-msgstr ""
+msgstr "Také znám jako"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:459
 msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
 msgstr ""
+"Přidružená osoba je ta, která je zúčastněná v tomto faktu nebo události, "
+"např. svědek nebo kněz."
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:457
 msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
 msgstr ""
+"Přidružená osoba je tak, která je nějak spojená s touto osobou, např. jako "
+"přítel nebo zaměstnavatel."
 
 #. I18N: gedcom tag ANCI
 #: replacedWebtrees/app/GedcomTag.php:472
 msgid "Ancestors interest"
-msgstr ""
+msgstr "Ancestors interest"
 
 #. I18N: gedcom tag AFN
 #: replacedWebtrees/app/GedcomTag.php:457
 msgid "Ancestral file number"
-msgstr ""
+msgstr "Číslo souboru předků"
 
 #. I18N: gedcom tag ANUL
 #: replacedWebtrees/app/GedcomTag.php:475
 msgid "Annulment"
-msgstr ""
+msgstr "Anulování"
 
 #. I18N: gedcom tag ASSO
 #. I18N: gedcom tag _ASSO
 #: replacedWebtrees/app/GedcomTag.php:478
 #: replacedWebtrees/app/GedcomTag.php:1055
 msgid "Associate"
-msgstr ""
+msgstr "Přidružená osoba"
 
 #. I18N: Module Configuration, also checkbox on facts and events tab
 #: CommonI18N.php:153
@@ -186,57 +190,57 @@ msgstr "Fakta a události společníků"
 #. I18N: gedcom tag AUTH
 #: replacedWebtrees/app/GedcomTag.php:481
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #. I18N: gedcom tag CHAN:_WT_USER
 #: replacedWebtrees/app/GedcomTag.php:564
 msgid "Author of last change"
-msgstr ""
+msgstr "Autor poslední změny"
 
 #. I18N: gedcom tag BAPM
 #: replacedWebtrees/app/GedcomTag.php:493
 msgid "Baptism"
-msgstr ""
+msgstr "Křest"
 
 #. I18N: gedcom tag BARM
 #: replacedWebtrees/app/GedcomTag.php:500
 msgid "Bar mitzvah"
-msgstr ""
+msgstr "Bar mitzvah"
 
 #. I18N: gedcom tag BASM
 #: replacedWebtrees/app/GedcomTag.php:507
 msgid "Bat mitzvah"
-msgstr ""
+msgstr "Bat mitzvah"
 
 #. I18N: gedcom tag _BIBL
 #: replacedWebtrees/app/GedcomTag.php:1059
 msgid "Bibliography"
-msgstr ""
+msgstr "Seznam pramenů"
 
 #. I18N: gedcom tag BLOB
 #: replacedWebtrees/app/GedcomTag.php:528
 msgid "Binary data object"
-msgstr ""
+msgstr "Objekt binárních dat"
 
 #. I18N: gedcom tag BIRT
 #: replacedWebtrees/app/GedcomTag.php:514
 msgid "Birth"
-msgstr ""
+msgstr "Narození"
 
 #. I18N: gedcom tag BLES
 #: replacedWebtrees/app/GedcomTag.php:521
 msgid "Blessing"
-msgstr ""
+msgstr "Požehnání"
 
 #. I18N: gedcom tag _BRTM
 #: replacedWebtrees/app/GedcomTag.php:1063
 msgid "Brit milah"
-msgstr ""
+msgstr "Brit milah"
 
 #. I18N: gedcom tag BURI
 #: replacedWebtrees/app/GedcomTag.php:531
 msgid "Burial"
-msgstr ""
+msgstr "Pohřbení"
 
 #. I18N: gedcom tag CALN
 #: replacedWebtrees/app/GedcomTag.php:538
