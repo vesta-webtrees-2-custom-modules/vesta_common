@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2021-10-11 18:54+0200\n"
+"POT-Creation-Date: 2021-12-05 11:26+0100\n"
 "PO-Revision-Date: 2021-04-18 22:26+0000\n"
 "Last-Translator: Hasse Häljeskog <hasse.haljeskog@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/sv/>\n"
@@ -41,12 +41,6 @@ msgstr "(hela modulen)"
 msgid "(specific functionality)"
 msgstr "(specifik funktionalitet)"
 
-#. I18N: a label/value pair, such as “Occupation: Farmer”. Some languages may need to change the punctuation.
-#: replacedWebtrees/app/GedcomTag.php:1325
-#, php-format
-msgid "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
-msgstr ""
-
 #: VestaCommonLibModule.php:60
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr "En modul som tillhandahåller vanliga klasser och översättningar för andra 'Vesta' anpassade moduler."
@@ -71,78 +65,8 @@ msgstr "S: Vestasymbolen används huvudsakligen för att gruppera relaterade mod
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "S: Via krokar. Krokar tillåter moduler att utöka funktionaliteten hos andra komponenter utan att behöva implementera hela komponenten på nytt. Webtrees använder krokar t.ex. i sidfoten och för historiska händelser."
 
-#. I18N: gedcom tag ABBR
-#: replacedWebtrees/app/GedcomTag.php:435
-msgid "Abbreviation"
-msgstr ""
-
-#. I18N: gedcom tag ADDR
-#: replacedWebtrees/app/GedcomTag.php:438
-msgid "Address"
-msgstr ""
-
-#. I18N: gedcom tag ADR1
-#: replacedWebtrees/app/GedcomTag.php:441
-msgid "Address line 1"
-msgstr ""
-
-#. I18N: gedcom tag ADR2
-#: replacedWebtrees/app/GedcomTag.php:444
-msgid "Address line 2"
-msgstr ""
-
-#. I18N: gedcom tag ADR3
-#: replacedWebtrees/app/GedcomTag.php:447
-msgid "Address line 3"
-msgstr ""
-
-#. I18N: gedcom tag _ADPF
-#: replacedWebtrees/app/GedcomTag.php:1038
-msgid "Adopted by father"
-msgstr ""
-
-#. I18N: gedcom tag _ADPM
-#: replacedWebtrees/app/GedcomTag.php:1042
-msgid "Adopted by mother"
-msgstr ""
-
-#. I18N: gedcom tag ADOP
-#: replacedWebtrees/app/GedcomTag.php:450
-msgid "Adoption"
-msgstr ""
-
-#. I18N: gedcom tag CHRA
-#: replacedWebtrees/app/GedcomTag.php:580
-msgid "Adult christening"
-msgstr ""
-
-#. I18N: gedcom tag AGE
-#: replacedWebtrees/app/GedcomTag.php:460
-msgid "Age"
-msgstr ""
-
-#. I18N: gedcom tag AGNC
-#: replacedWebtrees/app/GedcomTag.php:463
-msgid "Agency"
-msgstr ""
-
-#. I18N: gedcom tag _ALBUM
-#: replacedWebtrees/app/GedcomTag.php:1052
-msgid "Album"
-msgstr ""
-
-#. I18N: gedcom tag ALIA
-#: replacedWebtrees/app/GedcomTag.php:466
-msgid "Alias"
-msgstr ""
-
 #: replacedWebtrees/Functions/FunctionsEdit.php:170
 msgid "All"
-msgstr ""
-
-#. I18N: gedcom tag _AKA
-#: replacedWebtrees/app/GedcomTag.php:1047
-msgid "Also known as"
 msgstr ""
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:459
@@ -153,203 +77,13 @@ msgstr ""
 msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
 msgstr ""
 
-#. I18N: gedcom tag ANCI
-#: replacedWebtrees/app/GedcomTag.php:472
-msgid "Ancestors interest"
-msgstr ""
-
-#. I18N: gedcom tag AFN
-#: replacedWebtrees/app/GedcomTag.php:457
-msgid "Ancestral file number"
-msgstr ""
-
-#. I18N: gedcom tag ANUL
-#: replacedWebtrees/app/GedcomTag.php:475
-msgid "Annulment"
-msgstr ""
-
-#. I18N: gedcom tag ASSO
-#. I18N: gedcom tag _ASSO
-#: replacedWebtrees/app/GedcomTag.php:478
-#: replacedWebtrees/app/GedcomTag.php:1055
-msgid "Associate"
-msgstr ""
-
 #. I18N: Module Configuration, also checkbox on facts and events tab
 #: CommonI18N.php:153
 msgid "Associated facts and events"
 msgstr "Tillhörande fakta och händelser"
 
-#. I18N: gedcom tag AUTH
-#: replacedWebtrees/app/GedcomTag.php:481
-msgid "Author"
-msgstr ""
-
-#. I18N: gedcom tag CHAN:_WT_USER
-#: replacedWebtrees/app/GedcomTag.php:564
-msgid "Author of last change"
-msgstr ""
-
-#. I18N: gedcom tag BAPM
-#: replacedWebtrees/app/GedcomTag.php:493
-msgid "Baptism"
-msgstr ""
-
-#. I18N: gedcom tag BARM
-#: replacedWebtrees/app/GedcomTag.php:500
-msgid "Bar mitzvah"
-msgstr ""
-
-#. I18N: gedcom tag BASM
-#: replacedWebtrees/app/GedcomTag.php:507
-msgid "Bat mitzvah"
-msgstr ""
-
-#. I18N: gedcom tag _BIBL
-#: replacedWebtrees/app/GedcomTag.php:1059
-msgid "Bibliography"
-msgstr ""
-
-#. I18N: gedcom tag BLOB
-#: replacedWebtrees/app/GedcomTag.php:528
-msgid "Binary data object"
-msgstr ""
-
-#. I18N: gedcom tag BIRT
-#: replacedWebtrees/app/GedcomTag.php:514
-msgid "Birth"
-msgstr ""
-
-#. I18N: gedcom tag BLES
-#: replacedWebtrees/app/GedcomTag.php:521
-msgid "Blessing"
-msgstr ""
-
-#. I18N: gedcom tag _BRTM
-#: replacedWebtrees/app/GedcomTag.php:1063
-msgid "Brit milah"
-msgstr ""
-
-#. I18N: gedcom tag BURI
-#: replacedWebtrees/app/GedcomTag.php:531
-msgid "Burial"
-msgstr ""
-
-#. I18N: gedcom tag CALN
-#: replacedWebtrees/app/GedcomTag.php:538
-msgid "Call number"
-msgstr ""
-
-#. I18N: gedcom tag CAST
-#: replacedWebtrees/app/GedcomTag.php:541
-msgid "Caste"
-msgstr ""
-
-#. I18N: gedcom tag CAUS
-#: replacedWebtrees/app/GedcomTag.php:544
-msgid "Cause"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:635
-msgid "Cause of death"
-msgstr ""
-
-#. I18N: gedcom tag CEME
-#: replacedWebtrees/app/GedcomTag.php:547
-msgid "Cemetery"
-msgstr ""
-
-#. I18N: gedcom tag CENS
-#: replacedWebtrees/app/GedcomTag.php:550
-msgid "Census"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:552
-msgid "Census date"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:554
-msgid "Census place"
-msgstr ""
-
-#. I18N: gedcom tag CHAR
-#: replacedWebtrees/app/GedcomTag.php:567
-msgid "Character set"
-msgstr ""
-
-#. I18N: gedcom tag CHIL
-#: replacedWebtrees/app/GedcomTag.php:570
-msgid "Child"
-msgstr ""
-
-#. I18N: gedcom tag CHR
-#: replacedWebtrees/app/GedcomTag.php:573
-msgid "Christening"
-msgstr ""
-
-#. I18N: gedcom tag PAGE
-#: replacedWebtrees/app/GedcomTag.php:873
-msgid "Citation details"
-msgstr ""
-
-#. I18N: gedcom tag CITN
-#: replacedWebtrees/app/GedcomTag.php:583
-msgid "Citizenship"
-msgstr ""
-
-#. I18N: gedcom tag CITY
-#: replacedWebtrees/app/GedcomTag.php:586
-msgid "City"
-msgstr ""
-
 #: replacedWebtrees/Functions/FunctionsEdit.php:619
-#: replacedWebtrees/app/GedcomTag.php:803
 msgid "Civil marriage"
-msgstr ""
-
-#. I18N: gedcom tag COMM
-#: replacedWebtrees/app/GedcomTag.php:589
-msgid "Comment"
-msgstr ""
-
-#. I18N: gedcom tag _COML
-#: replacedWebtrees/app/GedcomTag.php:1071
-msgid "Common law marriage"
-msgstr ""
-
-#. I18N: gedcom tag CONC
-#: replacedWebtrees/app/GedcomTag.php:592
-msgid "Concatenation"
-msgstr ""
-
-#. I18N: gedcom tag CONF
-#: replacedWebtrees/app/GedcomTag.php:598
-msgid "Confirmation"
-msgstr ""
-
-#. I18N: gedcom tag CONT
-#: replacedWebtrees/app/GedcomTag.php:595
-msgid "Continued"
-msgstr ""
-
-#. I18N: gedcom tag MAP
-#: replacedWebtrees/app/GedcomTag.php:781
-msgid "Coordinates"
-msgstr ""
-
-#. I18N: gedcom tag COPR
-#: replacedWebtrees/app/GedcomTag.php:608
-msgid "Copyright"
-msgstr ""
-
-#. I18N: gedcom tag CORP
-#: replacedWebtrees/app/GedcomTag.php:611
-msgid "Corporation"
-msgstr ""
-
-#. I18N: gedcom tag CTRY
-#: replacedWebtrees/app/GedcomTag.php:621
-msgid "Country"
 msgstr ""
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:491
@@ -372,177 +106,10 @@ msgstr ""
 msgid "Create a submitter"
 msgstr ""
 
-#. I18N: gedcom tag CREM
-#: replacedWebtrees/app/GedcomTag.php:614
-msgid "Cremation"
-msgstr ""
-
-#. I18N: gedcom tag _DNA (from FTM 2010)
-#: replacedWebtrees/app/GedcomTag.php:1085
-msgid "DNA markers"
-msgstr ""
-
-#. I18N: gedcom tag DATA
-#: replacedWebtrees/app/GedcomTag.php:624
-msgid "Data"
-msgstr ""
-
-#. I18N: gedcom tag DATE
-#: replacedWebtrees/app/GedcomTag.php:630
-msgid "Date"
-msgstr ""
-
-#. I18N: LDS = Church of Latter Day Saints.
-#: replacedWebtrees/app/GedcomTag.php:487
-msgid "Date of LDS baptism"
-msgstr ""
-
-#. I18N: LDS = Church of Latter Day Saints.
-#: replacedWebtrees/app/GedcomTag.php:963
-msgid "Date of LDS child sealing"
-msgstr ""
-
-#. I18N: LDS = Church of Latter Day Saints.
-#: replacedWebtrees/app/GedcomTag.php:680
-msgid "Date of LDS endowment"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:452
-msgid "Date of adoption"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:495
-msgid "Date of baptism"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:502
-msgid "Date of bar mitzvah"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:509
-msgid "Date of bat mitzvah"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:516
-msgid "Date of birth"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:523
-msgid "Date of blessing"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1065
-msgid "Date of brit milah"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:533
-msgid "Date of burial"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:575
-msgid "Date of christening"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:600
-msgid "Date of confirmation"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:616
-msgid "Date of cremation"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:637
-msgid "Date of death"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:672
-msgid "Date of emigration"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:688
-msgid "Date of engagement"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:626
-msgid "Date of entry in original source"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:695
-msgid "Date of event"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:724
-msgid "Date of first communion"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:758
-msgid "Date of immigration"
-msgstr ""
-
-#. I18N: gedcom tag CHAN:DATE
-#: replacedWebtrees/app/GedcomTag.php:561
-msgid "Date of last change"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:799
-msgid "Date of marriage"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:786
-msgid "Date of marriage banns"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:830
-msgid "Date of naturalization"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:868
-msgid "Date of ordination"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:923
-msgid "Date of residence"
-msgstr ""
-
-#. I18N: gedcom tag DEAT
-#: replacedWebtrees/app/GedcomTag.php:633
-msgid "Death"
-msgstr ""
-
-#. I18N: gedcom tag _DETS
-#: replacedWebtrees/app/GedcomTag.php:1082
-msgid "Death of one spouse"
-msgstr ""
-
-#. I18N: gedcom tag _DEG
-#: replacedWebtrees/app/GedcomTag.php:1079
-msgid "Degree"
-msgstr ""
-
-#. I18N: gedcom tag DESC
-#: replacedWebtrees/app/GedcomTag.php:642
-msgid "Descendants"
-msgstr ""
-
-#. I18N: gedcom tag DESI
-#: replacedWebtrees/app/GedcomTag.php:645
-msgid "Descendants interest"
-msgstr ""
-
-#. I18N: gedcom tag DSCR
-#: replacedWebtrees/app/GedcomTag.php:657
-msgid "Description"
-msgstr ""
-
 #. I18N: Module Configuration
 #: CommonI18N.php:147
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr "Avmarkera för att titeln ska visas exakt som den ursprungliga titeln."
-
-#. I18N: gedcom tag DEST
-#: replacedWebtrees/app/GedcomTag.php:648
-msgid "Destination"
-msgstr ""
 
 #: resources/views/vesta_config.phtml:43
 msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
@@ -558,112 +125,8 @@ msgstr "Visad data"
 msgid "Displayed title"
 msgstr "Visad titel"
 
-#. I18N: gedcom tag DIV
-#: replacedWebtrees/app/GedcomTag.php:651
-msgid "Divorce"
-msgstr ""
-
-#. I18N: gedcom tag DIVF
-#: replacedWebtrees/app/GedcomTag.php:654
-msgid "Divorce filed"
-msgstr ""
-
 #: replacedWebtrees/Functions/FunctionsEdit.php:608
 msgid "Edit the name"
-msgstr ""
-
-#. I18N: gedcom tag EDUC
-#: replacedWebtrees/app/GedcomTag.php:660
-msgid "Education"
-msgstr ""
-
-#. I18N: gedcom tag EMAIL
-#. I18N: gedcom tag _EMAIL
-#: replacedWebtrees/app/GedcomTag.php:667
-#: replacedWebtrees/app/GedcomTag.php:1088
-msgid "Email address"
-msgstr ""
-
-#. I18N: gedcom tag EMIG
-#: replacedWebtrees/app/GedcomTag.php:670
-msgid "Emigration"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:858
-#: replacedWebtrees/app/GedcomTag.php:933
-msgid "Employer"
-msgstr ""
-
-#. I18N: gedcom tag ENGA
-#: replacedWebtrees/app/GedcomTag.php:686
-msgid "Engagement"
-msgstr ""
-
-#. I18N: gedcom tag EVEN
-#: replacedWebtrees/app/GedcomTag.php:693
-msgid "Event"
-msgstr ""
-
-#. I18N: gedcom tag _EYEC
-#: replacedWebtrees/app/GedcomTag.php:1091
-msgid "Eye color"
-msgstr ""
-
-#. I18N: gedcom tag FACT
-#: replacedWebtrees/app/GedcomTag.php:702
-msgid "Fact"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1093
-msgid "Fact 1"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1111
-msgid "Fact 10"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1113
-msgid "Fact 11"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1115
-msgid "Fact 12"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1117
-msgid "Fact 13"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1095
-msgid "Fact 2"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1097
-msgid "Fact 3"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1099
-msgid "Fact 4"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1101
-msgid "Fact 5"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1103
-msgid "Fact 6"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1105
-msgid "Fact 7"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1107
-msgid "Fact 8"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1109
-msgid "Fact 9"
 msgstr ""
 
 #. I18N: Module Configuration
@@ -671,166 +134,13 @@ msgstr ""
 msgid "Facts and Events Tab Settings"
 msgstr "Inställningar för fliken Fakta och händelser"
 
-#. I18N: gedcom tag FAM
-#: replacedWebtrees/app/GedcomTag.php:707
-msgid "Family"
-msgstr ""
-
-#. I18N: gedcom tag FAMC
-#: replacedWebtrees/app/GedcomTag.php:710
-msgid "Family as a child"
-msgstr ""
-
-#. I18N: gedcom tag FAMS
-#: replacedWebtrees/app/GedcomTag.php:716
-msgid "Family as a spouse"
-msgstr ""
-
-#. I18N: gedcom tag FAMF
-#: replacedWebtrees/app/GedcomTag.php:713
-msgid "Family file"
-msgstr ""
-
-#. I18N: gedcom tag _FSFTID
-#: replacedWebtrees/app/GedcomTag.php:1128
-msgid "FamilySearch id"
-msgstr "FamilySearch id"
-
-#. I18N: gedcom tag FAX
-#: replacedWebtrees/app/GedcomTag.php:719
-msgid "Fax"
-msgstr ""
-
 #: replacedWebtrees/Functions/FunctionsEdit.php:542
 msgid "Female"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1285
-msgid "File size"
-msgstr ""
-
-#. I18N: gedcom tag FILE
-#: replacedWebtrees/app/GedcomTag.php:729
-msgid "Filename"
-msgstr ""
-
-#. I18N: gedcom tag FCOM
-#: replacedWebtrees/app/GedcomTag.php:722
-msgid "First communion"
-msgstr ""
-
-#. I18N: gedcom tag FORM
-#: replacedWebtrees/app/GedcomTag.php:735
-msgid "Format"
-msgstr ""
-
-#. I18N: gedcom tag _FNRL
-#: replacedWebtrees/app/GedcomTag.php:1120
-msgid "Funeral"
-msgstr ""
-
-#. I18N: gedcom tag GEDC
-#. I18N: gedcom tag _GEDF
-#: replacedWebtrees/app/GedcomTag.php:738
-#: replacedWebtrees/app/GedcomTag.php:1132
-msgid "GEDCOM file"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1177
-msgid "GOV id for type of location"
-msgstr ""
-
-#. I18N: gedcom tag _GOV - see https://gov.genealogy.net
-#: replacedWebtrees/app/GedcomTag.php:1138
-msgid "GOV identifier"
-msgstr ""
-
-#. I18N: gedcom tag SEX
-#: replacedWebtrees/app/GedcomTag.php:955
-msgid "Gender"
-msgstr ""
-
-#. I18N: gedcom tag ANCE
-#: replacedWebtrees/app/GedcomTag.php:469
-msgid "Generations of ancestors"
-msgstr ""
-
-#. I18N: gedcom tag GIVN
-#: replacedWebtrees/app/GedcomTag.php:741
-msgid "Given names"
-msgstr ""
-
-#. I18N: gedcom tag _GODP
-#: replacedWebtrees/app/GedcomTag.php:1135
-msgid "Godparent"
-msgstr ""
-
-#. I18N: gedcom tag GRAD
-#: replacedWebtrees/app/GedcomTag.php:744
-msgid "Graduation"
-msgstr ""
-
-#. I18N: gedcom tag _HAIR
-#: replacedWebtrees/app/GedcomTag.php:1141
-msgid "Hair color"
-msgstr ""
-
-#. I18N: gedcom tag HEAD
-#: replacedWebtrees/app/GedcomTag.php:747
-msgid "Header"
-msgstr ""
-
-#. I18N: gedcom tag _HEB
-#: replacedWebtrees/app/GedcomTag.php:1144
-msgid "Hebrew"
-msgstr ""
-
-#. I18N: gedcom tag _HNM
-#: replacedWebtrees/app/GedcomTag.php:1150
-msgid "Hebrew name"
-msgstr ""
-
-#. I18N: gedcom tag _HEIG
-#: replacedWebtrees/app/GedcomTag.php:1147
-msgid "Height"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1165
-msgid "Higher-level shared place"
-msgstr ""
-
-#. I18N: gedcom tag _PRIM
-#: replacedWebtrees/app/GedcomTag.php:1187
-msgid "Highlighted image"
-msgstr ""
-
-#. I18N: gedcom tag _HOL
-#: replacedWebtrees/app/GedcomTag.php:1153
-msgid "Holocaust"
-msgstr ""
-
-#. I18N: gedcom tag HUSB
-#: replacedWebtrees/app/GedcomTag.php:750
-msgid "Husband"
-msgstr ""
-
-#. I18N: gedcom tag IDNO
-#: replacedWebtrees/app/GedcomTag.php:753
-msgid "Identification number"
 msgstr ""
 
 #: resources/views/vesta_config.phtml:58
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
 msgstr "Om symbolen visas felaktigt, t.ex. som en rektangel, kontrollera webbläsarens unicode-supportfunktioner."
-
-#: replacedWebtrees/app/GedcomTag.php:1288
-msgid "Image dimensions"
-msgstr ""
-
-#. I18N: gedcom tag IMMI
-#: replacedWebtrees/app/GedcomTag.php:756
-msgid "Immigration"
-msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:165
@@ -867,91 +177,10 @@ msgstr "Inkludera %1$s-symbolen i sidofältets titel"
 msgid "Include the %1$s symbol in the tab title"
 msgstr "Inkludera %1$s-symbolen i flikens titel"
 
-#. I18N: gedcom tag INDI
-#: replacedWebtrees/app/GedcomTag.php:763
-msgid "Individual"
-msgstr ""
-
-#. I18N: gedcom tag INFL
-#: replacedWebtrees/app/GedcomTag.php:766
-msgid "Infant"
-msgstr ""
-
-#. I18N: gedcom tag _INTE
-#: replacedWebtrees/app/GedcomTag.php:1157
-msgid "Interment"
-msgstr ""
-
-#. I18N: gedcom tag BAPL. LDS = Church of Latter Day Saints.
-#: replacedWebtrees/app/GedcomTag.php:484
-msgid "LDS baptism"
-msgstr ""
-
-#. I18N: gedcom tag SLGC. LDS = Church of Latter Day Saints.
-#: replacedWebtrees/app/GedcomTag.php:960
-msgid "LDS child sealing"
-msgstr ""
-
-#. I18N: gedcom tag CONL. LDS = Church of Latter Day Saints.
-#: replacedWebtrees/app/GedcomTag.php:605
-msgid "LDS confirmation"
-msgstr ""
-
-#. I18N: gedcom tag ENDL. LDS = Church of Latter Day Saints.
-#: replacedWebtrees/app/GedcomTag.php:677
-msgid "LDS endowment"
-msgstr ""
-
-#. I18N: gedcom tag SLGS. LDS = Church of Latter Day Saints.
-#: replacedWebtrees/app/GedcomTag.php:969
-msgid "LDS spouse sealing"
-msgstr ""
-
-#. I18N: gedcom tag LANG
-#: replacedWebtrees/app/GedcomTag.php:769
-#: resources/views/layouts/administration.phtml:62
-msgid "Language"
-msgstr ""
-
-#. I18N: gedcom tag CHAN
-#: replacedWebtrees/app/GedcomTag.php:558
-msgid "Last change"
-msgstr ""
-
-#. I18N: gedcom tag LATI
-#: replacedWebtrees/app/GedcomTag.php:772
-msgid "Latitude"
-msgstr ""
-
-#. I18N: gedcom tag LEGA
-#: replacedWebtrees/app/GedcomTag.php:775
-msgid "Legatee"
-msgstr ""
-
-#. I18N: gedcom tag _DBID
-#: replacedWebtrees/app/GedcomTag.php:1075
-msgid "Linked database ID"
-msgstr ""
-
-#. I18N: gedcom tag _LOC
-#: replacedWebtrees/app/GedcomTag.php:1161
-msgid "Location"
-msgstr ""
-
 #. I18N: Module Configuration
 #: CommonI18N.php:93
 msgid "Location Data Providers"
 msgstr "Leverantör av lokaliseringsdata"
-
-#. I18N: gedcom tag LONG
-#: replacedWebtrees/app/GedcomTag.php:778
-msgid "Longitude"
-msgstr ""
-
-#. I18N: gedcom tag _NAME
-#: replacedWebtrees/app/GedcomTag.php:1217
-msgid "Mailing name"
-msgstr ""
 
 #: resources/views/admin/upgrade/wizard.phtml:35
 #, php-format
@@ -960,101 +189,6 @@ msgstr ""
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:542
 msgid "Male"
-msgstr ""
-
-#. I18N: gedcom tag MARR
-#: replacedWebtrees/app/GedcomTag.php:797
-msgid "Marriage"
-msgstr ""
-
-#. I18N: gedcom tag MARB
-#: replacedWebtrees/app/GedcomTag.php:784
-msgid "Marriage banns"
-msgstr ""
-
-#. I18N: gedcom tag _MSTAT
-#: replacedWebtrees/app/GedcomTag.php:1214
-msgid "Marriage beginning status"
-msgstr ""
-
-#. I18N: gedcom tag _MBON
-#: replacedWebtrees/app/GedcomTag.php:1193
-msgid "Marriage bond"
-msgstr ""
-
-#. I18N: gedcom tag MARC
-#: replacedWebtrees/app/GedcomTag.php:791
-msgid "Marriage contract"
-msgstr ""
-
-#. I18N: gedcom tag _MEND
-#: replacedWebtrees/app/GedcomTag.php:1202
-msgid "Marriage ending status"
-msgstr ""
-
-#. I18N: gedcom tag _MARI
-#: replacedWebtrees/app/GedcomTag.php:1181
-msgid "Marriage intention"
-msgstr ""
-
-#. I18N: gedcom tag MARL
-#: replacedWebtrees/app/GedcomTag.php:794
-msgid "Marriage license"
-msgstr ""
-
-#. I18N: gedcom tag MARS
-#: replacedWebtrees/app/GedcomTag.php:812
-msgid "Marriage settlement"
-msgstr ""
-
-#. I18N: gedcom tag _STAT
-#: replacedWebtrees/app/GedcomTag.php:1254
-msgid "Marriage status"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:809
-msgid "Marriage type unknown"
-msgstr ""
-
-#. I18N: gedcom tag _MARNM
-#: replacedWebtrees/app/GedcomTag.php:1184
-msgid "Married name"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1189
-msgid "Married surname"
-msgstr ""
-
-#. I18N: gedcom tag OBJE
-#: replacedWebtrees/app/GedcomTag.php:853
-msgid "Media object"
-msgstr ""
-
-#. I18N: gedcom tag MEDI
-#. I18N: gedcom tag _TYPE
-#: replacedWebtrees/app/GedcomTag.php:815
-#: replacedWebtrees/app/GedcomTag.php:1263
-msgid "Media type"
-msgstr ""
-
-#. I18N: gedcom tag _MDCL
-#: replacedWebtrees/app/GedcomTag.php:1196
-msgid "Medical"
-msgstr ""
-
-#. I18N: gedcom tag _MEDC
-#: replacedWebtrees/app/GedcomTag.php:1199
-msgid "Medical condition"
-msgstr ""
-
-#. I18N: gedcom tag _MILI
-#: replacedWebtrees/app/GedcomTag.php:1205
-msgid "Military"
-msgstr ""
-
-#. I18N: gedcom tag _MILT
-#: replacedWebtrees/app/GedcomTag.php:1208
-msgid "Military service"
 msgstr ""
 
 #. I18N: Module Configuration
@@ -1072,91 +206,8 @@ msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Flytta"
 
-#: resources/views/layouts/administration.phtml:58
-msgid "My page"
-msgstr ""
-
-#. I18N: gedcom tag NAME
-#: replacedWebtrees/app/GedcomTag.php:818
-msgid "Name"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:918
-msgctxt "Repository"
-msgid "Name"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:822
-msgid "Name in Hebrew"
-msgstr ""
-
-#. I18N: gedcom tag NPFX
-#: replacedWebtrees/app/GedcomTag.php:847
-msgid "Name prefix"
-msgstr ""
-
-#. I18N: gedcom tag NSFX
-#: replacedWebtrees/app/GedcomTag.php:850
-msgid "Name suffix"
-msgstr ""
-
-#. I18N: gedcom tag _NAMS
-#: replacedWebtrees/app/GedcomTag.php:1220
-msgid "Namesake"
-msgstr ""
-
-#. I18N: gedcom tag NATI
-#: replacedWebtrees/app/GedcomTag.php:825
-msgid "Nationality"
-msgstr ""
-
-#. I18N: gedcom tag NATU
-#: replacedWebtrees/app/GedcomTag.php:828
-msgid "Naturalization"
-msgstr ""
-
-#. I18N: gedcom tag _NMAR
-#: replacedWebtrees/app/GedcomTag.php:1226
-msgid "Never married"
-msgstr ""
-
-#. I18N: gedcom tag NICK
-#: replacedWebtrees/app/GedcomTag.php:838
-msgid "Nickname"
-msgstr ""
-
 #: replacedWebtrees/Functions/FunctionsEdit.php:132
 msgid "No calendar conversion"
-msgstr ""
-
-#. I18N: gedcom tag _NLIV
-#: replacedWebtrees/app/GedcomTag.php:1223
-msgid "Not living"
-msgstr ""
-
-#. I18N: gedcom tag _NMR
-#: replacedWebtrees/app/GedcomTag.php:1230
-msgid "Not married"
-msgstr ""
-
-#. I18N: gedcom tag NOTE
-#: replacedWebtrees/app/GedcomTag.php:844
-msgid "Note"
-msgstr ""
-
-#. I18N: gedcom tag NCHI
-#: replacedWebtrees/app/GedcomTag.php:835
-msgid "Number of children"
-msgstr ""
-
-#. I18N: gedcom tag NMR
-#: replacedWebtrees/app/GedcomTag.php:841
-msgid "Number of marriages"
-msgstr ""
-
-#. I18N: gedcom tag OCCU
-#: replacedWebtrees/app/GedcomTag.php:856
-msgid "Occupation"
 msgstr ""
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:223
@@ -1168,183 +219,10 @@ msgstr ""
 msgid "Options"
 msgstr "Alternativ"
 
-#. I18N: gedcom tag ORDI
-#: replacedWebtrees/app/GedcomTag.php:861
-msgid "Ordinance"
-msgstr ""
-
-#. I18N: gedcom tag ORDN
-#: replacedWebtrees/app/GedcomTag.php:864
-msgid "Ordination"
-msgstr ""
-
-#. I18N: gedcom tag _PRMN
-#: replacedWebtrees/app/GedcomTag.php:1239
-msgid "Permanent number"
-msgstr ""
-
-#. I18N: gedcom tag PHON
-#: replacedWebtrees/app/GedcomTag.php:879
-msgid "Phone"
-msgstr ""
-
-#. I18N: gedcom tag FONE
-#: replacedWebtrees/app/GedcomTag.php:732
-msgid "Phonetic"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:820
-msgid "Phonetic name"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:885
-msgid "Phonetic place"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1009
-msgid "Phonetic title"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1234
-msgid "Photo"
-msgstr ""
-
-#. I18N: gedcom tag PLAC
-#: replacedWebtrees/app/GedcomTag.php:883
-msgid "Place"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:889
-msgid "Place in Hebrew"
-msgstr ""
-
-#. I18N: LDS = Church of Latter Day Saints.
-#: replacedWebtrees/app/GedcomTag.php:490
-msgid "Place of LDS baptism"
-msgstr ""
-
-#. I18N: LDS = Church of Latter Day Saints.
-#: replacedWebtrees/app/GedcomTag.php:966
-msgid "Place of LDS child sealing"
-msgstr ""
-
-#. I18N: LDS = Church of Latter Day Saints.
-#: replacedWebtrees/app/GedcomTag.php:683
-msgid "Place of LDS endowment"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:454
-msgid "Place of adoption"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:497
-msgid "Place of baptism"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:504
-msgid "Place of bar mitzvah"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:511
-msgid "Place of bat mitzvah"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:518
-msgid "Place of birth"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:525
-msgid "Place of blessing"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1067
-msgid "Place of brit milah"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:535
-msgid "Place of burial"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:577
-msgid "Place of christening"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:602
-msgid "Place of confirmation"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:618
-msgid "Place of cremation"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:639
-msgid "Place of death"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:674
-msgid "Place of emigration"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:690
-msgid "Place of engagement"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:697
-msgid "Place of event"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:726
-msgid "Place of first communion"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:760
-msgid "Place of immigration"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:801
-msgid "Place of marriage"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:788
-msgid "Place of marriage banns"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:832
-msgid "Place of naturalization"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:870
-msgid "Place of ordination"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:925
-msgid "Place of residence"
-msgstr ""
-
-#. I18N: gedcom tag POST
-#: replacedWebtrees/app/GedcomTag.php:892
-msgid "Postal code"
-msgstr ""
-
-#. I18N: gedcom tag PROB
-#: replacedWebtrees/app/GedcomTag.php:895
-msgid "Probate"
-msgstr ""
-
-#. I18N: gedcom tag PROP
-#: replacedWebtrees/app/GedcomTag.php:898
-msgid "Property"
-msgstr ""
-
 #. I18N: Module Configuration
 #: CommonI18N.php:89
 msgid "Provides location data to other custom modules."
 msgstr "Förser andra anpassade moduler med lokaliseringsdata."
-
-#. I18N: gedcom tag PUBL
-#: replacedWebtrees/app/GedcomTag.php:901
-msgid "Publication"
-msgstr ""
 
 #: resources/views/vesta_config.phtml:47
 msgid "Q: How do I configure additional hooks?"
@@ -1367,87 +245,17 @@ msgstr "F: Ok, men vad är den faktiska fördelen för användaren?"
 msgid "Q: What's with the %1$s symbol?"
 msgstr "F: Vad är det med %1$s-symbolen?"
 
-#. I18N: gedcom tag QUAY
-#: replacedWebtrees/app/GedcomTag.php:904
-msgid "Quality of data"
-msgstr ""
-
-#. I18N: gedcom tag _WT_OBJE_SORT
-#: replacedWebtrees/app/GedcomTag.php:1278
-msgid "Re-order media"
-msgstr ""
-
 #. I18N: Module configuration: Refers to the module's Readme file
 #: CommonI18N.php:103
 msgid "Readme"
 msgstr "Läs mig"
 
-#. I18N: gedcom tag RIN
-#: replacedWebtrees/app/GedcomTag.php:943
-msgid "Record ID number"
-msgstr ""
-
-#. I18N: gedcom tag RFN
-#: replacedWebtrees/app/GedcomTag.php:936
-msgid "Record file number"
-msgstr ""
-
-#. I18N: gedcom tag REFN
-#: replacedWebtrees/app/GedcomTag.php:907
-msgid "Reference number"
-msgstr ""
-
 #: replacedWebtrees/Functions/FunctionsEdit.php:621
-#: replacedWebtrees/app/GedcomTag.php:805
 msgid "Registered partnership"
 msgstr ""
 
-#. I18N: gedcom tag RELA
-#: replacedWebtrees/app/GedcomTag.php:910
-msgid "Relationship"
-msgstr ""
-
-#. I18N: gedcom tag _FREL
-#: replacedWebtrees/app/GedcomTag.php:1123
-msgid "Relationship to father"
-msgstr ""
-
-#. I18N: gedcom tag _MREL
-#: replacedWebtrees/app/GedcomTag.php:1211
-msgid "Relationship to mother"
-msgstr ""
-
-#. I18N: gedcom tag PEDI
-#: replacedWebtrees/app/GedcomTag.php:876
-msgid "Relationship to parents"
-msgstr ""
-
-#. I18N: gedcom tag RELI
-#: replacedWebtrees/app/GedcomTag.php:913
-msgid "Religion"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:866
-msgid "Religious institution"
-msgstr ""
-
 #: replacedWebtrees/Functions/FunctionsEdit.php:620
-#: replacedWebtrees/app/GedcomTag.php:807
 msgid "Religious marriage"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1241
-msgid "Religious name"
-msgstr ""
-
-#. I18N: gedcom tag SERV
-#: replacedWebtrees/app/GedcomTag.php:952
-msgid "Remote server"
-msgstr ""
-
-#. I18N: gedcom tag REPO
-#: replacedWebtrees/app/GedcomTag.php:916
-msgid "Repository"
 msgstr ""
 
 #. I18N: Module Configuration
@@ -1468,16 +276,6 @@ msgstr "Kräver '%1$s %2$s'-modulen, '%1$s %3$s'-modulen, och '%1$s %4$s'-module
 msgid "Requires the '%1$s %2$s' module."
 msgstr "Kräver '%1$s %2$s'-modulen."
 
-#. I18N: gedcom tag _TODO
-#: replacedWebtrees/app/GedcomTag.php:1260
-msgid "Research task"
-msgstr ""
-
-#. I18N: gedcom tag RESI
-#: replacedWebtrees/app/GedcomTag.php:921
-msgid "Residence"
-msgstr ""
-
 #. I18N: Module Configuration
 #: CommonI18N.php:161
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
@@ -1488,61 +286,10 @@ msgstr "Begränsa till denna lista över GEDCOM individuella fakta och händelse
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Begränsa till denna lista över GEDCOM individuella fakta och händelser. Du kan ändra den här listan genom att ta bort eller lägga till fakta- och evenemangsnamn, även anpassade, efter behov."
 
-#. I18N: gedcom tag RESN
-#: replacedWebtrees/app/GedcomTag.php:928
-msgid "Restriction"
-msgstr ""
-
-#. I18N: gedcom tag RETI
-#: replacedWebtrees/app/GedcomTag.php:931
-msgid "Retirement"
-msgstr ""
-
-#. I18N: gedcom tag ROLE
-#: replacedWebtrees/app/GedcomTag.php:946
-msgid "Role"
-msgstr ""
-
-#. I18N: gedcom tag ROMN
-#: replacedWebtrees/app/GedcomTag.php:949
-msgid "Romanized"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:887
-msgid "Romanized place"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1011
-msgid "Romanized title"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:662
-msgid "School or college"
-msgstr ""
-
-#. I18N: gedcom tag _SCBK
-#: replacedWebtrees/app/GedcomTag.php:1245
-msgid "Scrapbook"
-msgstr ""
-
 #: resources/views/vesta_config.phtml:68
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr "Se även %1$s för en översikt över platsdatahantering i webbträd."
-
-#. I18N: gedcom tag _SEPR
-#: replacedWebtrees/app/GedcomTag.php:1248
-msgid "Separation"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:957
-msgid "Shared note"
-msgstr ""
-
-#. I18N: gedcom tag _SUBQ
-#: replacedWebtrees/app/GedcomTag.php:1257
-msgid "Short version"
-msgstr ""
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:222
 msgid "Show to managers"
@@ -1554,74 +301,6 @@ msgstr ""
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:220
 msgid "Show to visitors"
-msgstr ""
-
-#: resources/views/layouts/administration.phtml:71
-msgid "Sign out"
-msgstr ""
-
-#. I18N: Skip over the headers and menus, to the main content of the page
-#: resources/views/layouts/administration.phtml:52
-msgid "Skip to content"
-msgstr ""
-
-#. I18N: gedcom tag _SSHOW
-#: replacedWebtrees/app/GedcomTag.php:1251
-msgid "Slide show"
-msgstr ""
-
-#. I18N: gedcom tag SSN
-#: replacedWebtrees/app/GedcomTag.php:978
-msgid "Social security number"
-msgstr ""
-
-#. I18N: gedcom tag SOUR
-#: replacedWebtrees/app/GedcomTag.php:972
-msgid "Source"
-msgstr ""
-
-#. I18N: gedcom tag STAE
-#: replacedWebtrees/app/GedcomTag.php:981
-msgid "State"
-msgstr ""
-
-#. I18N: gedcom tag STAT
-#: replacedWebtrees/app/GedcomTag.php:984
-msgid "Status"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:986
-msgid "Status change date"
-msgstr ""
-
-#. I18N: gedcom tag SUBN
-#: replacedWebtrees/app/GedcomTag.php:992
-msgid "Submission"
-msgstr ""
-
-#. I18N: gedcom tag SUBM
-#: replacedWebtrees/app/GedcomTag.php:989
-msgid "Submitter"
-msgstr ""
-
-#. I18N: gedcom tag SURN
-#: replacedWebtrees/app/GedcomTag.php:995
-msgid "Surname"
-msgstr ""
-
-#. I18N: gedcom tag SPFX
-#: replacedWebtrees/app/GedcomTag.php:975
-msgid "Surname prefix"
-msgstr ""
-
-#. I18N: gedcom tag TEMP
-#: replacedWebtrees/app/GedcomTag.php:998
-msgid "Temple"
-msgstr ""
-
-#. I18N: gedcom tag TEXT
-#: replacedWebtrees/app/GedcomTag.php:1001
-msgid "Text"
 msgstr ""
 
 #: resources/views/admin/upgrade/wizard.phtml:63
@@ -1638,76 +317,13 @@ msgstr ""
 msgid "This module cannot be disabled."
 msgstr "Den här modulen kan inte inaktiveras."
 
-#. I18N: gedcom tag TIME
-#: replacedWebtrees/app/GedcomTag.php:1004
-msgid "Time"
-msgstr ""
-
-#. I18N: gedcom tag TITL
-#: replacedWebtrees/app/GedcomTag.php:1007
-msgid "Title"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1013
-msgid "Title in Hebrew"
-msgstr ""
-
-#. I18N: gedcom tag TRLR
-#: replacedWebtrees/app/GedcomTag.php:1016
-msgid "Trailer"
-msgstr ""
-
-#. I18N: gedcom tag TYPE
-#: replacedWebtrees/app/GedcomTag.php:1019
-msgid "Type"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:699
-msgid "Type of event"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:704
-msgid "Type of fact"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1173
-msgid "Type of hierarchical relationship"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1169
-msgid "Type of location"
-msgstr ""
-
-#. I18N: gedcom tag URL (A web address / URL)
-#. I18N: gedcom tag WWW (A web address / URL)
-#. I18N: gedcom tag _URL
-#: replacedWebtrees/app/GedcomTag.php:1022
-#: replacedWebtrees/app/GedcomTag.php:1034
-#: replacedWebtrees/app/GedcomTag.php:1269
-msgid "URL"
-msgstr ""
-
-#. I18N: gedcom tag _UID
-#: replacedWebtrees/app/GedcomTag.php:1266
-msgid "Unique identifier"
-msgstr ""
-
 #: replacedWebtrees/Functions/FunctionsEdit.php:542
 msgctxt "unknown gender"
 msgid "Unknown"
 msgstr ""
 
-#: replacedWebtrees/app/GedcomTag.php:1298
-msgid "Unrecognized GEDCOM code"
-msgstr ""
-
 #: replacedWebtrees/Functions/FunctionsEdit.php:566
 msgid "Use this image for charts and on the individual’s page."
-msgstr ""
-
-#. I18N: gedcom tag VERS
-#: replacedWebtrees/app/GedcomTag.php:1025
-msgid "Version"
 msgstr ""
 
 #. I18N: Module title
@@ -1770,34 +386,9 @@ msgstr "Vesta Webtrees Location Data Provider"
 msgid "Vesta location data management overview"
 msgstr "Översikt Vesta platsdatahantering"
 
-#. I18N: gedcom tag _WEIG
-#: replacedWebtrees/app/GedcomTag.php:1272
-msgid "Weight"
-msgstr ""
-
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
 msgstr "Vad är nytt? "
-
-#. I18N: gedcom tag WIFE
-#: replacedWebtrees/app/GedcomTag.php:1028
-msgid "Wife"
-msgstr ""
-
-#. I18N: gedcom tag WILL
-#: replacedWebtrees/app/GedcomTag.php:1031
-msgid "Will"
-msgstr ""
-
-#. I18N: gedcom tag _WITN
-#: replacedWebtrees/app/GedcomTag.php:1275
-msgid "Witness"
-msgstr ""
-
-#. I18N: gedcom tag _YART - A yahrzeit is a special anniversary of death in the Hebrew faith/calendar.
-#: replacedWebtrees/app/GedcomTag.php:1281
-msgid "Yahrzeit"
-msgstr ""
 
 #: resources/views/vesta_config.phtml:59
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
@@ -1805,14 +396,6 @@ msgstr "Du kan behöva installera ett teckensnitt som tillhandahåller denna sym
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:565
 msgid "always"
-msgstr ""
-
-#: replacedWebtrees/app/GedcomTag.php:1236
-msgid "by"
-msgstr ""
-
-#: resources/views/layouts/administration.phtml:80
-msgid "close"
 msgstr ""
 
 #: resources/views/admin/vesta_components.phtml:30
@@ -1871,3 +454,6 @@ msgstr "upp"
 #: replacedWebtrees/Functions/FunctionsEdit.php:188
 msgid "yes"
 msgstr ""
+
+#~ msgid "FamilySearch id"
+#~ msgstr "FamilySearch id"
