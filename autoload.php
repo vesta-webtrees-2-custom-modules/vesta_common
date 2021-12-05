@@ -20,7 +20,7 @@ $loader->addPsr4('Cissee\\WebtreesExt\\Http\\RequestHandlers\\', __DIR__ . "/pat
 
 $loader->register();
 
-//note: some of this is already in ElementFactory, but Functions* stilal accesses GedcomTag!
+//note: some of this is already in ElementFactory, but Functions* still accesses GedcomTag!
 //GedcomTag:
 //adjustments for shared places:
 //adjustment for _LOC:_LOC etc hopefully possible in webtrees 2.1.x
