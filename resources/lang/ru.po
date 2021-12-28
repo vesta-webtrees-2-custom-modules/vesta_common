@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-12-05 11:26+0100\n"
-"PO-Revision-Date: 2021-05-13 11:53+0000\n"
-"Last-Translator: Продай Своё <ol810car@gmail.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/ru/>\n"
+"PO-Revision-Date: 2021-12-28 12:28+0000\n"
+"Last-Translator: Олег <uolega@yandex.ru>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.7-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.10.1\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -67,15 +69,19 @@ msgstr "A: Через крючки. Хуки позволяют модулям �
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:170
 msgid "All"
-msgstr ""
+msgstr "Все"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:459
 msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
 msgstr ""
+"Партнер - это другое лицо, причастное к этому факту или событию, например "
+"свидетель или священник."
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:457
 msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
 msgstr ""
+"Партнер - это другое лицо, которое было связано с этим человеком, например "
+"друг или работодатель."
 
 #. I18N: Module Configuration, also checkbox on facts and events tab
 #: CommonI18N.php:153
@@ -84,27 +90,27 @@ msgstr "Связанные факты и события"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:619
 msgid "Civil marriage"
-msgstr ""
+msgstr "Гражданский брак"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:491
 msgid "Create a media object"
-msgstr ""
+msgstr "Создать медиа-объект"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:532
 msgid "Create a repository"
-msgstr ""
+msgstr "Создать репозиторий"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:482
 msgid "Create a shared note"
-msgstr ""
+msgstr "Создать общую заметку"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:546
 msgid "Create a source"
-msgstr ""
+msgstr "Создать источник"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:554
 msgid "Create a submitter"
-msgstr ""
+msgstr "Создать отправителя"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:147
@@ -127,7 +133,7 @@ msgstr "Отображаемый заголовок"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:608
 msgid "Edit the name"
-msgstr ""
+msgstr "Отредактируйте имя"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:169
@@ -136,7 +142,7 @@ msgstr "Настройки вкладки \"Факты и события\""
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:542
 msgid "Female"
-msgstr ""
+msgstr "Женский"
 
 #: resources/views/vesta_config.phtml:58
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
@@ -186,10 +192,12 @@ msgstr "Поставщики данных о местоположении"
 #, php-format
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
+"Убедитесь, что все активные пользовательские модули совместимы с новой "
+"версией веб-дерева %1$s. Возможно, вам также придется обновить их."
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:542
 msgid "Male"
-msgstr ""
+msgstr "Мужской"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
@@ -208,11 +216,11 @@ msgstr "Переместить"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:132
 msgid "No calendar conversion"
-msgstr ""
+msgstr "Без преобразования календаря"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:223
 msgid "Only managers can edit"
-msgstr ""
+msgstr "Только менеджеры могут редактировать"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:115
@@ -252,11 +260,11 @@ msgstr "Прочти меня"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:621
 msgid "Registered partnership"
-msgstr ""
+msgstr "Зарегистрированное партнерство"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:620
 msgid "Religious marriage"
-msgstr ""
+msgstr "Религиозный брак"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
@@ -293,25 +301,31 @@ msgstr "См. Также %1$s для обзора управления данн�
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:222
 msgid "Show to managers"
-msgstr ""
+msgstr "Показать менеджерам"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:221
 msgid "Show to members"
-msgstr ""
+msgstr "Показать участникам"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:220
 msgid "Show to visitors"
-msgstr ""
+msgstr "Показать посетителям"
 
 #: resources/views/admin/upgrade/wizard.phtml:63
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
 msgstr ""
+"Установленные в настоящее время версии следующих настраиваемых модулей могут "
+"быть несовместимы с новой версией webtrees %1$s, и пока нет доступных "
+"обновлений: %2$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:47
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
 msgstr ""
+"Установленные в настоящее время версии следующих настраиваемых модулей могут "
+"быть несовместимы с новой версией webtrees %1$s, но для модулей доступны "
+"обновления: %2$s"
 
 #: VestaCommonLibModule.php:61
 msgid "This module cannot be disabled."
@@ -320,11 +334,11 @@ msgstr "Этот модуль нельзя отключить."
 #: replacedWebtrees/Functions/FunctionsEdit.php:542
 msgctxt "unknown gender"
 msgid "Unknown"
-msgstr ""
+msgstr "Неизвестный"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:566
 msgid "Use this image for charts and on the individual’s page."
-msgstr ""
+msgstr "Используйте это изображение для диаграмм и на индивидуальной странице."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -396,7 +410,7 @@ msgstr "Возможно, вам придется установить шриф�
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:565
 msgid "always"
-msgstr ""
+msgstr "всегда"
 
 #: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
@@ -415,7 +429,7 @@ msgstr "здесь"
 #. I18N: Examples of valid time formats (hours:minutes:seconds)
 #: replacedWebtrees/Functions/FunctionsEdit.php:561
 msgid "hh:mm or hh:mm:ss"
-msgstr ""
+msgstr "чч: мм или чч: мм: сс"
 
 #: HookInterfaces/FunctionsPlaceUtils.php:88
 msgid "map coordinates directly (MAP tag)"
@@ -423,12 +437,12 @@ msgstr "координаты карты напрямую (тег MAP)"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:565
 msgid "never"
-msgstr ""
+msgstr "никогда"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:153
 #: replacedWebtrees/Functions/FunctionsEdit.php:187
 msgid "no"
-msgstr ""
+msgstr "нет"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
@@ -453,7 +467,7 @@ msgstr "вверх"
 #: replacedWebtrees/Functions/FunctionsEdit.php:154
 #: replacedWebtrees/Functions/FunctionsEdit.php:188
 msgid "yes"
-msgstr ""
+msgstr "да"
 
 #~ msgid "FamilySearch id"
 #~ msgstr "Идентификатор FamilySearch"
