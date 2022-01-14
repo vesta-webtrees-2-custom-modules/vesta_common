@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-12-05 11:26+0100\n"
-"PO-Revision-Date: 2021-12-09 15:53+0000\n"
+"PO-Revision-Date: 2022-01-14 17:52+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/sk/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.10-dev\n"
+"X-Generator: Weblate 4.10.1\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -132,7 +132,7 @@ msgstr "Zobrazovaný názov"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:608
 msgid "Edit the name"
-msgstr ""
+msgstr "Upraviť meno"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:169
@@ -141,7 +141,7 @@ msgstr "Nastavenie záložky Fakty a udalosti"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:542
 msgid "Female"
-msgstr ""
+msgstr "žena"
 
 #: resources/views/vesta_config.phtml:58
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
@@ -191,10 +191,12 @@ msgstr "Poskytovatelia údajov o polohe"
 #, php-format
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
+"Uistite sa, že všetky aktívne užívateľské moduly sú kompatibilné s novou "
+"verziou webtrees %1$s. Možno ich budete musieť tiež aktualizovať."
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:542
 msgid "Male"
-msgstr ""
+msgstr "muž"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
@@ -213,11 +215,11 @@ msgstr "Posuň"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:132
 msgid "No calendar conversion"
-msgstr ""
+msgstr "Bez konverzie kalendára"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:223
 msgid "Only managers can edit"
-msgstr ""
+msgstr "Upravovať môžu len správcovia"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:115
@@ -257,11 +259,11 @@ msgstr "Čítať"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:621
 msgid "Registered partnership"
-msgstr ""
+msgstr "registrované partnerstvo"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:620
 msgid "Religious marriage"
-msgstr ""
+msgstr "Cirkevný sobáš"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
@@ -298,20 +300,23 @@ msgstr "Pozrite aj %1$s pre prehľad o správe údajov o polohe vo webtrees."
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:222
 msgid "Show to managers"
-msgstr ""
+msgstr "Zobraziť správcom"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:221
 msgid "Show to members"
-msgstr ""
+msgstr "Zobraziť členom"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:220
 msgid "Show to visitors"
-msgstr ""
+msgstr "Zobraziť návštevníkom"
 
 #: resources/views/admin/upgrade/wizard.phtml:63
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
 msgstr ""
+"V súčasnosti inštalované verzie nasledovných užívateľských modulov možno nie "
+"sú kompatibilné s novou verziou webtrees %1$s a zatiaľ nie sú k dispozícii "
+"príslušné aktualizácie: %2$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:47
 #, php-format
@@ -325,7 +330,7 @@ msgstr "Tento modul sa nedá vypnúť."
 #: replacedWebtrees/Functions/FunctionsEdit.php:542
 msgctxt "unknown gender"
 msgid "Unknown"
-msgstr ""
+msgstr "Neznáme"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:566
 msgid "Use this image for charts and on the individual’s page."
@@ -420,7 +425,7 @@ msgstr "tu"
 #. I18N: Examples of valid time formats (hours:minutes:seconds)
 #: replacedWebtrees/Functions/FunctionsEdit.php:561
 msgid "hh:mm or hh:mm:ss"
-msgstr ""
+msgstr "hh:mm alebo hh:mm:ss"
 
 #: HookInterfaces/FunctionsPlaceUtils.php:88
 msgid "map coordinates directly (MAP tag)"
@@ -428,7 +433,7 @@ msgstr "koordináty na mape priamo (tag MAP)"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:565
 msgid "never"
-msgstr ""
+msgstr "nikdy"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:153
 #: replacedWebtrees/Functions/FunctionsEdit.php:187
