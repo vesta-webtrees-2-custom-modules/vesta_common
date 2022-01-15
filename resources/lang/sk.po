@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2021-12-05 11:26+0100\n"
-"PO-Revision-Date: 2022-01-14 17:52+0000\n"
+"PO-Revision-Date: 2022-01-15 11:53+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/sk/>\n"
@@ -322,6 +322,9 @@ msgstr ""
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
 msgstr ""
+"V súčasnosti inštalované verzie nasledovných užívateľských modulov možno nie "
+"sú kompatibilné s novou verziou webtrees %1$s, ale moduly majú k dispozícii "
+"aktualizácie: %2$s"
 
 #: VestaCommonLibModule.php:61
 msgid "This module cannot be disabled."
@@ -334,7 +337,7 @@ msgstr "Neznáme"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:566
 msgid "Use this image for charts and on the individual’s page."
-msgstr ""
+msgstr "Použiť tento obrázok pre schémy a na stránke osoby."
 
 #. I18N: Module title
 #: CommonI18N.php:23
