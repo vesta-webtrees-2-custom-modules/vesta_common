@@ -18,8 +18,8 @@ This module also provides translations, and therefore has to be activated in the
 
 ### Download<a name="download"/>
 
-* Current version: 2.0.19.2.0
-* Based on and tested with webtrees 2.0.19. Requires webtrees 2.0.12 or later.
+* Current version: 2.0.22.0.0
+* Based on and tested with webtrees 2.0.22. Requires webtrees 2.0.12 or later.
 * Download the zip file, which includes all Vesta modules, [here](https://cissee.de/vesta.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>
 * Issues also via <https://github.com/vesta-webtrees-2-custom-modules/vesta_common/issues> 
@@ -33,7 +33,7 @@ This module also provides translations, and therefore has to be activated in the
 
 * **vesta_common: a webtrees custom module**
 * Copyright (C) 2019 – 2022 Richard Cissée
-* Derived from **webtrees** - Copyright 2021 webtrees development team.
+* Derived from **webtrees** - Copyright 2022 webtrees development team.
 * Dutch translations provided by TheDutchJewel.
 * Czech translations provided by Josef Prause.
 * Further translations contributed via weblate.
