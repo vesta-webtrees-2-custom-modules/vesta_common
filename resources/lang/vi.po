@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2021-12-05 11:26+0100\n"
+"POT-Creation-Date: 2022-04-03 20:22+0200\n"
 "PO-Revision-Date: 2021-07-21 01:36+0000\n"
 "Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/vi/>\n"
@@ -28,7 +28,7 @@ msgstr "Đã loại trừ %1$s"
 msgid "%1$s filters"
 msgstr "Bộ lọc %1$s"
 
-#: resources/views/vesta_config.phtml:57
+#: resources/views/vesta_config.phtml:58
 #, php-format
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s là biểu tượng thiên văn của tiểu hành tinh Vesta, được đặt theo tên của nữ thần lò sưởi, ngôi nhà và gia đình của người La Mã."
@@ -41,68 +41,63 @@ msgstr "(toàn bộ mô-đun)"
 msgid "(specific functionality)"
 msgstr "(chức năng cụ thể)"
 
-#: VestaCommonLibModule.php:60
+#: VestaCommonLibModule.php:61
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr "Một mô-đun cung cấp các lớp phổ biến và bản dịch cho các mô-đun tùy chỉnh khác của 'Vesta'."
 
-#: resources/views/vesta_config.phtml:41
+#: resources/views/vesta_config.phtml:42
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
 msgstr "Trả lời: Các mô-đun khác nhau có thể nhắm mục tiêu đến cùng một thành phần, ví dụ: bằng cách nâng cao tab sự kiện và sự kiện ở nhiều nơi khác nhau. Nếu không có hook, chúng tôi sẽ phải sử dụng nhiều tab dành riêng cho mô-đun."
 
-#: resources/views/vesta_config.phtml:65
+#: resources/views/vesta_config.phtml:66
 msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
 msgstr "Trả lời: Mỗi mô-đun có một tệp Readme với thông tin cơ bản (tốt nhất là xem trực tuyến, nhưng cũng được bao gồm trong thư mục của mô-đun)."
 
-#: resources/views/vesta_config.phtml:50
+#: resources/views/vesta_config.phtml:51
 msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
 msgstr "Trả lời: Các móc thường được bật tự động khi bật mô-đun tùy chỉnh tương ứng. Xem thêm tùy chọn nguồn và mô-đun đích tương ứng."
 
-#: resources/views/vesta_config.phtml:56
+#: resources/views/vesta_config.phtml:57
 msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
 msgstr "Trả lời: Biểu tượng Vesta chủ yếu được sử dụng để nhóm các mô-đun liên quan trong danh sách quản trị mô-đun."
 
-#: resources/views/vesta_config.phtml:34
+#: resources/views/vesta_config.phtml:35
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "Trả lời: Qua móc câu. Hooks cho phép các mô-đun mở rộng chức năng của các thành phần khác mà không cần phải triển khai lại toàn bộ thành phần. Webtrees sử dụng hooks, ví dụ: trong chân trang và cho các sự kiện lịch sử."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:170
+#: replacedWebtrees/Functions/FunctionsEdit.php:169
 msgid "All"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:459
+#: replacedWebtrees/Functions/FunctionsEdit.php:458
 msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:457
+#: replacedWebtrees/Functions/FunctionsEdit.php:456
 msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
 msgstr ""
 
-#. I18N: Module Configuration, also checkbox on facts and events tab
-#: CommonI18N.php:153
-msgid "Associated facts and events"
-msgstr "Sự kiện và số liệu liên quan"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:619
+#: replacedWebtrees/Functions/FunctionsEdit.php:618
 msgid "Civil marriage"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:491
+#: replacedWebtrees/Functions/FunctionsEdit.php:490
 msgid "Create a media object"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:532
+#: replacedWebtrees/Functions/FunctionsEdit.php:531
 msgid "Create a repository"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:482
+#: replacedWebtrees/Functions/FunctionsEdit.php:481
 msgid "Create a shared note"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:546
+#: replacedWebtrees/Functions/FunctionsEdit.php:545
 msgid "Create a source"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:554
+#: replacedWebtrees/Functions/FunctionsEdit.php:553
 msgid "Create a submitter"
 msgstr ""
 
@@ -111,7 +106,7 @@ msgstr ""
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr "Bỏ chọn để tiêu đề xuất hiện chính xác như tiêu đề ban đầu."
 
-#: resources/views/vesta_config.phtml:43
+#: resources/views/vesta_config.phtml:44
 msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
 msgstr "Các mô-đun khác nhau cũng có thể được liên kết động để cung cấp dữ liệu cụ thể, chẳng hạn như dữ liệu vị trí cho các địa điểm tổ chức sự kiện."
 
@@ -125,25 +120,25 @@ msgstr "Dữ liệu được hiển thị"
 msgid "Displayed title"
 msgstr "Tiêu đề được hiển thị"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:608
+#: replacedWebtrees/Functions/FunctionsEdit.php:607
 msgid "Edit the name"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:169
+#: CommonI18N.php:165
 msgid "Facts and Events Tab Settings"
 msgstr "Cài đặt tab Sự kiện và Số liệu"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:542
+#: replacedWebtrees/Functions/FunctionsEdit.php:541
 msgid "Female"
 msgstr ""
 
-#: resources/views/vesta_config.phtml:58
+#: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
 msgstr "Nếu biểu tượng được hiển thị không đúng cách, ví dụ: dưới dạng hình chữ nhật, hãy kiểm tra khả năng hỗ trợ unicode của trình duyệt của bạn."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:161
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "Đặc biệt nếu cả hai danh sách đều trống, không có dữ kiện và sự kiện bổ sung nào thuộc loại này sẽ được hiển thị."
 
@@ -187,7 +182,7 @@ msgstr "Nhà cung cấp dữ liệu vị trí"
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:542
+#: replacedWebtrees/Functions/FunctionsEdit.php:541
 msgid "Male"
 msgstr ""
 
@@ -206,11 +201,11 @@ msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:132
+#: replacedWebtrees/Functions/FunctionsEdit.php:131
 msgid "No calendar conversion"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:223
+#: replacedWebtrees/Functions/FunctionsEdit.php:222
 msgid "Only managers can edit"
 msgstr ""
 
@@ -224,23 +219,23 @@ msgstr "Tùy chọn"
 msgid "Provides location data to other custom modules."
 msgstr "Cung cấp dữ liệu vị trí cho các mô-đun tùy chỉnh khác."
 
-#: resources/views/vesta_config.phtml:47
+#: resources/views/vesta_config.phtml:48
 msgid "Q: How do I configure additional hooks?"
 msgstr "Hỏi: Làm cách nào để định cấu hình các móc bổ sung?"
 
-#: resources/views/vesta_config.phtml:31
+#: resources/views/vesta_config.phtml:32
 msgid "Q: How do the Vesta modules interact?"
 msgstr "Hỏi: Làm thế nào để các mô-đun Vesta tương tác?"
 
-#: resources/views/vesta_config.phtml:62
+#: resources/views/vesta_config.phtml:63
 msgid "Q: Is there additional documentation?"
 msgstr "Hỏi: Có tài liệu bổ sung không?"
 
-#: resources/views/vesta_config.phtml:37
+#: resources/views/vesta_config.phtml:38
 msgid "Q: Ok, but what's the actual benefit for the user?"
 msgstr "Hỏi: Được rồi, nhưng lợi ích thực sự cho người dùng là gì?"
 
-#: resources/views/vesta_config.phtml:53
+#: resources/views/vesta_config.phtml:54
 #, php-format
 msgid "Q: What's with the %1$s symbol?"
 msgstr "Hỏi: Biểu tượng %1$s là gì?"
@@ -250,11 +245,11 @@ msgstr "Hỏi: Biểu tượng %1$s là gì?"
 msgid "Readme"
 msgstr "Đọc file này"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:621
+#: replacedWebtrees/Functions/FunctionsEdit.php:620
 msgid "Registered partnership"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:620
+#: replacedWebtrees/Functions/FunctionsEdit.php:619
 msgid "Religious marriage"
 msgstr ""
 
@@ -277,29 +272,29 @@ msgid "Requires the '%1$s %2$s' module."
 msgstr "Yêu cầu mô-đun '%1$s %2$s'."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:161
+#: CommonI18N.php:157
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Giới hạn trong danh sách các dữ kiện và sự kiện gia đình GEDCOM này. Bạn có thể sửa đổi danh sách này bằng cách xóa hoặc thêm tên sự kiện và sự kiện, thậm chí cả tên tùy chỉnh, nếu cần."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:157
+#: CommonI18N.php:153
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Giới hạn trong danh sách này các dữ kiện và sự kiện riêng lẻ của GEDCOM. Bạn có thể sửa đổi danh sách này bằng cách xóa hoặc thêm tên sự kiện và sự kiện, thậm chí cả tên tùy chỉnh, nếu cần."
 
-#: resources/views/vesta_config.phtml:68
+#: resources/views/vesta_config.phtml:69
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr "Xem them %1$s để biết tổng quan về quản lý dữ liệu vị trí trong webtrees."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:222
+#: replacedWebtrees/Functions/FunctionsEdit.php:221
 msgid "Show to managers"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:221
+#: replacedWebtrees/Functions/FunctionsEdit.php:220
 msgid "Show to members"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:220
+#: replacedWebtrees/Functions/FunctionsEdit.php:219
 msgid "Show to visitors"
 msgstr ""
 
@@ -313,16 +308,16 @@ msgstr ""
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
 msgstr ""
 
-#: VestaCommonLibModule.php:61
+#: VestaCommonLibModule.php:62
 msgid "This module cannot be disabled."
 msgstr "Mô-đun này không thể bị vô hiệu hóa."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:542
+#: replacedWebtrees/Functions/FunctionsEdit.php:541
 msgctxt "unknown gender"
 msgid "Unknown"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:566
+#: replacedWebtrees/Functions/FunctionsEdit.php:565
 msgid "Use this image for charts and on the individual’s page."
 msgstr ""
 
@@ -390,11 +385,11 @@ msgstr "Vesta Tổng quan về quản lý dữ liệu vị trí"
 msgid "What's new? "
 msgstr "Có gì mới? "
 
-#: resources/views/vesta_config.phtml:59
+#: resources/views/vesta_config.phtml:60
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Bạn có thể phải cài đặt một phông chữ cung cấp biểu tượng này và đối với một số trình duyệt nhất định - cụ thể là Chrome - phông chữ này phải thuộc một trong các họ phông chữ do webtrees chỉ định, chẳng hạn như 'Segoe UI Symbol'."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:565
+#: replacedWebtrees/Functions/FunctionsEdit.php:564
 msgid "always"
 msgstr ""
 
@@ -408,12 +403,12 @@ msgstr ""
 msgid "exclude %1$s"
 msgstr "loại trừ %1$s"
 
-#: resources/views/vesta_config.phtml:67
+#: resources/views/vesta_config.phtml:68
 msgid "here"
 msgstr "đây"
 
 #. I18N: Examples of valid time formats (hours:minutes:seconds)
-#: replacedWebtrees/Functions/FunctionsEdit.php:561
+#: replacedWebtrees/Functions/FunctionsEdit.php:560
 msgid "hh:mm or hh:mm:ss"
 msgstr ""
 
@@ -421,12 +416,12 @@ msgstr ""
 msgid "map coordinates directly (MAP tag)"
 msgstr "tọa độ bản đồ trực tiếp (thẻ MAP)"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:565
+#: replacedWebtrees/Functions/FunctionsEdit.php:564
 msgid "never"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:153
-#: replacedWebtrees/Functions/FunctionsEdit.php:187
+#: replacedWebtrees/Functions/FunctionsEdit.php:152
+#: replacedWebtrees/Functions/FunctionsEdit.php:186
 msgid "no"
 msgstr ""
 
@@ -450,10 +445,13 @@ msgctxt "as in \"Move up\""
 msgid "up"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:154
-#: replacedWebtrees/Functions/FunctionsEdit.php:188
+#: replacedWebtrees/Functions/FunctionsEdit.php:153
+#: replacedWebtrees/Functions/FunctionsEdit.php:187
 msgid "yes"
 msgstr ""
+
+#~ msgid "Associated facts and events"
+#~ msgstr "Sự kiện và số liệu liên quan"
 
 #~ msgid "FamilySearch id"
 #~ msgstr "Id Tìm kiếm gia đình"

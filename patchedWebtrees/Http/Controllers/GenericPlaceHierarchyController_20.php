@@ -7,41 +7,36 @@ namespace Cissee\WebtreesExt\Http\Controllers;
 use Exception;
 use Fisharebest\Webtrees\Exceptions\HttpNotFoundException;
 use Fisharebest\Webtrees\Http\ViewResponseTrait;
-use Fisharebest\Webtrees\Module\ModuleMapProviderInterface;
 use Fisharebest\Webtrees\Place;
-use Fisharebest\Webtrees\Services\LeafletJsService;
-use Fisharebest\Webtrees\Services\ModuleService;
+use Fisharebest\Webtrees\Site;
 use Fisharebest\Webtrees\Tree;
-use Fisharebest\Webtrees\Validator;
 use Fisharebest\Webtrees\Webtrees;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use function app;
 use function array_chunk;
 use function array_pop;
 use function array_reverse;
+use function assert;
 use function ceil;
 use function count;
 use function is_file;
 use function redirect;
 use function view;
 
-//generalizes PlaceHierarchyListModule
-class GenericPlaceHierarchyController {
+class GenericPlaceHierarchyController_20 {
     use ViewResponseTrait;
   
-    private PlaceHierarchyUtils $utils;
-    private int $detailsThreshold;
-    
+    /** @var PlaceHierarchyUtils */
+    private $utils;
+
+    private $detailsThreshold;
+            
     /**
      * GenericPlaceHierarchyController constructor.
      *
      * @param PlaceHierarchyUtils $utils
      */
-    public function __construct(
-        PlaceHierarchyUtils $utils, 
-        int $detailsThreshold) {
-        
+    public function __construct(PlaceHierarchyUtils $utils, int $detailsThreshold) {
         $this->utils = $utils;
         $this->detailsThreshold = $detailsThreshold;
     }
@@ -52,12 +47,11 @@ class GenericPlaceHierarchyController {
      * @return ResponseInterface
      */
     public function show(ServerRequestInterface $request): ResponseInterface {
-        $tree = Validator::attributes($request)->tree();
+        $tree = $request->getAttribute('tree');
+        assert($tree instanceof Tree);
 
-        //routing (TODO modernize)
         $module   = $request->getAttribute('module');
         $action   = $request->getAttribute('action');
-        
         $action2  = $request->getQueryParams()['action2'] ?? 'hierarchy';
         $place_id = (int) ($request->getQueryParams()['place_id'] ?? 0);
         $place    = $this->utils->findPlace($place_id, $tree, $request->getQueryParams());
@@ -67,11 +61,9 @@ class GenericPlaceHierarchyController {
             return redirect($place->url());
         }
 
-        $map_providers = app(ModuleService::class)->findByInterface(ModuleMapProviderInterface::class);
-
-        $content = '';
-        $showmap = $map_providers->isNotEmpty();
-        $data    = null;
+        $content    = '';
+        $showmap    = Site::getPreference('map-provider') !== '';
+        $data       = null;
 
         $places = null;
         if ($showmap) {
@@ -80,29 +72,25 @@ class GenericPlaceHierarchyController {
             $places = $place->getChildPlaces();
 
             $content .= view('modules/place-hierarchy/map', [
-                'data'           => $this->mapData($place, $places),
-                'leaflet_config' => app(LeafletJsService::class)->config(),
+                'data'     => $this->mapData($place, $places),
+                'provider' => [
+                    'url'    => 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    'options' => [
+                        'attribution' => '<a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a> contributors',
+                        'max_zoom'    => 19
+                    ]
+                ]
             ]);
         }
-
-        $urlFilters = $this->utils->getUrlFilters($request->getQueryParams());
 
         switch ($action2) {
             case 'list':
                 $nextaction = ['hierarchy' => $this->utils->hierarchyActionLabel()];
-                
-                $alt_link = $this->utils->hierarchyActionLabel();
-                $alt_url  = $this->listUrl($tree, ['module' => $module, 'action' => $action, 'action2' => 'hierarchy', 'place_id' => $place_id] + $urlFilters);
-                
                 $content .= view($this->utils->listView(), $this->getList($tree, $request));
                 break;
             case 'hierarchy':
             case 'hierarchy-e':
                 $nextaction = ['list' => $this->utils->listActionLabel()];
-                
-                $alt_link = $this->utils->listActionLabel();
-                $alt_url  = $this->listUrl($tree, ['module' => $module, 'action' => $action, 'action2' => 'list', 'place_id' => 0] + $urlFilters);
-                
                 $data       = $this->getHierarchy($place, $places);
                 $content .= (null === $data || $showmap) ? '' : view($this->utils->placeHierarchyView(), $data);
                 if (null === $data || $action2 === 'hierarchy-e') {
@@ -117,52 +105,29 @@ class GenericPlaceHierarchyController {
                 throw new HttpNotFoundException('Invalid action');
         }
 
-        if ($data !== null && $action2 !== 'hierarchy-e' && $place->gedcomName() !== '') {
-            $events_link = $this->listUrl($tree, ['module' => $module, 'action' => $action, 'action2' => 'hierarchy-e', 'place_id' => $place_id] + $urlFilters);
-        } else {
-            $events_link = '';
-        }
-        
         $breadcrumbs = $this->breadcrumbs($place);
+
+        $urlFilters = $this->utils->getUrlFilters($request->getQueryParams());
         
         return $this->viewResponse(
             $this->utils->pageView(),
             [
-                'utils'       => $this->utils,
-                'urlFilters'  => $urlFilters,
-                
-                'alt_link'    => $alt_link,
-                'alt_url'     => $alt_url,
-                'breadcrumbs' => $breadcrumbs['breadcrumbs'],
-                'content'     => $content,
-                'current'     => $breadcrumbs['current'],
-                'events_link' => $events_link,
-                'place'       => $place,
-                'title'       => $this->utils->pageLabel(),
-                'tree'        => $tree,
-                
-                //replaced by events link
+                'utils'          => $this->utils,
+                'title'          => $this->utils->pageLabel(),
+                'tree'           => $tree,
+                'current'        => $breadcrumbs['current'],
+                'breadcrumbs'    => $breadcrumbs['breadcrumbs'],
+                'place'          => $place,
+                'content'        => $content,
                 'showeventslink' => null !== $data && $place->gedcomName() !== '' && $action2 !== 'hierarchy-e',
-                
-                //replaced by alt_link/alt_url
                 'nextaction'     => $nextaction,
-                
-                //obsolete (here)
                 'module'         => $module,
                 'action'         => $action,
+                'urlFilters'     => $urlFilters,
             ]
         );
     }
 
-    //TODO modernize links to vesta-place-list
-    public function listUrl(Tree $tree, array $parameters = []): string
-    {
-        $parameters['tree'] = $tree->name();
-
-        //return route(static::class, $parameters);        
-        return route('module', $parameters);
-    }
-    
     /**
      * @param Tree $tree
      *

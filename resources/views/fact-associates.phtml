@@ -1,0 +1,16 @@
+<?php
+
+use Cissee\Webtrees\Module\PersonalFacts\IndividualFactsTabModuleExtended;
+use Fisharebest\Webtrees\Fact;
+use Vesta\VestaUtils;
+
+/**
+ * @var Fact $fact
+ * @var IndividualFactsTabModuleExtended $module
+ */
+
+?>
+
+<div class="wt-fact-associates mt-2">
+    <?= view(VestaUtils::vestaViewsNamespace() . '::fact-association-structure', ['fact' => $fact, 'module' => $module]) ?>
+</div>

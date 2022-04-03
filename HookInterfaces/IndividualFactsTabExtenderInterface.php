@@ -2,7 +2,6 @@
 
 namespace Vesta\Hook\HookInterfaces;
 
-use Cissee\WebtreesExt\FactPlaceAdditions;
 use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\Individual;
 use Fisharebest\Webtrees\Tree;
@@ -21,7 +20,7 @@ interface IndividualFactsTabExtenderInterface {
   public function defaultFactsTabUIElementOrder(): int;
 
   /**
-   * if ajax-modal-vesta placeholder is required, return the respective select2 initializer javascript snippet here!
+   * if ajax-modal-vesta placeholder is required, return the respective initializer javascript snippet here (webtrees 2.0: for select2, webtrees 2.1: for tom-select)!
    * the modal placeholder itself is added by the vesta_personal_facts module itself if required.
    * 
    * @return string|null
@@ -73,9 +72,6 @@ interface IndividualFactsTabExtenderInterface {
   public function factPlaceAdditionsBeforePlace(PlaceStructure $place): ?string;
   public function factPlaceAdditionsAfterMap(PlaceStructure $place): ?string;
   public function factPlaceAdditionsAfterNotes(PlaceStructure $place): ?string;
-  
-  //deprecated
-  //public function factPlaceAdditions(PlaceStructure $place): ?FactPlaceAdditions;
 
   /**
    * first hook subscriber to return non-empty or null wins! 

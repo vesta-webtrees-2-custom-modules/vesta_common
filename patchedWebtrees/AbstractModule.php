@@ -13,7 +13,6 @@ use Fisharebest\Webtrees\Webtrees;
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Support\Collection;
 use stdClass;
-use function app;
 
 /**
  * Class AbstractModule - common functions for blocks
@@ -199,6 +198,7 @@ abstract class AbstractModule implements ModuleInterface {
     ]);
   }
 
+  //TODO cleanup, no longer required in webtrees 2.1
   //HACK in case accessLevel has to be re-evaluated (without $tree as arg, e.g. for ModuleSidebarInterface.supportedFacts())
   protected $treeUsedForAccessLevelCheck;
   

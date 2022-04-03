@@ -6,7 +6,7 @@ use Vesta\Model\GenericViewElement;
 
 interface GovIdEditControlsInterface {
 
-  public function govIdEditControlSelect2ScriptSnippet(): string;
+  public function govIdEditControlSelectScriptSnippet(): string;
           
   /**
    * 
@@ -14,8 +14,8 @@ interface GovIdEditControlsInterface {
    * @param string $id
    * @param string $name
    * @param string $placeName
-   * @param string|null $placeNameInputSelector
-   * @param bool $forModal if true, this has to be prepared via ajax-modal-vesta.phtml plus govIdEditControlSelect2ScriptSnippet()!
+   * @param string|null $placeNameSelector
+   * @param bool $forModal if true, this has to be prepared via ajax-modal-vesta.phtml plus govIdEditControlSelectScriptSnippet()!
    * @param bool $withLabel
    * @return GenericViewElement
    */
@@ -24,7 +24,7 @@ interface GovIdEditControlsInterface {
           string $id, 
           string $name, 
           string $placeName,
-          ?string $placeNameInputSelector,          
+          ?string $placeNameSelector,          
           bool $forModal,
           bool $withLabel): GenericViewElement;
   

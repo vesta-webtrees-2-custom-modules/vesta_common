@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vesta package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2021-12-05 11:26+0100\n"
+"POT-Creation-Date: 2022-04-03 20:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,14 +16,327 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
+#, php-format
+msgid "%1$s excluded"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
+#, php-format
+msgid "%1$s filters"
+msgstr ""
+
+#: resources/views/vesta_config.phtml:58
+#, php-format
+msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
+msgstr ""
+
+#: resources/views/admin/vesta_components.phtml:24
+msgid "(entire module)"
+msgstr ""
+
+#: resources/views/admin/vesta_components.phtml:26
+msgid "(specific functionality)"
+msgstr ""
+
+#: VestaCommonLibModule.php:61
+msgid "A module providing common classes and translations for other 'Vesta' custom modules."
+msgstr ""
+
+#: resources/views/vesta_config.phtml:42
+msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
+msgstr ""
+
+#: resources/views/vesta_config.phtml:66
+msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
+msgstr ""
+
+#: resources/views/vesta_config.phtml:51
+msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
+msgstr ""
+
+#: resources/views/vesta_config.phtml:57
+msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
+msgstr ""
+
+#: resources/views/vesta_config.phtml:35
+msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:169
+msgid "All"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:458
+msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:456
+msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:618
+msgid "Civil marriage"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:490
+msgid "Create a media object"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:531
+msgid "Create a repository"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:481
+msgid "Create a shared note"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:545
+msgid "Create a source"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:553
+msgid "Create a submitter"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:147
+msgid "Deselect in order to have the title appear exactly as the original title."
+msgstr ""
+
+#: resources/views/vesta_config.phtml:44
+msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:123
+msgid "Displayed data"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:119
+msgid "Displayed title"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:607
+msgid "Edit the name"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:165
+msgid "Facts and Events Tab Settings"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:541
+msgid "Female"
+msgstr ""
+
+#: resources/views/vesta_config.phtml:59
+msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:161
+msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:131
+#, php-format
+msgid "Include the %1$s symbol in the chart menu entry title"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:143
+#, php-format
+msgid "Include the %1$s symbol in the clippings cart menu entry title"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:135
+#, php-format
+msgid "Include the %1$s symbol in the list menu entry title"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:139
+#, php-format
+msgid "Include the %1$s symbol in the sidebar title"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:127
+#, php-format
+msgid "Include the %1$s symbol in the tab title"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:93
+msgid "Location Data Providers"
+msgstr ""
+
+#: resources/views/admin/upgrade/wizard.phtml:35
+#, php-format
+msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:541
+msgid "Male"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:97
+msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
+msgstr ""
+
+#: resources/views/admin/vesta_components.phtml:30
+msgctxt "as in \"Move down\""
+msgid "Move"
+msgstr ""
+
+#: resources/views/admin/vesta_components.phtml:29
+msgctxt "as in \"Move up\""
+msgid "Move"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:131
+msgid "No calendar conversion"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:222
+msgid "Only managers can edit"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:115
+msgid "Options"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:89
+msgid "Provides location data to other custom modules."
+msgstr ""
+
+#: resources/views/vesta_config.phtml:48
+msgid "Q: How do I configure additional hooks?"
+msgstr ""
+
+#: resources/views/vesta_config.phtml:32
+msgid "Q: How do the Vesta modules interact?"
+msgstr ""
+
+#: resources/views/vesta_config.phtml:63
+msgid "Q: Is there additional documentation?"
+msgstr ""
+
+#: resources/views/vesta_config.phtml:38
+msgid "Q: Ok, but what's the actual benefit for the user?"
+msgstr ""
+
+#: resources/views/vesta_config.phtml:54
+#, php-format
+msgid "Q: What's with the %1$s symbol?"
+msgstr ""
+
+#. I18N: Module configuration: Refers to the module's Readme file
+#: CommonI18N.php:103
+msgid "Readme"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:620
+msgid "Registered partnership"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:619
+msgid "Religious marriage"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:73
+#, php-format
+msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:81
+#, php-format
+msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:66
+#, php-format
+msgid "Requires the '%1$s %2$s' module."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:157
+msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:153
+msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
+msgstr ""
+
+#: resources/views/vesta_config.phtml:69
+#, php-format
+msgid "See also %1$s for an overview of location data management in webtrees."
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:221
+msgid "Show to managers"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:220
+msgid "Show to members"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:219
+msgid "Show to visitors"
+msgstr ""
+
+#: resources/views/admin/upgrade/wizard.phtml:63
+#, php-format
+msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
+msgstr ""
+
+#: resources/views/admin/upgrade/wizard.phtml:47
+#, php-format
+msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
+msgstr ""
+
+#: VestaCommonLibModule.php:62
+msgid "This module cannot be disabled."
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:541
+msgctxt "unknown gender"
+msgid "Unknown"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:565
+msgid "Use this image for charts and on the individual’s page."
+msgstr ""
+
+#. I18N: Module title
+#: CommonI18N.php:23
+msgid "Vesta Classic Look & Feel"
+msgstr ""
+
+#. I18N: Module title
+#: CommonI18N.php:59
+msgid "Vesta Clippings Cart"
+msgstr ""
+
 #. I18N: Module title
 #: CommonI18N.php:19
 msgid "Vesta Common"
 msgstr ""
 
 #. I18N: Module title
-#: CommonI18N.php:23
-msgid "Vesta Classic Look & Feel"
+#: CommonI18N.php:43
+msgid "Vesta Extended Relationships"
 msgstr ""
 
 #. I18N: Module title
@@ -42,13 +355,8 @@ msgid "Vesta Gov4Webtrees"
 msgstr ""
 
 #. I18N: Module title
-#: CommonI18N.php:39
-msgid "Vesta Shared Places"
-msgstr ""
-
-#. I18N: Module title
-#: CommonI18N.php:43
-msgid "Vesta Extended Relationships"
+#: CommonI18N.php:55
+msgid "Vesta Places and Pedigree map"
 msgstr ""
 
 #. I18N: Module title
@@ -57,56 +365,13 @@ msgid "Vesta Research Suggestions"
 msgstr ""
 
 #. I18N: Module title
+#: CommonI18N.php:39
+msgid "Vesta Shared Places"
+msgstr ""
+
+#. I18N: Module title
 #: CommonI18N.php:51
 msgid "Vesta Webtrees Location Data Provider"
-msgstr ""
-
-#. I18N: Module title
-#: CommonI18N.php:55
-msgid "Vesta Places and Pedigree map"
-msgstr ""
-
-#. I18N: Module title
-#: CommonI18N.php:59
-msgid "Vesta Clippings Cart"
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:66
-#, php-format
-msgid "Requires the '%1$s %2$s' module."
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:73
-#, php-format
-msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:81
-#, php-format
-msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:89
-msgid "Provides location data to other custom modules."
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:93
-msgid "Location Data Providers"
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:97
-msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
-msgstr ""
-
-#. I18N: Module configuration: Refers to the module's Readme file
-#: CommonI18N.php:103
-msgid "Readme"
 msgstr ""
 
 #. I18N: Module configuration: Refers to general documentation
@@ -114,271 +379,16 @@ msgstr ""
 msgid "Vesta location data management overview"
 msgstr ""
 
-#. I18N: Module Configuration
-#: CommonI18N.php:115
-msgid "Options"
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:119
-msgid "Displayed title"
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:123
-msgid "Displayed data"
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:127
-#, php-format
-msgid "Include the %1$s symbol in the tab title"
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:131
-#, php-format
-msgid "Include the %1$s symbol in the chart menu entry title"
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:135
-#, php-format
-msgid "Include the %1$s symbol in the list menu entry title"
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:139
-#, php-format
-msgid "Include the %1$s symbol in the sidebar title"
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:143
-#, php-format
-msgid "Include the %1$s symbol in the clippings cart menu entry title"
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:147
-msgid "Deselect in order to have the title appear exactly as the original title."
-msgstr ""
-
-#. I18N: Module Configuration, also checkbox on facts and events tab
-#: CommonI18N.php:153
-msgid "Associated facts and events"
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:157
-msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:161
-msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:165
-msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:169
-msgid "Facts and Events Tab Settings"
-msgstr ""
-
-#: HookInterfaces/FunctionsPlaceUtils.php:88
-msgid "map coordinates directly (MAP tag)"
-msgstr ""
-
-#: VestaCommonLibModule.php:60
-msgid "A module providing common classes and translations for other 'Vesta' custom modules."
-msgstr ""
-
-#: VestaCommonLibModule.php:61
-msgid "This module cannot be disabled."
-msgstr ""
-
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
 msgstr ""
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
-#, php-format
-msgid "%1$s filters"
+#: resources/views/vesta_config.phtml:60
+msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr ""
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
-#, php-format
-msgid "restrict to %1$s"
-msgstr ""
-
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
-#, php-format
-msgid "exclude %1$s"
-msgstr ""
-
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
-#, php-format
-msgid "%1$s excluded"
-msgstr ""
-
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
-msgid "reset this filter"
-msgstr ""
-
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
-#, php-format
-msgid "restricted to %1$s"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:132
-msgid "No calendar conversion"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:153
-#: replacedWebtrees/Functions/FunctionsEdit.php:187
-msgid "no"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:154
-#: replacedWebtrees/Functions/FunctionsEdit.php:188
-msgid "yes"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:170
-msgid "All"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:220
-msgid "Show to visitors"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:221
-msgid "Show to members"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:222
-msgid "Show to managers"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:223
-msgid "Only managers can edit"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:457
-msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:459
-msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:482
-msgid "Create a shared note"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:491
-msgid "Create a media object"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:532
-msgid "Create a repository"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:542
-msgid "Male"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:542
-msgid "Female"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:542
-msgctxt "unknown gender"
-msgid "Unknown"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:546
-msgid "Create a source"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:554
-msgid "Create a submitter"
-msgstr ""
-
-#. I18N: Examples of valid time formats (hours:minutes:seconds)
-#: replacedWebtrees/Functions/FunctionsEdit.php:561
-msgid "hh:mm or hh:mm:ss"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:565
+#: replacedWebtrees/Functions/FunctionsEdit.php:564
 msgid "always"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:565
-msgid "never"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:566
-msgid "Use this image for charts and on the individual’s page."
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:608
-msgid "Edit the name"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:619
-msgid "Civil marriage"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:620
-msgid "Religious marriage"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:621
-msgid "Registered partnership"
-msgstr ""
-
-#: resources/views/admin/upgrade/wizard.phtml:35
-#, php-format
-msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
-msgstr ""
-
-#: resources/views/admin/upgrade/wizard.phtml:47
-#, php-format
-msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
-msgstr ""
-
-#: resources/views/admin/upgrade/wizard.phtml:63
-#, php-format
-msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
-msgstr ""
-
-#: resources/views/admin/vesta_components.phtml:24
-msgid "(entire module)"
-msgstr ""
-
-#: resources/views/admin/vesta_components.phtml:26
-msgid "(specific functionality)"
-msgstr ""
-
-#: resources/views/admin/vesta_components.phtml:29
-msgctxt "as in \"Move up\""
-msgid "Move"
-msgstr ""
-
-#: resources/views/admin/vesta_components.phtml:29
-msgctxt "as in \"Move up\""
-msgid "up"
-msgstr ""
-
-#: resources/views/admin/vesta_components.phtml:30
-msgctxt "as in \"Move down\""
-msgid "Move"
 msgstr ""
 
 #: resources/views/admin/vesta_components.phtml:30
@@ -386,69 +396,54 @@ msgctxt "as in \"Move down\""
 msgid "down"
 msgstr ""
 
-#: resources/views/vesta_config.phtml:31
-msgid "Q: How do the Vesta modules interact?"
-msgstr ""
-
-#: resources/views/vesta_config.phtml:34
-msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
-msgstr ""
-
-#: resources/views/vesta_config.phtml:37
-msgid "Q: Ok, but what's the actual benefit for the user?"
-msgstr ""
-
-#: resources/views/vesta_config.phtml:41
-msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
-msgstr ""
-
-#: resources/views/vesta_config.phtml:43
-msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
-msgstr ""
-
-#: resources/views/vesta_config.phtml:47
-msgid "Q: How do I configure additional hooks?"
-msgstr ""
-
-#: resources/views/vesta_config.phtml:50
-msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
-msgstr ""
-
-#: resources/views/vesta_config.phtml:53
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
 #, php-format
-msgid "Q: What's with the %1$s symbol?"
-msgstr ""
-
-#: resources/views/vesta_config.phtml:56
-msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
-msgstr ""
-
-#: resources/views/vesta_config.phtml:57
-#, php-format
-msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
-msgstr ""
-
-#: resources/views/vesta_config.phtml:58
-msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
-msgstr ""
-
-#: resources/views/vesta_config.phtml:59
-msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
-msgstr ""
-
-#: resources/views/vesta_config.phtml:62
-msgid "Q: Is there additional documentation?"
-msgstr ""
-
-#: resources/views/vesta_config.phtml:65
-msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
-msgstr ""
-
-#: resources/views/vesta_config.phtml:67
-msgid "here"
+msgid "exclude %1$s"
 msgstr ""
 
 #: resources/views/vesta_config.phtml:68
+msgid "here"
+msgstr ""
+
+#. I18N: Examples of valid time formats (hours:minutes:seconds)
+#: replacedWebtrees/Functions/FunctionsEdit.php:560
+msgid "hh:mm or hh:mm:ss"
+msgstr ""
+
+#: HookInterfaces/FunctionsPlaceUtils.php:88
+msgid "map coordinates directly (MAP tag)"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:564
+msgid "never"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:152
+#: replacedWebtrees/Functions/FunctionsEdit.php:186
+msgid "no"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
+msgid "reset this filter"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
 #, php-format
-msgid "See also %1$s for an overview of location data management in webtrees."
+msgid "restrict to %1$s"
+msgstr ""
+
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
+#, php-format
+msgid "restricted to %1$s"
+msgstr ""
+
+#: resources/views/admin/vesta_components.phtml:29
+msgctxt "as in \"Move up\""
+msgid "up"
+msgstr ""
+
+#: replacedWebtrees/Functions/FunctionsEdit.php:153
+#: replacedWebtrees/Functions/FunctionsEdit.php:187
+msgid "yes"
 msgstr ""

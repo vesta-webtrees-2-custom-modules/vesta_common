@@ -3,13 +3,13 @@
 namespace Cissee\WebtreesExt\Http\Controllers;
 
 use Fisharebest\Webtrees\I18N;
-use Fisharebest\Webtrees\Module\PlaceHierarchyListModule;
+use Fisharebest\Webtrees\Module\ModuleListInterface;
 use Fisharebest\Webtrees\Place;
 use Illuminate\Support\Collection;
 
 class PlaceUrls {
   
-  /** @var PlaceHierarchyListModule|null */
+  /** @var ModuleListInterface|null */
   protected $urlModule;
   
   protected $urlFilters;
@@ -18,7 +18,7 @@ class PlaceUrls {
   protected $participants;
   
   public function __construct(
-          ?PlaceHierarchyListModule $urlModule,
+          ?ModuleListInterface $urlModule,
           array $urlFilters,
           Collection $participants) {
     

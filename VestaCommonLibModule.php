@@ -3,7 +3,7 @@
 namespace Vesta;
 
 use Cissee\WebtreesExt\AbstractModule;
-use Cissee\WebtreesExt\Elements\FamilySearchFamilyTreeId;
+use Cissee\WebtreesExt\Elements\FamilySearchFamilyTreeId_20;
 use Cissee\WebtreesExt\Module\ModuleMetaInterface;
 use Cissee\WebtreesExt\Module\ModuleMetaTrait;
 use Cissee\WebtreesExt\MoreI18N;
@@ -12,6 +12,7 @@ use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomTrait;
 use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\View;
+use Fisharebest\Webtrees\Webtrees;
 use function GuzzleHttp\json_decode;
 
 class VestaCommonLibModule extends AbstractModule implements 
@@ -66,8 +67,13 @@ class VestaCommonLibModule extends AbstractModule implements
   }
   
   public function boot(): void {
-    $ef = Registry::elementFactory();
-    $ef->register(['INDI:_FSFTID' => new FamilySearchFamilyTreeId(MoreI18N::xlate('FamilySearch id'))]);
+    if (str_starts_with(Webtrees::VERSION, '2.1')) {
+        //obsolete in webtrees 2.1  
+    } else {
+        $ef = Registry::elementFactory();
+        $ef->register(['INDI:_FSFTID' => new FamilySearchFamilyTreeId_20(MoreI18N::xlate('FamilySearch id'))]);        
+    }
+    
   
     $this->flashWhatsNew('\Vesta\WhatsNew', 2);
     
@@ -77,12 +83,17 @@ class VestaCommonLibModule extends AbstractModule implements
     // Replace an existing view with our own version.
     View::registerCustomView('::admin/upgrade/wizard', $this->name() . '::admin/upgrade/wizard');      
     
-    //allow custom modules to add head/body content to admin pages as well
-    View::registerCustomView('::layouts/administration', $this->name() . '::layouts/administration');
+    if (str_starts_with(Webtrees::VERSION, '2.1')) {
+        //allow custom modules to add head/body content to admin pages as well
+        View::registerCustomView('::layouts/administration', $this->name() . '::layouts/administration');
+    } else {
+        //allow custom modules to add head/body content to admin pages as well
+        View::registerCustomView('::layouts/administration', $this->name() . '::layouts/administration_20');
+    }
   }
   
   public function isEnabled(): bool {
-    //disabling this module has no useful effect, so we block it
+    //disabling this module has no useful effect, so we block disabling
     return true;
   }
 }

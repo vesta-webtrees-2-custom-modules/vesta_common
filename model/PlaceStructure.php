@@ -7,8 +7,10 @@ use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\Functions\Functions;
 use Fisharebest\Webtrees\Location;
 use Fisharebest\Webtrees\Place;
+use Fisharebest\Webtrees\Report\ReportParserGenerate;
 use Fisharebest\Webtrees\Services\TreeService;
 use Fisharebest\Webtrees\Tree;
+use Fisharebest\Webtrees\Webtrees;
 use JsonSerializable;
 use Vesta\Model\GedcomDateInterval;
 use function app;
@@ -28,7 +30,9 @@ class PlaceStructure implements JsonSerializable {
   private $eventDateInterval;
   private $level;
   private $location;
+  private $virtual;
   
+  #[\ReturnTypeWillChange]
   public function jsonSerialize() {
     return [
       'tree' => $this->tree->id(),
@@ -38,6 +42,7 @@ class PlaceStructure implements JsonSerializable {
       'eventDateInterval' => $this->eventDateInterval,
       'level' => $this->level,
       'location' => ($this->location !== null) ? $this->location->xref() : null,
+      'virtual' => $this->virtual,
     ];
   }
      
@@ -49,16 +54,25 @@ class PlaceStructure implements JsonSerializable {
   //cf WT_REGEX_XREF (1.x)/ Gedcom::REGEX_XREF (2.x)
   const REGEX_XREF = '[A-Za-z0-9:_-]+';
 
+  //TODO use tree() instead!
   public function getTree(): Tree {
     return $this->tree;
   }
 
+  public function tree(): Tree {
+    return $this->tree;
+  }
+  
   public function getGedcomName(): string {
     return $this->gedcomName;
   }
   
-  //discouraged, preferably use other getters! 
+  //TODO use gedcom() instead!
   public function getGedcom(): string {
+    return $this->gedcom;
+  }
+  
+  public function gedcom(): string {
     return $this->gedcom;
   }
   
@@ -69,6 +83,14 @@ class PlaceStructure implements JsonSerializable {
     return $this->eventType;
   }
 
+  public function tag(): string {
+    $tag = $this->eventType;
+    if ($tag === null) {
+        return '_UNKNOWN_'; //TODO better fallback?
+    }
+    return $tag;
+  }
+  
   /**
    * @return GedcomDateInterval date interval of the level 1 event
    */
@@ -84,11 +106,16 @@ class PlaceStructure implements JsonSerializable {
     return $this->location;
   }
   
+  public function isVirtual(): bool {
+    return $this->virtual;
+  }
+  
   private function __construct(
           string $gedcomName, 
           string $gedcom, 
           Tree $tree, 
           ?string $eventType, 
+          bool $virtual,
           GedcomDateInterval $eventDateInterval, 
           int $level = 0,
           ?Location $location = null) {
@@ -97,6 +124,7 @@ class PlaceStructure implements JsonSerializable {
     $this->gedcom = $gedcom;
     $this->tree = $tree;
     $this->eventType = $eventType;
+    $this->virtual = $virtual;
     $this->eventDateInterval = $eventDateInterval;
     $this->level = $level;
     $this->location = $location;
@@ -108,6 +136,7 @@ class PlaceStructure implements JsonSerializable {
             $std->gedcom, 
             app(TreeService::class)->find($std->tree), 
             $std->eventType, 
+            $std->virtual, 
             GedcomDateInterval::fromStd($std->eventDateInterval), 
             $std->level, 
             null); //hmmm
@@ -116,7 +145,8 @@ class PlaceStructure implements JsonSerializable {
   public static function create(
           string $gedcom, 
           Tree $tree, 
-          ?string $eventType = null, 
+          ?string $eventType = null,
+          bool $virtual = false,
           ?string $eventDateGedcomString = null, 
           int $level = 0,
           ?Location $location = null): ?PlaceStructure {
@@ -139,59 +169,120 @@ class PlaceStructure implements JsonSerializable {
     if ($eventDateGedcomString !== null) {
       $dateInterval = GedcomDateInterval::create($eventDateGedcomString);
     }
-    return new PlaceStructure($gedcomName, $gedcom, $tree, $eventType, $dateInterval, $level, $location);
+    
+    return new PlaceStructure(
+            $gedcomName, 
+            $gedcom, 
+            $tree, 
+            $eventType, 
+            $virtual,
+            $dateInterval, 
+            $level, 
+            $location);
   }
   
-  public static function fromName(string $name, Tree $tree): ?PlaceStructure {
+  public static function fromName(
+          string $name, 
+          Tree $tree): ?PlaceStructure {
+      
     $gedcom = "2 PLAC " . $name;
     return PlaceStructure::create($gedcom, $tree);
   }
   
-  public static function fromNameAndGov(string $name, string $gov, Tree $tree, int $level = 0): ?PlaceStructure {
+  public static function fromNameAndGov(
+          string $name, 
+          string $gov, 
+          Tree $tree, 
+          int $level = 0): ?PlaceStructure {
+      
     $gedcom = "2 PLAC " . $name . "\n3 _GOV @" . $gov . "@";
-    return PlaceStructure::create($gedcom, $tree, null, null, $level);
+    return PlaceStructure::create($gedcom, $tree, null, false, null, $level);
   }
   
-  public static function fromNameAndLoc(string $name, string $loc, Tree $tree, int $level = 0, ?Location $location = null): ?PlaceStructure {
+  public static function fromNameAndLoc(
+          string $name, 
+          string $loc, 
+          Tree $tree, 
+          int $level = 0, 
+          ?Location $location = null): ?PlaceStructure {
+      
     $gedcom = "2 PLAC " . $name . "\n3 _LOC @" . $loc . "@";
-    return PlaceStructure::create($gedcom, $tree, null, null, $level, $location);
+    return PlaceStructure::create($gedcom, $tree, null, false, null, $level, $location);
   }
   
-  public static function fromNameAndLocNow(string $name, string $loc, Tree $tree, int $level = 0, ?Location $location = null): ?PlaceStructure {
+  public static function fromNameAndLocNow(
+          string $name, 
+          string $loc, 
+          Tree $tree, 
+          int $level = 0, 
+          ?Location $location = null): ?PlaceStructure {
+      
     $gedcom = "2 PLAC " . $name . "\n3 _LOC @" . $loc . "@";
     $dateInterval = GedcomDateInterval::createNow();
-    return PlaceStructure::create($gedcom, $tree, null, $dateInterval->toGedcomString(2), $level, $location);
+    return PlaceStructure::create($gedcom, $tree, null, false, $dateInterval->toGedcomString(2), $level, $location);
   }
   
-  public static function fromNameAndLocWithYear(int $year, string $name, string $loc, Tree $tree, int $level = 0, ?Location $location = null): ?PlaceStructure {
+  public static function fromNameAndLocWithYear(
+          int $year, 
+          string $name, 
+          string $loc, 
+          Tree $tree, 
+          int $level = 0, 
+          ?Location $location = null): ?PlaceStructure {
+      
     $gedcom = "2 PLAC " . $name . "\n3 _LOC @" . $loc . "@";
     $dateInterval = GedcomDateInterval::createYear($year);
-    return PlaceStructure::create($gedcom, $tree, null, $dateInterval->toGedcomString(2), $level, $location);
+    return PlaceStructure::create($gedcom, $tree, null, false, $dateInterval->toGedcomString(2), $level, $location);
   }
   
-  public static function fromFact(Fact $event): ?PlaceStructure {
-    $placerec = Functions::getSubRecord(2, '2 PLAC', $event->gedcom());
+  public static function fromFact(
+          Fact $event): ?PlaceStructure {
+      
+    [, $tag] = explode(':', $event->tag());
+    
+    if (str_starts_with(Webtrees::VERSION, '2.1')) {
+        //TODO better replacement?
+        $placerec = ReportParserGenerate::getSubRecord(2, '2 PLAC', $event->gedcom());
+    } else {
+        $placerec = Functions::getSubRecord(2, '2 PLAC', $event->gedcom());
+    }
 
     $ps = PlaceStructure::create(
             $placerec, 
             $event->record()->tree(), 
-            $event->getTag(), 
+            $tag,
+            ($event->id() === 'histo'), 
             $event->attribute("DATE"));
+    
     return $ps;
   }
   
-  public static function fromFactWithExplicitInterval(Fact $event, GedcomDateInterval $dateInterval): ?PlaceStructure {
-    $placerec = Functions::getSubRecord(2, '2 PLAC', $event->gedcom());
+  public static function fromFactWithExplicitInterval(
+          Fact $event, 
+          GedcomDateInterval $dateInterval): ?PlaceStructure {
+      
+    [, $tag] = explode(':', $event->tag());
+    
+    if (str_starts_with(Webtrees::VERSION, '2.1')) {
+        //TODO better replacement?
+        $placerec = ReportParserGenerate::getSubRecord(2, '2 PLAC', $event->gedcom());
+    } else {
+        $placerec = Functions::getSubRecord(2, '2 PLAC', $event->gedcom());
+    }
+    
     $ps = PlaceStructure::create(
             $placerec, 
             $event->record()->tree(), 
-            $event->getTag(), 
+            $tag,
+            ($event->id() === 'histo'), 
             $dateInterval->toGedcomString(2));
     
     return $ps;
   }
   
-  public static function fromPlace(Place $place): ?PlaceStructure {
+  public static function fromPlace(
+          Place $place): ?PlaceStructure {
+      
     $gedcom = "2 PLAC " . $place->gedcomName();
     return PlaceStructure::create($gedcom, $place->tree());
   }
@@ -273,7 +364,8 @@ class PlaceStructure implements JsonSerializable {
       return PlaceStructure::create(
             $parentGedcom,
             $this->getTree(), 
-            $this->getEventType(), 
+            $this->getEventType(),
+            $this->isVirtual(), 
             $this->getEventDateInterval()->toGedcomString(2),
             $this->getLevel() + 1);
     }

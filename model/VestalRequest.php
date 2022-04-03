@@ -10,6 +10,7 @@ class VestalRequest implements JsonSerializable {
   private $method;
   private $args;
   
+  #[\ReturnTypeWillChange]
   public function jsonSerialize() {
     return [
       'method' => $this->method(),

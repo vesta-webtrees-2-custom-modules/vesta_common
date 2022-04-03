@@ -148,10 +148,6 @@ class CommonI18N {
   }
   
   //////////////////////////////////////////////////////////////////////////////
-    
-  public static function associatedFactsAndEvents(): string {
-    return /* I18N: Module Configuration, also checkbox on facts and events tab */I18N::translate('Associated facts and events');
-  }
   
   public static function restrictIndi(): string {
     return /* I18N: Module Configuration */I18N::translate('Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary.');

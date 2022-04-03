@@ -1,0 +1,134 @@
+<?php
+
+use Cissee\Webtrees\Module\PersonalFacts\IndividualFactsTabModuleExtended;
+use Fisharebest\Webtrees\Auth;
+use Fisharebest\Webtrees\Place;
+use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderInterface;
+use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderUtils;
+use Vesta\Model\PlaceStructure;
+
+/**
+ * @var PlaceStructure                   $ps
+ * @var IndividualFactsTabModuleExtended $module
+ * @var bool                             $useVestals
+ */
+
+//original view largely refactored
+
+if ($useVestals) {
+    //add placeholders for Vestals      
+    //TODO: cleanup: strictly we have to handle script here!
+    $key = md5(json_encode($ps));
+}
+?>
+
+
+<?php if ($ps !== null) : ?>
+
+    <?php if ($useVestals) : ?>
+        <span class = '<?= $key ?>_vestalBeforePlace'></span>
+    <?php else : ?>
+        <?php
+            $factPlaceAdditionsBeforePlace = IndividualFactsTabExtenderUtils::accessibleModules($module, $ps->getTree(), Auth::user())
+                ->map(function (IndividualFactsTabExtenderInterface $m) use ($ps) {
+                  return $m->factPlaceAdditionsBeforePlace($ps);
+                })
+                ->filter() //filter null values
+                ->toArray();
+
+            foreach ($factPlaceAdditionsBeforePlace as $factPlaceAddition) {
+                echo $factPlaceAddition;
+            }
+        ?>
+    <?php endif ?>
+
+    <?php
+        //[RC] adjusted
+        //$ps->getPlace()->fullName($fact->id() !== 'histo')
+    ?>
+
+    <?= $ps->getPlace()->fullName(!$ps->isVirtual()) ?>
+
+    <?php
+        //formatPlaceHebRomn: no changes wrt original view, except we use ps instead of fact and record
+    ?>
+    <?php if (preg_match('/\n(2 PLAC.*(?:\n[3-9].*)*)/', $ps->gedcom(), $match) === 1) : ?>
+        <?php $placerec = $match[1]; ?>
+        <?php if (preg_match_all('/\n3 (?:_HEB|ROMN|FONE) (.+)/', $placerec, $matches)) : ?>
+            <?php foreach ($matches[1] as $match) : ?>
+                — <?= (new Place($match, $ps->tree()))->fullName() ?>
+            <?php endforeach ?>
+        <?php endif ?>
+    <?php endif ?>
+
+    <?php
+        //map coordinates and formatPlaceLatiLong, original code:
+        /*
+        <?php if ($fact->latitude() !== null && $fact->longitude() !== null) : ?>
+            <div class="wt-fact-coordinates">
+                <span class="label"><?= I18N::translate('Latitude') ?>: </span><?= $fact->latitude() ?>
+                <span class="label"><?= I18N::translate('Longitude') ?>: </span><?= $fact->longitude()?>
+                <?= app(ModuleService::class)->findByInterface(ModuleMapLinkInterface::class)->map(fn(ModuleMapLinkInterface $module): string => ' ' . $module->mapLink($fact))->implode('') ?>
+            </div>
+        <?php endif ?>
+        */
+    ?>
+
+    <?php if ($useVestals) : ?>
+        <span class = '<?= $key ?>_vestalMapCoordinates'></span>
+    <?php else : ?>
+        <?= $module->functionsFactPlace()->mapCoordinates($ps); ?>
+    <?php endif ?>
+
+    <?php if ($useVestals) : ?>
+        <span class = '<?= $key ?>_vestalAfterMap'></span>
+    <?php else : ?>
+        <?php
+            $factPlaceAdditionsAfterMap = IndividualFactsTabExtenderUtils::accessibleModules($module, $ps->getTree(), Auth::user())
+                    ->map(function (IndividualFactsTabExtenderInterface $m) use ($ps) {
+                      return $m->factPlaceAdditionsAfterMap($ps);
+                    })
+                    ->filter() //filter null values
+                    ->toArray();
+
+            foreach ($factPlaceAdditionsAfterMap as $factPlaceAddition) {
+                echo $factPlaceAddition;
+            }
+        ?>
+    <?php endif ?>
+
+    <?php
+        //formatPlaceNotes: no changes wrt original view, except we use ps instead of fact and record
+    ?>
+    <?php if (preg_match('/\n(2 PLAC.*(?:\n[3-9].*)*)/', $ps->gedcom(), $match) === 1) : ?>
+        <?php $placerec = $match[1]; ?>
+        <?php if (preg_match_all('/\n(3 NOTE\b.*(?:\n[^3].*)*)/', $placerec, $matches, PREG_SET_ORDER) > 0) : ?>
+            <?php foreach ($matches as $match) : ?>
+                <?= view('fact-gedcom-fields', ['gedcom' => $match[1], 'parent' => $ps->tag() . ':PLAC:NOTE', 'tree' => $ps->tree()]) ?>
+            <?php endforeach ?>
+        <?php endif ?>
+    <?php endif ?>    
+
+    <?php if ($useVestals) : ?>
+        <span class = '<?= $key ?>_vestalAfterNotes'></span>
+    <?php else : ?>    
+
+        <?php
+            //formatPlaceCustomFieldsAfterNotes
+
+            $factPlaceAdditionsAfterNotes = IndividualFactsTabExtenderUtils::accessibleModules($module, $ps->getTree(), Auth::user())
+                    ->map(function (IndividualFactsTabExtenderInterface $m) use ($ps) {
+                      return $m->factPlaceAdditionsAfterNotes($ps);
+                    })
+                    ->filter() //filter null values
+                    ->toArray();
+
+            foreach ($factPlaceAdditionsAfterNotes as $factPlaceAddition) {
+                echo $factPlaceAddition;
+            }
+        ?>
+    <?php endif ?>
+
+<?php endif ?>
+
+

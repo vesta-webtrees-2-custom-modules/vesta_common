@@ -19,7 +19,7 @@ declare(strict_types=1);
 
 namespace Fisharebest\Webtrees\Functions;
 
-use Cissee\WebtreesExt\Functions\FunctionsEditPlacHandler;
+use Cissee\WebtreesExt\Functions\FunctionsEditPlacHandler_20;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Census\Census;
 use Fisharebest\Webtrees\Config;
@@ -52,7 +52,6 @@ use Fisharebest\Webtrees\Services\UserService;
 use Fisharebest\Webtrees\Tree;
 use Psr\Http\Message\ServerRequestInterface;
 use Ramsey\Uuid\Uuid;
-
 use function app;
 use function array_key_exists;
 use function array_merge;
@@ -655,12 +654,12 @@ class FunctionsEdit
 
         if (!in_array($fact, Config::nonDateFacts(), true)) {
             //echo self::addSimpleTag($tree, '0 DATE', $fact, GedcomTag::getLabel($fact . ':DATE'));
-            $handler = app(FunctionsEditPlacHandler::class);
+            $handler = app(FunctionsEditPlacHandler_20::class);
             echo $handler->addSimpleTag($tree, '0 DATE', $fact, GedcomTag::getLabel($fact . ':DATE'));
         }
 
         if (!in_array($fact, Config::nonPlaceFacts(), true)) {
-            $handler = app(FunctionsEditPlacHandler::class);
+            $handler = app(FunctionsEditPlacHandler_20::class);
             $handler->addSimpleTagsPlac($tree, $fact);
         }
     }
@@ -719,7 +718,7 @@ class FunctionsEdit
      */
     public static function createEditForm(Fact $fact): void
     {
-        $handler = app(FunctionsEditPlacHandler::class);
+        $handler = app(FunctionsEditPlacHandler_20::class);
         $expected_subtags_plac = $handler->expectedSubtagsPlac();
                 
         $record = $fact->record();
@@ -910,7 +909,7 @@ class FunctionsEdit
                     echo self::addSimpleTag($tree, '2 ' . $key, $level1tag);
                 //[RC] adjusted, DATE always added via handler!
                 } elseif ($key === 'DATE') {
-                  $handler = app(FunctionsEditPlacHandler::class);
+                  $handler = app(FunctionsEditPlacHandler_20::class);
                   echo $handler->addSimpleTag($tree, '2 ' . $key, $level1tag);
                 //[RC] adjusted, PLAC itself always added via handler!
                 } elseif (($level1tag !== 'NAME') && ($key !== 'PLAC')) {
@@ -919,7 +918,7 @@ class FunctionsEdit
                 // Add level 3/4 tags as appropriate
                 switch ($key) {
                     case 'PLAC':
-                        $handler = app(FunctionsEditPlacHandler::class);
+                        $handler = app(FunctionsEditPlacHandler_20::class);
                         $handler->insertMissingSubtagsPlac($tree, $level1tag);
                         break;
                     case 'EVEN':
@@ -965,7 +964,7 @@ class FunctionsEdit
                         }
                         echo self::addSimpleTag($tree, '3 MAP');
                         
-                        $handler = app(FunctionsEditPlacHandler::class);
+                        $handler = app(FunctionsEditPlacHandler_20::class);
                         //echo self::addSimpleTag($tree, '4 LATI');
                         echo $handler->addSimpleTag($tree, '4 LATI'); //must use this method to create proper 'child_of_'
                         //echo self::addSimpleTag($tree, '4 LONG');

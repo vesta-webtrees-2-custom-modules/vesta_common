@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2021-12-05 11:26+0100\n"
+"POT-Creation-Date: 2022-04-03 20:22+0200\n"
 "PO-Revision-Date: 2021-04-19 10:26+0000\n"
 "Last-Translator: Eyolf Østrem <eyolf@oestrem.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nb_NO/>\n"
@@ -28,7 +28,7 @@ msgstr "unntatt %1$s"
 msgid "%1$s filters"
 msgstr "%1$s filtre"
 
-#: resources/views/vesta_config.phtml:57
+#: resources/views/vesta_config.phtml:58
 #, php-format
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s Er det astronomiske symbolet på asteroiden Vesta, oppkalt etter den romerske gudinnen for ildsted, hjem og familie."
@@ -41,68 +41,63 @@ msgstr "(hele modulen)"
 msgid "(specific functionality)"
 msgstr "(spesifikk funksjonalitet)"
 
-#: VestaCommonLibModule.php:60
+#: VestaCommonLibModule.php:61
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr "En modul som gir felles klasser og oversettelser for andre 'Vesta' tilpassede moduler."
 
-#: resources/views/vesta_config.phtml:41
+#: resources/views/vesta_config.phtml:42
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
 msgstr "A: Ulike moduler kan bruke samme komponent, for eksempel ved å forbedre «Fakta og hendelser»-fanen på ulike steder. Uten hooks måtte vi bruke flere modulspesifikke faner."
 
-#: resources/views/vesta_config.phtml:65
+#: resources/views/vesta_config.phtml:66
 msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
 msgstr "A: Hver modul har en Readme-fil med grunnleggende informasjon (vises best on-line, men også inkludert i modulens mappe)."
 
-#: resources/views/vesta_config.phtml:50
+#: resources/views/vesta_config.phtml:51
 msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
 msgstr "A: Hooks aktiveres vanligvis automatisk når den respektive egendefinerte modulen er aktivert. Se også de respektive innstillingene for kilde- og målmodulen."
 
-#: resources/views/vesta_config.phtml:56
+#: resources/views/vesta_config.phtml:57
 msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
 msgstr "A: Vesta-symbolet brukes hovedsakelig til å gruppere relaterte moduler i moduladministrasjonslisten."
 
-#: resources/views/vesta_config.phtml:34
+#: resources/views/vesta_config.phtml:35
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "A: Via hooks. Hooks tillater moduler å utvide funksjonaliteten til andre komponenter, uten å måtte implementere hele komponenten på nytt. Webtrees bruker hooks f.eks i bunnteksten på siden, og for historiske hendelser."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:170
+#: replacedWebtrees/Functions/FunctionsEdit.php:169
 msgid "All"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:459
+#: replacedWebtrees/Functions/FunctionsEdit.php:458
 msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:457
+#: replacedWebtrees/Functions/FunctionsEdit.php:456
 msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
 msgstr ""
 
-#. I18N: Module Configuration, also checkbox on facts and events tab
-#: CommonI18N.php:153
-msgid "Associated facts and events"
-msgstr "Tilknyttede fakta og hendelser"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:619
+#: replacedWebtrees/Functions/FunctionsEdit.php:618
 msgid "Civil marriage"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:491
+#: replacedWebtrees/Functions/FunctionsEdit.php:490
 msgid "Create a media object"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:532
+#: replacedWebtrees/Functions/FunctionsEdit.php:531
 msgid "Create a repository"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:482
+#: replacedWebtrees/Functions/FunctionsEdit.php:481
 msgid "Create a shared note"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:546
+#: replacedWebtrees/Functions/FunctionsEdit.php:545
 msgid "Create a source"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:554
+#: replacedWebtrees/Functions/FunctionsEdit.php:553
 msgid "Create a submitter"
 msgstr ""
 
@@ -111,7 +106,7 @@ msgstr ""
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr "Fjern merket for at tittelen skal vises nøyaktig som den opprinnelige tittelen."
 
-#: resources/views/vesta_config.phtml:43
+#: resources/views/vesta_config.phtml:44
 msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
 msgstr "Ulike moduler kan også kobles dynamisk for å gi bestemte data, for eksempel stedsdata for hendelsessteder."
 
@@ -125,25 +120,25 @@ msgstr "Viste data"
 msgid "Displayed title"
 msgstr "Vist tittel"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:608
+#: replacedWebtrees/Functions/FunctionsEdit.php:607
 msgid "Edit the name"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:169
+#: CommonI18N.php:165
 msgid "Facts and Events Tab Settings"
 msgstr "Innstillinger for «Fakta og hendelser»-fanen"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:542
+#: replacedWebtrees/Functions/FunctionsEdit.php:541
 msgid "Female"
 msgstr ""
 
-#: resources/views/vesta_config.phtml:58
+#: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
 msgstr "Hvis symbolet vises feil, for eksempel som et rektangel, kontrollerer du nettleserens unicode-støttefunksjoner."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:161
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "Spesielt hvis begge listene er tomme, vises ingen flere fakta og hendelser av denne typen."
 
@@ -187,7 +182,7 @@ msgstr "Leverandører av posisjonsdata"
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:542
+#: replacedWebtrees/Functions/FunctionsEdit.php:541
 msgid "Male"
 msgstr ""
 
@@ -206,11 +201,11 @@ msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Flytt"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:132
+#: replacedWebtrees/Functions/FunctionsEdit.php:131
 msgid "No calendar conversion"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:223
+#: replacedWebtrees/Functions/FunctionsEdit.php:222
 msgid "Only managers can edit"
 msgstr ""
 
@@ -224,23 +219,23 @@ msgstr "Alternativer"
 msgid "Provides location data to other custom modules."
 msgstr "Gir posisjonsdata til andre egendefinerte moduler."
 
-#: resources/views/vesta_config.phtml:47
+#: resources/views/vesta_config.phtml:48
 msgid "Q: How do I configure additional hooks?"
 msgstr "Spørsmål: Hvordan konfigurerer jeg flere hooks?"
 
-#: resources/views/vesta_config.phtml:31
+#: resources/views/vesta_config.phtml:32
 msgid "Q: How do the Vesta modules interact?"
 msgstr "Spørsmål: Hvordan samhandler Vesta-modulene?"
 
-#: resources/views/vesta_config.phtml:62
+#: resources/views/vesta_config.phtml:63
 msgid "Q: Is there additional documentation?"
 msgstr "Q: Finnes det ytterligere dokumentasjon?"
 
-#: resources/views/vesta_config.phtml:37
+#: resources/views/vesta_config.phtml:38
 msgid "Q: Ok, but what's the actual benefit for the user?"
 msgstr "Q: Ok, men hva er den faktiske fordelen for brukeren?"
 
-#: resources/views/vesta_config.phtml:53
+#: resources/views/vesta_config.phtml:54
 #, php-format
 msgid "Q: What's with the %1$s symbol?"
 msgstr "Spørsmål: Hva er det med %1$s-symbolet?"
@@ -250,11 +245,11 @@ msgstr "Spørsmål: Hva er det med %1$s-symbolet?"
 msgid "Readme"
 msgstr "Readme"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:621
+#: replacedWebtrees/Functions/FunctionsEdit.php:620
 msgid "Registered partnership"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:620
+#: replacedWebtrees/Functions/FunctionsEdit.php:619
 msgid "Religious marriage"
 msgstr ""
 
@@ -277,29 +272,29 @@ msgid "Requires the '%1$s %2$s' module."
 msgstr "Krever modulen %1$s %2$s."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:161
+#: CommonI18N.php:157
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Begrens til denne listen over GEDCOM-familiefakta og -hendelser. Du kan endre denne listen ved å fjerne eller legge til fakta- og hendelsesnavn, til og med egendefinerte etter behov."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:157
+#: CommonI18N.php:153
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Begrens til denne listen over individuelle fakta og hendelser i GEDCOM. Du kan endre denne listen ved å fjerne eller legge til fakta- og hendelsesnavn, til og med egendefinerte etter behov."
 
-#: resources/views/vesta_config.phtml:68
+#: resources/views/vesta_config.phtml:69
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr "Se også %1$s for en oversikt over administrasjon av posisjonsdata i webtrees."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:222
+#: replacedWebtrees/Functions/FunctionsEdit.php:221
 msgid "Show to managers"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:221
+#: replacedWebtrees/Functions/FunctionsEdit.php:220
 msgid "Show to members"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:220
+#: replacedWebtrees/Functions/FunctionsEdit.php:219
 msgid "Show to visitors"
 msgstr ""
 
@@ -313,16 +308,16 @@ msgstr ""
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
 msgstr ""
 
-#: VestaCommonLibModule.php:61
+#: VestaCommonLibModule.php:62
 msgid "This module cannot be disabled."
 msgstr "Denne modulen kan ikke deaktiveres."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:542
+#: replacedWebtrees/Functions/FunctionsEdit.php:541
 msgctxt "unknown gender"
 msgid "Unknown"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:566
+#: replacedWebtrees/Functions/FunctionsEdit.php:565
 msgid "Use this image for charts and on the individual’s page."
 msgstr ""
 
@@ -390,11 +385,11 @@ msgstr "Oversikt over databehandling for Vesta-lokasjon"
 msgid "What's new? "
 msgstr "Hva er nytt? "
 
-#: resources/views/vesta_config.phtml:59
+#: resources/views/vesta_config.phtml:60
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Du må kanskje installere en skrifttype som gir dette symbolet, og for visse nettlesere - Chrome spesielt - denne skrifttypen må være i en av skriftfamiliene som er angitt av webtrees, for eksempel 'Segoe UI Symbol'."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:565
+#: replacedWebtrees/Functions/FunctionsEdit.php:564
 msgid "always"
 msgstr ""
 
@@ -408,12 +403,12 @@ msgstr "Ned"
 msgid "exclude %1$s"
 msgstr "ekskluder %1$s"
 
-#: resources/views/vesta_config.phtml:67
+#: resources/views/vesta_config.phtml:68
 msgid "here"
 msgstr "her"
 
 #. I18N: Examples of valid time formats (hours:minutes:seconds)
-#: replacedWebtrees/Functions/FunctionsEdit.php:561
+#: replacedWebtrees/Functions/FunctionsEdit.php:560
 msgid "hh:mm or hh:mm:ss"
 msgstr ""
 
@@ -421,12 +416,12 @@ msgstr ""
 msgid "map coordinates directly (MAP tag)"
 msgstr "kartkoordinater direkte (MAP-tag)"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:565
+#: replacedWebtrees/Functions/FunctionsEdit.php:564
 msgid "never"
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:153
-#: replacedWebtrees/Functions/FunctionsEdit.php:187
+#: replacedWebtrees/Functions/FunctionsEdit.php:152
+#: replacedWebtrees/Functions/FunctionsEdit.php:186
 msgid "no"
 msgstr ""
 
@@ -450,10 +445,13 @@ msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "Opp"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:154
-#: replacedWebtrees/Functions/FunctionsEdit.php:188
+#: replacedWebtrees/Functions/FunctionsEdit.php:153
+#: replacedWebtrees/Functions/FunctionsEdit.php:187
 msgid "yes"
 msgstr ""
+
+#~ msgid "Associated facts and events"
+#~ msgstr "Tilknyttede fakta og hendelser"
 
 #~ msgid "FamilySearch id"
 #~ msgstr "FamilySearch-ID"

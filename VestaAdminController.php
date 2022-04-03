@@ -2,37 +2,42 @@
 
 namespace Vesta;
 
-use Fisharebest\Webtrees\Http\Controllers\AbstractBaseController;
+use Fisharebest\Webtrees\Http\ViewResponseTrait;
 use Fisharebest\Webtrees\Services\TreeService;
+use Fisharebest\Webtrees\Webtrees;
 use Psr\Http\Message\ResponseInterface;
 use function app;
 use function route;
 
-class VestaAdminController extends AbstractBaseController {
+class VestaAdminController {
 
-  protected $layout = 'layouts/administration';
+    use ViewResponseTrait;
 
-  public static function vestaViewsNamespace(): string {
-    return 'Vesta_Views_Namespace';
-  }
+    protected $moduleName;
 
-  protected $moduleName;
+    public function __construct(string $moduleName) {
+        $this->moduleName = $moduleName;
+        $this->layout = 'layouts/administration';
+    }
 
-  public function __construct(string $moduleName) {
-    $this->moduleName = $moduleName;
-  }
+    //adapted from ModuleController (e.g. listFooters)
+    public function listHooks(
+        $modules,
+        $interface,
+        $title,
+        $description,
+        $access,
+        $sorting): ResponseInterface {
 
-  //adapted from ModuleController (e.g. listFooters)
-  public function listHooks(
-          $modules,
-          $interface,
-          $title,
-          $description,
-          $access,
-          $sorting): ResponseInterface {
-
-    //assumes the namespace has been registered!
-    return $this->viewResponse(VestaAdminController::vestaViewsNamespace() . '::admin/vesta_components', [
+        $view = VestaUtils::vestaViewsNamespace() . '::admin/vesta_components';
+        if (str_starts_with(Webtrees::VERSION, '2.1')) {
+            $view = VestaUtils::vestaViewsNamespace() . '::admin/vesta_components';
+        } else {
+            $view = VestaUtils::vestaViewsNamespace() . '::admin/vesta_components_20';
+        }      
+      
+        //assumes the namespace has been registered!
+        return $this->viewResponse($view, [
                 'interface' => $interface,
                 'description' => $description,
                 'modules' => $modules,
@@ -44,7 +49,6 @@ class VestaAdminController extends AbstractBaseController {
                     'module' => $this->moduleName,
                     'action' => 'Admin'
                 ])
-    ]);
-  }
-
+        ]);
+    }
 }

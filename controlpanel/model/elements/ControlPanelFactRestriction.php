@@ -2,8 +2,6 @@
 
 namespace Vesta\ControlPanelUtils\Model;
 
-use Fisharebest\Webtrees\GedcomTag;
-
 class ControlPanelFactRestriction implements ControlPanelElement {
 
   private $options;
@@ -43,11 +41,11 @@ class ControlPanelFactRestriction implements ControlPanelElement {
   }
   
   public static function createWithIndividualFacts($description, $settingKey, $settingDefaultValue) {
-    return new ControlPanelFactRestriction(GedcomTag::getPicklistFacts('INDI'), $description, $settingKey, $settingDefaultValue);
+    return new ControlPanelFactRestriction(PicklistFacts::getPicklistFactsINDI(), $description, $settingKey, $settingDefaultValue);
   }
   
   public static function createWithFamilyFacts($description, $settingKey, $settingDefaultValue) {
-    return new ControlPanelFactRestriction(GedcomTag::getPicklistFacts('FAM'), $description, $settingKey, $settingDefaultValue);
+    return new ControlPanelFactRestriction(PicklistFacts::getPicklistFactsFAM(), $description, $settingKey, $settingDefaultValue);
   }
 
   public static function createWithFacts($options, $description, $settingKey, $settingDefaultValue) {

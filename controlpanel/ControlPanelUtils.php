@@ -7,6 +7,7 @@ use Cissee\WebtreesExt\ViewUtils;
 use Exception;
 use Fisharebest\Webtrees\FlashMessages;
 use Fisharebest\Webtrees\Module\ModuleInterface;
+use Fisharebest\Webtrees\Webtrees;
 use Psr\Http\Message\ServerRequestInterface;
 use Vesta\ControlPanelUtils\Model\ControlPanelCheckbox;
 use Vesta\ControlPanelUtils\Model\ControlPanelCheckboxInverted;
@@ -19,6 +20,7 @@ use Vesta\ControlPanelUtils\Model\ControlPanelSection;
 use Vesta\ControlPanelUtils\Model\ControlPanelSubsection;
 use Vesta\ControlPanelUtils\Model\ControlPanelTextbox;
 use function csrf_field;
+use function str_starts_with;
 use function view;
 
 class ControlPanelUtils {
@@ -232,7 +234,7 @@ class ControlPanelUtils {
     ?>
     <div class="col-sm-9">
         <?= Bootstrap4::multiSelect(
-     GedcomTag::getPicklistFacts($element->getFamily() ? 'FAM' : 'INDI'), 
+     PicklistFacts::getPicklistFacts($element->getFamily() ? 'FAM' : 'INDI'), 
      explode(',', $value), 
      [
      'id' => $element->getSettingKey(), 
@@ -241,12 +243,19 @@ class ControlPanelUtils {
     </div>
     <?php
     */
+    
+    if (str_starts_with(Webtrees::VERSION, '2.1')) {
+        $clazz = 'tom-select';
+    } else {
+        $clazz = 'select2';
+    }
+    
     echo view('components/select', [
         'name' => $element->getSettingKey() . '[]', 
         'id' => $element->getSettingKey(), 
         'selected' => explode(',', $value), 
         'options' => $element->getOptions(), 
-        'class' => 'select2']);
+        'class' => $clazz]);
   }
 
   public function printControlPanelRange(ControlPanelRange $element) {

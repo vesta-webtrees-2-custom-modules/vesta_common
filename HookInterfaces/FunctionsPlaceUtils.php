@@ -352,8 +352,11 @@ class FunctionsPlaceUtils {
      
   public static function gov2plac(ModuleInterface $module, GovReference $gov, Tree $tree): ?PlaceStructure {
     //Issue #54
-    //expensive, therefore cached
-    return Registry::cache()->array()->remember(FunctionsPlaceUtils::class . 'gov2plac_' . $gov->getId(), static function () use ($module, $gov, $tree): ?PlaceStructure {
+    //expensive, therefore cached 
+    //(in-memory, therefore ok to skip user for cache key!
+    //but safer to add tree to cache key, even if it's reasonable to assume that a single request never targets multiple trees)
+    $cacheKey = FunctionsPlaceUtils::class . 'gov2plac_' . $gov->getId() . '_' . $tree->id();
+    return Registry::cache()->array()->remember($cacheKey, static function () use ($module, $gov, $tree): ?PlaceStructure {
       
       $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $tree, Auth::user())
             ->toArray();

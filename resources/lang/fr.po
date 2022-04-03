@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2021-12-05 11:26+0100\n"
+"POT-Creation-Date: 2022-04-03 20:22+0200\n"
 "PO-Revision-Date: 2022-03-24 09:54+0000\n"
 "Last-Translator: Vincent DENIS <vincent.denis06@gmail.com>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-common/fr/>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +28,7 @@ msgstr "%1$s exclu"
 msgid "%1$s filters"
 msgstr "Filtres %1$s"
 
-#: resources/views/vesta_config.phtml:57
+#: resources/views/vesta_config.phtml:58
 #, php-format
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s est le symbole astronomique de l'astéroïde Vesta, nommé d'après la déesse Romaine du cœur, du foyer et de la famille."
@@ -42,68 +41,63 @@ msgstr "(module entier)"
 msgid "(specific functionality)"
 msgstr "(fonctionnalité spécifique)"
 
-#: VestaCommonLibModule.php:60
+#: VestaCommonLibModule.php:61
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr "Un module fournissant les traductions et classes communes pour les autres modules personnalisés 'Vesta'."
 
-#: resources/views/vesta_config.phtml:41
+#: resources/views/vesta_config.phtml:42
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
 msgstr "R : Différents modules peuvent cibler le même composant, par exemple en améliorant l'onglet actes et événements à divers endroits. Sans les crochets, il faudrait utiliser plusieurs modules particuliers pour chaque onglet."
 
-#: resources/views/vesta_config.phtml:65
+#: resources/views/vesta_config.phtml:66
 msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
 msgstr "A : Chaque module dispose d'un fichier Lisez-moi avec les informations basiques (la lecture en ligne est conseillée, mais il se trouve aussi dans le répertoire d'installation du module)."
 
-#: resources/views/vesta_config.phtml:50
+#: resources/views/vesta_config.phtml:51
 msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
 msgstr "R : Les crochets sont généralement activés automatiquement lorsque le module personnalisé associé est activé. Voir aussi du côté des préférences des modules cible et source respectifs."
 
-#: resources/views/vesta_config.phtml:56
+#: resources/views/vesta_config.phtml:57
 msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
 msgstr "A : Le symbole Vesta est principalement utilisé pour regrouper des modules reliés dans la liste d'administration des modules."
 
-#: resources/views/vesta_config.phtml:34
+#: resources/views/vesta_config.phtml:35
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "R : via des crochets. Les crochets permettent aux modules d'étendre leurs fonctionnalités aux autres composants, sans avoir à réimplémenter tout le composant. Webtrees utilise par exemple les crochets dans le pied de page, et pour l'historique des événements."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:170
+#: replacedWebtrees/Functions/FunctionsEdit.php:169
 msgid "All"
 msgstr "Tous"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:459
+#: replacedWebtrees/Functions/FunctionsEdit.php:458
 msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
 msgstr "Un associé est une autre personne qui a été impliquée dans ce fait ou cet événement, comme un témoin ou un prêtre."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:457
+#: replacedWebtrees/Functions/FunctionsEdit.php:456
 msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
 msgstr "Un associé est une autre personne qui a été impliquée avec cette personne, comme un ami ou un employeur."
 
-#. I18N: Module Configuration, also checkbox on facts and events tab
-#: CommonI18N.php:153
-msgid "Associated facts and events"
-msgstr "Actes et événements associés"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:619
+#: replacedWebtrees/Functions/FunctionsEdit.php:618
 msgid "Civil marriage"
 msgstr "Mariage civil"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:491
+#: replacedWebtrees/Functions/FunctionsEdit.php:490
 msgid "Create a media object"
 msgstr "Créer un objet multimédia"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:532
+#: replacedWebtrees/Functions/FunctionsEdit.php:531
 msgid "Create a repository"
 msgstr "Créer un dépôt"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:482
+#: replacedWebtrees/Functions/FunctionsEdit.php:481
 msgid "Create a shared note"
 msgstr "Créer une note partagée"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:546
+#: replacedWebtrees/Functions/FunctionsEdit.php:545
 msgid "Create a source"
 msgstr "Créer une source"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:554
+#: replacedWebtrees/Functions/FunctionsEdit.php:553
 msgid "Create a submitter"
 msgstr "Créer un émetteur"
 
@@ -112,7 +106,7 @@ msgstr "Créer un émetteur"
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr "Désélectionner afin de faire apparaître le titre identique au titre original."
 
-#: resources/views/vesta_config.phtml:43
+#: resources/views/vesta_config.phtml:44
 msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
 msgstr "Différents modules peuvent aussi être liés dynamiquement pour fournir des données spécifiques, comme des données de localisation pour les lieux des événements."
 
@@ -126,25 +120,25 @@ msgstr "Données affichées"
 msgid "Displayed title"
 msgstr "Titre affiché"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:608
+#: replacedWebtrees/Functions/FunctionsEdit.php:607
 msgid "Edit the name"
 msgstr "Modifier le nom"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:169
+#: CommonI18N.php:165
 msgid "Facts and Events Tab Settings"
 msgstr "Paramètres de l'onglet Actes et Evenements"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:542
+#: replacedWebtrees/Functions/FunctionsEdit.php:541
 msgid "Female"
 msgstr "Femme"
 
-#: resources/views/vesta_config.phtml:58
+#: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
 msgstr "Si le symbole ne s'affiche pas correctement, par exemple sous forme de petit rectangle, vérifier le support unicode de votre navigateur."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:161
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "En particulier si les deux listes sont vides, aucun faits ou événements additionnels de ce type ne seront montrés."
 
@@ -186,12 +180,9 @@ msgstr "Fournisseurs de Données de Localisation"
 #: resources/views/admin/upgrade/wizard.phtml:35
 #, php-format
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
-msgstr ""
-"Assurez-vous que tous les modules personnalisés actifs sont compatibles avec "
-"la nouvelle version de Webtrees %1$s. Vous devrez peut-être également les "
-"mettre à niveau."
+msgstr "Assurez-vous que tous les modules personnalisés actifs sont compatibles avec la nouvelle version de Webtrees %1$s. Vous devrez peut-être également les mettre à niveau."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:542
+#: replacedWebtrees/Functions/FunctionsEdit.php:541
 msgid "Male"
 msgstr "Homme"
 
@@ -210,11 +201,11 @@ msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Déplacer"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:132
+#: replacedWebtrees/Functions/FunctionsEdit.php:131
 msgid "No calendar conversion"
 msgstr "Pas de conversion de calendrier"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:223
+#: replacedWebtrees/Functions/FunctionsEdit.php:222
 msgid "Only managers can edit"
 msgstr "Seuls les gestionnaires peuvent modifier"
 
@@ -228,23 +219,23 @@ msgstr "Options"
 msgid "Provides location data to other custom modules."
 msgstr "Fournit des données de localisation aux autres modules."
 
-#: resources/views/vesta_config.phtml:47
+#: resources/views/vesta_config.phtml:48
 msgid "Q: How do I configure additional hooks?"
 msgstr "Q : comment puis-je configurer des crochets supplémentaires ?"
 
-#: resources/views/vesta_config.phtml:31
+#: resources/views/vesta_config.phtml:32
 msgid "Q: How do the Vesta modules interact?"
 msgstr "Q : Comment interagissent les modules Vesta ?"
 
-#: resources/views/vesta_config.phtml:62
+#: resources/views/vesta_config.phtml:63
 msgid "Q: Is there additional documentation?"
 msgstr "Q : Existe-t-il une documentation supplémentaire ?"
 
-#: resources/views/vesta_config.phtml:37
+#: resources/views/vesta_config.phtml:38
 msgid "Q: Ok, but what's the actual benefit for the user?"
 msgstr "Q : Ok, mais c'est quoi le bénéfice pour l'utilisateur ?"
 
-#: resources/views/vesta_config.phtml:53
+#: resources/views/vesta_config.phtml:54
 #, php-format
 msgid "Q: What's with the %1$s symbol?"
 msgstr "Q : C'est quoi ce symbole %1$s ?"
@@ -254,11 +245,11 @@ msgstr "Q : C'est quoi ce symbole %1$s ?"
 msgid "Readme"
 msgstr "Lisez-moi"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:621
+#: replacedWebtrees/Functions/FunctionsEdit.php:620
 msgid "Registered partnership"
 msgstr "Partenariat enregistré"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:620
+#: replacedWebtrees/Functions/FunctionsEdit.php:619
 msgid "Religious marriage"
 msgstr "Mariage religieux"
 
@@ -281,58 +272,52 @@ msgid "Requires the '%1$s %2$s' module."
 msgstr "Nécessite le module '%1$s %2$s'."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:161
+#: CommonI18N.php:157
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Restreindre à une liste d'actes et d'événements familiaux GEDCOM. Vous pouvez modifier cette liste en supprimant ou ajoutant des noms d'actes ou d'événements, y compris personnalisés, si nécessaire."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:157
+#: CommonI18N.php:153
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Restreindre à une liste d'actes et d'événements individuels GEDCOM. Vous pouvez modifier cette liste en supprimant ou ajoutant des noms d'actes ou d'événements, y compris personnalisés, si nécessaire."
 
-#: resources/views/vesta_config.phtml:68
+#: resources/views/vesta_config.phtml:69
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr "Voir aussi %1$s pour un aperçu de la gestion des données de localisation dans webtrees."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:222
+#: replacedWebtrees/Functions/FunctionsEdit.php:221
 msgid "Show to managers"
 msgstr "Montrer aux gestionnaires"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:221
+#: replacedWebtrees/Functions/FunctionsEdit.php:220
 msgid "Show to members"
 msgstr "Montrer aux membres"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:220
+#: replacedWebtrees/Functions/FunctionsEdit.php:219
 msgid "Show to visitors"
 msgstr "Montrer aux visiteurs"
 
 #: resources/views/admin/upgrade/wizard.phtml:63
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
-msgstr ""
-"Les versions actuellement installées des modules personnalisés suivants "
-"peuvent ne pas être compatibles avec la nouvelle version de Webtrees %1$s, "
-"et il n'y a pas encore de mises à jour disponibles : %2$s"
+msgstr "Les versions actuellement installées des modules personnalisés suivants peuvent ne pas être compatibles avec la nouvelle version de Webtrees %1$s, et il n'y a pas encore de mises à jour disponibles : %2$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:47
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
-msgstr ""
-"Les versions actuellement installées des modules personnalisés suivants "
-"peuvent ne pas être compatibles avec la nouvelle version de Webtrees %1$s, "
-"mais les modules ont des mises à jour disponibles : %2$s"
+msgstr "Les versions actuellement installées des modules personnalisés suivants peuvent ne pas être compatibles avec la nouvelle version de Webtrees %1$s, mais les modules ont des mises à jour disponibles : %2$s"
 
-#: VestaCommonLibModule.php:61
+#: VestaCommonLibModule.php:62
 msgid "This module cannot be disabled."
 msgstr "Ce module ne peut être désactivé."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:542
+#: replacedWebtrees/Functions/FunctionsEdit.php:541
 msgctxt "unknown gender"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:566
+#: replacedWebtrees/Functions/FunctionsEdit.php:565
 msgid "Use this image for charts and on the individual’s page."
 msgstr "Utilisez cette image pour les graphiques et sur la page de l'individu."
 
@@ -400,11 +385,11 @@ msgstr "Aperçu de la gestion des données de localisation Vesta"
 msgid "What's new? "
 msgstr "Nouveautés "
 
-#: resources/views/vesta_config.phtml:59
+#: resources/views/vesta_config.phtml:60
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Vous pourriez avoir à installer une police permettant l'affichage de ce symbole, et pour certains navigateurs - Chrome en particulier - cette police doit être l'une des polices spécifiées par webtrees, par exemple 'Segoe UI Symbol'."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:565
+#: replacedWebtrees/Functions/FunctionsEdit.php:564
 msgid "always"
 msgstr "toujours"
 
@@ -418,12 +403,12 @@ msgstr "en bas"
 msgid "exclude %1$s"
 msgstr "exclure %1$s"
 
-#: resources/views/vesta_config.phtml:67
+#: resources/views/vesta_config.phtml:68
 msgid "here"
 msgstr "ici"
 
 #. I18N: Examples of valid time formats (hours:minutes:seconds)
-#: replacedWebtrees/Functions/FunctionsEdit.php:561
+#: replacedWebtrees/Functions/FunctionsEdit.php:560
 msgid "hh:mm or hh:mm:ss"
 msgstr "hh:mm ou hh:mm:ss"
 
@@ -431,12 +416,12 @@ msgstr "hh:mm ou hh:mm:ss"
 msgid "map coordinates directly (MAP tag)"
 msgstr "placer les coordonnées directement (tag MAP)"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:565
+#: replacedWebtrees/Functions/FunctionsEdit.php:564
 msgid "never"
 msgstr "jamais"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:153
-#: replacedWebtrees/Functions/FunctionsEdit.php:187
+#: replacedWebtrees/Functions/FunctionsEdit.php:152
+#: replacedWebtrees/Functions/FunctionsEdit.php:186
 msgid "no"
 msgstr "non"
 
@@ -460,8 +445,8 @@ msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "en haut"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:154
-#: replacedWebtrees/Functions/FunctionsEdit.php:188
+#: replacedWebtrees/Functions/FunctionsEdit.php:153
+#: replacedWebtrees/Functions/FunctionsEdit.php:187
 msgid "yes"
 msgstr "oui"
 
@@ -518,6 +503,9 @@ msgstr "oui"
 
 #~ msgid "Associate"
 #~ msgstr "Associer"
+
+#~ msgid "Associated facts and events"
+#~ msgstr "Actes et événements associés"
 
 #~ msgid "Author"
 #~ msgstr "Auteur"

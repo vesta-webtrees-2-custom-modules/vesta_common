@@ -10,6 +10,7 @@ class VestalResponse implements JsonSerializable {
   private $classAttr;
   private $html;
   
+  #[\ReturnTypeWillChange]
   public function jsonSerialize() {
     return [
       'classAttr' => $this->classAttr(),

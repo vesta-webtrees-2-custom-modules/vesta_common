@@ -18,26 +18,28 @@
           $("#wt-ajax-modal-vesta")
             .on("show.bs.modal", function (event) {
                 let modal_content = this.querySelector(".modal-content");
-        
-                // If we need to paste the result into a tom-select control
-                modal_content.dataset.wtSelectId = event.relatedTarget.dataset.wtSelectId;
+
+                // If we need to paste the result into a select2 control
+                modal_content.dataset.selectId = event.relatedTarget.dataset.selectId;
 
                 // Clear existing content (to prevent FOUC) and load new content.
                 $(modal_content)
                     .empty()
-                    .load(event.relatedTarget.dataset.wtHref, function () {
-                        <?php
-                            //[RC] generalized, see code below
-                            //name 'select2Initializers' is legacy, from webtrees 2.1 on actually $tomSelectInitializers
-                        
-                            // Activate autocomplete fields
-                            //this.querySelectorAll('.tom-select').forEach(element => webtrees.initializeTomSelect(element));
-                        ?>
-                        <?php  
-                        foreach ($select2Initializers as $select2Initializer) {
-                            echo $select2Initializer;
-                        }  
-                        ?>
+                    .load(event.relatedTarget.dataset.href, function () {
+                      <?php  
+                      foreach ($select2Initializers as $select2Initializer) {
+                        echo $select2Initializer;
+                      }  
+                      ?>
+                      /* 
+                        //example default initializer, cf ajax.phtml:
+  
+                        // Activate autocomplete fields
+                        $(".select2", $(this)).select2({
+                          dropdownParent: $(this),
+                          escapeMarkup: function (x) { return x }
+                        });
+                       */ 
                     });
             });
     <?php if (!$ajax) : ?>

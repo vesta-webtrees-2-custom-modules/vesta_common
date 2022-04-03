@@ -1,0 +1,26 @@
+<?php
+
+use Fisharebest\Webtrees\Date;
+use Fisharebest\Webtrees\Fact;
+use Fisharebest\Webtrees\GedcomRecord;
+use Fisharebest\Webtrees\Registry;
+
+/**
+ * @var Fact         $fact
+ * @var GedcomRecord $record
+ */
+
+//non-PLAC stuff extracted from original fact-place
+?>
+
+<?php if (preg_match('/2 TEMP (.+)/', $fact->gedcom(), $match)) : ?>
+    <?= Registry::elementFactory()->make($fact->tag() . ':TEMP')->labelValue($match[1], $record->tree()) ?>
+<?php endif ?>
+
+<?php if (preg_match('/2 STAT (.+)/', $fact->gedcom(), $match)) : ?>
+    <?= Registry::elementFactory()->make($fact->tag() . ':STAT')->labelValue($match[1], $record->tree()) ?>
+
+    <?php if (preg_match('/3 DATE (.+)/', $fact->gedcom(), $match)) : ?>
+        <?= Registry::elementFactory()->make($fact->tag() . ':STAT:DATE')->labelValue((new Date($match[1]))->display(), $record->tree()) ?>
+    <?php endif ?>
+<?php endif ?>

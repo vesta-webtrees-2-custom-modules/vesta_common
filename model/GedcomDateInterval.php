@@ -6,6 +6,8 @@ use Closure;
 use Fisharebest\Webtrees\Carbon;
 use Fisharebest\Webtrees\Date\AbstractCalendarDate;
 use Fisharebest\Webtrees\Date\GregorianDate;
+use Fisharebest\Webtrees\Registry;
+use Fisharebest\Webtrees\Webtrees;
 use Illuminate\Support\Collection;
 use JsonSerializable;
 use Vesta\Model\DateUtils;
@@ -47,6 +49,7 @@ class GedcomDateInterval implements JsonSerializable {
   /* @var $toIsInexact bool */
   private $toIsInexact;
   
+  #[\ReturnTypeWillChange]
   public function jsonSerialize() {
     return [
       'from' => $this->from,
@@ -131,13 +134,23 @@ class GedcomDateInterval implements JsonSerializable {
   }
 
   public static function createNow(): GedcomDateInterval {
-    $startjd = Carbon::now()->julianDay();
+    if (str_starts_with(Webtrees::VERSION, '2.1')) {
+        $startjd = Registry::timestampFactory()->now()->julianDay();
+    } else {
+        $startjd = Carbon::now()->julianDay();
+    }
+    
     $endjd = $startjd;
     return new GedcomDateInterval($startjd, $endjd);
   }
   
   public static function createYear(int $year): GedcomDateInterval {
-    $startjd = Carbon::createFromDate($year)->julianDay();
+    if (str_starts_with(Webtrees::VERSION, '2.1')) {
+        $startjd = Registry::timestampFactory()->fromString($year, 'Y')->julianDay();
+    } else {
+        $startjd = Carbon::createFromDate($year)->julianDay();
+    }
+    
     $endjd = $startjd;
     return new GedcomDateInterval($startjd, $endjd);
   }

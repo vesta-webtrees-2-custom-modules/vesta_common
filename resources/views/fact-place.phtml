@@ -1,0 +1,19 @@
+<?php
+
+use Cissee\Webtrees\Module\PersonalFacts\IndividualFactsTabModuleExtended;
+use Vesta\Model\PlaceStructure;
+use Vesta\VestaUtils;
+
+/**
+ * @var PlaceStructure                   $ps
+ * @var IndividualFactsTabModuleExtended $module
+ */
+
+?>
+
+<div class="wt-fact-place">
+    <?= view(VestaUtils::vestaViewsNamespace() . '::fact-place-actual', [
+        'ps' => $ps, 
+        'module' => $module,
+        'useVestals' => false]) ?>
+</div>

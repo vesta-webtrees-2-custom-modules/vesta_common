@@ -2,10 +2,8 @@
 
 namespace Vesta;
 
-use Fisharebest\Webtrees\Carbon;
 use Fisharebest\Webtrees\Exceptions\HttpAccessDeniedException;
 use Fisharebest\Webtrees\Exceptions\HttpNotFoundException;
-
 use Fisharebest\Webtrees\Schema\MigrationInterface;
 use Fisharebest\Webtrees\View;
 use Illuminate\Database\Capsule\Manager as DB;
@@ -15,6 +13,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Vesta\ControlPanelUtils\ControlPanelUtils;
 use Vesta\ControlPanelUtils\Model\ControlPanelPreferences;
+use function GuzzleHttp\json_decode;
 use function redirect;
 use function response;
 use function route;
@@ -166,7 +165,7 @@ trait VestaModuleTrait {
     $utils->printPrefs($this->createPrefs(), $this->name());
     $prefs = ob_get_clean();
     
-    $innerHtml = view(VestaAdminController::vestaViewsNamespace() . '::vesta_config', [
+    $innerHtml = view(VestaUtils::vestaViewsNamespace() . '::vesta_config', [
                 'title' => $this->title(),
                 'vesta' => $this->getVestaSymbol(),
                 'fullDescription' => $this->getFullDescription(),
@@ -248,10 +247,6 @@ trait VestaModuleTrait {
   }
 
   ////////////////////////////////////////////////////////////////////////////////
-
-  protected function vestaViewsNamespace(): string {
-    return 'Vesta_Views_Namespace';
-  }
   
   public function boot(): void {    
     
@@ -259,7 +254,7 @@ trait VestaModuleTrait {
     View::registerNamespace($this->name(), $this->resourcesFolder() . 'views/');
     
     // and for Vesta views.
-    View::registerNamespace(VestaAdminController::vestaViewsNamespace(), __DIR__ . '/resources/views/');
+    View::registerNamespace(VestaUtils::vestaViewsNamespace(), __DIR__ . '/resources/views/');
     
     $this->onBoot();
   }
@@ -374,7 +369,7 @@ trait VestaModuleTrait {
 
     $mime_type = $mime_types[$extension] ?? 'application/octet-stream';
 
-    //$expiry_date = Carbon::now()->addYears(10)->toDateTimeString();
+    //$expiry_date = Registry::timestampFactory()->now()->addYears(10)->toDateTimeString();
     
     $headers = [
         'Content-Type' => $mime_type,
