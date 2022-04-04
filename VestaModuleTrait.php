@@ -31,7 +31,7 @@ trait VestaModuleTrait {
 
   public function getTabTitle($mainTabTitle) {
     $prefix = '';
-    $vesta_show = $this->getPreference('VESTA_TAB', '1');
+    $vesta_show = boolval($this->getPreference('VESTA_TAB', '1'));
     if ($vesta_show) {
       $prefix = $this->getVestaSymbol() . ' ';
     }
@@ -40,7 +40,7 @@ trait VestaModuleTrait {
 
   public function getChartTitle($mainChartTitle) {
     $prefix = '';
-    $vesta_show = $this->getPreference('VESTA_CHART', '1');
+    $vesta_show = boolval($this->getPreference('VESTA_CHART', '1'));
     if ($vesta_show) {
       $prefix = $this->getVestaSymbol() . ' ';
     }
@@ -49,7 +49,7 @@ trait VestaModuleTrait {
 
   public function getListTitle($mainListTitle) {
     $prefix = '';
-    $vesta_show = $this->getPreference('VESTA_LIST', '1');
+    $vesta_show = boolval($this->getPreference('VESTA_LIST', '1'));
     if ($vesta_show) {
       $prefix = $this->getVestaSymbol() . ' ';
     }
@@ -58,7 +58,7 @@ trait VestaModuleTrait {
 
   public function getMenuTitle($mainMenuTitle) {
     $prefix = '';
-    $vesta_show = $this->getPreference('VESTA_MENU', '1');
+    $vesta_show = boolval($this->getPreference('VESTA_MENU', '1'));
     if ($vesta_show) {
       $prefix = $this->getVestaSymbol() . ' ';
     }
@@ -67,7 +67,7 @@ trait VestaModuleTrait {
   
   public function getSidebarTitle($mainTabTitle) {
     $prefix = '';
-    $vesta_show = $this->getPreference('VESTA_SIDEBAR', '1');
+    $vesta_show = boolval($this->getPreference('VESTA_SIDEBAR', '1'));
     if ($vesta_show) {
       $prefix = $this->getVestaSymbol() . ' ';
     }
@@ -76,7 +76,7 @@ trait VestaModuleTrait {
   
   public function title(): string {
     $prefix = '';
-    $vesta_show = true/*$this->getPreference('VESTA', '1')*/;
+    $vesta_show = true/*boolval($this->getPreference('VESTA', '1'))*/;
     if ($vesta_show) {
       $prefix = $this->getVestaSymbol() . ' ';
     }
@@ -212,7 +212,7 @@ trait VestaModuleTrait {
   //same as Database::getSchema, but use module settings instead of site settings (Issue #3 in personal_facts_with_hooks)
   protected function updateSchema($namespace, $schema_name, $target_version): bool {
     try {
-      $current_version = (int) $this->getPreference($schema_name);
+      $current_version = intval($this->getPreference($schema_name));
     } catch (PDOException $ex) {
       // During initial installation, the site_preference table won’t exist.
       $current_version = 0;
