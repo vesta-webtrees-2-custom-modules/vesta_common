@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 19:34+0200\n"
+"POT-Creation-Date: 2022-04-06 21:14+0200\n"
 "PO-Revision-Date: 2021-11-30 22:53+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/cs/>\n"
@@ -33,23 +33,6 @@ msgstr "%1$s filtry"
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s je astronomický symbol asteroidu Vesta, pojmenovaného po římské bohyni krbu, domova a rodiny."
 
-#: resources/views/fact-association-structure.phtml:68
-#, php-format
-msgid "(aged %s)"
-msgstr ""
-
-#: resources/views/fact-association-structure.phtml:65
-#, php-format
-msgctxt "Female"
-msgid "(aged %s)"
-msgstr ""
-
-#: resources/views/fact-association-structure.phtml:62
-#, php-format
-msgctxt "Male"
-msgid "(aged %s)"
-msgstr ""
-
 #: resources/views/admin/vesta_components.phtml:25
 #: resources/views/admin/vesta_components_20.phtml:25
 msgid "(entire module)"
@@ -59,12 +42,6 @@ msgstr "(celý modul)"
 #: resources/views/admin/vesta_components_20.phtml:27
 msgid "(specific functionality)"
 msgstr "(specifická funkcionalita)"
-
-#: resources/views/fact-association-structure.phtml:135
-#: resources/views/fact-association-structure.phtml:138
-#, php-format
-msgid "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
-msgstr "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
 
 #: VestaCommonLibModule.php:61
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
@@ -89,10 +66,6 @@ msgstr "A: Symbol Vesta je použit hlavně k seskupení modulů v seznamu modul�
 #: resources/views/vesta_config.phtml:35
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "A: Přes háčky (hooky). Háčky umožňují modulům rozšiřovat funkčnost ostatních komponent, aniž by bylo nutné přepracovat celou komponentu. Webtrees používá háčky např. u zápatí stránky a u historických událostí."
-
-#: resources/views/fact-association-structure.phtml:138
-msgid "Associate"
-msgstr "Přidružená osoba"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:147
@@ -379,6 +352,9 @@ msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "výše"
 
+#~ msgid "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
+#~ msgstr "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
+
 #~ msgid "Abbreviation"
 #~ msgstr "Zkratka"
 
@@ -438,6 +414,9 @@ msgstr "výše"
 
 #~ msgid "Annulment"
 #~ msgstr "Anulování"
+
+#~ msgid "Associate"
+#~ msgstr "Přidružená osoba"
 
 #~ msgid "Associated facts and events"
 #~ msgstr "Fakta a události společníků"

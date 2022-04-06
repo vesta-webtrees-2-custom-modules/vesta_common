@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 19:34+0200\n"
+"POT-Creation-Date: 2022-04-06 21:14+0200\n"
 "PO-Revision-Date: 2021-03-10 17:02+0000\n"
 "Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/tr/>\n"
@@ -33,23 +33,6 @@ msgstr "%1$s filtreleri"
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s; ocağın, evin ve ailenin Roma tanrıçasının adını taşıyan asteroit Vesta'nın astronomik sembolüdür."
 
-#: resources/views/fact-association-structure.phtml:68
-#, php-format
-msgid "(aged %s)"
-msgstr ""
-
-#: resources/views/fact-association-structure.phtml:65
-#, php-format
-msgctxt "Female"
-msgid "(aged %s)"
-msgstr ""
-
-#: resources/views/fact-association-structure.phtml:62
-#, php-format
-msgctxt "Male"
-msgid "(aged %s)"
-msgstr ""
-
 #: resources/views/admin/vesta_components.phtml:25
 #: resources/views/admin/vesta_components_20.phtml:25
 msgid "(entire module)"
@@ -59,12 +42,6 @@ msgstr "(tüm modül)"
 #: resources/views/admin/vesta_components_20.phtml:27
 msgid "(specific functionality)"
 msgstr "(özel işlevsellik)"
-
-#: resources/views/fact-association-structure.phtml:135
-#: resources/views/fact-association-structure.phtml:138
-#, php-format
-msgid "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
-msgstr ""
 
 #: VestaCommonLibModule.php:61
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
@@ -89,10 +66,6 @@ msgstr "C: Vesta sembolü esas olarak modül yönetim listesindeki ilgili modül
 #: resources/views/vesta_config.phtml:35
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "C: Kancalar aracılığıyla. Kancalar, modüllerin tüm bileşeni yeniden uygulamaya gerek kalmadan diğer bileşenlerin işlevselliğini genişletmesine izin verir. Webtrees, örneğin sayfa altbilgisinde ve tarihi olaylar için kancalar kullanır."
-
-#: resources/views/fact-association-structure.phtml:138
-msgid "Associate"
-msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:147

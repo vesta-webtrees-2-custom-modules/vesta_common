@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 19:34+0200\n"
+"POT-Creation-Date: 2022-04-06 21:14+0200\n"
 "PO-Revision-Date: 2021-07-21 01:36+0000\n"
 "Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/vi/>\n"
@@ -33,23 +33,6 @@ msgstr "Bộ lọc %1$s"
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s là biểu tượng thiên văn của tiểu hành tinh Vesta, được đặt theo tên của nữ thần lò sưởi, ngôi nhà và gia đình của người La Mã."
 
-#: resources/views/fact-association-structure.phtml:68
-#, php-format
-msgid "(aged %s)"
-msgstr ""
-
-#: resources/views/fact-association-structure.phtml:65
-#, php-format
-msgctxt "Female"
-msgid "(aged %s)"
-msgstr ""
-
-#: resources/views/fact-association-structure.phtml:62
-#, php-format
-msgctxt "Male"
-msgid "(aged %s)"
-msgstr ""
-
 #: resources/views/admin/vesta_components.phtml:25
 #: resources/views/admin/vesta_components_20.phtml:25
 msgid "(entire module)"
@@ -59,12 +42,6 @@ msgstr "(toàn bộ mô-đun)"
 #: resources/views/admin/vesta_components_20.phtml:27
 msgid "(specific functionality)"
 msgstr "(chức năng cụ thể)"
-
-#: resources/views/fact-association-structure.phtml:135
-#: resources/views/fact-association-structure.phtml:138
-#, php-format
-msgid "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
-msgstr ""
 
 #: VestaCommonLibModule.php:61
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
@@ -89,10 +66,6 @@ msgstr "Trả lời: Biểu tượng Vesta chủ yếu được sử dụng đ�
 #: resources/views/vesta_config.phtml:35
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "Trả lời: Qua móc câu. Hooks cho phép các mô-đun mở rộng chức năng của các thành phần khác mà không cần phải triển khai lại toàn bộ thành phần. Webtrees sử dụng hooks, ví dụ: trong chân trang và cho các sự kiện lịch sử."
-
-#: resources/views/fact-association-structure.phtml:138
-msgid "Associate"
-msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:147

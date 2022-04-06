@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 19:34+0200\n"
+"POT-Creation-Date: 2022-04-06 21:14+0200\n"
 "PO-Revision-Date: 2022-03-24 09:54+0000\n"
 "Last-Translator: Vincent DENIS <vincent.denis06@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/fr/>\n"
@@ -33,23 +33,6 @@ msgstr "Filtres %1$s"
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s est le symbole astronomique de l'astéroïde Vesta, nommé d'après la déesse Romaine du cœur, du foyer et de la famille."
 
-#: resources/views/fact-association-structure.phtml:68
-#, php-format
-msgid "(aged %s)"
-msgstr ""
-
-#: resources/views/fact-association-structure.phtml:65
-#, php-format
-msgctxt "Female"
-msgid "(aged %s)"
-msgstr ""
-
-#: resources/views/fact-association-structure.phtml:62
-#, php-format
-msgctxt "Male"
-msgid "(aged %s)"
-msgstr ""
-
 #: resources/views/admin/vesta_components.phtml:25
 #: resources/views/admin/vesta_components_20.phtml:25
 msgid "(entire module)"
@@ -59,12 +42,6 @@ msgstr "(module entier)"
 #: resources/views/admin/vesta_components_20.phtml:27
 msgid "(specific functionality)"
 msgstr "(fonctionnalité spécifique)"
-
-#: resources/views/fact-association-structure.phtml:135
-#: resources/views/fact-association-structure.phtml:138
-#, php-format
-msgid "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
-msgstr ""
 
 #: VestaCommonLibModule.php:61
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
@@ -89,10 +66,6 @@ msgstr "A : Le symbole Vesta est principalement utilisé pour regrouper des modu
 #: resources/views/vesta_config.phtml:35
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "R : via des crochets. Les crochets permettent aux modules d'étendre leurs fonctionnalités aux autres composants, sans avoir à réimplémenter tout le composant. Webtrees utilise par exemple les crochets dans le pied de page, et pour l'historique des événements."
-
-#: resources/views/fact-association-structure.phtml:138
-msgid "Associate"
-msgstr "Associer"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:147
@@ -438,6 +411,9 @@ msgstr "en haut"
 
 #~ msgid "Annulment"
 #~ msgstr "Annulation"
+
+#~ msgid "Associate"
+#~ msgstr "Associer"
 
 #~ msgid "Associated facts and events"
 #~ msgstr "Actes et événements associés"

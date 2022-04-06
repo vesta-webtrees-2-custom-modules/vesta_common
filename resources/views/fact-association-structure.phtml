@@ -7,7 +7,6 @@ use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\Family;
 use Fisharebest\Webtrees\Gedcom;
-use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Individual;
 use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Services\RelationshipService;
@@ -59,13 +58,13 @@ foreach ($amatches as $amatch) {
             $age = new Age($person->getBirthDate(), $fact->date());
             switch ($person->sex()) {
                 case 'M':
-                    $age_text = ' ' . I18N::translateContext('Male', '(aged %s)', (string) $age);
+                    $age_text = ' ' . MoreI18N::xlateContext('Male', '(aged %s)', (string) $age);
                     break;
                 case 'F':
-                    $age_text = ' ' . I18N::translateContext('Female', '(aged %s)', (string) $age);
+                    $age_text = ' ' . MoreI18N::xlateContext('Female', '(aged %s)', (string) $age);
                     break;
                 default:
-                    $age_text = ' ' . I18N::translate('(aged %s)', (string) $age);
+                    $age_text = ' ' . MoreI18N::xlate('(aged %s)', (string) $age);
                     break;
             }
         } else {
@@ -132,10 +131,10 @@ foreach ($amatches as $amatch) {
         //[RC] adjusted
         $value = implode('', $values);
         
-        $asso  = I18N::translate('<span class="label">%1$s:</span> <span class="field" dir="auto">%2$s</span>', $label, $value);
+        $asso  = MoreI18N::xlate('<span class="label">%1$s:</span> <span class="field" dir="auto">%2$s</span>', $label, $value);
     } elseif (!$person && Auth::isEditor($fact->record()->tree())) {
         $value = '<span class="error">' . $amatch[2] . '</span>';
-        $asso  = I18N::translate('<span class="label">%1$s:</span> <span class="field" dir="auto">%2$s</span>', I18N::translate('Associate'), $value);
+        $asso  = MoreI18N::xlate('<span class="label">%1$s:</span> <span class="field" dir="auto">%2$s</span>', MoreI18N::xlate('Associate'), $value);
     } else {
         $asso = '';
     }
