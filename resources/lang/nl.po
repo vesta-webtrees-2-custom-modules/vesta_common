@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 19:32+0200\n"
+"POT-Creation-Date: 2022-04-06 19:34+0200\n"
 "PO-Revision-Date: 2021-10-17 10:35+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nl/>\n"
@@ -157,10 +157,6 @@ msgstr "Het symbool %1$s opnemen in de zijbalktitel"
 msgid "Include the %1$s symbol in the tab title"
 msgstr "Het %1$s-symbool opnemen in de titel van het tabblad"
 
-#: resources/views/layouts/administration_20.phtml:60
-msgid "Language"
-msgstr "Taal"
-
 #. I18N: Module Configuration
 #: CommonI18N.php:93
 msgid "Location Data Providers"
@@ -187,10 +183,6 @@ msgstr "Verplaats"
 msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Verplaats"
-
-#: resources/views/layouts/administration_20.phtml:56
-msgid "My page"
-msgstr "Mijn pagina"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:115
@@ -260,15 +252,6 @@ msgstr "Beperken tot deze lijst van GEDCOM-persoonsfeiten en -gebeurtenissen. In
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr "Zie ook %1$s voor een overzicht van locatiegegevensbeheer in webtrees."
-
-#: resources/views/layouts/administration_20.phtml:69
-msgid "Sign out"
-msgstr "Afmelden"
-
-#. I18N: Skip over the headers and menus, to the main content of the page
-#: resources/views/layouts/administration_20.phtml:50
-msgid "Skip to content"
-msgstr "Spring naar inhoud"
 
 #: resources/views/admin/upgrade/wizard.phtml:63
 #, php-format
@@ -355,10 +338,6 @@ msgstr "Wat is er nieuw? "
 #: resources/views/vesta_config.phtml:60
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Het kan zijn dat u een lettertype moet installeren dat dit symbool bevat, en voor bepaalde browsers - met name Chrome - moet dit lettertype zich bevinden in een van de lettertypefamilies die door webtrees zijn opgegeven, zoals 'Segoe UI Symbol'."
-
-#: resources/views/layouts/administration_20.phtml:78
-msgid "close"
-msgstr "sluiten"
 
 #: resources/views/admin/vesta_components.phtml:31
 #: resources/views/admin/vesta_components_20.phtml:31
@@ -889,6 +868,9 @@ msgstr "omhoog"
 #~ msgid "LDS spouse sealing"
 #~ msgstr "LDS-verzegeling aan huwelijkspartner"
 
+#~ msgid "Language"
+#~ msgstr "Taal"
+
 #~ msgid "Last change"
 #~ msgstr "Laatste wijziging"
 
@@ -969,6 +951,9 @@ msgstr "omhoog"
 
 #~ msgid "Military service"
 #~ msgstr "Militaire dienst"
+
+#~ msgid "My page"
+#~ msgstr "Mijn pagina"
 
 #~ msgid "Name"
 #~ msgstr "Naam"
@@ -1241,6 +1226,12 @@ msgstr "omhoog"
 #~ msgid "Show to visitors"
 #~ msgstr "Toon aan bezoekers"
 
+#~ msgid "Sign out"
+#~ msgstr "Afmelden"
+
+#~ msgid "Skip to content"
+#~ msgstr "Spring naar inhoud"
+
 #~ msgid "Slide show"
 #~ msgstr "Diavoorstelling"
 
@@ -1343,6 +1334,9 @@ msgstr "omhoog"
 
 #~ msgid "by"
 #~ msgstr "door"
+
+#~ msgid "close"
+#~ msgstr "sluiten"
 
 #~ msgid "hh:mm or hh:mm:ss"
 #~ msgstr "uu:mm of uu:mm:ss"

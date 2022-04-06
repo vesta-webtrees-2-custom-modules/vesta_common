@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 19:32+0200\n"
+"POT-Creation-Date: 2022-04-06 19:34+0200\n"
 "PO-Revision-Date: 2021-04-18 22:26+0000\n"
 "Last-Translator: Hasse Häljeskog <hasse.haljeskog@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/sv/>\n"
@@ -157,10 +157,6 @@ msgstr "Inkludera %1$s-symbolen i sidofältets titel"
 msgid "Include the %1$s symbol in the tab title"
 msgstr "Inkludera %1$s-symbolen i flikens titel"
 
-#: resources/views/layouts/administration_20.phtml:60
-msgid "Language"
-msgstr ""
-
 #. I18N: Module Configuration
 #: CommonI18N.php:93
 msgid "Location Data Providers"
@@ -187,10 +183,6 @@ msgstr "Flytta"
 msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Flytta"
-
-#: resources/views/layouts/administration_20.phtml:56
-msgid "My page"
-msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:115
@@ -260,15 +252,6 @@ msgstr "Begränsa till denna lista över GEDCOM individuella fakta och händelse
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr "Se även %1$s för en översikt över platsdatahantering i webbträd."
-
-#: resources/views/layouts/administration_20.phtml:69
-msgid "Sign out"
-msgstr ""
-
-#. I18N: Skip over the headers and menus, to the main content of the page
-#: resources/views/layouts/administration_20.phtml:50
-msgid "Skip to content"
-msgstr ""
 
 #: resources/views/admin/upgrade/wizard.phtml:63
 #, php-format
@@ -355,10 +338,6 @@ msgstr "Vad är nytt? "
 #: resources/views/vesta_config.phtml:60
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Du kan behöva installera ett teckensnitt som tillhandahåller denna symbol, och för vissa webbläsare - särskilt Chrome - måste detta teckensnitt finnas i en av de teckensnittsfamiljer som anges av webbträd, till exempel 'Segoe UI Symbol'."
-
-#: resources/views/layouts/administration_20.phtml:78
-msgid "close"
-msgstr ""
 
 #: resources/views/admin/vesta_components.phtml:31
 #: resources/views/admin/vesta_components_20.phtml:31
