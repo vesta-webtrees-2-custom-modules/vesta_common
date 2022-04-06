@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 19:29+0200\n"
+"POT-Creation-Date: 2022-04-06 19:32+0200\n"
 "PO-Revision-Date: 2021-06-15 12:32+0000\n"
 "Last-Translator: z-yurets <zaharchenko.yurij@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/uk/>\n"
@@ -90,44 +90,8 @@ msgstr "В: Символ Vesta в основному використовуєт�
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "В: Через гачки. Гачки дозволяють модулям розширювати функціональність інших компонентів, без необхідності повторної реалізації цілого компонента. Веб-дерева використовують гачки, наприклад у нижньому колонтитулі сторінки, а також для історичних подій."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:169
-msgid "All"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:458
-msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:456
-msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
-msgstr ""
-
 #: resources/views/fact-association-structure.phtml:138
 msgid "Associate"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:618
-msgid "Civil marriage"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:490
-msgid "Create a media object"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:531
-msgid "Create a repository"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:481
-msgid "Create a shared note"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:545
-msgid "Create a source"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:553
-msgid "Create a submitter"
 msgstr ""
 
 #. I18N: Module Configuration
@@ -149,18 +113,10 @@ msgstr "Показані дані"
 msgid "Displayed title"
 msgstr "Заголовок"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:607
-msgid "Edit the name"
-msgstr ""
-
 #. I18N: Module Configuration
 #: CommonI18N.php:165
 msgid "Facts and Events Tab Settings"
 msgstr "Налаштування вкладки \"Факти та події\""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:541
-msgid "Female"
-msgstr ""
 
 #: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
@@ -215,10 +171,6 @@ msgstr "Постачальники даних про місцезнаходже�
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:541
-msgid "Male"
-msgstr ""
-
 #. I18N: Module Configuration
 #: CommonI18N.php:97
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
@@ -238,14 +190,6 @@ msgstr "Переміщення"
 
 #: resources/views/layouts/administration_20.phtml:56
 msgid "My page"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:131
-msgid "No calendar conversion"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:222
-msgid "Only managers can edit"
 msgstr ""
 
 #. I18N: Module Configuration
@@ -284,14 +228,6 @@ msgstr "П: Що з символом %1$s?"
 msgid "Readme"
 msgstr "Опис"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:620
-msgid "Registered partnership"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:619
-msgid "Religious marriage"
-msgstr ""
-
 #. I18N: Module Configuration
 #: CommonI18N.php:73
 #, php-format
@@ -325,18 +261,6 @@ msgstr "Обмежтесь цим переліком окремих фактів
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr "Дивись також %1$s для огляду управління даними про місцезнаходження у webtrees."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:221
-msgid "Show to managers"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:220
-msgid "Show to members"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:219
-msgid "Show to visitors"
-msgstr ""
-
 #: resources/views/layouts/administration_20.phtml:69
 msgid "Sign out"
 msgstr ""
@@ -359,15 +283,6 @@ msgstr ""
 #: VestaCommonLibModule.php:62
 msgid "This module cannot be disabled."
 msgstr "Цей модуль не можна вимкнути."
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:541
-msgctxt "unknown gender"
-msgid "Unknown"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:565
-msgid "Use this image for charts and on the individual’s page."
-msgstr ""
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -441,10 +356,6 @@ msgstr "Що нового? "
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Можливо, вам доведеться встановити шрифт із цим символом, а для певних браузерів, зокрема Chrome, цей шрифт повинен знаходитись в одному із сімейств шрифтів, визначених webtrees, наприклад, „Segoe UI Symbol”."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:564
-msgid "always"
-msgstr ""
-
 #: resources/views/layouts/administration_20.phtml:78
 msgid "close"
 msgstr ""
@@ -464,23 +375,9 @@ msgstr "виключити %1$s"
 msgid "here"
 msgstr "тут"
 
-#. I18N: Examples of valid time formats (hours:minutes:seconds)
-#: replacedWebtrees/Functions/FunctionsEdit.php:560
-msgid "hh:mm or hh:mm:ss"
-msgstr ""
-
 #: HookInterfaces/FunctionsPlaceUtils.php:88
 msgid "map coordinates directly (MAP tag)"
 msgstr "координати карти безпосередньо (тег MAP)"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:564
-msgid "never"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:152
-#: replacedWebtrees/Functions/FunctionsEdit.php:186
-msgid "no"
-msgstr ""
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
@@ -502,11 +399,6 @@ msgstr "обмежено до %1$s"
 msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "вгору"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:153
-#: replacedWebtrees/Functions/FunctionsEdit.php:187
-msgid "yes"
-msgstr ""
 
 #~ msgid "Associated facts and events"
 #~ msgstr "Пов’язані факти та події"

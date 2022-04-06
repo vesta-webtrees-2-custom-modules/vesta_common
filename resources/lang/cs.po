@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 19:29+0200\n"
+"POT-Creation-Date: 2022-04-06 19:32+0200\n"
 "PO-Revision-Date: 2021-11-30 22:53+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/cs/>\n"
@@ -90,45 +90,9 @@ msgstr "A: Symbol Vesta je použit hlavně k seskupení modulů v seznamu modul�
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "A: Přes háčky (hooky). Háčky umožňují modulům rozšiřovat funkčnost ostatních komponent, aniž by bylo nutné přepracovat celou komponentu. Webtrees používá háčky např. u zápatí stránky a u historických událostí."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:169
-msgid "All"
-msgstr "Všichni"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:458
-msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
-msgstr "Přidružená osoba je ta, která je zúčastněná v tomto faktu nebo události, např. svědek nebo kněz."
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:456
-msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
-msgstr "Přidružená osoba je tak, která je nějak spojená s touto osobou, např. jako přítel nebo zaměstnavatel."
-
 #: resources/views/fact-association-structure.phtml:138
 msgid "Associate"
 msgstr "Přidružená osoba"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:618
-msgid "Civil marriage"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:490
-msgid "Create a media object"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:531
-msgid "Create a repository"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:481
-msgid "Create a shared note"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:545
-msgid "Create a source"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:553
-msgid "Create a submitter"
-msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:147
@@ -149,18 +113,10 @@ msgstr "Zobrazované údaje"
 msgid "Displayed title"
 msgstr "Zobrazený název"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:607
-msgid "Edit the name"
-msgstr ""
-
 #. I18N: Module Configuration
 #: CommonI18N.php:165
 msgid "Facts and Events Tab Settings"
 msgstr "Nastavení záložky Fakta a události"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:541
-msgid "Female"
-msgstr ""
 
 #: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
@@ -215,10 +171,6 @@ msgstr "Poskytovatelé polohových údajů"
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:541
-msgid "Male"
-msgstr ""
-
 #. I18N: Module Configuration
 #: CommonI18N.php:97
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
@@ -238,14 +190,6 @@ msgstr "Přemístit"
 
 #: resources/views/layouts/administration_20.phtml:56
 msgid "My page"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:131
-msgid "No calendar conversion"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:222
-msgid "Only managers can edit"
 msgstr ""
 
 #. I18N: Module Configuration
@@ -284,14 +228,6 @@ msgstr "Q: Co je zač symbol %1$s ?"
 msgid "Readme"
 msgstr "Čístomně"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:620
-msgid "Registered partnership"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:619
-msgid "Religious marriage"
-msgstr ""
-
 #. I18N: Module Configuration
 #: CommonI18N.php:73
 #, php-format
@@ -325,18 +261,6 @@ msgstr "Omezit na tento seznam osobních faktů a událostí. Tento seznam je po
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr "Vizte také %1$s pro přehled o správě údajů o poloze ve webtrees."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:221
-msgid "Show to managers"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:220
-msgid "Show to members"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:219
-msgid "Show to visitors"
-msgstr ""
-
 #: resources/views/layouts/administration_20.phtml:69
 msgid "Sign out"
 msgstr ""
@@ -359,15 +283,6 @@ msgstr ""
 #: VestaCommonLibModule.php:62
 msgid "This module cannot be disabled."
 msgstr "Tento modul se nesmí vypnout."
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:541
-msgctxt "unknown gender"
-msgid "Unknown"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:565
-msgid "Use this image for charts and on the individual’s page."
-msgstr ""
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -441,10 +356,6 @@ msgstr "Co je nového? "
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Možná bude nutno instalovat font s tímto symbolem a pro určité prohlížeče ‒ zvláště Chrome ‒ musí být tento font jednou z rodin fontů nastavených ve webtrees, jako je 'Segoe UI Symbol'."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:564
-msgid "always"
-msgstr ""
-
 #: resources/views/layouts/administration_20.phtml:78
 msgid "close"
 msgstr ""
@@ -464,23 +375,9 @@ msgstr "kromě %1$s"
 msgid "here"
 msgstr "tady"
 
-#. I18N: Examples of valid time formats (hours:minutes:seconds)
-#: replacedWebtrees/Functions/FunctionsEdit.php:560
-msgid "hh:mm or hh:mm:ss"
-msgstr ""
-
 #: HookInterfaces/FunctionsPlaceUtils.php:88
 msgid "map coordinates directly (MAP tag)"
 msgstr "mapové souřadnice přímo (tag MAP)"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:564
-msgid "never"
-msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:152
-#: replacedWebtrees/Functions/FunctionsEdit.php:186
-msgid "no"
-msgstr ""
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
@@ -502,11 +399,6 @@ msgstr "s omezením na %1$s"
 msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "výše"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:153
-#: replacedWebtrees/Functions/FunctionsEdit.php:187
-msgid "yes"
-msgstr ""
 
 #~ msgid "Abbreviation"
 #~ msgstr "Zkratka"
@@ -547,8 +439,17 @@ msgstr ""
 #~ msgid "Alias"
 #~ msgstr "Alias"
 
+#~ msgid "All"
+#~ msgstr "Všichni"
+
 #~ msgid "Also known as"
 #~ msgstr "Také znám jako"
+
+#~ msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
+#~ msgstr "Přidružená osoba je ta, která je zúčastněná v tomto faktu nebo události, např. svědek nebo kněz."
+
+#~ msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
+#~ msgstr "Přidružená osoba je tak, která je nějak spojená s touto osobou, např. jako přítel nebo zaměstnavatel."
 
 #~ msgid "Ancestors interest"
 #~ msgstr "Ancestors interest"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 19:29+0200\n"
+"POT-Creation-Date: 2022-04-06 19:32+0200\n"
 "PO-Revision-Date: 2021-10-17 10:35+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nl/>\n"
@@ -90,45 +90,9 @@ msgstr "A: Het Vesta-symbool wordt voornamelijk gebruikt om gerelateerde modules
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "A: Via 'hooks'. Hooks zorgen ervoor dat modules de functionaliteit van andere componenten kunnen uitbreiden, zonder dat het hele onderdeel opnieuw hoeft te worden geïmplementeerd. Webtrees maakt gebruik van hooks, bijvoorbeeld in de paginavoettekst, en voor historische gebeurtenissen."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:169
-msgid "All"
-msgstr "Alle"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:458
-msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
-msgstr "Een gerelateerd persoon is een andere persoon die betrokken was bij dit feit of deze gebeurtenis, zoals een getuige of een priester."
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:456
-msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
-msgstr "Een gerelateerd persoon is een andere persoon die betrokken was bij deze persoon, zoals een vriend of een werkgever."
-
 #: resources/views/fact-association-structure.phtml:138
 msgid "Associate"
 msgstr "Gerelateerd persoon"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:618
-msgid "Civil marriage"
-msgstr "Burgerlijk huwelijk"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:490
-msgid "Create a media object"
-msgstr "Maak een nieuw mediaobject aan"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:531
-msgid "Create a repository"
-msgstr "Maak een nieuwe opslagplaats aan"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:481
-msgid "Create a shared note"
-msgstr "Maak een nieuwe gedeelde notitie aan"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:545
-msgid "Create a source"
-msgstr "Maak een nieuwe bron aan"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:553
-msgid "Create a submitter"
-msgstr "Maak een nieuwe indiener aan"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:147
@@ -149,18 +113,10 @@ msgstr "Weergegeven gegevens"
 msgid "Displayed title"
 msgstr "Weergegeven titel"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:607
-msgid "Edit the name"
-msgstr "Wijzig naam"
-
 #. I18N: Module Configuration
 #: CommonI18N.php:165
 msgid "Facts and Events Tab Settings"
 msgstr "Instellingen voor tabblad Feiten en gebeurtenissen"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:541
-msgid "Female"
-msgstr "Vrouw"
 
 #: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
@@ -215,10 +171,6 @@ msgstr "Aanbieders van locatiegegevens"
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr "Zorg ervoor dat alle actieve aangepaste modules compatibel zijn met de nieuwe webtrees-versie %1$s. Mogelijk moet u ze ook upgraden."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:541
-msgid "Male"
-msgstr "Man"
-
 #. I18N: Module Configuration
 #: CommonI18N.php:97
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
@@ -239,14 +191,6 @@ msgstr "Verplaats"
 #: resources/views/layouts/administration_20.phtml:56
 msgid "My page"
 msgstr "Mijn pagina"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:131
-msgid "No calendar conversion"
-msgstr "Geen kalenderomzetting"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:222
-msgid "Only managers can edit"
-msgstr "Alleen managers kunnen wijzigen"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:115
@@ -284,14 +228,6 @@ msgstr "V: Wat is er met het %1$s-symbool?"
 msgid "Readme"
 msgstr "Leesmij"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:620
-msgid "Registered partnership"
-msgstr "Samenlevingscontract"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:619
-msgid "Religious marriage"
-msgstr "Kerkelijk huwelijk"
-
 #. I18N: Module Configuration
 #: CommonI18N.php:73
 #, php-format
@@ -325,18 +261,6 @@ msgstr "Beperken tot deze lijst van GEDCOM-persoonsfeiten en -gebeurtenissen. In
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr "Zie ook %1$s voor een overzicht van locatiegegevensbeheer in webtrees."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:221
-msgid "Show to managers"
-msgstr "Toon aan managers"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:220
-msgid "Show to members"
-msgstr "Toon aan leden"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:219
-msgid "Show to visitors"
-msgstr "Toon aan bezoekers"
-
 #: resources/views/layouts/administration_20.phtml:69
 msgid "Sign out"
 msgstr "Afmelden"
@@ -359,15 +283,6 @@ msgstr "De huidige geïnstalleerde versies van de volgende aangepaste modules zi
 #: VestaCommonLibModule.php:62
 msgid "This module cannot be disabled."
 msgstr "Deze module kan niet worden uitgeschakeld."
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:541
-msgctxt "unknown gender"
-msgid "Unknown"
-msgstr "Onbekend"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:565
-msgid "Use this image for charts and on the individual’s page."
-msgstr "Gebruik deze afbeelding voor diagrammen en op de persoonspagina."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -441,10 +356,6 @@ msgstr "Wat is er nieuw? "
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Het kan zijn dat u een lettertype moet installeren dat dit symbool bevat, en voor bepaalde browsers - met name Chrome - moet dit lettertype zich bevinden in een van de lettertypefamilies die door webtrees zijn opgegeven, zoals 'Segoe UI Symbol'."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:564
-msgid "always"
-msgstr "altijd"
-
 #: resources/views/layouts/administration_20.phtml:78
 msgid "close"
 msgstr "sluiten"
@@ -464,23 +375,9 @@ msgstr "%1$s uitsluiten"
 msgid "here"
 msgstr "hier"
 
-#. I18N: Examples of valid time formats (hours:minutes:seconds)
-#: replacedWebtrees/Functions/FunctionsEdit.php:560
-msgid "hh:mm or hh:mm:ss"
-msgstr "uu:mm of uu:mm:ss"
-
 #: HookInterfaces/FunctionsPlaceUtils.php:88
 msgid "map coordinates directly (MAP tag)"
 msgstr "coördinaten rechtstreeks toewijzen (MAP-label)"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:564
-msgid "never"
-msgstr "nooit"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:152
-#: replacedWebtrees/Functions/FunctionsEdit.php:186
-msgid "no"
-msgstr "nee"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
@@ -502,11 +399,6 @@ msgstr "beperkt tot %1$s"
 msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "omhoog"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:153
-#: replacedWebtrees/Functions/FunctionsEdit.php:187
-msgid "yes"
-msgstr "ja"
 
 #~ msgid "Abbreviation"
 #~ msgstr "Afkorting"
@@ -547,8 +439,17 @@ msgstr "ja"
 #~ msgid "Alias"
 #~ msgstr "Alias"
 
+#~ msgid "All"
+#~ msgstr "Alle"
+
 #~ msgid "Also known as"
 #~ msgstr "Ook bekend als"
+
+#~ msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
+#~ msgstr "Een gerelateerd persoon is een andere persoon die betrokken was bij dit feit of deze gebeurtenis, zoals een getuige of een priester."
+
+#~ msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
+#~ msgstr "Een gerelateerd persoon is een andere persoon die betrokken was bij deze persoon, zoals een vriend of een werkgever."
 
 #~ msgid "Ancestors interest"
 #~ msgstr "Interesse in voorouders"
@@ -637,6 +538,9 @@ msgstr "ja"
 #~ msgid "City"
 #~ msgstr "Plaats"
 
+#~ msgid "Civil marriage"
+#~ msgstr "Burgerlijk huwelijk"
+
 #~ msgid "Comment"
 #~ msgstr "Commentaar"
 
@@ -663,6 +567,21 @@ msgstr "ja"
 
 #~ msgid "Country"
 #~ msgstr "Land"
+
+#~ msgid "Create a media object"
+#~ msgstr "Maak een nieuw mediaobject aan"
+
+#~ msgid "Create a repository"
+#~ msgstr "Maak een nieuwe opslagplaats aan"
+
+#~ msgid "Create a shared note"
+#~ msgstr "Maak een nieuwe gedeelde notitie aan"
+
+#~ msgid "Create a source"
+#~ msgstr "Maak een nieuwe bron aan"
+
+#~ msgid "Create a submitter"
+#~ msgstr "Maak een nieuwe indiener aan"
 
 #~ msgid "Cremation"
 #~ msgstr "Crematie"
@@ -784,6 +703,9 @@ msgstr "ja"
 #~ msgid "Divorce filed"
 #~ msgstr "Echtscheiding aangevraagd"
 
+#~ msgid "Edit the name"
+#~ msgstr "Wijzig naam"
+
 #~ msgid "Education"
 #~ msgstr "Opleiding"
 
@@ -864,6 +786,9 @@ msgstr "ja"
 
 #~ msgid "Fax"
 #~ msgstr "Fax"
+
+#~ msgid "Female"
+#~ msgstr "Vrouw"
 
 #~ msgid "File size"
 #~ msgstr "Bestandsgrootte"
@@ -985,6 +910,9 @@ msgstr "ja"
 #~ msgid "Mailing name"
 #~ msgstr "Mailingnaam"
 
+#~ msgid "Male"
+#~ msgstr "Man"
+
 #~ msgid "Marriage"
 #~ msgstr "Huwelijk"
 
@@ -1073,6 +1001,9 @@ msgstr "ja"
 #~ msgid "Nickname"
 #~ msgstr "Roepnaam"
 
+#~ msgid "No calendar conversion"
+#~ msgstr "Geen kalenderomzetting"
+
 #~ msgid "Not living"
 #~ msgstr "Overleden"
 
@@ -1090,6 +1021,9 @@ msgstr "ja"
 
 #~ msgid "Occupation"
 #~ msgstr "Beroep"
+
+#~ msgid "Only managers can edit"
+#~ msgstr "Alleen managers kunnen wijzigen"
 
 #~ msgid "Ordinance"
 #~ msgstr "Verordening"
@@ -1226,6 +1160,9 @@ msgstr "ja"
 #~ msgid "Reference number"
 #~ msgstr "Referentienummer"
 
+#~ msgid "Registered partnership"
+#~ msgstr "Samenlevingscontract"
+
 #~ msgid "Relationship"
 #~ msgstr "Verwantschap"
 
@@ -1243,6 +1180,9 @@ msgstr "ja"
 
 #~ msgid "Religious institution"
 #~ msgstr "Religieus instituut"
+
+#~ msgid "Religious marriage"
+#~ msgstr "Kerkelijk huwelijk"
 
 #~ msgid "Religious name"
 #~ msgstr "Religieuze naam"
@@ -1291,6 +1231,15 @@ msgstr "ja"
 
 #~ msgid "Short version"
 #~ msgstr "Korte versie"
+
+#~ msgid "Show to managers"
+#~ msgstr "Toon aan managers"
+
+#~ msgid "Show to members"
+#~ msgstr "Toon aan leden"
+
+#~ msgid "Show to visitors"
+#~ msgstr "Toon aan bezoekers"
 
 #~ msgid "Slide show"
 #~ msgstr "Diavoorstelling"
@@ -1361,8 +1310,15 @@ msgstr "ja"
 #~ msgid "Unique identifier"
 #~ msgstr "Uniek identificatienummer"
 
+#~ msgctxt "unknown gender"
+#~ msgid "Unknown"
+#~ msgstr "Onbekend"
+
 #~ msgid "Unrecognized GEDCOM code"
 #~ msgstr "Onbekende GEDCOM-code"
+
+#~ msgid "Use this image for charts and on the individual’s page."
+#~ msgstr "Gebruik deze afbeelding voor diagrammen en op de persoonspagina."
 
 #~ msgid "Version"
 #~ msgstr "Versie"
@@ -1382,5 +1338,20 @@ msgstr "ja"
 #~ msgid "Yahrzeit"
 #~ msgstr "Yahrzeit"
 
+#~ msgid "always"
+#~ msgstr "altijd"
+
 #~ msgid "by"
 #~ msgstr "door"
+
+#~ msgid "hh:mm or hh:mm:ss"
+#~ msgstr "uu:mm of uu:mm:ss"
+
+#~ msgid "never"
+#~ msgstr "nooit"
+
+#~ msgid "no"
+#~ msgstr "nee"
+
+#~ msgid "yes"
+#~ msgstr "ja"

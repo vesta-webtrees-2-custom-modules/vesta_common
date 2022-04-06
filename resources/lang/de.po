@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 19:29+0200\n"
+"POT-Creation-Date: 2022-04-06 19:32+0200\n"
 "PO-Revision-Date: 2021-12-05 19:51+0000\n"
 "Last-Translator: mpwt <der@bauschaffen.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/de/>\n"
@@ -90,45 +90,9 @@ msgstr "Das Vesta-Symbol wird hauptsächlich verwendet, um verwandte Module in d
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "A: Über Hooks. Hooks ermöglicht es den Modulen, die Funktionalität anderer Komponenten zu erweitern, ohne die gesamte Komponente neu implementieren zu müssen. Webtrees verwendet Hooks z.B. in der Seitenfußzeile und für historische Ereignisse."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:169
-msgid "All"
-msgstr "Alle"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:458
-msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
-msgstr "Eine assoziierte Person ist eine Person, die einer Tatsache oder einem Ereignis zugeordnet ist, etwa ein Zeuge oder eine Priester."
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:456
-msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
-msgstr "Eine assoziierte Person ist eine Person, die einen Bezug zu dieser Person hat, etwa ein Freund oder ein Arbeitgeber."
-
 #: resources/views/fact-association-structure.phtml:138
 msgid "Associate"
 msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:618
-msgid "Civil marriage"
-msgstr "Standesamtliche Heirat"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:490
-msgid "Create a media object"
-msgstr "Ein Medienobjekt erstellen"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:531
-msgid "Create a repository"
-msgstr "Ein Archiv erstellen"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:481
-msgid "Create a shared note"
-msgstr "Eine gemeinsame Notiz erstellen"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:545
-msgid "Create a source"
-msgstr "Eine Quelle erstellen"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:553
-msgid "Create a submitter"
-msgstr "Einen Übermittler erstellen"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:147
@@ -149,18 +113,10 @@ msgstr "Angezeigte Daten"
 msgid "Displayed title"
 msgstr "Angezeigter Titel"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:607
-msgid "Edit the name"
-msgstr "Namen bearbeiten"
-
 #. I18N: Module Configuration
 #: CommonI18N.php:165
 msgid "Facts and Events Tab Settings"
 msgstr "Einstellungen der Registerkarte Tatsachen und Ereignisse"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:541
-msgid "Female"
-msgstr "weiblich"
 
 #: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
@@ -215,10 +171,6 @@ msgstr "Anbieter von Standortdaten (Location Data Providers)"
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr "Stellen Sie sicher, dass alle aktiven benutzerdefinierten Module mit der neuen webtrees-Version %1$s kompatibel sind. Möglicherweise müssen Sie auch diese aktualisieren."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:541
-msgid "Male"
-msgstr "männlich"
-
 #. I18N: Module Configuration
 #: CommonI18N.php:97
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
@@ -239,14 +191,6 @@ msgstr "nach oben"
 #: resources/views/layouts/administration_20.phtml:56
 msgid "My page"
 msgstr ""
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:131
-msgid "No calendar conversion"
-msgstr "Keine Kalenderumwandlung"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:222
-msgid "Only managers can edit"
-msgstr "Nur Verwalter können bearbeiten"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:115
@@ -284,14 +228,6 @@ msgstr "F: Was hat es mit dem %1$s Symbol auf sich?"
 msgid "Readme"
 msgstr "Liesmich"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:620
-msgid "Registered partnership"
-msgstr "eingetragene Lebenspartnerschaft"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:619
-msgid "Religious marriage"
-msgstr "Kirchliche Trauung"
-
 #. I18N: Module Configuration
 #: CommonI18N.php:73
 #, php-format
@@ -325,18 +261,6 @@ msgstr "Beschränken Sie sich auf diese Liste der GEDCOM Individualfakten und -e
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr "Siehe auch %1$s für eine Übersicht über die Verwaltung von Ortsdaten in Webtrees."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:221
-msgid "Show to managers"
-msgstr "sichtbar für Verwalter"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:220
-msgid "Show to members"
-msgstr "sichtbar für Mitglieder"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:219
-msgid "Show to visitors"
-msgstr "sichtbar für Besucher"
-
 #: resources/views/layouts/administration_20.phtml:69
 msgid "Sign out"
 msgstr ""
@@ -359,15 +283,6 @@ msgstr "Die derzeit installierten Versionen der folgenden benutzerdefinierten Mo
 #: VestaCommonLibModule.php:62
 msgid "This module cannot be disabled."
 msgstr "Dieses Modul kann nicht deaktiviert werden."
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:541
-msgctxt "unknown gender"
-msgid "Unknown"
-msgstr "Unbekannt"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:565
-msgid "Use this image for charts and on the individual’s page."
-msgstr "Dieses Bild für Diagramme und auf der Personenseite verwenden."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -441,10 +356,6 @@ msgstr "Was ist neu? "
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Möglicherweise müssen Sie eine Schriftart installieren, die dieses Symbol bereitstellt, und bei bestimmten Browsern - insbesondere bei Chrome - muss diese Schriftart in einer der von Webtrees spezifizierten Schriftartfamilien vorliegen, wie z.B. 'Segoe UI Symbol'."
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:564
-msgid "always"
-msgstr "immer"
-
 #: resources/views/layouts/administration_20.phtml:78
 msgid "close"
 msgstr ""
@@ -464,23 +375,9 @@ msgstr "%1$s ausschließen"
 msgid "here"
 msgstr "hier"
 
-#. I18N: Examples of valid time formats (hours:minutes:seconds)
-#: replacedWebtrees/Functions/FunctionsEdit.php:560
-msgid "hh:mm or hh:mm:ss"
-msgstr "hh:mm oder hh:mm:ss"
-
 #: HookInterfaces/FunctionsPlaceUtils.php:88
 msgid "map coordinates directly (MAP tag)"
 msgstr "Kartenkoordinaten direkt (MAP-Tag)"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:564
-msgid "never"
-msgstr "nie"
-
-#: replacedWebtrees/Functions/FunctionsEdit.php:152
-#: replacedWebtrees/Functions/FunctionsEdit.php:186
-msgid "no"
-msgstr "nein"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
@@ -503,16 +400,90 @@ msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "nach oben"
 
-#: replacedWebtrees/Functions/FunctionsEdit.php:153
-#: replacedWebtrees/Functions/FunctionsEdit.php:187
-msgid "yes"
-msgstr "ja"
-
 #~ msgid "Abbreviation"
 #~ msgstr "Abkürzung"
+
+#~ msgid "All"
+#~ msgstr "Alle"
+
+#~ msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
+#~ msgstr "Eine assoziierte Person ist eine Person, die einer Tatsache oder einem Ereignis zugeordnet ist, etwa ein Zeuge oder eine Priester."
+
+#~ msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
+#~ msgstr "Eine assoziierte Person ist eine Person, die einen Bezug zu dieser Person hat, etwa ein Freund oder ein Arbeitgeber."
 
 #~ msgid "Associated facts and events"
 #~ msgstr "Zugehörige Tatsachen und Ereignisse"
 
+#~ msgid "Civil marriage"
+#~ msgstr "Standesamtliche Heirat"
+
+#~ msgid "Create a media object"
+#~ msgstr "Ein Medienobjekt erstellen"
+
+#~ msgid "Create a repository"
+#~ msgstr "Ein Archiv erstellen"
+
+#~ msgid "Create a shared note"
+#~ msgstr "Eine gemeinsame Notiz erstellen"
+
+#~ msgid "Create a source"
+#~ msgstr "Eine Quelle erstellen"
+
+#~ msgid "Create a submitter"
+#~ msgstr "Einen Übermittler erstellen"
+
+#~ msgid "Edit the name"
+#~ msgstr "Namen bearbeiten"
+
 #~ msgid "FamilySearch id"
 #~ msgstr "FamilySearch-ID"
+
+#~ msgid "Female"
+#~ msgstr "weiblich"
+
+#~ msgid "Male"
+#~ msgstr "männlich"
+
+#~ msgid "No calendar conversion"
+#~ msgstr "Keine Kalenderumwandlung"
+
+#~ msgid "Only managers can edit"
+#~ msgstr "Nur Verwalter können bearbeiten"
+
+#~ msgid "Registered partnership"
+#~ msgstr "eingetragene Lebenspartnerschaft"
+
+#~ msgid "Religious marriage"
+#~ msgstr "Kirchliche Trauung"
+
+#~ msgid "Show to managers"
+#~ msgstr "sichtbar für Verwalter"
+
+#~ msgid "Show to members"
+#~ msgstr "sichtbar für Mitglieder"
+
+#~ msgid "Show to visitors"
+#~ msgstr "sichtbar für Besucher"
+
+#~ msgctxt "unknown gender"
+#~ msgid "Unknown"
+#~ msgstr "Unbekannt"
+
+#~ msgid "Use this image for charts and on the individual’s page."
+#~ msgstr "Dieses Bild für Diagramme und auf der Personenseite verwenden."
+
+#~ msgid "always"
+#~ msgstr "immer"
+
+#~ msgid "hh:mm or hh:mm:ss"
+#~ msgstr "hh:mm oder hh:mm:ss"
+
+#~ msgid "never"
+#~ msgstr "nie"
+
+#~ msgid "no"
+#~ msgstr "nein"
+
+#~ msgid "yes"
+#~ msgstr "ja"
