@@ -1,6 +1,7 @@
 <?php
 
 use Cissee\Webtrees\Module\PersonalFacts\IndividualFactsTabModuleExtended;
+use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\Age;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Fact;
@@ -104,7 +105,7 @@ foreach ($amatches as $amatch) {
             if ($relationship_name === '') {
                 //[RC] adjusted we use a different fallback
                 //$relationship_name = I18N::translate('Relationship');
-                $relationship_name = I18N::translate('No relationship found');
+                $relationship_name = MoreI18N::xlate('No relationship found');
             }
 
             //[RC] adjusted

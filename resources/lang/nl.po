@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-03 20:22+0200\n"
+"POT-Creation-Date: 2022-04-06 19:29+0200\n"
 "PO-Revision-Date: 2021-10-17 10:35+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nl/>\n"
@@ -33,13 +33,38 @@ msgstr "%1$s filters"
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s is het astronomische symbool van de planetoïde Vesta, vernoemd naar de Romeinse godin van de haard, het huis en de familie."
 
-#: resources/views/admin/vesta_components.phtml:24
+#: resources/views/fact-association-structure.phtml:68
+#, php-format
+msgid "(aged %s)"
+msgstr ""
+
+#: resources/views/fact-association-structure.phtml:65
+#, php-format
+msgctxt "Female"
+msgid "(aged %s)"
+msgstr ""
+
+#: resources/views/fact-association-structure.phtml:62
+#, php-format
+msgctxt "Male"
+msgid "(aged %s)"
+msgstr ""
+
+#: resources/views/admin/vesta_components.phtml:25
+#: resources/views/admin/vesta_components_20.phtml:25
 msgid "(entire module)"
 msgstr "(volledige module)"
 
-#: resources/views/admin/vesta_components.phtml:26
+#: resources/views/admin/vesta_components.phtml:27
+#: resources/views/admin/vesta_components_20.phtml:27
 msgid "(specific functionality)"
 msgstr "(specifieke functionaliteit)"
+
+#: resources/views/fact-association-structure.phtml:135
+#: resources/views/fact-association-structure.phtml:138
+#, php-format
+msgid "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
+msgstr "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
 
 #: VestaCommonLibModule.php:61
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
@@ -76,6 +101,10 @@ msgstr "Een gerelateerd persoon is een andere persoon die betrokken was bij dit 
 #: replacedWebtrees/Functions/FunctionsEdit.php:456
 msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
 msgstr "Een gerelateerd persoon is een andere persoon die betrokken was bij deze persoon, zoals een vriend of een werkgever."
+
+#: resources/views/fact-association-structure.phtml:138
+msgid "Associate"
+msgstr "Gerelateerd persoon"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:618
 msgid "Civil marriage"
@@ -172,6 +201,10 @@ msgstr "Het symbool %1$s opnemen in de zijbalktitel"
 msgid "Include the %1$s symbol in the tab title"
 msgstr "Het %1$s-symbool opnemen in de titel van het tabblad"
 
+#: resources/views/layouts/administration_20.phtml:60
+msgid "Language"
+msgstr "Taal"
+
 #. I18N: Module Configuration
 #: CommonI18N.php:93
 msgid "Location Data Providers"
@@ -191,15 +224,21 @@ msgstr "Man"
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
 msgstr "Modules die hier worden vermeld, worden (in de geconfigureerde volgorde) gebruikt om kaartcoördinaten van plaatsen te bepalen."
 
-#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components.phtml:31
+#: resources/views/admin/vesta_components_20.phtml:31
 msgctxt "as in \"Move down\""
 msgid "Move"
 msgstr "Verplaats"
 
-#: resources/views/admin/vesta_components.phtml:29
+#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components_20.phtml:30
 msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Verplaats"
+
+#: resources/views/layouts/administration_20.phtml:56
+msgid "My page"
+msgstr "Mijn pagina"
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:131
 msgid "No calendar conversion"
@@ -298,6 +337,15 @@ msgstr "Toon aan leden"
 msgid "Show to visitors"
 msgstr "Toon aan bezoekers"
 
+#: resources/views/layouts/administration_20.phtml:69
+msgid "Sign out"
+msgstr "Afmelden"
+
+#. I18N: Skip over the headers and menus, to the main content of the page
+#: resources/views/layouts/administration_20.phtml:50
+msgid "Skip to content"
+msgstr "Spring naar inhoud"
+
 #: resources/views/admin/upgrade/wizard.phtml:63
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
@@ -381,6 +429,10 @@ msgstr "Vesta Webtreeslocatiegegevensaanbieder"
 msgid "Vesta location data management overview"
 msgstr "Overzicht van Vesta-locatiegegevensbeheer"
 
+#: resources/views/fact.phtml:165
+msgid "View this family"
+msgstr ""
+
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
 msgstr "Wat is er nieuw? "
@@ -393,7 +445,12 @@ msgstr "Het kan zijn dat u een lettertype moet installeren dat dit symbool bevat
 msgid "always"
 msgstr "altijd"
 
-#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/layouts/administration_20.phtml:78
+msgid "close"
+msgstr "sluiten"
+
+#: resources/views/admin/vesta_components.phtml:31
+#: resources/views/admin/vesta_components_20.phtml:31
 msgctxt "as in \"Move down\""
 msgid "down"
 msgstr "omlaag"
@@ -440,7 +497,8 @@ msgstr "beperken tot %1$s"
 msgid "restricted to %1$s"
 msgstr "beperkt tot %1$s"
 
-#: resources/views/admin/vesta_components.phtml:29
+#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components_20.phtml:30
 msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "omhoog"
@@ -449,9 +507,6 @@ msgstr "omhoog"
 #: replacedWebtrees/Functions/FunctionsEdit.php:187
 msgid "yes"
 msgstr "ja"
-
-#~ msgid "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
-#~ msgstr "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
 
 #~ msgid "Abbreviation"
 #~ msgstr "Afkorting"
@@ -503,9 +558,6 @@ msgstr "ja"
 
 #~ msgid "Annulment"
 #~ msgstr "Nietigverklaring"
-
-#~ msgid "Associate"
-#~ msgstr "Gerelateerd persoon"
 
 #~ msgid "Associated facts and events"
 #~ msgstr "Feiten en gebeurtenissen met gerelateerde personen"
@@ -912,9 +964,6 @@ msgstr "ja"
 #~ msgid "LDS spouse sealing"
 #~ msgstr "LDS-verzegeling aan huwelijkspartner"
 
-#~ msgid "Language"
-#~ msgstr "Taal"
-
 #~ msgid "Last change"
 #~ msgstr "Laatste wijziging"
 
@@ -992,9 +1041,6 @@ msgstr "ja"
 
 #~ msgid "Military service"
 #~ msgstr "Militaire dienst"
-
-#~ msgid "My page"
-#~ msgstr "Mijn pagina"
 
 #~ msgid "Name"
 #~ msgstr "Naam"
@@ -1246,12 +1292,6 @@ msgstr "ja"
 #~ msgid "Short version"
 #~ msgstr "Korte versie"
 
-#~ msgid "Sign out"
-#~ msgstr "Afmelden"
-
-#~ msgid "Skip to content"
-#~ msgstr "Spring naar inhoud"
-
 #~ msgid "Slide show"
 #~ msgstr "Diavoorstelling"
 
@@ -1344,6 +1384,3 @@ msgstr "ja"
 
 #~ msgid "by"
 #~ msgstr "door"
-
-#~ msgid "close"
-#~ msgstr "sluiten"

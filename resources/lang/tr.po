@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-03 20:22+0200\n"
+"POT-Creation-Date: 2022-04-06 19:29+0200\n"
 "PO-Revision-Date: 2021-03-10 17:02+0000\n"
 "Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/tr/>\n"
@@ -33,13 +33,38 @@ msgstr "%1$s filtreleri"
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s; ocağın, evin ve ailenin Roma tanrıçasının adını taşıyan asteroit Vesta'nın astronomik sembolüdür."
 
-#: resources/views/admin/vesta_components.phtml:24
+#: resources/views/fact-association-structure.phtml:68
+#, php-format
+msgid "(aged %s)"
+msgstr ""
+
+#: resources/views/fact-association-structure.phtml:65
+#, php-format
+msgctxt "Female"
+msgid "(aged %s)"
+msgstr ""
+
+#: resources/views/fact-association-structure.phtml:62
+#, php-format
+msgctxt "Male"
+msgid "(aged %s)"
+msgstr ""
+
+#: resources/views/admin/vesta_components.phtml:25
+#: resources/views/admin/vesta_components_20.phtml:25
 msgid "(entire module)"
 msgstr "(tüm modül)"
 
-#: resources/views/admin/vesta_components.phtml:26
+#: resources/views/admin/vesta_components.phtml:27
+#: resources/views/admin/vesta_components_20.phtml:27
 msgid "(specific functionality)"
 msgstr "(özel işlevsellik)"
+
+#: resources/views/fact-association-structure.phtml:135
+#: resources/views/fact-association-structure.phtml:138
+#, php-format
+msgid "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
+msgstr ""
 
 #: VestaCommonLibModule.php:61
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
@@ -75,6 +100,10 @@ msgstr ""
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:456
 msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
+msgstr ""
+
+#: resources/views/fact-association-structure.phtml:138
+msgid "Associate"
 msgstr ""
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:618
@@ -172,6 +201,10 @@ msgstr "Kenar çubuğu başlığına %1$s simgesini ekle"
 msgid "Include the %1$s symbol in the tab title"
 msgstr "%1$s sembolünü sekme başlığına dahil et"
 
+#: resources/views/layouts/administration_20.phtml:60
+msgid "Language"
+msgstr ""
+
 #. I18N: Module Configuration
 #: CommonI18N.php:93
 msgid "Location Data Providers"
@@ -191,15 +224,21 @@ msgstr ""
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
 msgstr "Burada listelenen modüller (yapılandırılmış sırada) yerlerin harita koordinatlarını belirlemek için kullanılır."
 
-#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components.phtml:31
+#: resources/views/admin/vesta_components_20.phtml:31
 msgctxt "as in \"Move down\""
 msgid "Move"
 msgstr "Taşı"
 
-#: resources/views/admin/vesta_components.phtml:29
+#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components_20.phtml:30
 msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Taşı"
+
+#: resources/views/layouts/administration_20.phtml:56
+msgid "My page"
+msgstr ""
 
 #: replacedWebtrees/Functions/FunctionsEdit.php:131
 msgid "No calendar conversion"
@@ -298,6 +337,15 @@ msgstr ""
 msgid "Show to visitors"
 msgstr ""
 
+#: resources/views/layouts/administration_20.phtml:69
+msgid "Sign out"
+msgstr ""
+
+#. I18N: Skip over the headers and menus, to the main content of the page
+#: resources/views/layouts/administration_20.phtml:50
+msgid "Skip to content"
+msgstr ""
+
 #: resources/views/admin/upgrade/wizard.phtml:63
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
@@ -381,6 +429,10 @@ msgstr "Vesta Webtrees Konum Verisi Sağlayıcısı"
 msgid "Vesta location data management overview"
 msgstr "Vesta konum verileri yönetimine genel bakış"
 
+#: resources/views/fact.phtml:165
+msgid "View this family"
+msgstr ""
+
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
 msgstr "Yeni olan ne? "
@@ -393,7 +445,12 @@ msgstr "Bu sembolü sağlayan bir yazı tipi yüklemeniz gerekebilir ve belirli 
 msgid "always"
 msgstr ""
 
-#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/layouts/administration_20.phtml:78
+msgid "close"
+msgstr ""
+
+#: resources/views/admin/vesta_components.phtml:31
+#: resources/views/admin/vesta_components_20.phtml:31
 msgctxt "as in \"Move down\""
 msgid "down"
 msgstr "aşağı"
@@ -440,7 +497,8 @@ msgstr "%1$s ile sınırla"
 msgid "restricted to %1$s"
 msgstr "%1$s ile sınırlı"
 
-#: resources/views/admin/vesta_components.phtml:29
+#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components_20.phtml:30
 msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "yukarı"
