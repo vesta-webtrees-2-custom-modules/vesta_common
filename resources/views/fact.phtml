@@ -173,12 +173,12 @@ if ($tag === 'MARR') {
                     <?= $element->value($value, $tree) ?>
                     <?php if ($element instanceof XrefAssociate && $fact->target() instanceof Individual) : ?>
                         <?php
-                        $module = app(ModuleService::class)->findByComponent(ModuleChartInterface::class, $tree, Auth::user())
-                            ->first(static fn (ModuleInterface $module):bool => $module instanceof RelationshipsChartModule)
+                        $relationshipChartModule = app(ModuleService::class)->findByComponent(ModuleChartInterface::class, $tree, Auth::user())
+                            ->first(static fn (ModuleInterface $m):bool => $m instanceof RelationshipsChartModule)
                         ?>
 
-                        <?php if ($module instanceof RelationshipsChartModule) : ?>
-                            — <a href="<?= $module->chartUrl($fact->target(), ['xref2' => $record->xref()]) ?>" rel="nofollow">
+                        <?php if ($relationshipChartModule instanceof RelationshipsChartModule) : ?>
+                            — <a href="<?= $relationshipChartModule->chartUrl($fact->target(), ['xref2' => $record->xref()]) ?>" rel="nofollow">
                                 <?= app(RelationshipService::class)->getCloseRelationshipName($fact->target(), $record) ?>
                             </a>
                         <?php endif ?>
