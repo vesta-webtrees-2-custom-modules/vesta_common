@@ -44,7 +44,7 @@ use Fisharebest\Webtrees\View;
                       <?php if ($module instanceof ModuleConfigInterface && $module->isEnabled()) : ?>
                         <a href="<?= e($module->getConfigLink()) ?>" title="<?= MoreI18N::xlate('Preferences') ?>">
                             <?= view('icons/preferences') ?>
-                            <span class="sr-only">
+                            <span class="visually-hidden">
                                 <?= MoreI18N::xlate('Preferences') ?>
                             </span>
                         </a>
@@ -60,7 +60,7 @@ use Fisharebest\Webtrees\View;
                   <td class="text-center">
                       <label class="d-block">
                           <input type="checkbox" name="status-<?= e($module->name()) ?>" id="status-<?= e($module->name()) ?>" <?= $module->isEnabled() ? 'checked' : '' ?>>
-                          <span class="sr-only">
+                          <span class="visually-hidden">
                               <?= MoreI18N::xlate('Enabled') ?>
                           </span>
                       </label>
@@ -108,7 +108,7 @@ use Fisharebest\Webtrees\View;
 
                         <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#access-level-<?= $module->name() ?>">
                             <?= view('icons/edit') ?>
-                            <span class="sr-only">
+                            <span class="visually-hidden">
                                 <?= MoreI18N::xlate('edit') ?>
                             </span>
                         </button>

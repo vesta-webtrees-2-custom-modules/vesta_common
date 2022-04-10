@@ -4,18 +4,23 @@ declare(strict_types=1);
 
 namespace Cissee\WebtreesExt\Http\Controllers;
 
+use Cissee\Webtrees\Module\PPM\PlaceHierarchyUtilsImpl;
 use Exception;
+use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Exceptions\HttpNotFoundException;
 use Fisharebest\Webtrees\Http\ViewResponseTrait;
+use Fisharebest\Webtrees\Module\ModuleListInterface;
 use Fisharebest\Webtrees\Module\ModuleMapProviderInterface;
 use Fisharebest\Webtrees\Place;
 use Fisharebest\Webtrees\Services\LeafletJsService;
 use Fisharebest\Webtrees\Services\ModuleService;
+use Fisharebest\Webtrees\Services\SearchService;
 use Fisharebest\Webtrees\Tree;
 use Fisharebest\Webtrees\Validator;
 use Fisharebest\Webtrees\Webtrees;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use function app;
 use function array_chunk;
 use function array_pop;
@@ -27,40 +32,41 @@ use function redirect;
 use function view;
 
 //generalizes PlaceHierarchyListModule
-class GenericPlaceHierarchyController {
+class GenericPlaceHierarchyController implements RequestHandlerInterface {
     use ViewResponseTrait;
   
-    private PlaceHierarchyUtils $utils;
-    private int $detailsThreshold;
+    private ModuleListInterface $module;
     
-    /**
-     * GenericPlaceHierarchyController constructor.
-     *
-     * @param PlaceHierarchyUtils $utils
-     */
     public function __construct(
-        PlaceHierarchyUtils $utils, 
-        int $detailsThreshold) {
+        ModuleListInterface $module) {
         
-        $this->utils = $utils;
-        $this->detailsThreshold = $detailsThreshold;
+        $this->module = $module;
     }
 
-    /**
-     * @param ServerRequestInterface $request
-     *
-     * @return ResponseInterface
-     */
-    public function show(ServerRequestInterface $request): ResponseInterface {
+    public function handle(ServerRequestInterface $request): ResponseInterface
+    {
         $tree = Validator::attributes($request)->tree();
+        $user = Validator::attributes($request)->user();
 
-        //routing (TODO modernize)
-        $module   = $request->getAttribute('module');
-        $action   = $request->getAttribute('action');
-        
+        Auth::checkComponentAccess($this->module, ModuleListInterface::class, $tree, $user);
+
+        $searchService = app(SearchService::class);
+        $participants = app(ModuleService::class)
+            ->findByComponent(PlaceHierarchyParticipant::class, $tree, Auth::user())
+            ->filter(function (PlaceHierarchyParticipant $php) use ($tree): bool {
+            return $php->participates($tree);
+        });
+
+        $utils = new PlaceHierarchyUtilsImpl(
+                $this->module,
+                $participants,
+                $searchService);
+    
+        $detailsThreshold = intval($this->module->getPreference('DETAILS_THRESHOLD', '100'));
+                
         $action2  = $request->getQueryParams()['action2'] ?? 'hierarchy';
         $place_id = (int) ($request->getQueryParams()['place_id'] ?? 0);
-        $place    = $this->utils->findPlace($place_id, $tree, $request->getQueryParams());
+        $place    = $utils->findPlace($place_id, $tree, $request->getQueryParams());
                 
         // Request for a non-existent place?
         if ($place_id !== $place->id()) {
@@ -80,36 +86,33 @@ class GenericPlaceHierarchyController {
             $places = $place->getChildPlaces();
 
             $content .= view('modules/place-hierarchy/map', [
-                'data'           => $this->mapData($place, $places),
+                'data'           => $this->mapData($utils, $detailsThreshold, $place, $places),
                 'leaflet_config' => app(LeafletJsService::class)->config(),
             ]);
         }
 
-        $urlFilters = $this->utils->getUrlFilters($request->getQueryParams());
+        $urlFilters = $utils->getUrlFilters($request->getQueryParams());
 
         switch ($action2) {
             case 'list':
-                $nextaction = ['hierarchy' => $this->utils->hierarchyActionLabel()];
+                $alt_link = $utils->hierarchyActionLabel();
+                $alt_url  = $this->module->listUrl($tree, ['action2' => 'hierarchy', 'place_id' => $place_id] + $urlFilters);
                 
-                $alt_link = $this->utils->hierarchyActionLabel();
-                $alt_url  = $this->listUrl($tree, ['module' => $module, 'action' => $action, 'action2' => 'hierarchy', 'place_id' => $place_id] + $urlFilters);
-                
-                $content .= view($this->utils->listView(), $this->getList($tree, $request));
+                $content .= view($utils->listView(), $this->getList($utils, $tree, $request));
                 break;
             case 'hierarchy':
             case 'hierarchy-e':
-                $nextaction = ['list' => $this->utils->listActionLabel()];
-                
-                $alt_link = $this->utils->listActionLabel();
-                $alt_url  = $this->listUrl($tree, ['module' => $module, 'action' => $action, 'action2' => 'list', 'place_id' => 0] + $urlFilters);
+                $alt_link = $utils->listActionLabel();
+                $alt_url  = $this->module->listUrl($tree, ['action2' => 'list', 'place_id' => 0] + $urlFilters);
                 
                 $data       = $this->getHierarchy($place, $places);
-                $content .= (null === $data || $showmap) ? '' : view($this->utils->placeHierarchyView(), $data);
+                $content .= (null === $data || $showmap) ? '' : view($utils->placeHierarchyView(), $data);
                 if (null === $data || $action2 === 'hierarchy-e') {
-                    $content .= view('modules/place-hierarchy/events', [
-                        'indilist' => $place->searchIndividualsInPlace(),
-                        'famlist'  => $place->searchFamiliesInPlace(),
-                        'tree'     => $place->tree(),
+                    $content .= view($utils->eventsView(), [
+                        'indilist'  => $place->searchIndividualsInPlace(),
+                        'famlist'   => $place->searchFamiliesInPlace(),
+                        'placename' => $place->gedcomName(),
+                        'tree'      => $place->tree(),
                     ]);
                 }
                 break;
@@ -118,7 +121,7 @@ class GenericPlaceHierarchyController {
         }
 
         if ($data !== null && $action2 !== 'hierarchy-e' && $place->gedcomName() !== '') {
-            $events_link = $this->listUrl($tree, ['module' => $module, 'action' => $action, 'action2' => 'hierarchy-e', 'place_id' => $place_id] + $urlFilters);
+            $events_link = $this->module->listUrl($tree, ['action2' => 'hierarchy-e', 'place_id' => $place_id] + $urlFilters);
         } else {
             $events_link = '';
         }
@@ -126,9 +129,9 @@ class GenericPlaceHierarchyController {
         $breadcrumbs = $this->breadcrumbs($place);
         
         return $this->viewResponse(
-            $this->utils->pageView(),
+            $utils->pageView(),
             [
-                'utils'       => $this->utils,
+                'utils'       => $utils,
                 'urlFilters'  => $urlFilters,
                 
                 'alt_link'    => $alt_link,
@@ -138,29 +141,10 @@ class GenericPlaceHierarchyController {
                 'current'     => $breadcrumbs['current'],
                 'events_link' => $events_link,
                 'place'       => $place,
-                'title'       => $this->utils->pageLabel(),
+                'title'       => $utils->pageLabel(),
                 'tree'        => $tree,
-                
-                //replaced by events link
-                'showeventslink' => null !== $data && $place->gedcomName() !== '' && $action2 !== 'hierarchy-e',
-                
-                //replaced by alt_link/alt_url
-                'nextaction'     => $nextaction,
-                
-                //obsolete (here)
-                'module'         => $module,
-                'action'         => $action,
             ]
         );
-    }
-
-    //TODO modernize links to vesta-place-list
-    public function listUrl(Tree $tree, array $parameters = []): string
-    {
-        $parameters['tree'] = $tree->name();
-
-        //return route(static::class, $parameters);        
-        return route('module', $parameters);
     }
     
     /**
@@ -168,8 +152,12 @@ class GenericPlaceHierarchyController {
      *
      * @return Place[][]
      */
-    private function getList(Tree $tree, ServerRequestInterface $request): array {
-        $topLevel = $this->utils->findPlace(0, $tree, $request->getQueryParams());
+    private function getList(
+        PlaceHierarchyUtils $utils,
+        Tree $tree, 
+        ServerRequestInterface $request): array {
+        
+        $topLevel = $utils->findPlace(0, $tree, $request->getQueryParams());
         $places = $topLevel->getChildPlaces();
             
         $numfound = count($places);
@@ -238,7 +226,12 @@ class GenericPlaceHierarchyController {
      *
      * @return array
      */
-    protected function mapData(PlaceWithinHierarchy $placeObj, $places): array {
+    protected function mapData(
+        PlaceHierarchyUtils $utils,
+        $detailsThreshold,
+        PlaceWithinHierarchy $placeObj, 
+        $places): array {
+        
         $features  = [];
         $sidebar   = '';
         $flag_path = Webtrees::MODULES_DIR . 'openstreetmap/';
@@ -253,7 +246,7 @@ class GenericPlaceHierarchyController {
         //details only up to a given threshold 
         //(relevant for stats in general (i.e. should be in main webtrees),
         //but also for our more complex location function)
-        $showDetails = sizeof($places) <= $this->detailsThreshold;
+        $showDetails = sizeof($places) <= $detailsThreshold;
       
         $locations = [];
         foreach ($places as $id => $place) {
@@ -303,7 +296,7 @@ class GenericPlaceHierarchyController {
               $placeStats['FAM'] = $place->countFamiliesInPlace();              
             }
             
-            $sidebar .= view($this->utils->sidebarView(), [
+            $sidebar .= view($utils->sidebarView(), [
                 'showlink'      => $show_link,
                 'flag'          => $flag,
                 'id'            => $id,

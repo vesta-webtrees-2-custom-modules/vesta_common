@@ -32,7 +32,7 @@ class FunctionsPrintExtHelpLink {
         return
             '<a href="#" data-bs-toggle="modal" data-bs-backdrop="static" data-bs-target="#wt-ajax-modal" data-wt-href="' . $url . '" title="' . MoreI18N::xlate('Help') . '">' .
             view('icons/help') .
-            '<span class="sr-only">' . MoreI18N::xlate('Help') . '</span>' .
+            '<span class="visually-hidden">' . MoreI18N::xlate('Help') . '</span>' .
             '</a>';
     }
     
