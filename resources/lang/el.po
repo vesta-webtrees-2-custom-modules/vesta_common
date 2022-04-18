@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 21:14+0200\n"
+"POT-Creation-Date: 2022-04-18 21:14+0200\n"
 "PO-Revision-Date: 2021-04-15 13:26+0000\n"
 "Last-Translator: Panagiotis Klimis <klimis.p@gmail.com>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/el/>\n"
@@ -87,7 +87,7 @@ msgid "Displayed title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:166
 msgid "Facts and Events Tab Settings"
 msgstr ""
 
@@ -160,6 +160,10 @@ msgstr ""
 #. I18N: Module Configuration
 #: CommonI18N.php:115
 msgid "Options"
+msgstr ""
+
+#: CommonI18N.php:170
+msgid "Place history"
 msgstr ""
 
 #. I18N: Module Configuration
@@ -300,7 +304,7 @@ msgstr ""
 msgid "Vesta location data management overview"
 msgstr ""
 
-#: resources/views/fact.phtml:165
+#: resources/views/fact.phtml:173
 msgid "View this family"
 msgstr ""
 
@@ -327,7 +331,7 @@ msgstr ""
 msgid "here"
 msgstr ""
 
-#: HookInterfaces/FunctionsPlaceUtils.php:88
+#: HookInterfaces/FunctionsPlaceUtils.php:94
 msgid "map coordinates directly (MAP tag)"
 msgstr ""
 

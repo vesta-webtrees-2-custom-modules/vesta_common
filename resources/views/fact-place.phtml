@@ -1,12 +1,13 @@
 <?php
 
-use Cissee\Webtrees\Module\PersonalFacts\IndividualFactsTabModuleExtended;
+use Fisharebest\Webtrees\Module\ModuleInterface;
 use Vesta\Model\PlaceStructure;
 use Vesta\VestaUtils;
 
 /**
- * @var PlaceStructure                   $ps
- * @var IndividualFactsTabModuleExtended $module
+ * @var PlaceStructure  $ps
+ * @var ModuleInterface $module
+ * @var bool            $hideCoordinates
  */
 
 ?>
@@ -15,5 +16,6 @@ use Vesta\VestaUtils;
     <?= view(VestaUtils::vestaViewsNamespace() . '::fact-place-actual', [
         'ps' => $ps, 
         'module' => $module,
-        'useVestals' => false]) ?>
+        'useVestals' => false,
+        'hideCoordinates' => $hideCoordinates]) ?>
 </div>

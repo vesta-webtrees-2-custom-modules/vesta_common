@@ -7,17 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 21:14+0200\n"
+"POT-Creation-Date: 2022-04-18 21:14+0200\n"
 "PO-Revision-Date: 2022-04-11 05:47+0000\n"
 "Last-Translator: Олег <uolega@yandex.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-common/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.12-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
@@ -89,7 +87,7 @@ msgid "Displayed title"
 msgstr "Отображаемый заголовок"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:166
 msgid "Facts and Events Tab Settings"
 msgstr "Настройки вкладки \"Факты и события\""
 
@@ -163,6 +161,10 @@ msgstr "Переместить"
 #: CommonI18N.php:115
 msgid "Options"
 msgstr "Параметры"
+
+#: CommonI18N.php:170
+msgid "Place history"
+msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
@@ -302,7 +304,7 @@ msgstr "Провайдер данных о местоположении Vesta We
 msgid "Vesta location data management overview"
 msgstr "Обзор управления данными о местоположении Vesta"
 
-#: resources/views/fact.phtml:165
+#: resources/views/fact.phtml:173
 msgid "View this family"
 msgstr "Посмотреть эту семью"
 
@@ -329,7 +331,7 @@ msgstr "исключить %1$s"
 msgid "here"
 msgstr "здесь"
 
-#: HookInterfaces/FunctionsPlaceUtils.php:88
+#: HookInterfaces/FunctionsPlaceUtils.php:94
 msgid "map coordinates directly (MAP tag)"
 msgstr "координаты карты напрямую (тег MAP)"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 21:14+0200\n"
+"POT-Creation-Date: 2022-04-18 21:14+0200\n"
 "PO-Revision-Date: 2021-06-15 12:32+0000\n"
 "Last-Translator: z-yurets <zaharchenko.yurij@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/uk/>\n"
@@ -87,7 +87,7 @@ msgid "Displayed title"
 msgstr "Заголовок"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:166
 msgid "Facts and Events Tab Settings"
 msgstr "Налаштування вкладки \"Факти та події\""
 
@@ -161,6 +161,10 @@ msgstr "Переміщення"
 #: CommonI18N.php:115
 msgid "Options"
 msgstr "Параметри"
+
+#: CommonI18N.php:170
+msgid "Place history"
+msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
@@ -300,7 +304,7 @@ msgstr "Vesta Постачальник даних про місцезнаход�
 msgid "Vesta location data management overview"
 msgstr "Огляд управління даними про місцезнаходження Vesta"
 
-#: resources/views/fact.phtml:165
+#: resources/views/fact.phtml:173
 msgid "View this family"
 msgstr ""
 
@@ -327,7 +331,7 @@ msgstr "виключити %1$s"
 msgid "here"
 msgstr "тут"
 
-#: HookInterfaces/FunctionsPlaceUtils.php:88
+#: HookInterfaces/FunctionsPlaceUtils.php:94
 msgid "map coordinates directly (MAP tag)"
 msgstr "координати карти безпосередньо (тег MAP)"
 

@@ -1,0 +1,213 @@
+<?php
+
+declare(strict_types=1);
+
+use Cissee\WebtreesExt\Contracts\FactListUtils;
+use Cissee\WebtreesExt\Contracts\FallbackAssociateFactUtils;
+use Cissee\WebtreesExt\Functions\FunctionsPrintExtHelpLink;
+use Cissee\WebtreesExt\Module\ModuleVestalInterface;
+use Cissee\WebtreesExt\MoreI18N;
+use Fisharebest\Webtrees\Auth;
+use Fisharebest\Webtrees\Fact;
+use Fisharebest\Webtrees\I18N;
+use Fisharebest\Webtrees\Registry;
+use Fisharebest\Webtrees\Tree;
+use Fisharebest\Webtrees\View;
+use Illuminate\Support\Collection;
+use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderInterface;
+use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderUtils;
+use Vesta\Model\FactFilter;
+use Vesta\VestaUtils;
+//use Ramsey\Uuid\Uuid;
+
+/**
+ * @var GedcomRecord               $record
+ * @var Collection<int,Individual> $individuals
+ * @var FactFilter                 $factFilter
+ * @var Tree                       $tree
+ * @var string                     $context
+ * @var ModuleVestalInterface      $module
+ * 
+ * //$module must also provide getHelpAction for 'Predecessor'!
+ */
+
+// lists requires a unique ID in case there are multiple lists per page
+//$table_id = 'place-history-' . Uuid::uuid4()->toString();
+
+//TODO: make configurable
+//TEMP ONLY, TO BE EXTENDED
+$filter = [
+    'OCCU' => 'OCCU',
+    'PROP' => 'PROP',
+    'RESI' => 'RESI',
+    ];
+
+$facts = $individuals
+    ->flatMap(function ($individual) use ($filter, $factFilter): Collection {
+        $individual_facts = $individual
+            ->facts($filter)
+            ->filter(function (Fact $fact) use ($factFilter) : bool {
+                return $factFilter->filter($fact);
+            });
+        
+        return $individual_facts;
+    });
+
+$additionalFacts = array();
+$ret = IndividualFactsTabExtenderUtils::accessibleModules($module, $record->tree(), Auth::user())
+    ->map(function (IndividualFactsTabExtenderInterface $module) use ($record) {
+      return $module->hFactsTabGetAdditionalFacts($record);
+    })
+    ->toArray();
+
+foreach ($ret as $r) {
+    foreach ($r as $rr) {
+        $tag = explode(':', $rr->tag())[1];
+        if (in_array($tag, $filter, true)) {
+            $additionalFacts[] = $rr;
+        }        
+    }
+}
+
+$facts = $facts->merge($additionalFacts);
+$facts = Fact::sortFacts($facts);
+
+?>
+    
+<?php
+//[RC] PATCHED
+$outputBeforeTab = FactListUtils::getOutputBeforeTab($module, $record, false);
+echo $outputBeforeTab->getMain();
+View::push('javascript');
+echo $outputBeforeTab->getScript();
+View::endpush();
+?>
+
+<div class="wt-facts-tab py-4">
+    <table class="table wt-facts-table">
+        <tbody>
+            <tr>
+                <td colspan="2">
+                    <?php if (array_key_exists('BIRT', $filter)) : ?>
+                        <label>
+                            <?php
+                                //autocomplete off prevents firefox from caching checked state on reload (occured only in case of reload via reload button)
+                                //this caching is problematic because it messes up persistentToggle, which assumes unchecked state and therefore checks regardless of state
+                                //cf https://stackoverflow.com/questions/299811/why-does-the-checkbox-stay-checked-when-reloading-the-page
+                            ?>
+                            <input id="show-births-in-place-history" type="checkbox" data-bs-toggle="collapse" data-bs-target=".wt-show-BIRT-in-place-history-<?= $context ?>" data-wt-persist="show-BIRT-in-place-history-<?= $context ?>" autocomplete="off">
+                            <?= MoreI18N::xlate('Births') ?>
+                        </label>
+                    <?php endif ?>
+                    
+                    <?php if (array_key_exists('OCCU', $filter)) : ?>
+                        <label>
+                            <input id="show-occupations-in-place-history" type="checkbox" data-bs-toggle="collapse" data-bs-target=".wt-show-OCCU-in-place-history-<?= $context ?>" data-wt-persist="show-OCCU-in-place-history-<?= $context ?>" autocomplete="off">
+                            <?= MoreI18N::xlate('Occupations') ?>
+                        </label>
+                    <?php endif ?>
+                    <?php if (array_key_exists('PROP', $filter)) : ?>
+                        <label>
+                            <input id="show-possessions-in-place-history" type="checkbox" data-bs-toggle="collapse" data-bs-target=".wt-show-PROP-in-place-history-<?= $context ?>" data-wt-persist="show-PROP-in-place-history-<?= $context ?>" autocomplete="off">
+                            <?= /* I18N: Gedcom tag PROP */ I18N::translate('Possessions') ?>
+                        </label>
+                    <?php endif ?>
+                    <?php if (array_key_exists('RESI', $filter)) : ?>
+                        <label>
+                            <input id="show-residences-in-place-history" type="checkbox" data-bs-toggle="collapse" data-bs-target=".wt-show-PROP-in-place-history-<?= $context ?>" data-wt-persist="show-RESI-in-place-history-<?= $context ?>" autocomplete="off">
+                            <?= /* I18N: Gedcom tag RESI */ I18N::translate('Residences') ?>
+                        </label>
+                    <?php endif ?>
+
+                    <?php
+                    //[RC] PATCHED
+                    $outputInDescriptionbox = FactListUtils::getOutputInDescriptionbox($module, $record);
+                    echo $outputInDescriptionbox->getMain();
+                    View::push('javascript');
+                    echo $outputInDescriptionbox->getScript();
+                    View::endpush();
+                    ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table wt-facts-table">
+        <tbody>
+            <?php
+                $predecessors = [];
+            ?>
+            <?php foreach ($facts as $fact) : ?>
+                <?php
+                    $tag = explode(':', $fact->tag())[1];                
+                    $styles = [];
+                    $styles []= 'wt-show-'.$tag.'-in-place-history-'.$context;                                        
+                ?>       
+                <?= view(VestaUtils::vestaViewsNamespace() . '::fact', [                    
+                    'fact'                   => $fact, 
+                    'record'                 => $record, 
+                    'module'                 => $module,
+                    'useVestals'             => true, //TODO make configurable?
+                    'hideCoordinates'        => true, //TODO make configurable?
+                    'associateFactUtils'     => new FallbackAssociateFactUtils(),
+                    'styles'                 => $styles,
+                    'predecessors'           => array_key_exists($tag, $predecessors)?$predecessors[$tag]:[],
+                    'relToPredecessorSuffix' => FunctionsPrintExtHelpLink::helpLink($module->name(), 'Predecessor'),
+                    ]) ?>
+                <?php
+                    //prepare next fact
+                    $predecessors[$tag] = [$fact->record()];
+                ?>
+            <?php endforeach ?>
+
+            <?php if ($facts->isEmpty()) : ?>
+                <tr>
+                    <td colspan="2">
+                        <?= I18N::translate('No events of these specific types have occurred at this place.') ?>
+                    </td>
+                </tr>
+            <?php endif ?>
+        </tbody>
+    </table>
+</div>
+
+<?php
+//[RC] PATCHED
+$outputAfterTab = FactListUtils::getOutputAfterTab($module, $record, false);
+echo $outputAfterTab->getMain();
+View::push('javascript');
+echo $outputAfterTab->getScript();
+View::endpush();
+?>
+
+<?php  
+    $requests = [];
+
+    if ($module->useVestals()) {
+        foreach ($facts as $fact) {
+            $requests = array_merge($requests, $module->functionsVestals()->vestalsForFactPlace($fact));
+        }        
+    }
+
+    $url = $module->functionsVestals()->vestalsActionUrl();
+?>
+    
+<?php if (sizeof($requests) > 0) : ?>
+    <?php View::push('javascript') ?>
+    <script>
+    //load via ajax
+    $.ajax({
+          url : "<?= $url ?>",
+          type: "POST",
+          data: JSON.stringify(<?= json_encode(array_values($requests)) ?>),
+          contentType: "application/json; charset=utf-8",
+          dataType   : "json",
+          success    : function(arr) {
+            for (i = 0; i < arr.length; i++) {
+              $("."+arr[i].classAttr).replaceWith(arr[i].html);
+            }
+          }
+    });
+    </script>
+    <?php View::endpush() ?>
+<?php endif ?>

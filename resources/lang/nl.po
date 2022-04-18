@@ -2,16 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the vesta package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 21:14+0200\n"
+"POT-Creation-Date: 2022-04-18 21:14+0200\n"
 "PO-Revision-Date: 2021-10-17 10:35+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-"
-"custom-modules/vesta-common/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,12 +30,8 @@ msgstr "%1$s filters"
 
 #: resources/views/vesta_config.phtml:58
 #, php-format
-msgid ""
-"%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman "
-"goddess of the hearth, home, and family."
-msgstr ""
-"%1$s is het astronomische symbool van de planetoïde Vesta, vernoemd naar de "
-"Romeinse godin van de haard, het huis en de familie."
+msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
+msgstr "%1$s is het astronomische symbool van de planetoïde Vesta, vernoemd naar de Romeinse godin van de haard, het huis en de familie."
 
 #: resources/views/admin/vesta_components.phtml:25
 #: resources/views/admin/vesta_components_20.phtml:25
@@ -49,74 +44,37 @@ msgid "(specific functionality)"
 msgstr "(specifieke functionaliteit)"
 
 #: VestaCommonLibModule.php:61
-msgid ""
-"A module providing common classes and translations for other 'Vesta' custom "
-"modules."
-msgstr ""
-"Een module met gemeenschappelijke klassen voor andere 'Vesta' aangepaste "
-"modules."
+msgid "A module providing common classes and translations for other 'Vesta' custom modules."
+msgstr "Een module met gemeenschappelijke klassen voor andere 'Vesta' aangepaste modules."
 
 #: resources/views/vesta_config.phtml:42
-msgid ""
-"A: Different modules may target the same component, e.g. by enhancing the "
-"facts and events tab in various places. Without hooks, we'd have to use "
-"multiple module-specific tabs."
-msgstr ""
-"A: Verschillende modules kunnen zich richten op hetzelfde onderdeel, "
-"bijvoorbeeld door het tabblad feiten en gebeurtenissen op verschillende "
-"plaatsen te verbeteren. Zonder hooks moeten er meerdere modulespecifieke "
-"tabbladen worden gebruiken."
+msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
+msgstr "A: Verschillende modules kunnen zich richten op hetzelfde onderdeel, bijvoorbeeld door het tabblad feiten en gebeurtenissen op verschillende plaatsen te verbeteren. Zonder hooks moeten er meerdere modulespecifieke tabbladen worden gebruiken."
 
 #: resources/views/vesta_config.phtml:66
-msgid ""
-"A: Each module has a Readme file with basic information (best viewed online, "
-"but also included in the module's folder)."
-msgstr ""
-"A: Elke module heeft een Readme-bestand met basisinformatie (online te "
-"bekijken, maar ook opgenomen in de map van de module)."
+msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
+msgstr "A: Elke module heeft een Readme-bestand met basisinformatie (online te bekijken, maar ook opgenomen in de map van de module)."
 
 #: resources/views/vesta_config.phtml:51
-msgid ""
-"A: Hooks are usually enabled automatically when the respective custom module "
-"is enabled. See also the respective source and target module's preferences."
-msgstr ""
-"A: Hooks worden meestal automatisch ingeschakeld wanneer de desbetreffende "
-"aangepaste module is ingeschakeld. Zie ook de voorkeuren van de betreffende "
-"bron- en doelmodule."
+msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
+msgstr "A: Hooks worden meestal automatisch ingeschakeld wanneer de desbetreffende aangepaste module is ingeschakeld. Zie ook de voorkeuren van de betreffende bron- en doelmodule."
 
 #: resources/views/vesta_config.phtml:57
-msgid ""
-"A: The Vesta symbol is mainly used to group related modules in the module "
-"administration list."
-msgstr ""
-"A: Het Vesta-symbool wordt voornamelijk gebruikt om gerelateerde modules in "
-"de modulebeheerlijst te groeperen."
+msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
+msgstr "A: Het Vesta-symbool wordt voornamelijk gebruikt om gerelateerde modules in de modulebeheerlijst te groeperen."
 
 #: resources/views/vesta_config.phtml:35
-msgid ""
-"A: Via hooks. Hooks allow modules to extend functionality of other "
-"components, without having to re-implement the entire component. Webtrees "
-"uses hooks e.g. in the page footer, and for historic events."
-msgstr ""
-"A: Via 'hooks'. Hooks zorgen ervoor dat modules de functionaliteit van "
-"andere componenten kunnen uitbreiden, zonder dat het hele onderdeel opnieuw "
-"hoeft te worden geïmplementeerd. Webtrees maakt gebruik van hooks, "
-"bijvoorbeeld in de paginavoettekst, en voor historische gebeurtenissen."
+msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
+msgstr "A: Via 'hooks'. Hooks zorgen ervoor dat modules de functionaliteit van andere componenten kunnen uitbreiden, zonder dat het hele onderdeel opnieuw hoeft te worden geïmplementeerd. Webtrees maakt gebruik van hooks, bijvoorbeeld in de paginavoettekst, en voor historische gebeurtenissen."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:147
-msgid ""
-"Deselect in order to have the title appear exactly as the original title."
-msgstr ""
-"Schakel de selectie uit om de oorspronkelijke naam te blijven gebruiken."
+msgid "Deselect in order to have the title appear exactly as the original title."
+msgstr "Schakel de selectie uit om de oorspronkelijke naam te blijven gebruiken."
 
 #: resources/views/vesta_config.phtml:44
-msgid ""
-"Different modules may also be linked dynamically to provide specific data, "
-"such as location data for event places."
-msgstr ""
-"Verschillende modules kunnen ook dynamisch worden gekoppeld om specifieke "
-"gegevens te verstrekken, zoals locatiegegevens voor gebeurtenisplaatsen."
+msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
+msgstr "Verschillende modules kunnen ook dynamisch worden gekoppeld om specifieke gegevens te verstrekken, zoals locatiegegevens voor gebeurtenisplaatsen."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:123
@@ -129,26 +87,18 @@ msgid "Displayed title"
 msgstr "Weergegeven titel"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:166
 msgid "Facts and Events Tab Settings"
 msgstr "Instellingen voor tabblad Feiten en gebeurtenissen"
 
 #: resources/views/vesta_config.phtml:59
-msgid ""
-"If the symbol is displayed improperly, e.g. as a rectangle, check your "
-"browser's unicode support capabilities."
-msgstr ""
-"Als het symbool niet goed wordt weergegeven, bijvoorbeeld als rechthoek, "
-"controleer dan de Unicode-ondersteuningsmogelijkheden van uw browser."
+msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
+msgstr "Als het symbool niet goed wordt weergegeven, bijvoorbeeld als rechthoek, controleer dan de Unicode-ondersteuningsmogelijkheden van uw browser."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:161
-msgid ""
-"In particular if both lists are empty, no additional facts and events of "
-"this kind will be shown."
-msgstr ""
-"Als beide lijsten leeg zijn, zullen geen aanvullende feiten en "
-"gebeurtenissen van deze aard worden getoond."
+msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
+msgstr "Als beide lijsten leeg zijn, zullen geen aanvullende feiten en gebeurtenissen van deze aard worden getoond."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:131
@@ -187,21 +137,13 @@ msgstr "Aanbieders van locatiegegevens"
 
 #: resources/views/admin/upgrade/wizard.phtml:35
 #, php-format
-msgid ""
-"Make sure all active custom modules are compatible with the new webtrees "
-"version %1$s. You may have to upgrade them as well."
-msgstr ""
-"Zorg ervoor dat alle actieve aangepaste modules compatibel zijn met de "
-"nieuwe webtrees-versie %1$s. Mogelijk moet u ze ook upgraden."
+msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
+msgstr "Zorg ervoor dat alle actieve aangepaste modules compatibel zijn met de nieuwe webtrees-versie %1$s. Mogelijk moet u ze ook upgraden."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
-msgid ""
-"Modules listed here are used (in the configured order) to determine map "
-"coordinates of places."
-msgstr ""
-"Modules die hier worden vermeld, worden (in de geconfigureerde volgorde) "
-"gebruikt om kaartcoördinaten van plaatsen te bepalen."
+msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
+msgstr "Modules die hier worden vermeld, worden (in de geconfigureerde volgorde) gebruikt om kaartcoördinaten van plaatsen te bepalen."
 
 #: resources/views/admin/vesta_components.phtml:31
 #: resources/views/admin/vesta_components_20.phtml:31
@@ -219,6 +161,10 @@ msgstr "Verplaats"
 #: CommonI18N.php:115
 msgid "Options"
 msgstr "Opties"
+
+#: CommonI18N.php:170
+msgid "Place history"
+msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
@@ -260,9 +206,7 @@ msgstr "Vereist de modules '%1$s %2$s' en '%1$s %3$s'."
 #. I18N: Module Configuration
 #: CommonI18N.php:81
 #, php-format
-msgid ""
-"Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' "
-"module."
+msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
 msgstr "Vereist de modules '%1$s %2$s', '%1$s %3$s' en '%1$s %4$s'."
 
 #. I18N: Module Configuration
@@ -273,25 +217,13 @@ msgstr "Vereist de module '%1$s %2$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
-msgid ""
-"Restrict to this list of GEDCOM family facts and events. You can modify this "
-"list by removing or adding fact and event names, even custom ones, as "
-"necessary."
-msgstr ""
-"Beperken tot deze lijst van GEDCOM-gezinsfeiten en -gebeurtenissen. Indien "
-"nodig kunt u deze lijst wijzigen door namen van feiten en gebeurtenissen, "
-"zelfs aangepaste namen, te verwijderen of toe te voegen."
+msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
+msgstr "Beperken tot deze lijst van GEDCOM-gezinsfeiten en -gebeurtenissen. Indien nodig kunt u deze lijst wijzigen door namen van feiten en gebeurtenissen, zelfs aangepaste namen, te verwijderen of toe te voegen."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:153
-msgid ""
-"Restrict to this list of GEDCOM individual facts and events. You can modify "
-"this list by removing or adding fact and event names, even custom ones, as "
-"necessary."
-msgstr ""
-"Beperken tot deze lijst van GEDCOM-persoonsfeiten en -gebeurtenissen. Indien "
-"nodig kunt u deze lijst wijzigen door namen van feiten en gebeurtenissen, "
-"zelfs aangepaste namen, te verwijderen of toe te voegen."
+msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
+msgstr "Beperken tot deze lijst van GEDCOM-persoonsfeiten en -gebeurtenissen. Indien nodig kunt u deze lijst wijzigen door namen van feiten en gebeurtenissen, zelfs aangepaste namen, te verwijderen of toe te voegen."
 
 #: resources/views/vesta_config.phtml:69
 #, php-format
@@ -300,25 +232,13 @@ msgstr "Zie ook %1$s voor een overzicht van locatiegegevensbeheer in webtrees."
 
 #: resources/views/admin/upgrade/wizard.phtml:63
 #, php-format
-msgid ""
-"The currently installed versions of the following custom modules may not be "
-"compatible with the new webtrees version %1$s, and there are no upgrades "
-"available yet: %2$s"
-msgstr ""
-"De huidige geïnstalleerde versies van de volgende aangepaste modules zijn "
-"mogelijk niet compatibel met de nieuwe webtrees-versie %1$s, en er zijn nog "
-"geen upgrades beschikbaar: %2$s"
+msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
+msgstr "De huidige geïnstalleerde versies van de volgende aangepaste modules zijn mogelijk niet compatibel met de nieuwe webtrees-versie %1$s, en er zijn nog geen upgrades beschikbaar: %2$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:47
 #, php-format
-msgid ""
-"The currently installed versions of the following custom modules may not be "
-"compatible with the new webtrees version %1$s, but the modules have upgrades "
-"available: %2$s"
-msgstr ""
-"De huidige geïnstalleerde versies van de volgende aangepaste modules zijn "
-"mogelijk niet compatibel met de nieuwe webtrees-versie %1$s, maar er zijn "
-"upgrades voor de modules beschikbaar: %2$s"
+msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
+msgstr "De huidige geïnstalleerde versies van de volgende aangepaste modules zijn mogelijk niet compatibel met de nieuwe webtrees-versie %1$s, maar er zijn upgrades voor de modules beschikbaar: %2$s"
 
 #: VestaCommonLibModule.php:62
 msgid "This module cannot be disabled."
@@ -384,7 +304,7 @@ msgstr "Vesta Webtreeslocatiegegevensaanbieder"
 msgid "Vesta location data management overview"
 msgstr "Overzicht van Vesta-locatiegegevensbeheer"
 
-#: resources/views/fact.phtml:165
+#: resources/views/fact.phtml:173
 msgid "View this family"
 msgstr "Bekijk dit gezin"
 
@@ -393,15 +313,8 @@ msgid "What's new? "
 msgstr "Wat is er nieuw? "
 
 #: resources/views/vesta_config.phtml:60
-msgid ""
-"You may have to install a font providing this symbol, and for certain "
-"browsers – Chrome in particular – this font has to be in one of the font "
-"families specified by webtrees, such as 'Segoe UI Symbol'."
-msgstr ""
-"Het kan zijn dat u een lettertype moet installeren dat dit symbool bevat, en "
-"voor bepaalde browsers - met name Chrome - moet dit lettertype zich bevinden "
-"in een van de lettertypefamilies die door webtrees zijn opgegeven, zoals "
-"'Segoe UI Symbol'."
+msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
+msgstr "Het kan zijn dat u een lettertype moet installeren dat dit symbool bevat, en voor bepaalde browsers - met name Chrome - moet dit lettertype zich bevinden in een van de lettertypefamilies die door webtrees zijn opgegeven, zoals 'Segoe UI Symbol'."
 
 #: resources/views/admin/vesta_components.phtml:31
 #: resources/views/admin/vesta_components_20.phtml:31
@@ -418,7 +331,7 @@ msgstr "%1$s uitsluiten"
 msgid "here"
 msgstr "hier"
 
-#: HookInterfaces/FunctionsPlaceUtils.php:88
+#: HookInterfaces/FunctionsPlaceUtils.php:94
 msgid "map coordinates directly (MAP tag)"
 msgstr "coördinaten rechtstreeks toewijzen (MAP-label)"
 
@@ -443,36 +356,19 @@ msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "omhoog"
 
-#: resources/views/fact-association-structure.phtml:135
-#: resources/views/fact-association-structure.phtml:138
-#, php-format
-msgid ""
-"<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</"
-"span>"
-msgstr ""
-"<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</"
-"span>"
+#~ msgid "(aged %s)"
+#~ msgstr "(leeftijd %s)"
 
-#: resources/views/fact-association-structure.phtml:138
-msgid "Associate"
-msgstr "Gerelateerd persoon"
+#~ msgctxt "Female"
+#~ msgid "(aged %s)"
+#~ msgstr "(leeftijd %s)"
 
-#: resources/views/fact-association-structure.phtml:68
-#, php-format
-msgid "(aged %s)"
-msgstr "(leeftijd %s)"
+#~ msgctxt "Male"
+#~ msgid "(aged %s)"
+#~ msgstr "(leeftijd %s)"
 
-#: resources/views/fact-association-structure.phtml:65
-#, php-format
-msgctxt "Female"
-msgid "(aged %s)"
-msgstr "(leeftijd %s)"
-
-#: resources/views/fact-association-structure.phtml:62
-#, php-format
-msgctxt "Male"
-msgid "(aged %s)"
-msgstr "(leeftijd %s)"
+#~ msgid "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
+#~ msgstr "<span class=\"label\">%1$s:</span> <span class=\"field\" dir=\"auto\">%2$s</span>"
 
 #~ msgid "Abbreviation"
 #~ msgstr "Afkorting"
@@ -519,19 +415,11 @@ msgstr "(leeftijd %s)"
 #~ msgid "Also known as"
 #~ msgstr "Ook bekend als"
 
-#~ msgid ""
-#~ "An associate is another individual who was involved with this fact or "
-#~ "event, such as a witness or a priest."
-#~ msgstr ""
-#~ "Een gerelateerd persoon is een andere persoon die betrokken was bij dit "
-#~ "feit of deze gebeurtenis, zoals een getuige of een priester."
+#~ msgid "An associate is another individual who was involved with this fact or event, such as a witness or a priest."
+#~ msgstr "Een gerelateerd persoon is een andere persoon die betrokken was bij dit feit of deze gebeurtenis, zoals een getuige of een priester."
 
-#~ msgid ""
-#~ "An associate is another individual who was involved with this individual, "
-#~ "such as a friend or an employer."
-#~ msgstr ""
-#~ "Een gerelateerd persoon is een andere persoon die betrokken was bij deze "
-#~ "persoon, zoals een vriend of een werkgever."
+#~ msgid "An associate is another individual who was involved with this individual, such as a friend or an employer."
+#~ msgstr "Een gerelateerd persoon is een andere persoon die betrokken was bij deze persoon, zoals een vriend of een werkgever."
 
 #~ msgid "Ancestors interest"
 #~ msgstr "Interesse in voorouders"
@@ -541,6 +429,9 @@ msgstr "(leeftijd %s)"
 
 #~ msgid "Annulment"
 #~ msgstr "Nietigverklaring"
+
+#~ msgid "Associate"
+#~ msgstr "Gerelateerd persoon"
 
 #~ msgid "Associated facts and events"
 #~ msgstr "Feiten en gebeurtenissen met gerelateerde personen"

@@ -1,6 +1,7 @@
 <?php
 
 use Cissee\Webtrees\Module\PersonalFacts\IndividualFactsTabModuleExtended;
+use Cissee\WebtreesExt\Functions\FunctionsFactAssociates;
 use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\Age;
 use Fisharebest\Webtrees\Auth;
@@ -9,8 +10,6 @@ use Fisharebest\Webtrees\Family;
 use Fisharebest\Webtrees\Gedcom;
 use Fisharebest\Webtrees\Individual;
 use Fisharebest\Webtrees\Registry;
-use Fisharebest\Webtrees\Services\RelationshipService;
-use Fisharebest\Webtrees\View;
 
 /**
  * @var Fact $fact
@@ -99,37 +98,13 @@ foreach ($amatches as $amatch) {
         $value = implode(' — ', $values);        
          */
         
-        foreach ($associates as $associate) {
-            $relationship_name = app(RelationshipService::class)->getCloseRelationshipName($associate, $person);
-            if ($relationship_name === '') {
-                //[RC] adjusted we use a different fallback
-                //$relationship_name = I18N::translate('Relationship');
-                $relationship_name = MoreI18N::xlate('No relationship found');
-            }
-
-            //[RC] adjusted
-            $relationship_name_suffix = '';
-            if ($parent instanceof Family) {
-                // For family ASSO records (e.g. MARR), identify the spouse with a sex icon
-                $sex = '<small>' . view('icons/sex', ['sex' => $associate->sex()]) . '</small>';
-                $relationship_name_suffix = $sex;
-            }
-
-            //[RC] adjusted
-            $out = $module->getOutputForRelationship($fact, $person, $associate, ' — ', $relationship_name, $relationship_name_suffix, false);
-            if ($out != null) {
-                $values[] = $out->getMain();
-                $script = $out->getScript();
-                if ($script !== '') {
-                    View::push('javascript');
-                    echo $script;
-                    View::endpush();
-                }
-            }
-        }
-        
-        //[RC] adjusted
-        $value = implode('', $values);
+        $value = FunctionsFactAssociates::getHtmlAndPushScript(
+            $module, 
+            $fact, 
+            $parent,
+            $person,
+            $associates,
+            $values);
         
         $label = '<span class="label">' . $label . '</span>';
         $value = '<span class="field" dir="auto">' . $value . '</span>';

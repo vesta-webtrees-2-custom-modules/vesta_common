@@ -111,8 +111,9 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
                     $content .= view($utils->eventsView(), [
                         'indilist'  => $place->searchIndividualsInPlace(),
                         'famlist'   => $place->searchFamiliesInPlace(),
-                        'placename' => $place->gedcomName(),
                         'tree'      => $place->tree(),
+                        'placename' => $place->gedcomName(),
+                        'module'    => $this->module,
                     ]);
                 }
                 break;

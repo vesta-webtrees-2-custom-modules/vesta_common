@@ -5,13 +5,11 @@ declare(strict_types=1);
 namespace Cissee\WebtreesExt\Module;
 
 use Fig\Http\Message\StatusCodeInterface;
-use Fisharebest\Webtrees\Cache;
 use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Webtrees;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Support\Collection;
-use function app;
 use function GuzzleHttp\json_decode;
 
 /**

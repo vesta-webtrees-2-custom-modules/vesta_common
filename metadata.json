@@ -186,5 +186,11 @@
 		"from": "2.0.12",
 		"to": "2.1.0",
 		"changelog": ["All modules: Additional translations.","All modules: Bugfixes in the 2.1.0-beta code."]
+	},
+	{
+		"version": "2.0.23+2.1.0-beta.2.3.0",
+		"from": "2.0.12",
+		"to": "2.1.0",
+		"changelog": ["All modules: Additional translations."]
 	}
 ]

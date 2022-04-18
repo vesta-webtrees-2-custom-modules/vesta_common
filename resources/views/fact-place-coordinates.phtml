@@ -1,0 +1,41 @@
+<?php
+
+use Cissee\WebtreesExt\MoreI18N;
+use Fisharebest\Webtrees\Module\ModuleInterface;
+use Fisharebest\Webtrees\Module\ModuleMapLinkInterface;
+use Fisharebest\Webtrees\Services\ModuleService;
+use Vesta\Hook\HookInterfaces\FunctionsPlaceUtils;
+use Vesta\Model\PlaceStructure;
+
+/**
+ * @var PlaceStructure  $ps
+ * @var ModuleInterface $module
+ * @var bool            $hideCoordinates
+ */
+
+$mapCoordinates = FunctionsPlaceUtils::plac2map($module, $ps, true);
+if ($mapCoordinates == null) {
+    return;
+}
+
+$fact = $ps->asFact();
+$mapLinks = app(ModuleService::class)
+    ->findByInterface(ModuleMapLinkInterface::class)
+    ->map(fn(ModuleMapLinkInterface $module): string => ' ' . $module->mapLink($fact))
+    ->implode('');
+
+if ($hideCoordinates) {
+    echo $mapLinks;
+    return;
+}
+
+$title = ' title="' . htmlspecialchars($mapCoordinates->getTrace()->getAll()) . '"';
+
+?>
+
+<div class="wt-fact-coordinates">
+    <span class="label"<?= $title ?>><?= MoreI18N::xlate('Latitude') ?>: </span><?= $mapCoordinates->getLati() ?>
+    <span class="label"<?= $title ?>><?= MoreI18N::xlate('Longitude') ?>: </span><?= $mapCoordinates->getLong() ?>
+    <?= $mapLinks ?>
+</div>
+

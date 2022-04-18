@@ -1,16 +1,18 @@
 <?php
 
-use Cissee\Webtrees\Module\PersonalFacts\IndividualFactsTabModuleExtended;
 use Fisharebest\Webtrees\Auth;
+use Fisharebest\Webtrees\Module\ModuleInterface;
 use Fisharebest\Webtrees\Place;
 use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderInterface;
 use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderUtils;
 use Vesta\Model\PlaceStructure;
+use Vesta\VestaUtils;
 
 /**
- * @var PlaceStructure                   $ps
- * @var IndividualFactsTabModuleExtended $module
- * @var bool                             $useVestals
+ * @var PlaceStructure  $ps
+ * @var ModuleInterface $module
+ * @var bool            $useVestals
+ * @var bool            $hideCoordinates
  */
 
 //original view largely refactored
@@ -77,7 +79,10 @@ if ($useVestals) {
     <?php if ($useVestals) : ?>
         <span class = '<?= $key ?>_vestalMapCoordinates'></span>
     <?php else : ?>
-        <?= $module->functionsFactPlace()->mapCoordinates($ps); ?>
+        <?= view(VestaUtils::vestaViewsNamespace() . '::fact-place-coordinates', [
+                        'ps' => $ps, 
+                        'module' => $module,
+                        'hideCoordinates' => $hideCoordinates]) ?>
     <?php endif ?>
 
     <?php if ($useVestals) : ?>

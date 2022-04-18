@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 21:14+0200\n"
+"POT-Creation-Date: 2022-04-18 21:14+0200\n"
 "PO-Revision-Date: 2021-07-21 01:36+0000\n"
 "Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/vi/>\n"
@@ -87,7 +87,7 @@ msgid "Displayed title"
 msgstr "Tiêu đề được hiển thị"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:166
 msgid "Facts and Events Tab Settings"
 msgstr "Cài đặt tab Sự kiện và Số liệu"
 
@@ -161,6 +161,10 @@ msgstr ""
 #: CommonI18N.php:115
 msgid "Options"
 msgstr "Tùy chọn"
+
+#: CommonI18N.php:170
+msgid "Place history"
+msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
@@ -300,7 +304,7 @@ msgstr "Vesta Webtrees Nhà cung cấp dữ liệu vị trí"
 msgid "Vesta location data management overview"
 msgstr "Vesta Tổng quan về quản lý dữ liệu vị trí"
 
-#: resources/views/fact.phtml:165
+#: resources/views/fact.phtml:173
 msgid "View this family"
 msgstr ""
 
@@ -327,7 +331,7 @@ msgstr "loại trừ %1$s"
 msgid "here"
 msgstr "đây"
 
-#: HookInterfaces/FunctionsPlaceUtils.php:88
+#: HookInterfaces/FunctionsPlaceUtils.php:94
 msgid "map coordinates directly (MAP tag)"
 msgstr "tọa độ bản đồ trực tiếp (thẻ MAP)"
 

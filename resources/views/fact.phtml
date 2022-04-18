@@ -1,6 +1,8 @@
 <?php
 
-use Cissee\Webtrees\Module\PersonalFacts\IndividualFactsTabModuleExtended;
+use Cissee\WebtreesExt\Contracts\AssociateFactUtils;
+use Cissee\WebtreesExt\Functions\FunctionsFact;
+use Cissee\WebtreesExt\Functions\FunctionsFactAssociates;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Elements\UnknownElement;
 use Fisharebest\Webtrees\Elements\XrefAssociate;
@@ -22,14 +24,20 @@ use Vesta\Model\PlaceStructure;
 use Vesta\VestaUtils;
 
 /**
- * @var Fact                             $fact
- * @var GedcomRecord                     $record
- * @var IndividualFactsTabModuleExtended $module
+ * @var Fact               $fact
+ * @var GedcomRecord       $record
+ * @var ModuleInterface    $module
+ * @var bool               $useVestals
+ * @var bool               $hideCoordinates
+ * @var AssociateFactUtils $associateFactUtils
+ * @var array              $styles
+ * @var mixed              $predecessors
+ * @var string             $relToPredecessorSuffix
  */
 
 $parent  = $fact->record();
 $tree    = $parent->tree();
-[, $tag] = explode(':', $fact->tag());
+$tag     = explode(':', $fact->tag())[1];
 $label   = $fact->label();
 $value   = $fact->value();
 $type    = $fact->attribute('TYPE');
@@ -38,7 +46,7 @@ $id      = $fact->id();
 $element = Registry::elementFactory()->make($fact->tag());
 
 // New or deleted facts need different styling
-$styles = [];
+//$styles = [];
 if ($fact->isPendingAddition()) {
     $styles[] = 'wt-new';
 }
@@ -47,7 +55,7 @@ if ($fact->isPendingDeletion()) {
 }
 
 //[RC] added
-$styles = array_merge($styles, $module->additionalStyles($fact));
+$styles = array_merge($styles, FunctionsFact::additionalStyles($module, $fact));
 
 //[RC] PATCHED change style in order to keep separate from original module
 // Event of close relative
@@ -84,7 +92,7 @@ if ($tag === 'MARR') {
             
         <?php
             //[RC] added additional edit controls, even if fact itself is not editable
-            $additionalControls = $module->gveAdditionalEditControls($fact);
+            $additionalControls = FunctionsFact::gveAdditionalEditControls($module, $fact);
             $main = $additionalControls->getMain(); //echoed further down
             $script = $additionalControls->getScript();
             
@@ -101,7 +109,7 @@ if ($tag === 'MARR') {
         
         //check: anything else than Individual actually possible here?
         if (($fact->id() === 'asso') && ($record instanceof Individual)) {
-            $labelForAsso = $module->gveLabelForAsso($label, $fact, $record);
+            $labelForAsso = $associateFactUtils->gveLabelForAsso($module, $label, $fact, $record);
             $label = $labelForAsso->getMain(); //echoed further down
             $script = $labelForAsso->getScript();
             
@@ -165,6 +173,23 @@ if ($tag === 'MARR') {
                             <a href="<?= e($parent->url()) ?>"><?= I18N::translate('View this family') ?></a>
                         <?php elseif ($parent instanceof Individual) : ?>
                             <a href="<?= e($parent->url()) ?>"><?= $parent->fullName() ?></a>
+                            
+                            <?php
+                                //[RC] extended for place history 
+                                
+                            if (sizeof($predecessors) > 0) {
+                                $relToPredecessor = FunctionsFactAssociates::getHtmlAndPushScript(
+                                    $module, 
+                                    $fact, 
+                                    $parent, //!
+                                    $parent,
+                                    $predecessors,
+                                    []);
+                                
+                                echo $relToPredecessor . $relToPredecessorSuffix;
+                            }
+                            
+                            ?>
                         <?php endif ?>
                     </div>
                 <?php endif ?>
@@ -198,7 +223,8 @@ if ($tag === 'MARR') {
                     <?= view(VestaUtils::vestaViewsNamespace() . '::fact-place-actual', [
                         'ps' => PlaceStructure::fromFact($fact), 
                         'module' => $module,
-                        'useVestals' => $module->useVestals()]) ?>
+                        'useVestals' => $useVestals,
+                        'hideCoordinates' => $hideCoordinates]) ?>
                     
                     <?php
                         //[RC] why are the following tags within wt-fact-place? they have nothing to do with PLAC?
@@ -223,7 +249,9 @@ if ($tag === 'MARR') {
                 <?php
                 //[RC] adjusted
                 ?>
-                <?= view(VestaUtils::vestaViewsNamespace() . '::fact-associates', ['fact' => $fact, 'module' => $module]) ?>
+                <?= view(VestaUtils::vestaViewsNamespace() . '::fact-associates', [
+                    'fact' => $fact, 
+                    'module' => $module]) ?>
             <?php endif ?>
 
             <?= view('fact-sources', ['fact' => $fact]) ?>

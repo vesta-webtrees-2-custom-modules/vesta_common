@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 21:14+0200\n"
+"POT-Creation-Date: 2022-04-18 21:14+0200\n"
 "PO-Revision-Date: 2022-04-15 19:07+0000\n"
 "Last-Translator: Bernd Schwendinger <b0ernie@gmx.net>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-common/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -88,7 +87,7 @@ msgid "Displayed title"
 msgstr "Angezeigter Titel"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:166
 msgid "Facts and Events Tab Settings"
 msgstr "Einstellungen der Registerkarte Tatsachen und Ereignisse"
 
@@ -162,6 +161,10 @@ msgstr "nach oben"
 #: CommonI18N.php:115
 msgid "Options"
 msgstr "Optionen"
+
+#: CommonI18N.php:170
+msgid "Place history"
+msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
@@ -301,7 +304,7 @@ msgstr "Vesta Webtrees Location Data Provider"
 msgid "Vesta location data management overview"
 msgstr "Vesta-Standortdatenmanagement im Überblick"
 
-#: resources/views/fact.phtml:165
+#: resources/views/fact.phtml:173
 msgid "View this family"
 msgstr "Diese Familie ansehen"
 
@@ -328,7 +331,7 @@ msgstr "%1$s ausschließen"
 msgid "here"
 msgstr "hier"
 
-#: HookInterfaces/FunctionsPlaceUtils.php:88
+#: HookInterfaces/FunctionsPlaceUtils.php:94
 msgid "map coordinates directly (MAP tag)"
 msgstr "Kartenkoordinaten direkt (MAP-Tag)"
 

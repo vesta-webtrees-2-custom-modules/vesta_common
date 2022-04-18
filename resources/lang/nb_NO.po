@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-06 21:14+0200\n"
+"POT-Creation-Date: 2022-04-18 21:14+0200\n"
 "PO-Revision-Date: 2021-04-19 10:26+0000\n"
 "Last-Translator: Eyolf Østrem <eyolf@oestrem.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nb_NO/>\n"
@@ -87,7 +87,7 @@ msgid "Displayed title"
 msgstr "Vist tittel"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:166
 msgid "Facts and Events Tab Settings"
 msgstr "Innstillinger for «Fakta og hendelser»-fanen"
 
@@ -161,6 +161,10 @@ msgstr "Flytt"
 #: CommonI18N.php:115
 msgid "Options"
 msgstr "Alternativer"
+
+#: CommonI18N.php:170
+msgid "Place history"
+msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
@@ -300,7 +304,7 @@ msgstr "Leverandør av Vesta webtrees-plasseringsdata"
 msgid "Vesta location data management overview"
 msgstr "Oversikt over databehandling for Vesta-lokasjon"
 
-#: resources/views/fact.phtml:165
+#: resources/views/fact.phtml:173
 msgid "View this family"
 msgstr ""
 
@@ -327,7 +331,7 @@ msgstr "ekskluder %1$s"
 msgid "here"
 msgstr "her"
 
-#: HookInterfaces/FunctionsPlaceUtils.php:88
+#: HookInterfaces/FunctionsPlaceUtils.php:94
 msgid "map coordinates directly (MAP tag)"
 msgstr "kartkoordinater direkte (MAP-tag)"
 
