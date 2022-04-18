@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-18 21:14+0200\n"
+"POT-Creation-Date: 2022-04-18 21:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -189,6 +189,14 @@ msgstr ""
 msgid "Place history"
 msgstr ""
 
+#: HelpTextsPlaceHistory.php:15
+msgid "Relationship to predecessor"
+msgstr ""
+
+#: HelpTextsPlaceHistory.php:17
+msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
+msgstr ""
+
 #: HookInterfaces/FunctionsPlaceUtils.php:94
 msgid "map coordinates directly (MAP tag)"
 msgstr ""
@@ -286,6 +294,20 @@ msgstr ""
 
 #: resources/views/fact.phtml:173
 msgid "View this family"
+msgstr ""
+
+#. I18N: Gedcom tag PROP
+#: resources/views/lists/place-history.phtml:112
+msgid "Possessions"
+msgstr ""
+
+#. I18N: Gedcom tag RESI
+#: resources/views/lists/place-history.phtml:118
+msgid "Residences"
+msgstr ""
+
+#: resources/views/lists/place-history.phtml:166
+msgid "No events of these specific types have occurred at this place."
 msgstr ""
 
 #: resources/views/vesta_config.phtml:32
