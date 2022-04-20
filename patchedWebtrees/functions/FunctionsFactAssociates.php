@@ -94,7 +94,7 @@ class FunctionsFactAssociates {
         Fact $fact,
         GedcomRecord $parent,
         Individual $person,
-        mixed $associates,
+        /*mixed - php 8 only!*/ $associates,
         array $values): string {
         
         foreach ($associates as $associate) {

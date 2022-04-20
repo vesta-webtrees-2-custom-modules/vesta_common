@@ -372,7 +372,7 @@ trait VestaModuleTrait {
     //$expiry_date = Registry::timestampFactory()->now()->addYears(10)->toDateTimeString();
     
     $headers = [
-        'Content-Type' => $mime_type,
+        'content-type' => $mime_type,
         //'Expires' => $expiry_date, //apparently outdated, see also EmitResponse.php, i.e. we have to use Cache-Control!
         'Cache-Control'  => 'public,max-age=31536000', //what webtrees uses elsewhere: ~10 years
     ];
