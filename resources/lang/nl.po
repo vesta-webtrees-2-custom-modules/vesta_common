@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-04-18 21:37+0200\n"
-"PO-Revision-Date: 2021-10-17 10:35+0000\n"
+"PO-Revision-Date: 2022-04-20 20:19+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 4.12-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -160,6 +161,8 @@ msgstr "Verplaats"
 #: resources/views/lists/place-history.phtml:166
 msgid "No events of these specific types have occurred at this place."
 msgstr ""
+"Op deze plaats hebben zich geen gebeurtenissen van dit specifieke type "
+"voorgedaan."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:115
@@ -168,12 +171,12 @@ msgstr "Opties"
 
 #: CommonI18N.php:170
 msgid "Place history"
-msgstr ""
+msgstr "Plaatsgeschiedenis"
 
 #. I18N: Gedcom tag PROP
 #: resources/views/lists/place-history.phtml:112
 msgid "Possessions"
-msgstr ""
+msgstr "Bezittingen"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
@@ -208,7 +211,7 @@ msgstr "Leesmij"
 
 #: HelpTextsPlaceHistory.php:15
 msgid "Relationship to predecessor"
-msgstr ""
+msgstr "Verwantschap met voorganger"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
@@ -231,7 +234,7 @@ msgstr "Vereist de module '%1$s %2$s'."
 #. I18N: Gedcom tag RESI
 #: resources/views/lists/place-history.phtml:118
 msgid "Residences"
-msgstr ""
+msgstr "Woonplaatsen"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
@@ -261,6 +264,8 @@ msgstr "De huidige geïnstalleerde versies van de volgende aangepaste modules zi
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
+"De verwantschap verwijst naar de voorganger, d.w.z. de persoon van het "
+"voorafgaande feit van hetzelfde type."
 
 #: VestaCommonLibModule.php:62
 msgid "This module cannot be disabled."
