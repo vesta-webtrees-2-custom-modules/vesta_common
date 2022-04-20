@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-04-18 21:37+0200\n"
-"PO-Revision-Date: 2022-04-20 20:13+0000\n"
+"PO-Revision-Date: 2022-04-20 20:19+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/nl/>\n"
@@ -264,6 +264,8 @@ msgstr "De huidige geïnstalleerde versies van de volgende aangepaste modules zi
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
+"De verwantschap verwijst naar de voorganger, d.w.z. de persoon van het "
+"voorafgaande feit van hetzelfde type."
 
 #: VestaCommonLibModule.php:62
 msgid "This module cannot be disabled."
