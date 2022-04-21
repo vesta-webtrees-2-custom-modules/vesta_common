@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-18 21:37+0200\n"
+"POT-Creation-Date: 2022-04-21 22:43+0200\n"
 "PO-Revision-Date: 2022-01-15 11:53+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/sk/>\n"
@@ -140,6 +140,10 @@ msgstr "Poskytovatelia údajov o polohe"
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr "Uistite sa, že všetky aktívne užívateľské moduly sú kompatibilné s novou verziou webtrees %1$s. Možno ich budete musieť tiež aktualizovať."
 
+#: VestaCommonLibModule.php:62
+msgid "Make sure to enable this module if any other Vesta module is enabled."
+msgstr ""
+
 #. I18N: Module Configuration
 #: CommonI18N.php:97
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
@@ -261,10 +265,6 @@ msgstr "V súčasnosti inštalované verzie nasledovných užívateľských modu
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
-
-#: VestaCommonLibModule.php:62
-msgid "This module cannot be disabled."
-msgstr "Tento modul sa nedá vypnúť."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -440,6 +440,9 @@ msgstr "hore"
 
 #~ msgid "Show to visitors"
 #~ msgstr "Zobraziť návštevníkom"
+
+#~ msgid "This module cannot be disabled."
+#~ msgstr "Tento modul sa nedá vypnúť."
 
 #~ msgctxt "unknown gender"
 #~ msgid "Unknown"

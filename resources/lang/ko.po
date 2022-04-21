@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-18 21:37+0200\n"
+"POT-Creation-Date: 2022-04-21 22:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -138,6 +138,10 @@ msgstr ""
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
 
+#: VestaCommonLibModule.php:62
+msgid "Make sure to enable this module if any other Vesta module is enabled."
+msgstr ""
+
 #. I18N: Module Configuration
 #: CommonI18N.php:97
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
@@ -258,10 +262,6 @@ msgstr ""
 
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
-msgstr ""
-
-#: VestaCommonLibModule.php:62
-msgid "This module cannot be disabled."
 msgstr ""
 
 #. I18N: Module title

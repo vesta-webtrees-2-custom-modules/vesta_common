@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-18 21:37+0200\n"
+"POT-Creation-Date: 2022-04-21 22:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -206,7 +206,7 @@ msgid "A module providing common classes and translations for other 'Vesta' cust
 msgstr ""
 
 #: VestaCommonLibModule.php:62
-msgid "This module cannot be disabled."
+msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr ""
 
 #: VestaModuleCustomTrait.php:87

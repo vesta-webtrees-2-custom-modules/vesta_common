@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-18 21:37+0200\n"
+"POT-Creation-Date: 2022-04-21 22:43+0200\n"
 "PO-Revision-Date: 2021-04-19 10:26+0000\n"
 "Last-Translator: Eyolf Østrem <eyolf@oestrem.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nb_NO/>\n"
@@ -140,6 +140,10 @@ msgstr "Leverandører av posisjonsdata"
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
 
+#: VestaCommonLibModule.php:62
+msgid "Make sure to enable this module if any other Vesta module is enabled."
+msgstr ""
+
 #. I18N: Module Configuration
 #: CommonI18N.php:97
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
@@ -262,10 +266,6 @@ msgstr ""
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
 
-#: VestaCommonLibModule.php:62
-msgid "This module cannot be disabled."
-msgstr "Denne modulen kan ikke deaktiveres."
-
 #. I18N: Module title
 #: CommonI18N.php:23
 msgid "Vesta Classic Look & Feel"
@@ -383,3 +383,6 @@ msgstr "Opp"
 
 #~ msgid "FamilySearch id"
 #~ msgstr "FamilySearch-ID"
+
+#~ msgid "This module cannot be disabled."
+#~ msgstr "Denne modulen kan ikke deaktiveres."
