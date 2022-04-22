@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-04-21 22:43+0200\n"
-"PO-Revision-Date: 2022-04-20 20:19+0000\n"
+"PO-Revision-Date: 2022-04-22 18:07+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12-dev\n"
+"X-Generator: Weblate 4.12.1-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -143,6 +144,8 @@ msgstr "Zorg ervoor dat alle actieve aangepaste modules compatibel zijn met de n
 #: VestaCommonLibModule.php:62
 msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr ""
+"Zorg ervoor dat u deze module inschakelt als een andere Vesta-module is "
+"ingeschakeld."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
