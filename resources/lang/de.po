@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-04-21 22:43+0200\n"
-"PO-Revision-Date: 2022-04-15 19:07+0000\n"
-"Last-Translator: Bernd Schwendinger <b0ernie@gmx.net>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/de/>\n"
+"PO-Revision-Date: 2022-04-22 10:06+0000\n"
+"Last-Translator: mpwt <der@bauschaffen.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12-dev\n"
+"X-Generator: Weblate 4.12.1-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -143,6 +144,8 @@ msgstr "Stellen Sie sicher, dass alle aktiven benutzerdefinierten Module mit der
 #: VestaCommonLibModule.php:62
 msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr ""
+"Stellen Sie sicher, dass Sie dieses Modul aktivieren, wenn ein anderes Vesta-"
+"Modul aktiviert ist."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
@@ -163,7 +166,7 @@ msgstr "nach oben"
 
 #: resources/views/lists/place-history.phtml:166
 msgid "No events of these specific types have occurred at this place."
-msgstr ""
+msgstr "An diesem Ort hat es keine Ereignisse dieser Art gegeben."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:115
@@ -172,12 +175,12 @@ msgstr "Optionen"
 
 #: CommonI18N.php:170
 msgid "Place history"
-msgstr ""
+msgstr "Geschichte des Ortes"
 
 #. I18N: Gedcom tag PROP
 #: resources/views/lists/place-history.phtml:112
 msgid "Possessions"
-msgstr ""
+msgstr "Besitzungen"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
@@ -212,7 +215,7 @@ msgstr "Liesmich"
 
 #: HelpTextsPlaceHistory.php:15
 msgid "Relationship to predecessor"
-msgstr ""
+msgstr "Beziehung zum Vorgänger"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
@@ -235,7 +238,7 @@ msgstr "Benötigt das Modul '%1$s %2$s'."
 #. I18N: Gedcom tag RESI
 #: resources/views/lists/place-history.phtml:118
 msgid "Residences"
-msgstr ""
+msgstr "Wohnsitze"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
@@ -265,6 +268,8 @@ msgstr "Die derzeit installierten Versionen der folgenden benutzerdefinierten Mo
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
+"Die Beziehung bezieht sich auf den Vorgänger, d.h. die Person aus dem "
+"vorangegangenen Tatsache derselben Art."
 
 #. I18N: Module title
 #: CommonI18N.php:23
