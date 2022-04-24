@@ -156,7 +156,11 @@ class CommonI18N {
     public static function restrictFam(): string {
         return /* I18N: Module Configuration */I18N::translate('Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary.');
     }
-
+ 
+    public static function restrictPlaceHistory(): string {
+        return /* I18N: Module Configuration */I18N::translate('Restrict facts and events in the place history to this list of GEDCOM facts and events.');
+    }
+    
     public static function bothEmpty(): string {
         return /* I18N: Module Configuration */I18N::translate('In particular if both lists are empty, no additional facts and events of this kind will be shown.');
     }

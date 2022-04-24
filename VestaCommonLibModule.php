@@ -59,7 +59,14 @@ class VestaCommonLibModule extends AbstractModule implements
   public function description(): string {
     $description = 
             I18N::translate('A module providing common classes and translations for other \'Vesta\' custom modules.') . ' ' .
-            I18N::translate('This module cannot be disabled.');
+            I18N::translate('Make sure to enable this module if any other Vesta module is enabled.');
+    
+            //I18N::translate('This module cannot be disabled.');
+        
+            //actually not too much breaks when this module is disabled
+            //(apart from the stuff in onBoot())
+            //but it seems easier not to go into details here ...
+    
     if (!$this->isEnabled()) {
       $description = ModuleI18N::translate($this, $description);
     }
@@ -72,8 +79,7 @@ class VestaCommonLibModule extends AbstractModule implements
     } else {
         $ef = Registry::elementFactory();
         $ef->register(['INDI:_FSFTID' => new FamilySearchFamilyTreeId_20(MoreI18N::xlate('FamilySearch id'))]);        
-    }
-    
+    }    
   
     $this->flashWhatsNew('\Vesta\WhatsNew', 2);
     
@@ -92,8 +98,13 @@ class VestaCommonLibModule extends AbstractModule implements
     }
   }
   
+  //Issue #62
+  //blocking this goes against best practices wrt investigating webtrees bugs
+  //also 'has no useful effect' is no longer strictly true as there are actual changes made by this module itself
+  /*
   public function isEnabled(): bool {
     //disabling this module has no useful effect, so we block disabling
     return true;
   }
+  */
 }

@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-21 22:43+0200\n"
+"POT-Creation-Date: 2022-04-24 21:09+0200\n"
 "PO-Revision-Date: 2022-04-22 18:07+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-common/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,6 +67,21 @@ msgstr "A: Het Vesta-symbool wordt voornamelijk gebruikt om gerelateerde modules
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "A: Via 'hooks'. Hooks zorgen ervoor dat modules de functionaliteit van andere componenten kunnen uitbreiden, zonder dat het hele onderdeel opnieuw hoeft te worden geïmplementeerd. Webtrees maakt gebruik van hooks, bijvoorbeeld in de paginavoettekst, en voor historische gebeurtenissen."
 
+#. I18N: Plural for Gedcom tag BAPM
+#: model/PlaceHistory.php:59
+msgid "Baptisms"
+msgstr ""
+
+#. I18N: Plural for Gedcom tag CHR
+#: model/PlaceHistory.php:60
+msgid "Christenings"
+msgstr ""
+
+#. I18N: Plural for Gedcom tag CONF
+#: model/PlaceHistory.php:61
+msgid "Confirmations"
+msgstr ""
+
 #. I18N: Module Configuration
 #: CommonI18N.php:147
 msgid "Deselect in order to have the title appear exactly as the original title."
@@ -88,7 +102,7 @@ msgid "Displayed title"
 msgstr "Weergegeven titel"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:166
+#: CommonI18N.php:170
 msgid "Facts and Events Tab Settings"
 msgstr "Instellingen voor tabblad Feiten en gebeurtenissen"
 
@@ -97,7 +111,7 @@ msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your br
 msgstr "Als het symbool niet goed wordt weergegeven, bijvoorbeeld als rechthoek, controleer dan de Unicode-ondersteuningsmogelijkheden van uw browser."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:161
+#: CommonI18N.php:165
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "Als beide lijsten leeg zijn, zullen geen aanvullende feiten en gebeurtenissen van deze aard worden getoond."
 
@@ -143,9 +157,7 @@ msgstr "Zorg ervoor dat alle actieve aangepaste modules compatibel zijn met de n
 
 #: VestaCommonLibModule.php:62
 msgid "Make sure to enable this module if any other Vesta module is enabled."
-msgstr ""
-"Zorg ervoor dat u deze module inschakelt als een andere Vesta-module is "
-"ingeschakeld."
+msgstr "Zorg ervoor dat u deze module inschakelt als een andere Vesta-module is ingeschakeld."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
@@ -164,7 +176,7 @@ msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Verplaats"
 
-#: resources/views/lists/place-history.phtml:166
+#: resources/views/lists/place-history.phtml:156
 msgid "No events of these specific types have occurred at this place."
 msgstr "Op deze plaats hebben zich geen gebeurtenissen van dit specifieke type voorgedaan."
 
@@ -173,12 +185,12 @@ msgstr "Op deze plaats hebben zich geen gebeurtenissen van dit specifieke type v
 msgid "Options"
 msgstr "Opties"
 
-#: CommonI18N.php:170
+#: CommonI18N.php:174
 msgid "Place history"
 msgstr "Plaatsgeschiedenis"
 
-#. I18N: Gedcom tag PROP
-#: resources/views/lists/place-history.phtml:112
+#. I18N: Plural for Gedcom tag PROP
+#: model/PlaceHistory.php:65
 msgid "Possessions"
 msgstr "Bezittingen"
 
@@ -236,9 +248,14 @@ msgid "Requires the '%1$s %2$s' module."
 msgstr "Vereist de module '%1$s %2$s'."
 
 #. I18N: Gedcom tag RESI
-#: resources/views/lists/place-history.phtml:118
+#: model/PlaceHistory.php:64
 msgid "Residences"
 msgstr "Woonplaatsen"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:161
+msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
+msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
@@ -356,7 +373,7 @@ msgstr "%1$s uitsluiten"
 msgid "here"
 msgstr "hier"
 
-#: HookInterfaces/FunctionsPlaceUtils.php:94
+#: HookInterfaces/FunctionsPlaceUtils.php:108
 msgid "map coordinates directly (MAP tag)"
 msgstr "coördinaten rechtstreeks toewijzen (MAP-label)"
 

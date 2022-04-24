@@ -24,7 +24,10 @@ use function app;
 
 class FunctionsPlaceUtils {
 
-    public static function loc2linkIcon(ModuleInterface $module, LocReference $loc): string {
+    public static function loc2linkIcon(
+        ModuleInterface $module, 
+        LocReference $loc): string {
+        
         $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModulesPrintFunctions($module, $loc->getTree(), Auth::user())
             ->toArray();
 
@@ -38,7 +41,10 @@ class FunctionsPlaceUtils {
         return implode($links);
     }
 
-    public static function plac2html(ModuleInterface $module, PlaceStructure $ps): GenericViewElement {
+    public static function plac2html(
+        ModuleInterface $module, 
+        PlaceStructure $ps): GenericViewElement {
+        
         $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModulesPrintFunctions($module, $ps->getTree(), Auth::user())
             ->toArray();
 
@@ -52,7 +58,11 @@ class FunctionsPlaceUtils {
         return GenericViewElement::implode($gves);
     }
 
-    public static function gov2html(ModuleInterface $module, Tree $tree, GovReference $gov): GenericViewElement {
+    public static function gov2html(
+        ModuleInterface $module, 
+        Tree $tree, 
+        GovReference $gov): GenericViewElement {
+        
         $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModulesPrintFunctions($module, $tree, Auth::user())
             ->toArray();
 
@@ -66,7 +76,11 @@ class FunctionsPlaceUtils {
         return GenericViewElement::implode($gves);
     }
 
-    public static function map2html(ModuleInterface $module, Tree $tree, MapCoordinates $map): GenericViewElement {
+    public static function map2html(
+        ModuleInterface $module, 
+        Tree $tree, 
+        MapCoordinates $map): GenericViewElement {
+        
         $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModulesPrintFunctions($module, $tree, Auth::user())
             ->toArray();
 
@@ -247,7 +261,11 @@ class FunctionsPlaceUtils {
     }
 
     //for now, never fallback via indirect parent hierarchies
-    public static function plac2gov(ModuleInterface $module, PlaceStructure $ps, $fallbackViaParents = true): ?GovReference {
+    public static function plac2gov(
+        ModuleInterface $module, 
+        PlaceStructure $ps, 
+        $fallbackViaParents = true): ?GovReference {
+        
         //1. skip:
         //_GOV is a non-standard tag - we don't know how to handle it directly!
 
@@ -289,7 +307,26 @@ class FunctionsPlaceUtils {
         }
         return FunctionsPlaceUtils::plac2gov($module, $parentPs, true);
     }
+    
+    public static function loc2gov(
+        ModuleInterface $module, 
+        LocReference $loc): ?GovReference {
 
+        $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $loc->getTree(), Auth::user())
+            ->toArray();
+
+        //first one wins
+        foreach ($functionsPlaceProviders as $functionsPlaceProvider) {
+            $gov = $functionsPlaceProvider->loc2gov($loc);
+            if ($gov !== null) {
+                //first one wins!
+                return $gov;
+            }
+        }
+        
+        return null;
+    }
+    
     //for now, never fallback via indirect parent hierarchies
     public static function plac2loc(
         ModuleInterface $module, 
@@ -324,7 +361,10 @@ class FunctionsPlaceUtils {
     }
 
     //for now, never fallback via indirect parent hierarchies
-    public static function loc2map(ModuleInterface $module, LocReference $loc): ?MapCoordinates {
+    public static function loc2map(
+        ModuleInterface $module, 
+        LocReference $loc): ?MapCoordinates {
+        
         $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $loc->getTree(), Auth::user())
             ->toArray();
 
@@ -356,7 +396,11 @@ class FunctionsPlaceUtils {
         return null;
     }
 
-    public static function gov2plac(ModuleInterface $module, GovReference $gov, Tree $tree): ?PlaceStructure {
+    public static function gov2plac(
+        ModuleInterface $module, 
+        GovReference $gov, 
+        Tree $tree): ?PlaceStructure {
+        
         //Issue #54
         //expensive, therefore cached 
         //(in-memory, therefore ok to skip user for cache key!
@@ -396,6 +440,30 @@ class FunctionsPlaceUtils {
             });
     }
 
+    public static function loc2plac(
+        ModuleInterface $module, 
+        LocReference $loc): ?PlaceStructure {
+        
+        //expensive, therefore cached 
+        //(in-memory, therefore ok to skip user for cache key!
+        $cacheKey = FunctionsPlaceUtils::class . 'loc2plac_' . $loc->getXref();
+        return Registry::cache()->array()->remember($cacheKey, static function () use ($module, $loc): ?PlaceStructure {
+
+                $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $loc->getTree(), Auth::user())
+                    ->toArray();
+
+                foreach ($functionsPlaceProviders as $functionsPlaceProvider2) {
+                    $ps = $functionsPlaceProvider2->loc2plac($loc);
+                    if ($ps !== null) {
+                        //first one wins!
+                        return $ps;
+                    }
+                }
+
+                return null;
+            });
+    }
+    
     ////////////////////////////////////////////////////////////////////////////////
 
     public static function placPplac(
@@ -495,7 +563,10 @@ class FunctionsPlaceUtils {
 
     ////////////////////////////////////////////////////////////////////////////////
 
-    public static function updateOrder(ModuleInterface $moduleForPrefsOrder, ServerRequestInterface $request) {
+    public static function updateOrder(
+        ModuleInterface $moduleForPrefsOrder, 
+        ServerRequestInterface $request) {
+        
         $order = Requests::getArray($request, 'order');
         //set als preference
         $pref = implode(',', $order);

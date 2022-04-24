@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-21 22:43+0200\n"
+"POT-Creation-Date: 2022-04-24 21:09+0200\n"
 "PO-Revision-Date: 2021-11-30 22:53+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/cs/>\n"
@@ -67,6 +67,21 @@ msgstr "A: Symbol Vesta je použit hlavně k seskupení modulů v seznamu modul�
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "A: Přes háčky (hooky). Háčky umožňují modulům rozšiřovat funkčnost ostatních komponent, aniž by bylo nutné přepracovat celou komponentu. Webtrees používá háčky např. u zápatí stránky a u historických událostí."
 
+#. I18N: Plural for Gedcom tag BAPM
+#: model/PlaceHistory.php:59
+msgid "Baptisms"
+msgstr ""
+
+#. I18N: Plural for Gedcom tag CHR
+#: model/PlaceHistory.php:60
+msgid "Christenings"
+msgstr ""
+
+#. I18N: Plural for Gedcom tag CONF
+#: model/PlaceHistory.php:61
+msgid "Confirmations"
+msgstr ""
+
 #. I18N: Module Configuration
 #: CommonI18N.php:147
 msgid "Deselect in order to have the title appear exactly as the original title."
@@ -87,7 +102,7 @@ msgid "Displayed title"
 msgstr "Zobrazený název"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:166
+#: CommonI18N.php:170
 msgid "Facts and Events Tab Settings"
 msgstr "Nastavení záložky Fakta a události"
 
@@ -96,7 +111,7 @@ msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your br
 msgstr "Pokud se symbol zobrazuje nesprávně, např. jako nějaký čtyřúhelník, zkontrolujte kódové nastavení vašeho prohlížeče."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:161
+#: CommonI18N.php:165
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "Zejména když jsou oba seznamy prázdné, žádná dodatečná fakta ani události tohoto druhu se nezobrazí."
 
@@ -161,7 +176,7 @@ msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Přemístit"
 
-#: resources/views/lists/place-history.phtml:166
+#: resources/views/lists/place-history.phtml:156
 msgid "No events of these specific types have occurred at this place."
 msgstr ""
 
@@ -170,12 +185,12 @@ msgstr ""
 msgid "Options"
 msgstr "Možnosti"
 
-#: CommonI18N.php:170
+#: CommonI18N.php:174
 msgid "Place history"
 msgstr ""
 
-#. I18N: Gedcom tag PROP
-#: resources/views/lists/place-history.phtml:112
+#. I18N: Plural for Gedcom tag PROP
+#: model/PlaceHistory.php:65
 msgid "Possessions"
 msgstr ""
 
@@ -233,8 +248,13 @@ msgid "Requires the '%1$s %2$s' module."
 msgstr "Vyžaduje modul „%1$s %2$s“."
 
 #. I18N: Gedcom tag RESI
-#: resources/views/lists/place-history.phtml:118
+#: model/PlaceHistory.php:64
 msgid "Residences"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:161
+msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
 
 #. I18N: Module Configuration
@@ -353,7 +373,7 @@ msgstr "kromě %1$s"
 msgid "here"
 msgstr "tady"
 
-#: HookInterfaces/FunctionsPlaceUtils.php:94
+#: HookInterfaces/FunctionsPlaceUtils.php:108
 msgid "map coordinates directly (MAP tag)"
 msgstr "mapové souřadnice přímo (tag MAP)"
 

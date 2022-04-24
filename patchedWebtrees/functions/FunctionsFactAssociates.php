@@ -95,6 +95,7 @@ class FunctionsFactAssociates {
         GedcomRecord $parent,
         Individual $person,
         /*mixed - php 8 only!*/ $associates,
+        string $additionalSuffix,
         array $values): string {
         
         foreach ($associates as $associate) {
@@ -121,7 +122,7 @@ class FunctionsFactAssociates {
                 $associate, 
                 ' — ', 
                 $relationship_name, 
-                $relationship_name_suffix, 
+                $relationship_name_suffix . $additionalSuffix, 
                 false);
             
             if ($out != null) {

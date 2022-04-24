@@ -2,8 +2,8 @@
 
 use Cissee\WebtreesExt\Module\ModuleExtGlobalInterface;
 use Fisharebest\Webtrees\FlashMessages;
-use Fisharebest\Webtrees\Http\RequestHandlers\HomePage;
 use Fisharebest\Webtrees\Http\RequestHandlers\Logout;
+use Fisharebest\Webtrees\Http\RequestHandlers\HomePage;
 use Fisharebest\Webtrees\Http\RequestHandlers\SelectLanguage;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\CustomCssJsModule;
@@ -12,8 +12,10 @@ use Fisharebest\Webtrees\Module\ModuleGlobalInterface;
 use Fisharebest\Webtrees\Services\ModuleService;
 use Fisharebest\Webtrees\View;
 
-/** @var string $title */
-/** @var string $content */
+/**
+ * @var string $title
+ * @var string $content
+ */
 
 ?>
 
@@ -34,13 +36,13 @@ use Fisharebest\Webtrees\View;
         <?= View::stack('styles') ?>
 
         <?= app(ModuleService::class)->findByInterface(ModuleGlobalInterface::class)->map(static function (ModuleGlobalInterface $module): string {
-          if ($module instanceof ModuleExtGlobalInterface) {
-            return $module->headContentOnAdminPage();
-          }
+            //[RC] extended
+            if ($module instanceof ModuleExtGlobalInterface) {
+                return $module->headContentOnAdminPage();
+            }
           
-          return $module instanceof ModuleCustomInterface || $module instanceof CustomCssJsModule ? '' : $module->headContent();
+            return $module instanceof ModuleCustomInterface || $module instanceof CustomCssJsModule ? '' : $module->headContent();
         })->implode('') ?>
-
     </head>
     <body class="container-lg wt-global wt-control-panel">
         <header>
@@ -61,27 +63,28 @@ use Fisharebest\Webtrees\View;
                     </a>
                     <div class="dropdown-menu">
                         <?php foreach (I18N::activeLocales() as $locale) : ?>
-                            <a class="dropdown-item menu-language-<?= $locale->languageTag() ?> <?= I18N::languageTag() === $locale->languageTag() ? ' active' : '' ?>" href="#" data-post-url="<?= e(route(SelectLanguage::class, ['language' => $locale->languageTag()])) ?>"><?= $locale->endonym() ?></a>
+                            <a class="dropdown-item menu-language-<?= $locale->languageTag() ?> <?= I18N::languageTag() === $locale->languageTag() ? ' active' : '' ?>" href="#" data-wt-post-url="<?= e(route(SelectLanguage::class, ['language' => $locale->languageTag()])) ?>"><?= $locale->endonym() ?></a>
                         <?php endforeach ?>
                     </div>
                 </li>
                 <li class="nav-item menu-logout">
-                    <a class="nav-link" href="#" data-post-url="<?= e(route(Logout::class)) ?>" data-reload-url="<?= e(route(HomePage::class)) ?>"><?= I18N::translate('Sign out') ?></a>
+                    <a class="nav-link" href="#" data-wt-post-url="<?= e(route(Logout::class)) ?>" data-wt-reload-url="<?= e(route(HomePage::class)) ?>"><?= I18N::translate('Sign out') ?></a>
                 </li>
             </ul>
         </header>
 
-        <div id="content"></div>
+        <main id="content">
+            <?php foreach (FlashMessages::getMessages() as $message) : ?>
+                <div class="alert alert-<?= $message->status ?> alert-dismissible" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="<?= I18N::translate('close') ?>">
+                    </button>
+                    <?= $message->text ?>
+                </div>
+            <?php endforeach ?>
 
-        <?php foreach (FlashMessages::getMessages() as $message) : ?>
-            <div class="alert alert-<?= $message->status ?> alert-dismissible" role="alert">
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="<?= I18N::translate('close') ?>">
-                </button>                
-                <?= $message->text ?>
-            </div>
-        <?php endforeach ?>
+            <?= $content ?>
+        </main>
 
-        <?= $content ?>
 
         <script src="<?= e(asset('js/vendor.min.js')) ?>"></script>
         <script src="<?= e(asset('js/webtrees.min.js')) ?>"></script>
@@ -89,11 +92,11 @@ use Fisharebest\Webtrees\View;
         <?= View::stack('javascript') ?>
 
         <?= app(ModuleService::class)->findByInterface(ModuleGlobalInterface::class)->map(static function (ModuleGlobalInterface $module): string {
-          if ($module instanceof ModuleExtGlobalInterface) {
-            return $module->bodyContentOnAdminPage();
-          }
-          return $module instanceof ModuleCustomInterface || $module instanceof CustomCssJsModule ? '' : $module->bodyContent();
+            //[RC] extended
+            if ($module instanceof ModuleExtGlobalInterface) {
+                return $module->bodyContentOnAdminPage();
+            }
+            return $module instanceof ModuleCustomInterface || $module instanceof CustomCssJsModule ? '' : $module->bodyContent();
         })->implode('') ?>
-
     </body>
 </html>

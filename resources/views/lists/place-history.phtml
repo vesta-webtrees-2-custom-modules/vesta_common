@@ -4,19 +4,20 @@ declare(strict_types=1);
 
 use Cissee\WebtreesExt\Contracts\FactListUtils;
 use Cissee\WebtreesExt\Contracts\FallbackAssociateFactUtils;
+use Cissee\WebtreesExt\FactExt;
 use Cissee\WebtreesExt\Functions\FunctionsPrintExtHelpLink;
 use Cissee\WebtreesExt\Module\ModuleVestalInterface;
-use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Fact;
+use Fisharebest\Webtrees\GedcomRecord;
 use Fisharebest\Webtrees\I18N;
-use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Tree;
 use Fisharebest\Webtrees\View;
 use Illuminate\Support\Collection;
 use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderInterface;
 use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderUtils;
 use Vesta\Model\FactFilter;
+use Vesta\Model\PlaceHistory;
 use Vesta\VestaUtils;
 //use Ramsey\Uuid\Uuid;
 
@@ -29,18 +30,19 @@ use Vesta\VestaUtils;
  * @var ModuleVestalInterface      $module
  * 
  * //$module must also provide getHelpAction for 'Predecessor'!
+ * //$module may also provide preferences for 'RESTRICTED_PLACE_HISTORY'!
  */
 
 // lists requires a unique ID in case there are multiple lists per page
 //$table_id = 'place-history-' . Uuid::uuid4()->toString();
 
-//TODO: make configurable
-//TEMP ONLY, TO BE EXTENDED
-$filter = [
-    'OCCU' => 'OCCU',
-    'PROP' => 'PROP',
-    'RESI' => 'RESI',
-    ];
+$filter = explode(',', $module->getPreference(
+    'RESTRICTED_PLACE_HISTORY', 
+    PlaceHistory::initialFactsStringForPreferences()));
+$filter = array_combine($filter, $filter);
+
+
+//TODO support FAM facts here as well?
 
 $facts = $individuals
     ->flatMap(function ($individual) use ($filter, $factFilter): Collection {
@@ -62,15 +64,20 @@ $ret = IndividualFactsTabExtenderUtils::accessibleModules($module, $record->tree
 
 foreach ($ret as $r) {
     foreach ($r as $rr) {
-        $tag = explode(':', $rr->tag())[1];
-        if (in_array($tag, $filter, true)) {
+        //do not filter here - these are expected to have their own checkbox!
+        //and anyway some of them may not have a standard type anyway (Gov4Webtrees)
+        //
+        //$tag = explode(':', $rr->tag())[1];
+        //if (in_array($tag, $filter, true)) {
             $additionalFacts[] = $rr;
-        }        
+        //}
     }
 }
 
 $facts = $facts->merge($additionalFacts);
-$facts = Fact::sortFacts($facts);
+
+//do not use original sort function here, which is intended for single INDI/FAM and reorders between dated/non-dated
+$facts = FactExt::sortFacts($facts);
 
 ?>
     
@@ -88,36 +95,19 @@ View::endpush();
         <tbody>
             <tr>
                 <td colspan="2">
-                    <?php if (array_key_exists('BIRT', $filter)) : ?>
-                        <label>
-                            <?php
-                                //autocomplete off prevents firefox from caching checked state on reload (occured only in case of reload via reload button)
-                                //this caching is problematic because it messes up persistentToggle, which assumes unchecked state and therefore checks regardless of state
-                                //cf https://stackoverflow.com/questions/299811/why-does-the-checkbox-stay-checked-when-reloading-the-page
-                            ?>
-                            <input id="show-births-in-place-history" type="checkbox" data-bs-toggle="collapse" data-bs-target=".wt-show-BIRT-in-place-history-<?= $context ?>" data-wt-persist="show-BIRT-in-place-history-<?= $context ?>" autocomplete="off">
-                            <?= MoreI18N::xlate('Births') ?>
-                        </label>
-                    <?php endif ?>
-                    
-                    <?php if (array_key_exists('OCCU', $filter)) : ?>
-                        <label>
-                            <input id="show-occupations-in-place-history" type="checkbox" data-bs-toggle="collapse" data-bs-target=".wt-show-OCCU-in-place-history-<?= $context ?>" data-wt-persist="show-OCCU-in-place-history-<?= $context ?>" autocomplete="off">
-                            <?= MoreI18N::xlate('Occupations') ?>
-                        </label>
-                    <?php endif ?>
-                    <?php if (array_key_exists('PROP', $filter)) : ?>
-                        <label>
-                            <input id="show-possessions-in-place-history" type="checkbox" data-bs-toggle="collapse" data-bs-target=".wt-show-PROP-in-place-history-<?= $context ?>" data-wt-persist="show-PROP-in-place-history-<?= $context ?>" autocomplete="off">
-                            <?= /* I18N: Gedcom tag PROP */ I18N::translate('Possessions') ?>
-                        </label>
-                    <?php endif ?>
-                    <?php if (array_key_exists('RESI', $filter)) : ?>
-                        <label>
-                            <input id="show-residences-in-place-history" type="checkbox" data-bs-toggle="collapse" data-bs-target=".wt-show-PROP-in-place-history-<?= $context ?>" data-wt-persist="show-RESI-in-place-history-<?= $context ?>" autocomplete="off">
-                            <?= /* I18N: Gedcom tag RESI */ I18N::translate('Residences') ?>
-                        </label>
-                    <?php endif ?>
+                    <?php foreach (PlaceHistory::getPicklistFacts() as $key => $v) : ?>
+                        <?php if (array_key_exists($key, $filter)) : ?>
+                            <label>
+                                <?php
+                                    //autocomplete off prevents firefox from caching checked state on reload (occured only in case of reload via reload button)
+                                    //this caching is problematic because it messes up persistentToggle, which assumes unchecked state and therefore checks regardless of state
+                                    //cf https://stackoverflow.com/questions/299811/why-does-the-checkbox-stay-checked-when-reloading-the-page
+                                ?>
+                                <input id="show-<?= $key ?>-in-place-history" type="checkbox" data-bs-toggle="collapse" data-bs-target=".wt-show-<?= $key ?>-in-place-history-<?= $context ?>" data-wt-persist="show-<?= $key ?>-in-place-history-<?= $context ?>" autocomplete="off">
+                                <?= PlaceHistory::getLabel($key) ?>
+                            </label>
+                        <?php endif ?>
+                    <?php endforeach ?>
 
                     <?php
                     //[RC] PATCHED
@@ -141,7 +131,7 @@ View::endpush();
                 <?php
                     $tag = explode(':', $fact->tag())[1];                
                     $styles = [];
-                    $styles []= 'wt-show-'.$tag.'-in-place-history-'.$context;                                        
+                    $styles []= 'wt-show-'.$tag.'-in-place-history-'.$context.' collapse';                                        
                 ?>       
                 <?= view(VestaUtils::vestaViewsNamespace() . '::fact', [                    
                     'fact'                   => $fact, 

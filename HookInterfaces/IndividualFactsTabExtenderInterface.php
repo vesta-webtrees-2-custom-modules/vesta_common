@@ -30,7 +30,8 @@ interface IndividualFactsTabExtenderInterface {
      * 
      * @return string|null
      */
-    public function hFactsTabRequiresModalVesta(Tree $tree): ?string;
+    public function hFactsTabRequiresModalVesta(
+        Tree $tree): ?string;
 
     /**
      * used for family-page and place-history as well!
@@ -38,7 +39,8 @@ interface IndividualFactsTabExtenderInterface {
      * @param GedcomRecord $record
      * @return array (array of Fact) additional facts (e.g. further historical facts, research suggestions or other 'virtual' facts)
      */
-    public function hFactsTabGetAdditionalFacts(GedcomRecord $record);
+    public function hFactsTabGetAdditionalFacts(
+        GedcomRecord $record);
 
     /**
      * used for family-page and place-history as well!
@@ -86,11 +88,14 @@ interface IndividualFactsTabExtenderInterface {
     public function hFactsTabGetOutputAfterDBox(
         Individual $person): GenericViewElement;
 
-    public function factPlaceAdditionsBeforePlace(PlaceStructure $place): ?string;
+    public function factPlaceAdditionsBeforePlace(
+        PlaceStructure $place): ?string;
 
-    public function factPlaceAdditionsAfterMap(PlaceStructure $place): ?string;
+    public function factPlaceAdditionsAfterMap(
+        PlaceStructure $place): ?string;
 
-    public function factPlaceAdditionsAfterNotes(PlaceStructure $place): ?string;
+    public function factPlaceAdditionsAfterNotes(
+        PlaceStructure $place): ?string;
 
     /**
      * first hook subscriber to return non-empty or null wins! 

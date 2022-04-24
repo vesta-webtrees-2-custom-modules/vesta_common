@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-21 22:43+0200\n"
+"POT-Creation-Date: 2022-04-24 21:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -177,15 +177,20 @@ msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:161
+msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:165
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:166
+#: CommonI18N.php:170
 msgid "Facts and Events Tab Settings"
 msgstr ""
 
-#: CommonI18N.php:170
+#: CommonI18N.php:174
 msgid "Place history"
 msgstr ""
 
@@ -197,7 +202,7 @@ msgstr ""
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
 
-#: HookInterfaces/FunctionsPlaceUtils.php:94
+#: HookInterfaces/FunctionsPlaceUtils.php:108
 msgid "map coordinates directly (MAP tag)"
 msgstr ""
 
@@ -211,6 +216,31 @@ msgstr ""
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
+msgstr ""
+
+#. I18N: Plural for Gedcom tag BAPM
+#: model/PlaceHistory.php:59
+msgid "Baptisms"
+msgstr ""
+
+#. I18N: Plural for Gedcom tag CHR
+#: model/PlaceHistory.php:60
+msgid "Christenings"
+msgstr ""
+
+#. I18N: Plural for Gedcom tag CONF
+#: model/PlaceHistory.php:61
+msgid "Confirmations"
+msgstr ""
+
+#. I18N: Gedcom tag RESI
+#: model/PlaceHistory.php:64
+msgid "Residences"
+msgstr ""
+
+#. I18N: Plural for Gedcom tag PROP
+#: model/PlaceHistory.php:65
+msgid "Possessions"
 msgstr ""
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
@@ -296,17 +326,7 @@ msgstr ""
 msgid "View this family"
 msgstr ""
 
-#. I18N: Gedcom tag PROP
-#: resources/views/lists/place-history.phtml:112
-msgid "Possessions"
-msgstr ""
-
-#. I18N: Gedcom tag RESI
-#: resources/views/lists/place-history.phtml:118
-msgid "Residences"
-msgstr ""
-
-#: resources/views/lists/place-history.phtml:166
+#: resources/views/lists/place-history.phtml:156
 msgid "No events of these specific types have occurred at this place."
 msgstr ""
 
