@@ -63,6 +63,9 @@ class FactExt {
     /**
      * Helper functions to sort facts
      * same as in Fact, but it's private there bah
+     * 
+     * we have to adjust anyway for overlapping dates:
+     * just sort strictly by start date
      *
      * @return Closure
      */
@@ -71,7 +74,9 @@ class FactExt {
         return static function (Fact $a, Fact $b): int {
             if ($a->date()->isOK() && $b->date()->isOK()) {
                 // If both events have dates, compare by date
-                $ret = Date::compare($a->date(), $b->date());
+                
+                //[RC] adjusted: Date::compare is not what we want for overlapping events
+                $ret = FactExt::compare($a->date(), $b->date());
 
                 if ($ret === 0) {
                     // If dates overlap, compare by fact type
@@ -89,5 +94,50 @@ class FactExt {
             // One or both events have no date - retain the initial order
             return $a->sortOrder <=> $b->sortOrder;
         };
+    }
+    
+    //adapted from Date.php
+    public static function compare(Date $a, Date $b): int
+    {
+        // Get min/max JD for each date.
+        switch ($a->qual1) {
+            case 'BEF':
+                $amin = $a->minimumJulianDay() - 1;
+                $amax = $amin;
+                break;
+            case 'AFT':
+                $amax = $a->maximumJulianDay() + 1;
+                $amin = $amax;
+                break;
+            default:
+                $amin = $a->minimumJulianDay();
+                $amax = $a->maximumJulianDay();
+                break;
+        }
+        switch ($b->qual1) {
+            case 'BEF':
+                $bmin = $b->minimumJulianDay() - 1;
+                $bmax = $bmin;
+                break;
+            case 'AFT':
+                $bmax = $b->maximumJulianDay() + 1;
+                $bmin = $bmax;
+                break;
+            default:
+                $bmin = $b->minimumJulianDay();
+                $bmax = $b->maximumJulianDay();
+                break;
+        }
+        
+        if ($amin < $bmin) {
+            return -1;
+        }
+
+        if ($amin > $bmin) {
+            return 1;
+        }
+        
+        //if equal min: shorter first
+        return ($amax <=> $bmax);
     }
 }
