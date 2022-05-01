@@ -45,7 +45,8 @@ interface IndividualFactsTabExtenderInterface {
     /**
      * used for family-page and place-history as well!
      * 
-     * css classes for styling of facts via fact id (intended for additional facts) 
+     * css classes for styling of facts via fact id (intended for additional facts)
+     * (TODO: perhaps transport these via fact itself? via VirtualFact? more flexible)
      *  
      * @return array (key: fact id, value: css class)
      */

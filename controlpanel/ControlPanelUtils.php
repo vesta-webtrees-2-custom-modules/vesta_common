@@ -185,7 +185,7 @@ class ControlPanelUtils {
     }
 
     public function printControlPanelCheckbox(ControlPanelCheckbox $element) {
-        $value = $this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue());
+        $value = boolval($this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue()));
 
         //ugly positioning of checkbox - for now, build checkbox directly (as in admin_trees_config)
         /*

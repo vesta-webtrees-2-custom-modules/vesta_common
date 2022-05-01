@@ -81,7 +81,7 @@ class VestaCommonLibModule extends AbstractModule implements
         $ef->register(['INDI:_FSFTID' => new FamilySearchFamilyTreeId_20(MoreI18N::xlate('FamilySearch id'))]);        
     }    
   
-    $this->flashWhatsNew('\Vesta\WhatsNew', 2);
+    $this->flashWhatsNew('\Vesta\WhatsNew', 3);
     
     // Register a namespace for our views.
     View::registerNamespace($this->name(), $this->resourcesFolder() . 'views/');

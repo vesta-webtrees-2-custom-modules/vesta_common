@@ -423,11 +423,17 @@ class GedcomDateInterval implements JsonSerializable {
 
         if ($this->from === null) {
             $to = DateUtils::toGedcomString(new GregorianDate($this->to));
+            if ($asFromTo) {
+                return "\n" . $level . ' DATE TO ' . $to;
+            }
             return "\n" . $level . ' DATE BEF ' . $to;
         }
 
         $from = DateUtils::toGedcomString(new GregorianDate($this->from));
         if ($this->to === null) {
+            if ($asFromTo) {
+                return "\n" . $level . ' DATE FROM ' . $from;
+            }
             return "\n" . $level . ' DATE AFT ' . $from;
         }
 

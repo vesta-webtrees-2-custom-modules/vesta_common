@@ -60,7 +60,7 @@ class FunctionsFactAssociates {
                     $inverse);
     }
   
-    protected function getOutputForRelationshipFallback(
+    protected static function getOutputForRelationshipFallback(
         Fact $event,
         Individual $person,
         Individual $associate,
