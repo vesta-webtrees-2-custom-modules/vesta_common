@@ -66,10 +66,10 @@ class FactListUtils {
         GedcomRecord $record) {
         
         return GenericViewElement::implode(IndividualFactsTabExtenderUtils::accessibleModules($module, $record->tree(), Auth::user())
-                            ->map(function (IndividualFactsTabExtenderInterface $m) use ($record) {
-                              return $m->hFactsTabGetOutputInDBox($record);
-                            })
-                            ->toArray());
+                    ->map(function (IndividualFactsTabExtenderInterface $m) use ($record) {
+                        return $m->hFactsTabGetOutputInDBox($record);
+                    })
+                    ->toArray());
     }
 
     public static function getOutputAfterDescriptionBox(
@@ -77,10 +77,10 @@ class FactListUtils {
         Individual $person) {
         
         return GenericViewElement::implode(IndividualFactsTabExtenderUtils::accessibleModules($module, $person->tree(), Auth::user())
-                            ->map(function (IndividualFactsTabExtenderInterface $m) use ($person) {
-                              return $m->hFactsTabGetOutputAfterDBox($person);
-                            })
-                            ->toArray());
+                    ->map(function (IndividualFactsTabExtenderInterface $m) use ($person) {
+                      return $m->hFactsTabGetOutputAfterDBox($person);
+                    })
+                    ->toArray());
     }
 
 }
