@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-04-24 21:09+0200\n"
-"PO-Revision-Date: 2022-04-22 10:06+0000\n"
-"Last-Translator: mpwt <der@bauschaffen.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/de/>\n"
+"PO-Revision-Date: 2022-05-05 17:15+0000\n"
+"Last-Translator: Markus Hemprich <hemprich@gmx.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12.1-dev\n"
+"X-Generator: Weblate 4.12.1\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -70,17 +71,17 @@ msgstr "A: Über Hooks. Hooks ermöglicht es den Modulen, die Funktionalität an
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
 msgid "Baptisms"
-msgstr ""
+msgstr "Taufen"
 
 #. I18N: Plural for Gedcom tag CHR
 #: model/PlaceHistory.php:60
 msgid "Christenings"
-msgstr ""
+msgstr "Kindstaufen"
 
 #. I18N: Plural for Gedcom tag CONF
 #: model/PlaceHistory.php:61
 msgid "Confirmations"
-msgstr ""
+msgstr "Konfirmationen"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:147
@@ -256,6 +257,8 @@ msgstr "Wohnsitze"
 #: CommonI18N.php:161
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
+"Beschränke die Tatsachen und Ereignisse zur Geschichte des Ortes auf diese "
+"Liste von GEDCOM Tatsachen und Ereignissen."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
