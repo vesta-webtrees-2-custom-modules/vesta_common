@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-04-24 21:09+0200\n"
-"PO-Revision-Date: 2022-04-20 18:59+0000\n"
-"Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
-"Language-Team: Polish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/pl/>\n"
+"PO-Revision-Date: 2022-05-06 09:16+0000\n"
+"Last-Translator: Grzegorz Kociubowski <gkociubowski@gmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.12-dev\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.12.1\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -70,22 +72,23 @@ msgstr ""
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
 msgid "Baptisms"
-msgstr ""
+msgstr "Chrzty"
 
 #. I18N: Plural for Gedcom tag CHR
 #: model/PlaceHistory.php:60
 msgid "Christenings"
-msgstr ""
+msgstr "Chrzciny"
 
 #. I18N: Plural for Gedcom tag CONF
 #: model/PlaceHistory.php:61
 msgid "Confirmations"
-msgstr ""
+msgstr "Potwierdzenia"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:147
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr ""
+"Usuń zaznaczenie, aby tytuł wyglądał dokładnie tak, jak tytuł oryginalny."
 
 #: resources/views/vesta_config.phtml:44
 msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
@@ -94,21 +97,23 @@ msgstr ""
 #. I18N: Module Configuration
 #: CommonI18N.php:123
 msgid "Displayed data"
-msgstr ""
+msgstr "Pokazywane dane"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:119
 msgid "Displayed title"
-msgstr ""
+msgstr "Pokazywane tytuły"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:170
 msgid "Facts and Events Tab Settings"
-msgstr ""
+msgstr "Ustawienia Zakładki Fakty i Wydarzenia"
 
 #: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
 msgstr ""
+"Jeśli symbol/litera są pokazywane  nieprawidłowo, np. jako prostokąt, "
+"sprawdź możliwości obsługi Unicode w Twojej przeglądarce."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:165
@@ -158,36 +163,40 @@ msgstr ""
 #: VestaCommonLibModule.php:62
 msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr ""
+"Pamiętaj aby uruchomić ten moduł, jeśli włączony jest jakikolwiek inny moduł "
+"Vesta."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
 msgstr ""
+"Wymienione moduły służą (w ustawionej kolejności) do określenia "
+"współrzędnych miejsc na mapach."
 
 #: resources/views/admin/vesta_components.phtml:31
 #: resources/views/admin/vesta_components_20.phtml:31
 msgctxt "as in \"Move down\""
 msgid "Move"
-msgstr ""
+msgstr "Przenieść"
 
 #: resources/views/admin/vesta_components.phtml:30
 #: resources/views/admin/vesta_components_20.phtml:30
 msgctxt "as in \"Move up\""
 msgid "Move"
-msgstr ""
+msgstr "Przenieść"
 
 #: resources/views/lists/place-history.phtml:156
 msgid "No events of these specific types have occurred at this place."
-msgstr ""
+msgstr "W tej lokalizacji nie ma wydarzeń określonego typu."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:115
 msgid "Options"
-msgstr ""
+msgstr "Opcje"
 
 #: CommonI18N.php:174
 msgid "Place history"
-msgstr ""
+msgstr "Historia miejsca"
 
 #. I18N: Plural for Gedcom tag PROP
 #: model/PlaceHistory.php:65
@@ -223,7 +232,7 @@ msgstr ""
 #. I18N: Module configuration: Refers to the module's Readme file
 #: CommonI18N.php:103
 msgid "Readme"
-msgstr ""
+msgstr "Dokumentacja"
 
 #: HelpTextsPlaceHistory.php:15
 msgid "Relationship to predecessor"
@@ -299,7 +308,7 @@ msgstr "Vesta Koszyk Wycinków"
 #. I18N: Module title
 #: CommonI18N.php:19
 msgid "Vesta Common"
-msgstr "Vesta Główny"
+msgstr "Vesta Moduł Główny"
 
 #. I18N: Module title
 #: CommonI18N.php:43
@@ -309,7 +318,7 @@ msgstr "Vesta Rozszerzone Relacje"
 #. I18N: Module title
 #: CommonI18N.php:27
 msgid "Vesta Facts and events"
-msgstr "Vesta Fakty i wydarzenia"
+msgstr "Vesta Fakty i Wydarzenia"
 
 #. I18N: Module title
 #: CommonI18N.php:31
@@ -339,7 +348,7 @@ msgstr "Vesta Wspólne Miejsca"
 #. I18N: Module title
 #: CommonI18N.php:51
 msgid "Vesta Webtrees Location Data Provider"
-msgstr "Vesta Dostawca Danych o Położeniu miejsc"
+msgstr "Vesta Udostępniający Dane o Miejscach"
 
 #. I18N: Module configuration: Refers to general documentation
 #: CommonI18N.php:107
