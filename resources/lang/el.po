@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-24 21:09+0200\n"
+"POT-Creation-Date: 2022-05-12 22:04+0200\n"
 "PO-Revision-Date: 2021-04-15 13:26+0000\n"
 "Last-Translator: Panagiotis Klimis <klimis.p@gmail.com>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/el/>\n"
@@ -176,8 +176,12 @@ msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr ""
 
-#: resources/views/lists/place-history.phtml:156
+#: resources/views/lists/place-history.phtml:160
 msgid "No events of these specific types have occurred at this place."
+msgstr ""
+
+#: CommonI18N.php:179
+msgid "No relationship found"
 msgstr ""
 
 #. I18N: Module Configuration

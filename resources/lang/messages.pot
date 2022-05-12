@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-24 21:09+0200\n"
+"POT-Creation-Date: 2022-05-12 22:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -194,6 +194,10 @@ msgstr ""
 msgid "Place history"
 msgstr ""
 
+#: CommonI18N.php:179
+msgid "No relationship found"
+msgstr ""
+
 #: HelpTextsPlaceHistory.php:15
 msgid "Relationship to predecessor"
 msgstr ""
@@ -326,7 +330,7 @@ msgstr ""
 msgid "View this family"
 msgstr ""
 
-#: resources/views/lists/place-history.phtml:156
+#: resources/views/lists/place-history.phtml:160
 msgid "No events of these specific types have occurred at this place."
 msgstr ""
 

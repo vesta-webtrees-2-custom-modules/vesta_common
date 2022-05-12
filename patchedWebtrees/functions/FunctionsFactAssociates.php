@@ -2,7 +2,6 @@
 
 namespace Cissee\WebtreesExt\Functions;
 
-use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\Family;
@@ -14,6 +13,7 @@ use Fisharebest\Webtrees\Module\RelationshipsChartModule;
 use Fisharebest\Webtrees\Services\ModuleService;
 use Fisharebest\Webtrees\Services\RelationshipService;
 use Fisharebest\Webtrees\View;
+use Vesta\CommonI18N;
 use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderInterface;
 use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderUtils;
 use Vesta\Model\GenericViewElement;
@@ -103,7 +103,7 @@ class FunctionsFactAssociates {
             if ($relationship_name === '') {
                 //[RC] adjusted we use a different fallback
                 //$relationship_name = I18N::translate('Relationship');
-                $relationship_name = MoreI18N::xlate('No relationship found');
+                $relationship_name = CommonI18N::noRelationshipFound();
             }
 
             //[RC] adjusted

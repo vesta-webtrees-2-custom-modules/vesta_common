@@ -173,4 +173,9 @@ class CommonI18N {
     public static function placeHistory(): string {
         return I18N::translate('Place history');
     }
+    
+    public static function noRelationshipFound(): string {
+        //earlier webtrees versions had this string
+        return I18N::translate('No relationship found');
+    }
 }

@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-04-24 21:09+0200\n"
+"POT-Creation-Date: 2022-05-12 22:04+0200\n"
 "PO-Revision-Date: 2022-04-30 08:10+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-common/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -177,9 +176,13 @@ msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Verplaats"
 
-#: resources/views/lists/place-history.phtml:156
+#: resources/views/lists/place-history.phtml:160
 msgid "No events of these specific types have occurred at this place."
 msgstr "Op deze plaats hebben zich geen gebeurtenissen van dit specifieke type voorgedaan."
+
+#: CommonI18N.php:179
+msgid "No relationship found"
+msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:115
@@ -256,9 +259,7 @@ msgstr "Woonplaatsen"
 #. I18N: Module Configuration
 #: CommonI18N.php:161
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
-msgstr ""
-"Beperk feiten en gebeurtenissen in de plaatsgeschiedenis tot deze lijst van "
-"GEDCOM-feiten en -gebeurtenissen."
+msgstr "Beperk feiten en gebeurtenissen in de plaatsgeschiedenis tot deze lijst van GEDCOM-feiten en -gebeurtenissen."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
