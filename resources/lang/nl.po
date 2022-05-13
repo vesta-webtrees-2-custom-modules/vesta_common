@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-05-12 22:04+0200\n"
-"PO-Revision-Date: 2022-04-30 08:10+0000\n"
+"PO-Revision-Date: 2022-05-13 20:18+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12.1\n"
+"X-Generator: Weblate 4.13-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -182,7 +183,7 @@ msgstr "Op deze plaats hebben zich geen gebeurtenissen van dit specifieke type v
 
 #: CommonI18N.php:179
 msgid "No relationship found"
-msgstr ""
+msgstr "Geen verwantschap gevonden"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:115
