@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-05-12 22:04+0200\n"
-"PO-Revision-Date: 2022-01-15 11:53+0000\n"
+"PO-Revision-Date: 2022-05-13 10:16+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/sk/>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 4.13-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
 #, php-format
@@ -70,17 +71,17 @@ msgstr "A: Cez háčiky (hooks). Háčiky umožňujú modulom rozšíriť funkci
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
 msgid "Baptisms"
-msgstr ""
+msgstr "Krsty"
 
 #. I18N: Plural for Gedcom tag CHR
 #: model/PlaceHistory.php:60
 msgid "Christenings"
-msgstr ""
+msgstr "Krsty (kresťanské)"
 
 #. I18N: Plural for Gedcom tag CONF
 #: model/PlaceHistory.php:61
 msgid "Confirmations"
-msgstr ""
+msgstr "Birmovania"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:147
@@ -178,11 +179,11 @@ msgstr "Posuň"
 
 #: resources/views/lists/place-history.phtml:160
 msgid "No events of these specific types have occurred at this place."
-msgstr ""
+msgstr "Na tomto mieste sa neudiala žiadna z uvedených udalostí."
 
 #: CommonI18N.php:179
 msgid "No relationship found"
-msgstr ""
+msgstr "Nenašiel sa žiaden vzťah"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:115
@@ -254,12 +255,14 @@ msgstr "Vyžaduje modul „%1$s %2$s“."
 #. I18N: Gedcom tag RESI
 #: model/PlaceHistory.php:64
 msgid "Residences"
-msgstr "Bydliská"
+msgstr "Sídla"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:161
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
+"Obmedziť fakty a udalosti v histórii miesta na tento zoznam GEDCOM faktov a "
+"udalostí."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
@@ -289,6 +292,8 @@ msgstr "V súčasnosti inštalované verzie nasledovných užívateľských modu
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
+"Vzťah sa určuje k predchodcovi, t.j. osobe z predchádzajúceho faktu toho "
+"istého typu."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -352,7 +357,7 @@ msgstr "Vesta prehľad správy údajov o polohe"
 
 #: resources/views/fact.phtml:173
 msgid "View this family"
-msgstr ""
+msgstr "Zobraziť túto rodinu"
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
