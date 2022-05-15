@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-05-12 22:04+0200\n"
+"POT-Creation-Date: 2022-05-15 08:05+0200\n"
 "PO-Revision-Date: 2022-05-06 09:16+0000\n"
 "Last-Translator: Grzegorz Kociubowski <gkociubowski@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/pl/>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.12.1\n"
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
 msgid "%1$s excluded"
 msgstr ""
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:64
 #, php-format
 msgid "%1$s filters"
 msgstr ""
@@ -83,7 +83,7 @@ msgid "Confirmations"
 msgstr "Potwierdzenia"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:147
+#: CommonI18N.php:158
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr "Usuń zaznaczenie, aby tytuł wyglądał dokładnie tak, jak tytuł oryginalny."
 
@@ -92,55 +92,60 @@ msgid "Different modules may also be linked dynamically to provide specific data
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:123
+#: CommonI18N.php:134
 msgid "Displayed data"
 msgstr "Pokazywane dane"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:119
+#: CommonI18N.php:130
 msgid "Displayed title"
 msgstr "Pokazywane tytuły"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:170
+#: CommonI18N.php:181
 msgid "Facts and Events Tab Settings"
 msgstr "Ustawienia Zakładki Fakty i Wydarzenia"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:107
+msgid "If multiple module provide the same type of data (such as map coordinates), only the first provider is used."
+msgstr ""
 
 #: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
 msgstr "Jeśli symbol/litera są pokazywane  nieprawidłowo, np. jako prostokąt, sprawdź możliwości obsługi Unicode w Twojej przeglądarce."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:176
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:131
+#: CommonI18N.php:142
 #, php-format
 msgid "Include the %1$s symbol in the chart menu entry title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:143
+#: CommonI18N.php:154
 #, php-format
 msgid "Include the %1$s symbol in the clippings cart menu entry title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:135
+#: CommonI18N.php:146
 #, php-format
 msgid "Include the %1$s symbol in the list menu entry title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:139
+#: CommonI18N.php:150
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:127
+#: CommonI18N.php:138
 #, php-format
 msgid "Include the %1$s symbol in the tab title"
 msgstr ""
@@ -164,6 +169,11 @@ msgstr "Pamiętaj aby uruchomić ten moduł, jeśli włączony jest jakikolwiek 
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
 msgstr "Wymienione moduły służą (w ustawionej kolejności) do określenia współrzędnych miejsc na mapach."
 
+#. I18N: Module Configuration
+#: CommonI18N.php:106
+msgid "Modules listed here may provide additional data for facts and events (displayed in the configured order)."
+msgstr ""
+
 #: resources/views/admin/vesta_components.phtml:31
 #: resources/views/admin/vesta_components_20.phtml:31
 msgctxt "as in \"Move down\""
@@ -180,16 +190,21 @@ msgstr "Przenieść"
 msgid "No events of these specific types have occurred at this place."
 msgstr "W tej lokalizacji nie ma wydarzeń określonego typu."
 
-#: CommonI18N.php:179
+#: CommonI18N.php:190
 msgid "No relationship found"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:115
+#: CommonI18N.php:126
 msgid "Options"
 msgstr "Opcje"
 
-#: CommonI18N.php:174
+#. I18N: Module Configuration
+#: CommonI18N.php:101
+msgid "Place History UI Element Providers"
+msgstr ""
+
+#: CommonI18N.php:185
 msgid "Place history"
 msgstr "Historia miejsca"
 
@@ -225,7 +240,7 @@ msgid "Q: What's with the %1$s symbol?"
 msgstr ""
 
 #. I18N: Module configuration: Refers to the module's Readme file
-#: CommonI18N.php:103
+#: CommonI18N.php:114
 msgid "Readme"
 msgstr "Dokumentacja"
 
@@ -257,17 +272,17 @@ msgid "Residences"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:161
+#: CommonI18N.php:172
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:157
+#: CommonI18N.php:168
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:153
+#: CommonI18N.php:164
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
 
@@ -288,6 +303,11 @@ msgstr ""
 
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:108
+msgid "These modules may also provide additional facts and events, which are are displayed sorted by date and type."
 msgstr ""
 
 #. I18N: Module title
@@ -346,7 +366,7 @@ msgid "Vesta Webtrees Location Data Provider"
 msgstr "Vesta Udostępniający Dane o Miejscach"
 
 #. I18N: Module configuration: Refers to general documentation
-#: CommonI18N.php:107
+#: CommonI18N.php:118
 msgid "Vesta location data management overview"
 msgstr ""
 
@@ -368,7 +388,7 @@ msgctxt "as in \"Move down\""
 msgid "down"
 msgstr ""
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:78
 #, php-format
 msgid "exclude %1$s"
 msgstr ""
@@ -381,17 +401,17 @@ msgstr ""
 msgid "map coordinates directly (MAP tag)"
 msgstr ""
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:88
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:98
 msgid "reset this filter"
 msgstr ""
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:71
 #, php-format
 msgid "restrict to %1$s"
 msgstr ""
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:90
 #, php-format
 msgid "restricted to %1$s"
 msgstr ""

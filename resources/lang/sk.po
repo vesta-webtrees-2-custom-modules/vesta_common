@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-05-12 22:04+0200\n"
+"POT-Creation-Date: 2022-05-15 08:05+0200\n"
 "PO-Revision-Date: 2022-05-13 10:16+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-common/sk/>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,12 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Weblate 4.13-dev\n"
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
 msgid "%1$s excluded"
 msgstr "bez %1$s"
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:64
 #, php-format
 msgid "%1$s filters"
 msgstr "%1$s filtre"
@@ -84,7 +83,7 @@ msgid "Confirmations"
 msgstr "Birmovania"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:147
+#: CommonI18N.php:158
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr "Zrušte voľbu, ak chcete, aby sa názov zobrazoval exaktne tak, ako pôvodný názov."
 
@@ -93,55 +92,60 @@ msgid "Different modules may also be linked dynamically to provide specific data
 msgstr "Rôzne moduly sa môžu pripájať dynamicky, aby poskytli určité údaje, ako napr. údaje o mieste udalosti."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:123
+#: CommonI18N.php:134
 msgid "Displayed data"
 msgstr "Zobrazované údaje"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:119
+#: CommonI18N.php:130
 msgid "Displayed title"
 msgstr "Zobrazovaný názov"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:170
+#: CommonI18N.php:181
 msgid "Facts and Events Tab Settings"
 msgstr "Nastavenie záložky Fakty a udalosti"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:107
+msgid "If multiple module provide the same type of data (such as map coordinates), only the first provider is used."
+msgstr ""
 
 #: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
 msgstr "Ak sa symbol zobrazuje nesprávne, napr. ako štvorček, skontrolujte vo vašom prehliadači podporu pre Unicode."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:176
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "Ak sú oba zoznamy prázdne, nebudú zobrazené žiadne takéto dodatočné fakty a údaje."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:131
+#: CommonI18N.php:142
 #, php-format
 msgid "Include the %1$s symbol in the chart menu entry title"
 msgstr "Použiť symbol %1$s v názve položky v menu schém"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:143
+#: CommonI18N.php:154
 #, php-format
 msgid "Include the %1$s symbol in the clippings cart menu entry title"
 msgstr "Použiť symbol %1$s v menu pri položke Schránka výstrižkov"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:135
+#: CommonI18N.php:146
 #, php-format
 msgid "Include the %1$s symbol in the list menu entry title"
 msgstr "Použiť symbol %1$s v názve položky v menu zoznamov"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:139
+#: CommonI18N.php:150
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
 msgstr "Použiť symbol %1$s v bočnom paneli"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:127
+#: CommonI18N.php:138
 #, php-format
 msgid "Include the %1$s symbol in the tab title"
 msgstr "Použiť symbol %1$s v názve záložky"
@@ -165,6 +169,11 @@ msgstr "Uistite sa, že je tento modul povolený, ak je povolený ľubovoľný i
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
 msgstr "Tu uvedené moduly sa používajú (v nakonfigurovanom poradí) na určovanie geografických koordinát miest."
 
+#. I18N: Module Configuration
+#: CommonI18N.php:106
+msgid "Modules listed here may provide additional data for facts and events (displayed in the configured order)."
+msgstr "Moduly v tomto zozname poskytujú dodatočné údaje pre fakty a údaje (zobrazované v konfigurovanom poradí)."
+
 #: resources/views/admin/vesta_components.phtml:31
 #: resources/views/admin/vesta_components_20.phtml:31
 msgctxt "as in \"Move down\""
@@ -181,16 +190,21 @@ msgstr "Posuň"
 msgid "No events of these specific types have occurred at this place."
 msgstr "Na tomto mieste sa neudiala žiadna z uvedených udalostí."
 
-#: CommonI18N.php:179
+#: CommonI18N.php:190
 msgid "No relationship found"
 msgstr "Nenašiel sa žiaden vzťah"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:115
+#: CommonI18N.php:126
 msgid "Options"
 msgstr "Možnosti"
 
-#: CommonI18N.php:174
+#. I18N: Module Configuration
+#: CommonI18N.php:101
+msgid "Place History UI Element Providers"
+msgstr ""
+
+#: CommonI18N.php:185
 msgid "Place history"
 msgstr "História miesta"
 
@@ -226,7 +240,7 @@ msgid "Q: What's with the %1$s symbol?"
 msgstr "Q: Čo je %1$s vlastne za symbol?"
 
 #. I18N: Module configuration: Refers to the module's Readme file
-#: CommonI18N.php:103
+#: CommonI18N.php:114
 msgid "Readme"
 msgstr "Čítať"
 
@@ -258,19 +272,17 @@ msgid "Residences"
 msgstr "Sídla"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:161
+#: CommonI18N.php:172
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
-msgstr ""
-"Obmedziť fakty a udalosti v histórii miesta na tento zoznam GEDCOM faktov a "
-"udalostí."
+msgstr "Obmedziť fakty a udalosti v histórii miesta na tento zoznam GEDCOM faktov a udalostí."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:157
+#: CommonI18N.php:168
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Obmedziť na tento zoznam rodinných GEDCOM faktov a udalostí. Tento zoznam môžete upraviť odstránením, alebo pridaním potrebných faktov a udalostí, pričom môžete použiť aj užívateľské fakty a udalosti."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:153
+#: CommonI18N.php:164
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Obmedziť na tento zoznam osobných GEDCOM faktov a udalostí. Tento zoznam môžete upraviť odstránením, alebo pridaním potrebných faktov a udalostí, pričom môžete použiť aj užívateľské fakty a udalosti."
 
@@ -291,9 +303,12 @@ msgstr "V súčasnosti inštalované verzie nasledovných užívateľských modu
 
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
+msgstr "Vzťah sa určuje k predchodcovi, t.j. osobe z predchádzajúceho faktu toho istého typu."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:108
+msgid "These modules may also provide additional facts and events, which are are displayed sorted by date and type."
 msgstr ""
-"Vzťah sa určuje k predchodcovi, t.j. osobe z predchádzajúceho faktu toho "
-"istého typu."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -351,7 +366,7 @@ msgid "Vesta Webtrees Location Data Provider"
 msgstr "Vesta Webtrees Location Data Provider"
 
 #. I18N: Module configuration: Refers to general documentation
-#: CommonI18N.php:107
+#: CommonI18N.php:118
 msgid "Vesta location data management overview"
 msgstr "Vesta prehľad správy údajov o polohe"
 
@@ -373,7 +388,7 @@ msgctxt "as in \"Move down\""
 msgid "down"
 msgstr "dole"
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:78
 #, php-format
 msgid "exclude %1$s"
 msgstr "okrem %1$s"
@@ -386,17 +401,17 @@ msgstr "tu"
 msgid "map coordinates directly (MAP tag)"
 msgstr "koordináty na mape priamo (tag MAP)"
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:88
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:98
 msgid "reset this filter"
 msgstr "zrušiť tento filter"
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:71
 #, php-format
 msgid "restrict to %1$s"
 msgstr "obmedziť na %1$s"
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:90
 #, php-format
 msgid "restricted to %1$s"
 msgstr "obmedzené na %1$s"

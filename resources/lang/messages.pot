@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-05-12 22:04+0200\n"
+"POT-Creation-Date: 2022-05-15 08:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -105,96 +105,116 @@ msgstr ""
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
 msgstr ""
 
+#. I18N: Module Configuration
+#: CommonI18N.php:101
+msgid "Place History UI Element Providers"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:106
+msgid "Modules listed here may provide additional data for facts and events (displayed in the configured order)."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:107
+msgid "If multiple module provide the same type of data (such as map coordinates), only the first provider is used."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:108
+msgid "These modules may also provide additional facts and events, which are are displayed sorted by date and type."
+msgstr ""
+
 #. I18N: Module configuration: Refers to the module's Readme file
-#: CommonI18N.php:103
+#: CommonI18N.php:114
 msgid "Readme"
 msgstr ""
 
 #. I18N: Module configuration: Refers to general documentation
-#: CommonI18N.php:107
+#: CommonI18N.php:118
 msgid "Vesta location data management overview"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:115
+#: CommonI18N.php:126
 msgid "Options"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:119
+#: CommonI18N.php:130
 msgid "Displayed title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:123
+#: CommonI18N.php:134
 msgid "Displayed data"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:127
+#: CommonI18N.php:138
 #, php-format
 msgid "Include the %1$s symbol in the tab title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:131
+#: CommonI18N.php:142
 #, php-format
 msgid "Include the %1$s symbol in the chart menu entry title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:135
+#: CommonI18N.php:146
 #, php-format
 msgid "Include the %1$s symbol in the list menu entry title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:139
+#: CommonI18N.php:150
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:143
+#: CommonI18N.php:154
 #, php-format
 msgid "Include the %1$s symbol in the clippings cart menu entry title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:147
+#: CommonI18N.php:158
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:153
+#: CommonI18N.php:164
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:157
+#: CommonI18N.php:168
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:161
+#: CommonI18N.php:172
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:176
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:170
+#: CommonI18N.php:181
 msgid "Facts and Events Tab Settings"
 msgstr ""
 
-#: CommonI18N.php:174
+#: CommonI18N.php:185
 msgid "Place history"
 msgstr ""
 
-#: CommonI18N.php:179
+#: CommonI18N.php:190
 msgid "No relationship found"
 msgstr ""
 
@@ -247,32 +267,32 @@ msgstr ""
 msgid "Possessions"
 msgstr ""
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:65
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:64
 #, php-format
 msgid "%1$s filters"
 msgstr ""
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:72
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:71
 #, php-format
 msgid "restrict to %1$s"
 msgstr ""
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:79
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:78
 #, php-format
 msgid "exclude %1$s"
 msgstr ""
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:81
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
 msgid "%1$s excluded"
 msgstr ""
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:89
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:99
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:88
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:98
 msgid "reset this filter"
 msgstr ""
 
-#: patchedWebtrees/Http/Controllers/PlaceUrls.php:91
+#: patchedWebtrees/Http/Controllers/PlaceUrls.php:90
 #, php-format
 msgid "restricted to %1$s"
 msgstr ""

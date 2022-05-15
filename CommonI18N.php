@@ -97,6 +97,17 @@ class CommonI18N {
         return /* I18N: Module Configuration */I18N::translate('Modules listed here are used (in the configured order) to determine map coordinates of places.');
     }
 
+    public static function placeHistoryDataProviders(): string {
+        return /* I18N: Module Configuration */I18N::translate('Place History UI Element Providers');
+    }
+
+    public static function factDataProvidersDescription(): string {
+        return 
+        /* I18N: Module Configuration */I18N::translate('Modules listed here may provide additional data for facts and events (displayed in the configured order).') . ' ' .
+        /* I18N: Module Configuration */I18N::translate('If multiple module provide the same type of data (such as map coordinates), only the first provider is used.'). ' ' .
+        /* I18N: Module Configuration */I18N::translate('These modules may also provide additional facts and events, which are are displayed sorted by date and type.');
+    }
+    
     //////////////////////////////////////////////////////////////////////////////
 
     public static function readme(): string {
