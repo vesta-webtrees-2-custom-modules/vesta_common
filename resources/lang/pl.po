@@ -15,8 +15,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.12.1\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.13-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -108,7 +109,9 @@ msgstr "Ustawienia Zakładki Fakty i Wydarzenia"
 
 #: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
-msgstr "Jeśli symbol/litera są pokazywane  nieprawidłowo, np. jako prostokąt, sprawdź możliwości obsługi Unicode w Twojej przeglądarce."
+msgstr ""
+"Jeśli symbol/litera są pokazywane nieprawidłowo, np. jako prostokąt, sprawdź "
+"możliwości obsługi Unicode w Twojej przeglądarce."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:175
