@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-05-15 08:05+0200\n"
+"POT-Creation-Date: 2022-05-15 08:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -117,104 +117,99 @@ msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:107
-msgid "If multiple module provide the same type of data (such as map coordinates), only the first provider is used."
-msgstr ""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:108
-msgid "These modules may also provide additional facts and events, which are are displayed sorted by date and type."
+msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
 msgstr ""
 
 #. I18N: Module configuration: Refers to the module's Readme file
-#: CommonI18N.php:114
+#: CommonI18N.php:113
 msgid "Readme"
 msgstr ""
 
 #. I18N: Module configuration: Refers to general documentation
-#: CommonI18N.php:118
+#: CommonI18N.php:117
 msgid "Vesta location data management overview"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:126
+#: CommonI18N.php:125
 msgid "Options"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:130
+#: CommonI18N.php:129
 msgid "Displayed title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:134
+#: CommonI18N.php:133
 msgid "Displayed data"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:138
+#: CommonI18N.php:137
 #, php-format
 msgid "Include the %1$s symbol in the tab title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:142
+#: CommonI18N.php:141
 #, php-format
 msgid "Include the %1$s symbol in the chart menu entry title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:146
+#: CommonI18N.php:145
 #, php-format
 msgid "Include the %1$s symbol in the list menu entry title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:150
+#: CommonI18N.php:149
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:154
+#: CommonI18N.php:153
 #, php-format
 msgid "Include the %1$s symbol in the clippings cart menu entry title"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:158
+#: CommonI18N.php:157
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:164
+#: CommonI18N.php:163
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:168
+#: CommonI18N.php:167
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:172
+#: CommonI18N.php:171
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:176
+#: CommonI18N.php:175
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:181
+#: CommonI18N.php:180
 msgid "Facts and Events Tab Settings"
 msgstr ""
 
-#: CommonI18N.php:185
+#: CommonI18N.php:184
 msgid "Place history"
 msgstr ""
 
-#: CommonI18N.php:190
+#: CommonI18N.php:189
 msgid "No relationship found"
 msgstr ""
 

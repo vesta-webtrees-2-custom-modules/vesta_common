@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-05-15 08:05+0200\n"
+"POT-Creation-Date: 2022-05-15 08:20+0200\n"
 "PO-Revision-Date: 2022-04-11 05:47+0000\n"
 "Last-Translator: Олег <uolega@yandex.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/ru/>\n"
@@ -83,7 +83,7 @@ msgid "Confirmations"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:158
+#: CommonI18N.php:157
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr "Снимите выделение, чтобы заголовок отображался точно так же, как исходный заголовок."
 
@@ -92,60 +92,55 @@ msgid "Different modules may also be linked dynamically to provide specific data
 msgstr "Различные модули также могут быть связаны динамически для предоставления конкретных данных, например данных о местоположении для мест проведения мероприятий."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:134
+#: CommonI18N.php:133
 msgid "Displayed data"
 msgstr "Отображаемые данные"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:130
+#: CommonI18N.php:129
 msgid "Displayed title"
 msgstr "Отображаемый заголовок"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:181
+#: CommonI18N.php:180
 msgid "Facts and Events Tab Settings"
 msgstr "Настройки вкладки \"Факты и события\""
-
-#. I18N: Module Configuration
-#: CommonI18N.php:107
-msgid "If multiple module provide the same type of data (such as map coordinates), only the first provider is used."
-msgstr ""
 
 #: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
 msgstr "Если символ отображается неправильно, например, в виде прямоугольника проверьте возможности поддержки Unicode в вашем браузере."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:176
+#: CommonI18N.php:175
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "В частности, если оба списка пусты, никакие дополнительные факты и события такого рода отображаться не будут."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:142
+#: CommonI18N.php:141
 #, php-format
 msgid "Include the %1$s symbol in the chart menu entry title"
 msgstr "Включите символ %1$s в название пункта меню диаграммы"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:154
+#: CommonI18N.php:153
 #, php-format
 msgid "Include the %1$s symbol in the clippings cart menu entry title"
 msgstr "Включите символ %1$s в заголовок записи меню корзины вырезок"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:146
+#: CommonI18N.php:145
 #, php-format
 msgid "Include the %1$s symbol in the list menu entry title"
 msgstr "Включите символ %1$s в заголовок пункта меню списка"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:150
+#: CommonI18N.php:149
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
 msgstr "Включите символ %1$s в заголовок боковой панели"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:138
+#: CommonI18N.php:137
 #, php-format
 msgid "Include the %1$s symbol in the tab title"
 msgstr "Включите символ %1$s в заголовок вкладки"
@@ -190,12 +185,12 @@ msgstr "Переместить"
 msgid "No events of these specific types have occurred at this place."
 msgstr ""
 
-#: CommonI18N.php:190
+#: CommonI18N.php:189
 msgid "No relationship found"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:126
+#: CommonI18N.php:125
 msgid "Options"
 msgstr "Параметры"
 
@@ -204,7 +199,7 @@ msgstr "Параметры"
 msgid "Place History UI Element Providers"
 msgstr ""
 
-#: CommonI18N.php:185
+#: CommonI18N.php:184
 msgid "Place history"
 msgstr ""
 
@@ -240,7 +235,7 @@ msgid "Q: What's with the %1$s symbol?"
 msgstr "В: Что за символ %1$s?"
 
 #. I18N: Module configuration: Refers to the module's Readme file
-#: CommonI18N.php:114
+#: CommonI18N.php:113
 msgid "Readme"
 msgstr "Прочти меня"
 
@@ -272,17 +267,17 @@ msgid "Residences"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:172
+#: CommonI18N.php:171
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:168
+#: CommonI18N.php:167
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Ограничьтесь этим списком фактов и событий семьи GEDCOM. Вы можете изменить этот список, удалив или добавив имена фактов и событий, даже собственные, если необходимо."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:164
+#: CommonI18N.php:163
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Ограничьте этот список отдельными фактами и событиями GEDCOM. Вы можете изменить этот список, удалив или добавив имена фактов и событий, даже собственные, если необходимо."
 
@@ -306,8 +301,8 @@ msgid "The relationship refers to the predecessor, i.e. the individual from the 
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:108
-msgid "These modules may also provide additional facts and events, which are are displayed sorted by date and type."
+#: CommonI18N.php:107
+msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
 msgstr ""
 
 #. I18N: Module title
@@ -366,7 +361,7 @@ msgid "Vesta Webtrees Location Data Provider"
 msgstr "Провайдер данных о местоположении Vesta Webtrees"
 
 #. I18N: Module configuration: Refers to general documentation
-#: CommonI18N.php:118
+#: CommonI18N.php:117
 msgid "Vesta location data management overview"
 msgstr "Обзор управления данными о местоположении Vesta"
 
