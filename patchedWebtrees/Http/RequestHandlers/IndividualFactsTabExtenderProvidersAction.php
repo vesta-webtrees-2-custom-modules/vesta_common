@@ -14,24 +14,25 @@ use function redirect;
 use function route;
 
 class IndividualFactsTabExtenderProvidersAction extends AbstractModuleComponentAction {
-  
-  protected $module;
-  
-  public function __construct($module) {
-    parent::__construct(app(ModuleService::class), app(TreeService::class));
-    $this->module = $module;
-  }
-  
-  public function handle(ServerRequestInterface $request): ResponseInterface {
-    $this->updateStatus(IndividualFactsTabExtenderInterface::class, $request);
-    IndividualFactsTabExtenderUtils::updateOrder($this->module, $request);
-    $this->updateAccessLevel(IndividualFactsTabExtenderInterface::class, $request);
 
-    $url = route('module', [
-        'module' => $this->module->name(),
-        'action' => 'IndividualFactsTabExtenderProviders'
-    ]);
+    protected $module;
 
-    return redirect($url);
-  } 
+    public function __construct($module) {
+        parent::__construct(app(ModuleService::class), app(TreeService::class));
+        $this->module = $module;
+    }
+
+    public function handle(ServerRequestInterface $request): ResponseInterface {
+        $this->updateStatus(IndividualFactsTabExtenderInterface::class, $request);
+        IndividualFactsTabExtenderUtils::updateOrder($this->module, $request);
+        $this->updateAccessLevel(IndividualFactsTabExtenderInterface::class, $request);
+
+        $url = route('module', [
+            'module' => $this->module->name(),
+            'action' => 'IndividualFactsTabExtenderProviders'
+        ]);
+
+        return redirect($url);
+    }
+
 }

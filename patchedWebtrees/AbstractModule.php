@@ -19,221 +19,221 @@ use stdClass;
  */
 abstract class AbstractModule implements ModuleInterface {
 
-  use ViewResponseTrait;
+    use ViewResponseTrait;
 
-  /** @var string A unique internal name for this module (based on the installation folder). */
-  private $name = '';
+    /** @var string A unique internal name for this module (based on the installation folder). */
+    private $name = '';
 
-  /** @var int The default access level for this module.  It can be changed in the control panel. */
-  protected $access_level = Auth::PRIV_PRIVATE;
+    /** @var int The default access level for this module.  It can be changed in the control panel. */
+    protected $access_level = Auth::PRIV_PRIVATE;
 
-  /** @var bool The default status for this module.  It can be changed in the control panel. */
-  private $enabled = true;
+    /** @var bool The default status for this module.  It can be changed in the control panel. */
+    private $enabled = true;
 
-  /** @var string For custom modules - optional (recommended) version number */
-  public const CUSTOM_VERSION = '';
+    /** @var string For custom modules - optional (recommended) version number */
+    public const CUSTOM_VERSION = '';
 
-  /** @var string For custom modules - link for support, upgrades, etc. */
-  public const CUSTOM_WEBSITE = '';
+    /** @var string For custom modules - link for support, upgrades, etc. */
+    public const CUSTOM_WEBSITE = '';
 
-  /**
-   * Called for all *enabled* modules.
-   */
-  public function boot(): void {
-    
-  }
+    /**
+     * Called for all *enabled* modules.
+     */
+    public function boot(): void {
+        
+    }
 
-  /**
-   * How should this module be identified in the control panel, etc.?
-   *
-   * @return string
-   */
-  public function title(): string {
-    return 'Module name goes here';
-  }
+    /**
+     * How should this module be identified in the control panel, etc.?
+     *
+     * @return string
+     */
+    public function title(): string {
+        return 'Module name goes here';
+    }
 
-  /**
-   * A sentence describing what this module does.
-   *
-   * @return string
-   */
-  public function description(): string {
-    return $this->title();
-  }
+    /**
+     * A sentence describing what this module does.
+     *
+     * @return string
+     */
+    public function description(): string {
+        return $this->title();
+    }
 
-  /**
-   * Get a block setting.
-   *
-   * Originally, this was just used for the home-page blocks.  Now, it is used by any
-   * module that has repeated blocks of content on the same page.
-   *
-   * @param int    $block_id
-   * @param string $setting_name
-   * @param string $default
-   *
-   * @return string
-   */
-  protected function getBlockSetting(int $block_id, string $setting_name, string $default = ''): string {
-    $settings = Registry::cache()->array()->remember('block_setting' . $block_id, function () use ($block_id): array {
-      return DB::table('block_setting')
-                      ->where('block_id', '=', $block_id)
-                      ->pluck('setting_value', 'setting_name')
-                      ->all();
-    });
+    /**
+     * Get a block setting.
+     *
+     * Originally, this was just used for the home-page blocks.  Now, it is used by any
+     * module that has repeated blocks of content on the same page.
+     *
+     * @param int    $block_id
+     * @param string $setting_name
+     * @param string $default
+     *
+     * @return string
+     */
+    protected function getBlockSetting(int $block_id, string $setting_name, string $default = ''): string {
+        $settings = Registry::cache()->array()->remember('block_setting' . $block_id, function () use ($block_id): array {
+            return DB::table('block_setting')
+                ->where('block_id', '=', $block_id)
+                ->pluck('setting_value', 'setting_name')
+                ->all();
+        });
 
-    return $settings[$setting_name] ?? $default;
-  }
+        return $settings[$setting_name] ?? $default;
+    }
 
-  /**
-   * Set a block setting.
-   *
-   * @param int    $block_id
-   * @param string $setting_name
-   * @param string $setting_value
-   *
-   * @return $this
-   */
-  protected function setBlockSetting(int $block_id, string $setting_name, string $setting_value): self {
-    DB::table('block_setting')->updateOrInsert([
-        'block_id' => $block_id,
-        'setting_name' => $setting_name,
+    /**
+     * Set a block setting.
+     *
+     * @param int    $block_id
+     * @param string $setting_name
+     * @param string $setting_value
+     *
+     * @return $this
+     */
+    protected function setBlockSetting(int $block_id, string $setting_name, string $setting_value): self {
+        DB::table('block_setting')->updateOrInsert([
+            'block_id' => $block_id,
+            'setting_name' => $setting_name,
             ], [
-        'setting_value' => $setting_value,
-    ]);
+            'setting_value' => $setting_value,
+        ]);
 
-    return $this;
-  }
+        return $this;
+    }
 
-  /**
-   * A unique internal name for this module (based on the installation folder).
-   *
-   * @param string $name
-   *
-   * @return void
-   */
-  public function setName(string $name): void {
-    $this->name = $name;
-  }
+    /**
+     * A unique internal name for this module (based on the installation folder).
+     *
+     * @param string $name
+     *
+     * @return void
+     */
+    public function setName(string $name): void {
+        $this->name = $name;
+    }
 
-  /**
-   * A unique internal name for this module (based on the installation folder).
-   *
-   * @return string
-   */
-  public function name(): string {
-    return $this->name;
-  }
+    /**
+     * A unique internal name for this module (based on the installation folder).
+     *
+     * @return string
+     */
+    public function name(): string {
+        return $this->name;
+    }
 
-  /**
-   * Modules are either enabled or disabled.
-   *
-   * @param bool $enabled
-   *
-   * @return ModuleInterface
-   */
-  public function setEnabled(bool $enabled): ModuleInterface {
-    $this->enabled = $enabled;
+    /**
+     * Modules are either enabled or disabled.
+     *
+     * @param bool $enabled
+     *
+     * @return ModuleInterface
+     */
+    public function setEnabled(bool $enabled): ModuleInterface {
+        $this->enabled = $enabled;
 
-    return $this;
-  }
+        return $this;
+    }
 
-  /**
-   * Modules are either enabled or disabled.
-   *
-   * @return bool
-   */
-  public function isEnabled(): bool {
-    return $this->enabled;
-  }
+    /**
+     * Modules are either enabled or disabled.
+     *
+     * @return bool
+     */
+    public function isEnabled(): bool {
+        return $this->enabled;
+    }
 
-  /**
-   * Should this module be enabled when it is first installed?
-   *
-   * @return bool
-   */
-  public function isEnabledByDefault(): bool {
-    return true;
-  }
+    /**
+     * Should this module be enabled when it is first installed?
+     *
+     * @return bool
+     */
+    public function isEnabledByDefault(): bool {
+        return true;
+    }
 
-  /**
-   * Get a module setting. Return a default if the setting is not set.
-   *
-   * @param string $setting_name
-   * @param string $default
-   *
-   * @return string
-   */
-  public function getPreference(string $setting_name, string $default = ''): string {
-    $name = $this->name();
-    $key = 'module_setting_' . $name . '_' . $setting_name . '_' . $default;
-    
-    return Registry::cache()->array()->remember(
-            $key, 
-            function() use($name, $setting_name, $default): string {
-      
-      return DB::table('module_setting')
-                    ->where('module_name', '=', $name)
-                    ->where('setting_name', '=', $setting_name)
-                    ->value('setting_value') ?? $default;
-    });
-  }
+    /**
+     * Get a module setting. Return a default if the setting is not set.
+     *
+     * @param string $setting_name
+     * @param string $default
+     *
+     * @return string
+     */
+    public function getPreference(string $setting_name, string $default = ''): string {
+        $name = $this->name();
+        $key = 'module_setting_' . $name . '_' . $setting_name . '_' . $default;
 
-  /**
-   * Set a module setting.
-   *
-   * Since module settings are NOT NULL, setting a value to NULL will cause
-   * it to be deleted.
-   *
-   * @param string $setting_name
-   * @param string $setting_value
-   *
-   * @return void
-   */
-  public function setPreference(string $setting_name, string $setting_value): void {
-    DB::table('module_setting')->updateOrInsert([
-        'module_name' => $this->name(),
-        'setting_name' => $setting_name,
+        return Registry::cache()->array()->remember(
+                $key,
+                function () use ($name, $setting_name, $default): string {
+
+                    return DB::table('module_setting')
+                        ->where('module_name', '=', $name)
+                        ->where('setting_name', '=', $setting_name)
+                        ->value('setting_value') ?? $default;
+                });
+    }
+
+    /**
+     * Set a module setting.
+     *
+     * Since module settings are NOT NULL, setting a value to NULL will cause
+     * it to be deleted.
+     *
+     * @param string $setting_name
+     * @param string $setting_value
+     *
+     * @return void
+     */
+    public function setPreference(string $setting_name, string $setting_value): void {
+        DB::table('module_setting')->updateOrInsert([
+            'module_name' => $this->name(),
+            'setting_name' => $setting_name,
             ], [
-        'setting_value' => $setting_value,
-    ]);
-  }
+            'setting_value' => $setting_value,
+        ]);
+    }
 
-  //TODO cleanup, no longer required in webtrees 2.1
-  //HACK in case accessLevel has to be re-evaluated (without $tree as arg, e.g. for ModuleSidebarInterface.supportedFacts())
-  protected $treeUsedForAccessLevelCheck;
-  
-  /**
-   * Get a the current access level for a module
-   *
-   * @param Tree   $tree
-   * @param string $interface
-   *
-   * @return int
-   */
-  public function accessLevel(Tree $tree, string $interface): int {
-    $this->treeUsedForAccessLevelCheck = $tree;
-    
-    $access_levels = Registry::cache()->array()
+    //TODO cleanup, no longer required in webtrees 2.1
+    //HACK in case accessLevel has to be re-evaluated (without $tree as arg, e.g. for ModuleSidebarInterface.supportedFacts())
+    protected $treeUsedForAccessLevelCheck;
+
+    /**
+     * Get a the current access level for a module
+     *
+     * @param Tree   $tree
+     * @param string $interface
+     *
+     * @return int
+     */
+    public function accessLevel(Tree $tree, string $interface): int {
+        $this->treeUsedForAccessLevelCheck = $tree;
+
+        $access_levels = Registry::cache()->array()
             ->remember('module-privacy-' . $tree->id(), static function () use ($tree): Collection {
-      return DB::table('module_privacy')
-              ->where('gedcom_id', '=', $tree->id())
-              ->get();
-    });
+            return DB::table('module_privacy')
+            ->where('gedcom_id', '=', $tree->id())
+            ->get();
+        });
 
-    $row = $access_levels->first(function (stdClass $row) use ($interface): bool {
-      return $row->interface === $interface && $row->module_name === $this->name();
-    });
+        $row = $access_levels->first(function (stdClass $row) use ($interface): bool {
+            return $row->interface === $interface && $row->module_name === $this->name();
+        });
 
-    return $row ? (int) $row->access_level : $this->access_level;
-  }
+        return $row ? (int) $row->access_level : $this->access_level;
+    }
 
-  /**
-   * Where does this module store its resources
-   *
-   * @return string
-   */
-  public function resourcesFolder(): string {
-    return Webtrees::ROOT_DIR . 'resources/';
-  }
+    /**
+     * Where does this module store its resources
+     *
+     * @return string
+     */
+    public function resourcesFolder(): string {
+        return Webtrees::ROOT_DIR . 'resources/';
+    }
 
 }

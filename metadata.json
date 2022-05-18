@@ -215,5 +215,11 @@
 		"from": "2.0.12",
 		"to": "2.1.3",
 		"changelog": ["All modules: Bugfixes and adjustments for latest webtrees version.","All modules: Additional translations."]
+	},
+	{
+		"version": "2.1.2.1.0",
+		"from": "2.0.12",
+		"to": "2.1.3",
+		"changelog": ["All modules: Additional translations."]
 	}
 ]

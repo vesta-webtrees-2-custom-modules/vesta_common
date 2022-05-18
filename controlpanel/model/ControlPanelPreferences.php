@@ -4,17 +4,17 @@ namespace Vesta\ControlPanelUtils\Model;
 
 class ControlPanelPreferences {
 
-  private $sections;
+    private $sections;
 
-  /**
-   * @return ControlPanelSection[]
-   */
-  public function getSections() {
-    return $this->sections;
-  }
+    /**
+     * @return ControlPanelSection[]
+     */
+    public function getSections() {
+        return $this->sections;
+    }
 
-  public function __construct($sections) {
-    $this->sections = $sections;
-  }
+    public function __construct($sections) {
+        $this->sections = $sections;
+    }
 
 }

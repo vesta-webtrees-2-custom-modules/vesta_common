@@ -283,7 +283,7 @@ class PlaceStructure implements JsonSerializable {
     }
 
     public static function fromPlace(
-        Place $place): ?PlaceStructure {
+        Place $place): PlaceStructure {
 
         $gedcom = "2 PLAC " . $place->gedcomName();
         return PlaceStructure::create($gedcom, $place->tree());
