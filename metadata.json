@@ -221,5 +221,11 @@
 		"from": "2.0.12",
 		"to": "2.1.3",
 		"changelog": ["All modules: Additional translations."]
+	},
+	{
+		"version": "2.1.2.1.1",
+		"from": "2.0.12",
+		"to": "2.1.3",
+		"changelog": ["Several modules: Bugfixes."]
 	}
 ]

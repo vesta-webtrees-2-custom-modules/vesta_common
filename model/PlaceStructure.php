@@ -243,8 +243,7 @@ class PlaceStructure implements JsonSerializable {
         $tag = explode(':', $event->tag())[1];
 
         if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            //TODO better replacement?
-            $placerec = ReportParserGenerate::getSubRecord(2, '2 PLAC', $event->gedcom());
+            $placerec = '2 PLAC ' . $event->attribute('PLAC');
         } else {
             $placerec = Functions::getSubRecord(2, '2 PLAC', $event->gedcom());
         }
@@ -266,8 +265,7 @@ class PlaceStructure implements JsonSerializable {
         $tag = explode(':', $event->tag())[1];
 
         if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            //TODO better replacement?
-            $placerec = ReportParserGenerate::getSubRecord(2, '2 PLAC', $event->gedcom());
+            $placerec = '2 PLAC ' . $event->attribute('PLAC');
         } else {
             $placerec = Functions::getSubRecord(2, '2 PLAC', $event->gedcom());
         }
@@ -283,7 +281,7 @@ class PlaceStructure implements JsonSerializable {
     }
 
     public static function fromPlace(
-        Place $place): PlaceStructure {
+        Place $place): ?PlaceStructure {
 
         $gedcom = "2 PLAC " . $place->gedcomName();
         return PlaceStructure::create($gedcom, $place->tree());
