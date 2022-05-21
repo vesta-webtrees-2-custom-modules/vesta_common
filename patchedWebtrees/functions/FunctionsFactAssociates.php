@@ -30,7 +30,7 @@ class FunctionsFactAssociates {
         $relationship_name_prefix,
         $relationship_name,
         $relationship_name_suffix,
-        $inverse): GenericViewElement {
+        $inverse): ?GenericViewElement {
 
         $outs = IndividualFactsTabExtenderUtils::accessibleModules($module, $person->tree(), Auth::user())
             ->map(function (IndividualFactsTabExtenderInterface $module) use ($event, $person, $associate, $relationship_name_prefix, $relationship_name, $relationship_name_suffix, $inverse) {
