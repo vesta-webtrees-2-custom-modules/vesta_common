@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-05-22 14:25+0200\n"
-"PO-Revision-Date: 2022-05-15 17:14+0000\n"
+"PO-Revision-Date: 2022-05-22 21:18+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,11 +70,13 @@ msgstr "A: Via 'hooks'. Hooks zorgen ervoor dat modules de functionaliteit van a
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
+"Alle functionaliteit van module '%1$s' is uitgeschakeld omdat de "
+"moduleversie niet compatibel is met de webtreesversie."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:166 CommonI18N.php:173
 msgid "All functionality of the module is therefore disabled."
-msgstr ""
+msgstr "Alle functionaliteit van de module is daarom uitgeschakeld."
 
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
@@ -199,7 +202,7 @@ msgstr "Geen verwantschap gevonden"
 #: CommonI18N.php:172
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
-msgstr ""
+msgstr "Alleen webtreesversies voor %1$s worden ondersteund."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
@@ -321,6 +324,7 @@ msgstr "Deze modules kunnen ook aanvullende feiten en gebeurtenissen verschaffen
 #: CommonI18N.php:164 CommonI18N.php:171
 msgid "This version of the module is incompatible with your current webtrees version."
 msgstr ""
+"Deze versie van de module is niet compatibel met uw huidige webtreesversie."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -390,7 +394,7 @@ msgstr "Bekijk dit gezin"
 #: CommonI18N.php:165
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
-msgstr ""
+msgstr "Webtreesversie moet %1$s of hoger zijn."
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
