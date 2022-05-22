@@ -17,7 +17,6 @@ use Fisharebest\Webtrees\View;
 <p><?= $description ?></p>
 
 <form method="post">
-    <?= csrf_field() ?>
     <table class="table table-bordered wt-table-menu">
         <thead>
             <tr>
@@ -142,6 +141,7 @@ use Fisharebest\Webtrees\View;
         <?= view('icons/cancel') ?>
         <?= MoreI18N::xlate('cancel') ?>
     </a>
+    <?= csrf_field() ?>
 </form>
 
 

@@ -156,7 +156,28 @@ class CommonI18N {
     public static function vestaSymbolInTitle2(): string {
         return /* I18N: Module Configuration */I18N::translate('Deselect in order to have the title appear exactly as the original title.');
     }
+    
+    //////////////////////////////////////////////////////////////////////////////
 
+    public static function noopModuleMin(string $version): string {
+        return 
+            /* I18N: Module Configuration */I18N::translate('This version of the module is incompatible with your current webtrees version.') . ' ' .
+            /* I18N: Module Configuration */I18N::translate('Webtrees version must be %1$s or higher.', $version) . ' ' .
+            /* I18N: Module Configuration */I18N::translate('All functionality of the module is therefore disabled.');
+    }
+    
+    public static function noopModuleMax(string $version): string {
+        return 
+            /* I18N: Module Configuration */I18N::translate('This version of the module is incompatible with your current webtrees version.') . ' ' .
+            /* I18N: Module Configuration */I18N::translate('Only webtrees versions before %1$s are supported.', $version) . ' ' .
+            /* I18N: Module Configuration */I18N::translate('All functionality of the module is therefore disabled.');
+    }
+    
+    public static function noopModuleMessage(string $title): string {
+        return 
+            I18N::translate('All functionality of module \'%1$s\' is disabled because the module version is incompatible with the webtrees version.', $title);
+    }
+    
     //////////////////////////////////////////////////////////////////////////////
 
     public static function restrictIndi(): string {

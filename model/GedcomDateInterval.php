@@ -3,11 +3,9 @@
 namespace Vesta\Model;
 
 use Closure;
-use Fisharebest\Webtrees\Carbon;
 use Fisharebest\Webtrees\Date\AbstractCalendarDate;
 use Fisharebest\Webtrees\Date\GregorianDate;
 use Fisharebest\Webtrees\Registry;
-use Fisharebest\Webtrees\Webtrees;
 use Illuminate\Support\Collection;
 use JsonSerializable;
 use Vesta\Model\DateUtils;
@@ -134,23 +132,13 @@ class GedcomDateInterval implements JsonSerializable {
     }
 
     public static function createNow(): GedcomDateInterval {
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            $startjd = Registry::timestampFactory()->now()->julianDay();
-        } else {
-            $startjd = Carbon::now()->julianDay();
-        }
-
+        $startjd = Registry::timestampFactory()->now()->julianDay();
         $endjd = $startjd;
         return new GedcomDateInterval($startjd, $endjd);
     }
 
     public static function createYear(int $year): GedcomDateInterval {
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            $startjd = Registry::timestampFactory()->fromString($year, 'Y')->julianDay();
-        } else {
-            $startjd = Carbon::createFromDate($year)->julianDay();
-        }
-
+        $startjd = Registry::timestampFactory()->fromString($year, 'Y')->julianDay();
         $endjd = $startjd;
         return new GedcomDateInterval($startjd, $endjd);
     }

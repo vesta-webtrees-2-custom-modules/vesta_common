@@ -17,13 +17,21 @@ use function GuzzleHttp\json_decode;
  */
 trait ModuleMetaTrait {
 
-    //legacy support
     public function customModuleVersion(): string {
         $metaData = $this->customModuleMetaData();
         return ($metaData != null) ? $metaData->version() : "";
     }
+    
+    public function minRequiredWebtreesVersion(): string {
+        $metaData = $this->customModuleMetaData();
+        return ($metaData != null) ? $metaData->minRequiredWebtreesVersion() : "";
+    }
 
-    //legacy support
+    public function minUnsupportedWebtreesVersion(): string {
+        $metaData = $this->customModuleMetaData();
+        return ($metaData != null) ? $metaData->minUnsupportedWebtreesVersion() : "";
+    }
+    
     public function customModuleLatestVersion(): string {
         //we're usually not interested in the latest overall version,
         //but in the latest version compatible with the current webtrees version
@@ -65,8 +73,11 @@ trait ModuleMetaTrait {
         }
 
         $cache = Registry::cache()->file();
+        
+        //$this->name() may not be initialized at this point!
+        $key = get_called_class() . '-latest-meta-data'; 
 
-        return $cache->remember($this->name() . '-latest-meta-data', function () {
+        return $cache->remember($key, function () {
                 try {
                     $client = new Client([
                         'timeout' => 3,

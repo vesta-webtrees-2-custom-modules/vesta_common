@@ -7,7 +7,6 @@ use Cissee\WebtreesExt\ViewUtils;
 use Exception;
 use Fisharebest\Webtrees\FlashMessages;
 use Fisharebest\Webtrees\Module\ModuleInterface;
-use Fisharebest\Webtrees\Webtrees;
 use Psr\Http\Message\ServerRequestInterface;
 use Vesta\ControlPanelUtils\Model\ControlPanelCheckbox;
 use Vesta\ControlPanelUtils\Model\ControlPanelCheckboxInverted;
@@ -20,7 +19,6 @@ use Vesta\ControlPanelUtils\Model\ControlPanelSection;
 use Vesta\ControlPanelUtils\Model\ControlPanelSubsection;
 use Vesta\ControlPanelUtils\Model\ControlPanelTextbox;
 use function csrf_field;
-use function str_starts_with;
 use function view;
 
 class ControlPanelUtils {
@@ -44,7 +42,6 @@ class ControlPanelUtils {
         <h1><?php echo MoreI18N::xlate('Preferences'); ?></h1>
 
         <form method="post">
-            <?= csrf_field() ?>
             <input type="hidden" name="route" value="module">
             <input type="hidden" name="module" value="<?php echo $module; ?>">
             <input type="hidden" name="action" value="Admin">
@@ -62,7 +59,8 @@ class ControlPanelUtils {
                     </button>
                 </div>
             </div>
-        </form>
+            <?= csrf_field() ?>
+       </form>
         <?php
     }
 
@@ -230,18 +228,12 @@ class ControlPanelUtils {
         //why escape only here?	
         $value = e($this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue()));
 
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            $clazz = 'tom-select';
-        } else {
-            $clazz = 'select2';
-        }
-
         echo view('components/select', [
             'name' => $element->getSettingKey() . '[]',
             'id' => $element->getSettingKey(),
             'selected' => explode(',', $value),
             'options' => $element->getOptions(),
-            'class' => $clazz]);
+            'class' => 'tom-select']);
     }
 
     public function printControlPanelRange(ControlPanelRange $element) {

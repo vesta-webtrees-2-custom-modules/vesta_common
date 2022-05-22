@@ -3,7 +3,6 @@
 namespace Cissee\WebtreesExt\Functions;
 
 use Cissee\WebtreesExt\MoreI18N;
-use Fisharebest\Webtrees\Webtrees;
 use function route;
 use function view;
 
@@ -28,18 +27,10 @@ class FunctionsPrintExtHelpLink {
             'topic' => $topic
         ]);
 
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            return
-                '<a href="#" data-bs-toggle="modal" data-bs-backdrop="static" data-bs-target="#wt-ajax-modal" data-wt-href="' . $url . '" title="' . MoreI18N::xlate('Help') . '">' .
-                view('icons/help') .
-                '<span class="visually-hidden">' . MoreI18N::xlate('Help') . '</span>' .
-                '</a>';
-        }
-
         return
-            '<a href="#" data-toggle="modal" data-target="#wt-ajax-modal" data-href="' . $url . '" title="' . MoreI18N::xlate('Help') . '">' .
+            '<a href="#" data-bs-toggle="modal" data-bs-backdrop="static" data-bs-target="#wt-ajax-modal" data-wt-href="' . $url . '" title="' . MoreI18N::xlate('Help') . '">' .
             view('icons/help') .
-            '<span class="sr-only">' . MoreI18N::xlate('Help') . '</span>' .
+            '<span class="visually-hidden">' . MoreI18N::xlate('Help') . '</span>' .
             '</a>';
     }
 

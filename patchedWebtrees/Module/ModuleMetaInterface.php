@@ -8,6 +8,10 @@ use Illuminate\Support\Collection;
 
 interface ModuleMetaInterface {
 
+    public function minRequiredWebtreesVersion(): string;
+    
+    public function minUnsupportedWebtreesVersion(): string;
+    
     public function customModuleMetaDatasJson(): string;
 
     /**

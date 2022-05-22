@@ -10,4 +10,5 @@ if (defined("WT_VERSION")) {
 
 require_once __DIR__ . '/autoload.php';
 
-return new VestaCommonLibModule('vestaCommonLib');
+$placeholder = app(PlaceholderModule::class);
+return $placeholder->ifIncompatible() ?? app(VestaCommonLibModule::class);

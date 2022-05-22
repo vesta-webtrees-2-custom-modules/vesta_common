@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-05-15 08:20+0200\n"
+"POT-Creation-Date: 2022-05-22 14:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -181,35 +181,62 @@ msgid "Deselect in order to have the title appear exactly as the original title.
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:163
+#: CommonI18N.php:164 CommonI18N.php:171
+msgid "This version of the module is incompatible with your current webtrees version."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:165
+#, php-format
+msgid "Webtrees version must be %1$s or higher."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:166 CommonI18N.php:173
+msgid "All functionality of the module is therefore disabled."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:172
+#, php-format
+msgid "Only webtrees versions before %1$s are supported."
+msgstr ""
+
+#: CommonI18N.php:178
+#, php-format
+msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:184
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:167
+#: CommonI18N.php:188
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:171
+#: CommonI18N.php:192
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:175
+#: CommonI18N.php:196
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:180
+#: CommonI18N.php:201
 msgid "Facts and Events Tab Settings"
 msgstr ""
 
-#: CommonI18N.php:184
+#: CommonI18N.php:205
 msgid "Place history"
 msgstr ""
 
-#: CommonI18N.php:189
+#: CommonI18N.php:210
 msgid "No relationship found"
 msgstr ""
 
@@ -225,11 +252,11 @@ msgstr ""
 msgid "map coordinates directly (MAP tag)"
 msgstr ""
 
-#: VestaCommonLibModule.php:61
+#: VestaCommonLibModule.php:57
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr ""
 
-#: VestaCommonLibModule.php:62
+#: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr ""
 
@@ -307,36 +334,30 @@ msgstr ""
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
 msgstr ""
 
-#: resources/views/admin/vesta_components.phtml:25
-#: resources/views/admin/vesta_components_20.phtml:25
+#: resources/views/admin/vesta_components.phtml:24
 msgid "(entire module)"
 msgstr ""
 
-#: resources/views/admin/vesta_components.phtml:27
-#: resources/views/admin/vesta_components_20.phtml:27
+#: resources/views/admin/vesta_components.phtml:26
 msgid "(specific functionality)"
 msgstr ""
 
-#: resources/views/admin/vesta_components.phtml:30
-#: resources/views/admin/vesta_components_20.phtml:30
+#: resources/views/admin/vesta_components.phtml:29
 msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr ""
 
-#: resources/views/admin/vesta_components.phtml:30
-#: resources/views/admin/vesta_components_20.phtml:30
+#: resources/views/admin/vesta_components.phtml:29
 msgctxt "as in \"Move up\""
 msgid "up"
 msgstr ""
 
-#: resources/views/admin/vesta_components.phtml:31
-#: resources/views/admin/vesta_components_20.phtml:31
+#: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
 msgid "Move"
 msgstr ""
 
-#: resources/views/admin/vesta_components.phtml:31
-#: resources/views/admin/vesta_components_20.phtml:31
+#: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
 msgid "down"
 msgstr ""

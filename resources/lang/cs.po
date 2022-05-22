@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-05-15 08:20+0200\n"
+"POT-Creation-Date: 2022-05-22 14:25+0200\n"
 "PO-Revision-Date: 2021-11-30 22:53+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/cs/>\n"
@@ -33,17 +33,15 @@ msgstr "%1$s filtry"
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s je astronomický symbol asteroidu Vesta, pojmenovaného po římské bohyni krbu, domova a rodiny."
 
-#: resources/views/admin/vesta_components.phtml:25
-#: resources/views/admin/vesta_components_20.phtml:25
+#: resources/views/admin/vesta_components.phtml:24
 msgid "(entire module)"
 msgstr "(celý modul)"
 
-#: resources/views/admin/vesta_components.phtml:27
-#: resources/views/admin/vesta_components_20.phtml:27
+#: resources/views/admin/vesta_components.phtml:26
 msgid "(specific functionality)"
 msgstr "(specifická funkcionalita)"
 
-#: VestaCommonLibModule.php:61
+#: VestaCommonLibModule.php:57
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr "Modul poskytující společné třídy a překlady pro ostatní moduly 'Vesta'."
 
@@ -66,6 +64,16 @@ msgstr "A: Symbol Vesta je použit hlavně k seskupení modulů v seznamu modul�
 #: resources/views/vesta_config.phtml:35
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "A: Přes háčky (hooky). Háčky umožňují modulům rozšiřovat funkčnost ostatních komponent, aniž by bylo nutné přepracovat celou komponentu. Webtrees používá háčky např. u zápatí stránky a u historických událostí."
+
+#: CommonI18N.php:178
+#, php-format
+msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:166 CommonI18N.php:173
+msgid "All functionality of the module is therefore disabled."
+msgstr ""
 
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
@@ -102,7 +110,7 @@ msgid "Displayed title"
 msgstr "Zobrazený název"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:180
+#: CommonI18N.php:201
 msgid "Facts and Events Tab Settings"
 msgstr "Nastavení záložky Fakta a události"
 
@@ -111,7 +119,7 @@ msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your br
 msgstr "Pokud se symbol zobrazuje nesprávně, např. jako nějaký čtyřúhelník, zkontrolujte kódové nastavení vašeho prohlížeče."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:175
+#: CommonI18N.php:196
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "Zejména když jsou oba seznamy prázdné, žádná dodatečná fakta ani události tohoto druhu se nezobrazí."
 
@@ -155,7 +163,7 @@ msgstr "Poskytovatelé polohových údajů"
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
 
-#: VestaCommonLibModule.php:62
+#: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr ""
 
@@ -169,14 +177,12 @@ msgstr "Moduly v tomto seznamu slouží (v tom pořadí) k určení mapových so
 msgid "Modules listed here may provide additional data for facts and events (displayed in the configured order)."
 msgstr "Moduly v tomto seznamu mohou poskytovat přídavné údaje o faktech a událostech (zobrazené v nastaveném pořadí)."
 
-#: resources/views/admin/vesta_components.phtml:31
-#: resources/views/admin/vesta_components_20.phtml:31
+#: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
 msgid "Move"
 msgstr "Přemístit"
 
-#: resources/views/admin/vesta_components.phtml:30
-#: resources/views/admin/vesta_components_20.phtml:30
+#: resources/views/admin/vesta_components.phtml:29
 msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Přemístit"
@@ -185,8 +191,14 @@ msgstr "Přemístit"
 msgid "No events of these specific types have occurred at this place."
 msgstr ""
 
-#: CommonI18N.php:189
+#: CommonI18N.php:210
 msgid "No relationship found"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:172
+#, php-format
+msgid "Only webtrees versions before %1$s are supported."
 msgstr ""
 
 #. I18N: Module Configuration
@@ -199,7 +211,7 @@ msgstr "Možnosti"
 msgid "Place History UI Element Providers"
 msgstr ""
 
-#: CommonI18N.php:184
+#: CommonI18N.php:205
 msgid "Place history"
 msgstr ""
 
@@ -267,17 +279,17 @@ msgid "Residences"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:171
+#: CommonI18N.php:192
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:167
+#: CommonI18N.php:188
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Omezit na tento seznam rodinných faktů a událostí. Tento seznam je podle potřeby možno modifikovat odebráním nebo přidáním názvů faktů a událostí."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:163
+#: CommonI18N.php:184
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Omezit na tento seznam osobních faktů a událostí. Tento seznam je podle potřeby možno modifikovat odebráním nebo přidáním názvů faktů a událostí."
 
@@ -303,6 +315,11 @@ msgstr ""
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:164 CommonI18N.php:171
+msgid "This version of the module is incompatible with your current webtrees version."
 msgstr ""
 
 #. I18N: Module title
@@ -369,6 +386,12 @@ msgstr "Přehled správy údajů o poloze ve Vesta"
 msgid "View this family"
 msgstr ""
 
+#. I18N: Module Configuration
+#: CommonI18N.php:165
+#, php-format
+msgid "Webtrees version must be %1$s or higher."
+msgstr ""
+
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
 msgstr "Co je nového? "
@@ -377,8 +400,7 @@ msgstr "Co je nového? "
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Možná bude nutno instalovat font s tímto symbolem a pro určité prohlížeče ‒ zvláště Chrome ‒ musí být tento font jednou z rodin fontů nastavených ve webtrees, jako je 'Segoe UI Symbol'."
 
-#: resources/views/admin/vesta_components.phtml:31
-#: resources/views/admin/vesta_components_20.phtml:31
+#: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
 msgid "down"
 msgstr "níže"
@@ -411,8 +433,7 @@ msgstr "omezit na %1$s"
 msgid "restricted to %1$s"
 msgstr "s omezením na %1$s"
 
-#: resources/views/admin/vesta_components.phtml:30
-#: resources/views/admin/vesta_components_20.phtml:30
+#: resources/views/admin/vesta_components.phtml:29
 msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "výše"

@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-05-15 08:20+0200\n"
+"POT-Creation-Date: 2022-05-22 14:25+0200\n"
 "PO-Revision-Date: 2022-05-15 17:14+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-common/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,17 +33,15 @@ msgstr "%1$s filters"
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s is het astronomische symbool van de planetoïde Vesta, vernoemd naar de Romeinse godin van de haard, het huis en de familie."
 
-#: resources/views/admin/vesta_components.phtml:25
-#: resources/views/admin/vesta_components_20.phtml:25
+#: resources/views/admin/vesta_components.phtml:24
 msgid "(entire module)"
 msgstr "(volledige module)"
 
-#: resources/views/admin/vesta_components.phtml:27
-#: resources/views/admin/vesta_components_20.phtml:27
+#: resources/views/admin/vesta_components.phtml:26
 msgid "(specific functionality)"
 msgstr "(specifieke functionaliteit)"
 
-#: VestaCommonLibModule.php:61
+#: VestaCommonLibModule.php:57
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr "Een module met gemeenschappelijke klassen voor andere 'Vesta' aangepaste modules."
 
@@ -67,6 +64,16 @@ msgstr "A: Het Vesta-symbool wordt voornamelijk gebruikt om gerelateerde modules
 #: resources/views/vesta_config.phtml:35
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "A: Via 'hooks'. Hooks zorgen ervoor dat modules de functionaliteit van andere componenten kunnen uitbreiden, zonder dat het hele onderdeel opnieuw hoeft te worden geïmplementeerd. Webtrees maakt gebruik van hooks, bijvoorbeeld in de paginavoettekst, en voor historische gebeurtenissen."
+
+#: CommonI18N.php:178
+#, php-format
+msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:166 CommonI18N.php:173
+msgid "All functionality of the module is therefore disabled."
+msgstr ""
 
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
@@ -103,7 +110,7 @@ msgid "Displayed title"
 msgstr "Weergegeven titel"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:180
+#: CommonI18N.php:201
 msgid "Facts and Events Tab Settings"
 msgstr "Instellingen voor tabblad Feiten en gebeurtenissen"
 
@@ -112,7 +119,7 @@ msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your br
 msgstr "Als het symbool niet goed wordt weergegeven, bijvoorbeeld als rechthoek, controleer dan de Unicode-ondersteuningsmogelijkheden van uw browser."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:175
+#: CommonI18N.php:196
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "Als beide lijsten leeg zijn, zullen geen aanvullende feiten en gebeurtenissen van deze aard worden getoond."
 
@@ -156,7 +163,7 @@ msgstr "Aanbieders van locatiegegevens"
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr "Zorg ervoor dat alle actieve aangepaste modules compatibel zijn met de nieuwe webtrees-versie %1$s. Mogelijk moet u ze ook upgraden."
 
-#: VestaCommonLibModule.php:62
+#: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr "Zorg ervoor dat u deze module inschakelt als een andere Vesta-module is ingeschakeld."
 
@@ -170,14 +177,12 @@ msgstr "Modules die hier worden vermeld, worden (in de geconfigureerde volgorde)
 msgid "Modules listed here may provide additional data for facts and events (displayed in the configured order)."
 msgstr "De hier vermelde modules kunnen aanvullende gegevens bevatten voor feiten en gebeurtenissen (weergegeven in de geconfigureerde volgorde)."
 
-#: resources/views/admin/vesta_components.phtml:31
-#: resources/views/admin/vesta_components_20.phtml:31
+#: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
 msgid "Move"
 msgstr "Verplaats"
 
-#: resources/views/admin/vesta_components.phtml:30
-#: resources/views/admin/vesta_components_20.phtml:30
+#: resources/views/admin/vesta_components.phtml:29
 msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Verplaats"
@@ -186,9 +191,15 @@ msgstr "Verplaats"
 msgid "No events of these specific types have occurred at this place."
 msgstr "Op deze plaats hebben zich geen gebeurtenissen van dit specifieke type voorgedaan."
 
-#: CommonI18N.php:189
+#: CommonI18N.php:210
 msgid "No relationship found"
 msgstr "Geen verwantschap gevonden"
+
+#. I18N: Module Configuration
+#: CommonI18N.php:172
+#, php-format
+msgid "Only webtrees versions before %1$s are supported."
+msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
@@ -200,7 +211,7 @@ msgstr "Opties"
 msgid "Place History UI Element Providers"
 msgstr "Aanbieders van gebruikersinterface-element voor plaatsgeschiedenis"
 
-#: CommonI18N.php:184
+#: CommonI18N.php:205
 msgid "Place history"
 msgstr "Plaatsgeschiedenis"
 
@@ -268,17 +279,17 @@ msgid "Residences"
 msgstr "Woonplaatsen"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:171
+#: CommonI18N.php:192
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr "Beperk feiten en gebeurtenissen in de plaatsgeschiedenis tot deze lijst van GEDCOM-feiten en -gebeurtenissen."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:167
+#: CommonI18N.php:188
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Beperken tot deze lijst van GEDCOM-gezinsfeiten en -gebeurtenissen. Indien nodig kunt u deze lijst wijzigen door namen van feiten en gebeurtenissen, zelfs aangepaste namen, te verwijderen of toe te voegen."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:163
+#: CommonI18N.php:184
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Beperken tot deze lijst van GEDCOM-persoonsfeiten en -gebeurtenissen. Indien nodig kunt u deze lijst wijzigen door namen van feiten en gebeurtenissen, zelfs aangepaste namen, te verwijderen of toe te voegen."
 
@@ -304,9 +315,12 @@ msgstr "De verwantschap verwijst naar de voorganger, d.w.z. de persoon van het v
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
+msgstr "Deze modules kunnen ook aanvullende feiten en gebeurtenissen verschaffen, die gesorteerd op datum en type worden weergegeven."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:164 CommonI18N.php:171
+msgid "This version of the module is incompatible with your current webtrees version."
 msgstr ""
-"Deze modules kunnen ook aanvullende feiten en gebeurtenissen verschaffen, "
-"die gesorteerd op datum en type worden weergegeven."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -372,6 +386,12 @@ msgstr "Overzicht van Vesta-locatiegegevensbeheer"
 msgid "View this family"
 msgstr "Bekijk dit gezin"
 
+#. I18N: Module Configuration
+#: CommonI18N.php:165
+#, php-format
+msgid "Webtrees version must be %1$s or higher."
+msgstr ""
+
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
 msgstr "Wat is er nieuw? "
@@ -380,8 +400,7 @@ msgstr "Wat is er nieuw? "
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Het kan zijn dat u een lettertype moet installeren dat dit symbool bevat, en voor bepaalde browsers - met name Chrome - moet dit lettertype zich bevinden in een van de lettertypefamilies die door webtrees zijn opgegeven, zoals 'Segoe UI Symbol'."
 
-#: resources/views/admin/vesta_components.phtml:31
-#: resources/views/admin/vesta_components_20.phtml:31
+#: resources/views/admin/vesta_components.phtml:30
 msgctxt "as in \"Move down\""
 msgid "down"
 msgstr "omlaag"
@@ -414,8 +433,7 @@ msgstr "beperken tot %1$s"
 msgid "restricted to %1$s"
 msgstr "beperkt tot %1$s"
 
-#: resources/views/admin/vesta_components.phtml:30
-#: resources/views/admin/vesta_components_20.phtml:30
+#: resources/views/admin/vesta_components.phtml:29
 msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "omhoog"

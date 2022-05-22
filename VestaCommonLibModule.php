@@ -3,16 +3,12 @@
 namespace Vesta;
 
 use Cissee\WebtreesExt\AbstractModule;
-use Cissee\WebtreesExt\Elements\FamilySearchFamilyTreeId_20;
 use Cissee\WebtreesExt\Module\ModuleMetaInterface;
 use Cissee\WebtreesExt\Module\ModuleMetaTrait;
-use Cissee\WebtreesExt\MoreI18N;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\ModuleCustomInterface;
 use Fisharebest\Webtrees\Module\ModuleCustomTrait;
-use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\View;
-use Fisharebest\Webtrees\Webtrees;
 use function GuzzleHttp\json_decode;
 
 class VestaCommonLibModule extends AbstractModule implements
@@ -73,13 +69,6 @@ ModuleCustomInterface, ModuleMetaInterface {
     }
 
     public function boot(): void {
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            //obsolete in webtrees 2.1  
-        } else {
-            $ef = Registry::elementFactory();
-            $ef->register(['INDI:_FSFTID' => new FamilySearchFamilyTreeId_20(MoreI18N::xlate('FamilySearch id'))]);
-        }
-
         $this->flashWhatsNew('\Vesta\WhatsNew', 3);
 
         // Register a namespace for our views.
@@ -88,13 +77,8 @@ ModuleCustomInterface, ModuleMetaInterface {
         // Replace an existing view with our own version.
         View::registerCustomView('::admin/upgrade/wizard', $this->name() . '::admin/upgrade/wizard');
 
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            //allow custom modules to add head/body content to admin pages as well
-            View::registerCustomView('::layouts/administration', $this->name() . '::layouts/administration');
-        } else {
-            //allow custom modules to add head/body content to admin pages as well
-            View::registerCustomView('::layouts/administration', $this->name() . '::layouts/administration_20');
-        }
+        //allow custom modules to add head/body content to admin pages as well
+        View::registerCustomView('::layouts/administration', $this->name() . '::layouts/administration');
     }
 
     //Issue #62

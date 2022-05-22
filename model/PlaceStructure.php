@@ -4,7 +4,6 @@ namespace Vesta\Model;
 
 use Closure;
 use Fisharebest\Webtrees\Fact;
-use Fisharebest\Webtrees\Functions\Functions;
 use Fisharebest\Webtrees\Location;
 use Fisharebest\Webtrees\Place;
 use Fisharebest\Webtrees\Registry;
@@ -12,7 +11,6 @@ use Fisharebest\Webtrees\Report\ReportParserGenerate;
 use Fisharebest\Webtrees\Services\GedcomService;
 use Fisharebest\Webtrees\Services\TreeService;
 use Fisharebest\Webtrees\Tree;
-use Fisharebest\Webtrees\Webtrees;
 use JsonSerializable;
 use Vesta\Model\GedcomDateInterval;
 use function app;
@@ -242,11 +240,9 @@ class PlaceStructure implements JsonSerializable {
 
         $tag = explode(':', $event->tag())[1];
 
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            $placerec = '2 PLAC ' . $event->attribute('PLAC');
-        } else {
-            $placerec = Functions::getSubRecord(2, '2 PLAC', $event->gedcom());
-        }
+        //cannot use this - skips levels 3 tags
+        //$placerec = '2 PLAC ' . $event->attribute('PLAC');
+        $placerec = ReportParserGenerate::getSubRecord(2, '2 PLAC', $event->gedcom());
 
         $ps = PlaceStructure::create(
                 $placerec,
@@ -264,13 +260,9 @@ class PlaceStructure implements JsonSerializable {
 
         $tag = explode(':', $event->tag())[1];
 
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            //cannot use this - skips levels 3 tags
-            //$placerec = '2 PLAC ' . $event->attribute('PLAC');
-            $placerec = ReportParserGenerate::getSubRecord(2, '2 PLAC', $event->gedcom());
-        } else {
-            $placerec = Functions::getSubRecord(2, '2 PLAC', $event->gedcom());
-        }
+        //cannot use this - skips levels 3 tags
+        //$placerec = '2 PLAC ' . $event->attribute('PLAC');
+        $placerec = ReportParserGenerate::getSubRecord(2, '2 PLAC', $event->gedcom());
 
         $ps = PlaceStructure::create(
                 $placerec,
@@ -325,59 +317,31 @@ class PlaceStructure implements JsonSerializable {
 
     public function getLati(): ?string {
         
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            //cf Fact->latitude()
-            if (preg_match('/\n4 LATI (.+)/', $this->getGedcom(), $match)) {
-                $gedcom_service = new GedcomService();
+        //cf Fact->latitude()
+        if (preg_match('/\n4 LATI (.+)/', $this->getGedcom(), $match)) {
+            $gedcom_service = new GedcomService();
 
-                $map_lati = $gedcom_service->readLatitude($match[1]);
-                if ($map_lati !== null) {
-                    return '' . $map_lati;
-                }
+            $map_lati = $gedcom_service->readLatitude($match[1]);
+            if ($map_lati !== null) {
+                return '' . $map_lati;
             }
+        }
 
-            return null;
-        }        
-        
-        //cf FunctionsPrint
-        $map_lati = null;
-        $cts = preg_match('/4 LATI (.*)/', $this->getGedcom(), $match);
-        if ($cts > 0) {
-            $map_lati = $match[1];
-        }
-        if ($map_lati) {
-            $map_lati = trim(strtr($map_lati, "NSEW,�", " - -. ")); // S5,6789 ==> -5.6789
-            return $map_lati;
-        }
         return null;
     }
 
     public function getLong(): ?string {
         
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            //cf Fact->latitude()
-            if (preg_match('/\n4 LONG (.+)/', $this->getGedcom(), $match)) {
-                $gedcom_service = new GedcomService();
+        //cf Fact->latitude()
+        if (preg_match('/\n4 LONG (.+)/', $this->getGedcom(), $match)) {
+            $gedcom_service = new GedcomService();
 
-                $map_long = $gedcom_service->readLongitude($match[1]);
-                if ($map_long !== null) {
-                    return '' . $map_long;
-                }
+            $map_long = $gedcom_service->readLongitude($match[1]);
+            if ($map_long !== null) {
+                return '' . $map_long;
             }
+        }
 
-            return null;
-        }
-        
-        //cf FunctionsPrint
-        $map_long = null;
-        $cts = preg_match('/4 LONG (.*)/', $this->getGedcom(), $match);
-        if ($cts > 0) {
-            $map_long = $match[1];
-        }
-        if ($map_long) {
-            $map_long = trim(strtr($map_long, "NSEW,�", " - -. ")); // E3.456� ==> 3.456
-            return $map_long;
-        }
         return null;
     }
 

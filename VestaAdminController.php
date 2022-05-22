@@ -4,7 +4,6 @@ namespace Vesta;
 
 use Fisharebest\Webtrees\Http\ViewResponseTrait;
 use Fisharebest\Webtrees\Services\TreeService;
-use Fisharebest\Webtrees\Webtrees;
 use Psr\Http\Message\ResponseInterface;
 use function app;
 use function route;
@@ -30,11 +29,6 @@ class VestaAdminController {
         $sorting): ResponseInterface {
 
         $view = VestaUtils::vestaViewsNamespace() . '::admin/vesta_components';
-        if (str_starts_with(Webtrees::VERSION, '2.1')) {
-            $view = VestaUtils::vestaViewsNamespace() . '::admin/vesta_components';
-        } else {
-            $view = VestaUtils::vestaViewsNamespace() . '::admin/vesta_components_20';
-        }      
       
         //assumes the namespace has been registered!
         return $this->viewResponse($view, [
