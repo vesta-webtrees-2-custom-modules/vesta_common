@@ -22,6 +22,11 @@ class FunctionsFact {
         
         $styles = [];
 
+        //skip for 'histo' facts (improves performance if there are many such facts)
+        if ($fact->id() === 'histo') {
+            return [];
+        }
+        
         $additions = IndividualFactsTabExtenderUtils::accessibleModules($module, $fact->record()->tree(), Auth::user())
                 ->map(function (IndividualFactsTabExtenderInterface $m) {
                   return $m->hFactsTabGetStyleadds();
@@ -41,6 +46,11 @@ class FunctionsFact {
     public static function gveAdditionalEditControls(
         ModuleInterface $module,
         Fact $fact): GenericViewElement {
+        
+        //skip for 'histo' facts (improves performance if there are many such facts)
+        if ($fact->id() === 'histo') {
+            return GenericViewElement::createEmpty();
+        }
         
         $additions = IndividualFactsTabExtenderUtils::accessibleModules($module, $fact->record()->tree(), Auth::user())
             ->map(function (IndividualFactsTabExtenderInterface $m) use ($fact) {

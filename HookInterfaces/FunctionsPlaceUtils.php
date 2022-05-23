@@ -257,7 +257,11 @@ class FunctionsPlaceUtils {
         if ($parentPs === null) {
             return null;
         }
-        return FunctionsPlaceUtils::plac2map($module, $parentPs, true);
+        $ret = FunctionsPlaceUtils::plac2map($module, $parentPs, true);
+        if ($ret !== null) {
+            $ret->getTrace()->add(" (fallback via parent)");
+        }
+        return $ret;
     }
 
     //for now, never fallback via indirect parent hierarchies

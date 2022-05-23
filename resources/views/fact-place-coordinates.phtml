@@ -13,10 +13,7 @@ use Vesta\Model\PlaceStructure;
  * @var bool            $hideCoordinates
  */
 
-$mapCoordinates = FunctionsPlaceUtils::plac2map($module, $ps, true);
-if ($mapCoordinates == null) {
-    return;
-}
+$mapCoordinates = FunctionsPlaceUtils::plac2map($module, $ps, false); //DO NOT fallbackViaParents for actual displayed coordinates!
 
 $fact = $ps->asFact();
 $mapLinks = app(ModuleService::class)
@@ -24,8 +21,13 @@ $mapLinks = app(ModuleService::class)
     ->map(fn(ModuleMapLinkInterface $module): string => ' ' . $module->mapLink($fact))
     ->implode('');
 
-if ($hideCoordinates) {
+//mapCoordinates may be null even if we have map links (if we determine map links via fallbackViaParents)
+if ($hideCoordinates || ($mapCoordinates == null)) {
     echo $mapLinks;
+    return;
+}
+
+if ($mapCoordinates == null) {
     return;
 }
 

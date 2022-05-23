@@ -2,7 +2,7 @@
 
 namespace Vesta\Model;
 
-//TODO: make immutable!
+//TODO: make immutable! but not that add() is in use!
 class Trace {
 
     private $elements;

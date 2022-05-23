@@ -25,7 +25,7 @@ class PlaceAsTopLevelRecord extends GedcomRecord {
         return $this->place->url();
     }
     
-    public function placeStructure(): PlaceStructure {
+    public function placeStructure(): ?PlaceStructure {
         return PlaceStructure::fromPlace($this->place);
     }
         
