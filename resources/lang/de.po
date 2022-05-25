@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-05-22 14:25+0200\n"
-"PO-Revision-Date: 2022-05-12 22:17+0000\n"
-"Last-Translator: mpwt <der@bauschaffen.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/de/>\n"
+"PO-Revision-Date: 2022-05-25 06:14+0000\n"
+"Last-Translator: Markus Hemprich <hemprich@gmx.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,11 +70,13 @@ msgstr "A: Über Hooks. Hooks ermöglicht es den Modulen, die Funktionalität an
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
+"Alle Funktionen des Moduls '%1$s' sind deaktiviert, weil die Modul Version "
+"inkompatibel mit der webtrees Version ist."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:166 CommonI18N.php:173
 msgid "All functionality of the module is therefore disabled."
-msgstr ""
+msgstr "Alle Funktionen des Moduls sind daher deaktiviert."
 
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
@@ -199,7 +202,7 @@ msgstr "Keine Beziehung gefunden"
 #: CommonI18N.php:172
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
-msgstr ""
+msgstr "Es werden nur webtrees Versionen vor %1$s unterstützt."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
@@ -316,11 +319,14 @@ msgstr "Die Beziehung bezieht sich auf den Vorgänger, d.h. die Person aus dem v
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
 msgstr ""
+"Diese Module können auch zusätzliche Tatsachen und Ereignisse zur Verfügung "
+"stellen, welche nach Datum und Typ sortiert angezeigt werden."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:164 CommonI18N.php:171
 msgid "This version of the module is incompatible with your current webtrees version."
 msgstr ""
+"Diese Version des Moduls ist inkompatibel mit der aktuellen webtrees Version."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -390,7 +396,7 @@ msgstr "Diese Familie ansehen"
 #: CommonI18N.php:165
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
-msgstr ""
+msgstr "Die webtrees Version muss %1$s oder höher sein."
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
