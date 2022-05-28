@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-05-22 14:25+0200\n"
-"PO-Revision-Date: 2021-06-15 12:32+0000\n"
-"Last-Translator: z-yurets <zaharchenko.yurij@gmail.com>\n"
-"Language-Team: Ukrainian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/uk/>\n"
+"PO-Revision-Date: 2022-05-28 13:18+0000\n"
+"Last-Translator: Artem <artem@molotov.work>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.7-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.13-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -73,7 +75,7 @@ msgstr ""
 #. I18N: Module Configuration
 #: CommonI18N.php:166 CommonI18N.php:173
 msgid "All functionality of the module is therefore disabled."
-msgstr ""
+msgstr "Таким чином, всі функції модуля вимкнено."
 
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
@@ -88,7 +90,7 @@ msgstr ""
 #. I18N: Plural for Gedcom tag CONF
 #: model/PlaceHistory.php:61
 msgid "Confirmations"
-msgstr ""
+msgstr "Підтвердження"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
@@ -166,6 +168,8 @@ msgstr ""
 #: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr ""
+"Переконайтеся, що цей модуль увімкнено, якщо ввімкнено будь-який інший "
+"модуль Vesta."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
