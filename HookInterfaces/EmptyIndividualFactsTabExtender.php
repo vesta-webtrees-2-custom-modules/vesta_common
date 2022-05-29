@@ -36,7 +36,10 @@ trait EmptyIndividualFactsTabExtender {
         return array();
     }
 
-    public function hFactsTabGetStyleadds() {
+    public function hFactsTabGetStyleadds(
+        GedcomRecord $record,
+        Fact $fact): array {
+        
         return array();
     }
 

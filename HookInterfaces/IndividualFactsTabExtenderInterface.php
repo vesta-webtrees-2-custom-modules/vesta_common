@@ -46,11 +46,14 @@ interface IndividualFactsTabExtenderInterface {
      * used for family-page and place-history as well!
      * 
      * css classes for styling of facts via fact id (intended for additional facts)
-     * (TODO: perhaps transport these via fact itself? via VirtualFact? more flexible)
+     * (TODO: should we transport these together with additionalFacts? 
+     * We have to sort facts anyway, so we wouldn't gain that much)
      *  
-     * @return array (key: fact id, value: css class)
+     * @return array (value: css class)
      */
-    public function hFactsTabGetStyleadds();
+    public function hFactsTabGetStyleadds(
+        GedcomRecord $record,
+        Fact $fact): array;
 
     /**
      * used for family-page and place-history as well!

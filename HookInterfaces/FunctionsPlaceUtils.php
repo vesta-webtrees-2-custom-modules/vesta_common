@@ -578,16 +578,16 @@ class FunctionsPlaceUtils {
     }
 
     public static function accessibleModules(
-        ModuleInterface $moduleForPrefsOrder,
+        ModuleInterface $module,
         Tree $tree,
         UserInterface $user): Collection {
 
-        return self::sort($moduleForPrefsOrder, app()->make(ModuleService::class)
+        return self::sort($module, app()->make(ModuleService::class)
                     ->findByComponent(FunctionsPlaceInterface::class, $tree, $user));
     }
 
     public static function accessibleModulesPrintFunctions(
-        ModuleInterface $moduleForPrefsOrder,
+        ModuleInterface $module,
         Tree $tree,
         UserInterface $user): Collection {
 
@@ -597,10 +597,10 @@ class FunctionsPlaceUtils {
     }
 
     public static function modules(
-        ModuleInterface $moduleForPrefsOrder,
+        ModuleInterface $module,
         $include_disabled = false): Collection {
 
-        return self::sort($moduleForPrefsOrder, app()
+        return self::sort($module, app()
                     ->make(ModuleService::class)
                     ->findByInterface(FunctionsPlaceInterface::class, $include_disabled));
     }

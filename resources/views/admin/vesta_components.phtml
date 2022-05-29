@@ -8,9 +8,24 @@ use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\ModuleConfigInterface;
 use Fisharebest\Webtrees\Module\ModuleExternalUrlInterface;
 use Fisharebest\Webtrees\View;
+
+/**
+ * @var array<string,array<string,string>> $access_summary
+ * @var string                             $description
+ * @var string                             $interface
+ * @var Collection<int,ModuleInterface>    $modules
+ * @var string                             $title
+ * @var Collection<int,Tree>               $trees
+ * @var bool                               $uses_access
+ * @var bool                               $uses_sorting
+ * 
+ * @var bool                               $uses_enabled
+ * @var array                              breadcrumbs
+ * @var array                              cancelRoute
+ */
 ?>
 
-<?= view('components/breadcrumbs', ['links' => [route(ControlPanel::class) => MoreI18N::xlate('Control panel'), route(ModulesAllPage::class) => MoreI18N::xlate('Modules'), $title]]) ?>
+<?= view('components/breadcrumbs', ['links' => $breadcrumbs]) ?>
 
 <h1><?= $title ?></h1>
 
@@ -21,113 +36,121 @@ use Fisharebest\Webtrees\View;
         <thead>
             <tr>
                 <th><?= MoreI18N::xlate('Module') ?><br/>&nbsp;</th>
-                <th class="text-center"><?= MoreI18N::xlate('Enabled') ?><br/><?= I18N::translate('(entire module)') ?></th>
+                <?php if ($uses_enabled) : ?>
+                    <th class="text-center"><?= MoreI18N::xlate('Enabled') ?><br/><?= I18N::translate('(entire module)') ?></th>
+                <?php endif ?>                
                 <?php if ($uses_access) : ?>
-                  <th class="text-center"><?= MoreI18N::xlate('Access level') ?><br/><?= I18N::translate('(specific functionality)') ?></th>
+                    <th colspan="2" class="text-center"><?= MoreI18N::xlate('Access level') ?><br/><?= I18N::translate('(specific functionality)') ?></th>
                 <?php endif ?>
                 <?php if ($uses_sorting) : ?>
-                  <th class="text-center"><?= I18N::translateContext('as in "Move up"', 'Move') ?><br/><?= I18N::translateContext('as in "Move up"', 'up') ?></th>
-                  <th class="text-center"><?= I18N::translateContext('as in "Move down"', 'Move') ?><br/><?= I18N::translateContext('as in "Move down"', 'down') ?></th>
+                    <th class="text-center"><?= I18N::translateContext('as in "Move up"', 'Move') ?><br/><?= I18N::translateContext('as in "Move up"', 'up') ?></th>
+                    <th class="text-center"><?= I18N::translateContext('as in "Move down"', 'Move') ?><br/><?= I18N::translateContext('as in "Move down"', 'down') ?></th>
                 <?php endif ?>
             </tr>
         </thead>
 
         <tbody>
             <?php foreach ($modules as $module_name => $module) : ?>
-              <tr>
-                  <th scope="col">
-                      <input type="hidden" name="order[]" value="<?= e($module->name()) ?>"?>
-                      <span title="<?= e($module->description()) ?>">
-                          <?= $module->title() ?>
-                      </span>
-                      <?php if ($module instanceof ModuleConfigInterface && $module->isEnabled()) : ?>
-                        <a href="<?= e($module->getConfigLink()) ?>" title="<?= MoreI18N::xlate('Preferences') ?>">
-                            <?= view('icons/preferences') ?>
-                            <span class="visually-hidden">
-                                <?= MoreI18N::xlate('Preferences') ?>
-                            </span>
-                        </a>
-                      <?php endif ?>
-                      <?php if ($module instanceof ModuleExternalUrlInterface) : ?>
-                        <br>
-                        <a href="<?= e($module->externalUrl()) ?>">
-                            <?= e($module->externalUrl()) ?>
-                        </a>
-                      <?php endif ?>
-                  </th>
+                <tr>
+                    <th scope="col">
+                        <input type="hidden" name="order[]" value="<?= e($module->name()) ?>"?>
+                        <span title="<?= e($module->description()) ?>">
+                            <?= $module->title() ?>
+                        </span>
+                        <?php if ($module instanceof ModuleConfigInterface && $module->isEnabled()) : ?>
+                            <a href="<?= e($module->getConfigLink()) ?>" title="<?= MoreI18N::xlate('Preferences') ?>">
+                                <?= view('icons/preferences') ?>
+                                <span class="visually-hidden">
+                                    <?= MoreI18N::xlate('Preferences') ?>
+                                </span>
+                            </a>
+                        <?php endif ?>
+                        <?php if ($module instanceof ModuleExternalUrlInterface) : ?>
+                            <br>
+                            <a href="<?= e($module->externalUrl()) ?>">
+                                <?= e($module->externalUrl()) ?>
+                            </a>
+                        <?php endif ?>
+                    </th>
+                    
+                    <?php if ($uses_enabled) : ?>
+                        <td class="text-center">
+                            <label class="d-block">
+                                <input type="checkbox" name="status-<?= e($module->name()) ?>" id="status-<?= e($module->name()) ?>" <?= $module->isEnabled() ? 'checked' : '' ?>>
+                                <span class="visually-hidden">
+                                    <?= MoreI18N::xlate('Enabled') ?>
+                                </span>
+                            </label>
+                        </td>
+                    <?php endif ?>
+                        
+                    <?php if ($uses_access) : ?>
+                        <td>
+                            <ul class="list-unstyled">
+                                <?php foreach ($access_summary[$module->name()] as $level) : ?>
+                                    <li><?= $level ?></li>
+                                <?php endforeach ?>
+                            </ul>
 
-                  <td class="text-center">
-                      <label class="d-block">
-                          <input type="checkbox" name="status-<?= e($module->name()) ?>" id="status-<?= e($module->name()) ?>" <?= $module->isEnabled() ? 'checked' : '' ?>>
-                          <span class="visually-hidden">
-                              <?= MoreI18N::xlate('Enabled') ?>
-                          </span>
-                      </label>
-                  </td>
-
-                  <?php if ($uses_access) : ?>
-                    <td class="text-center">
-                        <div class="modal fade" id="access-level-<?= $module->name() ?>" tabindex="-1" role="dialog">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2 class="modal-title">
-                                            <?= e($module->title()) ?> – <?= MoreI18N::xlate('Access level') ?>
-                                        </h2>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <table class="table table-sm">
-                                            <tbody>
-                                                <?php foreach ($trees as $tree) : ?>
-                                                  <tr>
-                                                      <td>
-                                                          <?= e($tree->title()) ?>
-                                                      </td>
-                                                      <td>
-                                                          <?= view('components/select', [
-                                                              'name' => 'access-' . $module->name() . '-' . $tree->id(), 
-                                                              'selected' => $module->accessLevel($tree, $interface), 
-                                                              'options' => Auth::accessLevelNames()
-                                                          ]); ?>
-                                                      </td>
-                                                  </tr>
-                                                <?php endforeach ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            <div class="modal fade" id="access-level-<?= $module->name() ?>" tabindex="-1"
+                                 role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h2 class="modal-title">
+                                                <?= e($module->title()) ?> – <?= MoreI18N::xlate('Access level') ?>
+                                            </h2>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="<?= MoreI18N::xlate('close') ?>">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <table class="table table-sm">
+                                                <tbody>
+                                                    <?php foreach ($trees as $tree) : ?>
+                                                        <tr>
+                                                            <td>
+                                                                <?= e($tree->title()) ?>
+                                                            </td>
+                                                            <td>
+                                                                <?= view('components/select', ['name' => 'access-' . $module->name() . '-' . $tree->id(), 'selected' => $module->accessLevel($tree, $interface), 'options' => Auth::accessLevelNames()]) ?>
+                                                        </tr>
+                                                    <?php endforeach ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </td>
 
-                        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#access-level-<?= $module->name() ?>">
-                            <?= view('icons/edit') ?>
-                            <span class="visually-hidden">
-                                <?= MoreI18N::xlate('edit') ?>
-                            </span>
-                        </button>
-                    </td>
-                  <?php endif ?>
+                        <td>
+                            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-backdrop="static"
+                                    data-bs-target="#access-level-<?= $module->name() ?>">
+                                        <?= view('icons/edit') ?>
+                                <span class="visually-hidden"><?= MoreI18N::xlate('edit') ?></span>
+                            </button>
+                        </td>
+                    <?php endif ?>
 
-                  <?php if ($uses_sorting) : ?>
-                    <td class="move up text-center">
-                        <a href="#" title="<?= MoreI18N::xlate('Move up') ?>">
-                            <?= view('icons/arrow-up') ?>
-                        </a>
-                    </td>
 
-                    <td class="move down text-center">
-                        <a href="#" title="<?= MoreI18N::xlate('Move down') ?>">
-                            <?= view('icons/arrow-down') ?>
-                        </a>
-                    </td>
-                  <?php endif ?>
-              </tr>
+                    <?php if ($uses_sorting) : ?>
+                        <td class="move up text-center">
+                            <a href="#" title="<?= MoreI18N::xlate('Move up') ?>">
+                                <?= view('icons/arrow-up') ?>
+                            </a>
+                        </td>
+
+                        <td class="move down text-center">
+                            <a href="#" title="<?= MoreI18N::xlate('Move down') ?>">
+                                <?= view('icons/arrow-down') ?>
+                            </a>
+                        </td>
+                    <?php endif ?>
+                </tr>
             <?php endforeach ?>
         </tbody>
     </table>
@@ -147,17 +170,17 @@ use Fisharebest\Webtrees\View;
 
 <?php View::push('javascript') ?>
 <script>
-  $('.wt-table-menu td.move').click(function () {
-      var row = $(this).closest('tr');
+    $('.wt-table-menu td.move').click(function () {
+        var row = $(this).closest('tr');
 
-      if ($(this).hasClass('up')) {
-          row.prev().before(row);
-      } else {
-          row.next().after(row);
-      }
+        if ($(this).hasClass('up')) {
+            row.prev().before(row);
+        } else {
+            row.next().after(row);
+        }
 
-      return false;
-  });
+        return false;
+    });
 </script>
 <?php View::endpush() ?>
 

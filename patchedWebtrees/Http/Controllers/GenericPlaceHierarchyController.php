@@ -251,6 +251,12 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
       
         $locations = [];
         foreach ($places as $id => $place) {
+            
+            //$id is just the array index (not the place id)
+            if ($place->id() === 0) {
+                continue; //skip empty top-level (empty e.g. due to filters)
+            }
+            
             /* @var $location PlaceWithinHierarchy */
             $location = $place;
             

@@ -7,7 +7,6 @@ use Cissee\WebtreesExt\Contracts\FallbackAssociateFactUtils;
 use Cissee\WebtreesExt\FactExt;
 use Cissee\WebtreesExt\Functions\FunctionsPrintExtHelpLink;
 use Cissee\WebtreesExt\Module\ModuleVestalInterface;
-use Cissee\WebtreesExt\VirtualFact;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\GedcomRecord;
@@ -132,10 +131,7 @@ View::endpush();
                 <?php
                     $tag = explode(':', $fact->tag())[1];                
                     $styles = [];
-                    
-                    if (!($fact instanceof VirtualFact)) {
-                        $styles []= 'wt-show-'.$tag.'-in-place-history-'.$context.' collapse';                                        
-                    } //else expected to be styled elsewhere!                    
+                    $styles []= 'wt-show-'.$tag.'-in-place-history-'.$context.' collapse';
                 ?>       
                 <?= view(VestaUtils::vestaViewsNamespace() . '::fact', [                    
                     'fact'                   => $fact, 
@@ -144,7 +140,7 @@ View::endpush();
                     'useVestals'             => true, //TODO make configurable?
                     'hideCoordinates'        => true, //TODO make configurable?
                     'associateFactUtils'     => new FallbackAssociateFactUtils(),
-                    'styles'                 => $styles,
+                    'ownAdditionalStyles'    => $styles,
                     'predecessors'           => array_key_exists($tag, $predecessors)?$predecessors[$tag]:[],
                     'relToPredecessorSuffix' => FunctionsPrintExtHelpLink::helpLink($module->name(), 'Predecessor'),
                     ]) ?>

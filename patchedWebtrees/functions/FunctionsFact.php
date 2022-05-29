@@ -4,6 +4,7 @@ namespace Cissee\WebtreesExt\Functions;
 
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Fact;
+use Fisharebest\Webtrees\GedcomRecord;
 use Fisharebest\Webtrees\Module\ModuleInterface;
 use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderInterface;
 use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderUtils;
@@ -18,6 +19,7 @@ class FunctionsFact {
   
     public static function additionalStyles(
         ModuleInterface $module,
+        GedcomRecord $record,
         Fact $fact): array {
         
         $styles = [];
@@ -28,16 +30,14 @@ class FunctionsFact {
         }
         
         $additions = IndividualFactsTabExtenderUtils::accessibleModules($module, $fact->record()->tree(), Auth::user())
-                ->map(function (IndividualFactsTabExtenderInterface $m) {
-                  return $m->hFactsTabGetStyleadds();
+                ->map(function (IndividualFactsTabExtenderInterface $m) use ($record, $fact) {
+                  return $m->hFactsTabGetStyleadds($record, $fact);
                 })
                 ->toArray();
 
         foreach ($additions as $a) {
-            foreach ($a as $id => $cssClass) {
-                if ($fact->id() === $id) {
-                    $styles[] = trim($cssClass);
-                }
+            foreach ($a as $cssClass) {
+                $styles[] = trim($cssClass);
             }
         }
         return $styles;

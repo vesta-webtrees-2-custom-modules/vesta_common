@@ -30,7 +30,7 @@ use Vesta\VestaUtils;
  * @var bool               $useVestals
  * @var bool               $hideCoordinates
  * @var AssociateFactUtils $associateFactUtils
- * @var array              $styles
+ * @var array              $ownAdditionalStyles
  * @var mixed              $predecessors
  * @var string             $relToPredecessorSuffix
  */
@@ -46,7 +46,7 @@ $id      = $fact->id();
 $element = Registry::elementFactory()->make($fact->tag());
 
 // New or deleted facts need different styling
-//$styles = [];
+$styles = [];
 if ($fact->isPendingAddition()) {
     $styles[] = 'wt-new';
 }
@@ -55,7 +55,12 @@ if ($fact->isPendingDeletion()) {
 }
 
 //[RC] added
-$styles = array_merge($styles, FunctionsFact::additionalStyles($module, $fact));
+$additionalStyles = FunctionsFact::additionalStyles($module, $record, $fact);
+if (sizeof($additionalStyles) === 0) {
+    $styles = array_merge($styles, $ownAdditionalStyles);
+} else {
+   $styles = array_merge($styles, $additionalStyles); 
+}
 
 //[RC] PATCHED change style in order to keep separate from original module
 // Event of close relative

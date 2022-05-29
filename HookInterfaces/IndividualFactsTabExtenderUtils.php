@@ -2,6 +2,8 @@
 
 namespace Vesta\Hook\HookInterfaces;
 
+use Cissee\WebtreesExt\Requests;
+use Cissee\WebtreesExt\Services\ModuleServiceExt;
 use Closure;
 use Fisharebest\Webtrees\Contracts\UserInterface;
 use Fisharebest\Webtrees\Module\ModuleInterface;
@@ -9,15 +11,14 @@ use Fisharebest\Webtrees\Services\ModuleService;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
 use Psr\Http\Message\ServerRequestInterface;
-use Cissee\WebtreesExt\Requests;
 use function app;
 
 class IndividualFactsTabExtenderUtils {
 
     public static function updateOrder(
-        ModuleInterface $moduleForPrefsOrder, 
+        ModuleInterface $moduleForPrefsOrder,
         ServerRequestInterface $request) {
-        
+
         $order = Requests::getArray($request, 'order');
         //set als preference
         $pref = implode(',', $order);
@@ -25,28 +26,35 @@ class IndividualFactsTabExtenderUtils {
     }
 
     public static function accessibleModules(
-        ModuleInterface $moduleForPrefsOrder, 
-        Tree $tree, 
+        ModuleInterface $module,
+        Tree $tree,
         UserInterface $user): Collection {
-        
-        return self::sort($moduleForPrefsOrder, app()
-                    ->make(ModuleService::class)
-                    ->findByComponent(IndividualFactsTabExtenderInterface::class, $tree, $user));
+
+        return self::sort(
+                $module,
+                ModuleServiceExt::findBySpecificComponent(
+                        IndividualFactsTabExtenderInterface::class,
+                        IndividualFactsTabExtenderUtils::moduleSpecificComponentName($module),
+                        $tree,
+                        $user));
     }
 
+    //should only be used for control panel, otherwise always use accessibleModules()!
     public static function modules(
-        ModuleInterface $moduleForPrefsOrder, 
+        ModuleInterface $moduleForPrefsOrder,
         $include_disabled = false): Collection {
-        
-        return self::sort($moduleForPrefsOrder, app()
+
+        return self::sort(
+                $moduleForPrefsOrder,
+                app()
                     ->make(ModuleService::class)
                     ->findByInterface(IndividualFactsTabExtenderInterface::class, $include_disabled));
     }
 
     private static function sort(
-        ModuleInterface $moduleForPrefsOrder, 
+        ModuleInterface $moduleForPrefsOrder,
         Collection $coll): Collection {
-        
+
         $pref = $moduleForPrefsOrder->getPreference('ORDER_FACTS_TAB');
         if ($pref === null) {
             $pref = '';
@@ -69,6 +77,15 @@ class IndividualFactsTabExtenderUtils {
         return function (IndividualFactsTabExtenderInterface $x, IndividualFactsTabExtenderInterface $y): int {
             return $x->getFactsTabUIElementOrder() <=> $y->getFactsTabUIElementOrder();
         };
+    }
+
+    //we want to be able to configure per-module, e.g.
+    //hide research suggestions in place history, but not in individual facts and events tab
+    //therefore do not just use same constant string for all modules!
+    public static function moduleSpecificComponentName(
+        ModuleInterface $module): string {
+
+        return "VestaFactsVia" . $module->name();
     }
 
 }

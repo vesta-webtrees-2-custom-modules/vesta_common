@@ -15,6 +15,7 @@ $loader->addPsr4('Cissee\\WebtreesExt\\WhatsNew\\', __DIR__ . "/patchedWebtrees/
 $loader->addPsr4('Cissee\\WebtreesExt\\Functions\\', __DIR__ . "/patchedWebtrees/functions");
 $loader->addPsr4('Cissee\\WebtreesExt\\Contracts\\', __DIR__ . "/patchedWebtrees/Contracts");
 $loader->addPsr4('Cissee\\WebtreesExt\\Module\\', __DIR__ . "/patchedWebtrees/Module");
+$loader->addPsr4('Cissee\\WebtreesExt\\Services\\', __DIR__ . "/patchedWebtrees/Services");
 $loader->addPsr4('Cissee\\WebtreesExt\\Elements\\', __DIR__ . "/patchedWebtrees/Elements");
 $loader->addPsr4('Cissee\\WebtreesExt\\Http\\Controllers\\', __DIR__ . "/patchedWebtrees/Http/Controllers");
 $loader->addPsr4('Cissee\\WebtreesExt\\Http\\RequestHandlers\\', __DIR__ . "/patchedWebtrees/Http/RequestHandlers");
