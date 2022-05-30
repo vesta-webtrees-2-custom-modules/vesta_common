@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-05-22 14:25+0200\n"
-"PO-Revision-Date: 2022-05-28 13:18+0000\n"
+"PO-Revision-Date: 2022-05-30 23:17+0000\n"
 "Last-Translator: Artem <artem@molotov.work>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/uk/>\n"
@@ -71,6 +71,8 @@ msgstr "В: Через гачки. Гачки дозволяють модуля�
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
+"Усі можливості модуля \"%1$s\" вимкнено, оскільки версія модуля не сумісна з "
+"версією Webtrees."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:166 CommonI18N.php:173
@@ -164,6 +166,8 @@ msgstr "Постачальники даних про місцезнаходже�
 #, php-format
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
+"Переконайтеся, що всі активні користувацькі модулі сумісні з новою версією "
+"Webtrees %1$s. Можливо, вам також доведеться їх оновити."
 
 #: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
@@ -193,17 +197,17 @@ msgstr "Переміщення"
 
 #: resources/views/lists/place-history.phtml:160
 msgid "No events of these specific types have occurred at this place."
-msgstr ""
+msgstr "У цьому місці не відбувалося подій такого типу."
 
 #: CommonI18N.php:210
 msgid "No relationship found"
-msgstr ""
+msgstr "Взаємовідносини не знайдено"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:172
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
-msgstr ""
+msgstr "Підтримуються версії Webtrees лише до %1$s."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
@@ -213,11 +217,11 @@ msgstr "Параметри"
 #. I18N: Module Configuration
 #: CommonI18N.php:101
 msgid "Place History UI Element Providers"
-msgstr ""
+msgstr "Постачальники елементів UI \"Історія місць\""
 
 #: CommonI18N.php:205
 msgid "Place history"
-msgstr ""
+msgstr "Історія місць"
 
 #. I18N: Plural for Gedcom tag PROP
 #: model/PlaceHistory.php:65
@@ -257,7 +261,7 @@ msgstr "Опис"
 
 #: HelpTextsPlaceHistory.php:15
 msgid "Relationship to predecessor"
-msgstr ""
+msgstr "Відношення до попередника"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
@@ -279,13 +283,15 @@ msgstr "Необхідний '%1$s %2$s' модуль."
 
 #. I18N: Gedcom tag RESI
 #: model/PlaceHistory.php:64
+#, fuzzy
 msgid "Residences"
-msgstr ""
+msgstr "Резиденції"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:192
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
+"Обмежити факти та події в історії місць цим списком GEDCOM фактів і подій."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:188
