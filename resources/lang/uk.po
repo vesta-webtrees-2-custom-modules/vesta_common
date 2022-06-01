@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-05-22 14:25+0200\n"
-"PO-Revision-Date: 2022-05-28 13:18+0000\n"
+"PO-Revision-Date: 2022-06-01 14:18+0000\n"
 "Last-Translator: Artem <artem@molotov.work>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/uk/>\n"
@@ -71,6 +71,8 @@ msgstr "В: Через гачки. Гачки дозволяють модуля�
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
+"Усі можливості модуля \"%1$s\" вимкнено, оскільки версія модуля не сумісна з "
+"версією Webtrees."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:166 CommonI18N.php:173
@@ -164,6 +166,8 @@ msgstr "Постачальники даних про місцезнаходже�
 #, php-format
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
+"Переконайтеся, що всі активні користувацькі модулі сумісні з новою версією "
+"Webtrees %1$s. Можливо, вам також доведеться їх оновити."
 
 #: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
@@ -193,17 +197,17 @@ msgstr "Переміщення"
 
 #: resources/views/lists/place-history.phtml:160
 msgid "No events of these specific types have occurred at this place."
-msgstr ""
+msgstr "У цьому місці не відбувалося подій такого типу."
 
 #: CommonI18N.php:210
 msgid "No relationship found"
-msgstr ""
+msgstr "Взаємовідносини не знайдено"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:172
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
-msgstr ""
+msgstr "Підтримуються версії Webtrees лише до %1$s."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
@@ -213,11 +217,11 @@ msgstr "Параметри"
 #. I18N: Module Configuration
 #: CommonI18N.php:101
 msgid "Place History UI Element Providers"
-msgstr ""
+msgstr "Постачальники елементів UI \"Історія місць\""
 
 #: CommonI18N.php:205
 msgid "Place history"
-msgstr ""
+msgstr "Історія місць"
 
 #. I18N: Plural for Gedcom tag PROP
 #: model/PlaceHistory.php:65
@@ -257,7 +261,7 @@ msgstr "Опис"
 
 #: HelpTextsPlaceHistory.php:15
 msgid "Relationship to predecessor"
-msgstr ""
+msgstr "Відношення до попередника"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
@@ -279,13 +283,15 @@ msgstr "Необхідний '%1$s %2$s' модуль."
 
 #. I18N: Gedcom tag RESI
 #: model/PlaceHistory.php:64
+#, fuzzy
 msgid "Residences"
-msgstr ""
+msgstr "Резиденції"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:192
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
+"Обмежити факти та події в історії місць цим списком GEDCOM фактів і подій."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:188
@@ -306,25 +312,34 @@ msgstr "Дивись також %1$s для огляду управління д
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
 msgstr ""
+"Наразі встановлені версії наступних користувацьких модулів можуть бути "
+"несумісними з новою версією Webtrees %1$s, а оновлення ще не доступні: %2$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:47
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
 msgstr ""
+"Наразі встановлені версії наступних користувацьких модулів можуть бути "
+"несумісними з новою версією Webtrees %1$s, але модулі мають доступні "
+"оновлення: %2$s"
 
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
+"Відношення стосується попередника, тобто індивіда з попереднього факту того "
+"ж типу."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
 msgstr ""
+"Ці модулі також можуть надавати додаткові факти та події, які відображаються "
+"відсортованими за датою та типом."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:164 CommonI18N.php:171
 msgid "This version of the module is incompatible with your current webtrees version."
-msgstr ""
+msgstr "Ця версія модуля несумісна з вашою поточною версією Webtrees."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -388,13 +403,13 @@ msgstr "Огляд управління даними про місцезнахо
 
 #: resources/views/fact.phtml:173
 msgid "View this family"
-msgstr ""
+msgstr "Переглянути цю сім'ю"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:165
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
-msgstr ""
+msgstr "Версія Webtrees повинна бути %1$s або вище."
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
