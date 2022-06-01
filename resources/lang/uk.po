@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-05-22 14:25+0200\n"
-"PO-Revision-Date: 2022-06-01 12:20+0000\n"
+"PO-Revision-Date: 2022-06-01 14:18+0000\n"
 "Last-Translator: Artem <artem@molotov.work>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/uk/>\n"
@@ -312,11 +312,16 @@ msgstr "Дивись також %1$s для огляду управління д
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
 msgstr ""
+"Наразі встановлені версії наступних користувацьких модулів можуть бути "
+"несумісними з новою версією Webtrees %1$s, а оновлення ще не доступні: %2$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:47
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
 msgstr ""
+"Наразі встановлені версії наступних користувацьких модулів можуть бути "
+"несумісними з новою версією Webtrees %1$s, але модулі мають доступні "
+"оновлення: %2$s"
 
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
