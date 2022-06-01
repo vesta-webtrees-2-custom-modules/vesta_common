@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-05-22 14:25+0200\n"
-"PO-Revision-Date: 2022-05-30 23:17+0000\n"
+"PO-Revision-Date: 2022-06-01 12:20+0000\n"
 "Last-Translator: Artem <artem@molotov.work>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/uk/>\n"
@@ -321,16 +321,20 @@ msgstr ""
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
+"Відношення стосується попередника, тобто індивіда з попереднього факту того "
+"ж типу."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
 msgstr ""
+"Ці модулі також можуть надавати додаткові факти та події, які відображаються "
+"відсортованими за датою та типом."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:164 CommonI18N.php:171
 msgid "This version of the module is incompatible with your current webtrees version."
-msgstr ""
+msgstr "Ця версія модуля несумісна з вашою поточною версією Webtrees."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -394,13 +398,13 @@ msgstr "Огляд управління даними про місцезнахо
 
 #: resources/views/fact.phtml:173
 msgid "View this family"
-msgstr ""
+msgstr "Переглянути цю сім'ю"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:165
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
-msgstr ""
+msgstr "Версія Webtrees повинна бути %1$s або вище."
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
