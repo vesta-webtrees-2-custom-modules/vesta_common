@@ -253,5 +253,10 @@
 		"from": "2.1.4",
 		"to": "2.1.5",
 		"changelog": ["Several modules: Bugfixes.","All modules: Additional translations."]
+	},
+	{
+		"version": "2.1.5.0.0",
+		"from": "2.1.4",
+		"to": "2.1.6"
 	}
 ]
