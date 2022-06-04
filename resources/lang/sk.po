@@ -8,9 +8,10 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-05-22 14:25+0200\n"
-"PO-Revision-Date: 2022-05-13 10:16+0000\n"
+"PO-Revision-Date: 2022-06-04 10:17+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/sk/>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,11 +70,13 @@ msgstr "A: Cez háčiky (hooks). Háčiky umožňujú modulom rozšíriť funkci
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
+"Všetky funkcionality modulu '%1$s' boli deaktivované, lebo táto verzia "
+"modulu je nekompatibilná s verziou webtrees."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:166 CommonI18N.php:173
 msgid "All functionality of the module is therefore disabled."
-msgstr ""
+msgstr "Všetky funkcionality modulu sú preto deaktivované."
 
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
@@ -199,7 +202,7 @@ msgstr "Nenašiel sa žiaden vzťah"
 #: CommonI18N.php:172
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
-msgstr ""
+msgstr "Podporované sú len verzie pred %1$s."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
@@ -316,11 +319,13 @@ msgstr "Vzťah sa určuje k predchodcovi, t.j. osobe z predchádzajúceho faktu 
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
 msgstr ""
+"Tieto moduly môžu poskytovať aj dodatočné fakty a udalosti, ktoré sú "
+"zobrazené a triedené podľa dátumu a typu."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:164 CommonI18N.php:171
 msgid "This version of the module is incompatible with your current webtrees version."
-msgstr ""
+msgstr "Táto verzia modulu je nekompatibilná s vašou verziou webtrees."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -390,7 +395,7 @@ msgstr "Zobraziť túto rodinu"
 #: CommonI18N.php:165
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
-msgstr ""
+msgstr "Verzia webtrees musí byť %1$s, alebo vyššia."
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
