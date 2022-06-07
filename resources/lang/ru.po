@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-05-22 14:25+0200\n"
-"PO-Revision-Date: 2022-04-11 05:47+0000\n"
+"PO-Revision-Date: 2022-06-07 07:09+0000\n"
 "Last-Translator: Олег <uolega@yandex.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.12-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.13-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -69,26 +71,28 @@ msgstr "A: Через крючки. Хуки позволяют модулям �
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
+"Все функции модуля \"%1$s\" отключены, так как версия модуля несовместима с "
+"версией webtrees."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:166 CommonI18N.php:173
 msgid "All functionality of the module is therefore disabled."
-msgstr ""
+msgstr "Таким образом, все функции модуля отключены."
 
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
 msgid "Baptisms"
-msgstr ""
+msgstr "Крещения"
 
 #. I18N: Plural for Gedcom tag CHR
 #: model/PlaceHistory.php:60
 msgid "Christenings"
-msgstr ""
+msgstr "Крестины"
 
 #. I18N: Plural for Gedcom tag CONF
 #: model/PlaceHistory.php:61
 msgid "Confirmations"
-msgstr ""
+msgstr "Подтверждения"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
@@ -166,6 +170,7 @@ msgstr "Убедитесь, что все активные пользовате�
 #: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr ""
+"Обязательно включите этот модуль, если любой другой модуль Vesta включен."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
@@ -189,17 +194,17 @@ msgstr "Переместить"
 
 #: resources/views/lists/place-history.phtml:160
 msgid "No events of these specific types have occurred at this place."
-msgstr ""
+msgstr "Никаких событий этих конкретных типов не произошло в этом месте."
 
 #: CommonI18N.php:210
 msgid "No relationship found"
-msgstr ""
+msgstr "Связь не найдена"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:172
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
-msgstr ""
+msgstr "Поддерживаются только версии веб-деревьев до %1$s."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
@@ -209,16 +214,16 @@ msgstr "Параметры"
 #. I18N: Module Configuration
 #: CommonI18N.php:101
 msgid "Place History UI Element Providers"
-msgstr ""
+msgstr "Поставщики элементов пользовательского интерфейса «История места»"
 
 #: CommonI18N.php:205
 msgid "Place history"
-msgstr ""
+msgstr "История места"
 
 #. I18N: Plural for Gedcom tag PROP
 #: model/PlaceHistory.php:65
 msgid "Possessions"
-msgstr ""
+msgstr "Имущество"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
@@ -253,7 +258,7 @@ msgstr "Прочти меня"
 
 #: HelpTextsPlaceHistory.php:15
 msgid "Relationship to predecessor"
-msgstr ""
+msgstr "Отношение к предшественнику"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
@@ -276,12 +281,14 @@ msgstr "Требуется модуль '%1$s %2$s'."
 #. I18N: Gedcom tag RESI
 #: model/PlaceHistory.php:64
 msgid "Residences"
-msgstr ""
+msgstr "Резиденции"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:192
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
+"Ограничьте факты и события в истории места этим списком фактов и событий "
+"GEDCOM."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:188
@@ -311,16 +318,20 @@ msgstr "Установленные в настоящее время версии
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
+"Отношение относится к предшественнику, то есть индивидууму из "
+"предшествующего факта того же типа."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
 msgstr ""
+"Эти модули также могут предоставлять дополнительные факты и события, которые "
+"отображаются с сортировкой по дате и типу."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:164 CommonI18N.php:171
 msgid "This version of the module is incompatible with your current webtrees version."
-msgstr ""
+msgstr "Эта версия модуля несовместима с вашей текущей версией webtrees."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -390,7 +401,7 @@ msgstr "Посмотреть эту семью"
 #: CommonI18N.php:165
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
-msgstr ""
+msgstr "Версия Webtrees должна быть %1$s или выше."
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
