@@ -35,7 +35,7 @@ Map coordinates are also used by the 'Vesta Places and pedigree map' module for 
 
 The following diagram gives an overview of the Vesta custom modules. Modules displaying data (via lists, tabs, and charts) are in the top row, with a green background. Modules also provide location data (red background) and other data (orange background) to other modules.
 
-<p align="center"><img src="vesta.svg" alt="Screenshot" align="center" width="67%"></p>
+<p align="center"><img src="vesta.svg" alt="Screenshot" align="center" width="100%"></p>
 
 The following diagram gives an overview of the different kinds of location data, and the different ways to manage this data.
 
