@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-05-22 14:25+0200\n"
-"PO-Revision-Date: 2022-06-04 10:17+0000\n"
+"PO-Revision-Date: 2022-07-21 14:17+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/sk/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.13-dev\n"
+"X-Generator: Weblate 4.14-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -212,7 +212,7 @@ msgstr "Možnosti"
 #. I18N: Module Configuration
 #: CommonI18N.php:101
 msgid "Place History UI Element Providers"
-msgstr ""
+msgstr "História miesta poskytovateľ UI"
 
 #: CommonI18N.php:205
 msgid "Place history"
