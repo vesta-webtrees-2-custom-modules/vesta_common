@@ -170,7 +170,8 @@ class CommonI18N {
         return 
             /* I18N: Module Configuration */I18N::translate('This version of the module is incompatible with your current webtrees version.') . ' ' .
             /* I18N: Module Configuration */I18N::translate('Only webtrees versions before %1$s are supported.', $version) . ' ' .
-            /* I18N: Module Configuration */I18N::translate('All functionality of the module is therefore disabled.');
+            /* I18N: Module Configuration */I18N::translate('All functionality of the module is therefore disabled.') . ' ' .
+            /* I18N: Module Configuration */I18N::translate('To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible).');
     }
     
     public static function noopModuleMessage(string $title): string {

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-05-22 14:25+0200\n"
+"POT-Creation-Date: 2022-08-10 13:33+0200\n"
 "PO-Revision-Date: 2021-03-10 17:02+0000\n"
 "Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/tr/>\n"
@@ -33,11 +33,11 @@ msgstr "%1$s filtreleri"
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s; ocağın, evin ve ailenin Roma tanrıçasının adını taşıyan asteroit Vesta'nın astronomik sembolüdür."
 
-#: resources/views/admin/vesta_components.phtml:24
+#: resources/views/admin/vesta_components.phtml:40
 msgid "(entire module)"
 msgstr "(tüm modül)"
 
-#: resources/views/admin/vesta_components.phtml:26
+#: resources/views/admin/vesta_components.phtml:43
 msgid "(specific functionality)"
 msgstr "(özel işlevsellik)"
 
@@ -65,7 +65,7 @@ msgstr "C: Vesta sembolü esas olarak modül yönetim listesindeki ilgili modül
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "C: Kancalar aracılığıyla. Kancalar, modüllerin tüm bileşeni yeniden uygulamaya gerek kalmadan diğer bileşenlerin işlevselliğini genişletmesine izin verir. Webtrees, örneğin sayfa altbilgisinde ve tarihi olaylar için kancalar kullanır."
 
-#: CommonI18N.php:178
+#: CommonI18N.php:179
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
@@ -110,7 +110,7 @@ msgid "Displayed title"
 msgstr "Görüntülenen başlık"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:201
+#: CommonI18N.php:202
 msgid "Facts and Events Tab Settings"
 msgstr "Gerçekler ve Olaylar Sekmesi Ayarları"
 
@@ -119,7 +119,7 @@ msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your br
 msgstr "Sembol yanlış görüntülenirse, örneğin bir dikdörtgen olarak, tarayıcınızın unicode destek yeteneklerini kontrol edin."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:196
+#: CommonI18N.php:197
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "Özellikle, her iki liste de boşsa, bu tür ek gerçekler ve olaylar gösterilmeyecektir."
 
@@ -177,21 +177,21 @@ msgstr "Burada listelenen modüller (yapılandırılmış sırada) yerlerin hari
 msgid "Modules listed here may provide additional data for facts and events (displayed in the configured order)."
 msgstr "Burada listelenen modüller, gerçekler ve olaylar için ek veriler sağlayabilir (yapılandırılmış sırayla görüntülenir)."
 
-#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "Move"
 msgstr "Taşı"
 
-#: resources/views/admin/vesta_components.phtml:29
+#: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Taşı"
 
-#: resources/views/lists/place-history.phtml:160
+#: resources/views/lists/place-history.phtml:156
 msgid "No events of these specific types have occurred at this place."
 msgstr ""
 
-#: CommonI18N.php:210
+#: CommonI18N.php:211
 msgid "No relationship found"
 msgstr ""
 
@@ -211,7 +211,7 @@ msgstr "Seçenekler"
 msgid "Place History UI Element Providers"
 msgstr ""
 
-#: CommonI18N.php:205
+#: CommonI18N.php:206
 msgid "Place history"
 msgstr ""
 
@@ -279,17 +279,17 @@ msgid "Residences"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:192
+#: CommonI18N.php:193
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:188
+#: CommonI18N.php:189
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Bu GEDCOM aile gerçekleri ve olayları listesiyle sınırlandırın. Gerektiğinde gerçek ve olay adlarını, hatta özel olanları bile kaldırarak veya ekleyerek bu listeyi değiştirebilirsiniz."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:184
+#: CommonI18N.php:185
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Bu GEDCOM bireysel gerçekleri ve olayları listesiyle sınırlandırın. Gerektiğinde gerçek ve olay adlarını, hatta özel olanları bile kaldırarak veya ekleyerek bu listeyi değiştirebilirsiniz."
 
@@ -320,6 +320,11 @@ msgstr ""
 #. I18N: Module Configuration
 #: CommonI18N.php:164 CommonI18N.php:171
 msgid "This version of the module is incompatible with your current webtrees version."
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:174
+msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
 msgstr ""
 
 #. I18N: Module title
@@ -382,7 +387,7 @@ msgstr "Vesta Webtrees Konum Verisi Sağlayıcısı"
 msgid "Vesta location data management overview"
 msgstr "Vesta konum verileri yönetimine genel bakış"
 
-#: resources/views/fact.phtml:173
+#: resources/views/fact.phtml:178
 msgid "View this family"
 msgstr ""
 
@@ -400,7 +405,7 @@ msgstr "Yeni olan ne? "
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Bu sembolü sağlayan bir yazı tipi yüklemeniz gerekebilir ve belirli tarayıcılar için – özellikle Chrome – bu yazı tipi, 'Segoe UI Symbol' gibi webtrees tarafından belirtilen yazı tipi ailelerinden birinde olmalıdır."
 
-#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "down"
 msgstr "aşağı"
@@ -433,7 +438,7 @@ msgstr "%1$s ile sınırla"
 msgid "restricted to %1$s"
 msgstr "%1$s ile sınırlı"
 
-#: resources/views/admin/vesta_components.phtml:29
+#: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "yukarı"

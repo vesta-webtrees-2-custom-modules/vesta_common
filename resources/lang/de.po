@@ -7,11 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-05-22 14:25+0200\n"
+"POT-Creation-Date: 2022-08-10 13:33+0200\n"
 "PO-Revision-Date: 2022-07-10 20:19+0000\n"
 "Last-Translator: Bernd Schwendinger <b0ernie@gmx.net>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-common/de/>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,11 +33,11 @@ msgstr "%1$s filtern"
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s ist das astronomische Symbol für den Asteroiden Vesta, benannt nach der römischen Göttin des Herdes, des Hauses und der Familie."
 
-#: resources/views/admin/vesta_components.phtml:24
+#: resources/views/admin/vesta_components.phtml:40
 msgid "(entire module)"
 msgstr "(gesamtes Modul)"
 
-#: resources/views/admin/vesta_components.phtml:26
+#: resources/views/admin/vesta_components.phtml:43
 msgid "(specific functionality)"
 msgstr "(spezifische Funktionalität)"
 
@@ -66,12 +65,10 @@ msgstr "Das Vesta-Symbol wird hauptsächlich verwendet, um verwandte Module in d
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "A: Über Hooks. Hooks ermöglicht es den Modulen, die Funktionalität anderer Komponenten zu erweitern, ohne die gesamte Komponente neu implementieren zu müssen. Webtrees verwendet Hooks z.B. in der Seitenfußzeile und für historische Ereignisse."
 
-#: CommonI18N.php:178
+#: CommonI18N.php:179
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
-msgstr ""
-"Alle Funktionen des Moduls '%1$s' sind deaktiviert, weil die Modul Version "
-"inkompatibel mit der webtrees Version ist."
+msgstr "Alle Funktionen des Moduls '%1$s' sind deaktiviert, weil die Modul Version inkompatibel mit der webtrees Version ist."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:166 CommonI18N.php:173
@@ -113,7 +110,7 @@ msgid "Displayed title"
 msgstr "Angezeigter Titel"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:201
+#: CommonI18N.php:202
 msgid "Facts and Events Tab Settings"
 msgstr "Einstellungen der Registerkarte Tatsachen und Ereignisse"
 
@@ -122,7 +119,7 @@ msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your br
 msgstr "Wenn das Symbol nicht korrekt angezeigt wird, z.B. als Rechteck, überprüfen Sie die Unicode-Unterstützung Ihres Browsers."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:196
+#: CommonI18N.php:197
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "Insbesondere, wenn beide Listen leer sind, werden keine weiteren Tatsachen und Ereignisse dieser Art angezeigt."
 
@@ -180,21 +177,21 @@ msgstr "Die hier aufgeführten Module werden (in der konfigurierten Reihenfolge)
 msgid "Modules listed here may provide additional data for facts and events (displayed in the configured order)."
 msgstr "Die hier aufgeführten Module können zusätzliche Daten für Tatsachen und Ereignisse bereitstellen (Anzeige in der konfigurierten Reihenfolge)."
 
-#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "Move"
 msgstr "nach unten"
 
-#: resources/views/admin/vesta_components.phtml:29
+#: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "nach oben"
 
-#: resources/views/lists/place-history.phtml:160
+#: resources/views/lists/place-history.phtml:156
 msgid "No events of these specific types have occurred at this place."
 msgstr "An diesem Ort hat es keine Ereignisse dieser Art gegeben."
 
-#: CommonI18N.php:210
+#: CommonI18N.php:211
 msgid "No relationship found"
 msgstr "Keine Beziehung gefunden"
 
@@ -214,7 +211,7 @@ msgstr "Optionen"
 msgid "Place History UI Element Providers"
 msgstr "Geschichte des Ortes UI-Elementanbieter"
 
-#: CommonI18N.php:205
+#: CommonI18N.php:206
 msgid "Place history"
 msgstr "Geschichte des Ortes"
 
@@ -282,17 +279,17 @@ msgid "Residences"
 msgstr "Wohnsitze"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:192
+#: CommonI18N.php:193
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr "Beschränke die Tatsachen und Ereignisse zur Geschichte des Ortes auf diese Liste von GEDCOM Tatsachen und Ereignissen."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:188
+#: CommonI18N.php:189
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Beschränken Sie sich auf diese Liste der GEDCOM Familienfakten und -ereignisse. Sie können diese Liste ändern, indem Sie Fakten- und Ereignisnamen, auch benutzerdefinierte, nach Bedarf entfernen oder hinzufügen."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:184
+#: CommonI18N.php:185
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Beschränken Sie sich auf diese Liste der GEDCOM Individualfakten und -ereignisse. Sie können diese Liste ändern, indem Sie Fakten- und Ereignisnamen, auch benutzerdefinierte, nach Bedarf entfernen oder hinzufügen."
 
@@ -318,15 +315,17 @@ msgstr "Die Beziehung bezieht sich auf den Vorgänger, d.h. die Person aus dem v
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
-msgstr ""
-"Diese Module können auch zusätzliche Tatsachen und Ereignisse zur Verfügung "
-"stellen, welche nach Datum und Typ sortiert angezeigt werden."
+msgstr "Diese Module können auch zusätzliche Tatsachen und Ereignisse zur Verfügung stellen, welche nach Datum und Typ sortiert angezeigt werden."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:164 CommonI18N.php:171
 msgid "This version of the module is incompatible with your current webtrees version."
+msgstr "Diese Version des Moduls ist inkompatibel mit der aktuellen webtrees Version."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:174
+msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
 msgstr ""
-"Diese Version des Moduls ist inkompatibel mit der aktuellen webtrees Version."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -388,7 +387,7 @@ msgstr "Vesta Webtrees Location Data Provider"
 msgid "Vesta location data management overview"
 msgstr "Vesta-Standortdatenmanagement im Überblick"
 
-#: resources/views/fact.phtml:173
+#: resources/views/fact.phtml:178
 msgid "View this family"
 msgstr "Diese Familie ansehen"
 
@@ -406,7 +405,7 @@ msgstr "Was ist neu? "
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Möglicherweise müssen Sie eine Schriftart installieren, die dieses Symbol bereitstellt, und bei bestimmten Browsern - insbesondere bei Chrome - muss diese Schriftart in einer der von Webtrees spezifizierten Schriftartfamilien vorliegen, wie z.B. 'Segoe UI Symbol'."
 
-#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "down"
 msgstr "nach unten"
@@ -439,7 +438,7 @@ msgstr "beschränken auf %1$s"
 msgid "restricted to %1$s"
 msgstr "beschränkt auf %1$s"
 
-#: resources/views/admin/vesta_components.phtml:29
+#: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "nach oben"

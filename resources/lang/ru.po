@@ -7,17 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-05-22 14:25+0200\n"
+"POT-Creation-Date: 2022-08-10 13:33+0200\n"
 "PO-Revision-Date: 2022-06-07 07:09+0000\n"
 "Last-Translator: Олег <uolega@yandex.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-common/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.13-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
@@ -35,11 +33,11 @@ msgstr "%1$s фильтры"
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s - астрономический символ астероида Веста, названный в честь римской богини домашнего очага, дома и семьи."
 
-#: resources/views/admin/vesta_components.phtml:24
+#: resources/views/admin/vesta_components.phtml:40
 msgid "(entire module)"
 msgstr "(весь модуль)"
 
-#: resources/views/admin/vesta_components.phtml:26
+#: resources/views/admin/vesta_components.phtml:43
 msgid "(specific functionality)"
 msgstr "(специфическая функциональность)"
 
@@ -67,12 +65,10 @@ msgstr "О: Символ Vesta в основном используется дл
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "A: Через крючки. Хуки позволяют модулям расширять функциональность других компонентов без необходимости повторной реализации всего компонента. Webtrees использует хуки, например в нижнем колонтитуле страницы и для исторических событий."
 
-#: CommonI18N.php:178
+#: CommonI18N.php:179
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
-msgstr ""
-"Все функции модуля \"%1$s\" отключены, так как версия модуля несовместима с "
-"версией webtrees."
+msgstr "Все функции модуля \"%1$s\" отключены, так как версия модуля несовместима с версией webtrees."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:166 CommonI18N.php:173
@@ -114,7 +110,7 @@ msgid "Displayed title"
 msgstr "Отображаемый заголовок"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:201
+#: CommonI18N.php:202
 msgid "Facts and Events Tab Settings"
 msgstr "Настройки вкладки \"Факты и события\""
 
@@ -123,7 +119,7 @@ msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your br
 msgstr "Если символ отображается неправильно, например, в виде прямоугольника проверьте возможности поддержки Unicode в вашем браузере."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:196
+#: CommonI18N.php:197
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "В частности, если оба списка пусты, никакие дополнительные факты и события такого рода отображаться не будут."
 
@@ -169,8 +165,7 @@ msgstr "Убедитесь, что все активные пользовате�
 
 #: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
-msgstr ""
-"Обязательно включите этот модуль, если любой другой модуль Vesta включен."
+msgstr "Обязательно включите этот модуль, если любой другой модуль Vesta включен."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
@@ -182,21 +177,21 @@ msgstr "Перечисленные здесь модули используют�
 msgid "Modules listed here may provide additional data for facts and events (displayed in the configured order)."
 msgstr "Перечисленные здесь модули могут предоставлять дополнительные данные для фактов и событий (отображаются в настроенном порядке)."
 
-#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "Move"
 msgstr "Переместить"
 
-#: resources/views/admin/vesta_components.phtml:29
+#: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Переместить"
 
-#: resources/views/lists/place-history.phtml:160
+#: resources/views/lists/place-history.phtml:156
 msgid "No events of these specific types have occurred at this place."
 msgstr "Никаких событий этих конкретных типов не произошло в этом месте."
 
-#: CommonI18N.php:210
+#: CommonI18N.php:211
 msgid "No relationship found"
 msgstr "Связь не найдена"
 
@@ -216,7 +211,7 @@ msgstr "Параметры"
 msgid "Place History UI Element Providers"
 msgstr "Поставщики элементов пользовательского интерфейса «История места»"
 
-#: CommonI18N.php:205
+#: CommonI18N.php:206
 msgid "Place history"
 msgstr "История места"
 
@@ -284,19 +279,17 @@ msgid "Residences"
 msgstr "Резиденции"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:192
+#: CommonI18N.php:193
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
-msgstr ""
-"Ограничьте факты и события в истории места этим списком фактов и событий "
-"GEDCOM."
+msgstr "Ограничьте факты и события в истории места этим списком фактов и событий GEDCOM."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:188
+#: CommonI18N.php:189
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Ограничьтесь этим списком фактов и событий семьи GEDCOM. Вы можете изменить этот список, удалив или добавив имена фактов и событий, даже собственные, если необходимо."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:184
+#: CommonI18N.php:185
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Ограничьте этот список отдельными фактами и событиями GEDCOM. Вы можете изменить этот список, удалив или добавив имена фактов и событий, даже собственные, если необходимо."
 
@@ -317,21 +310,22 @@ msgstr "Установленные в настоящее время версии
 
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
-msgstr ""
-"Отношение относится к предшественнику, то есть индивидууму из "
-"предшествующего факта того же типа."
+msgstr "Отношение относится к предшественнику, то есть индивидууму из предшествующего факта того же типа."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
-msgstr ""
-"Эти модули также могут предоставлять дополнительные факты и события, которые "
-"отображаются с сортировкой по дате и типу."
+msgstr "Эти модули также могут предоставлять дополнительные факты и события, которые отображаются с сортировкой по дате и типу."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:164 CommonI18N.php:171
 msgid "This version of the module is incompatible with your current webtrees version."
 msgstr "Эта версия модуля несовместима с вашей текущей версией webtrees."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:174
+msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
+msgstr ""
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -393,7 +387,7 @@ msgstr "Провайдер данных о местоположении Vesta We
 msgid "Vesta location data management overview"
 msgstr "Обзор управления данными о местоположении Vesta"
 
-#: resources/views/fact.phtml:173
+#: resources/views/fact.phtml:178
 msgid "View this family"
 msgstr "Посмотреть эту семью"
 
@@ -411,7 +405,7 @@ msgstr "Какие новости? "
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Возможно, вам придется установить шрифт, предоставляющий этот символ, и для некоторых браузеров, в частности Chrome, этот шрифт должен принадлежать к одному из семейств шрифтов, указанных веб-деревьями, например «Segoe UI Symbol»."
 
-#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "down"
 msgstr "вниз"
@@ -444,7 +438,7 @@ msgstr "ограничить %1$s"
 msgid "restricted to %1$s"
 msgstr "ограничено %1$s"
 
-#: resources/views/admin/vesta_components.phtml:29
+#: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "вверх"

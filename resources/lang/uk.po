@@ -7,17 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-05-22 14:25+0200\n"
+"POT-Creation-Date: 2022-08-10 13:33+0200\n"
 "PO-Revision-Date: 2022-06-21 15:15+0000\n"
 "Last-Translator: Artem <artem@molotov.work>\n"
-"Language-Team: Ukrainian <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-common/uk/>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.13.1-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
@@ -35,11 +33,11 @@ msgstr "%1$s фільтри"
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr "%1$s є астрономічним символом астероїда Веста, названого на честь римської богині вогнища, дому та родини."
 
-#: resources/views/admin/vesta_components.phtml:24
+#: resources/views/admin/vesta_components.phtml:40
 msgid "(entire module)"
 msgstr "(цілий модуль)"
 
-#: resources/views/admin/vesta_components.phtml:26
+#: resources/views/admin/vesta_components.phtml:43
 msgid "(specific functionality)"
 msgstr "(особлива функціональність)"
 
@@ -67,12 +65,10 @@ msgstr "В: Символ Vesta в основному використовуєт�
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "В: Через гачки. Гачки дозволяють модулям розширювати функціональність інших компонентів, без необхідності повторної реалізації цілого компонента. Веб-дерева використовують гачки, наприклад у нижньому колонтитулі сторінки, а також для історичних подій."
 
-#: CommonI18N.php:178
+#: CommonI18N.php:179
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
-msgstr ""
-"Усі можливості модуля \"%1$s\" вимкнено, оскільки версія модуля не сумісна з "
-"версією Webtrees."
+msgstr "Усі можливості модуля \"%1$s\" вимкнено, оскільки версія модуля не сумісна з версією Webtrees."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:166 CommonI18N.php:173
@@ -114,7 +110,7 @@ msgid "Displayed title"
 msgstr "Заголовок"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:201
+#: CommonI18N.php:202
 msgid "Facts and Events Tab Settings"
 msgstr "Налаштування вкладки \"Факти та події\""
 
@@ -123,7 +119,7 @@ msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your br
 msgstr "Якщо символ відображається неправильно, напр. як прямокутник, перевірте можливості підтримки юнікоду в браузері."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:196
+#: CommonI18N.php:197
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "Зокрема, якщо обидва списки порожні, додаткові факти та події подібного роду не відображатимуться."
 
@@ -165,15 +161,11 @@ msgstr "Постачальники даних про місцезнаходже�
 #: resources/views/admin/upgrade/wizard.phtml:35
 #, php-format
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
-msgstr ""
-"Переконайтеся, що всі активні користувацькі модулі сумісні з новою версією "
-"Webtrees %1$s. Можливо, вам також доведеться їх оновити."
+msgstr "Переконайтеся, що всі активні користувацькі модулі сумісні з новою версією Webtrees %1$s. Можливо, вам також доведеться їх оновити."
 
 #: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
-msgstr ""
-"Переконайтеся, що цей модуль увімкнено, якщо ввімкнено будь-який інший "
-"модуль Vesta."
+msgstr "Переконайтеся, що цей модуль увімкнено, якщо ввімкнено будь-який інший модуль Vesta."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
@@ -185,21 +177,21 @@ msgstr "Перераховані тут модулі використовуют�
 msgid "Modules listed here may provide additional data for facts and events (displayed in the configured order)."
 msgstr "Модулі, перераховані тут, можуть надавати додаткові дані про факти та події (відображаються у налаштованому порядку)."
 
-#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "Move"
 msgstr "Переміщення"
 
-#: resources/views/admin/vesta_components.phtml:29
+#: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "Move"
 msgstr "Переміщення"
 
-#: resources/views/lists/place-history.phtml:160
+#: resources/views/lists/place-history.phtml:156
 msgid "No events of these specific types have occurred at this place."
 msgstr "У цьому місці не відбувалося подій такого типу."
 
-#: CommonI18N.php:210
+#: CommonI18N.php:211
 msgid "No relationship found"
 msgstr "Взаємовідносини не знайдено"
 
@@ -219,7 +211,7 @@ msgstr "Параметри"
 msgid "Place History UI Element Providers"
 msgstr "Постачальники елементів UI \"Історія місць\""
 
-#: CommonI18N.php:205
+#: CommonI18N.php:206
 msgid "Place history"
 msgstr "Історія місць"
 
@@ -287,18 +279,17 @@ msgid "Residences"
 msgstr "Резиденції"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:192
+#: CommonI18N.php:193
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
-msgstr ""
-"Обмежити факти та події в історії місць цим списком GEDCOM фактів і подій."
+msgstr "Обмежити факти та події в історії місць цим списком GEDCOM фактів і подій."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:188
+#: CommonI18N.php:189
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Обмежтеся цим переліком сімейних фактів та подій GEDCOM. Ви можете змінити цей список, видаливши або додавши назви фактів та подій, навіть власні, за потреби."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:184
+#: CommonI18N.php:185
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Обмежтесь цим переліком окремих фактів та подій GEDCOM. Ви можете змінити цей список, видаливши або додавши назви фактів та подій, навіть власні, за потреби."
 
@@ -310,35 +301,31 @@ msgstr "Дивись також %1$s для огляду управління д
 #: resources/views/admin/upgrade/wizard.phtml:63
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
-msgstr ""
-"Наразі встановлені версії наступних користувацьких модулів можуть бути "
-"несумісними з новою версією Webtrees %1$s, а оновлення ще не доступні: %2$s"
+msgstr "Наразі встановлені версії наступних користувацьких модулів можуть бути несумісними з новою версією Webtrees %1$s, а оновлення ще не доступні: %2$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:47
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
-msgstr ""
-"Наразі встановлені версії наступних користувацьких модулів можуть бути "
-"несумісними з новою версією Webtrees %1$s, але модулі мають доступні "
-"оновлення: %2$s"
+msgstr "Наразі встановлені версії наступних користувацьких модулів можуть бути несумісними з новою версією Webtrees %1$s, але модулі мають доступні оновлення: %2$s"
 
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
-msgstr ""
-"Відношення стосується попередника, тобто індивіда з попереднього факту того "
-"ж типу."
+msgstr "Відношення стосується попередника, тобто індивіда з попереднього факту того ж типу."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
-msgstr ""
-"Ці модулі також можуть надавати додаткові факти та події, які відображаються "
-"відсортованими за датою та типом."
+msgstr "Ці модулі також можуть надавати додаткові факти та події, які відображаються відсортованими за датою та типом."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:164 CommonI18N.php:171
 msgid "This version of the module is incompatible with your current webtrees version."
 msgstr "Ця версія модуля несумісна з вашою поточною версією Webtrees."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:174
+msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
+msgstr ""
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -400,7 +387,7 @@ msgstr "Vesta Постачальник даних про місцезнаход�
 msgid "Vesta location data management overview"
 msgstr "Огляд управління даними про місцезнаходження Vesta"
 
-#: resources/views/fact.phtml:173
+#: resources/views/fact.phtml:178
 msgid "View this family"
 msgstr "Переглянути цю сім'ю"
 
@@ -418,7 +405,7 @@ msgstr "Що нового? "
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr "Можливо, вам доведеться встановити шрифт із цим символом, а для певних браузерів, зокрема Chrome, цей шрифт повинен знаходитись в одному із сімейств шрифтів, визначених webtrees, наприклад, „Segoe UI Symbol”."
 
-#: resources/views/admin/vesta_components.phtml:30
+#: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "down"
 msgstr "вниз"
@@ -451,7 +438,7 @@ msgstr "обмежити до %1$s"
 msgid "restricted to %1$s"
 msgstr "обмежено до %1$s"
 
-#: resources/views/admin/vesta_components.phtml:29
+#: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "up"
 msgstr "вгору"
