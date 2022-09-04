@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-10 13:33+0200\n"
-"PO-Revision-Date: 2022-07-10 20:19+0000\n"
-"Last-Translator: Bernd Schwendinger <b0ernie@gmx.net>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/de/>\n"
+"PO-Revision-Date: 2022-09-02 14:15+0000\n"
+"Last-Translator: mpwt <der@bauschaffen.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.13.1-dev\n"
+"X-Generator: Weblate 4.14.1-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -326,6 +327,9 @@ msgstr "Diese Version des Moduls ist inkompatibel mit der aktuellen webtrees Ver
 #: CommonI18N.php:174
 msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
 msgstr ""
+"Um die Funktionalität wiederherzustellen, verwenden Sie entweder eine "
+"aktualisierte Version dieses Moduls (sobald verfügbar) oder setzen Sie Ihrer "
+"Webtrees-Version auf die vorhergehende zurück (falls möglich)."
 
 #. I18N: Module title
 #: CommonI18N.php:23
