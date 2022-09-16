@@ -8,171 +8,182 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-10 13:33+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-09-16 17:20+0000\n"
+"Last-Translator: Jose Antonio Corral <calducho@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.1-dev\n"
 
 #. I18N: Module title
 #: CommonI18N.php:19
 msgid "Vesta Common"
-msgstr ""
+msgstr "Vesta Común"
 
 #. I18N: Module title
 #: CommonI18N.php:23
 msgid "Vesta Classic Look & Feel"
-msgstr ""
+msgstr "Vesta Apariencia clásica"
 
 #. I18N: Module title
 #: CommonI18N.php:27
 msgid "Vesta Facts and events"
-msgstr ""
+msgstr "Vesta Hechos y eventos"
 
 #. I18N: Module title
 #: CommonI18N.php:31
 msgid "Vesta Families"
-msgstr ""
+msgstr "Vesta Familias"
 
 #. I18N: Module title
 #: CommonI18N.php:35
 msgid "Vesta Gov4Webtrees"
-msgstr ""
+msgstr "Vesta Gov4Webtrees"
 
 #. I18N: Module title
 #: CommonI18N.php:39
 msgid "Vesta Shared Places"
-msgstr ""
+msgstr "Vesta Sitios compartidos"
 
 #. I18N: Module title
 #: CommonI18N.php:43
 msgid "Vesta Extended Relationships"
-msgstr ""
+msgstr "Vesta Relaciones ampliadas"
 
 #. I18N: Module title
 #: CommonI18N.php:47
 msgid "Vesta Research Suggestions"
-msgstr ""
+msgstr "Vesta Sugerencias de investigación"
 
 #. I18N: Module title
 #: CommonI18N.php:51
 msgid "Vesta Webtrees Location Data Provider"
-msgstr ""
+msgstr "Vesta Proveedor de datos de localización de Webtrees"
 
 #. I18N: Module title
 #: CommonI18N.php:55
 msgid "Vesta Places and Pedigree map"
-msgstr ""
+msgstr "Vesta Lugares y mapa genealógico"
 
 #. I18N: Module title
 #: CommonI18N.php:59
 msgid "Vesta Clippings Cart"
-msgstr ""
+msgstr "Vesta Imágenes"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:66
 #, php-format
 msgid "Requires the '%1$s %2$s' module."
-msgstr ""
+msgstr "Requiere el módulo '%1$s %2$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
 #, php-format
 msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
-msgstr ""
+msgstr "Requiere el módulo '%1$s %2$s' y el módulo '%1$s %3$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:81
 #, php-format
 msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
 msgstr ""
+"Requiere el módulo '%1$s %2$s', el módulo '%1$s %3$s' y el módulo '%1$s "
+"%4$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
 msgid "Provides location data to other custom modules."
-msgstr ""
+msgstr "Proporciona datos de geolocalización a otros módulos personalizados."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:93
 msgid "Location Data Providers"
-msgstr ""
+msgstr "Proveedores de datos de geolocalización."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
 msgstr ""
+"Los módulos enumerados aquí se utilizan (en el orden configurado) para "
+"determinar las coordenadas de los lugares."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:101
 msgid "Place History UI Element Providers"
-msgstr ""
+msgstr "Proveedores de Elementos UI para lugares históricos"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:106
 msgid "Modules listed here may provide additional data for facts and events (displayed in the configured order)."
 msgstr ""
+"Los módulos enumerados aquí pueden proporcionar datos adicionales para "
+"hechos y eventos (que se muestran en el orden configurado)."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
 msgstr ""
+"Estos módulos también pueden proporcionar hechos y eventos adicionales, que "
+"se muestran ordenados por fecha y tipo."
 
 #. I18N: Module configuration: Refers to the module's Readme file
 #: CommonI18N.php:113
 msgid "Readme"
-msgstr ""
+msgstr "Léame"
 
 #. I18N: Module configuration: Refers to general documentation
 #: CommonI18N.php:117
 msgid "Vesta location data management overview"
-msgstr ""
+msgstr "Vesta Descripción general de la gestión de datos de geolocalización"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
 msgid "Options"
-msgstr ""
+msgstr "Opciones"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:129
 msgid "Displayed title"
-msgstr ""
+msgstr "Título mostrado"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:133
 msgid "Displayed data"
-msgstr ""
+msgstr "Datos mostrados"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:137
 #, php-format
 msgid "Include the %1$s symbol in the tab title"
-msgstr ""
+msgstr "Incluir el símbolo %1$s en el título de la pestaña"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:141
 #, php-format
 msgid "Include the %1$s symbol in the chart menu entry title"
-msgstr ""
+msgstr "Incluir el símbolo %1$s en el título de la entrada del menú gráfico"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:145
 #, php-format
 msgid "Include the %1$s symbol in the list menu entry title"
-msgstr ""
+msgstr "Incluir el símbolo %1$s en el título de la entrada del menú"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:149
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
-msgstr ""
+msgstr "Incluir el símbolo %1$s en la barra lateral"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:153
 #, php-format
 msgid "Include the %1$s symbol in the clippings cart menu entry title"
-msgstr ""
+msgstr "Incluir el símbolo %1$s en el título del menú de imágenes"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
