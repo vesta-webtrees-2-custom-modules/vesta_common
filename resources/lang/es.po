@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-10 13:33+0200\n"
-"PO-Revision-Date: 2022-09-16 17:20+0000\n"
+"PO-Revision-Date: 2022-09-19 12:18+0000\n"
 "Last-Translator: Jose Antonio Corral <calducho@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1-dev\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. I18N: Module title
 #: CommonI18N.php:19
@@ -102,7 +102,7 @@ msgstr "Proporciona datos de geolocalización a otros módulos personalizados."
 #. I18N: Module Configuration
 #: CommonI18N.php:93
 msgid "Location Data Providers"
-msgstr "Proveedores de datos de geolocalización."
+msgstr "Proveedores de datos de geolocalización"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
@@ -189,265 +189,324 @@ msgstr "Incluir el símbolo %1$s en el título del menú de imágenes"
 #: CommonI18N.php:157
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr ""
+"Anule la selección para que el título se muestre exactamente como el título "
+"original."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:164 CommonI18N.php:171
 msgid "This version of the module is incompatible with your current webtrees version."
 msgstr ""
+"Esta versión del módulo es incompatible con su versión actual de webtrees."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:165
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
-msgstr ""
+msgstr "La versión de webtrees debe ser %1$s o superior."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:166 CommonI18N.php:173
 msgid "All functionality of the module is therefore disabled."
-msgstr ""
+msgstr "Por lo que toda la funcionalidad del módulo está deshabilitada."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:172
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
-msgstr ""
+msgstr "Solo se admiten las versiones de webtrees anteriores a %1$s."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:174
 msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
 msgstr ""
+"Para restaurar la funcionalidad, use una versión actualizada de este módulo ("
+"si esté disponible) o baje la versión de su webtrees (si es posible)."
 
 #: CommonI18N.php:179
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
+"Toda la funcionalidad del módulo '%1$s' está deshabilitada porque la versión "
+"del módulo no es compatible con la versión de webtrees."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:185
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
+"Restringir a esta lista de hechos y eventos individuales de GEDCOM. Puede "
+"modificar esta lista eliminando o agregando hechos y eventos, incluso "
+"personalizados, según crea necesario."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:189
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
+"Restringir a esta lista de hechos y eventos de la familia GEDCOM. Puede "
+"modificar esta lista eliminando o agregando hechos y eventos, incluso "
+"personalizados, según crea necesario."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:193
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
+"Restringir los hechos y eventos del historial del lugar a esta lista de "
+"hechos y eventos de GEDCOM."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:197
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr ""
+"En particular, si ambas listas están vacías, no se mostrarán hechos y "
+"eventos adicionales de este tipo."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:202
 msgid "Facts and Events Tab Settings"
-msgstr ""
+msgstr "Pestaña de configuración Hechos y eventos"
 
 #: CommonI18N.php:206
 msgid "Place history"
-msgstr ""
+msgstr "Historial de lugares"
 
 #: CommonI18N.php:211
 msgid "No relationship found"
-msgstr ""
+msgstr "No se encontró relación"
 
 #: HelpTextsPlaceHistory.php:15
 msgid "Relationship to predecessor"
-msgstr ""
+msgstr "Relación con el antecesor"
 
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
+"La relación se refiere al antecesor, es decir, al individuo del hecho "
+"precedente del mismo tipo."
 
 #: HookInterfaces/FunctionsPlaceUtils.php:108
 msgid "map coordinates directly (MAP tag)"
-msgstr ""
+msgstr "coordenadas del mapa directas(MAP tag)"
 
 #: VestaCommonLibModule.php:57
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr ""
+"Un módulo que proporciona clases y traducciones comunes para otros módulos "
+"'Vesta' personalizados ."
 
 #: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr ""
+"Asegúrese de habilitar este módulo si cualquier otro módulo Vesta está "
+"habilitado."
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
-msgstr ""
+msgstr "Novedades "
 
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
 msgid "Baptisms"
-msgstr ""
+msgstr "Bautismos católicos"
 
 #. I18N: Plural for Gedcom tag CHR
 #: model/PlaceHistory.php:60
 msgid "Christenings"
-msgstr ""
+msgstr "Baustimos (Christenings)"
 
 #. I18N: Plural for Gedcom tag CONF
 #: model/PlaceHistory.php:61
 msgid "Confirmations"
-msgstr ""
+msgstr "Confirmaciones"
 
 #. I18N: Gedcom tag RESI
 #: model/PlaceHistory.php:64
 msgid "Residences"
-msgstr ""
+msgstr "Residencias"
 
 #. I18N: Plural for Gedcom tag PROP
 #: model/PlaceHistory.php:65
 msgid "Possessions"
-msgstr ""
+msgstr "Posesiones"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:64
 #, php-format
 msgid "%1$s filters"
-msgstr ""
+msgstr "%1$s filtros"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:71
 #, php-format
 msgid "restrict to %1$s"
-msgstr ""
+msgstr "restringido a %1$s"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:78
 #, php-format
 msgid "exclude %1$s"
-msgstr ""
+msgstr "excluir %1$s"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
 msgid "%1$s excluded"
-msgstr ""
+msgstr "%1$s excluido"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:88
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:98
 msgid "reset this filter"
-msgstr ""
+msgstr "borrar este filtro"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:90
 #, php-format
 msgid "restricted to %1$s"
-msgstr ""
+msgstr "restringido a %1$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:35
 #, php-format
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
+"Asegúrese de que todos los módulos personalizados activos sean compatibles "
+"con la nueva versión de webtrees %1$s. Es posible que también tengas que "
+"actualizarlos."
 
 #: resources/views/admin/upgrade/wizard.phtml:47
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
 msgstr ""
+"Es posible que las versiones actualmente instaladas de los siguientes "
+"módulos personalizados no sean compatibles con la nueva versión de webtrees "
+"%1$s, pero los módulos tienen actualizaciones disponibles: %2$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:63
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
 msgstr ""
+"Es posible que las versiones actualmente instaladas de los siguientes "
+"módulos personalizados no sean compatibles con la nueva versión de webtrees "
+"%1$s, y aún no hay actualizaciones disponibles: %2$s"
 
 #: resources/views/admin/vesta_components.phtml:40
 msgid "(entire module)"
-msgstr ""
+msgstr "(módulo completo)"
 
 #: resources/views/admin/vesta_components.phtml:43
 msgid "(specific functionality)"
-msgstr ""
+msgstr "(funcionalidad específica)"
 
 #: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "Move"
-msgstr ""
+msgstr "Mover"
 
 #: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "up"
-msgstr ""
+msgstr "hacia arriba"
 
 #: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "Move"
-msgstr ""
+msgstr "Mover"
 
 #: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "down"
-msgstr ""
+msgstr "hacia abajo"
 
 #: resources/views/fact.phtml:178
 msgid "View this family"
-msgstr ""
+msgstr "Ver esta familia"
 
 #: resources/views/lists/place-history.phtml:156
 msgid "No events of these specific types have occurred at this place."
-msgstr ""
+msgstr "Ningún evento de este tipo específico ha ocurrido en este lugar."
 
 #: resources/views/vesta_config.phtml:32
 msgid "Q: How do the Vesta modules interact?"
-msgstr ""
+msgstr "P: ¿Cómo interactúan los módulos Vesta?"
 
 #: resources/views/vesta_config.phtml:35
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr ""
+"R: A través de hooks. Los hooks permiten que los módulos amplíen la "
+"funcionalidad de otros componentes, sin tener que volver a implementar todo "
+"el componente. Webtrees usa también hooks, por ejemplo. en el pie de página "
+"y para eventos históricos."
 
 #: resources/views/vesta_config.phtml:38
 msgid "Q: Ok, but what's the actual benefit for the user?"
-msgstr ""
+msgstr "P: Bien, pero ¿Cuál es el beneficio real para el usuario?"
 
 #: resources/views/vesta_config.phtml:42
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
 msgstr ""
+"R: Diferentes módulos pueden tener como objetivo el mismo componente, por "
+"ejemplo, al mejorar la pestaña de hechos y eventos en varios lugares. Sin "
+"hooks, tendríamos que usar varias pestañas específicas del módulo."
 
 #: resources/views/vesta_config.phtml:44
 msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
 msgstr ""
+"Los diferentes módulos también se pueden vincular dinámicamente para "
+"proporcionar datos específicos, como datos de ubicación para lugares de "
+"eventos."
 
 #: resources/views/vesta_config.phtml:48
 msgid "Q: How do I configure additional hooks?"
-msgstr ""
+msgstr "P: ¿Cómo configuro hooks adicionales?"
 
 #: resources/views/vesta_config.phtml:51
 msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
 msgstr ""
+"R: Los hooks generalmente se habilitan automáticamente cuando se habilita el "
+"correspondiente módulo. Consulte también las preferencias de los módulos de "
+"origen y de destino ."
 
 #: resources/views/vesta_config.phtml:54
 #, php-format
 msgid "Q: What's with the %1$s symbol?"
-msgstr ""
+msgstr "P: ¿Qué significa el símbolo %1$s?"
 
 #: resources/views/vesta_config.phtml:57
 msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
 msgstr ""
+"R: El símbolo Vesta se usa principalmente para agrupar módulos relacionados "
+"en la lista de administración de módulos."
 
 #: resources/views/vesta_config.phtml:58
 #, php-format
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr ""
+"%1$s es el símbolo astronómico del asteroide Vesta, llamado así por la diosa "
+"romana del hogar, el hogar y la familia."
 
 #: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
 msgstr ""
+"Si el símbolo se muestra incorrectamente, p. como un rectángulo, verifique "
+"la compatibilidad de su navegador con Unicode."
 
 #: resources/views/vesta_config.phtml:60
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr ""
+"Es posible que tenga que instalar una fuente que proporcione este símbolo, y "
+"para ciertos navegadores (Chrome en particular), esta fuente debe estar en "
+"una de las familias de fuentes especificadas por webtrees, como por ejemplo "
+"'Segoe UI Symbol'."
 
 #: resources/views/vesta_config.phtml:63
 msgid "Q: Is there additional documentation?"
-msgstr ""
+msgstr "P: ¿Hay documentación adicional?"
 
 #: resources/views/vesta_config.phtml:66
 msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
 msgstr ""
+"R: Cada módulo tiene un archivo Léame con información básica (se ve mejor en "
+"línea, pero también se incluye en la carpeta de instalación del módulo)."
 
 #: resources/views/vesta_config.phtml:68
 msgid "here"
-msgstr ""
+msgstr "aquí"
 
 #: resources/views/vesta_config.phtml:69
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr ""
+"Consulte también %1$s para obtener una descripción general de la "
+"administración de datos de geolocalización en webtrees."
