@@ -8,6 +8,7 @@ use Cissee\Webtrees\Module\PPM\PlaceHierarchyUtilsImpl;
 use Exception;
 use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Exceptions\HttpNotFoundException;
+use Fisharebest\Webtrees\Http\RequestHandlers\MapDataEdit;
 use Fisharebest\Webtrees\Http\ViewResponseTrait;
 use Fisharebest\Webtrees\Module\ModuleListInterface;
 use Fisharebest\Webtrees\Module\ModuleMapProviderInterface;
@@ -29,6 +30,7 @@ use function ceil;
 use function count;
 use function is_file;
 use function redirect;
+use function route;
 use function view;
 
 //generalizes PlaceHierarchyListModule
@@ -264,18 +266,20 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
             $locations[] = $location;
             
             $sidebar_class = '';
-            $flag = '';
             
+            if (Auth::isAdmin()) {
+                $this_url = route(self::class, ['tree' => $place->tree()->name(), 'place_id' => $place->id()]);
+                $edit_url = route(MapDataEdit::class, ['location_id' => $location->id(), 'url' => $this_url]);
+            } else {
+                $edit_url = '';
+            }
+                
             if ($showDetails) {
-              if ($location->icon() !== '' && is_file($flag_path . $location->icon())) {
-                  $flag = $flag_path . $location->icon();
-              }
-
-              if ($location->latitude() === null && $location->longitude() === null) {
-                  $sidebar_class = 'unmapped';
-              } else {
-                  $sidebar_class = 'mapped';
-                  $features[]    = [
+                if ($location->latitude() === null && $location->longitude() === null) {
+                    $sidebar_class = 'unmapped';
+                } else {
+                    $sidebar_class = 'mapped';
+                    $features[]    = [
                       'type'       => 'Feature',
                       'id'         => $id,
                       'geometry'   => [
@@ -284,16 +288,16 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
                       ],
                       'properties' => [
                           'tooltip' => $place->gedcomName(),
-                          'popup'   => view('modules/place-hierarchy/popup', [
-                              'showlink'  => $show_link,
-                              'flag'      => $flag,
+                          'popup'   => view('modules/place-hierarchy/popup', [                              
+                              'edit_url'  => $edit_url,
                               'place'     => $place,
                               'latitude'  => $location->latitude(),
                               'longitude' => $location->longitude(),
+                              'showlink'  => $show_link,
                           ]),
                       ],
                   ];
-              }
+                }
             }
 
             //Stats
@@ -304,10 +308,10 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
             }
             
             $sidebar .= view($utils->sidebarView(), [
-                'showlink'      => $show_link,
-                'flag'          => $flag,
+                'edit_url'      => $edit_url,
                 'id'            => $id,
                 'place'         => $place,
+                'showlink'      => $show_link,
                 'sidebar_class' => $sidebar_class,
                 'stats'         => $placeStats,
                 
