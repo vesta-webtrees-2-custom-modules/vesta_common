@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-10 13:33+0200\n"
-"PO-Revision-Date: 2022-11-28 13:48+0000\n"
+"PO-Revision-Date: 2022-11-30 11:14+0000\n"
 "Last-Translator: Josef Prause <josef.prause@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/cs/>\n"
@@ -70,26 +70,28 @@ msgstr "A: Přes háčky (hooky). Háčky umožňují modulům rozšiřovat funk
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
+"Veškerá funkcionalita modulu %1$s je vyřazena, protože verse modulu není "
+"slučitelná s versí webtrees."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:166 CommonI18N.php:173
 msgid "All functionality of the module is therefore disabled."
-msgstr ""
+msgstr "Veškerá funkcionalita modulu je proto vyřazena."
 
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
 msgid "Baptisms"
-msgstr ""
+msgstr "Křty"
 
 #. I18N: Plural for Gedcom tag CHR
 #: model/PlaceHistory.php:60
 msgid "Christenings"
-msgstr ""
+msgstr "Křty (křesťanské)"
 
 #. I18N: Plural for Gedcom tag CONF
 #: model/PlaceHistory.php:61
 msgid "Confirmations"
-msgstr ""
+msgstr "Biřmování"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
@@ -163,10 +165,13 @@ msgstr "Poskytovatelé polohových údajů"
 #, php-format
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
+"Ujistěte se, že všechny aktivní uživatelské moduly jsou slučitelné s novou "
+"versí webtrees %1$s. Možná je budete muset také aktualizovat."
 
 #: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr ""
+"Tento modul musíte povolit, pokud je povolený kterýkoliv jiný modul Vesta."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
@@ -190,17 +195,17 @@ msgstr "Přemístit"
 
 #: resources/views/lists/place-history.phtml:156
 msgid "No events of these specific types have occurred at this place."
-msgstr ""
+msgstr "Na tomto místě nenastala žádná událost tohoto typu."
 
 #: CommonI18N.php:211
 msgid "No relationship found"
-msgstr ""
+msgstr "Nenašel se žádný vztah"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:172
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
-msgstr ""
+msgstr "Podporované jsou jen verse webtrees před %1$s."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
@@ -210,16 +215,16 @@ msgstr "Možnosti"
 #. I18N: Module Configuration
 #: CommonI18N.php:101
 msgid "Place History UI Element Providers"
-msgstr ""
+msgstr "Poskytovatelé UI historie místa"
 
 #: CommonI18N.php:206
 msgid "Place history"
-msgstr ""
+msgstr "Historie místa"
 
 #. I18N: Plural for Gedcom tag PROP
 #: model/PlaceHistory.php:65
 msgid "Possessions"
-msgstr ""
+msgstr "Majetek"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
@@ -254,7 +259,7 @@ msgstr "Čístomně"
 
 #: HelpTextsPlaceHistory.php:15
 msgid "Relationship to predecessor"
-msgstr ""
+msgstr "Vztah k předchůdci"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
@@ -277,12 +282,14 @@ msgstr "Vyžaduje modul „%1$s %2$s“."
 #. I18N: Gedcom tag RESI
 #: model/PlaceHistory.php:64
 msgid "Residences"
-msgstr ""
+msgstr "Sídla"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:193
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
+"Omezit fakty a události v historii místa na tento seznam GEDCOM faktů a "
+"událostí."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:189
@@ -303,30 +310,41 @@ msgstr "Vizte také %1$s pro přehled o správě údajů o poloze ve webtrees."
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
 msgstr ""
+"V současnosti instalované verse následujících uživatelských modulů nemusí "
+"být slučitelné s novou versí webtrees %1$s a zatím nejsou k dispozici jejich "
+"aktualizace: %2$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:47
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
 msgstr ""
+"V současnosti instalované verse následujících uživatelských modulů nemusí "
+"být slučitelné s novou versí webtrees %1$s, ale jsou k dispozici jejich "
+"aktualizace: %2$s"
 
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
+"Vztah odkazuje na předchůdce, t.j. osobu z předchozího faktu téhož typu."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
 msgstr ""
+"Tyto moduly mohou poskytovat také dodatečné fakty a události, které jsou "
+"zobrazené v řazení podle data a typu."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:164 CommonI18N.php:171
 msgid "This version of the module is incompatible with your current webtrees version."
-msgstr ""
+msgstr "Tato verse modulu není slučitelná s vaší současnou versí webtrees."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:174
 msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
 msgstr ""
+"K obnově funkcionality buď použijte aktualizovanou versi tohoto modulu (když "
+"je k dispozici), nebo nižší versi webtrees (je-li to možné)."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -390,13 +408,13 @@ msgstr "Přehled správy údajů o poloze ve Vesta"
 
 #: resources/views/fact.phtml:178
 msgid "View this family"
-msgstr ""
+msgstr "Zobrazit tuto rodinu"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:165
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
-msgstr ""
+msgstr "Verse webtrees musí být %1$s nebo vyšší."
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
