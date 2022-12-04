@@ -102,7 +102,10 @@ trait ModuleMetaTrait {
 
         $current = $this->customModuleMetaDatas()
             ->sort(static function (ModuleMetaData $x, ModuleMetaData $y): int {
-                return $x->version() <=> $y->version();
+                //cannot use string comparator, we need alphanumeric comparator within the version parts,
+                //i.e. php version_compare function
+                //return $x->version() <=> $y->version();
+                return version_compare($x->version(), $y->version());
             })
             //highest version is the current metadata
             ->last();
@@ -111,7 +114,7 @@ trait ModuleMetaTrait {
             //unexpected!
             return null;
         }
-
+        
         if ($targetWebtreesVersion === null) {
             //check with data from server:
             //installed $current may not be up-to-date wrt actual range!
@@ -126,16 +129,26 @@ trait ModuleMetaTrait {
 
         return $this->customModuleLatestMetaDatas()
                 ->sort(static function (ModuleMetaData $x, ModuleMetaData $y): int {
-                    return $x->version() <=> $y->version();
+                    //cannot use string comparator, we need alphanumeric comparator within the version parts,
+                    //i.e. php version_compare function
+                    //return $x->version() <=> $y->version();
+                    return version_compare($x->version(), $y->version());
                 })
                 ->filter(static function (ModuleMetaData $x) use ($current, $targetWebtreesVersion): bool {
                     //everything up to current version is irrelevant for the cumulative changelog
-                    if ($x->version() <= $current->version()) {
+                    //if ($x->version() <= $current->version()) {
+                    if (version_compare($x->version(), $current->version()) < 1) {
                         return false;
                     }
 
                     //everything out of range wrt target version is also irrelevant
-                    $isInRange = (($x->minRequiredWebtreesVersion() <= $targetWebtreesVersion) && ($targetWebtreesVersion < $x->minUnsupportedWebtreesVersion()));
+                    //$isInRange = (
+                    //    ($x->minRequiredWebtreesVersion() <= $targetWebtreesVersion) && 
+                    //    ($targetWebtreesVersion < $x->minUnsupportedWebtreesVersion()));
+                    $isInRange = (
+                        (version_compare($x->minRequiredWebtreesVersion(), $targetWebtreesVersion) < 1) && 
+                        (version_compare($targetWebtreesVersion, $x->minUnsupportedWebtreesVersion()) < 0));
+                        
                     return $isInRange;
                 })
                 //highest version is the target metadata, but we have to create the cumulative changelog
