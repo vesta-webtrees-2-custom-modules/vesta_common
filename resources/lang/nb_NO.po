@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-10 13:33+0200\n"
-"PO-Revision-Date: 2022-12-17 18:43+0000\n"
+"PO-Revision-Date: 2022-12-17 19:53+0000\n"
 "Last-Translator: H R Nilsen <hogne@visitusinmaputo.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/nb_NO/>\n"
@@ -448,7 +448,7 @@ msgstr ""
 #: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "down"
-msgstr "Ned"
+msgstr "ned"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:78
 #, php-format
@@ -481,7 +481,7 @@ msgstr "begrenset til %1$s"
 #: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "up"
-msgstr "Opp"
+msgstr "opp"
 
 #~ msgid "Associated facts and events"
 #~ msgstr "Tilknyttede fakta og hendelser"
