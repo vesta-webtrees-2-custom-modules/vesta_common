@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-10 13:33+0200\n"
-"PO-Revision-Date: 2022-12-17 19:53+0000\n"
+"PO-Revision-Date: 2022-12-18 14:51+0000\n"
 "Last-Translator: H R Nilsen <hogne@visitusinmaputo.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/nb_NO/>\n"
@@ -172,7 +172,7 @@ msgstr "Inkluder symbolet %1$s i fanetittelen"
 #. I18N: Module Configuration
 #: CommonI18N.php:93
 msgid "Location Data Providers"
-msgstr "Leverandører av posisjonsdata"
+msgstr "Kilde til posisjonsdata"
 
 #: resources/views/admin/upgrade/wizard.phtml:35
 #, php-format
@@ -285,8 +285,7 @@ msgstr "Krever modulen %1$s %2$s, og modulen %1$s %3$s."
 #: CommonI18N.php:81
 #, php-format
 msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
-msgstr ""
-"Krever modulen '%1$s %2$s', modulen '%1$s %3$s' og modulen '%1$s %4$s' ."
+msgstr "Krever modulen '%1$s %2$s', modulen '%1$s %3$s' og modulen '%1$s %4$s'."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:66
@@ -372,7 +371,7 @@ msgstr "Vesta Classic Look & Feel"
 #. I18N: Module title
 #: CommonI18N.php:59
 msgid "Vesta Clippings Cart"
-msgstr "Vesta Utklippshandlekurv"
+msgstr "Vesta Utklippsmappe"
 
 #. I18N: Module title
 #: CommonI18N.php:19
@@ -402,7 +401,7 @@ msgstr "Vesta Gov4Webtrees"
 #. I18N: Module title
 #: CommonI18N.php:55
 msgid "Vesta Places and Pedigree map"
-msgstr "Vesta Steder og Stamtavlekart"
+msgstr "Vesta Steder og Anekart"
 
 #. I18N: Module title
 #: CommonI18N.php:47
@@ -417,7 +416,7 @@ msgstr "Vesta Delte Steder"
 #. I18N: Module title
 #: CommonI18N.php:51
 msgid "Vesta Webtrees Location Data Provider"
-msgstr "Leverandør av Vesta webtrees-plasseringsdata"
+msgstr "Kilde til Vesta webtrees-steddata"
 
 #. I18N: Module configuration: Refers to general documentation
 #: CommonI18N.php:117
