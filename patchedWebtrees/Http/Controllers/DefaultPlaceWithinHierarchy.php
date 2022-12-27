@@ -14,7 +14,6 @@ use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Services\SearchService;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Database\Capsule\Manager as DB;
-use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Query\JoinClause;
 use Illuminate\Support\Collection;
 use stdClass;
@@ -77,8 +76,8 @@ class DefaultPlaceWithinHierarchy implements PlaceWithinHierarchy {
         return DB::table('places')
                 ->where('p_file', '=', $tree->id())
                 ->where('p_parent_id', '=', $place->id())
-                ->orderBy(new Expression('p_place /*! COLLATE ' . I18N::collation() . ' */'))
                 ->pluck('p_place', 'p_id')
+                ->sortBy(I18N::comparator())
                 ->map(function (string $place, int $id) use ($parent_text, $tree): Place {
                     $place = new Place($place . $parent_text, $tree);
                     Registry::cache()->array()->remember('place-' . $place->gedcomName(), function () use ($id): int {
