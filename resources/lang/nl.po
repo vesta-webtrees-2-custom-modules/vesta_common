@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2022-08-10 13:33+0200\n"
-"PO-Revision-Date: 2022-08-28 22:17+0000\n"
+"PO-Revision-Date: 2023-01-12 17:52+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/nl/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1-dev\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -334,7 +334,7 @@ msgstr ""
 #. I18N: Module title
 #: CommonI18N.php:23
 msgid "Vesta Classic Look & Feel"
-msgstr "Vesta Klassieke uitstraling & gevoel"
+msgstr "Vesta Klassiek uiterlijk"
 
 #. I18N: Module title
 #: CommonI18N.php:59
