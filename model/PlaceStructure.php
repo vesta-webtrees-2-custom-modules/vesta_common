@@ -2,11 +2,12 @@
 
 namespace Vesta\Model;
 
+use Cissee\WebtreesExt\MoreI18N;
+use Cissee\WebtreesExt\PlaceAsTopLevelRecord;
 use Closure;
 use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\Location;
 use Fisharebest\Webtrees\Place;
-use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Report\ReportParserGenerate;
 use Fisharebest\Webtrees\Services\GedcomService;
 use Fisharebest\Webtrees\Services\TreeService;
@@ -376,19 +377,26 @@ class PlaceStructure implements JsonSerializable {
     }
     
     //mainly for webtrees interfaces such as ModuleMapLinkInterface
+    //note: MapLinkBing uses fact details to create a label
+    //$label = strip_tags($fact->record()->fullName()) . ' — ' . $fact->label();
     public function asFact(): Fact {
         
         //TODO could use actual parent if constructed via Fact,
-        //not considered to be important though
+        //not considered to be important though        
+        //would be nicer for MapLinkBing though
         
-        $dummy = Registry::gedcomRecordFactory()->new(
-            '', 
-            '0 @@ _DUMMY', 
-            null, 
+        $dummy = new PlaceAsTopLevelRecord(
+            $this->gedcomName, 
             $this->tree());
         
+        $label = MoreI18N::xlate('webtrees');
+        if ($this->eventType !== null) {
+            //TODO hacky, what about FAM events
+            //$label = Registry::elementFactory()->make('INDI:'.$this->eventType)->label();
+        }
+        
         return new Fact(
-            '1 EVEN'."\n" . $this->gedcom(), 
+            '1 EVEN'."\n".'2 TYPE '.$label."\n". $this->gedcom(), 
             $dummy, 
             'from PlaceStructure');
     }

@@ -21,6 +21,10 @@ class PlaceAsTopLevelRecord extends GedcomRecord {
         $this->place = new Place($place_name, $tree);
     }
     
+    public function getFallBackName(): string {
+        return $this->place->gedcomName();
+    }
+    
     public function url(): string {        
         return $this->place->url();
     }

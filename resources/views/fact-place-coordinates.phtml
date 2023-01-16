@@ -16,6 +16,15 @@ use Vesta\Model\PlaceStructure;
 $mapCoordinates = FunctionsPlaceUtils::plac2map($module, $ps, false); //DO NOT fallbackViaParents for actual displayed coordinates!
 
 $fact = $ps->asFact();
+//TODO could enhance this fact here so that non-Vesta map-providers get 'indirect' coordinates as well
+/*
+$mapCoordinates2 = FunctionsPlaceUtils::plac2map($module, $ps, true);
+if ($mapCoordinates2 !== null) {
+    //TODO implement withCoordinates()
+    $fact = $ps->withCoordinates($mapCoordinates2)->asFact();
+}
+*/
+
 $mapLinks = app(ModuleService::class)
     ->findByInterface(ModuleMapLinkInterface::class)
     ->map(fn(ModuleMapLinkInterface $module): string => ' ' . $module->mapLink($fact))
