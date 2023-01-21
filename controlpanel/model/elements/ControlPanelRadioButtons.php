@@ -64,7 +64,13 @@ class ControlPanelRadioButtons implements ControlPanelElement {
      * @param string $settingKey
      * @param string $settingDefaultValue
      */
-    public function __construct($inline, $values, $description, $settingKey, $settingDefaultValue) {
+    public function __construct(
+        $inline, 
+        $values, 
+        $description, 
+        $settingKey, 
+        $settingDefaultValue) {
+        
         $this->inline = $inline;
         $this->values = $values;
         $this->description = $description;

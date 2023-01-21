@@ -74,6 +74,15 @@ trait VestaModuleTrait {
         return $prefix . $mainTabTitle;
     }
 
+    public function getBlockTitle($mainBlockTitle) {
+        $prefix = '';
+        $vesta_show = boolval($this->getPreference('VESTA_BLOCK', '1'));
+        if ($vesta_show) {
+            $prefix = $this->getVestaSymbol() . ' ';
+        }
+        return $prefix . $mainBlockTitle;
+    }
+    
     public function title(): string {
         $prefix = '';
         $vesta_show = true/* boolval($this->getPreference('VESTA', '1')) */;

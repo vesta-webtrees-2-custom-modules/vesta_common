@@ -7,17 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-08-10 13:33+0200\n"
+"POT-Creation-Date: 2023-01-21 15:53+0100\n"
 "PO-Revision-Date: 2022-10-03 06:58+0000\n"
 "Last-Translator: Олег <uolega@yandex.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/"
-"vesta-webtrees-custom-modules/vesta-common/ru/>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.14.1\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
@@ -67,13 +65,13 @@ msgstr "О: Символ Vesta в основном используется дл
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "A: Через крючки. Хуки позволяют модулям расширять функциональность других компонентов без необходимости повторной реализации всего компонента. Webtrees использует хуки, например в нижнем колонтитуле страницы и для исторических событий."
 
-#: CommonI18N.php:179
+#: CommonI18N.php:183
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr "Все функции модуля \"%1$s\" отключены, так как версия модуля несовместима с версией webtrees."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:166 CommonI18N.php:173
+#: CommonI18N.php:170 CommonI18N.php:177
 msgid "All functionality of the module is therefore disabled."
 msgstr "Таким образом, все функции модуля отключены."
 
@@ -93,7 +91,7 @@ msgid "Confirmations"
 msgstr "Подтверждения"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:157
+#: CommonI18N.php:161
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr "Снимите выделение, чтобы заголовок отображался точно так же, как исходный заголовок."
 
@@ -112,7 +110,7 @@ msgid "Displayed title"
 msgstr "Отображаемый заголовок"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:202
+#: CommonI18N.php:206
 msgid "Facts and Events Tab Settings"
 msgstr "Настройки вкладки \"Факты и события\""
 
@@ -121,9 +119,15 @@ msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your br
 msgstr "Если символ отображается неправильно, например, в виде прямоугольника проверьте возможности поддержки Unicode в вашем браузере."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:197
+#: CommonI18N.php:201
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "В частности, если оба списка пусты, никакие дополнительные факты и события такого рода отображаться не будут."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:157
+#, php-format
+msgid "Include the %1$s symbol in the block title"
+msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:141
@@ -193,12 +197,12 @@ msgstr "Переместить"
 msgid "No events of these specific types have occurred at this place."
 msgstr "Никаких событий этих конкретных типов не произошло в этом месте."
 
-#: CommonI18N.php:211
+#: CommonI18N.php:215
 msgid "No relationship found"
 msgstr "Связь не найдена"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:172
+#: CommonI18N.php:176
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
 msgstr "Поддерживаются только версии веб-деревьев до %1$s."
@@ -213,7 +217,7 @@ msgstr "Параметры"
 msgid "Place History UI Element Providers"
 msgstr "Поставщики элементов пользовательского интерфейса «История места»"
 
-#: CommonI18N.php:206
+#: CommonI18N.php:210
 msgid "Place history"
 msgstr "История места"
 
@@ -281,17 +285,17 @@ msgid "Residences"
 msgstr "Резиденции"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:193
+#: CommonI18N.php:197
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr "Ограничьте факты и события в истории места этим списком фактов и событий GEDCOM."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:189
+#: CommonI18N.php:193
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Ограничьтесь этим списком фактов и событий семьи GEDCOM. Вы можете изменить этот список, удалив или добавив имена фактов и событий, даже собственные, если необходимо."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:185
+#: CommonI18N.php:189
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Ограничьте этот список отдельными фактами и событиями GEDCOM. Вы можете изменить этот список, удалив или добавив имена фактов и событий, даже собственные, если необходимо."
 
@@ -320,17 +324,14 @@ msgid "These modules may also provide additional facts and events, which are dis
 msgstr "Эти модули также могут предоставлять дополнительные факты и события, которые отображаются с сортировкой по дате и типу."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:164 CommonI18N.php:171
+#: CommonI18N.php:168 CommonI18N.php:175
 msgid "This version of the module is incompatible with your current webtrees version."
 msgstr "Эта версия модуля несовместима с вашей текущей версией webtrees."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:174
+#: CommonI18N.php:178
 msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
-msgstr ""
-"Чтобы восстановить функциональность, либо используйте обновленную версию "
-"этого модуля (когда она будет доступна), либо понизьте версию веб-деревьев ("
-"если возможно)."
+msgstr "Чтобы восстановить функциональность, либо используйте обновленную версию этого модуля (когда она будет доступна), либо понизьте версию веб-деревьев (если возможно)."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -397,7 +398,7 @@ msgid "View this family"
 msgstr "Посмотреть эту семью"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:169
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
 msgstr "Версия Webtrees должна быть %1$s или выше."

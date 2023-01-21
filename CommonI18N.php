@@ -152,6 +152,10 @@ class CommonI18N {
     public static function vestaSymbolInClippingsCartTitle(): string {
         return /* I18N: Module Configuration */I18N::translate('Include the %1$s symbol in the clippings cart menu entry title', CommonI18N::getVestaSymbol());
     }
+    
+    public static function vestaSymbolInBlockTitle(): string {
+        return /* I18N: Module Configuration */I18N::translate('Include the %1$s symbol in the block title', CommonI18N::getVestaSymbol());
+    }
 
     public static function vestaSymbolInTitle2(): string {
         return /* I18N: Module Configuration */I18N::translate('Deselect in order to have the title appear exactly as the original title.');

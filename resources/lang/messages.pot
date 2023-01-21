@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-08-10 13:33+0200\n"
+"POT-Creation-Date: 2023-01-21 15:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -177,71 +177,77 @@ msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
+#, php-format
+msgid "Include the %1$s symbol in the block title"
+msgstr ""
+
+#. I18N: Module Configuration
+#: CommonI18N.php:161
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:164 CommonI18N.php:171
+#: CommonI18N.php:168 CommonI18N.php:175
 msgid "This version of the module is incompatible with your current webtrees version."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:169
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:166 CommonI18N.php:173
+#: CommonI18N.php:170 CommonI18N.php:177
 msgid "All functionality of the module is therefore disabled."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:172
+#: CommonI18N.php:176
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:174
+#: CommonI18N.php:178
 msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
 msgstr ""
 
-#: CommonI18N.php:179
+#: CommonI18N.php:183
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:185
+#: CommonI18N.php:189
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:189
+#: CommonI18N.php:193
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:193
+#: CommonI18N.php:197
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:197
+#: CommonI18N.php:201
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:202
+#: CommonI18N.php:206
 msgid "Facts and Events Tab Settings"
 msgstr ""
 
-#: CommonI18N.php:206
+#: CommonI18N.php:210
 msgid "Place history"
 msgstr ""
 
-#: CommonI18N.php:211
+#: CommonI18N.php:215
 msgid "No relationship found"
 msgstr ""
 

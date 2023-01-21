@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
-"POT-Creation-Date: 2022-08-10 13:33+0200\n"
+"POT-Creation-Date: 2023-01-21 15:53+0100\n"
 "PO-Revision-Date: 2021-07-21 01:36+0000\n"
 "Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/vi/>\n"
@@ -65,13 +65,13 @@ msgstr "Trả lời: Biểu tượng Vesta chủ yếu được sử dụng đ�
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr "Trả lời: Qua móc câu. Hooks cho phép các mô-đun mở rộng chức năng của các thành phần khác mà không cần phải triển khai lại toàn bộ thành phần. Webtrees sử dụng hooks, ví dụ: trong chân trang và cho các sự kiện lịch sử."
 
-#: CommonI18N.php:179
+#: CommonI18N.php:183
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:166 CommonI18N.php:173
+#: CommonI18N.php:170 CommonI18N.php:177
 msgid "All functionality of the module is therefore disabled."
 msgstr ""
 
@@ -91,7 +91,7 @@ msgid "Confirmations"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:157
+#: CommonI18N.php:161
 msgid "Deselect in order to have the title appear exactly as the original title."
 msgstr "Bỏ chọn để tiêu đề xuất hiện chính xác như tiêu đề ban đầu."
 
@@ -110,7 +110,7 @@ msgid "Displayed title"
 msgstr "Tiêu đề được hiển thị"
 
 #. I18N: Module Configuration
-#: CommonI18N.php:202
+#: CommonI18N.php:206
 msgid "Facts and Events Tab Settings"
 msgstr "Cài đặt tab Sự kiện và Số liệu"
 
@@ -119,9 +119,15 @@ msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your br
 msgstr "Nếu biểu tượng được hiển thị không đúng cách, ví dụ: dưới dạng hình chữ nhật, hãy kiểm tra khả năng hỗ trợ unicode của trình duyệt của bạn."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:197
+#: CommonI18N.php:201
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr "Đặc biệt nếu cả hai danh sách đều trống, không có dữ kiện và sự kiện bổ sung nào thuộc loại này sẽ được hiển thị."
+
+#. I18N: Module Configuration
+#: CommonI18N.php:157
+#, php-format
+msgid "Include the %1$s symbol in the block title"
+msgstr ""
 
 #. I18N: Module Configuration
 #: CommonI18N.php:141
@@ -191,12 +197,12 @@ msgstr ""
 msgid "No events of these specific types have occurred at this place."
 msgstr ""
 
-#: CommonI18N.php:211
+#: CommonI18N.php:215
 msgid "No relationship found"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:172
+#: CommonI18N.php:176
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
 msgstr ""
@@ -211,7 +217,7 @@ msgstr "Tùy chọn"
 msgid "Place History UI Element Providers"
 msgstr ""
 
-#: CommonI18N.php:206
+#: CommonI18N.php:210
 msgid "Place history"
 msgstr ""
 
@@ -279,17 +285,17 @@ msgid "Residences"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:193
+#: CommonI18N.php:197
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:189
+#: CommonI18N.php:193
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Giới hạn trong danh sách các dữ kiện và sự kiện gia đình GEDCOM này. Bạn có thể sửa đổi danh sách này bằng cách xóa hoặc thêm tên sự kiện và sự kiện, thậm chí cả tên tùy chỉnh, nếu cần."
 
 #. I18N: Module Configuration
-#: CommonI18N.php:185
+#: CommonI18N.php:189
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr "Giới hạn trong danh sách này các dữ kiện và sự kiện riêng lẻ của GEDCOM. Bạn có thể sửa đổi danh sách này bằng cách xóa hoặc thêm tên sự kiện và sự kiện, thậm chí cả tên tùy chỉnh, nếu cần."
 
@@ -318,12 +324,12 @@ msgid "These modules may also provide additional facts and events, which are dis
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:164 CommonI18N.php:171
+#: CommonI18N.php:168 CommonI18N.php:175
 msgid "This version of the module is incompatible with your current webtrees version."
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:174
+#: CommonI18N.php:178
 msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
 msgstr ""
 
@@ -392,7 +398,7 @@ msgid "View this family"
 msgstr ""
 
 #. I18N: Module Configuration
-#: CommonI18N.php:165
+#: CommonI18N.php:169
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
 msgstr ""
