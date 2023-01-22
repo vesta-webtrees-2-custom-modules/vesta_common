@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-01-21 15:53+0100\n"
-"PO-Revision-Date: 2023-01-12 17:52+0000\n"
+"PO-Revision-Date: 2023-01-22 09:06+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.15.1\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -127,7 +128,7 @@ msgstr "Als beide lijsten leeg zijn, zullen geen aanvullende feiten en gebeurten
 #: CommonI18N.php:157
 #, php-format
 msgid "Include the %1$s symbol in the block title"
-msgstr ""
+msgstr "Neem het %1$s-symbool op in de bloktitel"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:141
@@ -151,7 +152,7 @@ msgstr "Het %1$s-symbool opnemen in het Lijsten-menu"
 #: CommonI18N.php:149
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
-msgstr "Het symbool %1$s opnemen in de zijbalktitel"
+msgstr "Het %1$s-symbool opnemen in de zijbalktitel"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:137
