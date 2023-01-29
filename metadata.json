@@ -336,5 +336,11 @@
 		"from": "2.1.15",
 		"to": "2.1.17",
 		"changelog": ["All modules: Additional translations."]
+	},
+	{
+		"version": "2.1.16.1.1",
+		"from": "2.1.15",
+		"to": "2.1.17",
+		"changelog": ["Several modules: Additional translations."]
 	}
 ]
