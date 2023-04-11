@@ -2,8 +2,8 @@
 
 namespace Vesta;
 
-use Fisharebest\Webtrees\Exceptions\HttpAccessDeniedException;
-use Fisharebest\Webtrees\Exceptions\HttpNotFoundException;
+use Fisharebest\Webtrees\Http\Exceptions\HttpAccessDeniedException;
+use Fisharebest\Webtrees\Http\Exceptions\HttpNotFoundException;
 use Fisharebest\Webtrees\Schema\MigrationInterface;
 use Fisharebest\Webtrees\View;
 use Illuminate\Database\Capsule\Manager as DB;
@@ -357,7 +357,7 @@ trait VestaModuleTrait {
             $file = $this->resourcesFolder() . $asset;
 
             if (!file_exists($file)) {
-                throw new HttpNotFoundException($file);
+                throw new HttpNotFoundException('Asset \'' . $asset . '\' not found.');
             }
 
             $content = file_get_contents($file);

@@ -7,7 +7,7 @@ namespace Cissee\WebtreesExt\Http\Controllers;
 use Cissee\Webtrees\Module\PPM\PlaceHierarchyUtilsImpl;
 use Exception;
 use Fisharebest\Webtrees\Auth;
-use Fisharebest\Webtrees\Exceptions\HttpNotFoundException;
+use Fisharebest\Webtrees\Http\Exceptions\HttpNotFoundException;
 use Fisharebest\Webtrees\Http\RequestHandlers\MapDataEdit;
 use Fisharebest\Webtrees\Http\ViewResponseTrait;
 use Fisharebest\Webtrees\Module\ModuleListInterface;
