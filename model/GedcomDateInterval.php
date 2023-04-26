@@ -105,8 +105,15 @@ class GedcomDateInterval implements JsonSerializable {
         bool $fromIsInexact = false,
         bool $toIsInexact = false) {
 
+        //'to' cannot be smaller than 'from' in a meaningful interval
+        //we rely on this e.g. when intersecting
+        //if that is the case, we assume 'to' to be erroneous and just ignore it
+        if (($from !== null) && ($to !== null) and ($to < $from)) {
+            $to = null;
+        }
+        
         $this->from = $from;
-        $this->to = $to;
+        $this->to = $to;        
         $this->fromIsInexact = ($from === null) ? true : $fromIsInexact;
         $this->toIsInexact = ($to === null) ? true : $toIsInexact;
     }
