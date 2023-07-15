@@ -24,6 +24,6 @@ class MoreI18N {
     //different name prevents gettext from picking this up
     //(intention: use where already expected to be translated via main webtrees)
     public static function plural(string $singular, string $plural, int $count, ...$args): string {
-        return I18N::plural($singular, $plural, $count, $args);
+        return I18N::plural($singular, $plural, $count, ...$args);
     }
 }
