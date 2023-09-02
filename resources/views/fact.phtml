@@ -139,14 +139,20 @@ if ($tag === 'MARR') {
             $adjustedCheck = ($id !== 'histo' && (($id !== 'asso' && $fact->canEdit()) || ($main != '')) && !in_array($tag, ['HUSB', 'WIFE', 'CHIL', 'FAMC', 'FAMS'], true));
         ?>  
         <?php if ($adjustedCheck) : ?>
-            <div class="pt-2 wt-fact-edit-links">
-                <?php if ($originalCheck) : ?>                
-                    <?= view('edit/icon-fact-edit', ['fact' => $fact, 'url' => $record->url() ?? null]) ?>
-                    <?= view('edit/icon-fact-copy', ['fact' => $fact]) ?>
-                    <?= view('edit/icon-fact-delete', ['fact' => $fact]) ?>                
-                <?php endif ?>
-                <?= $main ?>
-            </div>
+            <?php
+               /* give other custom modules a chance to add links here */
+            ?>
+            <?php if ($originalCheck) : ?>
+                <?= view('fact-edit-links', ['fact' => $fact, 'url' => $record->url()]) ?>
+            <?php endif ?>
+            <?php
+               /* Vesta links on a separate row (arguably ok because they do not edit the fact directly, actually mainly for technical reasons) */
+            ?>
+            <?php if ($main != '') : ?>
+                <div class="pt-2 wt-fact-edit-links">
+                    <?= $main ?>
+                </div>
+            <?php endif ?>            
         <?php endif ?>
 
         <?php if ($tree->getPreference('SHOW_FACT_ICONS')) : ?>

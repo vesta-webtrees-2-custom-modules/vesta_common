@@ -22,6 +22,4 @@ $loader->addPsr4('Cissee\\WebtreesExt\\Http\\RequestHandlers\\', __DIR__ . "/pat
 
 $loader->register();
 
-$classMap = array();
-
 $loader->register(true); //prepend in order to override definitions from default class loader

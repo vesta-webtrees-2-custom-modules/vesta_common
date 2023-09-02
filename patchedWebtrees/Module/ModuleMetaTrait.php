@@ -8,6 +8,7 @@ use Fig\Http\Message\StatusCodeInterface;
 use Fisharebest\Webtrees\Registry;
 use Fisharebest\Webtrees\Webtrees;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Support\Collection;
 use function GuzzleHttp\json_decode;
@@ -83,12 +84,14 @@ trait ModuleMetaTrait {
                         'timeout' => 3,
                     ]);
 
-                    $response = $client->get($this->customModuleLatestMetaDatasJsonUrl());
+                    $response = $client->getx($this->customModuleLatestMetaDatasJsonUrl());
 
                     if ($response->getStatusCode() === StatusCodeInterface::STATUS_OK) {
                         $json = $response->getBody()->getContents();
                         return $this->decodeJsonToMetaDatas($json);
                     }
+                } catch (ConnectException $ex) {
+                    // Can't connect to the server?
                 } catch (RequestException $ex) {
                     // Can't connect to the server?
                 }
@@ -99,7 +102,7 @@ trait ModuleMetaTrait {
 
     public function customModuleMetaData(
         ?string $targetWebtreesVersion = null): ?ModuleMetaData {
-
+        
         $current = $this->customModuleMetaDatas()
             ->sort(static function (ModuleMetaData $x, ModuleMetaData $y): int {
                 //cannot use string comparator, we need alphanumeric comparator within the version parts,
