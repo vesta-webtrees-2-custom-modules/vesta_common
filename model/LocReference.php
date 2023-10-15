@@ -39,6 +39,10 @@ class LocReference {
         Trace $trace, 
         int $level = 0) {
         
+        if ($xref === '@VOID@') {
+            throw new \Exception();
+        }
+        
         $this->xref = $xref;
         $this->tree = $tree;
         $this->trace = $trace;
