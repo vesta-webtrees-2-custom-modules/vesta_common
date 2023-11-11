@@ -47,6 +47,8 @@ interface FunctionsPlaceInterface {
   public function gov2loc(GovReference $gov, Tree $tree): ?LocReference;
   
   public function loc2plac(LocReference $loc): ?PlaceStructure;
+  
+  public function loc2placAt(LocReference $loc, GedcomDateInterval $date): ?PlaceStructure;
 
   /**
    * get parent(s) of indicated types ("POLI","RELI" etc)

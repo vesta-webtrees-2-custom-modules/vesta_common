@@ -468,6 +468,31 @@ class FunctionsPlaceUtils {
             });
     }
     
+    public static function loc2placAt(
+        ModuleInterface $module, 
+        LocReference $loc,
+        GedcomDateInterval $date): ?PlaceStructure {
+        
+        //expensive, therefore cached 
+        //(in-memory, therefore ok to skip user for cache key!
+        $cacheKey = FunctionsPlaceUtils::class . 'loc2placAt_' . $loc->getXref() . '_' . $date->toGedcomString(1);
+        return Registry::cache()->array()->remember($cacheKey, static function () use ($module, $loc, $date): ?PlaceStructure {
+
+                $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $loc->getTree(), Auth::user())
+                    ->toArray();
+
+                foreach ($functionsPlaceProviders as $functionsPlaceProvider2) {
+                    $ps = $functionsPlaceProvider2->loc2placAt($loc, $date);
+                    if ($ps !== null) {
+                        //first one wins!
+                        return $ps;
+                    }
+                }
+
+                return null;
+            });
+    }
+    
     ////////////////////////////////////////////////////////////////////////////////
 
     public static function placPplac(
