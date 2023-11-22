@@ -84,18 +84,22 @@ trait ModuleMetaTrait {
                         'timeout' => 3,
                     ]);
 
-                    $response = $client->getx($this->customModuleLatestMetaDatasJsonUrl());
+                    $response = $client->get($this->customModuleLatestMetaDatasJsonUrl());
 
                     if ($response->getStatusCode() === StatusCodeInterface::STATUS_OK) {
                         $json = $response->getBody()->getContents();
                         return $this->decodeJsonToMetaDatas($json);
                     }
+                    error_log("error retrieving metadata: " . $response->getStatusCode());
+                    
                 } catch (ConnectException $ex) {
                     // Can't connect to the server?
+                    error_log("error retrieving metadata: " . $ex);
                 } catch (RequestException $ex) {
                     // Can't connect to the server?
+                    error_log("error retrieving metadata: " . $ex);
                 }
-
+                
                 return $this->customModuleMetaDatas();
             }, 3600); //ModuleCustomTrait has 1 day, we use 1 hour
     }
