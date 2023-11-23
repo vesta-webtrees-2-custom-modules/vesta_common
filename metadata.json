@@ -383,5 +383,11 @@
 		"version": "2.1.18.1.0",
 		"from": "2.1.17",
 		"to": "2.1.19"
+	},
+	{
+		"version": "2.1.18.1.1",
+		"from": "2.1.17",
+		"to": "2.1.19",
+		"changelog": ["Bugfix: Module upgrade data was no longer retrieved properly."]
 	}
 ]
