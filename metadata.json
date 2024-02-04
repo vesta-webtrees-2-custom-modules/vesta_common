@@ -394,5 +394,11 @@
 		"version": "2.1.18.2.0",
 		"from": "2.1.17",
 		"to": "2.1.19"
+	},
+	{
+		"version": "2.1.18.2.1",
+		"from": "2.1.17",
+		"to": "2.1.19",
+		"changelog": ["Several modules: Additional translations."]
 	}
 ]
