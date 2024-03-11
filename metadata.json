@@ -400,5 +400,11 @@
 		"from": "2.1.17",
 		"to": "2.1.19",
 		"changelog": ["Several modules: Additional translations."]
+	},
+	{
+		"version": "2.1.18.2.2",
+		"from": "2.1.17",
+		"to": "2.1.19",
+		"changelog": ["Several modules: Minor bugfixes.","Several modules: Additional translations."]
 	}
 ]
