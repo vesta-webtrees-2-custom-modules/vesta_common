@@ -22,7 +22,7 @@ abstract class AbstractModuleSpecificComponentAction implements RequestHandlerIn
      * @param TreeService   $tree_service
      */
     public function __construct(
-        ModuleService $module_service, 
+        ModuleService $module_service,
         TreeService $tree_service)
     {
         $this->module_service = $module_service;
@@ -40,10 +40,10 @@ abstract class AbstractModuleSpecificComponentAction implements RequestHandlerIn
      * @return void
      */
     protected function updateSpecificAccessLevel(
-        string $interface, 
+        string $interface,
         string $interfaceForAccessLevel,
         ServerRequestInterface $request): void
-        
+
     {
         $modules = $this->module_service->findByInterface($interface, true);
 

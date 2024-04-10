@@ -9,7 +9,7 @@ class ControlPanelSection {
     private $subsections;
 
     /**
-     * 
+     *
      * @return string
      */
     public function getLabel() {
@@ -17,7 +17,7 @@ class ControlPanelSection {
     }
 
     /**
-     * 
+     *
      * @return string|null
      */
     public function getDescription() {

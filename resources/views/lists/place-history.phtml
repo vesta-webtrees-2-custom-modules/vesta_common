@@ -28,7 +28,7 @@ use Vesta\VestaUtils;
  * @var Tree                       $tree
  * @var string                     $context
  * @var ModuleVestalInterface      $module
- * 
+ *
  * //$module must also provide getHelpAction for 'Predecessor'!
  * //$module may also provide preferences for 'RESTRICTED_PLACE_HISTORY'!
  */
@@ -37,7 +37,7 @@ use Vesta\VestaUtils;
 //$table_id = 'place-history-' . Uuid::uuid4()->toString();
 
 $filter = explode(',', $module->getPreference(
-    'RESTRICTED_PLACE_HISTORY', 
+    'RESTRICTED_PLACE_HISTORY',
     PlaceHistory::initialFactsStringForPreferences()));
 $filter = array_combine($filter, $filter);
 
@@ -51,7 +51,7 @@ $facts = $individuals
             ->filter(function (Fact $fact) use ($factFilter) : bool {
                 return $factFilter->filter($fact);
             });
-        
+
         return $individual_facts;
     });
 
@@ -80,7 +80,7 @@ $facts = $facts->merge($additionalFacts);
 $facts = FactExt::sortFacts($facts);
 
 ?>
-    
+
 <?php
 //[RC] PATCHED
 $outputBeforeTab = FactListUtils::getOutputBeforeTab($module, $record, false);
@@ -129,13 +129,13 @@ View::endpush();
             ?>
             <?php foreach ($facts as $fact) : ?>
                 <?php
-                    $tag = explode(':', $fact->tag())[1];                
+                    $tag = explode(':', $fact->tag())[1];
                     $styles = [];
                     $styles []= 'wt-show-'.$tag.'-in-place-history-'.$context.' collapse';
-                ?>       
-                <?= view(VestaUtils::vestaViewsNamespace() . '::fact', [                    
-                    'fact'                   => $fact, 
-                    'record'                 => $record, 
+                ?>
+                <?= view(VestaUtils::vestaViewsNamespace() . '::fact', [
+                    'fact'                   => $fact,
+                    'record'                 => $record,
                     'module'                 => $module,
                     'useVestals'             => true, //TODO make configurable?
                     'hideCoordinates'        => true, //TODO make configurable?
@@ -170,18 +170,18 @@ echo $outputAfterTab->getScript();
 View::endpush();
 ?>
 
-<?php  
+<?php
     $requests = [];
 
     if ($module->useVestals()) {
         foreach ($facts as $fact) {
             $requests = array_merge($requests, $module->functionsVestals()->vestalsForFactPlace($fact));
-        }        
+        }
     }
 
     $url = $module->functionsVestals()->vestalsActionUrl();
 ?>
-    
+
 <?php if (sizeof($requests) > 0) : ?>
     <?php View::push('javascript') ?>
     <script>

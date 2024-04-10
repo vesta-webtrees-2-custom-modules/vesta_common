@@ -14,7 +14,7 @@ This is a webtrees 2.x module - It cannot be used with webtrees 1.x.
 
 ### Features<a name="features"/>
 
-This module also provides translations, and therefore has to be activated in the module administration even if it doesn't provide any other kind of webtrees components. 
+This module also provides translations, and therefore has to be activated in the module administration even if it doesn't provide any other kind of webtrees components.
 
 ### Download<a name="download"/>
 
@@ -22,7 +22,7 @@ This module also provides translations, and therefore has to be activated in the
 * Based on and tested with webtrees 2.1.20. Requires webtrees 2.1.17 or later.
 * Download the zip file, which includes all Vesta modules, [here](https://cissee.de/vesta.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>
-* Issues also via <https://github.com/vesta-webtrees-2-custom-modules/vesta_common/issues> 
+* Issues also via <https://github.com/vesta-webtrees-2-custom-modules/vesta_common/issues>
 * Translations may be contributed via weblate: <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/>
 
 ### Installation<a name="installation"/>

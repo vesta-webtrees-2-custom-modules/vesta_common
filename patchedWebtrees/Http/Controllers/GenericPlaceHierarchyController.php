@@ -36,12 +36,12 @@ use function view;
 //generalizes PlaceHierarchyListModule
 class GenericPlaceHierarchyController implements RequestHandlerInterface {
     use ViewResponseTrait;
-  
+
     private ModuleListInterface $module;
-    
+
     public function __construct(
         ModuleListInterface $module) {
-        
+
         $this->module = $module;
     }
 
@@ -63,13 +63,13 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
                 $this->module,
                 $participants,
                 $searchService);
-    
+
         $detailsThreshold = intval($this->module->getPreference('DETAILS_THRESHOLD', '100'));
-                
+
         $action2  = $request->getQueryParams()['action2'] ?? 'hierarchy';
         $place_id = (int) ($request->getQueryParams()['place_id'] ?? 0);
         $place    = $utils->findPlace($place_id, $tree, $request->getQueryParams());
-                
+
         // Request for a non-existent place?
         if ($place_id !== $place->id()) {
             return redirect($place->url());
@@ -99,14 +99,14 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
             case 'list':
                 $alt_link = $utils->hierarchyActionLabel();
                 $alt_url  = $this->module->listUrl($tree, ['action2' => 'hierarchy', 'place_id' => $place_id] + $urlFilters);
-                
+
                 $content .= view($utils->listView(), $this->getList($utils, $tree, $request));
                 break;
             case 'hierarchy':
             case 'hierarchy-e':
                 $alt_link = $utils->listActionLabel();
                 $alt_url  = $this->module->listUrl($tree, ['action2' => 'list', 'place_id' => 0] + $urlFilters);
-                
+
                 $data       = $this->getHierarchy($place, $places);
                 $content .= (null === $data || $showmap) ? '' : view($utils->placeHierarchyView(), $data);
                 if (null === $data || $action2 === 'hierarchy-e') {
@@ -128,15 +128,15 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
         } else {
             $events_link = '';
         }
-        
+
         $breadcrumbs = $this->breadcrumbs($place);
-        
+
         return $this->viewResponse(
             $utils->pageView(),
             [
                 'utils'       => $utils,
                 'urlFilters'  => $urlFilters,
-                
+
                 'alt_link'    => $alt_link,
                 'alt_url'     => $alt_url,
                 'breadcrumbs' => $breadcrumbs['breadcrumbs'],
@@ -149,7 +149,7 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
             ]
         );
     }
-    
+
     /**
      * @param Tree $tree
      *
@@ -157,12 +157,12 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
      */
     private function getList(
         PlaceHierarchyUtils $utils,
-        Tree $tree, 
+        Tree $tree,
         ServerRequestInterface $request): array {
-        
+
         $topLevel = $utils->findPlace(0, $tree, $request->getQueryParams());
         $places = $topLevel->getChildPlaces();
-            
+
         $numfound = count($places);
 
         if ($numfound === 0) {
@@ -211,7 +211,7 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
     private function breadcrumbs(PlaceWithinHierarchy $place): array {
         $breadcrumbs = [];
         $breadcrumbs[] = $place;
-        while ($place->gedcomName() !== '') {          
+        while ($place->gedcomName() !== '') {
           $place = $place->parent();
           $breadcrumbs[] = $place;
         }
@@ -232,9 +232,9 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
     protected function mapData(
         PlaceHierarchyUtils $utils,
         $detailsThreshold,
-        PlaceWithinHierarchy $placeObj, 
+        PlaceWithinHierarchy $placeObj,
         $places): array {
-        
+
         $features  = [];
         $sidebar   = '';
         $flag_path = Webtrees::MODULES_DIR . 'openstreetmap/';
@@ -246,34 +246,34 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
         }
 
         //Speedup #3
-        //details only up to a given threshold 
+        //details only up to a given threshold
         //(relevant for stats in general (i.e. should be in main webtrees),
         //but also for our more complex location function)
         $showDetails = sizeof($places) <= $detailsThreshold;
-      
+
         $locations = [];
         foreach ($places as $id => $place) {
-            
+
             //$id is just the array index (not the place id)
             if ($place->id() === 0) {
                 continue; //skip empty top-level (empty e.g. due to filters)
             }
-            
+
             /* @var $location PlaceWithinHierarchy */
             $location = $place;
-            
+
             //[RC] added, may be more efficient to re-use
             $locations[] = $location;
-            
+
             $sidebar_class = '';
-            
+
             if (Auth::isAdmin()) {
                 $this_url = route(self::class, ['tree' => $place->tree()->name(), 'place_id' => $place->id()]);
                 $edit_url = route(MapDataEdit::class, ['location_id' => $location->id(), 'url' => $this_url]);
             } else {
                 $edit_url = '';
             }
-                
+
             if ($showDetails) {
                 if ($location->latitude() === null && $location->longitude() === null) {
                     $sidebar_class = 'unmapped';
@@ -288,7 +288,7 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
                       ],
                       'properties' => [
                           'tooltip' => $place->gedcomName(),
-                          'popup'   => view('modules/place-hierarchy/popup', [                              
+                          'popup'   => view('modules/place-hierarchy/popup', [
                               'edit_url'  => $edit_url,
                               'place'     => $place,
                               'latitude'  => $location->latitude(),
@@ -304,9 +304,9 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
             $placeStats = [];
             if ($showDetails) {
               $placeStats['INDI'] = $place->countIndividualsInPlace();
-              $placeStats['FAM'] = $place->countFamiliesInPlace();              
+              $placeStats['FAM'] = $place->countFamiliesInPlace();
             }
-            
+
             $sidebar .= view($utils->sidebarView(), [
                 'edit_url'      => $edit_url,
                 'id'            => $id,
@@ -314,7 +314,7 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
                 'showlink'      => $show_link,
                 'sidebar_class' => $sidebar_class,
                 'stats'         => $placeStats,
-                
+
                 'showDetails'   => $showDetails,
             ]);
         }
@@ -323,7 +323,7 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
         if ($showDetails) {
           $bounds = $placeObj->boundingRectangleWithChildren($locations);
         }
-        
+
         return [
             'bounds'  => $bounds,
             'sidebar' => $sidebar,

@@ -25,9 +25,9 @@ use function app;
 class FunctionsPlaceUtils {
 
     public static function loc2linkIcon(
-        ModuleInterface $module, 
+        ModuleInterface $module,
         LocReference $loc): string {
-        
+
         $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModulesPrintFunctions($module, $loc->getTree(), Auth::user())
             ->toArray();
 
@@ -42,9 +42,9 @@ class FunctionsPlaceUtils {
     }
 
     public static function plac2html(
-        ModuleInterface $module, 
+        ModuleInterface $module,
         PlaceStructure $ps): GenericViewElement {
-        
+
         $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModulesPrintFunctions($module, $ps->getTree(), Auth::user())
             ->toArray();
 
@@ -59,10 +59,10 @@ class FunctionsPlaceUtils {
     }
 
     public static function gov2html(
-        ModuleInterface $module, 
-        Tree $tree, 
+        ModuleInterface $module,
+        Tree $tree,
         GovReference $gov): GenericViewElement {
-        
+
         $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModulesPrintFunctions($module, $tree, Auth::user())
             ->toArray();
 
@@ -77,10 +77,10 @@ class FunctionsPlaceUtils {
     }
 
     public static function map2html(
-        ModuleInterface $module, 
-        Tree $tree, 
+        ModuleInterface $module,
+        Tree $tree,
         MapCoordinates $map): GenericViewElement {
-        
+
         $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModulesPrintFunctions($module, $tree, Auth::user())
             ->toArray();
 
@@ -266,10 +266,10 @@ class FunctionsPlaceUtils {
 
     //for now, never fallback via indirect parent hierarchies
     public static function plac2gov(
-        ModuleInterface $module, 
-        PlaceStructure $ps, 
+        ModuleInterface $module,
+        PlaceStructure $ps,
         $fallbackViaParents = true): ?GovReference {
-        
+
         //1. skip:
         //_GOV is a non-standard tag - we don't know how to handle it directly!
 
@@ -311,9 +311,9 @@ class FunctionsPlaceUtils {
         }
         return FunctionsPlaceUtils::plac2gov($module, $parentPs, true);
     }
-    
+
     public static function loc2gov(
-        ModuleInterface $module, 
+        ModuleInterface $module,
         LocReference $loc): ?GovReference {
 
         $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $loc->getTree(), Auth::user())
@@ -327,16 +327,16 @@ class FunctionsPlaceUtils {
                 return $gov;
             }
         }
-        
+
         return null;
     }
-    
+
     //for now, never fallback via indirect parent hierarchies
     public static function plac2loc(
-        ModuleInterface $module, 
-        PlaceStructure $ps, 
+        ModuleInterface $module,
+        PlaceStructure $ps,
         $fallbackViaParents = true): ?LocReference {
-        
+
         //1. skip:
         //_LOC is a non-standard tag - we don't know how to handle it directly!
 
@@ -366,9 +366,9 @@ class FunctionsPlaceUtils {
 
     //for now, never fallback via indirect parent hierarchies
     public static function loc2map(
-        ModuleInterface $module, 
+        ModuleInterface $module,
         LocReference $loc): ?MapCoordinates {
-        
+
         $functionsPlaceProviders = FunctionsPlaceUtils::accessibleModules($module, $loc->getTree(), Auth::user())
             ->toArray();
 
@@ -401,12 +401,12 @@ class FunctionsPlaceUtils {
     }
 
     public static function gov2plac(
-        ModuleInterface $module, 
-        GovReference $gov, 
+        ModuleInterface $module,
+        GovReference $gov,
         Tree $tree): ?PlaceStructure {
-        
+
         //Issue #54
-        //expensive, therefore cached 
+        //expensive, therefore cached
         //(in-memory, therefore ok to skip user for cache key!
         //but safer to add tree to cache key, even if it's reasonable to assume that a single request never targets multiple trees)
         $cacheKey = FunctionsPlaceUtils::class . 'gov2plac_' . $gov->getId() . '_' . $tree->id();
@@ -445,10 +445,10 @@ class FunctionsPlaceUtils {
     }
 
     public static function loc2plac(
-        ModuleInterface $module, 
+        ModuleInterface $module,
         LocReference $loc): ?PlaceStructure {
-        
-        //expensive, therefore cached 
+
+        //expensive, therefore cached
         //(in-memory, therefore ok to skip user for cache key!
         $cacheKey = FunctionsPlaceUtils::class . 'loc2plac_' . $loc->getXref();
         return Registry::cache()->array()->remember($cacheKey, static function () use ($module, $loc): ?PlaceStructure {
@@ -467,13 +467,13 @@ class FunctionsPlaceUtils {
                 return null;
             });
     }
-    
+
     public static function loc2placAt(
-        ModuleInterface $module, 
+        ModuleInterface $module,
         LocReference $loc,
         GedcomDateInterval $date): ?PlaceStructure {
-        
-        //expensive, therefore cached 
+
+        //expensive, therefore cached
         //(in-memory, therefore ok to skip user for cache key!
         $cacheKey = FunctionsPlaceUtils::class . 'loc2placAt_' . $loc->getXref() . '_' . $date->toGedcomString(1);
         return Registry::cache()->array()->remember($cacheKey, static function () use ($module, $loc, $date): ?PlaceStructure {
@@ -492,7 +492,7 @@ class FunctionsPlaceUtils {
                 return null;
             });
     }
-    
+
     ////////////////////////////////////////////////////////////////////////////////
 
     public static function placPplac(
@@ -593,9 +593,9 @@ class FunctionsPlaceUtils {
     ////////////////////////////////////////////////////////////////////////////////
 
     public static function updateOrder(
-        ModuleInterface $moduleForPrefsOrder, 
+        ModuleInterface $moduleForPrefsOrder,
         ServerRequestInterface $request) {
-        
+
         $order = Requests::getArray($request, 'order');
         //set als preference
         $pref = implode(',', $order);

@@ -7,9 +7,9 @@ use Vesta\Model\GenericViewElement;
 interface GovIdEditControlsInterface {
 
   public function govIdEditControlSelectScriptSnippet(): string;
-          
+
   /**
-   * 
+   *
    * @param string|null $govId
    * @param string $id
    * @param string $name
@@ -20,17 +20,17 @@ interface GovIdEditControlsInterface {
    * @return GenericViewElement
    */
   public function govIdEditControl(
-          ?string $govId, 
-          string $id, 
-          string $name, 
+          ?string $govId,
+          string $id,
+          string $name,
           string $placeName,
-          ?string $placeNameSelector,          
+          ?string $placeNameSelector,
           bool $forModal,
           bool $withLabel): GenericViewElement;
-  
+
   public function govTypeIdEditControl(
-          ?string $govTypeId, 
-          string $id, 
+          ?string $govTypeId,
+          string $id,
           string $name): GenericViewElement;
 
 }

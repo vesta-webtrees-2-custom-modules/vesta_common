@@ -13,7 +13,7 @@ use Vesta\Model\PlaceStructure;
  * base impl of PrintFunctionsPlaceInterface
  */
 trait EmptyPrintFunctionsPlace {
-  
+
   public function plac2html(PlaceStructure $ps): ?GenericViewElement {
     return null;
   }
@@ -25,7 +25,7 @@ trait EmptyPrintFunctionsPlace {
   public function map2html(MapCoordinates $map): ?GenericViewElement {
     return null;
   }
-  
+
   public function loc2linkIcon(LocReference $loc): ?string {
     return null;
   }

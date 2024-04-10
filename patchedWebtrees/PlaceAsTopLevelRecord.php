@@ -10,27 +10,27 @@ use Fisharebest\Webtrees\Tree;
 use Vesta\Model\PlaceStructure;
 
 class PlaceAsTopLevelRecord extends GedcomRecord {
-    
+
     protected Place $place;
-    
+
     public function __construct(
-        string $place_name, 
+        string $place_name,
         Tree $tree) {
-        
+
         parent::__construct("", "0 @@ _LOC\n1 NAME " . $place_name, null, $tree);
         $this->place = new Place($place_name, $tree);
     }
-    
+
     public function getFallBackName(): string {
         return $this->place->gedcomName();
     }
-    
-    public function url(): string {        
+
+    public function url(): string {
         return $this->place->url();
     }
-    
+
     public function placeStructure(): ?PlaceStructure {
         return PlaceStructure::fromPlace($this->place);
     }
-        
+
 }

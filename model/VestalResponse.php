@@ -27,7 +27,7 @@ class VestalResponse implements JsonSerializable {
     }
 
     /**
-     * 
+     *
      * @return string html including tag to replace all tags with classAttr
      */
     public function html(): string {

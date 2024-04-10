@@ -102,11 +102,11 @@ class CommonI18N {
     }
 
     public static function factDataProvidersDescription(): string {
-        return 
+        return
         /* I18N: Module Configuration */I18N::translate('Modules listed here may provide additional data for facts and events (displayed in the configured order).') . ' ' .
         /* I18N: Module Configuration */I18N::translate('These modules may also provide additional facts and events, which are displayed sorted by date and type.');
     }
-    
+
     //////////////////////////////////////////////////////////////////////////////
 
     public static function readme(): string {
@@ -152,7 +152,7 @@ class CommonI18N {
     public static function vestaSymbolInClippingsCartTitle(): string {
         return /* I18N: Module Configuration */I18N::translate('Include the %1$s symbol in the clippings cart menu entry title', CommonI18N::getVestaSymbol());
     }
-    
+
     public static function vestaSymbolInBlockTitle(): string {
         return /* I18N: Module Configuration */I18N::translate('Include the %1$s symbol in the block title', CommonI18N::getVestaSymbol());
     }
@@ -160,29 +160,29 @@ class CommonI18N {
     public static function vestaSymbolInTitle2(): string {
         return /* I18N: Module Configuration */I18N::translate('Deselect in order to have the title appear exactly as the original title.');
     }
-    
+
     //////////////////////////////////////////////////////////////////////////////
 
     public static function noopModuleMin(string $version): string {
-        return 
+        return
             /* I18N: Module Configuration */I18N::translate('This version of the module is incompatible with your current webtrees version.') . ' ' .
             /* I18N: Module Configuration */I18N::translate('Webtrees version must be %1$s or higher.', $version) . ' ' .
             /* I18N: Module Configuration */I18N::translate('All functionality of the module is therefore disabled.');
     }
-    
+
     public static function noopModuleMax(string $version): string {
-        return 
+        return
             /* I18N: Module Configuration */I18N::translate('This version of the module is incompatible with your current webtrees version.') . ' ' .
             /* I18N: Module Configuration */I18N::translate('Only webtrees versions before %1$s are supported.', $version) . ' ' .
             /* I18N: Module Configuration */I18N::translate('All functionality of the module is therefore disabled.') . ' ' .
             /* I18N: Module Configuration */I18N::translate('To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible).');
     }
-    
+
     public static function noopModuleMessage(string $title): string {
-        return 
+        return
             I18N::translate('All functionality of module \'%1$s\' is disabled because the module version is incompatible with the webtrees version.', $title);
     }
-    
+
     //////////////////////////////////////////////////////////////////////////////
 
     public static function restrictIndi(): string {
@@ -192,11 +192,11 @@ class CommonI18N {
     public static function restrictFam(): string {
         return /* I18N: Module Configuration */I18N::translate('Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary.');
     }
- 
+
     public static function restrictPlaceHistory(): string {
         return /* I18N: Module Configuration */I18N::translate('Restrict facts and events in the place history to this list of GEDCOM facts and events.');
     }
-    
+
     public static function bothEmpty(): string {
         return /* I18N: Module Configuration */I18N::translate('In particular if both lists are empty, no additional facts and events of this kind will be shown.');
     }
@@ -209,7 +209,7 @@ class CommonI18N {
     public static function placeHistory(): string {
         return I18N::translate('Place history');
     }
-    
+
     public static function noRelationshipFound(): string {
         //earlier webtrees versions had this string
         return I18N::translate('No relationship found');

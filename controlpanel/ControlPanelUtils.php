@@ -26,7 +26,7 @@ class ControlPanelUtils {
     private $module;
 
     /**
-     * 
+     *
      * @param ModuleInterface $module
      */
     public function __construct(ModuleInterface $module) {
@@ -34,7 +34,7 @@ class ControlPanelUtils {
     }
 
     /**
-     * 
+     *
      * @return void
      */
     public function printPrefs(ControlPanelPreferences $prefs, $module) {
@@ -65,7 +65,7 @@ class ControlPanelUtils {
     }
 
     /**
-     * 
+     *
      * @return void
      */
     public function printSection(ControlPanelSection $section) {
@@ -86,7 +86,7 @@ class ControlPanelUtils {
     }
 
     /**
-     * 
+     *
      * @return void
      */
     public function printSubsection(ControlPanelSubsection $subsection) {
@@ -225,7 +225,7 @@ class ControlPanelUtils {
     }
 
     public function printControlPanelFactRestriction(ControlPanelFactRestriction $element) {
-        //why escape only here?	
+        //why escape only here?
         $value = e($this->module->getPreference($element->getSettingKey(), $element->getSettingDefaultValue()));
 
         echo view('components/select', [
@@ -292,7 +292,7 @@ class ControlPanelUtils {
     }
 
     /**
-     * 
+     *
      * @return void
      */
     public function savePostData(ServerRequestInterface $request, ControlPanelPreferences $prefs) {

@@ -19,7 +19,7 @@ class MoreI18N {
     public static function xlateContext(string $context, string $message, ...$args): string {
         return I18N::translateContext($context, $message, ...$args);
     }
-    
+
     //functionally same as I18N::plural,
     //different name prevents gettext from picking this up
     //(intention: use where already expected to be translated via main webtrees)

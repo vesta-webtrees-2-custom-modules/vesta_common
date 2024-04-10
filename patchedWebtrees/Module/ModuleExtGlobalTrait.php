@@ -29,8 +29,8 @@ trait ModuleExtGlobalTrait
     public function bodyContentOnAdminPage(): string
     {
         return '';
-    } 
-    
+    }
+
     /**
      * Raw content, to be added at the end of the <head> element.
      * Typically, this will be <link> and <meta> elements.
@@ -41,7 +41,7 @@ trait ModuleExtGlobalTrait
     {
         return '';
     }
-    
+
     /**
      * Raw content, to be added at the end of the <head> element.
      * Typically, this will be <link> and <meta> elements.
@@ -51,5 +51,5 @@ trait ModuleExtGlobalTrait
     public function headContentOnAdminPage(): string
     {
         return '';
-    }  
+    }
 }

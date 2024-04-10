@@ -40,7 +40,7 @@ abstract class AbstractModule implements ModuleInterface {
      * Called for all *enabled* modules.
      */
     public function boot(): void {
-        
+
     }
 
     /**

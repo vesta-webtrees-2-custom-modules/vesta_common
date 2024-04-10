@@ -82,7 +82,7 @@ trait VestaModuleTrait {
         }
         return $prefix . $mainBlockTitle;
     }
-    
+
     public function title(): string {
         $prefix = '';
         $vesta_show = true/* boolval($this->getPreference('VESTA', '1')) */;
@@ -194,20 +194,20 @@ trait VestaModuleTrait {
 
     /**
      * OverrideHook
-     * 
+     *
      * echoes html
      */
     protected function editConfigBeforeFaq() {
-        
+
     }
 
     /**
      * OverrideHook
-     * 
+     *
      * echoes html
      */
     protected function editConfigAfterFaq() {
-        
+
     }
 
     /**
@@ -239,7 +239,7 @@ trait VestaModuleTrait {
 
             //when a module is first installed, we may not be able to setPreference at this point
             ////(if this is called e.g. from SetName())
-            //because of foreign key constraints: 
+            //because of foreign key constraints:
             //the module may not have been inserted in the 'module' table at this point!
             //cf. ModuleService.all()
             //
@@ -272,7 +272,7 @@ trait VestaModuleTrait {
      * OverrideHook
      */
     protected function onBoot(): void {
-        
+
     }
 
     ////////////////////////////////////////////////////////////////////////////////

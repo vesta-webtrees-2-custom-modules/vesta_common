@@ -9,13 +9,13 @@ use Illuminate\Support\Collection;
 interface ModuleMetaInterface {
 
     public function minRequiredWebtreesVersion(): string;
-    
+
     public function minUnsupportedWebtreesVersion(): string;
-    
+
     public function customModuleMetaDatasJson(): string;
 
     /**
-     * 
+     *
      * @return Collection<ModuleMetaData>
      */
     public function customModuleMetaDatas(): Collection;
@@ -23,13 +23,13 @@ interface ModuleMetaInterface {
     public function customModuleLatestMetaDatasJsonUrl(): string;
 
     /**
-     * 
+     *
      * @return Collection<ModuleMetaData>
      */
     public function customModuleLatestMetaDatas(): Collection;
 
     /**
-     * 
+     *
      * @param string|null $targetWebtreesVersion if null, return metadata about currently installed version
      * @return ModuleMetaData|null
      */

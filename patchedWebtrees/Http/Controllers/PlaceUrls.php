@@ -43,7 +43,7 @@ class PlaceUrls {
     }
 
     /**
-     * 
+     *
      * @return Collection<PlaceHierarchyLinks>
      */
     public function links(Place $place): Collection {

@@ -36,7 +36,7 @@ class VestaAdminController {
         bool $specific = false): ResponseInterface {
 
         $view = VestaUtils::vestaViewsNamespace() . '::admin/vesta_components';
-      
+
         //cf AbstractModuleComponentPage
         $access_summary = $modules
             ->mapWithKeys(function (ModuleInterface $module) use ($interface): array {
@@ -54,7 +54,7 @@ class VestaAdminController {
                 return [$module->name() => $access_levels];
             })
             ->all();
-            
+
         $breadcrumbs = [];
         $breadcrumbs[route(ControlPanel::class)] = MoreI18N::xlate('Control panel');
         $breadcrumbs[route(ModulesAllPage::class)] = MoreI18N::xlate('Modules');
@@ -62,7 +62,7 @@ class VestaAdminController {
             $breadcrumbs[$this->module->getConfigLink()] = $this->module->title();
         }
         $breadcrumbs[] = $title;
-        
+
         //assumes the namespace has been registered!
         return $this->viewResponse($view, [
                 'description' => $description,
@@ -73,7 +73,7 @@ class VestaAdminController {
                 'uses_access' => $uses_access,
                 'uses_sorting' => $uses_sorting,
                 'access_summary' => $access_summary,
-            
+
                 'uses_enabled' => !$specific,
                 'breadcrumbs' => $breadcrumbs,
                 'cancelRoute' => route('module', [

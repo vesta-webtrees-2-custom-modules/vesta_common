@@ -24,7 +24,7 @@ class ModuleMetaData {
     }
 
     /**
-     * 
+     *
      * @return string changelog wrt previous version, or cumulative changelog from currently installed version to target version
      */
     public function changelog(): array {

@@ -10,7 +10,7 @@ interface ControlPanelElement {
     public function getDescription();
 
     /**
-     * 
+     *
      * @return string
      */
     public function getSettingKey();

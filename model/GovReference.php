@@ -21,7 +21,7 @@ class GovReference {
     }
 
     /**
-     * 
+     *
      * @param string $id _GOV id
      * @param Trace $trace
      * @param int $level

@@ -20,24 +20,24 @@ class ModuleMetaInterfaceUtils {
                 ->filter(function (ModuleInterface $module) use ($targetWebtreesVersion, $updateable): bool {
                     $currentMeta = $module->customModuleMetaData();
                     //cannot use string comparator, we need alphanumeric comparator within the version parts,
-                    
-                    $isInRange = 
-                        (($currentMeta !== null) && 
-                        (version_compare($currentMeta->minRequiredWebtreesVersion(),$targetWebtreesVersion) < 1) && 
+
+                    $isInRange =
+                        (($currentMeta !== null) &&
+                        (version_compare($currentMeta->minRequiredWebtreesVersion(),$targetWebtreesVersion) < 1) &&
                         (version_compare($targetWebtreesVersion,$currentMeta->minUnsupportedWebtreesVersion()) < 0));
-                        //($currentMeta->minRequiredWebtreesVersion() <= $targetWebtreesVersion) && 
+                        //($currentMeta->minRequiredWebtreesVersion() <= $targetWebtreesVersion) &&
                         //($targetWebtreesVersion < $currentMeta->minUnsupportedWebtreesVersion()));
 
                     if (!$isInRange) {
                         //is is updateable?
                         $targetMeta = $module->customModuleMetaData($targetWebtreesVersion);
-                        $isUpdateable = 
-                            (($targetMeta !== null) && 
-                            (version_compare($targetMeta->minRequiredWebtreesVersion(), $targetWebtreesVersion) < 1) && 
+                        $isUpdateable =
+                            (($targetMeta !== null) &&
+                            (version_compare($targetMeta->minRequiredWebtreesVersion(), $targetWebtreesVersion) < 1) &&
                             (version_compare($targetWebtreesVersion, $targetMeta->minUnsupportedWebtreesVersion()) < 0));
-                            //($targetMeta->minRequiredWebtreesVersion() <= $targetWebtreesVersion) && 
+                            //($targetMeta->minRequiredWebtreesVersion() <= $targetWebtreesVersion) &&
                             //($targetWebtreesVersion < $targetMeta->minUnsupportedWebtreesVersion()));
-                        
+
                         return ($isUpdateable === $updateable);
                     }
 

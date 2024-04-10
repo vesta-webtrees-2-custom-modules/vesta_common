@@ -9,7 +9,7 @@ use Vesta\Model\GenericViewElement;
 
 
 interface AssociateFactUtils {
-    
+
     public function gveLabelForAsso(
         ModuleInterface $module,
         string $label,

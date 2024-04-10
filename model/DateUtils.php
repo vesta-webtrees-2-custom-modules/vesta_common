@@ -137,10 +137,10 @@ class DateUtils {
         }
     }
 
-    //[RC] added 
+    //[RC] added
 
     /**
-     * 
+     *
      * @param CalendarDate $date
      * @param int $offset
      * @return CalendarDate

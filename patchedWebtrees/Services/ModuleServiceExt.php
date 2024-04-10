@@ -14,11 +14,11 @@ use function app;
 
 //cf AbstractModuleSpecificComponentAction
 class ModuleServiceExt
-{        
+{
     /**
      * Modules which (a) provide a specific function and (b) we have permission to see
      * in a specific context.
-     * 
+     *
      * @param string        $interface
      * @param string        $interfaceForAccessLevel
      * @param Tree          $tree
@@ -27,9 +27,9 @@ class ModuleServiceExt
      * @return Collection<string,ModuleInterface>
      */
     public static function findBySpecificComponent(
-        string $interface, 
+        string $interface,
         string $interfaceForAccessLevel,
-        Tree $tree, 
+        Tree $tree,
         UserInterface $user): Collection
     {
         return app(ModuleService::class)->findByInterface($interface, false, true)

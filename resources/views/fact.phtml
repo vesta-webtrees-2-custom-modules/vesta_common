@@ -59,7 +59,7 @@ $additionalStyles = FunctionsFact::additionalStyles($module, $record, $fact);
 if (sizeof($additionalStyles) === 0) {
     $styles = array_merge($styles, $ownAdditionalStyles);
 } else {
-   $styles = array_merge($styles, $additionalStyles); 
+   $styles = array_merge($styles, $additionalStyles);
 }
 
 //[RC] PATCHED change style in order to keep separate from original module
@@ -94,50 +94,50 @@ if ($tag === 'MARR') {
 ?>
 <tr class="<?= implode(' ', $styles) ?>">
     <th scope="row">
-            
+
         <?php
             //[RC] added additional edit controls, even if fact itself is not editable
             $additionalControls = FunctionsFact::gveAdditionalEditControls($module, $fact);
             $main = $additionalControls->getMain(); //echoed further down
             $script = $additionalControls->getScript();
-            
+
             if ($script !== '') {
                 View::push('javascript');
                 echo $script;
                 View::endpush();
-            }            
+            }
         ?>
-        
+
         <?php
         //[RC] adjusted: asso gets special extended label
         //this could be (partially) in main webtrees
-        
+
         //check: anything else than Individual actually possible here?
         if (($fact->id() === 'asso') && ($record instanceof Individual)) {
             $labelForAsso = $associateFactUtils->gveLabelForAsso($module, $label, $fact, $record);
             $label = $labelForAsso->getMain(); //echoed further down
             $script = $labelForAsso->getScript();
-            
+
             if ($script !== '') {
                 View::push('javascript');
                 echo $script;
                 View::endpush();
             }
         }
-        
+
         ?>
         <div class="wt-fact-label"><?= $label?></div>
-            
+
         <?php
             //[RC] extended,
             //and sub view 'fact-edit-links' integrated
-        
+
             //[RC] meh - why not just use a non-editable Fact subclass for asso/histo? (see VirtualFact)
             //rather hacky to have the special checks here!
             $originalCheck = ($id !== 'histo' && $id !== 'asso' && $fact->canEdit() && !in_array($tag, ['HUSB', 'WIFE', 'CHIL', 'FAMC', 'FAMS'], true));
-            
+
             $adjustedCheck = ($id !== 'histo' && (($id !== 'asso' && $fact->canEdit()) || ($main != '')) && !in_array($tag, ['HUSB', 'WIFE', 'CHIL', 'FAMC', 'FAMS'], true));
-        ?>  
+        ?>
         <?php if ($adjustedCheck) : ?>
             <?php
                /* give other custom modules a chance to add links here */
@@ -152,7 +152,7 @@ if ($tag === 'MARR') {
                 <div class="pt-2 wt-fact-edit-links">
                     <?= $main ?>
                 </div>
-            <?php endif ?>            
+            <?php endif ?>
         <?php endif ?>
 
         <?php if ($tree->getPreference('SHOW_FACT_ICONS')) : ?>
@@ -184,23 +184,23 @@ if ($tag === 'MARR') {
                             <a href="<?= e($parent->url()) ?>"><?= I18N::translate('View this family') ?></a>
                         <?php elseif ($parent instanceof Individual) : ?>
                             <a href="<?= e($parent->url()) ?>"><?= $parent->fullName() ?></a>
-                            
+
                             <?php
-                                //[RC] extended for place history 
-                                
+                                //[RC] extended for place history
+
                             if (sizeof($predecessors) > 0) {
                                 $relToPredecessor = FunctionsFactAssociates::getHtmlAndPushScript(
-                                    $module, 
-                                    $fact, 
+                                    $module,
+                                    $fact,
                                     $parent, //!
                                     $parent,
                                     $predecessors,
                                     $relToPredecessorSuffix,
                                     []);
-                                
+
                                 echo $relToPredecessor;
                             }
-                            
+
                             ?>
                         <?php endif ?>
                     </div>
@@ -230,19 +230,19 @@ if ($tag === 'MARR') {
                 <?php endif ?>
 
                 <?= view('fact-date', ['cal_link' => 'true', 'fact' => $fact, 'record' => $record, 'time' => true]) ?>
-                
+
                 <div class="wt-fact-place">
                     <?= view(VestaUtils::vestaViewsNamespace() . '::fact-place-actual', [
-                        'ps' => PlaceStructure::fromFact($fact), 
+                        'ps' => PlaceStructure::fromFact($fact),
                         'module' => $module,
                         'useVestals' => $useVestals,
                         'hideCoordinates' => $hideCoordinates]) ?>
-                    
+
                     <?php
                         //[RC] why are the following tags within wt-fact-place? they have nothing to do with PLAC?
                         //anyway: no changes wrt original view
                     ?>
-                    
+
                     <?= view(VestaUtils::vestaViewsNamespace() . '::fact-other', ['fact' => $fact, 'record' => $record]) ?>
                 </div>
             </div>
@@ -257,12 +257,12 @@ if ($tag === 'MARR') {
             </div>
 
             <?php if ($id !== 'asso') : ?>
-            
+
                 <?php
                 //[RC] adjusted
                 ?>
                 <?= view(VestaUtils::vestaViewsNamespace() . '::fact-associates', [
-                    'fact' => $fact, 
+                    'fact' => $fact,
                     'module' => $module]) ?>
             <?php endif ?>
 

@@ -11,7 +11,7 @@ use Vesta\Model\PlaceStructure;
 
 /**
  * Interface for modules which intend to hook into 'Facts and events' tab
- * 
+ *
  * TODO should be generalized, also used for facts displayed elsewhere (family page, place history)
  */
 interface IndividualFactsTabExtenderInterface {
@@ -24,10 +24,10 @@ interface IndividualFactsTabExtenderInterface {
 
     /**
      * used for family-page and place-history as well!
-     * 
+     *
      * if ajax-modal-vesta placeholder is required, return the respective initializer javascript snippet here (webtrees 2.0: for select2, webtrees 2.1: for tom-select)!
      * the modal placeholder itself is added by the vesta_personal_facts module itself if required.
-     * 
+     *
      * @return string|null
      */
     public function hFactsTabRequiresModalVesta(
@@ -35,7 +35,7 @@ interface IndividualFactsTabExtenderInterface {
 
     /**
      * used for family-page and place-history as well!
-     * 
+     *
      * @param GedcomRecord $record
      * @return array (array of Fact) additional facts (e.g. further historical facts, research suggestions or other 'virtual' facts)
      */
@@ -44,11 +44,11 @@ interface IndividualFactsTabExtenderInterface {
 
     /**
      * used for family-page and place-history as well!
-     * 
+     *
      * css classes for styling of facts via fact id (intended for additional facts)
-     * (TODO: should we transport these together with additionalFacts? 
+     * (TODO: should we transport these together with additionalFacts?
      * We have to sort facts anyway, so we wouldn't gain that much)
-     *  
+     *
      * @return array (value: css class)
      */
     public function hFactsTabGetStyleadds(
@@ -57,7 +57,7 @@ interface IndividualFactsTabExtenderInterface {
 
     /**
      * used for family-page and place-history as well!
-     * 
+     *
      * @param GedcomRecord $record
      * @return GenericViewElement with html to display before the entire tab, and script
      */
@@ -66,7 +66,7 @@ interface IndividualFactsTabExtenderInterface {
 
     /**
      * used for family-page and place-history as well!
-     * 
+     *
      * @param GedcomRecord $record
      * @return GenericViewElement with html to display after the entire tab, and script
      */
@@ -76,7 +76,7 @@ interface IndividualFactsTabExtenderInterface {
 
     /**
      * used for family-page and place-history as well!
-     * 
+     *
      * @param GedcomRecord $record
      * @return GenericViewElement with html to display in the description box, and script
      */
@@ -85,7 +85,7 @@ interface IndividualFactsTabExtenderInterface {
 
     /**
      * specifically for facts tab
-     * 
+     *
      * @param Individual $person
      * @return GenericViewElement with html to display after the description box, and script
      */
@@ -102,8 +102,8 @@ interface IndividualFactsTabExtenderInterface {
         PlaceStructure $place): ?string;
 
     /**
-     * first hook subscriber to return non-empty or null wins! 
-     * 
+     * first hook subscriber to return non-empty or null wins!
+     *
      * @param Fact $event
      * @param Individual $person
      * @param Individual $associate
@@ -111,7 +111,7 @@ interface IndividualFactsTabExtenderInterface {
      * @param string $relationship_name may be used or replaced with soething more specific
      * @param string $relationship_suffix decorator, should be kept unless entire output is hidden
      * @param boolean $inverse indicates that relationship will be displayed for 'inverse' ASSO rel
-     * 
+     *
      * @return GenericViewElement|null html or null (indicating nothing should be displayed, not even the default fallback)
      */
     public function hFactsTabGetOutputForAssoRel(
@@ -125,7 +125,7 @@ interface IndividualFactsTabExtenderInterface {
 
     /**
      * called even if fact itself isn't editable!
-     * 
+     *
      * @param Fact $event
      * @return GenericViewElement
      */

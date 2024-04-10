@@ -18,7 +18,7 @@ use Fisharebest\Webtrees\View;
  * @var Collection<int,Tree>               $trees
  * @var bool                               $uses_access
  * @var bool                               $uses_sorting
- * 
+ *
  * @var bool                               $uses_enabled
  * @var array                              breadcrumbs
  * @var array                              cancelRoute
@@ -38,7 +38,7 @@ use Fisharebest\Webtrees\View;
                 <th><?= MoreI18N::xlate('Module') ?><br/>&nbsp;</th>
                 <?php if ($uses_enabled) : ?>
                     <th class="text-center"><?= MoreI18N::xlate('Enabled') ?><br/><?= I18N::translate('(entire module)') ?></th>
-                <?php endif ?>                
+                <?php endif ?>
                 <?php if ($uses_access) : ?>
                     <th colspan="2" class="text-center"><?= MoreI18N::xlate('Access level') ?><br/><?= I18N::translate('(specific functionality)') ?></th>
                 <?php endif ?>
@@ -72,7 +72,7 @@ use Fisharebest\Webtrees\View;
                             </a>
                         <?php endif ?>
                     </th>
-                    
+
                     <?php if ($uses_enabled) : ?>
                         <td class="text-center">
                             <label class="d-block">
@@ -83,7 +83,7 @@ use Fisharebest\Webtrees\View;
                             </label>
                         </td>
                     <?php endif ?>
-                        
+
                     <?php if ($uses_access) : ?>
                         <td>
                             <ul class="list-unstyled">

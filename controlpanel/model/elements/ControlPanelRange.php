@@ -36,7 +36,7 @@ class ControlPanelRange implements ControlPanelElement {
     }
 
     /**
-     * 
+     *
      * @param string $label
      * @param string|null $description
      * @param int $min

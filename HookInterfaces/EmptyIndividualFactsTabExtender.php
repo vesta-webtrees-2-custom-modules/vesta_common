@@ -39,32 +39,32 @@ trait EmptyIndividualFactsTabExtender {
     public function hFactsTabGetStyleadds(
         GedcomRecord $record,
         Fact $fact): array {
-        
+
         return array();
     }
 
     public function hFactsTabGetOutputBeforeTab(
         GedcomRecord $record): GenericViewElement {
-        
+
         return new GenericViewElement('', '');
     }
 
     public function hFactsTabGetOutputAfterTab(
         GedcomRecord $record,
         bool $ajax): GenericViewElement {
-        
+
         return new GenericViewElement('', '');
     }
 
     public function hFactsTabGetOutputInDBox(
         GedcomRecord $record): GenericViewElement {
-        
+
         return new GenericViewElement('', '');
     }
 
     public function hFactsTabGetOutputAfterDBox(
         Individual $person): GenericViewElement {
-        
+
         return new GenericViewElement('', '');
     }
 

@@ -14,14 +14,14 @@ use function redirect;
 use function route;
 
 class RelativesTabExtenderProvidersAction extends AbstractModuleComponentAction {
-  
+
   protected $module;
-  
+
   public function __construct($module) {
     parent::__construct(app(ModuleService::class), app(TreeService::class));
     $this->module = $module;
   }
-  
+
   public function handle(ServerRequestInterface $request): ResponseInterface {
     $this->updateStatus(RelativesTabExtenderInterface::class, $request);
     RelativesTabExtenderUtils::updateOrder($this->module, $request);
@@ -33,5 +33,5 @@ class RelativesTabExtenderProvidersAction extends AbstractModuleComponentAction 
     ]);
 
     return redirect($url);
-  } 
+  }
 }

@@ -14,7 +14,7 @@ class PlaceHierarchyLinks {
     }
 
     /**
-     * 
+     *
      * @return Collection<PlaceHierarchyLink>
      */
     public function links(): Collection {

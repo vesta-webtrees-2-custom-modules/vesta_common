@@ -14,7 +14,7 @@ use Vesta\VestaUtils;
 use function view;
 
 class FunctionsVestals {
-    
+
     protected ModuleInterface $module;
     protected string $vestalsActionUrl;
     protected bool $useVestals;
@@ -30,15 +30,15 @@ class FunctionsVestals {
         $this->vestalsActionUrl = $vestalsActionUrl;
         $this->useVestals = $useVestals;
         $this->hideCoordinates = $hideCoordinates;
-    }  
+    }
 
     public function vestalsActionUrl(): string {
         return $this->vestalsActionUrl;
     }
-  
+
     public function vestalsForFactPlace(
         Fact $event): array {
-    
+
         $ps = PlaceStructure::fromFact($event);
         if ($ps === null) {
           return [];
@@ -46,10 +46,10 @@ class FunctionsVestals {
 
         return $this->vestalsForPlaceNameAndSubRecords($ps);
     }
-  
+
     public function vestalsForPlaceNameAndSubRecords(
         PlaceStructure $ps): array {
-    
+
         if (!$this->useVestals) {
           return [];
         }
@@ -64,14 +64,14 @@ class FunctionsVestals {
 
         return $requests;
     }
-  
+
     ////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////
-      
+
     public function vestalBeforePlace(
         PlaceStructure $ps): VestalResponse {
-    
+
         $factPlaceAdditions = IndividualFactsTabExtenderUtils::accessibleModules($this->module, $ps->getTree(), Auth::user())
                 ->map(function (IndividualFactsTabExtenderInterface $module) use ($ps) {
                   return $module->factPlaceAdditionsBeforePlace($ps);
@@ -79,7 +79,7 @@ class FunctionsVestals {
                 ->filter() //filter null values
                 ->toArray();
 
-        $html1 = '';        
+        $html1 = '';
         foreach ($factPlaceAdditions as $factPlaceAddition) {
           $html1 .= $factPlaceAddition;
         }
@@ -87,10 +87,10 @@ class FunctionsVestals {
         $key = md5(json_encode($ps));
         return new VestalResponse($key.'_vestalBeforePlace', $html1);
     }
-  
+
     public function vestalAfterMap(
         PlaceStructure $ps): VestalResponse {
-    
+
         $factPlaceAdditions = IndividualFactsTabExtenderUtils::accessibleModules($this->module, $ps->getTree(), Auth::user())
                 ->map(function (IndividualFactsTabExtenderInterface $module) use ($ps) {
                   return $module->factPlaceAdditionsAfterMap($ps);
@@ -98,18 +98,18 @@ class FunctionsVestals {
                 ->filter() //filter null values
                 ->toArray();
 
-        $html = '';        
+        $html = '';
         foreach ($factPlaceAdditions as $factPlaceAddition) {
           $html .= $factPlaceAddition;
         }
-   
+
         $key = md5(json_encode($ps));
         return new VestalResponse($key.'_vestalAfterMap', $html);
     }
-  
+
     public function vestalAfterNotes(
         PlaceStructure $ps): VestalResponse {
-    
+
         $factPlaceAdditions = IndividualFactsTabExtenderUtils::accessibleModules($this->module, $ps->getTree(), Auth::user())
                 ->map(function (IndividualFactsTabExtenderInterface $module) use ($ps) {
                   return $module->factPlaceAdditionsAfterNotes($ps);
@@ -117,7 +117,7 @@ class FunctionsVestals {
                 ->filter() //filter null values
                 ->toArray();
 
-        $html = '';        
+        $html = '';
         foreach ($factPlaceAdditions as $factPlaceAddition) {
           $html .= $factPlaceAddition;
         }
@@ -128,14 +128,14 @@ class FunctionsVestals {
 
     public function vestalMapCoordinates(
         PlaceStructure $ps): VestalResponse {
-        
+
         $key = md5(json_encode($ps));
-        
+
         $html = view(VestaUtils::vestaViewsNamespace() . '::fact-place-coordinates', [
-                        'ps' => $ps, 
+                        'ps' => $ps,
                         'module' => $this->module,
                         'hideCoordinates' => $this->hideCoordinates]);
-            
+
         return new VestalResponse($key.'_vestalMapCoordinates', $html);
     }
 }

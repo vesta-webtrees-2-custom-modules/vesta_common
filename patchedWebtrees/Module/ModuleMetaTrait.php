@@ -22,7 +22,7 @@ trait ModuleMetaTrait {
         $metaData = $this->customModuleMetaData();
         return ($metaData != null) ? $metaData->version() : "";
     }
-    
+
     public function minRequiredWebtreesVersion(): string {
         $metaData = $this->customModuleMetaData();
         return ($metaData != null) ? $metaData->minRequiredWebtreesVersion() : "";
@@ -32,7 +32,7 @@ trait ModuleMetaTrait {
         $metaData = $this->customModuleMetaData();
         return ($metaData != null) ? $metaData->minUnsupportedWebtreesVersion() : "";
     }
-    
+
     public function customModuleLatestVersion(): string {
         //we're usually not interested in the latest overall version,
         //but in the latest version compatible with the current webtrees version
@@ -53,7 +53,7 @@ trait ModuleMetaTrait {
     }
 
     /**
-     * 
+     *
      * @return Collection<ModuleMetaData>
      */
     public function customModuleMetaDatas(): Collection {
@@ -64,7 +64,7 @@ trait ModuleMetaTrait {
     //adapted from ModuleCustomTrait
 
     /**
-     * 
+     *
      * @return Collection<ModuleMetaData>
      */
     public function customModuleLatestMetaDatas(): Collection {
@@ -74,9 +74,9 @@ trait ModuleMetaTrait {
         }
 
         $cache = Registry::cache()->file();
-        
+
         //$this->name() may not be initialized at this point!
-        $key = get_called_class() . '-latest-meta-data'; 
+        $key = get_called_class() . '-latest-meta-data';
 
         return $cache->remember($key, function () {
                 try {
@@ -91,7 +91,7 @@ trait ModuleMetaTrait {
                         return $this->decodeJsonToMetaDatas($json);
                     }
                     error_log("error retrieving metadata: " . $response->getStatusCode());
-                    
+
                 } catch (ConnectException $ex) {
                     // Can't connect to the server?
                     error_log("error retrieving metadata: " . $ex);
@@ -99,14 +99,14 @@ trait ModuleMetaTrait {
                     // Can't connect to the server?
                     error_log("error retrieving metadata: " . $ex);
                 }
-                
+
                 return $this->customModuleMetaDatas();
             }, 3600); //ModuleCustomTrait has 1 day, we use 1 hour
     }
 
     public function customModuleMetaData(
         ?string $targetWebtreesVersion = null): ?ModuleMetaData {
-        
+
         $current = $this->customModuleMetaDatas()
             ->sort(static function (ModuleMetaData $x, ModuleMetaData $y): int {
                 //cannot use string comparator, we need alphanumeric comparator within the version parts,
@@ -121,7 +121,7 @@ trait ModuleMetaTrait {
             //unexpected!
             return null;
         }
-        
+
         if ($targetWebtreesVersion === null) {
             //check with data from server:
             //installed $current may not be up-to-date wrt actual range!
@@ -150,23 +150,23 @@ trait ModuleMetaTrait {
 
                     //everything out of range wrt target version is also irrelevant
                     //$isInRange = (
-                    //    ($x->minRequiredWebtreesVersion() <= $targetWebtreesVersion) && 
+                    //    ($x->minRequiredWebtreesVersion() <= $targetWebtreesVersion) &&
                     //    ($targetWebtreesVersion < $x->minUnsupportedWebtreesVersion()));
                     $isInRange = (
-                        (version_compare($x->minRequiredWebtreesVersion(), $targetWebtreesVersion) < 1) && 
+                        (version_compare($x->minRequiredWebtreesVersion(), $targetWebtreesVersion) < 1) &&
                         (version_compare($targetWebtreesVersion, $x->minUnsupportedWebtreesVersion()) < 0));
-                        
+
                     return $isInRange;
                 })
                 //highest version is the target metadata, but we have to create the cumulative changelog
-                //->last();            
+                //->last();
                 ->reduce(static function (?ModuleMetaData $carry, ModuleMetaData $item): ModuleMetaData {
                     return $item->prependChangelogFrom($carry);
                 }, null);
     }
 
     /**
-     * 
+     *
      * @param string $jsonArray
      * @return Collection<ModuleMetaData>
      */

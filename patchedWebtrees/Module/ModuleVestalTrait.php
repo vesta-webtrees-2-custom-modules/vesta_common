@@ -19,14 +19,14 @@ use function route;
  */
 trait ModuleVestalTrait {
 
-    public function useVestals(): bool {    
+    public function useVestals(): bool {
         return true;
     }
-    
-    public function hideCoordinates(): bool {    
+
+    public function hideCoordinates(): bool {
         return true;
     }
-    
+
     public function vestalsActionUrl(): string {
         $parameters = [
             'module' => $this->name(),
@@ -37,10 +37,10 @@ trait ModuleVestalTrait {
 
         return $url;
     }
-  
+
     public function postVestalsAction(
         ServerRequestInterface $request): ResponseInterface {
-        
+
         //request->getBody returns stream, must be converted to string if using strict types!
         $body = json_decode(''.$request->getBody());
 
@@ -66,14 +66,14 @@ trait ModuleVestalTrait {
                 error_log("unexpected method:".$method);
             }
         }
-    
+
         ob_start();
         //array_values required for sequential numeric indexes, otherwise we end up with json object
         echo json_encode(array_values($responses));
         return response(ob_get_clean());
     }
-    
-    public function functionsVestals(): FunctionsVestals {  
+
+    public function functionsVestals(): FunctionsVestals {
         return new FunctionsVestals(
                 $this,
                 $this->vestalsActionUrl(),
