@@ -24,7 +24,7 @@ interface PlaceWithinHierarchy {
 
     /**
      * Get the lower level places.
-     * 
+     *
      * @return array<PlaceWithinHierarchy>, keyed by id
      */
     public function getChildPlaces(): array;
@@ -67,7 +67,7 @@ interface PlaceWithinHierarchy {
     public function additionalLinksHtmlBeforeName(): string;
 
     /**
-     * 
+     *
      * @return Collection<PlaceHierarchyLinks>
      */
     public function links(): Collection;

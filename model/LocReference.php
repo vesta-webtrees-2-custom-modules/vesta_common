@@ -28,21 +28,21 @@ class LocReference {
     }
 
     /**
-     * 
+     *
      * @param string $xref _LOC identifier
      * @param string $tree
      * @param string $trace
      */
     public function __construct(
-        string $xref, 
-        Tree $tree, 
-        Trace $trace, 
+        string $xref,
+        Tree $tree,
+        Trace $trace,
         int $level = 0) {
-        
+
         if ($xref === '@VOID@') {
             throw new \Exception();
         }
-        
+
         $this->xref = $xref;
         $this->tree = $tree;
         $this->trace = $trace;

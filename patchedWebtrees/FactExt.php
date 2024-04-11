@@ -19,7 +19,7 @@ class FactExt {
      * using the compare type function
      * 3. Then merge the arrays
      * //[RC] adjustment to the original method: just merge in this order, no further adjustments per type!
-     * 
+     *
      *
      * @param Collection<int,Fact> $unsorted
      *
@@ -52,18 +52,18 @@ class FactExt {
         foreach ($dated as $fact) {
             $sorted[] = $fact;
         }
-        
+
         foreach ($nondated as $fact) {
             $sorted[] = $fact;
         }
 
         return new Collection($sorted);
     }
-    
+
     /**
      * Helper functions to sort facts
      * same as in Fact, but it's private there bah
-     * 
+     *
      * we have to adjust anyway for overlapping dates:
      * just sort strictly by start date
      *
@@ -74,7 +74,7 @@ class FactExt {
         return static function (Fact $a, Fact $b): int {
             if ($a->date()->isOK() && $b->date()->isOK()) {
                 // If both events have dates, compare by date
-                
+
                 //[RC] adjusted: Date::compare is not what we want for overlapping events
                 $ret = FactExt::compare($a->date(), $b->date());
 
@@ -95,7 +95,7 @@ class FactExt {
             return $a->sortOrder <=> $b->sortOrder;
         };
     }
-    
+
     //adapted from Date.php
     public static function compare(Date $a, Date $b): int
     {
@@ -128,7 +128,7 @@ class FactExt {
                 $bmax = $b->maximumJulianDay();
                 break;
         }
-        
+
         if ($amin < $bmin) {
             return -1;
         }
@@ -136,7 +136,7 @@ class FactExt {
         if ($amin > $bmin) {
             return 1;
         }
-        
+
         //if equal min: shorter first
         return ($amax <=> $bmax);
     }

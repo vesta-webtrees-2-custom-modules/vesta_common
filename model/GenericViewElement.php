@@ -12,7 +12,7 @@ class GenericViewElement {
     private $script;
 
     /**
-     * 
+     *
      * @return string html string
      */
     public function getMain(): string {
@@ -20,7 +20,7 @@ class GenericViewElement {
     }
 
     /**
-     * 
+     *
      * @return string html string (i.e. script tags must be included)
      */
     public function getScript(): string {
@@ -41,7 +41,7 @@ class GenericViewElement {
     }
 
     /**
-     * 
+     *
      * @param GenericViewElement[] $elements
      * @return GenericViewElement
      */
@@ -56,31 +56,31 @@ class GenericViewElement {
     }
 
     public static function fromView(
-            string $name, 
+            string $name,
             array $data = []): GenericViewElement {
-      
+
         //preserve stacks
         $styles = View::stack('styles');
         $javascript = View::stack('javascript');
-        
+
         //render the view
         $gveMain = view($name, $data);
         $gveStyles = View::stack('styles');
         $gveScript = View::stack('javascript');
-        
+
         if ($gveStyles !== '') {
             throw new Exception("styles not supported in GenericViewElement!");
         }
-        
+
         //restore stacks
         View::push('styles');
         echo $styles;
         View::endpush();
-        
+
         View::push('javascript');
         echo $javascript;
         View::endpush();
-        
-        return new GenericViewElement($gveMain, $gveScript); 
+
+        return new GenericViewElement($gveMain, $gveScript);
     }
 }

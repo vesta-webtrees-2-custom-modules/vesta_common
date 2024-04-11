@@ -10,7 +10,7 @@ class ControlPanelSubsection {
     private $header;
 
     /**
-     * 
+     *
      * @return string
      */
     public function getLabel() {

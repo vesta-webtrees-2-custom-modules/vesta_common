@@ -79,7 +79,7 @@ ModuleCustomInterface, ModuleMetaInterface {
 
         //allow custom modules to add head/body content to admin pages as well
         View::registerCustomView('::layouts/administration', $this->name() . '::layouts/administration');
-        
+
         View::registerCustomView('::components/select-with-optgroup', $this->name() . '::components/select-with-optgroup');
     }
 

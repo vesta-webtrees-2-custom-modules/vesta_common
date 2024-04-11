@@ -21,7 +21,7 @@ use function app;
 use function view;
 
 class FunctionsFactAssociates {
-  
+
     public static function getOutputForRelationship(
         ModuleInterface $module,
         Fact $event,
@@ -59,7 +59,7 @@ class FunctionsFactAssociates {
                     $relationship_name_suffix,
                     $inverse);
     }
-  
+
     protected static function getOutputForRelationshipFallback(
         Fact $event,
         Individual $person,
@@ -88,7 +88,7 @@ class FunctionsFactAssociates {
         $main = $relationship_name_prefix . $relationship_name . $relationship_name_suffix;
         return new GenericViewElement($main, '');
     }
-    
+
     public static function getHtmlAndPushScript(
         ModuleInterface $module,
         Fact $fact,
@@ -97,7 +97,7 @@ class FunctionsFactAssociates {
         /*mixed - php 8 only!*/ $associates,
         string $additionalSuffix,
         array $values): string {
-        
+
         foreach ($associates as $associate) {
             $relationship_name = app(RelationshipService::class)->getCloseRelationshipName($associate, $person);
             if ($relationship_name === '') {
@@ -116,15 +116,15 @@ class FunctionsFactAssociates {
 
             //[RC] adjusted
             $out = FunctionsFactAssociates::getOutputForRelationship(
-                $module, 
-                $fact, 
-                $person, 
-                $associate, 
-                ' — ', 
-                $relationship_name, 
-                $relationship_name_suffix . $additionalSuffix, 
+                $module,
+                $fact,
+                $person,
+                $associate,
+                ' — ',
+                $relationship_name,
+                $relationship_name_suffix . $additionalSuffix,
                 false);
-            
+
             if ($out != null) {
                 $values[] = $out->getMain();
                 $script = $out->getScript();
@@ -135,10 +135,10 @@ class FunctionsFactAssociates {
                 }
             }
         }
-        
+
         //[RC] adjusted
         $value = implode('', $values);
-        
+
         return $value;
     }
 }

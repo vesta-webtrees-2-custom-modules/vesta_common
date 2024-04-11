@@ -22,13 +22,13 @@ class IndividualFactsTabExtenderProvidersAction extends AbstractModuleSpecificCo
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface {
-        
+
         //just confusing to include this here
         //$this->updateStatus(IndividualFactsTabExtenderInterface::class, $request);
-        
+
         IndividualFactsTabExtenderUtils::updateOrder($this->module, $request);
         $this->updateSpecificAccessLevel(
-            IndividualFactsTabExtenderInterface::class, 
+            IndividualFactsTabExtenderInterface::class,
             IndividualFactsTabExtenderUtils::moduleSpecificComponentName($this->module),
             $request);
 

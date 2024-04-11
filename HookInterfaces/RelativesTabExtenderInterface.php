@@ -41,9 +41,9 @@ interface RelativesTabExtenderInterface {
    *
    * @param Individual $person
    * @return GenericViewElement with html to display after the description box, and script
-   * 
+   *
    * The table structure is basically for consistency with the facts and events tab.
-   * 
+   *
    */
   public function hRelativesTabGetOutputAfterDBox(Individual $person);
 
@@ -52,7 +52,7 @@ interface RelativesTabExtenderInterface {
    * @param Family $family
    * @param string $type
    * @return GenericViewElement with html to display after a family subheader.
-   * 
+   *
    */
   public function hRelativesTabGetOutputFamAfterSH(Family $family, $type);
 }

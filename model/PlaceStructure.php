@@ -20,7 +20,7 @@ use function GuzzleHttp\json_encode;
 /**
  * A GEDCOM level 2 place (PLAC) object (complete structure, may include custom tags)
  * plus event type and date
- *   
+ *
  */
 class PlaceStructure implements JsonSerializable {
 
@@ -271,7 +271,7 @@ class PlaceStructure implements JsonSerializable {
                 $tag,
                 ($event->id() === 'histo'),
                 $dateInterval->toGedcomString(2));
-        
+
         return $ps;
     }
 
@@ -284,7 +284,7 @@ class PlaceStructure implements JsonSerializable {
 
     /**
      *
-     * @return Place	 
+     * @return Place
      */
     public function getPlace() {
         return new Place($this->getGedcomName(), $this->tree);
@@ -292,7 +292,7 @@ class PlaceStructure implements JsonSerializable {
 
     /**
      * helper for those who are aware of this custom tag
-     * 
+     *
      * @return string|null
      */
     public function getLoc() {
@@ -305,7 +305,7 @@ class PlaceStructure implements JsonSerializable {
 
     /**
      * helper for those who are aware of this custom tag
-     * 
+     *
      * @return string|null
      */
     public function getGov() {
@@ -317,7 +317,7 @@ class PlaceStructure implements JsonSerializable {
     }
 
     public function getLati(): ?string {
-        
+
         //cf Fact->latitude()
         if (preg_match('/\n4 LATI (.+)/', $this->getGedcom(), $match)) {
             $gedcom_service = new GedcomService();
@@ -332,7 +332,7 @@ class PlaceStructure implements JsonSerializable {
     }
 
     public function getLong(): ?string {
-        
+
         //cf Fact->latitude()
         if (preg_match('/\n4 LONG (.+)/', $this->getGedcom(), $match)) {
             $gedcom_service = new GedcomService();
@@ -375,29 +375,29 @@ class PlaceStructure implements JsonSerializable {
             return $x->getLevel() <=> $y->getLevel();
         };
     }
-    
+
     //mainly for webtrees interfaces such as ModuleMapLinkInterface
     //note: MapLinkBing uses fact details to create a label
     //$label = strip_tags($fact->record()->fullName()) . ' — ' . $fact->label();
     public function asFact(): Fact {
-        
+
         //TODO could use actual parent if constructed via Fact,
-        //not considered to be important though        
+        //not considered to be important though
         //would be nicer for MapLinkBing though
-        
+
         $dummy = new PlaceAsTopLevelRecord(
-            $this->gedcomName, 
+            $this->gedcomName,
             $this->tree());
-        
+
         $label = MoreI18N::xlate('webtrees');
         if ($this->eventType !== null) {
             //TODO hacky, what about FAM events
             //$label = Registry::elementFactory()->make('INDI:'.$this->eventType)->label();
         }
-        
+
         return new Fact(
-            '1 EVEN'."\n".'2 TYPE '.$label."\n". $this->gedcom(), 
-            $dummy, 
+            '1 EVEN'."\n".'2 TYPE '.$label."\n". $this->gedcom(),
+            $dummy,
             'from PlaceStructure');
     }
 

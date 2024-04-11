@@ -18,7 +18,7 @@ use Vesta\VestaUtils;
 //original view largely refactored
 
 if ($useVestals) {
-    //add placeholders for Vestals      
+    //add placeholders for Vestals
     //TODO: cleanup: strictly we have to handle script here!
     $key = md5(json_encode($ps));
 }
@@ -80,7 +80,7 @@ if ($useVestals) {
         <span class = '<?= $key ?>_vestalMapCoordinates'></span>
     <?php else : ?>
         <?= view(VestaUtils::vestaViewsNamespace() . '::fact-place-coordinates', [
-                        'ps' => $ps, 
+                        'ps' => $ps,
                         'module' => $module,
                         'hideCoordinates' => $hideCoordinates]) ?>
     <?php endif ?>
@@ -112,11 +112,11 @@ if ($useVestals) {
                 <?= view('fact-gedcom-fields', ['gedcom' => $match[1], 'parent' => $ps->tag() . ':PLAC:NOTE', 'tree' => $ps->tree()]) ?>
             <?php endforeach ?>
         <?php endif ?>
-    <?php endif ?>    
+    <?php endif ?>
 
     <?php if ($useVestals) : ?>
         <span class = '<?= $key ?>_vestalAfterNotes'></span>
-    <?php else : ?>    
+    <?php else : ?>
 
         <?php
             //formatPlaceCustomFieldsAfterNotes
@@ -135,5 +135,3 @@ if ($useVestals) {
     <?php endif ?>
 
 <?php endif ?>
-
-

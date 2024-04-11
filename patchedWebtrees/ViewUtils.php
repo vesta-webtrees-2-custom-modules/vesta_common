@@ -8,7 +8,7 @@ class ViewUtils {
     //webtrees 1.x had FunctionsEdit::twoStateCheckbox
 
     /**
-     * 
+     *
      * @param string $name
      * @param boolean $value
      * @param string $label
@@ -23,7 +23,7 @@ class ViewUtils {
     }
 
     /**
-     * 
+     *
      * @param string $name
      * @param string[] $options
      * @param string $value

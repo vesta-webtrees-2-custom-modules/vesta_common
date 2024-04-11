@@ -95,22 +95,22 @@ foreach ($amatches as $amatch) {
                 $values[] = '<a href="' . $module->chartUrl($associate, ['xref2' => $person->xref()]) . '" rel="nofollow">' . $relationship_name . '</a>';
             }
         }
-        $value = implode(' — ', $values);        
+        $value = implode(' — ', $values);
          */
-        
+
         $value = FunctionsFactAssociates::getHtmlAndPushScript(
-            $module, 
-            $fact, 
+            $module,
+            $fact,
             $parent,
             $person,
             $associates,
             '',
             $values);
-        
+
         $label = '<span class="label">' . $label . '</span>';
         $value = '<span class="field" dir="auto">' . $value . '</span>';
         $asso  = MoreI18N::xlate('%1$s: %2$s', $label, $value);
-        
+
     } elseif (!$person && Auth::isEditor($fact->record()->tree())) {
         $label = '<span class="label">' . MoreI18N::xlate('Associate') . '</span>';
         $value = '<span class="error">' . e($amatch[2]) . '</span>';

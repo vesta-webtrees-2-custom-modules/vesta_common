@@ -26,7 +26,7 @@ class ControlPanelFactRestriction implements ControlPanelElement {
     }
 
     /**
-     * 
+     *
      * @param array $options
      * @param string|null $description
      * @param string $settingKey

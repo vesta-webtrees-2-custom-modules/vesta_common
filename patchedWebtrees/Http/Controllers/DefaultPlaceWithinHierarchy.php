@@ -168,9 +168,9 @@ class DefaultPlaceWithinHierarchy implements PlaceWithinHierarchy {
     public function links(): Collection {
         return $this->urls->links($this->actual);
     }
-    
+
     //adapted from PlaceRepository (2.0), method no longer exists in 2.1
-    //was used in original 
+    //was used in original
     /**
      * Query places.
      *

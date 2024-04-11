@@ -41,7 +41,7 @@ class ControlPanelTextbox implements ControlPanelElement {
     }
 
     /**
-     * 
+     *
      * @param string $label
      * @param string|null $description
      * @param string $settingKey

@@ -13,7 +13,7 @@ use Vesta\Model\DateUtils;
 /**
  * A date interval, convertible from/to gedcom DATE
  * (conversion loses inexactness information though, i.e. not strictly lossless)
- *   
+ *
  */
 class GedcomDateInterval implements JsonSerializable {
     /* @var $fromCalendarDate AbstractCalendarDate|null */
@@ -111,9 +111,9 @@ class GedcomDateInterval implements JsonSerializable {
         if (($from !== null) && ($to !== null) and ($to < $from)) {
             $to = null;
         }
-        
+
         $this->from = $from;
-        $this->to = $to;        
+        $this->to = $to;
         $this->fromIsInexact = ($from === null) ? true : $fromIsInexact;
         $this->toIsInexact = ($to === null) ? true : $toIsInexact;
     }
@@ -172,16 +172,16 @@ class GedcomDateInterval implements JsonSerializable {
     }
 
     /**
-     * 
+     *
      * @param type $date
      * @param type $ignorePartialRanges if BEF/AFT are mainly used to indicate 'shortly before'/'shortly after',
      * it's often more helpful not to create actual (open) intervals
      * @return GedcomDateInterval
      */
     public static function create(
-        string $date, 
+        string $date,
         $ignorePartialRanges = false): GedcomDateInterval {
-        
+
         //cf Date.php
         // Extract any explanatory text
         if (preg_match('/^(.*) ?[(](.*)[)]/', $date, $match)) {
@@ -225,12 +225,12 @@ class GedcomDateInterval implements JsonSerializable {
 
     /**
      * expand to single interval containing both original intervals (and any additional interval in between)
-     * 
+     *
      * @return GedcomDateInterval
      */
     public function expand(
         GedcomDateInterval $other) {
-        
+
         $from = $this->getFrom();
         $fromIsInexact = $this->getFromIsInexact();
         if ($from !== null) {
@@ -261,7 +261,7 @@ class GedcomDateInterval implements JsonSerializable {
     }
 
     /**
-     * 
+     *
      * @param GedcomDateInterval $other
      * @param bool $sameInexactDateDoesNotIntersect interpret combination of 'TO 2001' and 'FROM 2001' as non-intersecting (instead of handling them like '31.12.2001' and '1.1.2001'),
      * (unless at least one of the intervals has same FROM/TO, because in that case we cannot guess the user's actual intention)
@@ -314,7 +314,7 @@ class GedcomDateInterval implements JsonSerializable {
 
     public function maxUntil(
         GedcomDateInterval $other): ?GedcomDateInterval {
-        
+
         if ($other->getFrom() === null) {
             return null;
         }
@@ -336,13 +336,13 @@ class GedcomDateInterval implements JsonSerializable {
     }
 
     /**
-     * 
+     *
      * @param $other
      * @return part of this that is before $other
      */
     public function before(
         GedcomDateInterval $other): ?GedcomDateInterval {
-        
+
         $otherFrom = $other->getFrom();
         if ($otherFrom === null) {
             return null;
@@ -370,13 +370,13 @@ class GedcomDateInterval implements JsonSerializable {
     }
 
     /**
-     * 
+     *
      * @param $other
      * @return part of this that is after $other
      */
     public function after(
         GedcomDateInterval $other): ?GedcomDateInterval {
-        
+
         $otherTo = $other->getTo();
         if ($otherTo === null) {
             return null;
@@ -405,13 +405,13 @@ class GedcomDateInterval implements JsonSerializable {
 
     /**
      * @param $asFromTo if false, return as BET a AND B (if applicable)
-     * @return empty if (null, null), gedcom starting with newline otherwise 
+     * @return empty if (null, null), gedcom starting with newline otherwise
      * note that we lose the inexactness information here! This is assumed to be acceptable.
      */
     public function toGedcomString(
-        $level, 
+        $level,
         $asFromTo = false) {
-        
+
         if (($this->from === null) && ($this->to === null)) {
             return '';
         }
@@ -463,20 +463,20 @@ class GedcomDateInterval implements JsonSerializable {
     }
 
     /**
-     * 
-     * 
+     *
+     *
      * @param Collection $input assumed to be ordered wrt GedcomDateInterval field
      * @return Collection that has an entry for each point within $this interval, ordered by GedcomDateInterval field
      */
 
     /**
-     * example: 
+     * example:
      * input has [1-10],[3-20],[50-100],[300-400]
      * $this is [open-200]
-     * 
+     *
      * result:
      * [open-1],[1-10],[3-20],[21-49],[50-100],[101-200]
-     * 
+     *
      * @param Collection $input sorted by date
      * @param Closure $dateGetter arg: collection element type, return: GedcomDateInterval
      * @param Closure $elementCreator arg: GedcomDateInterval, return collection element type

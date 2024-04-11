@@ -57,7 +57,7 @@ class ControlPanelRadioButtons implements ControlPanelElement {
     }
 
     /**
-     * 
+     *
      * @param boolean $inline
      * @param ControlPanelRadioButton[] $values
      * @param string|null $description
@@ -65,12 +65,12 @@ class ControlPanelRadioButtons implements ControlPanelElement {
      * @param string $settingDefaultValue
      */
     public function __construct(
-        $inline, 
-        $values, 
-        $description, 
-        $settingKey, 
+        $inline,
+        $values,
+        $description,
+        $settingKey,
         $settingDefaultValue) {
-        
+
         $this->inline = $inline;
         $this->values = $values;
         $this->description = $description;
