@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-01-21 15:53+0100\n"
-"PO-Revision-Date: 2021-03-10 17:02+0000\n"
-"Last-Translator: Oğuz Ersen <oguzersen@protonmail.com>\n"
-"Language-Team: Turkish <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/tr/>\n"
+"PO-Revision-Date: 2024-04-28 19:07+0000\n"
+"Last-Translator: Semih <semihbrn10@gmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5.2-dev\n"
+"X-Generator: Weblate 5.5.1\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -69,26 +70,28 @@ msgstr "C: Kancalar aracılığıyla. Kancalar, modüllerin tüm bileşeni yenid
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
+"Modül sürümü webtrees sürümüyle uyumlu olmadığı için '%1$s' modülünün tüm "
+"işlevleri devre dışı bırakıldı."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:170 CommonI18N.php:177
 msgid "All functionality of the module is therefore disabled."
-msgstr ""
+msgstr "Bu nedenle modülün tüm işlevleri devre dışı bırakılır."
 
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
 msgid "Baptisms"
-msgstr ""
+msgstr "Vaftizler"
 
 #. I18N: Plural for Gedcom tag CHR
 #: model/PlaceHistory.php:60
 msgid "Christenings"
-msgstr ""
+msgstr "Vaftizler (Christening)"
 
 #. I18N: Plural for Gedcom tag CONF
 #: model/PlaceHistory.php:61
 msgid "Confirmations"
-msgstr ""
+msgstr "Onaylar"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:161
@@ -127,7 +130,7 @@ msgstr "Özellikle, her iki liste de boşsa, bu tür ek gerçekler ve olaylar g�
 #: CommonI18N.php:157
 #, php-format
 msgid "Include the %1$s symbol in the block title"
-msgstr ""
+msgstr "Blok başlığına %1$s sembolünü ekleyin"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:141
@@ -168,10 +171,14 @@ msgstr "Konum Veri Sağlayıcıları"
 #, php-format
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
+"Tüm etkin özel modüllerin yeni webtrees sürümü %1$s ile uyumlu olduğundan "
+"emin olun. Onları da yükseltmeniz gerekebilir."
 
 #: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr ""
+"Başka bir Vesta modülü etkinleştirilmişse bu modülü etkinleştirdiğinizden "
+"emin olun."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
@@ -195,17 +202,17 @@ msgstr "Taşı"
 
 #: resources/views/lists/place-history.phtml:156
 msgid "No events of these specific types have occurred at this place."
-msgstr ""
+msgstr "Bu yerde bu türden herhangi bir olay meydana gelmemiştir."
 
 #: CommonI18N.php:215
 msgid "No relationship found"
-msgstr ""
+msgstr "İlişki bulunamadı"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:176
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
-msgstr ""
+msgstr "Yalnızca %1$s'den önceki webtrees sürümleri desteklenir."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
@@ -215,16 +222,16 @@ msgstr "Seçenekler"
 #. I18N: Module Configuration
 #: CommonI18N.php:101
 msgid "Place History UI Element Providers"
-msgstr ""
+msgstr "Yer Geçmişi UI Ögesi Sağlayıcıları"
 
 #: CommonI18N.php:210
 msgid "Place history"
-msgstr ""
+msgstr "Yer geçmişi"
 
 #. I18N: Plural for Gedcom tag PROP
 #: model/PlaceHistory.php:65
 msgid "Possessions"
-msgstr ""
+msgstr "Eşyalar"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
@@ -259,7 +266,7 @@ msgstr "Beni oku"
 
 #: HelpTextsPlaceHistory.php:15
 msgid "Relationship to predecessor"
-msgstr ""
+msgstr "Selef ile ilişki"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
@@ -282,12 +289,14 @@ msgstr "'%1$s %2$s' modülünü gerektirir."
 #. I18N: Gedcom tag RESI
 #: model/PlaceHistory.php:64
 msgid "Residences"
-msgstr ""
+msgstr "Rezidanslar"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:197
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
+"Yer geçmişindeki olguları ve olayları bu GEDCOM olguları ve olayları "
+"listesiyle sınırlayın."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:193
@@ -308,30 +317,39 @@ msgstr "Webtrees'de konum veri yönetimine genel bakış için %1$s bölümüne 
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
 msgstr ""
+"Aşağıdaki özel modüllerin şu anda yüklü sürümleri yeni webtrees sürümü %1$s "
+"ile uyumlu olmayabilir ve henüz herhangi bir yükseltme mevcut değildir: %2$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:47
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
 msgstr ""
+"Aşağıdaki özel modüllerin şu anda yüklü sürümleri yeni webtrees sürümü %1$s "
+"ile uyumlu olmayabilir, ancak modüllerin yükseltmeleri mevcuttur: %2$s"
 
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
+"İlişki selefe, yani aynı türden bir önceki olguya ait bireye atıfta bulunur."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
 msgstr ""
+"Bu modüller ayrıca tarih ve türe göre sıralanmış olarak görüntülenen ek olgu "
+"ve olaylar da sağlayabilir."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:168 CommonI18N.php:175
 msgid "This version of the module is incompatible with your current webtrees version."
-msgstr ""
+msgstr "Modülün bu sürümü mevcut webtrees sürümünüzle uyumlu değildir."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:178
 msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
 msgstr ""
+"İşlevselliği geri yüklemek için ya bu modülün güncellenmiş bir sürümünü "
+"kullanın (mevcut olduğunda) ya da webtrees sürümünüzü düşürün (mümkünse)."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -395,13 +413,13 @@ msgstr "Vesta konum verileri yönetimine genel bakış"
 
 #: resources/views/fact.phtml:178
 msgid "View this family"
-msgstr ""
+msgstr "Bu aileyi görüntüleyin"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:169
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
-msgstr ""
+msgstr "Webtrees sürümü %1$s veya daha yüksek olmalıdır."
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
