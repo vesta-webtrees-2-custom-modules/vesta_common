@@ -265,7 +265,6 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
             //[RC] added, may be more efficient to re-use
             $locations[] = $location;
 
-            $sidebar_class = '';
 
             if (Auth::isAdmin()) {
                 $this_url = route(self::class, ['tree' => $place->tree()->name(), 'place_id' => $place->id()]);
@@ -274,11 +273,19 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
                 $edit_url = '';
             }
 
+            $sidebar_class = '';
             if ($showDetails) {
                 if ($location->latitude() === null && $location->longitude() === null) {
                     $sidebar_class = 'unmapped';
                 } else {
                     $sidebar_class = 'mapped';
+                }
+            }
+
+            if ($showDetails) {
+                if ($location->latitude() === null && $location->longitude() === null) {
+
+                } else {
                     $features[]    = [
                       'type'       => 'Feature',
                       'id'         => $id,
@@ -296,7 +303,7 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
                               'showlink'  => $show_link,
                           ]),
                       ],
-                  ];
+                    ];
                 }
             }
 

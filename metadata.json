@@ -422,5 +422,10 @@
 		"from": "2.1.17",
 		"to": "2.1.21",
 		"changelog": ["Several modules: Additional translations."]
+	},
+	{
+		"version": "2.1.20.2.0",
+		"from": "2.1.17",
+		"to": "2.1.21"
 	}
 ]
