@@ -9,7 +9,6 @@ use Fisharebest\Webtrees\Contracts\UserInterface;
 use Fisharebest\Webtrees\Module\ModuleInterface;
 use Fisharebest\Webtrees\Services\ModuleService;
 use Illuminate\Support\Collection;
-use function app;
 
 class ModuleMetaInterfaceUtils {
 
@@ -50,8 +49,7 @@ class ModuleMetaInterfaceUtils {
             return new Collection();
         }
 
-        return app()
-                ->make(ModuleService::class)
+        return \Vesta\VestaUtils::get(ModuleService::class)
                 ->findByInterface(ModuleMetaInterface::class, false, true);
     }
 

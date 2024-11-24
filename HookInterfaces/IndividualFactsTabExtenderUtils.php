@@ -11,7 +11,6 @@ use Fisharebest\Webtrees\Services\ModuleService;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
 use Psr\Http\Message\ServerRequestInterface;
-use function app;
 
 class IndividualFactsTabExtenderUtils {
 
@@ -46,8 +45,7 @@ class IndividualFactsTabExtenderUtils {
 
         return self::sort(
                 $moduleForPrefsOrder,
-                app()
-                    ->make(ModuleService::class)
+                \Vesta\VestaUtils::get(ModuleService::class)
                     ->findByInterface(IndividualFactsTabExtenderInterface::class, $include_disabled));
     }
 

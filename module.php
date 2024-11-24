@@ -10,5 +10,5 @@ if (defined("WT_VERSION")) {
 
 require_once __DIR__ . '/autoload.php';
 
-$placeholder = app(PlaceholderModule::class);
-return $placeholder->ifIncompatible() ?? app(VestaCommonLibModule::class);
+$placeholder = \Vesta\VestaUtils::get(PlaceholderModule::class);
+return $placeholder->ifIncompatible() ?? \Vesta\VestaUtils::get(VestaCommonLibModule::class);

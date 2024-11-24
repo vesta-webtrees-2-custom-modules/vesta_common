@@ -210,13 +210,13 @@ if ($tag === 'MARR') {
                     <?= $element->value($value, $tree) ?>
                     <?php if ($element instanceof XrefAssociate && $fact->target() instanceof Individual) : ?>
                         <?php
-                        $relationshipChartModule = app(ModuleService::class)->findByComponent(ModuleChartInterface::class, $tree, Auth::user())
+                        $relationshipChartModule = \Vesta\VestaUtils::get(ModuleService::class)->findByComponent(ModuleChartInterface::class, $tree, Auth::user())
                             ->first(static fn (ModuleInterface $m):bool => $m instanceof RelationshipsChartModule)
                         ?>
 
                         <?php if ($relationshipChartModule instanceof RelationshipsChartModule && $record instanceof Individual) : ?>
                             — <a href="<?= $relationshipChartModule->chartUrl($fact->target(), ['xref2' => $record->xref()]) ?>" rel="nofollow">
-                                <?= app(RelationshipService::class)->getCloseRelationshipName($fact->target(), $record) ?>
+                                <?= \Vesta\VestaUtils::get(RelationshipService::class)->getCloseRelationshipName($fact->target(), $record) ?>
                             </a>
                         <?php endif ?>
                     <?php endif ?>

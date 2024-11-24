@@ -9,7 +9,6 @@ use Fisharebest\Webtrees\Location;
 use Fisharebest\Webtrees\Services\ModuleService;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
-use function app;
 
 class FunctionsClippingsCartUtils {
 
@@ -102,8 +101,7 @@ class FunctionsClippingsCartUtils {
   */
 
   public static function accessibleModules(Tree $tree, UserInterface $user): Collection {
-    return app()
-        ->make(ModuleService::class)
+    return \Vesta\VestaUtils::get(ModuleService::class)
         ->findByComponent(FunctionsClippingsCartInterface::class, $tree, $user);
   }
 }

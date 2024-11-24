@@ -14,7 +14,6 @@ use Fisharebest\Webtrees\Services\TreeService;
 use Fisharebest\Webtrees\Tree;
 use JsonSerializable;
 use Vesta\Model\GedcomDateInterval;
-use function app;
 use function GuzzleHttp\json_encode;
 
 /**
@@ -135,7 +134,7 @@ class PlaceStructure implements JsonSerializable {
         return new PlaceStructure(
             $std->gedcomName,
             $std->gedcom,
-            app(TreeService::class)->find($std->tree),
+            \Vesta\VestaUtils::get(TreeService::class)->find($std->tree),
             $std->eventType,
             $std->virtual,
             GedcomDateInterval::fromStd($std->eventDateInterval),

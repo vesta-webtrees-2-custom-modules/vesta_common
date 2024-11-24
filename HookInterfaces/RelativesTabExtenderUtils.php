@@ -10,7 +10,6 @@ use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
 use Psr\Http\Message\ServerRequestInterface;
 use Cissee\WebtreesExt\Requests;
-use function app;
 
 class RelativesTabExtenderUtils {
 
@@ -22,14 +21,12 @@ class RelativesTabExtenderUtils {
   }
 
   public static function accessibleModules(ModuleInterface $moduleForPrefsOrder, Tree $tree, UserInterface $user): Collection {
-    return self::sort($moduleForPrefsOrder, app()
-                            ->make(ModuleService::class)
+    return self::sort($moduleForPrefsOrder, \Vesta\VestaUtils::get(ModuleService::class)
                             ->findByComponent(RelativesTabExtenderInterface::class, $tree, $user));
   }
 
   public static function modules(ModuleInterface $moduleForPrefsOrder, $include_disabled = false): Collection {
-    return self::sort($moduleForPrefsOrder, app()
-                            ->make(ModuleService::class)
+    return self::sort($moduleForPrefsOrder, \Vesta\VestaUtils::get(ModuleService::class)
                             ->findByInterface(RelativesTabExtenderInterface::class, $include_disabled));
   }
 

@@ -10,7 +10,6 @@ use Fisharebest\Webtrees\Module\ModuleInterface;
 use Fisharebest\Webtrees\Services\ModuleService;
 use Fisharebest\Webtrees\Tree;
 use Illuminate\Support\Collection;
-use function app;
 
 //cf AbstractModuleSpecificComponentAction
 class ModuleServiceExt
@@ -32,7 +31,7 @@ class ModuleServiceExt
         Tree $tree,
         UserInterface $user): Collection
     {
-        return app(ModuleService::class)->findByInterface($interface, false, true)
+        return \Vesta\VestaUtils::get(ModuleService::class)->findByInterface($interface, false, true)
             ->filter(static function (ModuleInterface $module) use ($interfaceForAccessLevel, $tree, $user): bool {
                 return $module->accessLevel($tree, $interfaceForAccessLevel) >= Auth::accessLevel($tree, $user);
             });

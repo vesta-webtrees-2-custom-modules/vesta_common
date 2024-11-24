@@ -17,7 +17,6 @@ use Vesta\CommonI18N;
 use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderInterface;
 use Vesta\Hook\HookInterfaces\IndividualFactsTabExtenderUtils;
 use Vesta\Model\GenericViewElement;
-use function app;
 use function view;
 
 class FunctionsFactAssociates {
@@ -73,7 +72,7 @@ class FunctionsFactAssociates {
 
         $main = "";
 
-        $module = app(ModuleService::class)->findByComponent(ModuleChartInterface::class, $person->tree(), Auth::user())->first(static function (ModuleInterface $module) {
+        $module = \Vesta\VestaUtils::get(ModuleService::class)->findByComponent(ModuleChartInterface::class, $person->tree(), Auth::user())->first(static function (ModuleInterface $module) {
             return $module instanceof RelationshipsChartModule;
         });
 
@@ -99,7 +98,7 @@ class FunctionsFactAssociates {
         array $values): string {
 
         foreach ($associates as $associate) {
-            $relationship_name = app(RelationshipService::class)->getCloseRelationshipName($associate, $person);
+            $relationship_name = \Vesta\VestaUtils::get(RelationshipService::class)->getCloseRelationshipName($associate, $person);
             if ($relationship_name === '') {
                 //[RC] adjusted we use a different fallback
                 //$relationship_name = I18N::translate('Relationship');

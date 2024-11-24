@@ -22,13 +22,11 @@ use Fisharebest\Webtrees\Webtrees;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use function app;
 use function array_chunk;
 use function array_pop;
 use function array_reverse;
 use function ceil;
 use function count;
-use function is_file;
 use function redirect;
 use function route;
 use function view;
@@ -52,8 +50,8 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
 
         Auth::checkComponentAccess($this->module, ModuleListInterface::class, $tree, $user);
 
-        $searchService = app(SearchService::class);
-        $participants = app(ModuleService::class)
+        $searchService = \Vesta\VestaUtils::get(SearchService::class);
+        $participants = \Vesta\VestaUtils::get(ModuleService::class)
             ->findByComponent(PlaceHierarchyParticipant::class, $tree, Auth::user())
             ->filter(function (PlaceHierarchyParticipant $php) use ($tree): bool {
             return $php->participates($tree);
@@ -75,7 +73,7 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
             return redirect($place->url());
         }
 
-        $map_providers = app(ModuleService::class)->findByInterface(ModuleMapProviderInterface::class);
+        $map_providers = \Vesta\VestaUtils::get(ModuleService::class)->findByInterface(ModuleMapProviderInterface::class);
 
         $content = '';
         $showmap = $map_providers->isNotEmpty();
@@ -89,7 +87,7 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
 
             $content .= view('modules/place-hierarchy/map', [
                 'data'           => $this->mapData($utils, $detailsThreshold, $place, $places),
-                'leaflet_config' => app(LeafletJsService::class)->config(),
+                'leaflet_config' => \Vesta\VestaUtils::get(LeafletJsService::class)->config(),
             ]);
         }
 

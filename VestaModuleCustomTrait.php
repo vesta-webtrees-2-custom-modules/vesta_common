@@ -42,7 +42,7 @@ trait VestaModuleCustomTrait {
       return $this->customModuleVersion();
       }
 
-      $cache = app('cache.files');
+      $cache = \Vesta\VestaUtils::get('cache.files');
       assert($cache instanceof Cache);
 
       return $cache->remember($this->name() . '-latest-version', function () {

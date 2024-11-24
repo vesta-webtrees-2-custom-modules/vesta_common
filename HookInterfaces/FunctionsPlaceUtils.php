@@ -20,7 +20,6 @@ use Vesta\Model\LocReference;
 use Vesta\Model\MapCoordinates;
 use Vesta\Model\PlaceStructure;
 use Vesta\Model\Trace;
-use function app;
 
 class FunctionsPlaceUtils {
 
@@ -607,7 +606,7 @@ class FunctionsPlaceUtils {
         Tree $tree,
         UserInterface $user): Collection {
 
-        return self::sort($module, app()->make(ModuleService::class)
+        return self::sort($module, \Vesta\VestaUtils::get(ModuleService::class)
                     ->findByComponent(FunctionsPlaceInterface::class, $tree, $user));
     }
 
@@ -617,7 +616,7 @@ class FunctionsPlaceUtils {
         UserInterface $user): Collection {
 
         //currently no sorting!
-        return app()->make(ModuleService::class)
+        return \Vesta\VestaUtils::get(ModuleService::class)
                 ->findByComponent(PrintFunctionsPlaceInterface::class, $tree, $user);
     }
 
@@ -625,8 +624,7 @@ class FunctionsPlaceUtils {
         ModuleInterface $module,
         $include_disabled = false): Collection {
 
-        return self::sort($module, app()
-                    ->make(ModuleService::class)
+        return self::sort($module, \Vesta\VestaUtils::get(ModuleService::class)
                     ->findByInterface(FunctionsPlaceInterface::class, $include_disabled));
     }
 

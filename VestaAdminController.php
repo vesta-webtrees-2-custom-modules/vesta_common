@@ -11,7 +11,6 @@ use Fisharebest\Webtrees\Module\ModuleInterface;
 use Fisharebest\Webtrees\Services\TreeService;
 use Fisharebest\Webtrees\Tree;
 use Psr\Http\Message\ResponseInterface;
-use function app;
 use function route;
 
 class VestaAdminController {
@@ -40,7 +39,7 @@ class VestaAdminController {
         //cf AbstractModuleComponentPage
         $access_summary = $modules
             ->mapWithKeys(function (ModuleInterface $module) use ($interface): array {
-                $access_levels = app(TreeService::class)->all()
+                $access_levels = \Vesta\VestaUtils::get(TreeService::class)->all()
                     ->map(static function (Tree $tree) use ($interface, $module): int {
                         return $module->accessLevel($tree, $interface);
                     })
@@ -69,7 +68,7 @@ class VestaAdminController {
                 'interface' => $interface,
                 'modules' => $modules,
                 'title' => $title,
-                'trees' => app(TreeService::class)->all(),
+                'trees' => \Vesta\VestaUtils::get(TreeService::class)->all(),
                 'uses_access' => $uses_access,
                 'uses_sorting' => $uses_sorting,
                 'access_summary' => $access_summary,

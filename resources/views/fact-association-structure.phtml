@@ -76,13 +76,13 @@ foreach ($amatches as $amatch) {
         //anyway this doesn't look right in original tab -
         //why only display the relationship name if the chart is available?
         /*
-        $module = app(ModuleService::class)->findByComponent(ModuleChartInterface::class, $person->tree(), Auth::user())->first(static function (ModuleInterface $module) {
+        $module = \Vesta\VestaUtils::get(ModuleService::class)->findByComponent(ModuleChartInterface::class, $person->tree(), Auth::user())->first(static function (ModuleInterface $module) {
             return $module instanceof RelationshipsChartModule;
         });
 
         if ($module instanceof RelationshipsChartModule) {
             foreach ($associates as $associate) {
-                $relationship_name = app(RelationshipService::class)->getCloseRelationshipName($associate, $person);
+                $relationship_name = \Vesta\VestaUtils::get(RelationshipService::class)->getCloseRelationshipName($associate, $person);
                 if ($relationship_name === '') {
                     $relationship_name = I18N::translate('Relationship');
                 }
