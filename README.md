@@ -1,9 +1,7 @@
-# ⚶ Vesta Common (Webtrees 2 Custom Module)
+# ⚶ Vesta Common (Webtrees Custom Module)
 
 This [webtrees](https://www.webtrees.net/) custom module provides common classes to be used by other custom modules.
 The project’s website is [cissee.de](https://cissee.de).
-
-This is a webtrees 2.x module - It cannot be used with webtrees 1.x.
 
 ## Contents
 
@@ -18,8 +16,8 @@ This module also provides translations, and therefore has to be activated in the
 
 ### Download<a name="download"/>
 
-* Current version: 2.2.0.0.0
-* Based on and tested with webtrees 2.2.0. Requires webtrees 2.1.17 or later.
+* Current version: 2.2.1.0.0
+* Based on and tested with webtrees 2.2.1. Requires webtrees 2.1.17 or later.
 * Download the zip file, which includes all Vesta modules, [here](https://cissee.de/vesta.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>
 * Issues also via <https://github.com/vesta-webtrees-2-custom-modules/vesta_common/issues>
