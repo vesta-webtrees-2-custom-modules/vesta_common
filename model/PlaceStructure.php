@@ -308,7 +308,7 @@ class PlaceStructure implements JsonSerializable {
      * @return string|null
      */
     public function getGov() {
-        if (preg_match('/3 _GOV (.*)/', $this->getGedcom(), $match)) {
+        if (preg_match('/3 _GOV (.+)/', $this->getGedcom(), $match)) {
             return $match[1];
         }
 
