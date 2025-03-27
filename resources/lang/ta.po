@@ -8,441 +8,498 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-01-21 15:53+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-03-27 05:01+0000\n"
+"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/ta/>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 #. I18N: Module title
 #: CommonI18N.php:19
 msgid "Vesta Common"
-msgstr ""
+msgstr "வெச்டா பொதுவானது"
 
 #. I18N: Module title
 #: CommonI18N.php:23
 msgid "Vesta Classic Look & Feel"
-msgstr ""
+msgstr "வெச்டா கிளாசிக் தோற்றம் & உணர்வு"
 
 #. I18N: Module title
 #: CommonI18N.php:27
 msgid "Vesta Facts and events"
-msgstr ""
+msgstr "வெச்டா உண்மைகள் மற்றும் நிகழ்வுகள்"
 
 #. I18N: Module title
 #: CommonI18N.php:31
 msgid "Vesta Families"
-msgstr ""
+msgstr "வெச்டா குடும்பங்கள்"
 
 #. I18N: Module title
 #: CommonI18N.php:35
 msgid "Vesta Gov4Webtrees"
-msgstr ""
+msgstr "வெச்டா கோவ் 4 வெப்ட்ரீச்"
 
 #. I18N: Module title
 #: CommonI18N.php:39
 msgid "Vesta Shared Places"
-msgstr ""
+msgstr "வெச்டா பகிரப்பட்ட இடங்கள்"
 
 #. I18N: Module title
 #: CommonI18N.php:43
 msgid "Vesta Extended Relationships"
-msgstr ""
+msgstr "வெச்டா நீட்டிக்கப்பட்ட உறவுகள்"
 
 #. I18N: Module title
 #: CommonI18N.php:47
 msgid "Vesta Research Suggestions"
-msgstr ""
+msgstr "வெச்டா ஆராய்ச்சி பரிந்துரைகள்"
 
 #. I18N: Module title
 #: CommonI18N.php:51
 msgid "Vesta Webtrees Location Data Provider"
-msgstr ""
+msgstr "வெச்டா வெப் ட்ரீச் இருப்பிட தரவு வழங்குநர்"
 
 #. I18N: Module title
 #: CommonI18N.php:55
 msgid "Vesta Places and Pedigree map"
-msgstr ""
+msgstr "வெச்டா இடங்கள் மற்றும் வம்சாவளி வரைபடம்"
 
 #. I18N: Module title
 #: CommonI18N.php:59
 msgid "Vesta Clippings Cart"
-msgstr ""
+msgstr "வெச்டா கிளிப்பிங்ச் வண்டி"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:66
 #, php-format
 msgid "Requires the '%1$s %2$s' module."
-msgstr ""
+msgstr "' %1$s %2$s' தொகுதி தேவை."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
 #, php-format
 msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
-msgstr ""
+msgstr "' %1$s %2$s' தொகுதி தேவை, மற்றும் ' %1$s %3$s' தொகுதி தேவை."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:81
 #, php-format
 msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
 msgstr ""
+"' %1$s %2$s' தொகுதி, ' %1$s %3$s' தொகுதி மற்றும் ' %1$s %4 $ s' தொகுதி தேவை."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
 msgid "Provides location data to other custom modules."
-msgstr ""
+msgstr "பிற தனிப்பயன் தொகுதிகளுக்கு இருப்பிட தரவை வழங்குகிறது."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:93
 msgid "Location Data Providers"
-msgstr ""
+msgstr "இருப்பிட தரவு வழங்குநர்கள்"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
 msgstr ""
+"இடங்களின் வரைபட ஆயங்களை தீர்மானிக்க இங்கே பட்டியலிடப்பட்ட தொகுதிகள் பயன்படுத்தப்படுகின்றன "
+"(உள்ளமைக்கப்பட்ட வரிசையில்)."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:101
 msgid "Place History UI Element Providers"
-msgstr ""
+msgstr "வரலாறு இடைமுகம் உறுப்பு வழங்குநர்களை வைக்கவும்"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:106
 msgid "Modules listed here may provide additional data for facts and events (displayed in the configured order)."
 msgstr ""
+"இங்கே பட்டியலிடப்பட்ட தொகுதிகள் உண்மைகள் மற்றும் நிகழ்வுகளுக்கு கூடுதல் தரவை வழங்கக்கூடும் "
+"(உள்ளமைக்கப்பட்ட வரிசையில் காட்டப்படும்)."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
 msgstr ""
+"இந்த தொகுதிகள் கூடுதல் உண்மைகளையும் நிகழ்வுகளையும் வழங்கக்கூடும், அவை தேதி மற்றும் வகையால்"
+" வரிசைப்படுத்தப்படுகின்றன."
 
 #. I18N: Module configuration: Refers to the module's Readme file
 #: CommonI18N.php:113
 msgid "Readme"
-msgstr ""
+msgstr "README"
 
 #. I18N: Module configuration: Refers to general documentation
 #: CommonI18N.php:117
 msgid "Vesta location data management overview"
-msgstr ""
+msgstr "வெச்டா இருப்பிட தரவு மேலாண்மை கண்ணோட்டம்"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
 msgid "Options"
-msgstr ""
+msgstr "விருப்பங்கள்"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:129
 msgid "Displayed title"
-msgstr ""
+msgstr "காட்டப்பட்ட தலைப்பு"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:133
 msgid "Displayed data"
-msgstr ""
+msgstr "காட்டப்பட்ட தரவு"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:137
 #, php-format
 msgid "Include the %1$s symbol in the tab title"
-msgstr ""
+msgstr "தாவல் தலைப்பில் %1$s சின்னத்தை சேர்க்கவும்"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:141
 #, php-format
 msgid "Include the %1$s symbol in the chart menu entry title"
-msgstr ""
+msgstr "விளக்கப்பட பட்டியல் நுழைவு தலைப்பில் %1$s சின்னத்தை சேர்க்கவும்"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:145
 #, php-format
 msgid "Include the %1$s symbol in the list menu entry title"
-msgstr ""
+msgstr "பட்டியல் பட்டியல் நுழைவு தலைப்பில் %1$s சின்னத்தை சேர்க்கவும்"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:149
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
-msgstr ""
+msgstr "பக்கப்பட்டி தலைப்பில் %1$s சின்னத்தை சேர்க்கவும்"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:153
 #, php-format
 msgid "Include the %1$s symbol in the clippings cart menu entry title"
-msgstr ""
+msgstr "கிளிப்பிங்ச் வண்டி பட்டியல் நுழைவு தலைப்பில் %1$s சின்னத்தை சேர்க்கவும்"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:157
 #, php-format
 msgid "Include the %1$s symbol in the block title"
-msgstr ""
+msgstr "தொகுதி தலைப்பில் %1$s சின்னத்தை சேர்க்கவும்"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:161
 msgid "Deselect in order to have the title appear exactly as the original title."
-msgstr ""
+msgstr "தலைப்பு அசல் தலைப்பாகத் தோன்றுவதற்கு தேர்வுநீக்கு."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:168 CommonI18N.php:175
 msgid "This version of the module is incompatible with your current webtrees version."
 msgstr ""
+"தொகுதியின் இந்த பதிப்பு உங்கள் தற்போதைய வெப் ட்ரீச் பதிப்போடு பொருந்தாது."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:169
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
-msgstr ""
+msgstr "வெப் ட்ரீச் பதிப்பு %1$s அல்லது அதற்கு மேற்பட்டதாக இருக்க வேண்டும்."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:170 CommonI18N.php:177
 msgid "All functionality of the module is therefore disabled."
-msgstr ""
+msgstr "எனவே தொகுதியின் அனைத்து செயல்பாடுகளும் முடக்கப்பட்டுள்ளன."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:176
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
-msgstr ""
+msgstr "%1$s க்கு முன் வெப் ட்ரீச் பதிப்புகள் மட்டுமே ஆதரிக்கப்படுகின்றன."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:178
 msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
 msgstr ""
+"செயல்பாட்டை மீட்டெடுக்க, இந்த தொகுதியின் புதுப்பிக்கப்பட்ட பதிப்பைப் பயன்படுத்தவும் "
+"(கிடைத்ததும்) அல்லது உங்கள் வெப் ட்ரீச் பதிப்பை தரமிறக்கவும் (முடிந்தால்)."
 
 #: CommonI18N.php:183
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
+"'%1$s' தொகுதியின் அனைத்து செயல்பாடுகளும் முடக்கப்பட்டுள்ளன, ஏனெனில் தொகுதி பதிப்பு வெப் "
+"ட்ரீச் பதிப்போடு பொருந்தாது."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:189
 msgid "Restrict to this list of GEDCOM individual facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
+"GEDCOM தனிப்பட்ட உண்மைகள் மற்றும் நிகழ்வுகளின் இந்த பட்டியலை கட்டுப்படுத்தவும். தேவைக்கேற்ப "
+"உண்மை மற்றும் நிகழ்வு பெயர்களை, தனிப்பயன் பெயர்களை அகற்றுவதன் மூலம் அல்லது சேர்ப்பதன் மூலம் "
+"இந்த பட்டியலை மாற்றலாம்."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:193
 msgid "Restrict to this list of GEDCOM family facts and events. You can modify this list by removing or adding fact and event names, even custom ones, as necessary."
 msgstr ""
+"GEDCOM குடும்ப உண்மைகள் மற்றும் நிகழ்வுகளின் இந்த பட்டியலை கட்டுப்படுத்தவும். தேவைக்கேற்ப "
+"உண்மை மற்றும் நிகழ்வு பெயர்களை, தனிப்பயன் பெயர்களை அகற்றுவதன் மூலம் அல்லது சேர்ப்பதன் மூலம் "
+"இந்த பட்டியலை மாற்றலாம்."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:197
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
+"GEDCOM உண்மைகள் மற்றும் நிகழ்வுகளின் இந்த பட்டியலுக்கு இட வரலாற்றில் உண்மைகளையும் "
+"நிகழ்வுகளையும் கட்டுப்படுத்துங்கள்."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:201
 msgid "In particular if both lists are empty, no additional facts and events of this kind will be shown."
 msgstr ""
+"குறிப்பாக இரண்டு பட்டியல்களும் காலியாக இருந்தால், இந்த வகையான கூடுதல் உண்மைகள் மற்றும் "
+"நிகழ்வுகள் எதுவும் காட்டப்படாது."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:206
 msgid "Facts and Events Tab Settings"
-msgstr ""
+msgstr "உண்மைகள் மற்றும் நிகழ்வுகள் தாவல் அமைப்புகள்"
 
 #: CommonI18N.php:210
 msgid "Place history"
-msgstr ""
+msgstr "வரலாற்றை வைக்கவும்"
 
 #: CommonI18N.php:215
 msgid "No relationship found"
-msgstr ""
+msgstr "எந்த உறவும் கிடைக்கவில்லை"
 
 #: HelpTextsPlaceHistory.php:15
 msgid "Relationship to predecessor"
-msgstr ""
+msgstr "முன்னோடி உறவு"
 
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
+"உறவு முன்னோடிகளைக் குறிக்கிறது, அதாவது அதே வகையின் முந்தைய உண்மையிலிருந்து தனிநபர்."
 
 #: HookInterfaces/FunctionsPlaceUtils.php:108
 msgid "map coordinates directly (MAP tag)"
-msgstr ""
+msgstr "வரைபடம் நேரடியாக ஒருங்கிணைக்கிறது (வரைபட குறிச்சொல்)"
 
 #: VestaCommonLibModule.php:57
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
 msgstr ""
+"பிற 'வெச்டா' தனிப்பயன் தொகுதிகளுக்கு பொதுவான வகுப்புகள் மற்றும் மொழிபெயர்ப்புகளை வழங்கும்"
+" தொகுதி."
 
 #: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr ""
+"வேறு ஏதேனும் வெச்டா தொகுதி இயக்கப்பட்டிருந்தால் இந்த தொகுதியை இயக்குவதை உறுதிசெய்க."
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
-msgstr ""
+msgstr "புதியது என்ன? "
 
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
 msgid "Baptisms"
-msgstr ""
+msgstr "ஞானச்நானம்"
 
 #. I18N: Plural for Gedcom tag CHR
 #: model/PlaceHistory.php:60
 msgid "Christenings"
-msgstr ""
+msgstr "கிறிச்டனிங்ச்"
 
 #. I18N: Plural for Gedcom tag CONF
 #: model/PlaceHistory.php:61
 msgid "Confirmations"
-msgstr ""
+msgstr "உறுதிப்படுத்தல்கள்"
 
 #. I18N: Gedcom tag RESI
 #: model/PlaceHistory.php:64
 msgid "Residences"
-msgstr ""
+msgstr "குடியிருப்புகள்"
 
 #. I18N: Plural for Gedcom tag PROP
 #: model/PlaceHistory.php:65
 msgid "Possessions"
-msgstr ""
+msgstr "உடைமைகள்"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:64
 #, php-format
 msgid "%1$s filters"
-msgstr ""
+msgstr "%1$s வடிப்பான்கள்"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:71
 #, php-format
 msgid "restrict to %1$s"
-msgstr ""
+msgstr "%1$s க்கு கட்டுப்படுத்தவும்"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:78
 #, php-format
 msgid "exclude %1$s"
-msgstr ""
+msgstr "%1$s ஐ விலக்கு"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
 msgid "%1$s excluded"
-msgstr ""
+msgstr "%1$s விலக்கப்பட்டுள்ளது"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:88
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:98
 msgid "reset this filter"
-msgstr ""
+msgstr "இந்த வடிப்பானை மீட்டமைக்கவும்"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:90
 #, php-format
 msgid "restricted to %1$s"
-msgstr ""
+msgstr "%1$s க்கு கட்டுப்படுத்தப்பட்டுள்ளது"
 
 #: resources/views/admin/upgrade/wizard.phtml:35
 #, php-format
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
+"அனைத்து செயலில் உள்ள தனிப்பயன் தொகுதிகள் புதிய வெப் ட்ரீச் பதிப்பு %1$s உடன் இணக்கமாக "
+"இருப்பதை உறுதிப்படுத்திக் கொள்ளுங்கள். நீங்கள் அவற்றை மேம்படுத்த வேண்டியிருக்கும்."
 
 #: resources/views/admin/upgrade/wizard.phtml:47
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
 msgstr ""
+"பின்வரும் தனிப்பயன் தொகுதிகளின் தற்போது நிறுவப்பட்ட பதிப்புகள் புதிய வெப் ட்ரீச் பதிப்பு %1$"
+"s உடன் பொருந்தாது, ஆனால் தொகுதிகள் மேம்படுத்தல்களைக் கொண்டுள்ளன: %2$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:63
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
 msgstr ""
+"பின்வரும் தனிப்பயன் தொகுதிகளின் தற்போது நிறுவப்பட்ட பதிப்புகள் புதிய வெப் ட்ரீச் பதிப்பு %1$"
+"s உடன் பொருந்தாது, மேலும் மேம்படுத்தல்கள் எதுவும் கிடைக்கவில்லை: %2$s"
 
 #: resources/views/admin/vesta_components.phtml:40
 msgid "(entire module)"
-msgstr ""
+msgstr "(முழு தொகுதி)"
 
 #: resources/views/admin/vesta_components.phtml:43
 msgid "(specific functionality)"
-msgstr ""
+msgstr "(குறிப்பிட்ட செயல்பாடு)"
 
 #: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "Move"
-msgstr ""
+msgstr "நகர்த்தவும்"
 
 #: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "up"
-msgstr ""
+msgstr "மேலே"
 
 #: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "Move"
-msgstr ""
+msgstr "நகர்த்தவும்"
 
 #: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "down"
-msgstr ""
+msgstr "கீழே"
 
 #: resources/views/fact.phtml:178
 msgid "View this family"
-msgstr ""
+msgstr "இந்த குடும்பத்தைக் காண்க"
 
 #: resources/views/lists/place-history.phtml:156
 msgid "No events of these specific types have occurred at this place."
-msgstr ""
+msgstr "இந்த இடத்தில் இந்த குறிப்பிட்ட வகைகளின் நிகழ்வுகள் எதுவும் ஏற்படவில்லை."
 
 #: resources/views/vesta_config.phtml:32
 msgid "Q: How do the Vesta modules interact?"
-msgstr ""
+msgstr "கே: வெச்டா தொகுதிகள் எவ்வாறு தொடர்பு கொள்கின்றன?"
 
 #: resources/views/vesta_config.phtml:35
 msgid "A: Via hooks. Hooks allow modules to extend functionality of other components, without having to re-implement the entire component. Webtrees uses hooks e.g. in the page footer, and for historic events."
 msgstr ""
+"ப: கொக்கிகள் வழியாக. முழு கூறுகளையும் மீண்டும் செயல்படுத்தாமல், பிற கூறுகளின் செயல்பாட்டை"
+" நீட்டிக்க தொகுதிகள் தொகுதிகளை அனுமதிக்கின்றன. வெப் ட்ரீச் கொக்கிகள் பயன்படுத்துகிறது எ.கா"
+". பக்க அடிக்குறிப்பில், மற்றும் வரலாற்று நிகழ்வுகளுக்கு."
 
 #: resources/views/vesta_config.phtml:38
 msgid "Q: Ok, but what's the actual benefit for the user?"
-msgstr ""
+msgstr "கே: சரி, ஆனால் பயனருக்கு உண்மையான நன்மை என்ன?"
 
 #: resources/views/vesta_config.phtml:42
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
 msgstr ""
+"ப: வெவ்வேறு தொகுதிகள் ஒரே கூறுகளை குறிவைக்கக்கூடும், எ.கா. பல்வேறு இடங்களில் உண்மைகள் "
+"மற்றும் நிகழ்வுகள் தாவலை மேம்படுத்துவதன் மூலம். கொக்கிகள் இல்லாமல், நாங்கள் பல "
+"தொகுதி-குறிப்பிட்ட தாவல்களைப் பயன்படுத்த வேண்டும்."
 
 #: resources/views/vesta_config.phtml:44
 msgid "Different modules may also be linked dynamically to provide specific data, such as location data for event places."
 msgstr ""
+"நிகழ்வு இடங்களுக்கான இருப்பிட தரவு போன்ற குறிப்பிட்ட தரவை வழங்க வெவ்வேறு தொகுதிகள் "
+"மாறும் வகையில் இணைக்கப்படலாம்."
 
 #: resources/views/vesta_config.phtml:48
 msgid "Q: How do I configure additional hooks?"
-msgstr ""
+msgstr "கே: கூடுதல் கொக்கிகள் எவ்வாறு கட்டமைப்பது?"
 
 #: resources/views/vesta_config.phtml:51
 msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
 msgstr ""
+"ப: அந்தந்த தனிப்பயன் தொகுதி இயக்கப்பட்டிருக்கும் போது கொக்கிகள் பொதுவாக தானாக இயக்கப்படும்"
+". அந்தந்த மூல மற்றும் இலக்கு தொகுதியின் விருப்பங்களையும் காண்க."
 
 #: resources/views/vesta_config.phtml:54
 #, php-format
 msgid "Q: What's with the %1$s symbol?"
-msgstr ""
+msgstr "கே: %1$s சின்னத்துடன் என்ன இருக்கிறது?"
 
 #: resources/views/vesta_config.phtml:57
 msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
 msgstr ""
+"ப: வெச்டா அடையாளம் முக்கியமாக தொகுதி நிர்வாக பட்டியலில் குழு தொடர்பான தொகுதிகள் "
+"பயன்படுத்தப்படுகிறது."
 
 #: resources/views/vesta_config.phtml:58
 #, php-format
 msgid "%1$s is the astronomical symbol of the asteroid Vesta, named after the Roman goddess of the hearth, home, and family."
 msgstr ""
+"%1$s என்பது வெச்டாவின் சிறுகோள் என்ற வானியல் அடையாளமாகும், இது அடுப்பு, வீடு மற்றும் "
+"குடும்பத்தின் ரோமானிய தெய்வத்தின் பெயரிடப்பட்டது."
 
 #: resources/views/vesta_config.phtml:59
 msgid "If the symbol is displayed improperly, e.g. as a rectangle, check your browser's unicode support capabilities."
 msgstr ""
+"அடையாளம் முறையற்ற முறையில் காட்டப்பட்டால், எ.கா. ஒரு செவ்வகமாக, உங்கள் உலாவியின் யூனிகோட்"
+" உதவி திறன்களை சரிபார்க்கவும்."
 
 #: resources/views/vesta_config.phtml:60
 msgid "You may have to install a font providing this symbol, and for certain browsers – Chrome in particular – this font has to be in one of the font families specified by webtrees, such as 'Segoe UI Symbol'."
 msgstr ""
+"இந்த சின்னத்தை வழங்கும் எழுத்துருவை நீங்கள் நிறுவ வேண்டியிருக்கலாம், மேலும் சில "
+"உலாவிகளுக்கு - குறிப்பாக Chrome - இந்த எழுத்துரு 'செகோ யுஐ அடையாளம்' போன்ற வெப் "
+"ட்ரீசால் குறிப்பிடப்பட்ட எழுத்துரு குடும்பங்களில் ஒன்றில் இருக்க வேண்டும்."
 
 #: resources/views/vesta_config.phtml:63
 msgid "Q: Is there additional documentation?"
-msgstr ""
+msgstr "கே: கூடுதல் ஆவணங்கள் உள்ளதா?"
 
 #: resources/views/vesta_config.phtml:66
 msgid "A: Each module has a Readme file with basic information (best viewed online, but also included in the module's folder)."
 msgstr ""
+"ப: ஒவ்வொரு தொகுதிக்கும் அடிப்படை தகவல்களுடன் README கோப்பு உள்ளது (ஆன்லைனில் சிறப்பாகப் "
+"பார்க்கப்படுகிறது, ஆனால் தொகுதியின் கோப்புறையிலும் சேர்க்கப்பட்டுள்ளது)."
 
 #: resources/views/vesta_config.phtml:68
 msgid "here"
-msgstr ""
+msgstr "இங்கே"
 
 #: resources/views/vesta_config.phtml:69
 #, php-format
 msgid "See also %1$s for an overview of location data management in webtrees."
 msgstr ""
+"வெப் ட்ரீசில் இருப்பிட தரவு நிர்வாகத்தின் கண்ணோட்டத்திற்கு %1$s ஐயும் காண்க."
