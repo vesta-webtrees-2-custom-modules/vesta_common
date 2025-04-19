@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-01-21 15:53+0100\n"
-"PO-Revision-Date: 2025-03-27 05:01+0000\n"
+"PO-Revision-Date: 2025-04-19 09:05+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/ta/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.11.1-dev\n"
 
 #. I18N: Module title
 #: CommonI18N.php:19
@@ -91,7 +91,7 @@ msgstr "' %1$s %2$s' தொகுதி தேவை, மற்றும் ' %1
 #, php-format
 msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
 msgstr ""
-"' %1$s %2$s' தொகுதி, ' %1$s %3$s' தொகுதி மற்றும் ' %1$s %4 $ s' தொகுதி தேவை."
+"' %1$s %2$s' தொகுதி, '%1$s %3$s' தொகுதி மற்றும்' %1$s %4$s' தொகுதி தேவை."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
@@ -170,7 +170,7 @@ msgstr "விளக்கப்பட பட்டியல் நுழைவ�
 #: CommonI18N.php:145
 #, php-format
 msgid "Include the %1$s symbol in the list menu entry title"
-msgstr "பட்டியல் பட்டியல் நுழைவு தலைப்பில் %1$s சின்னத்தை சேர்க்கவும்"
+msgstr "பட்டியல் நுழைவு தலைப்பில் %1$s சின்னத்தைச் சேர்"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:149
