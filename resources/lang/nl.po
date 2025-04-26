@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-01-21 15:53+0100\n"
-"PO-Revision-Date: 2023-01-22 09:06+0000\n"
+"PO-Revision-Date: 2025-04-26 07:01+0000\n"
 "Last-Translator: TheDutchJewel <thedutchjewel@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/nl/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -69,7 +69,9 @@ msgstr "A: Via 'hooks'. Hooks zorgen ervoor dat modules de functionaliteit van a
 #: CommonI18N.php:183
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
-msgstr "Alle functionaliteit van module '%1$s' is uitgeschakeld omdat de moduleversie niet compatibel is met de webtreesversie."
+msgstr ""
+"Alle functionaliteit van module '%1$s' is uitgeschakeld omdat de "
+"moduleversie niet compatibel is met de webtrees-versie."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:170 CommonI18N.php:177
@@ -206,7 +208,7 @@ msgstr "Geen verwantschap gevonden"
 #: CommonI18N.php:176
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
-msgstr "Alleen webtreesversies voor %1$s worden ondersteund."
+msgstr "Alleen webtrees-versies voor %1$s worden ondersteund."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
@@ -327,7 +329,8 @@ msgstr "Deze modules kunnen ook aanvullende feiten en gebeurtenissen verschaffen
 #. I18N: Module Configuration
 #: CommonI18N.php:168 CommonI18N.php:175
 msgid "This version of the module is incompatible with your current webtrees version."
-msgstr "Deze versie van de module is niet compatibel met uw huidige webtreesversie."
+msgstr ""
+"Deze versie van de module is niet compatibel met uw huidige webtrees-versie."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:178
@@ -387,7 +390,7 @@ msgstr "Vesta Gedeelde plaatsen"
 #. I18N: Module title
 #: CommonI18N.php:51
 msgid "Vesta Webtrees Location Data Provider"
-msgstr "Vesta Webtreeslocatiegegevensaanbieder"
+msgstr "Vesta Webtrees-locatiegegevensaanbieder"
 
 #. I18N: Module configuration: Refers to general documentation
 #: CommonI18N.php:117
@@ -402,7 +405,7 @@ msgstr "Bekijk dit gezin"
 #: CommonI18N.php:169
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
-msgstr "Webtreesversie moet %1$s of hoger zijn."
+msgstr "Webtrees-versie moet %1$s of hoger zijn."
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
