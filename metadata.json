@@ -459,5 +459,11 @@
 		"from": "2.2.1",
 		"to": "2.2.2",
 		"changelog": ["All modules: Additional translations."]
+	},
+	{
+		"version": "2.2.1.4.0",
+		"from": "2.2.1",
+		"to": "2.2.2",
+		"changelog": ["All modules: Additional translations."]
 	}
 ]
