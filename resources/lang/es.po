@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-01-21 15:53+0100\n"
-"PO-Revision-Date: 2024-01-22 21:01+0000\n"
-"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
+"PO-Revision-Date: 2025-05-12 11:01+0000\n"
+"Last-Translator: BernatBanyuls <bernatbanyuls@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -438,12 +438,12 @@ msgstr "borrar este filtro"
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:71
 #, php-format
 msgid "restrict to %1$s"
-msgstr "restringido a %1$s"
+msgstr "limitado a %1$s"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:90
 #, php-format
 msgid "restricted to %1$s"
-msgstr "restringido a %1$s"
+msgstr "limitado a %1$s"
 
 #: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
