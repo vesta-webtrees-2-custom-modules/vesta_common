@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-01-21 15:53+0100\n"
-"PO-Revision-Date: 2022-07-21 14:17+0000\n"
+"PO-Revision-Date: 2025-06-28 12:13+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
-"Language-Team: Slovak <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/sk/>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/"
+"vesta-webtrees-custom-modules/vesta-common/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -332,6 +333,9 @@ msgstr "Táto verzia modulu je nekompatibilná s vašou verziou webtrees."
 #: CommonI18N.php:178
 msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
 msgstr ""
+"Aby ste obnovili funkcionalitu použite buď aktualizovanú verziu tohto modulu "
+"(pokiaľ je k dispozícii), alebo sa vráťte k predchádzajúcej verzii webtrees ("
+"ak to je možné)."
 
 #. I18N: Module title
 #: CommonI18N.php:23
