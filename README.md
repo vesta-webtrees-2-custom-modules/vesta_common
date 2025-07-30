@@ -16,8 +16,8 @@ This module also provides translations, and therefore has to be activated in the
 
 ### Download<a name="download"/>
 
-* Current version: 2.2.2.0.0
-* Based on and tested with webtrees 2.2.2. Requires webtrees 2.2.1 or later.
+* Current version: 2.2.3.0.0
+* Based on and tested with webtrees 2.2.3. Requires webtrees 2.2.1 or later.
 * Download the zip file, which includes all Vesta modules, [here](https://cissee.de/vesta.latest.zip).
 * Support, suggestions, feature requests: <ric@richard-cissee.de>
 * Issues also via <https://github.com/vesta-webtrees-2-custom-modules/vesta_common/issues>
