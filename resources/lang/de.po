@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-01-21 15:53+0100\n"
-"PO-Revision-Date: 2023-01-25 14:12+0000\n"
-"Last-Translator: mpwt <der@bauschaffen.de>\n"
+"PO-Revision-Date: 2025-08-02 18:38+0000\n"
+"Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/de/>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -44,7 +44,9 @@ msgstr "(spezifische Funktionalität)"
 
 #: VestaCommonLibModule.php:57
 msgid "A module providing common classes and translations for other 'Vesta' custom modules."
-msgstr "Ein Modul, das gemeinsame Klassen und Übersetzungen für andere benutzerdefinierte 'Vesta'-Module bereitstellt."
+msgstr ""
+"Ein Modul, das gemeinsame Klassen und Übersetzungen für andere 'Vesta'-"
+"Module bereitstellt."
 
 #: resources/views/vesta_config.phtml:42
 msgid "A: Different modules may target the same component, e.g. by enhancing the facts and events tab in various places. Without hooks, we'd have to use multiple module-specific tabs."
@@ -56,7 +58,10 @@ msgstr "A: Zu jedem Modul gibt es eine Readme-Datei mit grundlegenden Informatio
 
 #: resources/views/vesta_config.phtml:51
 msgid "A: Hooks are usually enabled automatically when the respective custom module is enabled. See also the respective source and target module's preferences."
-msgstr "A: Hooks werden normalerweise automatisch aktiviert, wenn das jeweilige benutzerdefinierte Modul aktiviert wird. Siehe auch die Präferenzen des jeweiligen Ausgangs- und Zielmoduls."
+msgstr ""
+"A: Hooks werden normalerweise automatisch aktiviert, wenn das jeweilige "
+"Modul aktiviert wird. Siehe auch die Präferenzen des jeweiligen Ausgangs- "
+"und Zielmoduls."
 
 #: resources/views/vesta_config.phtml:57
 msgid "A: The Vesta symbol is mainly used to group related modules in the module administration list."
@@ -168,7 +173,10 @@ msgstr "Anbieter von Standortdaten (Location Data Providers)"
 #: resources/views/admin/upgrade/wizard.phtml:35
 #, php-format
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
-msgstr "Stellen Sie sicher, dass alle aktiven benutzerdefinierten Module mit der neuen webtrees-Version %1$s kompatibel sind. Möglicherweise müssen Sie auch diese aktualisieren."
+msgstr ""
+"Stellen Sie sicher, dass alle aktiven Erweiterungsmodule mit der neuen "
+"webtrees-Version %1$s kompatibel sind. Möglicherweise müssen Sie auch diese "
+"aktualisieren."
 
 #: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
@@ -230,7 +238,7 @@ msgstr "Besitzungen"
 #. I18N: Module Configuration
 #: CommonI18N.php:89
 msgid "Provides location data to other custom modules."
-msgstr "Stellt Standortdaten für andere benutzerdefinierte Module zur Verfügung."
+msgstr "Stellt Standortdaten für andere Erweiterungsmodule zur Verfügung."
 
 #: resources/views/vesta_config.phtml:48
 msgid "Q: How do I configure additional hooks?"
@@ -308,12 +316,18 @@ msgstr "Siehe auch %1$s für eine Übersicht über die Verwaltung von Ortsdaten 
 #: resources/views/admin/upgrade/wizard.phtml:63
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
-msgstr "Die derzeit installierten Versionen der folgenden benutzerdefinierten Module sind möglicherweise nicht mit der neuen webtrees-Version %1$s kompatibel, und es sind noch keine Upgrades verfügbar: %2$s"
+msgstr ""
+"Die derzeit installierten Versionen der folgenden Erweiterungsmodule sind "
+"möglicherweise nicht mit der neuen webtrees-Version %1$s kompatibel, und es "
+"sind noch keine Upgrades verfügbar: %2$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:47
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
-msgstr "Die derzeit installierten Versionen der folgenden benutzerdefinierten Module sind möglicherweise nicht mit der neuen webtrees-Version %1$s kompatibel, aber für die Module sind Upgrades verfügbar: %2$s"
+msgstr ""
+"Die derzeit installierten Versionen der folgenden Erweiterungsmodule sind "
+"möglicherweise nicht mit der neuen webtrees-Version %1$s kompatibel, aber "
+"für die Module sind Upgrades verfügbar: %2$s"
 
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
