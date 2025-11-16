@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-01-21 15:53+0100\n"
-"PO-Revision-Date: 2025-06-28 12:13+0000\n"
+"PO-Revision-Date: 2025-11-16 19:51+0000\n"
 "Last-Translator: ro-la <lacoros@gmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/"
 "vesta-webtrees-custom-modules/vesta-common/sk/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -128,7 +128,7 @@ msgstr "Ak sú oba zoznamy prázdne, nebudú zobrazené žiadne takéto dodatoč
 #: CommonI18N.php:157
 #, php-format
 msgid "Include the %1$s symbol in the block title"
-msgstr ""
+msgstr "Zahrnúť symbol %1$s do titulu bloku"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:141
