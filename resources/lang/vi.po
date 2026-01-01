@@ -8,15 +8,16 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-01-21 15:53+0100\n"
-"PO-Revision-Date: 2021-07-21 01:36+0000\n"
+"PO-Revision-Date: 2025-12-31 09:01+0000\n"
 "Last-Translator: ngohuuthuanfc9865b89dde4baf <ngohuuthuan@gmail.com>\n"
-"Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-webtrees-custom-modules/vesta-common/vi/>\n"
+"Language-Team: Vietnamese <https://hosted.weblate.org/projects/vesta-"
+"webtrees-custom-modules/vesta-common/vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.7.2-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:80
 #, php-format
@@ -69,26 +70,28 @@ msgstr "Trả lời: Qua móc câu. Hooks cho phép các mô-đun mở rộng ch
 #, php-format
 msgid "All functionality of module '%1$s' is disabled because the module version is incompatible with the webtrees version."
 msgstr ""
+"Tất cả chức năng của mô-đun '%1$s' đều bị vô hiệu hóa vì phiên bản mô-đun "
+"không tương thích với phiên bản webtrees."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:170 CommonI18N.php:177
 msgid "All functionality of the module is therefore disabled."
-msgstr ""
+msgstr "Tất cả các chức năng của mô-đun do đó bị vô hiệu hóa."
 
 #. I18N: Plural for Gedcom tag BAPM
 #: model/PlaceHistory.php:59
 msgid "Baptisms"
-msgstr ""
+msgstr "Lễ rửa tội"
 
 #. I18N: Plural for Gedcom tag CHR
 #: model/PlaceHistory.php:60
 msgid "Christenings"
-msgstr ""
+msgstr "Lễ rửa tội"
 
 #. I18N: Plural for Gedcom tag CONF
 #: model/PlaceHistory.php:61
 msgid "Confirmations"
-msgstr ""
+msgstr "Xác nhận"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:161
@@ -127,7 +130,7 @@ msgstr "Đặc biệt nếu cả hai danh sách đều trống, không có dữ 
 #: CommonI18N.php:157
 #, php-format
 msgid "Include the %1$s symbol in the block title"
-msgstr ""
+msgstr "Bao gồm ký hiệu %1$s trong tiêu đề khối"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:141
@@ -168,10 +171,14 @@ msgstr "Nhà cung cấp dữ liệu vị trí"
 #, php-format
 msgid "Make sure all active custom modules are compatible with the new webtrees version %1$s. You may have to upgrade them as well."
 msgstr ""
+"Hãy đảm bảo rằng tất cả các mô-đun tùy chỉnh đang hoạt động đều tương thích "
+"với phiên bản mới của Webtrees %1$s. Bạn có thể cần phải nâng cấp chúng."
 
 #: VestaCommonLibModule.php:58
 msgid "Make sure to enable this module if any other Vesta module is enabled."
 msgstr ""
+"Hãy đảm bảo kích hoạt mô-đun này nếu bất kỳ mô-đun Vesta nào khác đang được "
+"kích hoạt."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
@@ -186,26 +193,26 @@ msgstr "Các mô-đun được liệt kê ở đây có thể cung cấp dữ li
 #: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "Move"
-msgstr ""
+msgstr "Di chuyển"
 
 #: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "Move"
-msgstr ""
+msgstr "Di chuyển"
 
 #: resources/views/lists/place-history.phtml:156
 msgid "No events of these specific types have occurred at this place."
-msgstr ""
+msgstr "Không có sự kiện cụ thể nào trong số này từng xảy ra tại địa điểm này."
 
 #: CommonI18N.php:215
 msgid "No relationship found"
-msgstr ""
+msgstr "Không tìm thấy mối quan hệ nào"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:176
 #, php-format
 msgid "Only webtrees versions before %1$s are supported."
-msgstr ""
+msgstr "Chỉ các phiên bản webtrees trước %1$s mới được hỗ trợ."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
@@ -215,16 +222,16 @@ msgstr "Tùy chọn"
 #. I18N: Module Configuration
 #: CommonI18N.php:101
 msgid "Place History UI Element Providers"
-msgstr ""
+msgstr "Các nhà cung cấp phần tử giao diện người dùng Lịch sử địa điểm"
 
 #: CommonI18N.php:210
 msgid "Place history"
-msgstr ""
+msgstr "Lịch sử địa điểm"
 
 #. I18N: Plural for Gedcom tag PROP
 #: model/PlaceHistory.php:65
 msgid "Possessions"
-msgstr ""
+msgstr "Tài sản"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
@@ -259,7 +266,7 @@ msgstr "Đọc file này"
 
 #: HelpTextsPlaceHistory.php:15
 msgid "Relationship to predecessor"
-msgstr ""
+msgstr "Mối quan hệ với người tiền nhiệm"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
@@ -282,12 +289,14 @@ msgstr "Yêu cầu mô-đun '%1$s %2$s'."
 #. I18N: Gedcom tag RESI
 #: model/PlaceHistory.php:64
 msgid "Residences"
-msgstr ""
+msgstr "Nơi ở"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:197
 msgid "Restrict facts and events in the place history to this list of GEDCOM facts and events."
 msgstr ""
+"Giới hạn các sự kiện và thông tin trong lịch sử địa điểm chỉ trong danh sách "
+"các sự kiện và thông tin GEDCOM này."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:193
@@ -308,30 +317,44 @@ msgstr "Xem them %1$s để biết tổng quan về quản lý dữ liệu vị 
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, and there are no upgrades available yet: %2$s"
 msgstr ""
+"Các phiên bản hiện đang được cài đặt của các mô-đun tùy chỉnh sau đây có thể "
+"không tương thích với phiên bản webtrees mới %1$s và hiện chưa có bản nâng "
+"cấp nào: %2$s"
 
 #: resources/views/admin/upgrade/wizard.phtml:47
 #, php-format
 msgid "The currently installed versions of the following custom modules may not be compatible with the new webtrees version %1$s, but the modules have upgrades available: %2$s"
 msgstr ""
+"Các phiên bản hiện đang được cài đặt của các mô-đun tùy chỉnh sau đây có thể "
+"không tương thích với phiên bản webtrees mới %1$s, nhưng các mô-đun này có "
+"sẵn bản nâng cấp: %2$s"
 
 #: HelpTextsPlaceHistory.php:17
 msgid "The relationship refers to the predecessor, i.e. the individual from the preceding fact of the same type."
 msgstr ""
+"Mối quan hệ này đề cập đến người đi trước, tức là cá nhân từ sự kiện trước "
+"đó cùng loại."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
 msgstr ""
+"Các mô-đun này cũng có thể cung cấp thêm thông tin và sự kiện, được hiển thị "
+"theo thứ tự ngày tháng và loại hình."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:168 CommonI18N.php:175
 msgid "This version of the module is incompatible with your current webtrees version."
 msgstr ""
+"Phiên bản mô-đun này không tương thích với phiên bản webtrees hiện tại của "
+"bạn."
 
 #. I18N: Module Configuration
 #: CommonI18N.php:178
 msgid "To restore functionality, either use an updated version of this module (once available) or downgrade your webtrees version (if possible)."
 msgstr ""
+"Để khôi phục chức năng, hãy sử dụng phiên bản cập nhật của mô-đun này (khi "
+"có sẵn) hoặc hạ cấp phiên bản webtrees của bạn (nếu có thể)."
 
 #. I18N: Module title
 #: CommonI18N.php:23
@@ -346,7 +369,7 @@ msgstr "Vesta Giỏ dữ liệu"
 #. I18N: Module title
 #: CommonI18N.php:19
 msgid "Vesta Common"
-msgstr ""
+msgstr "Vesta Common"
 
 #. I18N: Module title
 #: CommonI18N.php:43
@@ -366,7 +389,7 @@ msgstr "Vesta Gia đình"
 #. I18N: Module title
 #: CommonI18N.php:35
 msgid "Vesta Gov4Webtrees"
-msgstr ""
+msgstr "Vesta Gov4Webtrees"
 
 #. I18N: Module title
 #: CommonI18N.php:55
@@ -395,13 +418,13 @@ msgstr "Vesta Tổng quan về quản lý dữ liệu vị trí"
 
 #: resources/views/fact.phtml:178
 msgid "View this family"
-msgstr ""
+msgstr "Xem gia đình này"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:169
 #, php-format
 msgid "Webtrees version must be %1$s or higher."
-msgstr ""
+msgstr "Phiên bản Webtrees phải là %1$s trở lên."
 
 #: VestaModuleCustomTrait.php:87
 msgid "What's new? "
@@ -414,7 +437,7 @@ msgstr "Bạn có thể phải cài đặt một phông chữ cung cấp biểu 
 #: resources/views/admin/vesta_components.phtml:47
 msgctxt "as in \"Move down\""
 msgid "down"
-msgstr ""
+msgstr "xuống"
 
 #: patchedWebtrees/Http/Controllers/PlaceUrls.php:78
 #, php-format
@@ -423,7 +446,7 @@ msgstr "loại trừ %1$s"
 
 #: resources/views/vesta_config.phtml:68
 msgid "here"
-msgstr "đây"
+msgstr "ở đây"
 
 #: HookInterfaces/FunctionsPlaceUtils.php:108
 msgid "map coordinates directly (MAP tag)"
@@ -447,7 +470,7 @@ msgstr "bị giới hạn trong %1$s"
 #: resources/views/admin/vesta_components.phtml:46
 msgctxt "as in \"Move up\""
 msgid "up"
-msgstr ""
+msgstr "lên"
 
 #~ msgid "Associated facts and events"
 #~ msgstr "Sự kiện và số liệu liên quan"
