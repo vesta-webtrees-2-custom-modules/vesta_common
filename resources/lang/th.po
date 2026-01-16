@@ -8,24 +8,26 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-01-21 15:53+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-01-16 10:01+0000\n"
+"Last-Translator: Anucha Hlownonkor <tony.chompoo@gmail.com>\n"
+"Language-Team: Thai <https://hosted.weblate.org/projects/vesta-webtrees-"
+"custom-modules/vesta-common/th/>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. I18N: Module title
 #: CommonI18N.php:19
 msgid "Vesta Common"
-msgstr ""
+msgstr "โมดูลทั่วไปของ Vesta"
 
 #. I18N: Module title
 #: CommonI18N.php:23
 msgid "Vesta Classic Look & Feel"
-msgstr ""
+msgstr "โมดูล Vesta  แบบคลาสสิก"
 
 #. I18N: Module title
 #: CommonI18N.php:27
@@ -40,12 +42,12 @@ msgstr ""
 #. I18N: Module title
 #: CommonI18N.php:35
 msgid "Vesta Gov4Webtrees"
-msgstr ""
+msgstr "โมดูล Gov4Webtrees"
 
 #. I18N: Module title
 #: CommonI18N.php:39
 msgid "Vesta Shared Places"
-msgstr ""
+msgstr "Vesta ใช้ร่วมกัน"
 
 #. I18N: Module title
 #: CommonI18N.php:43
@@ -55,12 +57,12 @@ msgstr ""
 #. I18N: Module title
 #: CommonI18N.php:47
 msgid "Vesta Research Suggestions"
-msgstr ""
+msgstr "ข้อเสนอแนะเกี่ยวกับ Vesta"
 
 #. I18N: Module title
 #: CommonI18N.php:51
 msgid "Vesta Webtrees Location Data Provider"
-msgstr ""
+msgstr "ผู้ให้บริการข้อมูลตำแหน่งที่ตั้ง Vesta Webtrees"
 
 #. I18N: Module title
 #: CommonI18N.php:55
@@ -76,34 +78,34 @@ msgstr ""
 #: CommonI18N.php:66
 #, php-format
 msgid "Requires the '%1$s %2$s' module."
-msgstr ""
+msgstr "ต้องใช้โมดูล '%1$s %2$s'"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:73
 #, php-format
 msgid "Requires the '%1$s %2$s' module, and the '%1$s %3$s' module."
-msgstr ""
+msgstr "ต้องใช้โมดูล '%1$s %2$s' และโมดูล '%1$s %3$s'"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:81
 #, php-format
 msgid "Requires the '%1$s %2$s' module, the '%1$s %3$s' module, and the '%1$s %4$s' module."
-msgstr ""
+msgstr "ต้องใช้โมดูล '%1$s %2$s', โมดูล '%1$s %3$s' และโมดูล '%1$s %4$s'"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:89
 msgid "Provides location data to other custom modules."
-msgstr ""
+msgstr "ตำแหน่งที่ตั้งโมดูลที่กำหนดเอง"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:93
 msgid "Location Data Providers"
-msgstr ""
+msgstr "ที่ตั้งผู้ให้บริการ"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:97
 msgid "Modules listed here are used (in the configured order) to determine map coordinates of places."
-msgstr ""
+msgstr "โมดูลที่จะถูกใช้ (ตามลำดับที่กำหนด) เพื่อกำหนดตำแหน่งต่างๆ"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:101
@@ -114,60 +116,62 @@ msgstr ""
 #: CommonI18N.php:106
 msgid "Modules listed here may provide additional data for facts and events (displayed in the configured order)."
 msgstr ""
+"โมดูลที่ระบุไว้ในที่นี้อาจให้ข้อมูลเพิ่มเติมและเหตุการณ์ต่างๆ (แสดงตามลำดับที่กำหนดค่าไว้)"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:107
 msgid "These modules may also provide additional facts and events, which are displayed sorted by date and type."
 msgstr ""
+"โมดูลเหล่านี้อาจให้ข้อมูลและเหตุการณ์เพิ่มเติม ซึ่งจะแสดงผลเรียงลำดับตามวันที่และประเภท"
 
 #. I18N: Module configuration: Refers to the module's Readme file
 #: CommonI18N.php:113
 msgid "Readme"
-msgstr ""
+msgstr "I18N: กำหนดค่าโมดูล: อ้างอิงถึงไฟล์ Readme ของโมดูล"
 
 #. I18N: Module configuration: Refers to general documentation
 #: CommonI18N.php:117
 msgid "Vesta location data management overview"
-msgstr ""
+msgstr "ภาพรวมการจัดการข้อมูลตำแหน่งของ Vesta"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:125
 msgid "Options"
-msgstr ""
+msgstr "ตัวเลือก"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:129
 msgid "Displayed title"
-msgstr ""
+msgstr "ชื่อเรื่องที่แสดง"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:133
 msgid "Displayed data"
-msgstr ""
+msgstr "ข้อมูลที่แสดง"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:137
 #, php-format
 msgid "Include the %1$s symbol in the tab title"
-msgstr ""
+msgstr "ใส่สัญลักษณ์ %1$s ในชื่อแท็บ"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:141
 #, php-format
 msgid "Include the %1$s symbol in the chart menu entry title"
-msgstr ""
+msgstr "ใส่สัญลักษณ์ %1$s ในชื่อรายการเมนูแผนภูมิ"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:145
 #, php-format
 msgid "Include the %1$s symbol in the list menu entry title"
-msgstr ""
+msgstr "ใส่สัญลักษณ์ %1$s ในชื่อรายการเมนู"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:149
 #, php-format
 msgid "Include the %1$s symbol in the sidebar title"
-msgstr ""
+msgstr "ใส่สัญลักษณ์ %1$s ในชื่อแถบด้านข้าง"
 
 #. I18N: Module Configuration
 #: CommonI18N.php:153
