@@ -500,5 +500,10 @@
 		"from": "2.2.1",
 		"to": "2.2.5",
 		"changelog": ["All modules: Additional translations."]
+	},
+	{
+		"version": "2.2.5.0.0",
+		"from": "2.2.5",
+		"to": "2.2.6"
 	}
 ]
