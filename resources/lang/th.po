@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: vesta 1.0\n"
 "Report-Msgid-Bugs-To: ric@richard-cissee.de\n"
 "POT-Creation-Date: 2023-01-21 15:53+0100\n"
-"PO-Revision-Date: 2026-01-16 10:01+0000\n"
-"Last-Translator: Anucha Hlownonkor <tony.chompoo@gmail.com>\n"
+"PO-Revision-Date: 2026-01-17 18:01+0000\n"
+"Last-Translator: Richard Cissée <ric@richard-cissee.de>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/vesta-webtrees-"
 "custom-modules/vesta-common/th/>\n"
 "Language: th\n"
@@ -27,7 +27,7 @@ msgstr "โมดูลทั่วไปของ Vesta"
 #. I18N: Module title
 #: CommonI18N.php:23
 msgid "Vesta Classic Look & Feel"
-msgstr "โมดูล Vesta  แบบคลาสสิก"
+msgstr "โมดูล Vesta แบบคลาสสิก"
 
 #. I18N: Module title
 #: CommonI18N.php:27
