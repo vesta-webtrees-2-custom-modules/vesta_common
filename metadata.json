@@ -516,5 +516,10 @@
 		"from": "2.2.5",
 		"to": "2.2.6",
 		"changelog": ["Several modules: Additional translations."]
+	},
+	{
+		"version": "2.2.6.0.0",
+		"from": "2.2.5",
+		"to": "2.2.7"
 	}
 ]
