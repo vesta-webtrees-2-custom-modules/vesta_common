@@ -10,6 +10,7 @@ use Fisharebest\Webtrees\Auth;
 use Fisharebest\Webtrees\Http\Exceptions\HttpNotFoundException;
 use Fisharebest\Webtrees\Http\RequestHandlers\MapDataEdit;
 use Fisharebest\Webtrees\Http\ViewResponseTrait;
+use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Module\ModuleListInterface;
 use Fisharebest\Webtrees\Module\ModuleMapProviderInterface;
 use Fisharebest\Webtrees\Place;
@@ -22,6 +23,7 @@ use Fisharebest\Webtrees\Webtrees;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use Vesta\VestaUtils;
 use function array_chunk;
 use function array_pop;
 use function array_reverse;
@@ -50,8 +52,8 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
 
         Auth::checkComponentAccess($this->module, ModuleListInterface::class, $tree, $user);
 
-        $searchService = \Vesta\VestaUtils::get(SearchService::class);
-        $participants = \Vesta\VestaUtils::get(ModuleService::class)
+        $searchService = VestaUtils::get(SearchService::class);
+        $participants = VestaUtils::get(ModuleService::class)
             ->findByComponent(PlaceHierarchyParticipant::class, $tree, Auth::user())
             ->filter(function (PlaceHierarchyParticipant $php) use ($tree): bool {
             return $php->participates($tree);
@@ -73,7 +75,7 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
             return redirect($place->url());
         }
 
-        $map_providers = \Vesta\VestaUtils::get(ModuleService::class)->findByInterface(ModuleMapProviderInterface::class);
+        $map_providers = VestaUtils::get(ModuleService::class)->findByInterface(ModuleMapProviderInterface::class);
 
         $content = '';
         $showmap = $map_providers->isNotEmpty();
@@ -87,7 +89,7 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
 
             $content .= view('modules/place-hierarchy/map', [
                 'data'           => $this->mapData($utils, $detailsThreshold, $place, $places),
-                'leaflet_config' => \Vesta\VestaUtils::get(LeafletJsService::class)->config(),
+                'leaflet_config' => VestaUtils::get(LeafletJsService::class)->config(),
             ]);
         }
 
@@ -151,15 +153,28 @@ class GenericPlaceHierarchyController implements RequestHandlerInterface {
     /**
      * @param Tree $tree
      *
-     * @return Place[][]
+     * @return array<array<PlaceWithinHierarchy>>
      */
     private function getList(
         PlaceHierarchyUtils $utils,
         Tree $tree,
         ServerRequestInterface $request): array {
 
+        $searchService = VestaUtils::get(SearchService::class);
+
+        //cf original impl in PlaceHierarchyListModule
+        $places = $searchService->searchPlaces($tree, '')
+            ->sort(static fn (Place $x, Place $y): int => I18N::comparator()($x->gedcomName(), $y->gedcomName()))
+            ->map(fn (Place $p) : PlaceWithinHierarchy =>
+                $utils->findPlace($p->id(), $tree, $request->getQueryParams())
+            )
+            ->all();
+        
+        //top-level only
+        /*
         $topLevel = $utils->findPlace(0, $tree, $request->getQueryParams());
         $places = $topLevel->getChildPlaces();
+        */
 
         $numfound = count($places);
 

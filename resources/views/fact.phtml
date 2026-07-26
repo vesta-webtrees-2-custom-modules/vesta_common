@@ -12,6 +12,7 @@ use Fisharebest\Webtrees\Gedcom;
 use Fisharebest\Webtrees\GedcomRecord;
 use Fisharebest\Webtrees\I18N;
 use Fisharebest\Webtrees\Individual;
+use Fisharebest\Webtrees\Location;
 use Fisharebest\Webtrees\Media;
 use Fisharebest\Webtrees\Module\ModuleChartInterface;
 use Fisharebest\Webtrees\Module\ModuleInterface;
@@ -202,6 +203,8 @@ if ($tag === 'MARR') {
                             }
 
                             ?>
+                        <?php elseif ($parent instanceof Location) : ?>
+                            <a href="<?= e($parent->url()) ?>"><?= $parent->fullName() ?></a>
                         <?php endif ?>
                     </div>
                 <?php endif ?>
@@ -210,13 +213,13 @@ if ($tag === 'MARR') {
                     <?= $element->value($value, $tree) ?>
                     <?php if ($element instanceof XrefAssociate && $fact->target() instanceof Individual) : ?>
                         <?php
-                        $relationshipChartModule = \Vesta\VestaUtils::get(ModuleService::class)->findByComponent(ModuleChartInterface::class, $tree, Auth::user())
+                        $relationshipChartModule = VestaUtils::get(ModuleService::class)->findByComponent(ModuleChartInterface::class, $tree, Auth::user())
                             ->first(static fn (ModuleInterface $m):bool => $m instanceof RelationshipsChartModule)
                         ?>
 
                         <?php if ($relationshipChartModule instanceof RelationshipsChartModule && $record instanceof Individual) : ?>
                             — <a href="<?= $relationshipChartModule->chartUrl($fact->target(), ['xref2' => $record->xref()]) ?>" rel="nofollow">
-                                <?= \Vesta\VestaUtils::get(RelationshipService::class)->getCloseRelationshipName($fact->target(), $record) ?>
+                                <?= VestaUtils::get(RelationshipService::class)->getCloseRelationshipName($fact->target(), $record) ?>
                             </a>
                         <?php endif ?>
                     <?php endif ?>

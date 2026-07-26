@@ -9,6 +9,7 @@ use Fisharebest\Webtrees\Fact;
 use Fisharebest\Webtrees\Family;
 use Fisharebest\Webtrees\Gedcom;
 use Fisharebest\Webtrees\Individual;
+use Fisharebest\Webtrees\Location;
 use Fisharebest\Webtrees\Registry;
 
 /**
@@ -24,6 +25,9 @@ if ($parent instanceof Individual) {
 } elseif ($parent instanceof Family) {
     // On a family page, we show links to both spouses
     $associates = $parent->spouses();
+} elseif ($parent instanceof Location) {
+    // cannot show links, but still makes sense to support associates here
+    $associates = [];
 } else {
     // On other pages, it does not make sense to show associates
     return '';
